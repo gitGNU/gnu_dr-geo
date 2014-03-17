@@ -1,0 +1,2201 @@
+# traditional Chinese translation of drgeo.
+# Copyright (C) 2003 Free Software Foundation, Inc.
+# Abel Cheung <maddog@linux.org.hk>, 2003.
+# 
+# History
+# "PO-Revision-Date: 2003-08-24 21:08+0800\n"
+# "Last-Translator: Abel Cheung <maddog@linux.org.hk>\n"
+# "PO-Revision-Date: 2004-08-29 22:13+0800\n"
+# "Last-Translator: Chao-Kuei Hung <ckhung@cyut.edu.tw>\n"
+msgid ""
+msgstr ""
+"Project-Id-Version: drgeo 0.9.8\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-07-26 23:59+0200\n"
+"PO-Revision-Date: 2004-08-29 22:13+0800\n"
+"Last-Translator: Chao-Kuei Hung <ckhung@cyut.edu.tw>\n"
+"Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: drgenius_main.cc:56
+#, c-format
+msgid ""
+"Command line options:\n"
+"Term under [] are options, || means OR:\n"
+"   drgeo [--file geo_file_name || macro_file_name] [geo_file_name.fgeo] "
+"[macro_file_name.mgeo] [--evaluate dsf_file_name] [--texmacs] [--help]\n"
+"\n"
+"--file       : to load a Dr. Geo file\n"
+"--evaluate   : to load and evaluate a Dr. Geo Scheme Figure (DSF)\n"
+"--texmacs    : start Dr. Geo as a TeXmacs plug-in\n"
+"--help       : this help summary\n"
+"\n"
+"Several files can be loaded using a --file command for each\n"
+"\n"
+msgstr ""
+"命令列選項:\n"
+"[] 內的選項可有可無, || 表示「或」:\n"
+"   drgeo [--file geo_file_name || macro_file_name] [geo_file_name.fgeo] "
+"[macro_file_name.mgeo] [--evaluate dsf_file_name] [--texmacs] [--help]\n"
+"\n"
+"--file       : 載入 Dr. Geo 檔案\n"
+"--evaluate   : 載入並執行 Dr. Geo Scheme Figure (DSF)\n"
+"--texmacs    : 把 Dr. Geo 當做 TeXmacs 的 plug-in 來執行\n"
+"--help       : 這段文字說明\n"
+"\n"
+"可以同時有數個 --file 以便載入數個檔案\n"
+"\n"
+
+#: drgenius_main.cc:160
+#, c-format
+msgid ""
+"\n"
+"Miss a filename in --file\n"
+"\n"
+msgstr ""
+"\n"
+"使用 --file 但未指定檔案名稱\n"
+"\n"
+
+#: drgenius_main.cc:172
+#, c-format
+msgid ""
+"\n"
+"Miss a filename to evaluate in --evaluate\n"
+"\n"
+msgstr ""
+"\n"
+"使用 --evaluate 但未指定檔案名稱\n"
+"\n"
+
+#: drgenius_main.cc:196
+#, c-format
+msgid "Unknown file type: %s (try .fgeo, .mgeo)\n"
+msgstr "未支援的檔案格式: %s (請改試 .fgeo, .mgeo)\n"
+
+#: drgenius_main.cc:200
+#, c-format
+msgid ""
+"\n"
+"Unknows command: %s\n"
+msgstr ""
+"\n"
+"未支援的命令: %s\n"
+
+#: drgenius_mdi.cc:99
+msgid "Welcome to GNU Dr. Geo - Free Interactive geometry by OFSET"
+msgstr "歡迎使用 GNU Dr. Geo - OFSET 製作的互動式幾何軟體"
+
+#: drgenius_mdi.cc:149
+#, c-format
+msgid "Error loading file '%s'"
+msgstr "載入檔案‘%s’時發生錯誤"
+
+#: drgenius_mdi.cc:592
+msgid "Are you sure to quit Dr. Geo?"
+msgstr "是否確定結束 Dr. Geo？"
+
+#: drgenius_mdi.cc:643 drgenius_mdi.cc:703
+#, c-format
+msgid "Can't open file '%s'"
+msgstr "無法開啟檔案‘%s’"
+
+#: drgenius_mdi.cc:668
+msgid "Open..."
+msgstr "開啟..."
+
+#: drgenius_mdi.cc:727
+msgid "Evaluate..."
+msgstr "執行..."
+
+#: drgenius_mdi.cc:767 drgenius_mdi.cc:797
+#, c-format
+msgid "Error saving to '%s'!"
+msgstr "儲存‘%s’時發生錯誤！"
+
+#: drgenius_mdi.cc:829 drgenius_mdi.cc:859 drgenius_mdi.cc:890
+#: drgenius_mdi.cc:925
+#, c-format
+msgid "Error exporting to '%s'!"
+msgstr "將內容匯出至‘%s’時發生錯誤！"
+
+#: drgenius_mdi.cc:943
+#, c-format
+msgid ""
+"Error exporting to '%s'!\n"
+"Exporting to PNG required the Image Magick package.\n"
+"Install it and try again!"
+msgstr ""
+"將內容匯出至‘%s’時發生錯誤！匯出至 PNG 格式需要用到 Image Magick 套件。\n"
+"請安裝後再重試！"
+
+#: drgenius_mdi.cc:972
+msgid "Define the printing area"
+msgstr "指定列印區域"
+
+#: drgenius_mdi.cc:1003 drgenius_mdi.cc:1087 drgenius_mdi.cc:1112
+#: drgenius_mdi.cc:1138 drgenius_mdi.cc:1165 drgenius_mdi.cc:1192
+#, c-format
+msgid ""
+"File '%s' exists!\n"
+"Overwrite?"
+msgstr ""
+"檔案‘%s’已經存在！\n"
+"是否覆寫？"
+
+#: drgenius_mdi.cc:1027
+msgid "Save As..."
+msgstr "另存新檔..."
+
+#: drgenius_mdi.cc:1215 drgenius_mdi.cc:1865
+msgid "Interactive 2D Figure"
+msgstr "互動式平面圖形"
+
+#: drgenius_mdi.cc:1216
+msgid "Console"
+msgstr "終端機"
+
+#: drgenius_mdi.cc:1217 drgenius_mdi.cc:1866
+msgid "Text Buffer"
+msgstr "文字緩衝區"
+
+#: drgenius_mdi.cc:1241
+msgid "Type"
+msgstr "類別"
+
+#: drgenius_mdi.cc:1246 glade/drgeo2.glade.h:68
+msgid "Name"
+msgstr "名稱"
+
+#. Next we add the list of avalaible macro-construction
+#: drgenius_mdi.cc:1280 drgenius_mdi.cc:1872 glade/drgeo2.glade.h:66
+msgid "Macro-construction"
+msgstr "建構巨集"
+
+#: drgenius_mdi.cc:1365
+msgid "Error printing the current figure!"
+msgstr "列印圖形時發生錯誤！"
+
+#: drgenius_mdi.cc:1409
+msgid ""
+"Only geometric figure\n"
+"can be exported to Flydraw!"
+msgstr "只有幾何圖形才可以匯出成為 Flydraw！"
+
+#: drgenius_mdi.cc:1426 drgenius_mdi.cc:1478 drgenius_mdi.cc:1529
+#: drgenius_mdi.cc:1585 glade/drgeoMDI.glade.h:43
+msgid "Export As..."
+msgstr "匯出成為..."
+
+#: drgenius_mdi.cc:1461
+msgid ""
+"Only geomteric figure\n"
+"can be exported to LaTex!"
+msgstr "只有幾何圖形才可以匯出成為 LaTeX！"
+
+#: drgenius_mdi.cc:1513
+msgid ""
+"Only geomteric figure\n"
+"can be exported to PostScript!"
+msgstr "只有幾何圖形才可以匯出成為 PostScript！"
+
+#: drgenius_mdi.cc:1566
+msgid ""
+"Only geomteric figure\n"
+"can be exported to PNG!"
+msgstr "只有幾何圖形才可以匯出成為 PNG！"
+
+#: drgenius_mdi.cc:1705
+msgid "Are you sure to close this figure?"
+msgstr "是否確定關閉這個圖形？"
+
+#: drgenius_mdi.cc:1729
+msgid "About Dr. Geo"
+msgstr "關於 Dr. Geo"
+
+#. VERSION
+#: drgenius_mdi.cc:1742
+#, fuzzy
+msgid ""
+"\n"
+"Free Interactive Geometry\n"
+"\n"
+"(c) Copyright 1996-2005 H. Fernandes  \n"
+"(c) Copyright 2000 L. Gauthier\n"
+"(c) Copyright 2000-2005 OFSET\n"
+"Translation: translator_name"
+msgstr ""
+"\n"
+"互動幾何自由軟體\n"
+"\n"
+"(c) Copyright 1996-2000 H. Fernandes  \n"
+"(c) Copyright 2000 L. Gauthier\n"
+"(c) Copyright 2000-2003 OFSET\n"
+"翻譯: Abel Cheung & 洪朝貴"
+
+#: drgenius_mdi.cc:1826
+msgid "Save Session As..."
+msgstr "將此Session存檔..."
+
+#: drgenius_mdi.cc:1921 geo/drgeo_control.cc:812
+msgid "Play a recorded macro-construction"
+msgstr "播放先前製作的巨集"
+
+#: drgenius_mdi.cc:1976
+#, fuzzy
+msgid "Select a free point to animate it"
+msgstr "軌跡：選取自由點與應變點"
+
+#: drgeo.desktop.in.h:1
+msgid "Dr.Geo"
+msgstr "Dr.Geo"
+
+#: drgeo.desktop.in.h:2
+msgid "Dr.Geo Math Tool"
+msgstr "Dr.Geo 數學工具"
+
+#: drgeo_adaptDialog.cc:404
+msgid ""
+"Password does not match\n"
+" Access denied!"
+msgstr ""
+"密碼不符\n"
+"拒絕使用！"
+
+#. create a new name
+#: editor_view.cc:42
+#, c-format
+msgid "Text %d"
+msgstr "文字 %d"
+
+#: geo_view.cc:32
+#, c-format
+msgid "Figure %d"
+msgstr "圖 %d"
+
+#: geo_view.cc:132
+msgid "Items"
+msgstr "項目"
+
+#: geo/drgeo_angle.cc:210 geo/drgeo_angle.cc:241
+msgid "this angle %1"
+msgstr "這個角 %1"
+
+#: geo/drgeo_angle.cc:285
+#, c-format
+msgid "Geometric angle:: %s"
+msgstr "無向角:: %s"
+
+#: geo/drgeo_angle.cc:286 geo/drgeo_angle.cc:288 geo/drgeo_arcCircle.cc:377
+#: geo/drgeo_circle.cc:359 geo/drgeo_halfLine.cc:260 geo/drgeo_line.cc:320
+#: geo/drgeo_numeric.cc:481 geo/drgeo_numeric.cc:486 geo/drgeo_numeric.cc:503
+#: geo/drgeo_numeric.cc:510 geo/drgeo_numeric.cc:517 geo/drgeo_numeric.cc:518
+#: geo/drgeo_point.cc:445 geo/drgeo_point.cc:446 geo/drgeo_polygon.cc:289
+#, c-format
+msgid "Point %s"
+msgstr "點 %s"
+
+#: geo/drgeo_angle.cc:287
+#, c-format
+msgid "Vertex %s"
+msgstr "端點 %s"
+
+#: geo/drgeo_angle.cc:292
+#, c-format
+msgid "Oriented angle:: %s"
+msgstr "有向角:: %s"
+
+#: geo/drgeo_angle.cc:293 geo/drgeo_angle.cc:294 geo/drgeo_numeric.cc:461
+#: geo/drgeo_numeric.cc:491 geo/drgeo_numeric.cc:496
+#, c-format
+msgid "Vector %s"
+msgstr "向量 %s"
+
+#: geo/drgeo_arcCircle.cc:282 geo/drgeo_arcCircle.cc:286
+msgid "this arc %1"
+msgstr "這段圓弧 %1"
+
+#: geo/drgeo_arcCircle.cc:335
+#, c-format
+msgid "Rotate arc-circle:: %s"
+msgstr "旋轉圓弧:: %s"
+
+#: geo/drgeo_arcCircle.cc:336 geo/drgeo_arcCircle.cc:344
+#: geo/drgeo_arcCircle.cc:351
+#, c-format
+msgid "Transformed arc-circle %s"
+msgstr "變換過的圓弧 %s"
+
+#: geo/drgeo_arcCircle.cc:338 geo/drgeo_arcCircle.cc:346
+#: geo/drgeo_arcCircle.cc:369 geo/drgeo_circle.cc:319 geo/drgeo_circle.cc:327
+#: geo/drgeo_circle.cc:350 geo/drgeo_circle.cc:358 geo/drgeo_circle.cc:366
+#: geo/drgeo_circle.cc:375 geo/drgeo_halfLine.cc:221 geo/drgeo_halfLine.cc:229
+#: geo/drgeo_halfLine.cc:252 geo/drgeo_line.cc:282 geo/drgeo_line.cc:290
+#: geo/drgeo_line.cc:312 geo/drgeo_point.cc:383 geo/drgeo_point.cc:391
+#: geo/drgeo_point.cc:413 geo/drgeo_polygon.cc:297 geo/drgeo_polygon.cc:305
+#: geo/drgeo_polygon.cc:328 geo/drgeo_segment.cc:223 geo/drgeo_segment.cc:231
+#: geo/drgeo_segment.cc:254 geo/drgeo_vector.cc:248 geo/drgeo_vector.cc:256
+#: geo/drgeo_vector.cc:279
+#, c-format
+msgid "Center %s"
+msgstr "中心點 %s"
+
+#: geo/drgeo_arcCircle.cc:339 geo/drgeo_circle.cc:320
+#: geo/drgeo_halfLine.cc:222 geo/drgeo_line.cc:283 geo/drgeo_point.cc:384
+#: geo/drgeo_polygon.cc:298 geo/drgeo_segment.cc:224 geo/drgeo_vector.cc:249
+#, c-format
+msgid "Angle %s"
+msgstr "角度 %s"
+
+#: geo/drgeo_arcCircle.cc:343 geo/drgeo_arcCircle.cc:350
+#, c-format
+msgid "Symmetric arc-circle:: %s"
+msgstr "對稱圓弧:: %s"
+
+#: geo/drgeo_arcCircle.cc:353 geo/drgeo_circle.cc:334
+#: geo/drgeo_halfLine.cc:236 geo/drgeo_line.cc:297 geo/drgeo_point.cc:398
+#: geo/drgeo_polygon.cc:312 geo/drgeo_segment.cc:238 geo/drgeo_vector.cc:263
+#, c-format
+msgid "Reflexion axe %s"
+msgstr "鏡射軸 %s"
+
+#: geo/drgeo_arcCircle.cc:358
+#, c-format
+msgid "Translate arc-circle:: %s"
+msgstr "平移圓弧:: %s"
+
+#: geo/drgeo_arcCircle.cc:359
+#, c-format
+msgid "Translated arc-circle %s"
+msgstr "平移過的圓弧:: %s"
+
+#: geo/drgeo_arcCircle.cc:361 geo/drgeo_circle.cc:342
+#: geo/drgeo_halfLine.cc:244 geo/drgeo_line.cc:305 geo/drgeo_point.cc:406
+#: geo/drgeo_polygon.cc:320 geo/drgeo_segment.cc:246 geo/drgeo_vector.cc:271
+#, c-format
+msgid "Vector of translation %s"
+msgstr "平移向量 %s"
+
+#: geo/drgeo_arcCircle.cc:366
+#, c-format
+msgid "Scale arc-circle:: %s"
+msgstr "縮放圓弧:: %s"
+
+#: geo/drgeo_arcCircle.cc:367
+#, c-format
+msgid "Scaled arc-circle %s"
+msgstr "相似圓弧 %s"
+
+#: geo/drgeo_arcCircle.cc:370 geo/drgeo_circle.cc:351
+#: geo/drgeo_halfLine.cc:253 geo/drgeo_line.cc:313 geo/drgeo_point.cc:414
+#: geo/drgeo_polygon.cc:329 geo/drgeo_segment.cc:255 geo/drgeo_vector.cc:280
+#, c-format
+msgid "Factor %s"
+msgstr "比例 %s"
+
+#: geo/drgeo_arcCircle.cc:375
+#, c-format
+msgid "Arc-circle defined by three points:: %s"
+msgstr "三點所決定的圓弧:: %s"
+
+#: geo/drgeo_arcCircle.cc:376 geo/drgeo_arcCircle.cc:378
+#: geo/drgeo_segment.cc:261 geo/drgeo_segment.cc:262 geo/drgeo_vector.cc:287
+#, c-format
+msgid "Extremity %s"
+msgstr "端點 %s"
+
+#: geo/drgeo_circle.cc:258 geo/drgeo_circle.cc:262
+msgid "this circle %1"
+msgstr "這個圓形 %1"
+
+#: geo/drgeo_circle.cc:316
+#, c-format
+msgid "Rotate circle:: %s"
+msgstr "旋轉圓形:: %s"
+
+#: geo/drgeo_circle.cc:317 geo/drgeo_circle.cc:325 geo/drgeo_circle.cc:332
+#, c-format
+msgid "Transformed circle %s"
+msgstr "變換過的圓 %s"
+
+#: geo/drgeo_circle.cc:324 geo/drgeo_circle.cc:331
+#, c-format
+msgid "Symmetric circle:: %s"
+msgstr "對稱圓:: %s"
+
+#: geo/drgeo_circle.cc:339
+#, c-format
+msgid "Translate circle:: %s"
+msgstr "平移圓形:: %s"
+
+#: geo/drgeo_circle.cc:340
+#, c-format
+msgid "Translated circle %s"
+msgstr "平移過的圓形:: %s"
+
+#: geo/drgeo_circle.cc:347
+#, c-format
+msgid "Scale circle:: %s"
+msgstr "縮放圓形:: %s"
+
+#: geo/drgeo_circle.cc:348
+#, c-format
+msgid "Scaled circle %s"
+msgstr "相似圓:: %s"
+
+#: geo/drgeo_circle.cc:356
+#, c-format
+msgid "Circle defined by its center and a point:: %s"
+msgstr "由圓心與圓上一點定義的圓:: %s"
+
+#: geo/drgeo_circle.cc:364
+#, c-format
+msgid "Circle defined by its center and a segment:: %s"
+msgstr "由圓心與半徑線段定義的圓:: %s"
+
+#: geo/drgeo_circle.cc:367
+#, c-format
+msgid "Radius from segment %s"
+msgstr "由線段 %s 定義的半徑"
+
+#: geo/drgeo_circle.cc:373
+#, c-format
+msgid "Circle defined by its center and radius:: %s"
+msgstr "由圓心與半徑定義的圓:: %s"
+
+#: geo/drgeo_circle.cc:376
+#, c-format
+msgid "Radius %s"
+msgstr "半徑 %s"
+
+#: geo/drgeo_control.cc:254
+msgid "Free point: click on the plane or over a curve"
+msgstr "自由點：請在平面上或線上選取一點"
+
+#: geo/drgeo_control.cc:276
+msgid "Middle: select two points or a segment"
+msgstr "中點：選取兩點或者一條線段"
+
+#: geo/drgeo_control.cc:298
+msgid "Intersection(s): select two curves"
+msgstr "交點：選取兩條線"
+
+#: geo/drgeo_control.cc:319
+msgid "Coordinate point: select two numbers (its coordinates)"
+msgstr "座標點：選取兩個數字 (它的座標)"
+
+#: geo/drgeo_control.cc:340
+msgid "Line: select two points"
+msgstr "直線：選取兩點"
+
+#: geo/drgeo_control.cc:361
+msgid "Ray: select its origin then another point"
+msgstr "射線：選取起點與另一點"
+
+#: geo/drgeo_control.cc:382
+msgid "Segment: select its extremities"
+msgstr "線段：選取線段兩端端點"
+
+#: geo/drgeo_control.cc:404
+msgid "Vector: select its origin and extremity"
+msgstr "向量：選取原點和終點"
+
+#: geo/drgeo_control.cc:425
+msgid "Circle: select its center and a point or its radius (number or segment)"
+msgstr "圓：選取圓心與圓上一點或半徑 (數字或線段)"
+
+#: geo/drgeo_control.cc:446
+msgid "Arc: select three points"
+msgstr "圓弧：選取三點"
+
+#: geo/drgeo_control.cc:467
+msgid "Locus: select a free point and a dependent point"
+msgstr "軌跡：選取自由點與應變點"
+
+#: geo/drgeo_control.cc:488
+msgid "Polygon: select its vertices, then click over the first one"
+msgstr "多邊形：選取所有頂點，最後按下第一點"
+
+#: geo/drgeo_control.cc:508
+msgid ""
+"Parallel line: select a point and a direction (line, ray, segment, vector) "
+msgstr "平行線：選取一點和一個方向 (可以是直線、射線、線段或向量)"
+
+#: geo/drgeo_control.cc:528
+msgid ""
+"Orthogonal line: select a point and a direction (line, ray, segment, vector)"
+msgstr "垂直線：選取一點和一個方向 (可以是直線、射線、線段或向量)"
+
+#: geo/drgeo_control.cc:548
+msgid "Axial symmetry: select a geometric object and a line"
+msgstr "軸對稱：選取一件幾何物件，再選一條對稱軸"
+
+#: geo/drgeo_control.cc:568
+msgid "Central symmetry: select a geometric object and the center"
+msgstr "中心點對稱：選取一件幾何物件，再選一個對稱中心點"
+
+#: geo/drgeo_control.cc:588
+msgid "Translation: select a geometric object and a vector"
+msgstr "平移：選取一件幾何物件和一個向量"
+
+#: geo/drgeo_control.cc:608
+msgid ""
+"Rotation: select a geometric object, the center and an angle or a scalar"
+msgstr "旋轉：選取一件幾何物件，旋轉原點，及一個角度或純量"
+
+#: geo/drgeo_control.cc:628
+msgid "Scale: select a geometric object, the center and a scalar"
+msgstr "縮放：選取一件幾何物件，縮放原點，及一個純量"
+
+#: geo/drgeo_control.cc:648
+msgid ""
+"Numeric: click on the back to edit a free value or select geometric object"
+"(s) to calculate distance"
+msgstr "數字：點選背景以輸入數字，或選取幾何物件以計算距離"
+
+#: geo/drgeo_control.cc:668
+msgid ""
+"Angle: select three points (geometric angle) or two vectors (oriented angle)"
+msgstr "角度：選取三點 (無向角) 或兩個向量 (有向角)"
+
+#: geo/drgeo_control.cc:688
+msgid "Coordinates & Equation: select a point, a vector, a line or a circle"
+msgstr "座標及方程：選取一點、一個向量、一條線或一個圓"
+
+#: geo/drgeo_control.cc:709
+msgid "Script: select n objects (n >=0) then click on the background"
+msgstr "命令稿：選取 n 件物件 (n >=0) 然後點選背景"
+
+#: geo/drgeo_control.cc:729
+msgid "Delete object: select the object to delete"
+msgstr "刪除物件：選取您想刪除的物件"
+
+#: geo/drgeo_control.cc:749
+msgid "Look: select the object to change its look"
+msgstr "外觀：選取物件，更改它的外觀"
+
+#: geo/drgeo_control.cc:769
+msgid "Property: select the object to change its property"
+msgstr "屬性：選取物件，更改它的屬性"
+
+#: geo/drgeo_control.cc:790
+msgid "Construct a macro-construction "
+msgstr "建構巨集"
+
+#: geo/drgeo_control.cc:937
+msgid "Select: select and move an object"
+msgstr "選取：選取和移動物件"
+
+#: geo/drgeo_dialog.cc:62
+msgid "Enter a value"
+msgstr "輸入數值"
+
+#: geo/drgeo_equation.cc:173 geo/drgeo_equation.cc:182
+msgid "the equation of %1"
+msgstr "%1 的方程"
+
+#: geo/drgeo_equation.cc:230
+#, c-format
+msgid "Line's equation:: %s"
+msgstr "直線的方程:: %s"
+
+#: geo/drgeo_equation.cc:231 geo/drgeo_numeric.cc:471 geo/drgeo_numeric.cc:511
+#, c-format
+msgid "Line %s"
+msgstr "直線 %s"
+
+#: geo/drgeo_equation.cc:235
+#, c-format
+msgid "Circle's equation:: %s"
+msgstr "圓形的方程:: %s"
+
+#: geo/drgeo_equation.cc:236 geo/drgeo_numeric.cc:466 geo/drgeo_numeric.cc:504
+#, c-format
+msgid "Circle %s"
+msgstr "圓形 %s"
+
+#: geo/drgeo_gtkhelpers.cc:98
+#, c-format
+msgid ""
+"This help directory does not exist:\n"
+"'%s'\n"
+"Maybe the manual is not installed or it is not yet translated in your "
+"language.\n"
+"\n"
+"If you want to translate the manual contact ofset@ofset.org."
+msgstr ""
+"文件目錄不存在:\n"
+"'%s'\n"
+"也許您並未安裝文件，或文件尚未翻譯成您的語言。\n"
+"\n"
+"如果您想翻譯文件，請與 ofset@ofset.org 聯絡。"
+
+#: geo/drgeo_gtkhelpers.cc:117
+msgid ""
+"A default online manual\n"
+"in English will be used."
+msgstr "將採用內建的英文版線上文件。"
+
+#: geo/drgeo_gtkhelpers.cc:129
+msgid "No default online manual can be found."
+msgstr "找不到內建的線上文件。"
+
+#: geo/drgeo_halfLine.cc:152 geo/drgeo_halfLine.cc:170
+msgid "this half-line %1"
+msgstr "這條射線 %1"
+
+#: geo/drgeo_halfLine.cc:218
+#, c-format
+msgid "Rotate half-line:: %s"
+msgstr "旋轉射線:: %s"
+
+#: geo/drgeo_halfLine.cc:219 geo/drgeo_halfLine.cc:227
+#: geo/drgeo_halfLine.cc:234
+#, c-format
+msgid "Transformed half-line %s"
+msgstr "變換過的射線 %s"
+
+#: geo/drgeo_halfLine.cc:226 geo/drgeo_halfLine.cc:233
+#, c-format
+msgid "Symmetric half-line:: %s"
+msgstr "對稱射線:: %s"
+
+#: geo/drgeo_halfLine.cc:241
+#, c-format
+msgid "Translate half-line:: %s"
+msgstr "平移射線:: %s"
+
+#: geo/drgeo_halfLine.cc:242
+#, c-format
+msgid "Translated half-line %s"
+msgstr "平移過的射線 %s"
+
+#: geo/drgeo_halfLine.cc:249
+#, c-format
+msgid "Scale half-line:: %s"
+msgstr "縮放射線:: %s"
+
+#: geo/drgeo_halfLine.cc:250
+#, c-format
+msgid "Scaled half-line %s"
+msgstr "相似射線:: %s"
+
+#: geo/drgeo_halfLine.cc:258
+#, c-format
+msgid "Half-line defined by two points:: %s"
+msgstr "由兩點所決定的射線:: %s"
+
+#: geo/drgeo_halfLine.cc:259 geo/drgeo_vector.cc:286
+#, c-format
+msgid "Origin %s"
+msgstr "原點 %s"
+
+#: geo/drgeo_line.cc:202 geo/drgeo_line.cc:220
+msgid "this line %1"
+msgstr "這條直線 %1"
+
+#: geo/drgeo_line.cc:279
+#, c-format
+msgid "Rotate line:: %s"
+msgstr "旋轉直線:: %s"
+
+#: geo/drgeo_line.cc:280 geo/drgeo_line.cc:288 geo/drgeo_line.cc:295
+#, c-format
+msgid "Transformed line %s"
+msgstr "變換過的直線 %s"
+
+#: geo/drgeo_line.cc:287 geo/drgeo_line.cc:294
+#, c-format
+msgid "Symmetric line:: %s"
+msgstr "對稱直線:: %s"
+
+#: geo/drgeo_line.cc:302
+#, c-format
+msgid "Translate line:: %s"
+msgstr "平移直線:: %s"
+
+#: geo/drgeo_line.cc:303
+#, c-format
+msgid "Translated line %s"
+msgstr "平移過的直線 %s"
+
+#: geo/drgeo_line.cc:310
+#, c-format
+msgid "Scale line:: %s"
+msgstr "縮放直線:: %s"
+
+#: geo/drgeo_line.cc:311
+#, c-format
+msgid "Scaled line %s"
+msgstr "縮放過的直線 %s"
+
+#: geo/drgeo_line.cc:318
+#, c-format
+msgid "Line going through two points:: %s"
+msgstr "通過兩點的直線:: %s"
+
+#: geo/drgeo_line.cc:319 geo/drgeo_line.cc:327 geo/drgeo_line.cc:333
+#: geo/drgeo_line.cc:339
+#, c-format
+msgid "Point  %s"
+msgstr "點 %s"
+
+#: geo/drgeo_line.cc:325
+#, c-format
+msgid "Line defined by a point and its slope:: %s"
+msgstr "由一點與斜率所決定的直線:: %s"
+
+#: geo/drgeo_line.cc:328
+#, c-format
+msgid "Slope %s"
+msgstr "斜率 %s"
+
+#: geo/drgeo_line.cc:332
+#, c-format
+msgid "Parallel line:: %s"
+msgstr "平行線:: %s"
+
+#: geo/drgeo_line.cc:334 geo/drgeo_line.cc:340
+#, c-format
+msgid "Direction %s"
+msgstr "方向 %s"
+
+#: geo/drgeo_line.cc:338
+#, c-format
+msgid "Perpendicular line:: %s"
+msgstr "垂直線:: %s"
+
+#. compute the string length
+#: geo/drgeo_locus.cc:303 geo/drgeo_locus.cc:312
+msgid "%1's locus when %2 describes %3"
+msgstr "%2 沿 %3 移動時， 由 %1 所描繪出來的軌跡"
+
+#: geo/drgeo_locus.cc:350
+#, c-format
+msgid "Locus:: %s"
+msgstr "軌跡:: %s"
+
+#: geo/drgeo_locus.cc:351
+#, c-format
+msgid "Free point on curve %s"
+msgstr "線上的自由點 %s"
+
+#: geo/drgeo_locus.cc:353
+#, c-format
+msgid "Constrained point %s"
+msgstr "應變點 %s"
+
+#: geo/drgeo_numeric.cc:275 geo/drgeo_numeric.cc:281
+msgid "%1's length"
+msgstr "%1 的長度"
+
+#: geo/drgeo_numeric.cc:286 geo/drgeo_numeric.cc:292
+msgid "%1's magnitude"
+msgstr "%1 的大小"
+
+#: geo/drgeo_numeric.cc:297 geo/drgeo_numeric.cc:303
+msgid "%1's perimeter"
+msgstr "%1 的周長"
+
+#: geo/drgeo_numeric.cc:308 geo/drgeo_numeric.cc:314
+msgid "the slope of %1"
+msgstr "%1 的斜率"
+
+#: geo/drgeo_numeric.cc:322 geo/drgeo_numeric.cc:332
+msgid "the distance between %1 and %2"
+msgstr "%1 與 %2 的距離"
+
+#: geo/drgeo_numeric.cc:345 geo/drgeo_numeric.cc:351
+msgid "the abscissa of %1"
+msgstr "%1 的橫座標"
+
+#: geo/drgeo_numeric.cc:357 geo/drgeo_numeric.cc:363
+msgid "the ordinate of %1"
+msgstr "%1 的縱座標"
+
+#: geo/drgeo_numeric.cc:367 geo/drgeo_value.cc:52
+msgid "this value"
+msgstr "這個值"
+
+#: geo/drgeo_numeric.cc:451
+#, c-format
+msgid "Free value:: %s"
+msgstr "這個值:: %s"
+
+#: geo/drgeo_numeric.cc:455
+#, c-format
+msgid "Segment's length:: %s"
+msgstr "線段的長度:: %s"
+
+#: geo/drgeo_numeric.cc:456 geo/drgeo_point.cc:440
+#, c-format
+msgid "Segment %s"
+msgstr "線段 %s"
+
+#: geo/drgeo_numeric.cc:460
+#, c-format
+msgid "Vector's norm:: %s"
+msgstr "向量的長度:: %s"
+
+#: geo/drgeo_numeric.cc:465
+#, c-format
+msgid "Circle's perimeter:: %s"
+msgstr "圓周長:: %s"
+
+#: geo/drgeo_numeric.cc:470
+#, c-format
+msgid "Line's slope:: %s"
+msgstr "直線斜率:: %s"
+
+#: geo/drgeo_numeric.cc:475
+#, c-format
+msgid "Arc-circle's length:: %s"
+msgstr "圓弧長度:: %s"
+
+#: geo/drgeo_numeric.cc:476
+#, c-format
+msgid "Arc-circle %s"
+msgstr "圓弧 %s"
+
+#: geo/drgeo_numeric.cc:480
+#, c-format
+msgid "Point's abscissa:: %s"
+msgstr "點的橫座標:: %s"
+
+#: geo/drgeo_numeric.cc:485
+#, c-format
+msgid "Point's ordinate:: %s"
+msgstr "點的縱座標:: %s"
+
+#: geo/drgeo_numeric.cc:490
+#, c-format
+msgid "Vector's abscissa:: %s"
+msgstr "向量的橫座標:: %s"
+
+#: geo/drgeo_numeric.cc:495
+#, c-format
+msgid "Vector's ordinate:: %s"
+msgstr "向量的縱座標:: %s"
+
+#: geo/drgeo_numeric.cc:501
+#, c-format
+msgid "Distance between a point and a circle:: %s"
+msgstr "點到圓的距離:: %s"
+
+#: geo/drgeo_numeric.cc:509
+#, c-format
+msgid "Distance between a point and a line:: %s"
+msgstr "點到線的距離:: %s"
+
+#: geo/drgeo_numeric.cc:516
+#, c-format
+msgid "Distance between two points:: %s"
+msgstr "兩點的距離:: %s"
+
+#: geo/drgeo_point.cc:380
+#, c-format
+msgid "Rotate point:: %s"
+msgstr "旋轉一個點:: %s"
+
+#: geo/drgeo_point.cc:381 geo/drgeo_point.cc:389 geo/drgeo_point.cc:396
+#, c-format
+msgid "Transformed point %s"
+msgstr "變換過的點 %s"
+
+#: geo/drgeo_point.cc:388 geo/drgeo_point.cc:395
+#, c-format
+msgid "Symmetric point:: %s"
+msgstr "對稱點:: %s"
+
+#: geo/drgeo_point.cc:403
+#, c-format
+msgid "Translate point:: %s"
+msgstr "平移一個點:: %s"
+
+#: geo/drgeo_point.cc:404
+#, c-format
+msgid "Translated point %s"
+msgstr "平移過的點 %s"
+
+#: geo/drgeo_point.cc:411
+#, c-format
+msgid "Scale point:: %s"
+msgstr "縮放一個點:: %s"
+
+#: geo/drgeo_point.cc:412
+#, c-format
+msgid "Scaled point %s"
+msgstr "縮放過的點 %s"
+
+#: geo/drgeo_point.cc:418
+#, c-format
+msgid "Coordinate point:: %s"
+msgstr "座標點:: %s"
+
+#: geo/drgeo_point.cc:419
+#, c-format
+msgid "Abscissa %s"
+msgstr "橫座標 %s"
+
+#: geo/drgeo_point.cc:420
+#, c-format
+msgid "Ordinate %s"
+msgstr "縱座標 %s"
+
+#: geo/drgeo_point.cc:424
+#, c-format
+msgid "Free point:: %s"
+msgstr "自由點:: %s"
+
+#: geo/drgeo_point.cc:428
+#, c-format
+msgid "Free point on curve:: %s"
+msgstr "線上的自由點:: %s"
+
+#: geo/drgeo_point.cc:429 geo/drgeo_point.cc:434 geo/drgeo_point.cc:435
+#, c-format
+msgid "Curve %s"
+msgstr "線條 %s"
+
+#: geo/drgeo_point.cc:433
+#, c-format
+msgid "Intersection point:: %s"
+msgstr "交點:: %s"
+
+#: geo/drgeo_point.cc:439
+#, c-format
+msgid "Middle of segment:: %s"
+msgstr "線段的中點:: %s"
+
+#: geo/drgeo_point.cc:444
+#, c-format
+msgid "Middle of two points:: %s"
+msgstr "兩點的中點:: %s"
+
+#: geo/drgeo_point.cc:482 geo/drgeo_point.cc:486
+msgid "this point %1"
+msgstr "這一點 %1"
+
+#: geo/drgeo_polygon.cc:287
+#, c-format
+msgid "Polygon:: %s"
+msgstr "多邊形:: %s"
+
+#: geo/drgeo_polygon.cc:294
+#, c-format
+msgid "Rotate polygon:: %s"
+msgstr "旋轉多邊形:: %s"
+
+#: geo/drgeo_polygon.cc:295 geo/drgeo_polygon.cc:303 geo/drgeo_polygon.cc:310
+#, c-format
+msgid "Transformed polygon %s"
+msgstr "變換過的多邊形 %s"
+
+#: geo/drgeo_polygon.cc:302 geo/drgeo_polygon.cc:309
+#, c-format
+msgid "Symmetric polygon:: %s"
+msgstr "對稱多邊形:: %s"
+
+#: geo/drgeo_polygon.cc:317
+#, c-format
+msgid "Translate polygon:: %s"
+msgstr "平移多邊形:: %s"
+
+#: geo/drgeo_polygon.cc:318
+#, c-format
+msgid "Translated polygon %s"
+msgstr "平移過的多邊形 %s"
+
+#: geo/drgeo_polygon.cc:325
+#, c-format
+msgid "Scale polygon:: %s"
+msgstr "縮放多邊形:: %s"
+
+#: geo/drgeo_polygon.cc:326
+#, c-format
+msgid "Scaled polygon %s"
+msgstr "縮放過的多邊形 %s"
+
+#: geo/drgeo_polygon.cc:383 geo/drgeo_polygon.cc:407
+msgid "this polygon %1"
+msgstr "這個多邊形 %1"
+
+#: geo/drgeo_repere.cc:148 geo/drgeo_repere.cc:161
+msgid "this reference frame %1"
+msgstr "這個參考座標系 %1"
+
+#: geo/drgeo_scm_helper.cc:91
+#, c-format
+msgid "Error! Just got the following error tag: %s\n"
+msgstr "錯誤！ 錯誤代碼：%s\n"
+
+#: geo/drgeo_script.cc:158
+msgid "Unprintable result"
+msgstr "無法列印結果"
+
+#: geo/drgeo_script.cc:171 geo/drgeo_script.cc:175
+msgid "this script %1"
+msgstr "這個命令稿 %1"
+
+#: geo/drgeo_script.cc:223
+#, c-format
+msgid "Script:: %s"
+msgstr "命令稿:: %s"
+
+#: geo/drgeo_script.cc:225
+#, c-format
+msgid "Object %s"
+msgstr "物件 %s"
+
+#: geo/drgeo_segment.cc:153 geo/drgeo_segment.cc:171
+msgid "this segment %1"
+msgstr "這段線段 %1"
+
+#: geo/drgeo_segment.cc:220
+#, c-format
+msgid "Rotate segment:: %s"
+msgstr "旋轉線段:: %s"
+
+#: geo/drgeo_segment.cc:221 geo/drgeo_segment.cc:229 geo/drgeo_segment.cc:236
+#, c-format
+msgid "Transformed segment %s"
+msgstr "變換過的線段 %s"
+
+#: geo/drgeo_segment.cc:228 geo/drgeo_segment.cc:235
+#, c-format
+msgid "Symmetric segment:: %s"
+msgstr "對稱線段:: %s"
+
+#: geo/drgeo_segment.cc:243
+#, c-format
+msgid "Translate segment:: %s"
+msgstr "平移線段:: %s"
+
+#: geo/drgeo_segment.cc:244
+#, c-format
+msgid "Translated segment %s"
+msgstr "平移過的線段 %s"
+
+#: geo/drgeo_segment.cc:251
+#, c-format
+msgid "Scale segment:: %s"
+msgstr "縮放線段:: %s"
+
+#: geo/drgeo_segment.cc:252
+#, c-format
+msgid "Scaled segment %s"
+msgstr "縮放過的線段 %s"
+
+#: geo/drgeo_segment.cc:260
+#, c-format
+msgid "Segment defined by its extremities:: %s"
+msgstr "由兩端點所定義的線段:: %s"
+
+#: geo/drgeo_tool.cc:950
+#, c-format
+msgid "Remove %s?"
+msgstr "是否刪除 %s？"
+
+#: geo/drgeo_tool.cc:953
+msgid "Remove selected item?"
+msgstr "刪除所選物件?"
+
+#: geo/drgeo_vector.cc:170 geo/drgeo_vector.cc:188
+msgid "this vector %1"
+msgstr "這個向量 %1"
+
+#: geo/drgeo_vector.cc:245
+#, c-format
+msgid "Rotate vector:: %s"
+msgstr "旋轉向量:: %s"
+
+#: geo/drgeo_vector.cc:246 geo/drgeo_vector.cc:254 geo/drgeo_vector.cc:261
+#, c-format
+msgid "Transformed vector %s"
+msgstr "變換過的向量 %s"
+
+#: geo/drgeo_vector.cc:253 geo/drgeo_vector.cc:260
+#, c-format
+msgid "Symmetric vector:: %s"
+msgstr "對稱向量:: %s"
+
+#: geo/drgeo_vector.cc:268
+#, c-format
+msgid "Translate vector:: %s"
+msgstr "平移向量:: %s"
+
+#: geo/drgeo_vector.cc:269
+#, c-format
+msgid "Translated vector %s"
+msgstr "平移過的向量 %s"
+
+#: geo/drgeo_vector.cc:276
+#, c-format
+msgid "Scale vector:: %s"
+msgstr "縮放向量:: %s"
+
+#: geo/drgeo_vector.cc:277
+#, c-format
+msgid "Scaled vector %s"
+msgstr "縮放過的向量 %s"
+
+#: geo/drgeo_vector.cc:285
+#, c-format
+msgid "Vector defined by two points:: %s"
+msgstr "由兩點所定義的向量:: %s"
+
+#: glade/drgenius2.glade.h:1 glade/drgeo2.glade.h:1
+msgid "*"
+msgstr "*"
+
+#: glade/drgenius2.glade.h:2
+msgid "Angle"
+msgstr "角度"
+
+#: glade/drgenius2.glade.h:3
+msgid "Arc-Circle"
+msgstr "圓弧"
+
+#: glade/drgenius2.glade.h:4
+msgid "Circle"
+msgstr "圓形"
+
+#: glade/drgenius2.glade.h:5 glade/drgeo2.glade.h:33
+msgid "Color"
+msgstr "顏色"
+
+#: glade/drgenius2.glade.h:6
+msgid ""
+"Default figure name used when a new figure is created. This name is combined "
+"with a numeric indicator"
+msgstr "繪製新圖案，採用預設圖案名稱（檔名中的數字自動產生）"
+
+#: glade/drgenius2.glade.h:7
+msgid ""
+"Default file name used to export a geometric figure to the Flydraw format"
+msgstr "匯出幾何圖案至Flydraw格式，採用預設檔案名稱"
+
+#: glade/drgenius2.glade.h:8
+msgid ""
+"Default file name used to export a geometric figure to the LaTeX format "
+"(pstricks extension)"
+msgstr "匯出幾何圖案至LaTeX格式，採用預設檔案名稱（pstricks擴充套件）"
+
+#: glade/drgenius2.glade.h:9
+msgid ""
+"Default file name used to export a geometric figure to the encapsulated "
+"PostScript format"
+msgstr "匯出幾何圖案至encapsulated PostScript格式，採用預設檔案名稱"
+
+#: glade/drgenius2.glade.h:10
+msgid "Default file name used to save a geometric figure"
+msgstr "幾何圖案存檔，採用預設檔案名稱"
+
+#: glade/drgenius2.glade.h:11
+msgid ""
+"Default file name used to save a session (several documents in one file)"
+msgstr "將Session（內含多份文件）存成一個檔案，採用預設檔案名稱"
+
+#: glade/drgenius2.glade.h:12
+msgid "Default value"
+msgstr "預設值"
+
+#: glade/drgenius2.glade.h:13
+msgid "Defaut file name"
+msgstr "預設檔案名稱"
+
+#: glade/drgenius2.glade.h:14
+msgid "Figure name"
+msgstr "圖形名稱"
+
+#: glade/drgenius2.glade.h:15
+msgid "Flydraw:"
+msgstr "Flydraw:"
+
+#: glade/drgenius2.glade.h:16
+msgid "Geometric figure "
+msgstr "幾何圖形"
+
+#: glade/drgenius2.glade.h:17
+msgid "Global preferences"
+msgstr "整體偏好設定"
+
+#: glade/drgenius2.glade.h:18
+msgid "Half-Line"
+msgstr "射線"
+
+#: glade/drgenius2.glade.h:19
+msgid "Html viewer"
+msgstr "HTML 瀏覽器"
+
+#: glade/drgenius2.glade.h:20
+msgid "LaTeX:"
+msgstr "LaTeX："
+
+#: glade/drgenius2.glade.h:21 glade/drgeo2.glade.h:58
+msgid "Large"
+msgstr "大"
+
+#: glade/drgenius2.glade.h:22
+msgid "Line"
+msgstr "行"
+
+#: glade/drgenius2.glade.h:23
+msgid "Locus"
+msgstr "軌跡"
+
+#: glade/drgenius2.glade.h:24 glade/drgeo2.glade.h:69
+msgid "Normal"
+msgstr "正常"
+
+#: glade/drgenius2.glade.h:25
+msgid "Number of undo/redo operations. 0 for infinite undo/redo level"
+msgstr "復原/取消復原的次數。0 表示無限制。"
+
+#: glade/drgenius2.glade.h:26
+msgid "Numeric Precision"
+msgstr "有效數字"
+
+#: glade/drgenius2.glade.h:27
+#, fuzzy
+msgid "Object Aspect"
+msgstr "物件長寬比例"
+
+#: glade/drgenius2.glade.h:28 glade/drgeo2.glade.h:77
+msgid "Point"
+msgstr "點"
+
+#: glade/drgenius2.glade.h:29
+msgid "Polygon"
+msgstr "多邊形"
+
+#: glade/drgenius2.glade.h:30
+msgid "PostScript:"
+msgstr "PostScript："
+
+#: glade/drgenius2.glade.h:31
+msgid "Save a Dr Genius session"
+msgstr "儲存Dr Genius session"
+
+#: glade/drgenius2.glade.h:32
+msgid "Save all"
+msgstr "全部儲存"
+
+#: glade/drgenius2.glade.h:33
+msgid "Save selection"
+msgstr "儲存圈選部分"
+
+#: glade/drgenius2.glade.h:34
+msgid "Scalar"
+msgstr "純量"
+
+#: glade/drgenius2.glade.h:35
+msgid "Segment"
+msgstr "線段"
+
+#: glade/drgenius2.glade.h:36
+msgid "Select Color"
+msgstr "選取顏色"
+
+#: glade/drgenius2.glade.h:37
+msgid "Select data to save"
+msgstr "選擇要儲存的資料"
+
+#: glade/drgenius2.glade.h:38
+msgid "Session:"
+msgstr "Session:"
+
+#: glade/drgenius2.glade.h:39 glade/drgeo2.glade.h:96
+msgid "Shape"
+msgstr "形狀"
+
+#: glade/drgenius2.glade.h:40 glade/drgeo2.glade.h:97
+msgid "Size"
+msgstr "大小"
+
+#: glade/drgenius2.glade.h:41 glade/drgeo2.glade.h:98
+msgid "Small"
+msgstr "小"
+
+#: glade/drgenius2.glade.h:42 glade/drgeo2.glade.h:99
+msgid "Style"
+msgstr "樣式"
+
+#: glade/drgenius2.glade.h:43
+msgid "Undo/Redo levels"
+msgstr "復原/取消復原次數"
+
+#: glade/drgenius2.glade.h:44
+msgid "Vector"
+msgstr "向量"
+
+#: glade/drgenius2.glade.h:45
+msgid "dillo "
+msgstr "dillo"
+
+#: glade/drgenius2.glade.h:46
+msgid "galeon -x "
+msgstr "galeon -x"
+
+#: glade/drgenius2.glade.h:47
+msgid "konqueror "
+msgstr "konqueror"
+
+#: glade/drgenius2.glade.h:48
+msgid "mozilla "
+msgstr "mozilla"
+
+#: glade/drgeo2.glade.h:3
+#, no-c-format
+msgid "100%"
+msgstr "100%"
+
+#: glade/drgeo2.glade.h:5 glade/drgeoMDI.glade.h:2
+#, no-c-format
+msgid "125%"
+msgstr "125%"
+
+#: glade/drgeo2.glade.h:7 glade/drgeoMDI.glade.h:4
+#, no-c-format
+msgid "150%"
+msgstr "150%"
+
+#: glade/drgeo2.glade.h:9 glade/drgeoMDI.glade.h:6
+#, no-c-format
+msgid "175%"
+msgstr "175%"
+
+#: glade/drgeo2.glade.h:11 glade/drgeoMDI.glade.h:8
+#, no-c-format
+msgid "200%"
+msgstr "200%"
+
+#: glade/drgeo2.glade.h:13 glade/drgeoMDI.glade.h:10
+#, no-c-format
+msgid "25%"
+msgstr "25%"
+
+#: glade/drgeo2.glade.h:15 glade/drgeoMDI.glade.h:12
+#, no-c-format
+msgid "50%"
+msgstr "50%"
+
+#: glade/drgeo2.glade.h:17 glade/drgeoMDI.glade.h:14
+#, no-c-format
+msgid "75%"
+msgstr "75%"
+
+#: glade/drgeo2.glade.h:18
+msgid "Abscissa"
+msgstr "橫座標"
+
+#: glade/drgeo2.glade.h:19
+msgid "Adjust the line style"
+msgstr "調整線條樣式"
+
+#: glade/drgeo2.glade.h:20
+msgid "Adjust the point style"
+msgstr "調整點的樣式"
+
+#: glade/drgeo2.glade.h:21
+msgid "Adjust the value style"
+msgstr "調整數值的樣式"
+
+#: glade/drgeo2.glade.h:22
+msgid "Adjust the zoom factor"
+msgstr "調整縮放比率"
+
+#: glade/drgeo2.glade.h:23 glade/drgeoMDI.glade.h:15
+msgid "Angle defined by three points or two vectors"
+msgstr "以三點或者兩個向量定義角度"
+
+#: glade/drgeo2.glade.h:24 glade/drgeoMDI.glade.h:24
+msgid "Arc circle defined by three points"
+msgstr "以三點定義圓弧"
+
+#: glade/drgeo2.glade.h:25
+msgid "Avalaible macro-construction"
+msgstr "可用的巨集"
+
+#: glade/drgeo2.glade.h:26 glade/drgeoMDI.glade.h:25
+msgid ""
+"Axial symmetry of an object. When ambiguity, the first selected line is the "
+"line to transform"
+msgstr "軸對稱。有混淆之虞時，最先選取的直線為即將被映射的直線"
+
+#: glade/drgeo2.glade.h:27
+msgid "Build a macro construction"
+msgstr "製作巨集"
+
+#: glade/drgeo2.glade.h:28
+msgid "Build a macro-construction"
+msgstr "製作巨集"
+
+#: glade/drgeo2.glade.h:29 glade/drgeoMDI.glade.h:26
+msgid ""
+"Central symmetry of an object. When ambiguity, the first selected point is "
+"the point to transform"
+msgstr "中心點對稱。有混淆之虞時，最先選取的點為即將被映射的點"
+
+#: glade/drgeo2.glade.h:30 glade/drgeoMDI.glade.h:29
+msgid "Change the property of an object"
+msgstr "更改物件的屬性"
+
+#: glade/drgeo2.glade.h:31
+msgid "Change the style of an object"
+msgstr "更改物件的樣式"
+
+#: glade/drgeo2.glade.h:32 glade/drgeoMDI.glade.h:30
+msgid "Circle defines by center and point, radius or segment"
+msgstr "由圓心與圓上一點，半徑，或線段所定義的圓"
+
+#: glade/drgeo2.glade.h:34
+msgid "Construct a macro"
+msgstr "製作巨集"
+
+#: glade/drgeo2.glade.h:35
+msgid "Create curve"
+msgstr "繪畫線條"
+
+#: glade/drgeo2.glade.h:36
+msgid "Create numeric object"
+msgstr "產生數值物件"
+
+#: glade/drgeo2.glade.h:37
+msgid "Create point"
+msgstr "繪畫點"
+
+#: glade/drgeo2.glade.h:38
+msgid "Curve"
+msgstr "線條"
+
+#: glade/drgeo2.glade.h:39
+msgid "Custome User Interface"
+msgstr "自定操作介面"
+
+#: glade/drgeo2.glade.h:40
+msgid "Custome User Interface in the current view"
+msgstr "自定這個view的操作介面"
+
+#: glade/drgeo2.glade.h:41 glade/drgeoMDI.glade.h:38
+msgid "Delete an object and its relatives"
+msgstr "刪除一件物件和任何與它有關的物件"
+
+#: glade/drgeo2.glade.h:42
+msgid "Description"
+msgstr "說明"
+
+#: glade/drgeo2.glade.h:43 glade/drgeoMDI.glade.h:39
+msgid "Distance between objects, curve length, or edit free value"
+msgstr "物件之間的距離，線條長度，或自行輸入數字"
+
+#: glade/drgeo2.glade.h:44
+msgid "Edit Scheme script"
+msgstr "編輯Scheme命令稿"
+
+#: glade/drgeo2.glade.h:45
+msgid "Edit value"
+msgstr "編輯數值"
+
+#: glade/drgeo2.glade.h:46
+msgid "Enter the macro-construction description there"
+msgstr "輸入有關巨集的說明"
+
+#: glade/drgeo2.glade.h:47
+msgid "Enter the macro-construction name there"
+msgstr "輸入巨集名稱"
+
+#: glade/drgeo2.glade.h:48
+msgid "Enter the name of this view:"
+msgstr "輸入這個view的名稱"
+
+#: glade/drgeo2.glade.h:49
+msgid "Execute"
+msgstr "執行"
+
+#: glade/drgeo2.glade.h:50
+msgid "Execute a macro-construction"
+msgstr "執行巨集"
+
+#: glade/drgeo2.glade.h:51
+msgid "Execute pre-built macro"
+msgstr "執行預先製作的巨集"
+
+#: glade/drgeo2.glade.h:52
+msgid "Free point properties"
+msgstr "自由點的屬性"
+
+#: glade/drgeo2.glade.h:53
+msgid "Give a name and a description"
+msgstr "請命名並加以描述"
+
+#: glade/drgeo2.glade.h:54 glade/drgeoMDI.glade.h:55
+msgid "Guile script using objects as input parameters"
+msgstr "以物件為輸入參數的命令稿"
+
+#: glade/drgeo2.glade.h:55 glade/drgeoMDI.glade.h:56
+msgid "Half-Line defined by two points, the first selected point is the origin"
+msgstr "由兩點決定射線，第一點是原點"
+
+#: glade/drgeo2.glade.h:56
+msgid "Input"
+msgstr "輸入"
+
+#: glade/drgeo2.glade.h:57
+msgid "Intro"
+msgstr "介紹"
+
+#: glade/drgeo2.glade.h:59 glade/drgeoMDI.glade.h:58
+msgid "Line defined by two points"
+msgstr "由兩點所定義的直線"
+
+#: glade/drgeo2.glade.h:60 glade/drgeoMDI.glade.h:59
+msgid ""
+"Line passing through one point and orthogonal to a line, half-line, etc."
+msgstr "通過一點，且與某直線､射線､…垂直的直線"
+
+#: glade/drgeo2.glade.h:61 glade/drgeoMDI.glade.h:60
+msgid "Line passing through one point and parallel to a line, half-line, etc."
+msgstr "通過一點，且與某直線､射線､…平行的直線"
+
+#: glade/drgeo2.glade.h:62
+msgid "Lock"
+msgstr "鎖定"
+
+#: glade/drgeo2.glade.h:63
+msgid "Lock the interface"
+msgstr "鎖定操作介面"
+
+#: glade/drgeo2.glade.h:64 glade/drgeoMDI.glade.h:61
+msgid "Locus defined by a free point and a relative point"
+msgstr "由自由點與應變點所定義的軌跡"
+
+#: glade/drgeo2.glade.h:65
+msgid "Macro name"
+msgstr "巨集名稱"
+
+#: glade/drgeo2.glade.h:67
+msgid "Masked"
+msgstr "隱藏"
+
+#: glade/drgeo2.glade.h:70
+msgid "Not masked"
+msgstr "未隱藏"
+
+#: glade/drgeo2.glade.h:71
+msgid "Numeric"
+msgstr "數字"
+
+#: glade/drgeo2.glade.h:72
+msgid "Ordinate"
+msgstr "縱座標"
+
+#: glade/drgeo2.glade.h:73
+msgid "Other"
+msgstr "其它"
+
+#: glade/drgeo2.glade.h:74
+msgid "Output"
+msgstr "輸出"
+
+#: glade/drgeo2.glade.h:75
+msgid "Password to lock the changes to the interface: "
+msgstr "鎖住修改操作介面的密碼:"
+
+#: glade/drgeo2.glade.h:76
+msgid "Password to unlock the changes to the interface:"
+msgstr "開放修改操作介面的密碼:"
+
+#: glade/drgeo2.glade.h:78 glade/drgeoMDI.glade.h:65
+msgid "Point given its coordinates"
+msgstr "由座標決定的點"
+
+#: glade/drgeo2.glade.h:79 glade/drgeoMDI.glade.h:66
+msgid "Point on an object or the background plane"
+msgstr "物件上或背景平面上一點"
+
+#: glade/drgeo2.glade.h:80
+msgid ""
+"Polygon defined by n points. Last choosen point must be the initial point to "
+"terminate the selection"
+msgstr "由 n 個頂點所定義的多邊形。最後選取的點必須與第一點相同"
+
+#: glade/drgeo2.glade.h:81
+msgid "Press this button to mask the object"
+msgstr "請按此鈕以隱藏物件"
+
+#: glade/drgeo2.glade.h:82
+msgid "Press this button to unmask the object"
+msgstr "請按此鈕以顯示物件"
+
+#: glade/drgeo2.glade.h:83
+msgid "Print Figure"
+msgstr "列印圖形"
+
+#: glade/drgeo2.glade.h:84
+msgid "Re-lock the interface"
+msgstr "重新鎖住操作介面"
+
+#: glade/drgeo2.glade.h:85
+msgid "Rename the view"
+msgstr "更改view的名稱"
+
+#: glade/drgeo2.glade.h:86 glade/drgeoMDI.glade.h:75
+msgid ""
+"Rotation of an object. When ambiguity, the first selected point is the point "
+"to rotate"
+msgstr "旋轉。有混淆之虞時，最先選取的點為即將被旋轉的點"
+
+#: glade/drgeo2.glade.h:87 glade/drgeoMDI.glade.h:78
+msgid ""
+"Scale an object. When ambiguity, the first selected point is the point to "
+"transform"
+msgstr "放大縮小。有混淆之虞時，最先選取的點為即將被變換的點"
+
+#: glade/drgeo2.glade.h:88
+msgid "Scheme script using objects as input parameters"
+msgstr "以物件為輸入參數的Scheme命令稿"
+
+#: glade/drgeo2.glade.h:89
+msgid "Script"
+msgstr "命令稿"
+
+#: glade/drgeo2.glade.h:90 glade/drgeoMDI.glade.h:79
+msgid "Segment defined by two points"
+msgstr "由兩點所定義的線段"
+
+#: glade/drgeo2.glade.h:91
+msgid "Select a macro-construction then the figure items"
+msgstr "選取巨集然後選取圖上的物件"
+
+#: glade/drgeo2.glade.h:92
+msgid "Select and move an object"
+msgstr "選取和移動物件"
+
+#: glade/drgeo2.glade.h:93
+msgid "Select input parameters"
+msgstr "指定輸入的參數"
+
+#: glade/drgeo2.glade.h:94
+msgid "Select output parameters"
+msgstr "指定輸出的參數"
+
+#: glade/drgeo2.glade.h:95
+msgid "Select printer: "
+msgstr "選取印表機"
+
+#: glade/drgeo2.glade.h:100 glade/drgeoMDI.glade.h:82
+msgid "The midpoint of a segment or between two points"
+msgstr "線段或兩點的中點"
+
+#: glade/drgeo2.glade.h:101 glade/drgeoMDI.glade.h:83
+msgid "The point(s) of intersection between two objects"
+msgstr "兩物件的交點"
+
+#: glade/drgeo2.glade.h:102
+#, fuzzy
+msgid ""
+"This interface has already been locked.\n"
+"Enter the previously used password for this view: "
+msgstr ""
+"操作介面已鎖住。\n"
+"請輸入先前這個view的密碼:"
+
+#: glade/drgeo2.glade.h:104
+msgid ""
+"To build a macro-construction,\n"
+"\n"
+"1. First select the input parameters\n"
+"2. Next select the output parameters,\n"
+"3. Last chose a name and a description."
+msgstr ""
+"如果要製作巨集：\n"
+"\n"
+"1. 首先要選取輸入的參數\n"
+"2. 再選取輸出的參數\n"
+"3. 最後指定巨集的名稱和加上說明。"
+
+#: glade/drgeo2.glade.h:109
+msgid ""
+"To play a macro-construction,\n"
+"\n"
+"1. First select a macro-construction from the list,\n"
+"2. Select items on the figure. Only relevant items \n"
+"to the selected macro-construction are selectable.\n"
+"Once enought items are selected, the macro is \n"
+"automaticly executed.\n"
+"To start press the button \"next\"."
+msgstr ""
+"如果要播放巨集,\n"
+"\n"
+"1. 首先從下列巨集當中選取一個\n"
+"2. 再選取圖中的物件。您只能選取符合所選巨集輸入條件的物件\n"
+"一旦選取足夠的物件，巨集就會自動播放。\n"
+"請按\"next\"鈕開始。"
+
+#: glade/drgeo2.glade.h:117
+msgid "Tools based on properties and transformations"
+msgstr "與性質與轉換相關的工具"
+
+#: glade/drgeo2.glade.h:118 glade/drgeoMDI.glade.h:84
+msgid ""
+"Translation of an object. When ambiguity, the first selected vector is the "
+"vector to translate"
+msgstr "平移。有混淆之虞時，最先選取的向量為即將被變換的向量"
+
+#: glade/drgeo2.glade.h:119
+msgid "Unlock"
+msgstr "解除鎖定"
+
+#: glade/drgeo2.glade.h:120 glade/drgeoMDI.glade.h:86
+msgid "Vector and point coordinates, line and circle equation"
+msgstr "向量及點的座標，直線與圓的方程"
+
+#: glade/drgeo2.glade.h:121 glade/drgeoMDI.glade.h:87
+msgid "Vector defined by two points"
+msgstr "由兩點所決定的向量"
+
+#: glade/drgeo2.glade.h:122
+msgid "Visibility"
+msgstr "可見狀態"
+
+#: glade/drgeo2.glade.h:123
+msgid "Write down your description there."
+msgstr "請加以描述"
+
+#: glade/drgeo2.glade.h:124
+msgid "You can edit the description"
+msgstr "您可以編輯修改描述"
+
+#: glade/drgeo2.glade.h:125
+msgid "macro"
+msgstr "巨集"
+
+#: glade/drgeo2.glade.h:126
+msgid "other"
+msgstr "其它"
+
+#: glade/drgeo2.glade.h:127
+msgid "transformation"
+msgstr "變換"
+
+#: glade/drgeoMDI.glade.h:16
+#, fuzzy
+msgid "Animate a free point on a curve at speed 1"
+msgstr "線上的自由點 %s"
+
+#: glade/drgeoMDI.glade.h:17
+#, fuzzy
+msgid "Animate a free point on a curve at speed 2"
+msgstr "線上的自由點 %s"
+
+#: glade/drgeoMDI.glade.h:18
+#, fuzzy
+msgid "Animate a free point on a curve at speed 3"
+msgstr "線上的自由點 %s"
+
+#: glade/drgeoMDI.glade.h:19
+#, fuzzy
+msgid "Animate a free point on a curve at speed 4"
+msgstr "線上的自由點 %s"
+
+#: glade/drgeoMDI.glade.h:20
+msgid "Animation x1"
+msgstr ""
+
+#: glade/drgeoMDI.glade.h:21
+msgid "Animation x2"
+msgstr ""
+
+#: glade/drgeoMDI.glade.h:22
+msgid "Animation x3"
+msgstr ""
+
+#: glade/drgeoMDI.glade.h:23
+msgid "Animation x4"
+msgstr ""
+
+#: glade/drgeoMDI.glade.h:27
+msgid "Change the User Interface of the current figure"
+msgstr "更改目前圖形的用戶介面"
+
+#: glade/drgeoMDI.glade.h:28
+msgid "Change the look of an object"
+msgstr "更改物件的外觀"
+
+#: glade/drgeoMDI.glade.h:31
+msgid "Create a new geometric figure"
+msgstr "製作新的幾何圖形"
+
+#: glade/drgeoMDI.glade.h:32
+msgid "Create a new text"
+msgstr "建立新的文字"
+
+#: glade/drgeoMDI.glade.h:34
+#, no-c-format
+msgid "Default 100%"
+msgstr "預設 100%"
+
+#: glade/drgeoMDI.glade.h:35
+msgid "Define a macro-construction"
+msgstr "定義巨集"
+
+#: glade/drgeoMDI.glade.h:36
+msgid "Define exporting area"
+msgstr "定義匯出區域"
+
+#: glade/drgeoMDI.glade.h:37
+msgid "Define the exporting area"
+msgstr "定義匯出區域"
+
+#: glade/drgeoMDI.glade.h:40
+msgid "Dr Geo"
+msgstr "Dr Geo"
+
+#: glade/drgeoMDI.glade.h:41
+msgid "Evaluate a figure defined in Scheme"
+msgstr "執行Scheme命令稿以繪圖"
+
+#: glade/drgeoMDI.glade.h:42
+msgid "Execute a pre-built macro-construction"
+msgstr "播放先前定義的巨集"
+
+#: glade/drgeoMDI.glade.h:44
+msgid "Export current figure to Flydraw (for WIMS)"
+msgstr "將目前的圖形匯出成為 Flydraw (for WIMS)"
+
+#: glade/drgeoMDI.glade.h:45
+msgid "Export current figure to LaTeX (using PSTrick package)"
+msgstr "將目前的圖形匯出成為 LaTeX (使用 PSTrick 套件)"
+
+#: glade/drgeoMDI.glade.h:46
+msgid "Export current figure to PNG (image format)"
+msgstr "將目前的圖形匯出成為 PNG (圖檔格式)"
+
+#: glade/drgeoMDI.glade.h:47
+msgid "Export current figure to PostScript (eps)"
+msgstr "將目前的圖形匯出成為 PostScript (eps)"
+
+#: glade/drgeoMDI.glade.h:48
+msgid "Export figure to Flydraw"
+msgstr "將圖形匯出成為 Flydraw"
+
+#: glade/drgeoMDI.glade.h:49
+msgid "Export figure to LaTeX"
+msgstr "將圖形匯出成為 LaTeX"
+
+#: glade/drgeoMDI.glade.h:50
+msgid "Export figure to PNG"
+msgstr "將圖形匯出成為 PNG"
+
+#: glade/drgeoMDI.glade.h:51
+msgid "Export figure to PostScript"
+msgstr "將圖形匯出成為 PostScript"
+
+#: glade/drgeoMDI.glade.h:52
+msgid "Export preferences"
+msgstr "匯出偏好"
+
+#: glade/drgeoMDI.glade.h:53
+msgid "Free _point"
+msgstr "自由點(_p)"
+
+#: glade/drgeoMDI.glade.h:54
+msgid "Grid"
+msgstr "格線"
+
+#: glade/drgeoMDI.glade.h:57
+msgid "Help"
+msgstr "求助(_H)"
+
+#: glade/drgeoMDI.glade.h:62
+msgid "M_ove an object"
+msgstr "移動物件(_o)"
+
+#: glade/drgeoMDI.glade.h:63
+msgid "New Figure"
+msgstr "新增圖形"
+
+#: glade/drgeoMDI.glade.h:64
+msgid "New Text"
+msgstr "新增文字"
+
+#: glade/drgeoMDI.glade.h:67
+msgid "Polygon defined by three points or more"
+msgstr "由三點或更多點所定義的多邊形"
+
+#: glade/drgeoMDI.glade.h:68
+msgid "Preferences"
+msgstr "偏好設定"
+
+#: glade/drgeoMDI.glade.h:69
+msgid "Preferences set up"
+msgstr "偏好設定"
+
+#: glade/drgeoMDI.glade.h:70
+msgid "Re_name"
+msgstr "重新命名(_n)"
+
+#: glade/drgeoMDI.glade.h:71
+msgid "Remove exporting area"
+msgstr "刪除匯出區域"
+
+#: glade/drgeoMDI.glade.h:72
+msgid "Remove the exporting area"
+msgstr "刪除匯出區域"
+
+#: glade/drgeoMDI.glade.h:73
+msgid "Rename"
+msgstr "重新命名"
+
+#: glade/drgeoMDI.glade.h:74
+msgid "Rename the current view"
+msgstr "更改目前view的名稱"
+
+#: glade/drgeoMDI.glade.h:76
+msgid "Save _multiple"
+msgstr "同時儲存數份文件 (_m)"
+
+#: glade/drgeoMDI.glade.h:77
+msgid "Save several data (figures, macro-constructions.) in one file"
+msgstr "將數份文件（圖案，巨集）存入同一檔案"
+
+#: glade/drgeoMDI.glade.h:80
+msgid "Show or hide the grid"
+msgstr "顯示或隱藏格線"
+
+#: glade/drgeoMDI.glade.h:81
+#, fuzzy
+msgid "Show or hide the unit grid in the current view"
+msgstr "在目前的view下顯示或隱藏表示長度單位的格線"
+
+#: glade/drgeoMDI.glade.h:85
+msgid "User manual"
+msgstr "使用手冊"
+
+#: glade/drgeoMDI.glade.h:88
+msgid "Windows"
+msgstr "視窗"
+
+#: glade/drgeoMDI.glade.h:90
+#, no-c-format
+msgid "Zoom to 100%"
+msgstr "原來大小"
+
+#: glade/drgeoMDI.glade.h:92
+#, no-c-format
+msgid "Zoom to 125%"
+msgstr "放大至 125%"
+
+#: glade/drgeoMDI.glade.h:94
+#, no-c-format
+msgid "Zoom to 150%"
+msgstr "放大至 150%"
+
+#: glade/drgeoMDI.glade.h:96
+#, no-c-format
+msgid "Zoom to 175%"
+msgstr "放大至 175%"
+
+#: glade/drgeoMDI.glade.h:98
+#, no-c-format
+msgid "Zoom to 200%"
+msgstr "放大至 200%"
+
+#: glade/drgeoMDI.glade.h:100
+#, no-c-format
+msgid "Zoom to 25%"
+msgstr "縮小至 25%"
+
+#: glade/drgeoMDI.glade.h:102
+#, no-c-format
+msgid "Zoom to 50%"
+msgstr "縮小至 50%"
+
+#: glade/drgeoMDI.glade.h:104
+#, no-c-format
+msgid "Zoom to 75%"
+msgstr "縮小至 75%"
+
+#: glade/drgeoMDI.glade.h:105
+msgid "_About"
+msgstr "關於(_A)"
+
+#: glade/drgeoMDI.glade.h:106
+msgid "_Angle"
+msgstr "角度(_A)"
+
+#: glade/drgeoMDI.glade.h:107
+#, fuzzy
+msgid "_Animation"
+msgstr "變換(_T)"
+
+#: glade/drgeoMDI.glade.h:108
+msgid "_Arc Circle"
+msgstr "圓弧(_A)"
+
+#: glade/drgeoMDI.glade.h:109
+msgid "_Axial Symmetry"
+msgstr "軸對稱(_A)"
+
+#: glade/drgeoMDI.glade.h:110
+msgid "_Central Symmetry"
+msgstr "中心點對稱(_C)"
+
+#: glade/drgeoMDI.glade.h:111
+msgid "_Circle"
+msgstr "圓形(_C)"
+
+#: glade/drgeoMDI.glade.h:112
+msgid "_Construct Macro"
+msgstr "製作巨集(_C)"
+
+#: glade/drgeoMDI.glade.h:113
+msgid "_Contents"
+msgstr "內容(_C)"
+
+#: glade/drgeoMDI.glade.h:114
+msgid "_Coordinates"
+msgstr "座標(_C)"
+
+#: glade/drgeoMDI.glade.h:115
+msgid "_Coordinates & Equation"
+msgstr "座標及方程(_C)"
+
+#: glade/drgeoMDI.glade.h:116
+msgid "_Curve"
+msgstr "曲線(_C)"
+
+#: glade/drgeoMDI.glade.h:117
+msgid "_Custom Interface"
+msgstr "自訂介面(_C)"
+
+#: glade/drgeoMDI.glade.h:118
+msgid "_Delete an Object"
+msgstr "刪除物件(_D)"
+
+#: glade/drgeoMDI.glade.h:119
+msgid "_Distance & Length"
+msgstr "距離及長度(_D)"
+
+#: glade/drgeoMDI.glade.h:120
+msgid "_Edit"
+msgstr "編輯(_E)"
+
+#: glade/drgeoMDI.glade.h:121
+msgid "_Evaluate"
+msgstr "計算(_E)"
+
+#: glade/drgeoMDI.glade.h:122
+msgid "_Execute Macro"
+msgstr "執行巨集(_E)"
+
+#: glade/drgeoMDI.glade.h:123
+msgid "_Figure"
+msgstr "圖形(_F)"
+
+#: glade/drgeoMDI.glade.h:124
+msgid "_File"
+msgstr "檔案(_F)"
+
+#: glade/drgeoMDI.glade.h:125
+msgid "_Geometric Locus"
+msgstr "幾何軌跡(_G)"
+
+#: glade/drgeoMDI.glade.h:126
+msgid "_Half-line"
+msgstr "射線(_H)"
+
+#: glade/drgeoMDI.glade.h:127
+msgid "_Help"
+msgstr "求助(_H)"
+
+#: glade/drgeoMDI.glade.h:128
+msgid "_Intersection"
+msgstr "交點(_I)"
+
+#: glade/drgeoMDI.glade.h:129
+msgid "_Line"
+msgstr "直線(_L)"
+
+#: glade/drgeoMDI.glade.h:130
+msgid "_Look"
+msgstr "外觀"
+
+#: glade/drgeoMDI.glade.h:131
+msgid "_Macro"
+msgstr "巨集(_M)"
+
+#: glade/drgeoMDI.glade.h:132
+msgid "_Macro-constructions"
+msgstr "製作巨集"
+
+#: glade/drgeoMDI.glade.h:133
+msgid "_Middle"
+msgstr "中點(_M)"
+
+#: glade/drgeoMDI.glade.h:134
+msgid "_Numeric"
+msgstr "數值"
+
+#: glade/drgeoMDI.glade.h:135
+msgid "_Orthogonal Line"
+msgstr "垂直線(_O)"
+
+#: glade/drgeoMDI.glade.h:136
+msgid "_Other"
+msgstr "其它(_O)"
+
+#: glade/drgeoMDI.glade.h:137
+msgid "_Parallel Line"
+msgstr "平行線(_P)"
+
+#: glade/drgeoMDI.glade.h:138
+msgid "_Point"
+msgstr "點(_P)"
+
+#: glade/drgeoMDI.glade.h:139
+msgid "_Polygon"
+msgstr "多邊形(_P)"
+
+#: glade/drgeoMDI.glade.h:140
+msgid "_Property"
+msgstr "屬性(_P)"
+
+#: glade/drgeoMDI.glade.h:141
+msgid "_Rotation"
+msgstr "旋轉(_R)"
+
+#: glade/drgeoMDI.glade.h:142
+msgid "_Scale"
+msgstr "縮放(_S)"
+
+#: glade/drgeoMDI.glade.h:143
+msgid "_Script"
+msgstr "命令稿"
+
+#: glade/drgeoMDI.glade.h:144
+msgid "_Segment"
+msgstr "線段(_S)"
+
+#: glade/drgeoMDI.glade.h:145
+msgid "_Text"
+msgstr "文字(_T)"
+
+#: glade/drgeoMDI.glade.h:146
+msgid "_Transformation"
+msgstr "變換(_T)"
+
+#: glade/drgeoMDI.glade.h:147
+msgid "_Translation"
+msgstr "平移(_T)"
+
+#: glade/drgeoMDI.glade.h:148
+msgid "_Vector"
+msgstr "向量(_V)"
+
+#: glade/drgeoMDI.glade.h:149
+msgid "_Zoom"
+msgstr "縮放(_Z)"

@@ -1,0 +1,28 @@
+(new-figure "Baravelle")
+ 
+(define (triangle p1 p2 p3 n)   
+  (let* ((s1  (Segment "" extremities    p1 p2))
+         (s2  (Segment "" extremities    p2 p3))
+         (s3  (Segment "" extremities    p3 p1))
+         (m   (Point   "" middle-2pts    p1 p3))
+         (r   (Segment "" extremities    m  p3))
+         (pe  (Line    "" orthogonal     p3 s3))
+         (ci  (Circle  "" center-segment p3 r ))
+         (p4  (Point   "" intersection2  pe ci)))
+    (send pe  masked)
+    (send ci  masked)
+    (send p4  masked)
+    (send m   masked)
+    (if (> n 0)
+      (triangle  m  p3  p4 (- n 1)))))
+   
+ 
+(lets Point "A" free  0  5)
+(lets Point "B" free  5  5)
+(lets Point "C" free  5  0)
+(triangle A B C 9)
+ 
+(lets Point "D" free  0 -5)
+(lets Point "E" free -5 -5)
+(lets Point "F" free -5  0)
+(triangle D E F 9)

@@ -1,0 +1,3319 @@
+# ja.po file for drgeo.
+# Copyright (C) 2000-2004 Free Software Foundation, Inc.
+# Mitsuru Oka <mitsu-o@is.aist-nara.ac.jp>, 2000.
+# Yukihiro Nakai <nakai@gnome.gr.jp>, 2000.
+# Ryoichi INAGAKI <ryo1@bc.wakwak.com>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: drgeo HEAD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-07-26 23:59+0200\n"
+"PO-Revision-Date: 2004-08-13 00:20+0900\n"
+"Last-Translator: Ryoichi INAGAKI <ryo1@bc.wakwak.com>\n"
+"Language-Team: Japanese <translation@gnome.gr.jp>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: drgenius_main.cc:56
+#, c-format
+msgid ""
+"Command line options:\n"
+"Term under [] are options, || means OR:\n"
+"   drgeo [--file geo_file_name || macro_file_name] [geo_file_name.fgeo] "
+"[macro_file_name.mgeo] [--evaluate dsf_file_name] [--texmacs] [--help]\n"
+"\n"
+"--file       : to load a Dr. Geo file\n"
+"--evaluate   : to load and evaluate a Dr. Geo Scheme Figure (DSF)\n"
+"--texmacs    : start Dr. Geo as a TeXmacs plug-in\n"
+"--help       : this help summary\n"
+"\n"
+"Several files can be loaded using a --file command for each\n"
+"\n"
+msgstr ""
+"コマンドライン オプション:\n"
+"[] で囲まれた項目はオプションで, || は OR を意味しています:\n"
+"   drgeo [--file geo_file_name || macro_file_name] [geo_file_name.fgeo] "
+"[macro_file_name.mgeo] [--evaluate dsf_file_name] [--texmacs] [--help]\n"
+"\n"
+"--file       : Dr. Geo ファイルを読み込みます\n"
+"--evaluate   : Dr. Geo Scheme Figure (DSF) を読み込んで評価します\n"
+"--texmacs    : TeXmacs のプラグインとして Dr. Geo を開始します\n"
+"--help       : このヘルプ要約を表示します\n"
+"\n"
+"複数のファイルを読み込むには，各ファイルに対して --file コマンドを使います\n"
+"\n"
+
+#: drgenius_main.cc:160
+#, c-format
+msgid ""
+"\n"
+"Miss a filename in --file\n"
+"\n"
+msgstr ""
+
+#: drgenius_main.cc:172
+#, c-format
+msgid ""
+"\n"
+"Miss a filename to evaluate in --evaluate\n"
+"\n"
+msgstr ""
+
+#: drgenius_main.cc:196
+#, c-format
+msgid "Unknown file type: %s (try .fgeo, .mgeo)\n"
+msgstr "不明なファイル形式です: %s (.fgeo, .mgeo をお試しください)\n"
+
+#: drgenius_main.cc:200
+#, c-format
+msgid ""
+"\n"
+"Unknows command: %s\n"
+msgstr ""
+"\n"
+"不明なコマンドです: %s\n"
+
+#: drgenius_mdi.cc:99
+msgid "Welcome to GNU Dr. Geo - Free Interactive geometry by OFSET"
+msgstr ""
+
+#: drgenius_mdi.cc:149
+#, c-format
+msgid "Error loading file '%s'"
+msgstr "ファイル '%s' の読み込み中にエラー!"
+
+#: drgenius_mdi.cc:592
+msgid "Are you sure to quit Dr. Geo?"
+msgstr "Dr. Geo を本当に終了しますか?"
+
+#: drgenius_mdi.cc:643 drgenius_mdi.cc:703
+#, c-format
+msgid "Can't open file '%s'"
+msgstr "ファイルを開けません: '%s'"
+
+#: drgenius_mdi.cc:668
+msgid "Open..."
+msgstr "開く..."
+
+#: drgenius_mdi.cc:727
+msgid "Evaluate..."
+msgstr "評価..."
+
+#: drgenius_mdi.cc:767 drgenius_mdi.cc:797
+#, c-format
+msgid "Error saving to '%s'!"
+msgstr "'%s' ファイルの保存に失敗!"
+
+#: drgenius_mdi.cc:829 drgenius_mdi.cc:859 drgenius_mdi.cc:890
+#: drgenius_mdi.cc:925
+#, c-format
+msgid "Error exporting to '%s'!"
+msgstr "'%s' の書き出しに失敗!"
+
+#: drgenius_mdi.cc:943
+#, c-format
+msgid ""
+"Error exporting to '%s'!\n"
+"Exporting to PNG required the Image Magick package.\n"
+"Install it and try again!"
+msgstr ""
+"'%s' への出力時にエラー!\n"
+"PNG 形式での出力には ImageMagick パッケージが必要です.\n"
+"インストールしてからもう一度試してください!"
+
+#: drgenius_mdi.cc:972
+msgid "Define the printing area"
+msgstr "作図領域の定義"
+
+#: drgenius_mdi.cc:1003 drgenius_mdi.cc:1087 drgenius_mdi.cc:1112
+#: drgenius_mdi.cc:1138 drgenius_mdi.cc:1165 drgenius_mdi.cc:1192
+#, c-format
+msgid ""
+"File '%s' exists!\n"
+"Overwrite?"
+msgstr ""
+"ファイル '%s' は存在します!\n"
+"上書きしますか?"
+
+#: drgenius_mdi.cc:1027
+msgid "Save As..."
+msgstr "名前を付けて保存..."
+
+#: drgenius_mdi.cc:1215 drgenius_mdi.cc:1865
+msgid "Interactive 2D Figure"
+msgstr "操作可能な二次元図形"
+
+#: drgenius_mdi.cc:1216
+msgid "Console"
+msgstr "コンソール"
+
+#: drgenius_mdi.cc:1217 drgenius_mdi.cc:1866
+msgid "Text Buffer"
+msgstr "テキストバッファ"
+
+#: drgenius_mdi.cc:1241
+msgid "Type"
+msgstr "形式"
+
+#: drgenius_mdi.cc:1246 glade/drgeo2.glade.h:68
+msgid "Name"
+msgstr "名前"
+
+#. Next we add the list of avalaible macro-construction
+#: drgenius_mdi.cc:1280 drgenius_mdi.cc:1872 glade/drgeo2.glade.h:66
+msgid "Macro-construction"
+msgstr "マクロ作図"
+
+#: drgenius_mdi.cc:1365
+msgid "Error printing the current figure!"
+msgstr "現在の図形を作図中にエラー!"
+
+#: drgenius_mdi.cc:1409
+msgid ""
+"Only geometric figure\n"
+"can be exported to Flydraw!"
+msgstr ""
+"幾何図形のみ Flydraw に\n"
+"出力できます!"
+
+#: drgenius_mdi.cc:1426 drgenius_mdi.cc:1478 drgenius_mdi.cc:1529
+#: drgenius_mdi.cc:1585 glade/drgeoMDI.glade.h:43
+msgid "Export As..."
+msgstr "名前を付けて出力..."
+
+#: drgenius_mdi.cc:1461
+msgid ""
+"Only geomteric figure\n"
+"can be exported to LaTex!"
+msgstr ""
+"幾何図形のみ LaTeX に\n"
+"出力できます!"
+
+#: drgenius_mdi.cc:1513
+msgid ""
+"Only geomteric figure\n"
+"can be exported to PostScript!"
+msgstr ""
+"幾何図形のみ PostScript に\n"
+"出力できます!"
+
+#: drgenius_mdi.cc:1566
+msgid ""
+"Only geomteric figure\n"
+"can be exported to PNG!"
+msgstr ""
+"幾何図形のみ PNG に\n"
+"出力できます!"
+
+#: drgenius_mdi.cc:1705
+msgid "Are you sure to close this figure?"
+msgstr "この図形を閉じてよろしいですか?"
+
+#: drgenius_mdi.cc:1729
+msgid "About Dr. Geo"
+msgstr "Dr.Geo について"
+
+#. VERSION
+#: drgenius_mdi.cc:1742
+#, fuzzy
+msgid ""
+"\n"
+"Free Interactive Geometry\n"
+"\n"
+"(c) Copyright 1996-2005 H. Fernandes  \n"
+"(c) Copyright 2000 L. Gauthier\n"
+"(c) Copyright 2000-2005 OFSET\n"
+"Translation: translator_name"
+msgstr ""
+"\n"
+"Free Interactive Geometry\n"
+"\n"
+"(c) Copyright 1996-2000 H. Fernandes  \n"
+"(c) Copyright 2000 L. Gauthier\n"
+"(c) Copyright 2000-2003 OFSET\n"
+"翻訳者: Mitsuru Oka, Yukihiro Nakai, 稲垣良一"
+
+#: drgenius_mdi.cc:1826
+msgid "Save Session As..."
+msgstr "名前を付けてセッションを保存..."
+
+#: drgenius_mdi.cc:1921 geo/drgeo_control.cc:812
+#, fuzzy
+msgid "Play a recorded macro-construction"
+msgstr "マクロ作図を実行"
+
+#: drgenius_mdi.cc:1976
+#, fuzzy
+msgid "Select a free point to animate it"
+msgstr "軌跡: 自由点と関係する点を選択してください"
+
+#: drgeo.desktop.in.h:1
+msgid "Dr.Geo"
+msgstr "Dr.Geo"
+
+#: drgeo.desktop.in.h:2
+msgid "Dr.Geo Math Tool"
+msgstr "Dr.Geo 数学ツール"
+
+#: drgeo_adaptDialog.cc:404
+msgid ""
+"Password does not match\n"
+" Access denied!"
+msgstr ""
+"パスワードが一致しません\n"
+"アクセスは拒否されました!"
+
+#. create a new name
+#: editor_view.cc:42
+#, c-format
+msgid "Text %d"
+msgstr "テキスト %d"
+
+#: geo_view.cc:32
+#, c-format
+msgid "Figure %d"
+msgstr "図形 %d"
+
+#: geo_view.cc:132
+msgid "Items"
+msgstr "項目"
+
+#: geo/drgeo_angle.cc:210 geo/drgeo_angle.cc:241
+msgid "this angle %1"
+msgstr "この角度 %1"
+
+#: geo/drgeo_angle.cc:285
+#, c-format
+msgid "Geometric angle:: %s"
+msgstr "幾何図形の角度:: %s"
+
+#: geo/drgeo_angle.cc:286 geo/drgeo_angle.cc:288 geo/drgeo_arcCircle.cc:377
+#: geo/drgeo_circle.cc:359 geo/drgeo_halfLine.cc:260 geo/drgeo_line.cc:320
+#: geo/drgeo_numeric.cc:481 geo/drgeo_numeric.cc:486 geo/drgeo_numeric.cc:503
+#: geo/drgeo_numeric.cc:510 geo/drgeo_numeric.cc:517 geo/drgeo_numeric.cc:518
+#: geo/drgeo_point.cc:445 geo/drgeo_point.cc:446 geo/drgeo_polygon.cc:289
+#, c-format
+msgid "Point %s"
+msgstr "点 %s"
+
+#: geo/drgeo_angle.cc:287
+#, c-format
+msgid "Vertex %s"
+msgstr "ベクトル %s"
+
+#: geo/drgeo_angle.cc:292
+#, fuzzy, c-format
+msgid "Oriented angle:: %s"
+msgstr "平行移動(_T)"
+
+#: geo/drgeo_angle.cc:293 geo/drgeo_angle.cc:294 geo/drgeo_numeric.cc:461
+#: geo/drgeo_numeric.cc:491 geo/drgeo_numeric.cc:496
+#, c-format
+msgid "Vector %s"
+msgstr "ベクトル %s"
+
+#: geo/drgeo_arcCircle.cc:282 geo/drgeo_arcCircle.cc:286
+msgid "this arc %1"
+msgstr "この弧 %1"
+
+#: geo/drgeo_arcCircle.cc:335
+#, c-format
+msgid "Rotate arc-circle:: %s"
+msgstr "円弧を回転:: %s"
+
+#: geo/drgeo_arcCircle.cc:336 geo/drgeo_arcCircle.cc:344
+#: geo/drgeo_arcCircle.cc:351
+#, c-format
+msgid "Transformed arc-circle %s"
+msgstr "変形された円弧 %s"
+
+#: geo/drgeo_arcCircle.cc:338 geo/drgeo_arcCircle.cc:346
+#: geo/drgeo_arcCircle.cc:369 geo/drgeo_circle.cc:319 geo/drgeo_circle.cc:327
+#: geo/drgeo_circle.cc:350 geo/drgeo_circle.cc:358 geo/drgeo_circle.cc:366
+#: geo/drgeo_circle.cc:375 geo/drgeo_halfLine.cc:221 geo/drgeo_halfLine.cc:229
+#: geo/drgeo_halfLine.cc:252 geo/drgeo_line.cc:282 geo/drgeo_line.cc:290
+#: geo/drgeo_line.cc:312 geo/drgeo_point.cc:383 geo/drgeo_point.cc:391
+#: geo/drgeo_point.cc:413 geo/drgeo_polygon.cc:297 geo/drgeo_polygon.cc:305
+#: geo/drgeo_polygon.cc:328 geo/drgeo_segment.cc:223 geo/drgeo_segment.cc:231
+#: geo/drgeo_segment.cc:254 geo/drgeo_vector.cc:248 geo/drgeo_vector.cc:256
+#: geo/drgeo_vector.cc:279
+#, c-format
+msgid "Center %s"
+msgstr "中心 %s"
+
+#: geo/drgeo_arcCircle.cc:339 geo/drgeo_circle.cc:320
+#: geo/drgeo_halfLine.cc:222 geo/drgeo_line.cc:283 geo/drgeo_point.cc:384
+#: geo/drgeo_polygon.cc:298 geo/drgeo_segment.cc:224 geo/drgeo_vector.cc:249
+#, c-format
+msgid "Angle %s"
+msgstr "角度 %s"
+
+#: geo/drgeo_arcCircle.cc:343 geo/drgeo_arcCircle.cc:350
+#, c-format
+msgid "Symmetric arc-circle:: %s"
+msgstr ""
+
+#: geo/drgeo_arcCircle.cc:353 geo/drgeo_circle.cc:334
+#: geo/drgeo_halfLine.cc:236 geo/drgeo_line.cc:297 geo/drgeo_point.cc:398
+#: geo/drgeo_polygon.cc:312 geo/drgeo_segment.cc:238 geo/drgeo_vector.cc:263
+#, c-format
+msgid "Reflexion axe %s"
+msgstr ""
+
+#: geo/drgeo_arcCircle.cc:358
+#, c-format
+msgid "Translate arc-circle:: %s"
+msgstr "円弧を平行移動:: %s"
+
+#: geo/drgeo_arcCircle.cc:359
+#, c-format
+msgid "Translated arc-circle %s"
+msgstr "平行移動した円弧 %s"
+
+#: geo/drgeo_arcCircle.cc:361 geo/drgeo_circle.cc:342
+#: geo/drgeo_halfLine.cc:244 geo/drgeo_line.cc:305 geo/drgeo_point.cc:406
+#: geo/drgeo_polygon.cc:320 geo/drgeo_segment.cc:246 geo/drgeo_vector.cc:271
+#, c-format
+msgid "Vector of translation %s"
+msgstr ""
+
+#: geo/drgeo_arcCircle.cc:366
+#, c-format
+msgid "Scale arc-circle:: %s"
+msgstr "円弧の拡大・縮小:: %s"
+
+#: geo/drgeo_arcCircle.cc:367
+#, c-format
+msgid "Scaled arc-circle %s"
+msgstr "拡大・縮小された円弧 %s"
+
+#: geo/drgeo_arcCircle.cc:370 geo/drgeo_circle.cc:351
+#: geo/drgeo_halfLine.cc:253 geo/drgeo_line.cc:313 geo/drgeo_point.cc:414
+#: geo/drgeo_polygon.cc:329 geo/drgeo_segment.cc:255 geo/drgeo_vector.cc:280
+#, c-format
+msgid "Factor %s"
+msgstr "係数 %s"
+
+#: geo/drgeo_arcCircle.cc:375
+#, c-format
+msgid "Arc-circle defined by three points:: %s"
+msgstr "三点で定義される円弧:: %s"
+
+#: geo/drgeo_arcCircle.cc:376 geo/drgeo_arcCircle.cc:378
+#: geo/drgeo_segment.cc:261 geo/drgeo_segment.cc:262 geo/drgeo_vector.cc:287
+#, c-format
+msgid "Extremity %s"
+msgstr ""
+
+#: geo/drgeo_circle.cc:258 geo/drgeo_circle.cc:262
+msgid "this circle %1"
+msgstr "この円 %1"
+
+#: geo/drgeo_circle.cc:316
+#, c-format
+msgid "Rotate circle:: %s"
+msgstr "円の回転:: %s"
+
+#: geo/drgeo_circle.cc:317 geo/drgeo_circle.cc:325 geo/drgeo_circle.cc:332
+#, c-format
+msgid "Transformed circle %s"
+msgstr "変形した円 %s"
+
+#: geo/drgeo_circle.cc:324 geo/drgeo_circle.cc:331
+#, fuzzy, c-format
+msgid "Symmetric circle:: %s"
+msgstr "円 %1"
+
+#: geo/drgeo_circle.cc:339
+#, c-format
+msgid "Translate circle:: %s"
+msgstr "円の平行移動:: %s"
+
+#: geo/drgeo_circle.cc:340
+#, c-format
+msgid "Translated circle %s"
+msgstr "平行移動した円 %s"
+
+#: geo/drgeo_circle.cc:347
+#, c-format
+msgid "Scale circle:: %s"
+msgstr "円の拡大・縮小:: %s"
+
+#: geo/drgeo_circle.cc:348
+#, c-format
+msgid "Scaled circle %s"
+msgstr "拡大・縮小した円 %s"
+
+#: geo/drgeo_circle.cc:356
+#, c-format
+msgid "Circle defined by its center and a point:: %s"
+msgstr "中心と一点で定義される円:: %s"
+
+#: geo/drgeo_circle.cc:364
+#, c-format
+msgid "Circle defined by its center and a segment:: %s"
+msgstr "中心と線分で定義される円:: %s"
+
+#: geo/drgeo_circle.cc:367
+#, c-format
+msgid "Radius from segment %s"
+msgstr "線分 %s による半径"
+
+#: geo/drgeo_circle.cc:373
+#, c-format
+msgid "Circle defined by its center and radius:: %s"
+msgstr "中心とラ半径で定義される円:: %s"
+
+#: geo/drgeo_circle.cc:376
+#, c-format
+msgid "Radius %s"
+msgstr "半径 %s"
+
+#: geo/drgeo_control.cc:254
+msgid "Free point: click on the plane or over a curve"
+msgstr ""
+
+#: geo/drgeo_control.cc:276
+msgid "Middle: select two points or a segment"
+msgstr "中点: 二点もしくは線分を選択します"
+
+#: geo/drgeo_control.cc:298
+msgid "Intersection(s): select two curves"
+msgstr ""
+
+#: geo/drgeo_control.cc:319
+msgid "Coordinate point: select two numbers (its coordinates)"
+msgstr ""
+
+#: geo/drgeo_control.cc:340
+msgid "Line: select two points"
+msgstr "直線: 二点を選択してください"
+
+#: geo/drgeo_control.cc:361
+msgid "Ray: select its origin then another point"
+msgstr ""
+
+#: geo/drgeo_control.cc:382
+msgid "Segment: select its extremities"
+msgstr "線分: 端点を二つ選択してください"
+
+#: geo/drgeo_control.cc:404
+msgid "Vector: select its origin and extremity"
+msgstr "ベクトル: 始点と端点を選択してください"
+
+#: geo/drgeo_control.cc:425
+msgid "Circle: select its center and a point or its radius (number or segment)"
+msgstr "円: 中心と一点または半径 (数値もしくは線分) を選択してください"
+
+#: geo/drgeo_control.cc:446
+msgid "Arc: select three points"
+msgstr "円弧: 三点を選択してください"
+
+#: geo/drgeo_control.cc:467
+msgid "Locus: select a free point and a dependent point"
+msgstr "軌跡: 自由点と関係する点を選択してください"
+
+#: geo/drgeo_control.cc:488
+msgid "Polygon: select its vertices, then click over the first one"
+msgstr "多角形: 辺を選択し, 最後に最初に選択した辺をクリックしてください"
+
+#: geo/drgeo_control.cc:508
+msgid ""
+"Parallel line: select a point and a direction (line, ray, segment, vector) "
+msgstr ""
+
+#: geo/drgeo_control.cc:528
+msgid ""
+"Orthogonal line: select a point and a direction (line, ray, segment, vector)"
+msgstr ""
+
+#: geo/drgeo_control.cc:548
+msgid "Axial symmetry: select a geometric object and a line"
+msgstr "線対称: 幾何図形と直線を選択してください"
+
+#: geo/drgeo_control.cc:568
+msgid "Central symmetry: select a geometric object and the center"
+msgstr "点対称: 幾何図形と中心を選択してください"
+
+#: geo/drgeo_control.cc:588
+msgid "Translation: select a geometric object and a vector"
+msgstr "平行移動: 幾何図形とベクトルを選択してください"
+
+#: geo/drgeo_control.cc:608
+msgid ""
+"Rotation: select a geometric object, the center and an angle or a scalar"
+msgstr ""
+
+#: geo/drgeo_control.cc:628
+msgid "Scale: select a geometric object, the center and a scalar"
+msgstr ""
+
+#: geo/drgeo_control.cc:648
+msgid ""
+"Numeric: click on the back to edit a free value or select geometric object"
+"(s) to calculate distance"
+msgstr ""
+
+#: geo/drgeo_control.cc:668
+msgid ""
+"Angle: select three points (geometric angle) or two vectors (oriented angle)"
+msgstr ""
+"角度: 三点（幾何角度）または二つのベクトル（相対角度）を選択してください"
+
+#: geo/drgeo_control.cc:688
+msgid "Coordinates & Equation: select a point, a vector, a line or a circle"
+msgstr "座標と方程式: 点，ベクトル，直線や円を選択してください"
+
+#: geo/drgeo_control.cc:709
+msgid "Script: select n objects (n >=0) then click on the background"
+msgstr ""
+"Script: 0個以上のオブジェクトを選択し, オブジェクトのない場所でクリックしてく"
+"ださい"
+
+#: geo/drgeo_control.cc:729
+msgid "Delete object: select the object to delete"
+msgstr "オブジェクトの削除: 削除するオブジェクトを選択してください"
+
+#: geo/drgeo_control.cc:749
+msgid "Look: select the object to change its look"
+msgstr ""
+
+#: geo/drgeo_control.cc:769
+msgid "Property: select the object to change its property"
+msgstr "プロパティ: プロパティを変更したいオブジェクトを選択してください"
+
+#: geo/drgeo_control.cc:790
+#, fuzzy
+msgid "Construct a macro-construction "
+msgstr "マクロ作図の作成"
+
+#: geo/drgeo_control.cc:937
+msgid "Select: select and move an object"
+msgstr "選択: オブジェクトを選択し移動できます"
+
+#: geo/drgeo_dialog.cc:62
+msgid "Enter a value"
+msgstr "値を入力してください"
+
+#: geo/drgeo_equation.cc:173 geo/drgeo_equation.cc:182
+msgid "the equation of %1"
+msgstr "%1 の方程式"
+
+#: geo/drgeo_equation.cc:230
+#, c-format
+msgid "Line's equation:: %s"
+msgstr "直線の方程式:: %s"
+
+#: geo/drgeo_equation.cc:231 geo/drgeo_numeric.cc:471 geo/drgeo_numeric.cc:511
+#, c-format
+msgid "Line %s"
+msgstr "直線 %s"
+
+#: geo/drgeo_equation.cc:235
+#, c-format
+msgid "Circle's equation:: %s"
+msgstr "円の方程式:: %s"
+
+#: geo/drgeo_equation.cc:236 geo/drgeo_numeric.cc:466 geo/drgeo_numeric.cc:504
+#, c-format
+msgid "Circle %s"
+msgstr "円 %s"
+
+#: geo/drgeo_gtkhelpers.cc:98
+#, c-format
+msgid ""
+"This help directory does not exist:\n"
+"'%s'\n"
+"Maybe the manual is not installed or it is not yet translated in your "
+"language.\n"
+"\n"
+"If you want to translate the manual contact ofset@ofset.org."
+msgstr ""
+
+#: geo/drgeo_gtkhelpers.cc:117
+msgid ""
+"A default online manual\n"
+"in English will be used."
+msgstr ""
+"英語版のオンラインマニュアルを\n"
+"デフォルトでは使用します．"
+
+#: geo/drgeo_gtkhelpers.cc:129
+msgid "No default online manual can be found."
+msgstr "デフォルトのオンラインマニュアルが見つかりません．"
+
+#: geo/drgeo_halfLine.cc:152 geo/drgeo_halfLine.cc:170
+msgid "this half-line %1"
+msgstr "この半直線 %1"
+
+#: geo/drgeo_halfLine.cc:218
+#, c-format
+msgid "Rotate half-line:: %s"
+msgstr "半直線を回転:: %s"
+
+#: geo/drgeo_halfLine.cc:219 geo/drgeo_halfLine.cc:227
+#: geo/drgeo_halfLine.cc:234
+#, c-format
+msgid "Transformed half-line %s"
+msgstr "変形した半直線 %s"
+
+#: geo/drgeo_halfLine.cc:226 geo/drgeo_halfLine.cc:233
+#, c-format
+msgid "Symmetric half-line:: %s"
+msgstr "対称な半直線:: %s"
+
+#: geo/drgeo_halfLine.cc:241
+#, c-format
+msgid "Translate half-line:: %s"
+msgstr "半直線を平行移動:: %s"
+
+#: geo/drgeo_halfLine.cc:242
+#, c-format
+msgid "Translated half-line %s"
+msgstr "平行移動した半直線 %s"
+
+#: geo/drgeo_halfLine.cc:249
+#, c-format
+msgid "Scale half-line:: %s"
+msgstr "半直線を拡大・縮小:: %s"
+
+#: geo/drgeo_halfLine.cc:250
+#, c-format
+msgid "Scaled half-line %s"
+msgstr "拡大・縮小された半直線 %s"
+
+#: geo/drgeo_halfLine.cc:258
+#, c-format
+msgid "Half-line defined by two points:: %s"
+msgstr "二点で定義される半直線:: %s"
+
+#: geo/drgeo_halfLine.cc:259 geo/drgeo_vector.cc:286
+#, c-format
+msgid "Origin %s"
+msgstr "始点 %s"
+
+#: geo/drgeo_line.cc:202 geo/drgeo_line.cc:220
+msgid "this line %1"
+msgstr "この直線 %1"
+
+#: geo/drgeo_line.cc:279
+#, c-format
+msgid "Rotate line:: %s"
+msgstr "直線を回転:: %s"
+
+#: geo/drgeo_line.cc:280 geo/drgeo_line.cc:288 geo/drgeo_line.cc:295
+#, c-format
+msgid "Transformed line %s"
+msgstr "変形された直線 %s"
+
+#: geo/drgeo_line.cc:287 geo/drgeo_line.cc:294
+#, c-format
+msgid "Symmetric line:: %s"
+msgstr ""
+
+#: geo/drgeo_line.cc:302
+#, c-format
+msgid "Translate line:: %s"
+msgstr "直線の平行移動:: %s"
+
+#: geo/drgeo_line.cc:303
+#, c-format
+msgid "Translated line %s"
+msgstr "平行移動した直線 %s"
+
+#: geo/drgeo_line.cc:310
+#, c-format
+msgid "Scale line:: %s"
+msgstr ""
+
+#: geo/drgeo_line.cc:311
+#, fuzzy, c-format
+msgid "Scaled line %s"
+msgstr "スクロールバック行数"
+
+#: geo/drgeo_line.cc:318
+#, c-format
+msgid "Line going through two points:: %s"
+msgstr "二点を通過する直線:: %s"
+
+#: geo/drgeo_line.cc:319 geo/drgeo_line.cc:327 geo/drgeo_line.cc:333
+#: geo/drgeo_line.cc:339
+#, c-format
+msgid "Point  %s"
+msgstr "点  %s"
+
+#: geo/drgeo_line.cc:325
+#, c-format
+msgid "Line defined by a point and its slope:: %s"
+msgstr "一点と傾きで定義される直線:: %s"
+
+#: geo/drgeo_line.cc:328
+#, c-format
+msgid "Slope %s"
+msgstr "傾き %s"
+
+#: geo/drgeo_line.cc:332
+#, c-format
+msgid "Parallel line:: %s"
+msgstr "平行線:: %s"
+
+#: geo/drgeo_line.cc:334 geo/drgeo_line.cc:340
+#, c-format
+msgid "Direction %s"
+msgstr "方向 %s"
+
+#: geo/drgeo_line.cc:338
+#, c-format
+msgid "Perpendicular line:: %s"
+msgstr "垂直線:: %s"
+
+#. compute the string length
+#: geo/drgeo_locus.cc:303 geo/drgeo_locus.cc:312
+msgid "%1's locus when %2 describes %3"
+msgstr "%2 が %3 を描画したときの %1 の軌跡"
+
+#: geo/drgeo_locus.cc:350
+#, c-format
+msgid "Locus:: %s"
+msgstr "軌跡:: %s"
+
+#: geo/drgeo_locus.cc:351
+#, c-format
+msgid "Free point on curve %s"
+msgstr "曲線 %s 上の任意の点"
+
+#: geo/drgeo_locus.cc:353
+#, c-format
+msgid "Constrained point %s"
+msgstr "制約がかけられた点 %s"
+
+#: geo/drgeo_numeric.cc:275 geo/drgeo_numeric.cc:281
+msgid "%1's length"
+msgstr "%1 の長さ"
+
+#: geo/drgeo_numeric.cc:286 geo/drgeo_numeric.cc:292
+msgid "%1's magnitude"
+msgstr "%1 の拡大率"
+
+#: geo/drgeo_numeric.cc:297 geo/drgeo_numeric.cc:303
+msgid "%1's perimeter"
+msgstr "%1 の周囲長"
+
+#: geo/drgeo_numeric.cc:308 geo/drgeo_numeric.cc:314
+msgid "the slope of %1"
+msgstr "%1 の傾き"
+
+#: geo/drgeo_numeric.cc:322 geo/drgeo_numeric.cc:332
+msgid "the distance between %1 and %2"
+msgstr "%1 と %2 間の距離"
+
+#: geo/drgeo_numeric.cc:345 geo/drgeo_numeric.cc:351
+msgid "the abscissa of %1"
+msgstr "%1 の横座標"
+
+#: geo/drgeo_numeric.cc:357 geo/drgeo_numeric.cc:363
+msgid "the ordinate of %1"
+msgstr "%1 の縦座標"
+
+#: geo/drgeo_numeric.cc:367 geo/drgeo_value.cc:52
+msgid "this value"
+msgstr "この値"
+
+#: geo/drgeo_numeric.cc:451
+#, fuzzy, c-format
+msgid "Free value:: %s"
+msgstr "平行移動(_T)"
+
+#: geo/drgeo_numeric.cc:455
+#, c-format
+msgid "Segment's length:: %s"
+msgstr "線分の長さ:: %s"
+
+#: geo/drgeo_numeric.cc:456 geo/drgeo_point.cc:440
+#, c-format
+msgid "Segment %s"
+msgstr "線分 %s"
+
+#: geo/drgeo_numeric.cc:460
+#, c-format
+msgid "Vector's norm:: %s"
+msgstr "ベクトルのノルム:: %s"
+
+#: geo/drgeo_numeric.cc:465
+#, c-format
+msgid "Circle's perimeter:: %s"
+msgstr "円周の長さ:: %s"
+
+#: geo/drgeo_numeric.cc:470
+#, c-format
+msgid "Line's slope:: %s"
+msgstr "直線の傾き:: %s"
+
+#: geo/drgeo_numeric.cc:475
+#, c-format
+msgid "Arc-circle's length:: %s"
+msgstr "円弧の長さ:: %s"
+
+#: geo/drgeo_numeric.cc:476
+#, c-format
+msgid "Arc-circle %s"
+msgstr "円弧 %s"
+
+#: geo/drgeo_numeric.cc:480
+#, c-format
+msgid "Point's abscissa:: %s"
+msgstr "点の横座標:: %s"
+
+#: geo/drgeo_numeric.cc:485
+#, c-format
+msgid "Point's ordinate:: %s"
+msgstr "点の縦座標:: %s"
+
+#: geo/drgeo_numeric.cc:490
+#, c-format
+msgid "Vector's abscissa:: %s"
+msgstr "ベクトルの横座標:: %s"
+
+#: geo/drgeo_numeric.cc:495
+#, c-format
+msgid "Vector's ordinate:: %s"
+msgstr "ベクトルの縦座標:: %s"
+
+#: geo/drgeo_numeric.cc:501
+#, c-format
+msgid "Distance between a point and a circle:: %s"
+msgstr "点の円の間の距離:: %s"
+
+#: geo/drgeo_numeric.cc:509
+#, c-format
+msgid "Distance between a point and a line:: %s"
+msgstr "点と直線の間の距離:: %s"
+
+#: geo/drgeo_numeric.cc:516
+#, c-format
+msgid "Distance between two points:: %s"
+msgstr "二点間の距離:: %s"
+
+#: geo/drgeo_point.cc:380
+#, c-format
+msgid "Rotate point:: %s"
+msgstr "点の回転:: %s"
+
+#: geo/drgeo_point.cc:381 geo/drgeo_point.cc:389 geo/drgeo_point.cc:396
+#, c-format
+msgid "Transformed point %s"
+msgstr "変換された点 %s"
+
+#: geo/drgeo_point.cc:388 geo/drgeo_point.cc:395
+#, fuzzy, c-format
+msgid "Symmetric point:: %s"
+msgstr "点 %1"
+
+#: geo/drgeo_point.cc:403
+#, c-format
+msgid "Translate point:: %s"
+msgstr "点の平行移動:: %s"
+
+#: geo/drgeo_point.cc:404
+#, c-format
+msgid "Translated point %s"
+msgstr "平行移動された点 %s"
+
+#: geo/drgeo_point.cc:411
+#, c-format
+msgid "Scale point:: %s"
+msgstr ""
+
+#: geo/drgeo_point.cc:412
+#, c-format
+msgid "Scaled point %s"
+msgstr ""
+
+#: geo/drgeo_point.cc:418
+#, c-format
+msgid "Coordinate point:: %s"
+msgstr "座標点:: %s"
+
+#: geo/drgeo_point.cc:419
+#, c-format
+msgid "Abscissa %s"
+msgstr "横座標 %s"
+
+#: geo/drgeo_point.cc:420
+#, c-format
+msgid "Ordinate %s"
+msgstr "縦座標 %s"
+
+#: geo/drgeo_point.cc:424
+#, c-format
+msgid "Free point:: %s"
+msgstr "任意の点:: %s"
+
+#: geo/drgeo_point.cc:428
+#, c-format
+msgid "Free point on curve:: %s"
+msgstr "曲線上の任意の点:: %s"
+
+#: geo/drgeo_point.cc:429 geo/drgeo_point.cc:434 geo/drgeo_point.cc:435
+#, c-format
+msgid "Curve %s"
+msgstr "曲線 %s"
+
+#: geo/drgeo_point.cc:433
+#, c-format
+msgid "Intersection point:: %s"
+msgstr "内分点:: %s"
+
+#: geo/drgeo_point.cc:439
+#, c-format
+msgid "Middle of segment:: %s"
+msgstr "線分の中点:: %s"
+
+#: geo/drgeo_point.cc:444
+#, c-format
+msgid "Middle of two points:: %s"
+msgstr "二点の中間点:: %s"
+
+#: geo/drgeo_point.cc:482 geo/drgeo_point.cc:486
+msgid "this point %1"
+msgstr "この点 %1"
+
+#: geo/drgeo_polygon.cc:287
+#, c-format
+msgid "Polygon:: %s"
+msgstr "多角形:: %s"
+
+#: geo/drgeo_polygon.cc:294
+#, c-format
+msgid "Rotate polygon:: %s"
+msgstr "多角形の回転:: %s"
+
+#: geo/drgeo_polygon.cc:295 geo/drgeo_polygon.cc:303 geo/drgeo_polygon.cc:310
+#, c-format
+msgid "Transformed polygon %s"
+msgstr "変換された多角形 %s"
+
+#: geo/drgeo_polygon.cc:302 geo/drgeo_polygon.cc:309
+#, fuzzy, c-format
+msgid "Symmetric polygon:: %s"
+msgstr "点 %1"
+
+#: geo/drgeo_polygon.cc:317
+#, c-format
+msgid "Translate polygon:: %s"
+msgstr "多角形の平行移動:: %s"
+
+#: geo/drgeo_polygon.cc:318
+#, c-format
+msgid "Translated polygon %s"
+msgstr "平行移動した多角形 %s"
+
+#: geo/drgeo_polygon.cc:325
+#, fuzzy, c-format
+msgid "Scale polygon:: %s"
+msgstr "点"
+
+#: geo/drgeo_polygon.cc:326
+#, fuzzy, c-format
+msgid "Scaled polygon %s"
+msgstr "スクロールバック行数"
+
+#: geo/drgeo_polygon.cc:383 geo/drgeo_polygon.cc:407
+msgid "this polygon %1"
+msgstr "この多角形 %1"
+
+#: geo/drgeo_repere.cc:148 geo/drgeo_repere.cc:161
+msgid "this reference frame %1"
+msgstr ""
+
+#: geo/drgeo_scm_helper.cc:91
+#, c-format
+msgid "Error! Just got the following error tag: %s\n"
+msgstr ""
+
+#: geo/drgeo_script.cc:158
+msgid "Unprintable result"
+msgstr "表示不可能な結果です"
+
+#: geo/drgeo_script.cc:171 geo/drgeo_script.cc:175
+msgid "this script %1"
+msgstr "このスクリプト %1"
+
+#: geo/drgeo_script.cc:223
+#, c-format
+msgid "Script:: %s"
+msgstr "スクリプト:: %s"
+
+#: geo/drgeo_script.cc:225
+#, c-format
+msgid "Object %s"
+msgstr "オブジェクト %s"
+
+#: geo/drgeo_segment.cc:153 geo/drgeo_segment.cc:171
+msgid "this segment %1"
+msgstr "この線分 %1"
+
+#: geo/drgeo_segment.cc:220
+#, c-format
+msgid "Rotate segment:: %s"
+msgstr "線分の回転:: %s"
+
+#: geo/drgeo_segment.cc:221 geo/drgeo_segment.cc:229 geo/drgeo_segment.cc:236
+#, c-format
+msgid "Transformed segment %s"
+msgstr "変形した線分 %s"
+
+#: geo/drgeo_segment.cc:228 geo/drgeo_segment.cc:235
+#, fuzzy, c-format
+msgid "Symmetric segment:: %s"
+msgstr "線分 %1"
+
+#: geo/drgeo_segment.cc:243
+#, c-format
+msgid "Translate segment:: %s"
+msgstr "線分の平行移動:: %s"
+
+#: geo/drgeo_segment.cc:244
+#, c-format
+msgid "Translated segment %s"
+msgstr "平行移動した線分 %s"
+
+#: geo/drgeo_segment.cc:251
+#, c-format
+msgid "Scale segment:: %s"
+msgstr "線分の拡大・縮小:: %s"
+
+#: geo/drgeo_segment.cc:252
+#, c-format
+msgid "Scaled segment %s"
+msgstr "拡大・縮小した線分 %s"
+
+#: geo/drgeo_segment.cc:260
+#, c-format
+msgid "Segment defined by its extremities:: %s"
+msgstr "端点で定義される線分:: %s"
+
+#: geo/drgeo_tool.cc:950
+#, c-format
+msgid "Remove %s?"
+msgstr "%s を削除しますか?"
+
+#: geo/drgeo_tool.cc:953
+msgid "Remove selected item?"
+msgstr "選択された要素を削除しますか?"
+
+#: geo/drgeo_vector.cc:170 geo/drgeo_vector.cc:188
+msgid "this vector %1"
+msgstr "このベクトル %1"
+
+#: geo/drgeo_vector.cc:245
+#, c-format
+msgid "Rotate vector:: %s"
+msgstr "ベクトルの回転:: %s"
+
+#: geo/drgeo_vector.cc:246 geo/drgeo_vector.cc:254 geo/drgeo_vector.cc:261
+#, c-format
+msgid "Transformed vector %s"
+msgstr "変換されたベクトル %s"
+
+#: geo/drgeo_vector.cc:253 geo/drgeo_vector.cc:260
+#, fuzzy, c-format
+msgid "Symmetric vector:: %s"
+msgstr "ベクトル %1"
+
+#: geo/drgeo_vector.cc:268
+#, c-format
+msgid "Translate vector:: %s"
+msgstr "ベクトルの平行移動:: %s"
+
+#: geo/drgeo_vector.cc:269
+#, c-format
+msgid "Translated vector %s"
+msgstr "平行移動したベクトル %s"
+
+#: geo/drgeo_vector.cc:276
+#, c-format
+msgid "Scale vector:: %s"
+msgstr ""
+
+#: geo/drgeo_vector.cc:277
+#, fuzzy, c-format
+msgid "Scaled vector %s"
+msgstr "ベクトル %1"
+
+#: geo/drgeo_vector.cc:285
+#, c-format
+msgid "Vector defined by two points:: %s"
+msgstr "二点で定義されるベクトル:: %s"
+
+#: glade/drgenius2.glade.h:1 glade/drgeo2.glade.h:1
+msgid "*"
+msgstr "*"
+
+#: glade/drgenius2.glade.h:2
+msgid "Angle"
+msgstr "角度"
+
+#: glade/drgenius2.glade.h:3
+msgid "Arc-Circle"
+msgstr "円弧"
+
+#: glade/drgenius2.glade.h:4
+msgid "Circle"
+msgstr "円"
+
+#: glade/drgenius2.glade.h:5 glade/drgeo2.glade.h:33
+msgid "Color"
+msgstr "色"
+
+#: glade/drgenius2.glade.h:6
+msgid ""
+"Default figure name used when a new figure is created. This name is combined "
+"with a numeric indicator"
+msgstr ""
+
+#: glade/drgenius2.glade.h:7
+msgid ""
+"Default file name used to export a geometric figure to the Flydraw format"
+msgstr "幾何図形を Flydraw 形式に出力するときに使用するデフォルトのファイル名"
+
+#: glade/drgenius2.glade.h:8
+#, fuzzy
+msgid ""
+"Default file name used to export a geometric figure to the LaTeX format "
+"(pstricks extension)"
+msgstr "新規の幾何図形を作成"
+
+#: glade/drgenius2.glade.h:9
+#, fuzzy
+msgid ""
+"Default file name used to export a geometric figure to the encapsulated "
+"PostScript format"
+msgstr "新規の幾何図形を作成"
+
+#: glade/drgenius2.glade.h:10
+msgid "Default file name used to save a geometric figure"
+msgstr "幾何図形を保存するときに使用するデフォルトのファイル名"
+
+#: glade/drgenius2.glade.h:11
+msgid ""
+"Default file name used to save a session (several documents in one file)"
+msgstr ""
+"セッション（複数の文章をひとつのファイルにまとめたもの）を保存するときに使用"
+"するデフォルトのファイル名"
+
+#: glade/drgenius2.glade.h:12
+msgid "Default value"
+msgstr "デフォルトの値"
+
+#: glade/drgenius2.glade.h:13
+msgid "Defaut file name"
+msgstr "デフォルトのファイル名"
+
+#: glade/drgenius2.glade.h:14
+msgid "Figure name"
+msgstr "図形の名前"
+
+#: glade/drgenius2.glade.h:15
+msgid "Flydraw:"
+msgstr "Flydraw:"
+
+#: glade/drgenius2.glade.h:16
+msgid "Geometric figure "
+msgstr "幾何図形"
+
+#: glade/drgenius2.glade.h:17
+msgid "Global preferences"
+msgstr "全体設定"
+
+#: glade/drgenius2.glade.h:18
+msgid "Half-Line"
+msgstr "半直線"
+
+#: glade/drgenius2.glade.h:19
+msgid "Html viewer"
+msgstr "HTMLビューワ"
+
+#: glade/drgenius2.glade.h:20
+msgid "LaTeX:"
+msgstr "LaTeX:"
+
+#: glade/drgenius2.glade.h:21 glade/drgeo2.glade.h:58
+msgid "Large"
+msgstr "大"
+
+#: glade/drgenius2.glade.h:22
+msgid "Line"
+msgstr "直線"
+
+#: glade/drgenius2.glade.h:23
+msgid "Locus"
+msgstr "軌跡"
+
+#: glade/drgenius2.glade.h:24 glade/drgeo2.glade.h:69
+msgid "Normal"
+msgstr "中"
+
+#: glade/drgenius2.glade.h:25
+msgid "Number of undo/redo operations. 0 for infinite undo/redo level"
+msgstr ""
+"アンドゥ/リドゥ操作の回数を指定します．0 の場合, 回数は無限に設定されます"
+
+#: glade/drgenius2.glade.h:26
+msgid "Numeric Precision"
+msgstr "精度"
+
+#: glade/drgenius2.glade.h:27
+#, fuzzy
+msgid "Object Aspect"
+msgstr "デフォルト 100%"
+
+#: glade/drgenius2.glade.h:28 glade/drgeo2.glade.h:77
+msgid "Point"
+msgstr "点"
+
+#: glade/drgenius2.glade.h:29
+msgid "Polygon"
+msgstr "多角形"
+
+#: glade/drgenius2.glade.h:30
+msgid "PostScript:"
+msgstr "PostScript:"
+
+#: glade/drgenius2.glade.h:31
+msgid "Save a Dr Genius session"
+msgstr "Dr Genius セッションを保存"
+
+#: glade/drgenius2.glade.h:32
+msgid "Save all"
+msgstr "全て保存"
+
+#: glade/drgenius2.glade.h:33
+msgid "Save selection"
+msgstr "選択を保存"
+
+#: glade/drgenius2.glade.h:34
+msgid "Scalar"
+msgstr "数値"
+
+#: glade/drgenius2.glade.h:35
+msgid "Segment"
+msgstr "線分"
+
+#: glade/drgenius2.glade.h:36
+msgid "Select Color"
+msgstr "色を選択"
+
+#: glade/drgenius2.glade.h:37
+msgid "Select data to save"
+msgstr "保存するデータを選択"
+
+#: glade/drgenius2.glade.h:38
+msgid "Session:"
+msgstr "セッション:"
+
+#: glade/drgenius2.glade.h:39 glade/drgeo2.glade.h:96
+msgid "Shape"
+msgstr "形"
+
+#: glade/drgenius2.glade.h:40 glade/drgeo2.glade.h:97
+msgid "Size"
+msgstr "サイズ"
+
+#: glade/drgenius2.glade.h:41 glade/drgeo2.glade.h:98
+msgid "Small"
+msgstr "小"
+
+#: glade/drgenius2.glade.h:42 glade/drgeo2.glade.h:99
+msgid "Style"
+msgstr "スタイル"
+
+#: glade/drgenius2.glade.h:43
+msgid "Undo/Redo levels"
+msgstr "アンドゥ/リドゥの回数"
+
+#: glade/drgenius2.glade.h:44
+msgid "Vector"
+msgstr "ベクトル"
+
+#: glade/drgenius2.glade.h:45
+msgid "dillo "
+msgstr "dillo "
+
+#: glade/drgenius2.glade.h:46
+msgid "galeon -x "
+msgstr "galeon -x "
+
+#: glade/drgenius2.glade.h:47
+msgid "konqueror "
+msgstr "konqueror "
+
+#: glade/drgenius2.glade.h:48
+msgid "mozilla "
+msgstr "mozilla "
+
+#: glade/drgeo2.glade.h:3
+#, no-c-format
+msgid "100%"
+msgstr "100%"
+
+#: glade/drgeo2.glade.h:5 glade/drgeoMDI.glade.h:2
+#, no-c-format
+msgid "125%"
+msgstr "125%"
+
+#: glade/drgeo2.glade.h:7 glade/drgeoMDI.glade.h:4
+#, no-c-format
+msgid "150%"
+msgstr "150%"
+
+#: glade/drgeo2.glade.h:9 glade/drgeoMDI.glade.h:6
+#, no-c-format
+msgid "175%"
+msgstr "175%"
+
+#: glade/drgeo2.glade.h:11 glade/drgeoMDI.glade.h:8
+#, no-c-format
+msgid "200%"
+msgstr "200%"
+
+#: glade/drgeo2.glade.h:13 glade/drgeoMDI.glade.h:10
+#, no-c-format
+msgid "25%"
+msgstr "25%"
+
+#: glade/drgeo2.glade.h:15 glade/drgeoMDI.glade.h:12
+#, no-c-format
+msgid "50%"
+msgstr "50%"
+
+#: glade/drgeo2.glade.h:17 glade/drgeoMDI.glade.h:14
+#, no-c-format
+msgid "75%"
+msgstr "75%"
+
+#: glade/drgeo2.glade.h:18
+msgid "Abscissa"
+msgstr "横座標"
+
+#: glade/drgeo2.glade.h:19
+msgid "Adjust the line style"
+msgstr "直線のスタイルを調整"
+
+#: glade/drgeo2.glade.h:20
+msgid "Adjust the point style"
+msgstr "点のスタイルを調整"
+
+#: glade/drgeo2.glade.h:21
+msgid "Adjust the value style"
+msgstr "値のスタイルを調整"
+
+#: glade/drgeo2.glade.h:22
+msgid "Adjust the zoom factor"
+msgstr "倍率を調整"
+
+#: glade/drgeo2.glade.h:23 glade/drgeoMDI.glade.h:15
+msgid "Angle defined by three points or two vectors"
+msgstr "三点または二つのベクトルにより定義される角度"
+
+#: glade/drgeo2.glade.h:24 glade/drgeoMDI.glade.h:24
+msgid "Arc circle defined by three points"
+msgstr "三点で定義される円弧"
+
+#: glade/drgeo2.glade.h:25
+msgid "Avalaible macro-construction"
+msgstr "利用可能なマクロ作図"
+
+#: glade/drgeo2.glade.h:26 glade/drgeoMDI.glade.h:25
+msgid ""
+"Axial symmetry of an object. When ambiguity, the first selected line is the "
+"line to transform"
+msgstr ""
+"オブジェクトを線対称にします．あいまいなときは，最初に選択された線に対して変"
+"換します"
+
+#: glade/drgeo2.glade.h:27
+msgid "Build a macro construction"
+msgstr "マクロ作図の作成"
+
+#: glade/drgeo2.glade.h:28
+msgid "Build a macro-construction"
+msgstr "マクロ作図を作成します"
+
+#: glade/drgeo2.glade.h:29 glade/drgeoMDI.glade.h:26
+msgid ""
+"Central symmetry of an object. When ambiguity, the first selected point is "
+"the point to transform"
+msgstr ""
+"オブジェクトを点対称にします．あいまいなときは，最初に選択した点に対して変換"
+"します"
+
+#: glade/drgeo2.glade.h:30 glade/drgeoMDI.glade.h:29
+msgid "Change the property of an object"
+msgstr "オブジェクトのプロパティを変更"
+
+#: glade/drgeo2.glade.h:31
+msgid "Change the style of an object"
+msgstr "オブジェクトのスタイルを変更"
+
+#: glade/drgeo2.glade.h:32 glade/drgeoMDI.glade.h:30
+msgid "Circle defines by center and point, radius or segment"
+msgstr "円は中心と点，半径，線分のいずれかで定義されます"
+
+#: glade/drgeo2.glade.h:34
+msgid "Construct a macro"
+msgstr "作図マクロ"
+
+#: glade/drgeo2.glade.h:35
+msgid "Create curve"
+msgstr "曲線の作成"
+
+#: glade/drgeo2.glade.h:36
+msgid "Create numeric object"
+msgstr "数字オブジェクトの作成"
+
+#: glade/drgeo2.glade.h:37
+msgid "Create point"
+msgstr "点の作成"
+
+#: glade/drgeo2.glade.h:38
+msgid "Curve"
+msgstr "曲線"
+
+#: glade/drgeo2.glade.h:39
+msgid "Custome User Interface"
+msgstr "ユーザ・インターフェイスのカスタマイズ"
+
+#: glade/drgeo2.glade.h:40
+msgid "Custome User Interface in the current view"
+msgstr "現在のビューのユーザ・インターフェイスをカスタマイズします"
+
+#: glade/drgeo2.glade.h:41 glade/drgeoMDI.glade.h:38
+msgid "Delete an object and its relatives"
+msgstr "オブジェクトおよびその制約を削除"
+
+#: glade/drgeo2.glade.h:42
+msgid "Description"
+msgstr "説明"
+
+#: glade/drgeo2.glade.h:43 glade/drgeoMDI.glade.h:39
+msgid "Distance between objects, curve length, or edit free value"
+msgstr "オブジェクト間の距離，曲線の長さ，自由変数の編集"
+
+#: glade/drgeo2.glade.h:44
+msgid "Edit Scheme script"
+msgstr "Scheme スクリプトの編集"
+
+#: glade/drgeo2.glade.h:45
+msgid "Edit value"
+msgstr "値の編集"
+
+#: glade/drgeo2.glade.h:46
+msgid "Enter the macro-construction description there"
+msgstr "ここにマクロ作図の説明を入力"
+
+#: glade/drgeo2.glade.h:47
+msgid "Enter the macro-construction name there"
+msgstr "ここにマクロ作図名を入力"
+
+#: glade/drgeo2.glade.h:48
+msgid "Enter the name of this view:"
+msgstr "このビューの名前を入力:"
+
+#: glade/drgeo2.glade.h:49
+msgid "Execute"
+msgstr "実行"
+
+#: glade/drgeo2.glade.h:50
+msgid "Execute a macro-construction"
+msgstr "マクロ作図の実行"
+
+#: glade/drgeo2.glade.h:51
+msgid "Execute pre-built macro"
+msgstr "あらかじめ作られているマクロを実行します"
+
+#: glade/drgeo2.glade.h:52
+msgid "Free point properties"
+msgstr "自由点のプロパティ"
+
+#: glade/drgeo2.glade.h:53
+msgid "Give a name and a description"
+msgstr "名前と説明を決めます"
+
+#: glade/drgeo2.glade.h:54 glade/drgeoMDI.glade.h:55
+msgid "Guile script using objects as input parameters"
+msgstr "入力パラメータにオブジェクトを使う Guile スクリプト"
+
+#: glade/drgeo2.glade.h:55 glade/drgeoMDI.glade.h:56
+msgid "Half-Line defined by two points, the first selected point is the origin"
+msgstr "二点で定義される半直線，最初の選択点が始点になります"
+
+#: glade/drgeo2.glade.h:56
+msgid "Input"
+msgstr "入力"
+
+#: glade/drgeo2.glade.h:57
+msgid "Intro"
+msgstr ""
+
+#: glade/drgeo2.glade.h:59 glade/drgeoMDI.glade.h:58
+msgid "Line defined by two points"
+msgstr "二点で定義される直線"
+
+#: glade/drgeo2.glade.h:60 glade/drgeoMDI.glade.h:59
+msgid ""
+"Line passing through one point and orthogonal to a line, half-line, etc."
+msgstr "一つの点を通っていて一つの線や半線などに対角な線"
+
+#: glade/drgeo2.glade.h:61 glade/drgeoMDI.glade.h:60
+msgid "Line passing through one point and parallel to a line, half-line, etc."
+msgstr "一つの点を通っていて一つの線や半線などに平行な線"
+
+#: glade/drgeo2.glade.h:62
+msgid "Lock"
+msgstr "ロック"
+
+#: glade/drgeo2.glade.h:63
+msgid "Lock the interface"
+msgstr "インターフェイスのロック"
+
+#: glade/drgeo2.glade.h:64 glade/drgeoMDI.glade.h:61
+msgid "Locus defined by a free point and a relative point"
+msgstr "軌跡は自由に書いた点と関係する点で定義されます"
+
+#: glade/drgeo2.glade.h:65
+msgid "Macro name"
+msgstr "マクロ名"
+
+#: glade/drgeo2.glade.h:67
+msgid "Masked"
+msgstr ""
+
+#: glade/drgeo2.glade.h:70
+msgid "Not masked"
+msgstr ""
+
+#: glade/drgeo2.glade.h:71
+msgid "Numeric"
+msgstr "数値"
+
+#: glade/drgeo2.glade.h:72
+msgid "Ordinate"
+msgstr "縦座標"
+
+#: glade/drgeo2.glade.h:73
+msgid "Other"
+msgstr "その他"
+
+#: glade/drgeo2.glade.h:74
+msgid "Output"
+msgstr "出力"
+
+#: glade/drgeo2.glade.h:75
+msgid "Password to lock the changes to the interface: "
+msgstr "インターフェイスの変更をロックするためのパスワード: "
+
+#: glade/drgeo2.glade.h:76
+msgid "Password to unlock the changes to the interface:"
+msgstr "インターフェイス変更のロックを解除するためのパスワード:"
+
+#: glade/drgeo2.glade.h:78 glade/drgeoMDI.glade.h:65
+msgid "Point given its coordinates"
+msgstr "座標で与えられる点"
+
+#: glade/drgeo2.glade.h:79 glade/drgeoMDI.glade.h:66
+msgid "Point on an object or the background plane"
+msgstr "オブジェクト上あるいは背景プレーン上に点を置く"
+
+#: glade/drgeo2.glade.h:80
+msgid ""
+"Polygon defined by n points. Last choosen point must be the initial point to "
+"terminate the selection"
+msgstr ""
+
+#: glade/drgeo2.glade.h:81
+msgid "Press this button to mask the object"
+msgstr "このボタンを押すとオブジェクトをマスクします"
+
+#: glade/drgeo2.glade.h:82
+msgid "Press this button to unmask the object"
+msgstr "このボタンを押すとオブジェクトのマスクを解除します"
+
+#: glade/drgeo2.glade.h:83
+#, fuzzy
+msgid "Print Figure"
+msgstr "図形"
+
+#: glade/drgeo2.glade.h:84
+msgid "Re-lock the interface"
+msgstr "インターフェイスの再ロック"
+
+#: glade/drgeo2.glade.h:85
+msgid "Rename the view"
+msgstr "ビューの名前を変更"
+
+#: glade/drgeo2.glade.h:86 glade/drgeoMDI.glade.h:75
+msgid ""
+"Rotation of an object. When ambiguity, the first selected point is the point "
+"to rotate"
+msgstr ""
+"オブジェクトを回転します．あいまいなときは，最初に選択した点に対して回転しま"
+"す"
+
+#: glade/drgeo2.glade.h:87 glade/drgeoMDI.glade.h:78
+msgid ""
+"Scale an object. When ambiguity, the first selected point is the point to "
+"transform"
+msgstr ""
+"オブジェクトを拡大・縮小します．あいまいなときは、最初に選択した点に対して変"
+"換します"
+
+#: glade/drgeo2.glade.h:88
+msgid "Scheme script using objects as input parameters"
+msgstr "入力パラメータにオブジェクトを使う Scheme スクリプト"
+
+#: glade/drgeo2.glade.h:89
+msgid "Script"
+msgstr "スクリプト"
+
+#: glade/drgeo2.glade.h:90 glade/drgeoMDI.glade.h:79
+msgid "Segment defined by two points"
+msgstr "二点で定義される線分"
+
+#: glade/drgeo2.glade.h:91
+#, fuzzy
+msgid "Select a macro-construction then the figure items"
+msgstr "ここにマクロ作図名を入力"
+
+#: glade/drgeo2.glade.h:92
+msgid "Select and move an object"
+msgstr "オブジェクトの選択および移動"
+
+#: glade/drgeo2.glade.h:93
+msgid "Select input parameters"
+msgstr "入力パラメータを選択"
+
+#: glade/drgeo2.glade.h:94
+msgid "Select output parameters"
+msgstr "出力パラメータを選択"
+
+#: glade/drgeo2.glade.h:95
+msgid "Select printer: "
+msgstr "プリンタを選択: "
+
+#: glade/drgeo2.glade.h:100 glade/drgeoMDI.glade.h:82
+msgid "The midpoint of a segment or between two points"
+msgstr "線分または二点間の中間点"
+
+#: glade/drgeo2.glade.h:101 glade/drgeoMDI.glade.h:83
+msgid "The point(s) of intersection between two objects"
+msgstr "二つのオブジェクト間の内分点"
+
+#: glade/drgeo2.glade.h:102
+msgid ""
+"This interface has already been locked.\n"
+"Enter the previously used password for this view: "
+msgstr ""
+
+#: glade/drgeo2.glade.h:104
+msgid ""
+"To build a macro-construction,\n"
+"\n"
+"1. First select the input parameters\n"
+"2. Next select the output parameters,\n"
+"3. Last chose a name and a description."
+msgstr ""
+"マクロ作図を作成するには，\n"
+"\n"
+"1. 始めに入力パラメータを選択し，\n"
+"2. 次に出力パラーメータを選択し，\n"
+"3. 最後に名前と説明を決めます．"
+
+#: glade/drgeo2.glade.h:109
+#, fuzzy
+msgid ""
+"To play a macro-construction,\n"
+"\n"
+"1. First select a macro-construction from the list,\n"
+"2. Select items on the figure. Only relevant items \n"
+"to the selected macro-construction are selectable.\n"
+"Once enought items are selected, the macro is \n"
+"automaticly executed.\n"
+"To start press the button \"next\"."
+msgstr ""
+"マクロ作図を実行するには，\n"
+"\n"
+"1. 始めにリストからマクロ作図を選択し，\n"
+"2. 図の要素を選択します．マクロ作図に関係のある\n"
+"要素のみが選択可能です．一旦必要な要素が選択されると，\n"
+"マクロは自動的に構成されます．\n"
+"開始するには\"次へ\"ボタンを押してください．n"
+
+#: glade/drgeo2.glade.h:117
+msgid "Tools based on properties and transformations"
+msgstr "プロパティと変換に基づくツール"
+
+#: glade/drgeo2.glade.h:118 glade/drgeoMDI.glade.h:84
+msgid ""
+"Translation of an object. When ambiguity, the first selected vector is the "
+"vector to translate"
+msgstr ""
+"オブジェクトを平行移動します．あいまいなときは，最初に選択したベクトルを平行"
+"移動します"
+
+#: glade/drgeo2.glade.h:119
+msgid "Unlock"
+msgstr "ロック解除"
+
+#: glade/drgeo2.glade.h:120 glade/drgeoMDI.glade.h:86
+msgid "Vector and point coordinates, line and circle equation"
+msgstr "ベクトルと点座標、直線と円の方程式"
+
+#: glade/drgeo2.glade.h:121 glade/drgeoMDI.glade.h:87
+msgid "Vector defined by two points"
+msgstr "二点で定義されるベクトル"
+
+#: glade/drgeo2.glade.h:122
+msgid "Visibility"
+msgstr "可視性"
+
+#: glade/drgeo2.glade.h:123
+msgid "Write down your description there."
+msgstr "ここに説明を書き込みます。"
+
+#: glade/drgeo2.glade.h:124
+msgid "You can edit the description"
+msgstr "説明を編集できます"
+
+#: glade/drgeo2.glade.h:125
+msgid "macro"
+msgstr "マクロ"
+
+#: glade/drgeo2.glade.h:126
+msgid "other"
+msgstr "その他"
+
+#: glade/drgeo2.glade.h:127
+msgid "transformation"
+msgstr "変換"
+
+#: glade/drgeoMDI.glade.h:16
+#, fuzzy
+msgid "Animate a free point on a curve at speed 1"
+msgstr "曲線 %s 上の任意の点"
+
+#: glade/drgeoMDI.glade.h:17
+#, fuzzy
+msgid "Animate a free point on a curve at speed 2"
+msgstr "曲線 %s 上の任意の点"
+
+#: glade/drgeoMDI.glade.h:18
+#, fuzzy
+msgid "Animate a free point on a curve at speed 3"
+msgstr "曲線 %s 上の任意の点"
+
+#: glade/drgeoMDI.glade.h:19
+#, fuzzy
+msgid "Animate a free point on a curve at speed 4"
+msgstr "曲線 %s 上の任意の点"
+
+#: glade/drgeoMDI.glade.h:20
+#, fuzzy
+msgid "Animation x1"
+msgstr "情報"
+
+#: glade/drgeoMDI.glade.h:21
+#, fuzzy
+msgid "Animation x2"
+msgstr "情報"
+
+#: glade/drgeoMDI.glade.h:22
+#, fuzzy
+msgid "Animation x3"
+msgstr "情報"
+
+#: glade/drgeoMDI.glade.h:23
+#, fuzzy
+msgid "Animation x4"
+msgstr "情報"
+
+#: glade/drgeoMDI.glade.h:27
+msgid "Change the User Interface of the current figure"
+msgstr "現在の図形のユーザ・インターフェイスを変更します"
+
+#: glade/drgeoMDI.glade.h:28
+msgid "Change the look of an object"
+msgstr "オブジェクトのスタイルを変更"
+
+#: glade/drgeoMDI.glade.h:31
+msgid "Create a new geometric figure"
+msgstr "新規の幾何図形を作成"
+
+#: glade/drgeoMDI.glade.h:32
+msgid "Create a new text"
+msgstr "新規テキストを作成"
+
+#: glade/drgeoMDI.glade.h:34
+#, no-c-format
+msgid "Default 100%"
+msgstr "デフォルト 100%"
+
+#: glade/drgeoMDI.glade.h:35
+msgid "Define a macro-construction"
+msgstr "マクロ作図の定義"
+
+#: glade/drgeoMDI.glade.h:36
+msgid "Define exporting area"
+msgstr ""
+
+#: glade/drgeoMDI.glade.h:37
+msgid "Define the exporting area"
+msgstr ""
+
+#: glade/drgeoMDI.glade.h:40
+msgid "Dr Geo"
+msgstr "Dr Geo"
+
+#: glade/drgeoMDI.glade.h:41
+msgid "Evaluate a figure defined in Scheme"
+msgstr "Scheme で定義された図形を評価する"
+
+#: glade/drgeoMDI.glade.h:42
+msgid "Execute a pre-built macro-construction"
+msgstr "あらかじめ作られているマクロを実行します"
+
+#: glade/drgeoMDI.glade.h:44
+msgid "Export current figure to Flydraw (for WIMS)"
+msgstr "現在の図形を Flaydraw 用に出力します (WIMS 用)"
+
+#: glade/drgeoMDI.glade.h:45
+msgid "Export current figure to LaTeX (using PSTrick package)"
+msgstr "現在の図形を LaTeX 用に出力します (PSTrick パッケージを使用)"
+
+#: glade/drgeoMDI.glade.h:46
+msgid "Export current figure to PNG (image format)"
+msgstr "現在の図形を PNG に出力します"
+
+#: glade/drgeoMDI.glade.h:47
+msgid "Export current figure to PostScript (eps)"
+msgstr "現在の図形を PostScript(eps) に出力します"
+
+#: glade/drgeoMDI.glade.h:48
+msgid "Export figure to Flydraw"
+msgstr "図を Flydraw 用に出力"
+
+#: glade/drgeoMDI.glade.h:49
+msgid "Export figure to LaTeX"
+msgstr "図を LaTeX 用に出力"
+
+#: glade/drgeoMDI.glade.h:50
+msgid "Export figure to PNG"
+msgstr "図を PNG に出力"
+
+#: glade/drgeoMDI.glade.h:51
+msgid "Export figure to PostScript"
+msgstr "図を PostScript に出力"
+
+#: glade/drgeoMDI.glade.h:52
+msgid "Export preferences"
+msgstr "設定のエクスポート"
+
+#: glade/drgeoMDI.glade.h:53
+msgid "Free _point"
+msgstr "任意の点(_P)"
+
+#: glade/drgeoMDI.glade.h:54
+msgid "Grid"
+msgstr "格子"
+
+#: glade/drgeoMDI.glade.h:57
+msgid "Help"
+msgstr "ヘルプ"
+
+#: glade/drgeoMDI.glade.h:62
+msgid "M_ove an object"
+msgstr "オブジェクトの移動(_O)"
+
+#: glade/drgeoMDI.glade.h:63
+msgid "New Figure"
+msgstr "新規図形"
+
+#: glade/drgeoMDI.glade.h:64
+msgid "New Text"
+msgstr "新規テキスト"
+
+#: glade/drgeoMDI.glade.h:67
+msgid "Polygon defined by three points or more"
+msgstr "三点以上の点に定義される多角形"
+
+#: glade/drgeoMDI.glade.h:68
+msgid "Preferences"
+msgstr "設定"
+
+#: glade/drgeoMDI.glade.h:69
+msgid "Preferences set up"
+msgstr "設定を行います"
+
+#: glade/drgeoMDI.glade.h:70
+msgid "Re_name"
+msgstr "名前の変更(_N)"
+
+#: glade/drgeoMDI.glade.h:71
+msgid "Remove exporting area"
+msgstr ""
+
+#: glade/drgeoMDI.glade.h:72
+msgid "Remove the exporting area"
+msgstr ""
+
+#: glade/drgeoMDI.glade.h:73
+msgid "Rename"
+msgstr "名前の変更"
+
+#: glade/drgeoMDI.glade.h:74
+msgid "Rename the current view"
+msgstr "現在のビューの名前を変更"
+
+#: glade/drgeoMDI.glade.h:76
+msgid "Save _multiple"
+msgstr "複合保存(_M)"
+
+#: glade/drgeoMDI.glade.h:77
+msgid "Save several data (figures, macro-constructions.) in one file"
+msgstr "いくつかのデータ(図形、作図マクロ)を一つのファイルに保存します"
+
+#: glade/drgeoMDI.glade.h:80
+msgid "Show or hide the grid"
+msgstr "格子点を表示する/隠す"
+
+#: glade/drgeoMDI.glade.h:81
+msgid "Show or hide the unit grid in the current view"
+msgstr "現在のビューにおいて格子点を表示します/隠します"
+
+#: glade/drgeoMDI.glade.h:85
+msgid "User manual"
+msgstr "ユーザ・マニュアル"
+
+#: glade/drgeoMDI.glade.h:88
+#, fuzzy
+msgid "Windows"
+msgstr "ウィンドウ/"
+
+#: glade/drgeoMDI.glade.h:90
+#, no-c-format
+msgid "Zoom to 100%"
+msgstr "100%"
+
+#: glade/drgeoMDI.glade.h:92
+#, no-c-format
+msgid "Zoom to 125%"
+msgstr "125%"
+
+#: glade/drgeoMDI.glade.h:94
+#, no-c-format
+msgid "Zoom to 150%"
+msgstr "150%"
+
+#: glade/drgeoMDI.glade.h:96
+#, no-c-format
+msgid "Zoom to 175%"
+msgstr "175%"
+
+#: glade/drgeoMDI.glade.h:98
+#, no-c-format
+msgid "Zoom to 200%"
+msgstr "200%"
+
+#: glade/drgeoMDI.glade.h:100
+#, no-c-format
+msgid "Zoom to 25%"
+msgstr "25%"
+
+#: glade/drgeoMDI.glade.h:102
+#, no-c-format
+msgid "Zoom to 50%"
+msgstr "50%"
+
+#: glade/drgeoMDI.glade.h:104
+#, no-c-format
+msgid "Zoom to 75%"
+msgstr "75%"
+
+#: glade/drgeoMDI.glade.h:105
+msgid "_About"
+msgstr "情報(_A)"
+
+#: glade/drgeoMDI.glade.h:106
+msgid "_Angle"
+msgstr "角度(_A)"
+
+#: glade/drgeoMDI.glade.h:107
+#, fuzzy
+msgid "_Animation"
+msgstr "加算"
+
+#: glade/drgeoMDI.glade.h:108
+msgid "_Arc Circle"
+msgstr "円弧(_A)"
+
+#: glade/drgeoMDI.glade.h:109
+msgid "_Axial Symmetry"
+msgstr "線対称(_A)"
+
+#: glade/drgeoMDI.glade.h:110
+msgid "_Central Symmetry"
+msgstr "点対称(_C)"
+
+#: glade/drgeoMDI.glade.h:111
+msgid "_Circle"
+msgstr "円(_C)"
+
+#: glade/drgeoMDI.glade.h:112
+#, fuzzy
+msgid "_Construct Macro"
+msgstr "作図マクロ(_C)"
+
+#: glade/drgeoMDI.glade.h:113
+msgid "_Contents"
+msgstr "目次(_C)"
+
+#: glade/drgeoMDI.glade.h:114
+msgid "_Coordinates"
+msgstr "座標(_C)"
+
+#: glade/drgeoMDI.glade.h:115
+msgid "_Coordinates & Equation"
+msgstr "座標と方程式(_C)"
+
+#: glade/drgeoMDI.glade.h:116
+msgid "_Curve"
+msgstr "曲線(_C)"
+
+#: glade/drgeoMDI.glade.h:117
+msgid "_Custom Interface"
+msgstr "インターフェイスのカスタマイズ(_C)"
+
+#: glade/drgeoMDI.glade.h:118
+msgid "_Delete an Object"
+msgstr "オブジェクトを削除(_D)"
+
+#: glade/drgeoMDI.glade.h:119
+msgid "_Distance & Length"
+msgstr "距離と長さ(_D)"
+
+#: glade/drgeoMDI.glade.h:120
+msgid "_Edit"
+msgstr "編集(_E)"
+
+#: glade/drgeoMDI.glade.h:121
+msgid "_Evaluate"
+msgstr "評価(_E)"
+
+#: glade/drgeoMDI.glade.h:122
+msgid "_Execute Macro"
+msgstr "マクロの実行(_E)"
+
+#: glade/drgeoMDI.glade.h:123
+msgid "_Figure"
+msgstr "図形(_F)"
+
+#: glade/drgeoMDI.glade.h:124
+msgid "_File"
+msgstr "ファイル(_F)"
+
+#: glade/drgeoMDI.glade.h:125
+msgid "_Geometric Locus"
+msgstr "図形の軌跡(_G)"
+
+#: glade/drgeoMDI.glade.h:126
+msgid "_Half-line"
+msgstr "半直線(_H)"
+
+#: glade/drgeoMDI.glade.h:127
+msgid "_Help"
+msgstr "ヘルプ(_H)"
+
+#: glade/drgeoMDI.glade.h:128
+msgid "_Intersection"
+msgstr "内分点(_I)"
+
+#: glade/drgeoMDI.glade.h:129
+msgid "_Line"
+msgstr "直線(_L)"
+
+#: glade/drgeoMDI.glade.h:130
+msgid "_Look"
+msgstr "スタイル(_L)"
+
+#: glade/drgeoMDI.glade.h:131
+msgid "_Macro"
+msgstr "マクロ(_M)"
+
+#: glade/drgeoMDI.glade.h:132
+#, fuzzy
+msgid "_Macro-constructions"
+msgstr "マクロ作図"
+
+#: glade/drgeoMDI.glade.h:133
+msgid "_Middle"
+msgstr "中間点(_M)"
+
+#: glade/drgeoMDI.glade.h:134
+msgid "_Numeric"
+msgstr "数値(_N)"
+
+#: glade/drgeoMDI.glade.h:135
+msgid "_Orthogonal Line"
+msgstr "対角線(_O)"
+
+#: glade/drgeoMDI.glade.h:136
+msgid "_Other"
+msgstr "その他(_O)"
+
+#: glade/drgeoMDI.glade.h:137
+msgid "_Parallel Line"
+msgstr "平行線(_P)"
+
+#: glade/drgeoMDI.glade.h:138
+msgid "_Point"
+msgstr "点(_P)"
+
+#: glade/drgeoMDI.glade.h:139
+msgid "_Polygon"
+msgstr "多角形(_P)"
+
+#: glade/drgeoMDI.glade.h:140
+msgid "_Property"
+msgstr "プロパティ(_P)"
+
+#: glade/drgeoMDI.glade.h:141
+msgid "_Rotation"
+msgstr "回転(_R)"
+
+#: glade/drgeoMDI.glade.h:142
+msgid "_Scale"
+msgstr "拡大・縮小(_S)"
+
+#: glade/drgeoMDI.glade.h:143
+msgid "_Script"
+msgstr "スクリプト(_S)"
+
+#: glade/drgeoMDI.glade.h:144
+msgid "_Segment"
+msgstr "線分(_S)"
+
+#: glade/drgeoMDI.glade.h:145
+msgid "_Text"
+msgstr "文字(_T)"
+
+#: glade/drgeoMDI.glade.h:146
+msgid "_Transformation"
+msgstr "変換(_T)"
+
+#: glade/drgeoMDI.glade.h:147
+msgid "_Translation"
+msgstr "平行移動(_T)"
+
+#: glade/drgeoMDI.glade.h:148
+msgid "_Vector"
+msgstr "ベクトル(_V)"
+
+#: glade/drgeoMDI.glade.h:149
+msgid "_Zoom"
+msgstr "ズーム(_Z)"
+
+#, fuzzy
+#~ msgid "_Button Script"
+#~ msgstr "点 %1"
+
+#~ msgid "File to load"
+#~ msgstr "読み込むファイル"
+
+#~ msgid "%s is not a Dr Genius XML file\n"
+#~ msgstr "%sはDr GeniusのXMLファイルではありません\n"
+
+#~ msgid "_New..."
+#~ msgstr "新規(_N)..."
+
+#~ msgid "Undo modification"
+#~ msgstr "変更を元に戻す"
+
+#~ msgid "Redo change"
+#~ msgstr "変更のやり直し"
+
+#~ msgid "This does nothing; it is only a demonstration."
+#~ msgstr "何もしません。単なるデモンストレーションです。"
+
+#~ msgid "Can't open file '%s'!"
+#~ msgstr "'%s' ファイルを開けません!"
+
+#~ msgid "Hilaire Fernandes: main programmer, Dr Geo"
+#~ msgstr "Hilaire Fernandes: メインプログラマ、Dr Geo"
+
+#~ msgid "Laurent Gauthier: MDI interface, many contributions in Dr Geo code"
+#~ msgstr "Laurent Gauthier: MDI インタフェース、Dr Geo コードに大くの貢献"
+
+#, fuzzy
+#~ msgid "Frederic Toussaint: graphic art"
+#~ msgstr "Fred Neric Toussaint: グラフィックアート"
+
+#~ msgid "Dr Genius Home Page"
+#~ msgstr "Dr Genius ホームページ"
+
+#~ msgid "Value"
+#~ msgstr "値"
+
+#~ msgid "_Style"
+#~ msgstr "スタイル(_S)"
+
+#~ msgid "Data Name"
+#~ msgstr "データ名"
+
+#, fuzzy
+#~ msgid "Object Style"
+#~ msgstr "デフォルト 100%"
+
+#~ msgid "Finish macro-construction"
+#~ msgstr "マクロ作図を完了"
+
+#, fuzzy
+#~ msgid ""
+#~ "You've selected all the needed\n"
+#~ "information to build a macro-construction.\n"
+#~ "\n"
+#~ "Press Finish to build it!\n"
+#~ "\n"
+#~ "Or you can change selection with the Back button."
+#~ msgstr ""
+#~ "マクロ作図を行うために必要な情報は\n"
+#~ "全て選択されました。\n"
+#~ "\n"
+#~ "完了を押すと作成されます!\n"
+#~ "\n"
+#~ "戻るボタンを押すと選択を変更できます。"
+
+#~ msgid "Tips"
+#~ msgstr "助言"
+
+#~ msgid ""
+#~ "If you select another macro-construction,\n"
+#~ "all the selected item will be unselected.\n"
+#~ "\n"
+#~ "You can edit the description text, your change\n"
+#~ "will be recorded next time you save the macro."
+#~ msgstr ""
+#~ "もう一つのマクロ作図を選択した場合、\n"
+#~ "選択されていた全ての要素は未選択になります。\n"
+#~ "\n"
+#~ "説明テキストを編集することができ、変更は\n"
+#~ "このマクロが保存された次回から残ります。"
+
+#, fuzzy
+#~ msgid "Calculatrice"
+#~ msgstr "計算機"
+
+#, fuzzy
+#~ msgid "window2"
+#~ msgstr "ウィンドウ/"
+
+#, fuzzy
+#~ msgid "window3"
+#~ msgstr "ウィンドウ/"
+
+#~ msgid ""
+#~ "Dr Genius Refers to Geometry Exploration and Numeric Intuitive User "
+#~ "System."
+#~ msgstr ""
+#~ "Dr Genius は Geometry Exploration および\n"
+#~ "Numeric Intuitive User System を参考にしています。"
+
+#~ msgid "Properties"
+#~ msgstr "属性"
+
+#~ msgid "Nothing here for the moment."
+#~ msgstr "まだ何もありません。"
+
+#~ msgid "Global"
+#~ msgstr "グローバル"
+
+#~ msgid "Canvas"
+#~ msgstr "キャンバス"
+
+#~ msgid "Number of digits :"
+#~ msgstr "数字の数:"
+
+#~ msgid "Calculator"
+#~ msgstr "計算機"
+
+#~ msgid "Gel"
+#~ msgstr "Gel"
+
+#, fuzzy
+#~ msgid "Dark Green"
+#~ msgstr "Dr Genius"
+
+#, fuzzy
+#~ msgid "Blue"
+#~ msgstr "値"
+
+#~ msgid "Untitled Figure %d"
+#~ msgstr "無題の図形 %d"
+
+#~ msgid "MESSAGE"
+#~ msgstr "メッセージ"
+
+#~ msgid "George Lebl: main programmer, Genius"
+#~ msgstr "George Lebl: メインプログラマ、Genius"
+
+#~ msgid "Nils Barth: math. library written in GEL, documentation"
+#~ msgstr "Nils Barth: 数学。GEL によるライブラリ、ドキュメント"
+
+#~ msgid "Change the object style"
+#~ msgstr "オブジェクトのスタイルを変更"
+
+#~ msgid ""
+#~ "200%\n"
+#~ "175%\n"
+#~ "150%\n"
+#~ "125%\n"
+#~ "100%\n"
+#~ "75%\n"
+#~ "50%\n"
+#~ "25%\n"
+#~ msgstr ""
+#~ "200%\n"
+#~ "175%\n"
+#~ "150%\n"
+#~ "125%\n"
+#~ "100%\n"
+#~ "75%\n"
+#~ "50%\n"
+#~ "25%\n"
+
+#~ msgid ""
+#~ "Dr.Genius %s\n"
+#~ "Copyright (c) 1997,1998,1999 Free Software Foundation, Inc.\n"
+#~ "This is free software with ABSOLUTELY NO WARRANTY.\n"
+#~ "For details type `warranty'.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Dr.Genius %s\n"
+#~ "Copyright (c) 1997,1998,1999 Free Software Foundation, Inc.\n"
+#~ "本ソフトウェアは完全に無保証です。\n"
+#~ "詳細は `warranty' をタイプして下さい。\n"
+#~ "\n"
+
+#~ msgid "Error"
+#~ msgstr "エラー"
+
+#~ msgid ""
+#~ "\n"
+#~ "Too many errors! (%d followed)"
+#~ msgstr ""
+#~ "\n"
+#~ "エラーが多すぎます! (%d 以下)"
+
+#~ msgid "\\e[01;31mToo many errors! (%d followed)\\e[0m\n"
+#~ msgstr "\\e[01;31mエラーが多すぎます! (%d 以下)\\e[0m\n"
+
+#~ msgid "Untitled GEL Script %d"
+#~ msgstr "無題のGELスクリプト %d"
+
+#~ msgid "Can't open file!"
+#~ msgstr "ファイルを開けません!"
+
+#~ msgid "_Calculator"
+#~ msgstr "計算機(_C)"
+
+#~ msgid "_GEL file"
+#~ msgstr "GEL ファイル(_G)"
+
+#~ msgid "Create a GEL script"
+#~ msgstr "GEL スクリプトを作成"
+
+#~ msgid "line %d: %s\n"
+#~ msgstr "行 %d: %s\n"
+
+#~ msgid "Bad identifier for function node!"
+#~ msgstr "関数節の識別子が不正です!"
+
+#~ msgid "Unexpected operator!"
+#~ msgstr "予期しない演算子です!"
+
+#~ msgid "NULL tree!"
+#~ msgstr "NULL ツリー!"
+
+#~ msgid "NULL function!"
+#~ msgstr "NULL 関数!"
+
+#~ msgid "Unexpected function type!"
+#~ msgstr "予期しない関数型です!"
+
+#~ msgid "Unexpected node!"
+#~ msgstr "予期しない節です!"
+
+#~ msgid "File '%s' is a wrong version of GEL"
+#~ msgstr "ファイル '%s' は不正なバージョンの GEL です"
+
+#~ msgid "Badly formed record"
+#~ msgstr "不正な形式のレコード"
+
+#~ msgid "Record out of place"
+#~ msgstr "レコードが配置外です"
+
+#~ msgid "Missing value for function"
+#~ msgstr "関数の値が見つかりません"
+
+#~ msgid "Cannot open plugin '%s'!"
+#~ msgstr "プラグイン '%s' を開けません!"
+
+#~ msgid "ERROR: Probably corrupt stack!"
+#~ msgstr "エラー: おそらくスタックが汚染されています!"
+
+#~ msgid "ERROR: Can't execute more things at once!"
+#~ msgstr "エラー: 同時に多くの事を実行できません!"
+
+#~ msgid "ERROR: "
+#~ msgstr "エラー: "
+
+#~ msgid " before newline"
+#~ msgstr " 改行の前"
+
+#~ msgid " at end of input"
+#~ msgstr " 入力の最後"
+
+#~ msgid " before '"
+#~ msgstr " 前 '"
+
+#~ msgid "Bad tree record when decompiling"
+#~ msgstr "逆コンパイル時のツリー記録が不正です"
+
+#~ msgid "Cannot compare non value-only matrixes"
+#~ msgstr "全要素が数値の行列でないと比較できません"
+
+#~ msgid "Can't add/subtract two matricies of different sizes"
+#~ msgstr "異なるサイズの行列同士を加算/減算できません"
+
+#~ msgid "Can't multiply matricies of wrong sizes"
+#~ msgstr "不適当なサイズの行列間で乗算はできません"
+
+#~ msgid "Powers are defined on (square matrix)^(integer) only"
+#~ msgstr "羃乗は (正方行列)^(整数) のみが定義されています"
+
+#~ msgid "Exponent too large"
+#~ msgstr "指数が大きすぎます"
+
+#~ msgid "Matrix appears singular and can't be inverted"
+#~ msgstr "行列が特異なために、逆行列が求められません"
+
+#~ msgid "Can't divide matrices of different sizes or non-square matrices"
+#~ msgstr "サイズが異なるか、または正方行列ではないため、行列を除算できません"
+
+#~ msgid "Can't divide by a non-square matrix"
+#~ msgstr "非正方行列で除算できません"
+
+#~ msgid "Unevaluatable function type encountered!"
+#~ msgstr "評価できない関数型がありました!"
+
+#~ msgid "Variable '%s' used uninitialized"
+#~ msgstr "変数 '%s' が未初期化で使用されました"
+
+#~ msgid ""
+#~ "Call of '%s' with the wrong number of arguments!\n"
+#~ "(should be %d)"
+#~ msgstr ""
+#~ "'%s' の呼び出し引数の数が不正です!\n"
+#~ "(正しくは %d です)"
+
+#~ msgid "Trying to dereference '%s' which is not a reference!\n"
+#~ msgstr "参照を持たない '%s' を逆参照しようとしています!\n"
+
+#~ msgid "NULL reference encountered!"
+#~ msgstr "NULL 参照がありました!"
+
+#~ msgid "Cannot compare matrixes"
+#~ msgstr "行列を比較できません"
+
+#~ msgid "Primitives must get numeric/matrix/string arguments"
+#~ msgstr "プリミティブは 数値/行列/文字列 引数を取らなければなりません"
+
+#~ msgid "Function '%s' used uninitialized"
+#~ msgstr "関数 '%s' が初期化せずに使用されました"
+
+#~ msgid "Can't dereference '%s'!"
+#~ msgstr "'%s' を逆参照できません!"
+
+#~ msgid "Can't call a non-function!"
+#~ msgstr "非関数を呼べません!"
+
+#~ msgid "Referencing an undefined variable!"
+#~ msgstr "未定義変数の参照です!"
+
+#~ msgid "Reference function with arguments encountered!"
+#~ msgstr "引数付き参照関数にぶつかりました!"
+
+#~ msgid "Unnamed reference function encountered!"
+#~ msgstr "無名参照関数にぶつかりました!"
+
+#~ msgid "Bad type for 'for' loop!"
+#~ msgstr "'for' ループに対して不正な型です!"
+
+#~ msgid "'for' loop increment can't be 0"
+#~ msgstr "'for' ループの増分は 0 ではいけません"
+
+#~ msgid "Bad type for 'for in' loop!"
+#~ msgstr "'for in' ループに対して不正な型です!"
+
+#~ msgid "Continue or break outside a loop, assuming \"return null\""
+#~ msgstr "continueかbreakでループを抜け、\"return null\"を仮定します"
+
+#~ msgid "Wrong argument type as matrix index"
+#~ msgstr "引数の型が行列インデックスとして不正です"
+
+#~ msgid "Matrix index too large"
+#~ msgstr "行列のインデックスが大きすぎます"
+
+#~ msgid "Matrix index less than 1"
+#~ msgstr "行列のインデックスが 1 未満です"
+
+#~ msgid "Matrix 'to' index less then 'from' index"
+#~ msgstr "行列の 'to' インデックスが 'from' インデックスより小さいです"
+
+#~ msgid "Trying to set a protected id"
+#~ msgstr "保護された識別子の設定を試みます"
+
+#~ msgid "Indexed Lvalue not user function"
+#~ msgstr "参照された左辺値はユーザー関数ではありません"
+
+#~ msgid "Dereference of non-identifier!"
+#~ msgstr "非識別子を逆参照しています!"
+
+#~ msgid "Dereference of undefined variable!"
+#~ msgstr "未定義変数の逆参照をしています!"
+
+#~ msgid "Dereference of non-reference!"
+#~ msgstr "非参照の逆参照をしています!"
+
+#~ msgid "Indexed Lvalue not an identifier or a dereference"
+#~ msgstr "参照された左辺値は、識別子や逆参照ではありません"
+
+#~ msgid "Lvalue not an identifier/dereference/matrix location!"
+#~ msgstr "左辺値は 識別子/逆参照/行列 と特定できません!"
+
+#~ msgid "Can't set a region to a region of a different size"
+#~ msgstr "異なるサイズの範囲にリージョンを設定できません"
+
+#~ msgid "Index works only on matricies"
+#~ msgstr "インデックスは行列でのみ機能します"
+
+#~ msgid "Matrix index out of range"
+#~ msgstr "行列インデックスが範囲外です"
+
+#~ msgid "Index out of range"
+#~ msgstr "インデックスが範囲外です"
+
+#~ msgid "number"
+#~ msgstr "数値"
+
+#~ msgid "matrix"
+#~ msgstr "行列"
+
+#~ msgid "string"
+#~ msgstr "文字列"
+
+#~ msgid "function"
+#~ msgstr "関数"
+
+#~ msgid "Absolute value"
+#~ msgstr "絶対値"
+
+#~ msgid "Subtraction"
+#~ msgstr "減算"
+
+#~ msgid "Multiplication"
+#~ msgstr "乗算"
+
+#~ msgid "Division"
+#~ msgstr "除算"
+
+#~ msgid "Back division"
+#~ msgstr "逆除算"
+
+#~ msgid "Modulo"
+#~ msgstr "剰余"
+
+#~ msgid "Negation"
+#~ msgstr "負数"
+
+#~ msgid "Power"
+#~ msgstr "累乗"
+
+#~ msgid "Transpose"
+#~ msgstr "転置"
+
+#~ msgid "Comparison (<=>)"
+#~ msgstr "比較 (<=>)"
+
+#~ msgid "XOR"
+#~ msgstr "排他的論理和"
+
+#~ msgid "NOT"
+#~ msgstr "否定"
+
+#~ msgid "Bad types for '%s'"
+#~ msgstr "'%s' の型が不正です"
+
+#~ msgid "%s not defined on <%s> and <%s>"
+#~ msgstr "%s は <%s> および <%s> について定義されていません"
+
+#~ msgid "Bad type for '%s'"
+#~ msgstr "'%s' の型が不正です"
+
+#~ msgid "%s not defined on <%s>"
+#~ msgstr "%s は <%s> について定義さていません"
+
+#~ msgid ""
+#~ "Genius %s\n"
+#~ "Copyright (c) 1997,1998,1999 Free Software Foundation, Inc.\n"
+#~ "\n"
+#~ "    This program is free software; you can redistribute it and/or modify\n"
+#~ "    it under the terms of the GNU General Public License as published by\n"
+#~ "    the Free Software Foundation; either version 2 of the License , or\n"
+#~ "    (at your option) any later version.\n"
+#~ "\n"
+#~ "    This program is distributed in the hope that it will be useful,\n"
+#~ "    but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+#~ "    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+#~ "    GNU General Public License for more details.\n"
+#~ "\n"
+#~ "    You should have received a copy of the GNU General Public License\n"
+#~ "    along with this program. If not, write to the Free Software\n"
+#~ "    Foundation,  Inc., 59 Temple Place - Suite 330, Boston, MA 02111-"
+#~ "1307,\n"
+#~ "    USA.\n"
+#~ msgstr ""
+#~ "Genius %s\n"
+#~ "Copyright (c) 1997,1998,1999 Free Software Foundation, Inc.\n"
+#~ "\n"
+#~ "    This program is free software; you can redistribute it and/or modify\n"
+#~ "    it under the terms of the GNU General Public License as published by\n"
+#~ "    the Free Software Foundation; either version 2 of the License , or\n"
+#~ "    (at your option) any later version.\n"
+#~ "\n"
+#~ "    This program is distributed in the hope that it will be useful,\n"
+#~ "    but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+#~ "    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+#~ "    GNU General Public License for more details.\n"
+#~ "\n"
+#~ "    You should have received a copy of the GNU General Public License\n"
+#~ "    along with this program. If not, write to the Free Software\n"
+#~ "    Foundation,  Inc., 59 Temple Place - Suite 330, Boston, MA 02111-"
+#~ "1307,\n"
+#~ "    USA.\n"
+
+#~ msgid "display: first argument must be string!"
+#~ msgstr "display: 最初の引数は文字列でなければなりません!"
+
+#~ msgid "Cannot apply function to two differently sized matrixes"
+#~ msgstr "サイズの異なる行列2つに関数を適用できません"
+
+#~ msgid "sin: argument not a number"
+#~ msgstr "sin: 引数が数字ではありません"
+
+#~ msgid "sinh: argument not a number"
+#~ msgstr "sinh: 引数が数字ではありません"
+
+#~ msgid "cos: argument not a number"
+#~ msgstr "cos: 引数が数字ではありません"
+
+#~ msgid "cosh: argument not a number"
+#~ msgstr "cosh: 引数が数字ではありません"
+
+#~ msgid "tan: argument not a real number"
+#~ msgstr "tan: 引数が実数ではありません"
+
+#~ msgid "atan: argument not a number"
+#~ msgstr "atan: 引数が数字ではありません"
+
+#~ msgid "trunc: argument not a number"
+#~ msgstr "trunc: 引数が数字ではありません"
+
+#~ msgid "floor: argument not a number"
+#~ msgstr "floor: 引数が数字ではありません"
+
+#~ msgid "ceil: argument not a number"
+#~ msgstr "ceil: 引数が数字ではありません"
+
+#~ msgid "round: argument not a number"
+#~ msgstr "round: 引数が数字ではありません"
+
+#~ msgid "float: argument not a number"
+#~ msgstr "float: 引数が数字ではありません"
+
+#~ msgid "numerator: argument not a number"
+#~ msgstr "numerator: 引数が数字ではありません"
+
+#~ msgid "denominator: argument not a number"
+#~ msgstr "denominator: 引数が数字ではありません"
+
+#~ msgid "Re: argument not a number"
+#~ msgstr "Re: 引数が数字ではありません"
+
+#~ msgid "Im: argument not a number"
+#~ msgstr "Im: 引数が数字ではありません"
+
+#~ msgid "sqrt: argument not a number"
+#~ msgstr "sqrt: 引数が数字ではありません"
+
+#~ msgid "exp: matrix argument is not square"
+#~ msgstr "exp: 行列引数が正方行列ではありません"
+
+#~ msgid "exp: argument not a number"
+#~ msgstr "exp: 引数が数字ではありません"
+
+#~ msgid "ln: argument not a number"
+#~ msgstr "ln: 引数が数字ではありません"
+
+#~ msgid "gcd: arguments must be numbers"
+#~ msgstr "gcd: 引数は数字でなくてはなりません"
+
+#~ msgid "lcm: arguments must be numbers"
+#~ msgstr "lcm: 引数は数字でなくてはなりません"
+
+#~ msgid "jacobi: arguments must be numbers"
+#~ msgstr "jacobi 引数は数字でなくてはなりません"
+
+#~ msgid "legendre: arguments must be numbers"
+#~ msgstr "legender: 引数は数字でなくてはなりません"
+
+#~ msgid "perfect_square: argument must be a number"
+#~ msgstr "perfect_square: 引数は数字でなくてはなりません"
+
+#~ msgid "max: arguments must be numbers"
+#~ msgstr "max: 引数は数字でなくてはなりません"
+
+#~ msgid "min: arguments must be numbers"
+#~ msgstr "min: 引数は数字でなくてはなりません"
+
+#~ msgid "is_value_only: argument not a matrix"
+#~ msgstr "is_value_only: 引数が行列ではありません"
+
+#~ msgid "I: argument not an integer"
+#~ msgstr "I: 引数が整数ではありません"
+
+#~ msgid "I: argument can't be negative or 0"
+#~ msgstr "I: 引数は負または0にはなりません"
+
+#~ msgid "I: argument too large"
+#~ msgstr "I: 引数が大きすぎます"
+
+#~ msgid "rows: argument not a matrix"
+#~ msgstr "rows: 引数が行列ではありません"
+
+#~ msgid "columns: argument not a matrix"
+#~ msgstr "columns: 引数が行列ではありません"
+
+#~ msgid "set_size: wrong argument type"
+#~ msgstr "set_size: 引数の型が違います"
+
+#~ msgid "set_size: rows/columns negative or 0"
+#~ msgstr "set_size: rows/columnsが負か0です"
+
+#~ msgid "set_size: rows/columns too large"
+#~ msgstr "set_size: rows/columnsが多すぎます"
+
+#~ msgid "det: argument not a value only matrix"
+#~ msgstr "det: 引数が値だけの行列ではありません"
+
+#~ msgid "ref: argument not a value only matrix"
+#~ msgstr "ref: 引数が値だけの行列ではありません"
+
+#~ msgid "rref: argument not a value only matrix"
+#~ msgstr "rref: 引数が値だけの行列ではありません"
+
+#~ msgid "prime: argument not an integer"
+#~ msgstr "prime: 引数が整数ではありません"
+
+#~ msgid "prime: argument can't be negative or 0"
+#~ msgstr "prime: 引数は負または0にはできません"
+
+#~ msgid "prime: argument is too large"
+#~ msgstr "prime: 引数が大きすぎます"
+
+#~ msgid "%s: arguments not horizontal vectors"
+#~ msgstr "%s: 引数が水平ベクトルではありません"
+
+#~ msgid "%s: arguments not numeric only vectors"
+#~ msgstr "%s: 引数が数字だけのベクトルではありません"
+
+#~ msgid "polytostring: 2nd argument not a string"
+#~ msgstr "polytostring: 2番目の引数が文字ではありません"
+
+#~ msgid "sethelp: arguments must be strings (function name,help text)"
+#~ msgstr "sethelp: 引数は文字列でなくてはなりません(関数名、ヘルプテキスト)"
+
+#~ msgid "protect: argument must be a string"
+#~ msgstr "protect: 引数は文字でなくれはなりません"
+
+#~ msgid "unprotect: argument must be a string"
+#~ msgstr "unprotect: 引数は文字でなくれはなりません"
+
+#~ msgid "set_float_prec: argument not an integer"
+#~ msgstr "set_float_prec: 引数が整数ではありません"
+
+#~ msgid "set_float_prec: argument should be between 60 and 16384"
+#~ msgstr "set_float_prec: 引数は60と16384の間でなくてはなりません"
+
+#~ msgid "set_max_digits: argument not an integer"
+#~ msgstr "set_max_digits: 引数が整数ではありません"
+
+#~ msgid "set_max_digits: argument should be between 0 and 256"
+#~ msgstr "set_max_digits: 引数は0と255の間でなくてはなりません"
+
+#~ msgid "set_results_as_floats: argument not a value"
+#~ msgstr "set_results_as_floats: 引数が値ではありません"
+
+#~ msgid "set_scientific_notation: argument not a value"
+#~ msgstr "set_scientific_notation: 引数が値ではありません"
+
+#~ msgid "set_full_expressions: argument not a value"
+#~ msgstr "set_full_expressions: 引数が値ではありません"
+
+#~ msgid "set_max_errors: argument not an integer"
+#~ msgstr "set_max_errors: 引数が値ではありません"
+
+#~ msgid "set_max_errors: argument should be larger or equal to 0"
+#~ msgstr "set_max_errors: 引数は0と等しいかそれ以上でなくてはなりません"
+
+#~ msgid "set_mixed_fractions: argument not a value"
+#~ msgstr "set_mixed_fractions: 引数が値ではありません"
+
+#~ msgid "set_integer_output_base: argument not an integer"
+#~ msgstr "set_integer_output_base: 引数が整数ではありません"
+
+#~ msgid "set_integer_output_base: argument should be between 2 and 36"
+#~ msgstr "set_integer_output_base: 引数は2と36の間でなくてはなりません"
+
+#~ msgid "Gives the warranty information"
+#~ msgstr "保証についての情報を表示"
+
+#~ msgid "Exits the program"
+#~ msgstr "プログラムを終了"
+
+#~ msgid "Prints a string to the error stream"
+#~ msgstr "エラーストリームに文字を表示"
+
+#~ msgid "Prints an expression"
+#~ msgstr "式を印刷"
+
+#~ msgid "Prints an expression without a trailing newline"
+#~ msgstr "改行を入れないで式を印刷"
+
+#~ msgid "Display a string and an expression"
+#~ msgstr "文字と式を表示"
+
+#~ msgid "Set floating point precision"
+#~ msgstr "浮動小数点数精度を設定"
+
+#~ msgid "Get floating point precision"
+#~ msgstr "浮動小数点数精度を取得"
+
+#~ msgid "Set maximum digits to display"
+#~ msgstr "表示する最大桁を設定"
+
+#~ msgid "Get maximum digits to display"
+#~ msgstr "表示する最大桁を取得"
+
+#~ msgid "Set maximum number of errors printed"
+#~ msgstr "印刷するエラーの最大数を設定"
+
+#~ msgid "Get maximum number of errors printed"
+#~ msgstr "印刷するエラーの最大数を取得"
+
+#~ msgid "Set if we print fractions in mixed format"
+#~ msgstr "複合フォーマットで分数を印刷するかの設定"
+
+#~ msgid "Get if we print fractions in mixed format"
+#~ msgstr "複合フォーマットで分数を印刷するかを取得"
+
+#~ msgid "Set the integer output base"
+#~ msgstr "整数出力の基底を設定"
+
+#~ msgid "Get the integer output base"
+#~ msgstr "整数出力の基底を取得"
+
+#~ msgid "Calculates the sine function"
+#~ msgstr "sin関数を計算"
+
+#~ msgid "Calculates the cosine function"
+#~ msgstr "cos関数を計算"
+
+#~ msgid "Calculates the hyperbolic sine function"
+#~ msgstr "sinh関数を計算"
+
+#~ msgid "Calculates the hyperbolic cosine function"
+#~ msgstr "cosh関数を計算"
+
+#~ msgid "Calculates the tan function"
+#~ msgstr "tan関数を計算"
+
+#~ msgid "Calculates the arctan function"
+#~ msgstr "arctan関数を計算"
+
+#~ msgid "The number pi"
+#~ msgstr "π"
+
+#~ msgid "The natural number e"
+#~ msgstr "自然対数e"
+
+#~ msgid "The square root"
+#~ msgstr "平方根"
+
+#~ msgid "The exponential function"
+#~ msgstr "指数関数"
+
+#~ msgid "The natural logarithm function"
+#~ msgstr "自然対数関数"
+
+#~ msgid "Greatest common divisor"
+#~ msgstr "最大公約数"
+
+#~ msgid "Least common multiplier"
+#~ msgstr "最小公倍数"
+
+#~ msgid "Check a number for being a perfect square"
+#~ msgstr "数字が完全自乗になるかチェック"
+
+#~ msgid "Return the larger of two arguments"
+#~ msgstr "2つの引数のうち大きいものを返す"
+
+#~ msgid "Return the smaller of two arguments"
+#~ msgstr "2つの引数のうち小さいものを返す"
+
+#~ msgid "Return the n'th prime (up to a limit)"
+#~ msgstr "n番目の素数を返す(限界まで)"
+
+#~ msgid "Round a number"
+#~ msgstr "数字を丸める"
+
+#~ msgid "Get the highest integer less then or equal to n"
+#~ msgstr "nより小さいかnと等しい最大整数を求める"
+
+#~ msgid "Get the lowest integer more then or equal to n"
+#~ msgstr "nより大きいかnと等しい最大整数を求める"
+
+#~ msgid "Truncate a number to an integer"
+#~ msgstr "数字を切り捨てて整数にする"
+
+#~ msgid "Make number a float"
+#~ msgstr "数字を浮動小数点値にする"
+
+#~ msgid "Get the numerator of a rational"
+#~ msgstr "有理数の分子を求める"
+
+#~ msgid "Get the denominator of a rational"
+#~ msgstr "有理数の分母を求める"
+
+#~ msgid "Get the real part of a complex number"
+#~ msgstr "複素数の実部を求める"
+
+#~ msgid "Get the imaginary part of a complex number"
+#~ msgstr "複素数の虚部を求める"
+
+#~ msgid "Make an identity matrix of a given size"
+#~ msgstr "与えられたサイズの恒等行列を求める"
+
+#~ msgid "Get the rows of a column"
+#~ msgstr "列の行を求める"
+
+#~ msgid "Get the columns of a column"
+#~ msgstr "列の列を求める"
+
+#~ msgid "Make new matrix of given size from old one"
+#~ msgstr "古い行列から与えられたサイズの新しい行列を求める"
+
+#~ msgid "Get the determinant of a matrix"
+#~ msgstr "行列の行列式を求める"
+
+#~ msgid "Get the row echelon form of a matrix"
+#~ msgstr "行列の行階を求める"
+
+#~ msgid "Check if a matrix is a value only matrix"
+#~ msgstr "行列が値だけの行列かどうかをチェック"
+
+#~ msgid "Check if null"
+#~ msgstr "nullかどうかチェック"
+
+#~ msgid "Check if a number"
+#~ msgstr "数字かどうかをチェック"
+
+#~ msgid "Check if a string"
+#~ msgstr "文字かどうかをチェック"
+
+#~ msgid "Check if a matrix"
+#~ msgstr "行列かどうかをチェック"
+
+#~ msgid "Check if a function"
+#~ msgstr "関数かどうかをチェック"
+
+#~ msgid "Check if a function reference"
+#~ msgstr "関数参照かどうかをチェック"
+
+#~ msgid "Check if a number is complex"
+#~ msgstr "数が複素数かどうかをチェック"
+
+#~ msgid "Check if a number is real"
+#~ msgstr "数が実数かをチェック"
+
+#~ msgid "Check if a real number is an integer"
+#~ msgstr "実数が整数かどうかをチェック"
+
+#~ msgid "Check if a real number is rational"
+#~ msgstr "実数が有理数かどうかをチェック"
+
+#~ msgid "Check if a real number is a float"
+#~ msgstr "実数が浮動小数点値かどうかをチェック"
+
+#~ msgid "Display function list with small help"
+#~ msgstr "関数一覧を簡単なヘルプをつけて表示"
+
+#~ msgid "Set the help line for a function"
+#~ msgstr "ヘルプを関数に設定"
+
+#~ msgid "Protect a variable from being modified"
+#~ msgstr "値を修正されないようにプロテクト"
+
+#~ msgid "Unprotect a variable from being modified"
+#~ msgstr "値を修正されてもいいようにプロテクト解除"
+
+#~ msgid "Too many errors! (%d followed)\n"
+#~ msgstr "エラーが多すぎます! (%d 以下)\n"
+
+#~ msgid ""
+#~ "Genius %s usage:\n"
+#~ "\n"
+#~ "genius [options] [files]\n"
+#~ "\n"
+#~ "\t--precision=num   \tFloating point precision [256]\n"
+#~ "\t--maxdigits=num   \tMaximum digits to display (0=no limit) [0]\n"
+#~ "\t--[no]floatresult \tAll results as floats [OFF]\n"
+#~ "\t--[no]scinot      \tResults in scientific notation [OFF]\n"
+#~ "\t--[no]fullexp     \tAlways print full expressions [OFF]\n"
+#~ "\t--maxerrors=num   \tMaximum errors to display (0=no limit) [5]\n"
+#~ "\t--[no]mixed       \tPrint fractions in mixed format\n"
+#~ "\t--intoutbase=num  \tBase to use to print out integers [10]\n"
+#~ "\t--[no]readline    \tUse readline if it is available [ON]\n"
+#~ "\t--[no]compile     \tCompile everything and dump it to stdout [OFF]\n"
+#~ "\t--[no]quiet       \tBe quiet during non-interactive mode,\n"
+#~ "\t                  \t(always on when compiling) [OFF]\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Genius %s 使用方法:\n"
+#~ "\n"
+#~ "genius [オプション] [ファイル]\n"
+#~ "\n"
+#~ "\t--precision=num   \t浮動小数点数の精度 [256]\n"
+#~ "\t--maxdigits=num   \t表示する最大桁数 (0=無制限) [0]\n"
+#~ "\t--[no]floatresult \t結果は全て浮動小数点数にする [OFF]\n"
+#~ "\t--[no]scinot      \t結果を科学技術記法にする [OFF]\n"
+#~ "\t--[no]fullexp     \t常に完全な式を表示する [OFF]\n"
+#~ "\t--maxerrors=num   \t表示する最大エラー数 (0=no limit) [5]\n"
+#~ "\t--[no]mixed       \t混合形式で分数を表示\n"
+#~ "\t--intoutbase=num  \t表示に使用する整数の基数 [10]\n"
+#~ "\t--[no]readline    \t使用できれば readline を用いる [ON]\n"
+#~ "\t--[no]compile     \t全てコンパイルし標準出力にダンプする [OFF]\n"
+#~ "\t--[no]quiet       \t非対話モードの最中は静かにする, \n"
+#~ "\t                  \t(コンパイル中は常に ON) [OFF]\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "Genius %s\n"
+#~ "Copyright (c) 1997,1998,1999 Free Software Foundation, Inc.\n"
+#~ "This is free software with ABSOLUTELY NO WARRANTY.\n"
+#~ "For details type `warranty'.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Genius %s\n"
+#~ "Copyright (c) 1997,1998,1999 Free Software Foundation, Inc.\n"
+#~ "本ソフトウェアは完全に無保証です。\n"
+#~ "詳細は `warranty' をタイプして下さい。\n"
+#~ "\n"
+
+#~ msgid "Can't open file"
+#~ msgstr "ファイルを開けません"
+
+#~ msgid "GnomENIUS Calculator"
+#~ msgstr "GnomENIUS 計算機"
+
+#~ msgid "The Gnome calculator style edition of genius"
+#~ msgstr "Gnome 電卓スタイル版の genius"
+
+#~ msgid "GnomENIUS Calculator setup"
+#~ msgstr "GnomENIUS 計算機セットアップ"
+
+#~ msgid "Number/Expression output options"
+#~ msgstr "数値/式 出力オプション"
+
+#~ msgid "Maximum digits to output (0=unlimited)"
+#~ msgstr "出力の最大桁数 (0=無制限)"
+
+#~ msgid "Results as floats"
+#~ msgstr "結果の浮動小数点数表現"
+
+#~ msgid "Floats in scientific notation"
+#~ msgstr "浮動小数点数の科学技術記法"
+
+#~ msgid "Always print full expressions"
+#~ msgstr "常に完全な式を表示"
+
+#~ msgid "Error/Info output options"
+#~ msgstr "エラー/情報 出力オプション"
+
+#~ msgid "Display errors in a dialog"
+#~ msgstr "ダイアログにエラーを表示"
+
+#~ msgid "Display information messages in a dialog"
+#~ msgstr "ダイアログに情報メッセージを表示"
+
+#~ msgid "Maximum errors to display (0=unlimited)"
+#~ msgstr "表示する最大誤差 (0=無制限)"
+
+#~ msgid "Floating point precision"
+#~ msgstr "浮動小数点数精度"
+
+#~ msgid ""
+#~ "NOTE: The floating point precision might not take effect\n"
+#~ "for all numbers immediately, only new numbers calculated\n"
+#~ "and new variables will be affected."
+#~ msgstr ""
+#~ "注意: 浮動小数点数の精度はすぐに全ての値に影響するとは限らず、\n"
+#~ "今後計算された値や新しい変数のみが影響をうけます。"
+
+#~ msgid "Floating point precision (bits)"
+#~ msgstr "浮動小数点数の精度 (bits)"
+
+#~ msgid "Terminal options"
+#~ msgstr "端末オプション"
+
+#~ msgid "Font:"
+#~ msgstr "フォント:"
+
+#~ msgid "Can not open file!"
+#~ msgstr "ファイルを開けません!"
+
+#~ msgid "Load GEL file"
+#~ msgstr "GEL ファイルを読み込み"
+
+#~ msgid "Load and execute a file in genius"
+#~ msgstr "genius 中でファイルを読み込んで実行"
+
+#~ msgid "_Interrupt"
+#~ msgstr "割り込み(_I)"
+
+#~ msgid "Interrupt current calculation"
+#~ msgstr "現在の計算を中断"
+
+#~ msgid "_Plugins"
+#~ msgstr "プラグイン(_P)"
+
+#~ msgid "Interrupt"
+#~ msgstr "割り込み"
+
+#~ msgid ""
+#~ "Genius %s\n"
+#~ "Copyright (c) 1997-2000 Free Software Foundation, Inc.\n"
+#~ "This is free software with ABSOLUTELY NO WARRANTY.\n"
+#~ "For details type `warranty'.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Genius %s\n"
+#~ "Copyright (c) 1997-2000 Free Software Foundation, Inc.\n"
+#~ "本プログラムはフリーソフトウェアであり、いかなる保証も行いません。\n"
+#~ "詳細は `warranty' とタイプしてください。\n"
+#~ "\n"
+
+#~ msgid "Determinant of a non-square matrix is undefined"
+#~ msgstr "非正方行列の行列式が未定義です"
+
+#~ msgid "Number too large to compute exponential!"
+#~ msgstr "指数の計算には大きすぎる数です!"
+
+#~ msgid "Can't do modulo of floats or rationals!"
+#~ msgstr "浮動小数点数または有理数の剰余を取れません!"
+
+#~ msgid "Can't do GCD of floats or rationals!"
+#~ msgstr "浮動小数点数または有理数の最大公約数を得られません!"
+
+#~ msgid "Can't get jacobi symbols of floats or rationals!"
+#~ msgstr "浮動小数点数または有理数のヤコビ表現は得られません!"
+
+#~ msgid "Can't get legendre symbols of floats or rationals!"
+#~ msgstr "浮動小数点数または有理数のルジャンドル表現は得られません!"
+
+#~ msgid "perfect_square: can't work on non-integers!"
+#~ msgstr "perfect_square: 非整数では機能しません!"
+
+#~ msgid "Can't do factorials of rationals or floats!"
+#~ msgstr "有理数または浮動小数点数の階乗は取れません!"
+
+#~ msgid "Number too large to compute factorial!"
+#~ msgstr "階乗を計算するには数値が大きすぎます!"
+
+#~ msgid "Can't do factorials of negative numbers!"
+#~ msgstr "負の数値の階乗は計算できません!"
+
+#~ msgid "0^0 is undefined"
+#~ msgstr "0^0 は未定義です"
+
+#~ msgid "Can't get numerator of floating types"
+#~ msgstr "浮動小数点数型の分子は得られません"
+
+#~ msgid "Can't compare complex numbers"
+#~ msgstr "複素数の比較ができません"
+
+#~ msgid "Division by zero!"
+#~ msgstr "零で除算しました!"
+
+#~ msgid "Can't modulo complex numbers"
+#~ msgstr "複素数の剰余は得られません"
+
+#~ msgid "Can't GCD complex numbers"
+#~ msgstr "複素数の最大公約数は得られません"
+
+#~ msgid "Can't get jacobi symbols of complex numbers"
+#~ msgstr "複素数のヤコビ表現は得られません"
+
+#~ msgid "Can't get legendre symbols complex numbers"
+#~ msgstr "複素数のルジャンドル表現は得られません"
+
+#~ msgid "perfect_square: can't work on complex numbers"
+#~ msgstr "perfect_square: 複素数に対しては機能しません"
+
+#~ msgid "ln: can't take logarithm of 0"
+#~ msgstr "ln: 0 の対数を取ることはできません"
+
+#~ msgid "Can't make factorials of complex numbers"
+#~ msgstr "複素数の階乗は計算できません"
+
+#~ msgid "Can't determine type of a complex number"
+#~ msgstr "複素数の型を特定できません"
+
+#~ msgid "Can't convert complex number into integer"
+#~ msgstr "複素数を整数に変換できません"
+
+#~ msgid "Can't convert real number to integer"
+#~ msgstr "実数を整数に変換できません"
+
+#~ msgid "Integer too large for this operation"
+#~ msgstr "この演算には整数が大きすぎます"
+
+#~ msgid "Can't open plugin!"
+#~ msgstr "プラグインを開けません!"
+
+#~ msgid "Can't initialize plugin!"
+#~ msgstr "プラグインを初期化できません!"
+
+#~ msgid "Stack underflow!"
+#~ msgstr "スタックアンダーフロー!"

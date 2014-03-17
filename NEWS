@@ -1,0 +1,576 @@
+Changes in 1.1.0, 27/07/2005
+
+* Free point on a curve can be animated automatically at 4 different
+speeds. To use it, just use the Animation top bar menu and then select
+a free point on the figure.
+
+* Shortcuts fixes.
+
+* Adrian Ulises Soto did cleaning in the TeXmacs plugin. It also now
+possible to write DrGeo Scheme figure, then ask to DrGeo to evaluate
+it. At least the TeXmacs plug-in starts to be useful.
+
+* From TeXmacs it is now possible to use the DrGeo menu to insert
+DrGeo scheme commands in the session. It is really sweet. Thanks to
+Adrian Ulises Soto which implement this feature.
+
+* New and updated locales: Basque, Canadian English, Catalan, Czech,
+French, German, Hungarian, Kinyarwanda, Nepali, Norwegian, Spanish.
+
+* New scheme figure examples from Mohamed Choubane and Adrian Soto
+Ulises. It is the Koch shape, beware it is intensively recursive and a
+tiling example. Visit the folder /usr/share/drgeo/examples/scheme.
+
+
+Changes in 1.0.0,  1/1/2005
+
+* At least version I of Dr.Geo is there!
+
+* Updated Albanian, British, Chinese (simplified), Dutch, French,
+Hungarian, Indians, Norwegian, Portuguese (Brazil) and Spanish
+translations.
+
+* Bugs hunting in locus, macro-construction and undo/redo tools.
+
+Changes in 0.9.14, 31/08/2004
+
+* Macro-constructions can now handle free point on the plane, free
+point on cruve and free value as intermediate elements of a
+macro-construction. The coordinates and the values of these objects
+are the same to the ones used during the building process of the
+macro-construction.
+
+This possibility to now use non-dependant intermediate object opens
+intersting perspective in the use of macro-construction. For example the
+creation of regular polygon. (heu! This is just a stupid example but I am
+sure, dear reader, you will do much more fancy things). See the examples
+file polygon-7.fgeo and polygon-7.mgeo and the updated documentation.
+
+* Locus are now allowed to be used with macro.
+
+* Update the locus icon.
+
+* Add a Windows menu in the top menu bar. This menu list the open
+view.
+
+* Add a dialog less mode to play macro-construction: the macro-construction
+can now be executed directly from the top bar Macro-construction menu. The
+names of the macro are listed in this menu, as well the macro-construction
+descriptions as menu items tooltips. Very helpfull and user friendly
+feature.
+
+* Updated translations. In particular, a complet Classic Chinese translation
+from Taiwan (Prof. Hung Chao-Kuei)
+
+
+Changes in 0.9.13, 7/6/2004
+
+* Implement a vertical short cut toolbar with a set of preselected
+tools. In the main horizontal toolbar, add several buttons to rename,
+set/unset the grid, adjust the preferences and access the help.
+
+* Fix a bug in the customise user interface feature: masking the
+delete, aspect and property functions was a bit problematic.
+
+* Initial print support: the user can select a printer then
+the exporting area is sent to the printer as an EPS document.
+
+* Fix a nasty bug related to object name and the style dialog. When an
+object had no name and its style dialog was opened, the object got an
+incorrect name pointer (well it was not that simple because it was
+mangled in the undo/redo engine), then when the user wanted to delete
+it, DrGeo was just crashing!
+
+* Updated translation in various languages.
+
+* Some more examples.
+
+Changes in 0.9.12, 26/1/2004
+
+* Fix a bug related to some internal stuff which makes DrGeo to crash
+(for the curious, it is about hidden macro-construction nodes which
+after the deletion of some objects become crap ware and need to be
+clean up, I hope the clean up is now more efficient)
+
+* 2 new examples from student Hung Chao-Kue, wheel.fgeo is about
+block, and light6.fgeo is about microscope.
+
+* Fix a bug related to angle in the PostScript exporter.
+
+* Pre-version of a flydraw exporter written by Odile Benassy. Flydraw
+is a format used by Wims for interactive image.
+
+* Updated translations in Albanian, Catalan, Czech, Dutch, French,
+Italian, Portuguese, Serbian, Spanish.
+
+Changes in 0.9.11
+
+* Fix the path to the default help file.
+
+* Clean up in the drawable class. It should be easier to write
+additional figure exporter.
+
+* Clean up in the drawable class. It should be easier to write
+additional figure exporter.
+
+* Fix a bad behavior with scale and arc or circle.
+
+* When exporting to PostScript the Latin accent are correctly exported
+aswell
+
+* Fix a nasty bugs wich lead Dr.Geo to crash when the user ask for the
+distance between a point and a circle.
+
+* Replace the Scheme make-* function names by safer named drgeoMake-*
+function names.
+
+* Small enhancement in the i18n mark-up.
+
+* Update translations: Czech, Serbian, Spanish, Swedish.
+
+Changes in 0.9.10
+
+* New updated French, Italian, Spanish user manual.
+
+* New spanish synonyms to create Dr. Geo Scheme Figure with spanish
+words.
+
+* Fix in the macro system. A bug has appeared with the improvement in
+release 0.9.8. The cascading effect was that Dr. Geo hung when saving
+oldest style macro. It did not show up with freshly created macro.
+
+* Implement a simple and dirty intersection tool between line and
+locus, beware it may not work as you expect. I will eventually
+consider extending it if there are enought demand.
+
+* Small patch from Sebastian Kapfer to fix an infinit loop when
+parsing line command parameters.
+
+* Implement two new methods getUnit and getNormal in the script
+API. These are used to fetch a unit and a normal vector to a
+direction. Vectors' norm are equal to 1.
+
+* When exporting to PostScript adjust the scale so that 1 unit = 1 cm.
+
+* Remove a bug which appear when a user edit a free value.
+
+* When an object is created from a DSF, the description in the side
+bar is not updated. This really speed up the DSF evaluation.
+
+* Interesting contributed example files from Rhydwen Volsik and
+Sebastian Kapfer. See in /usr/share/drgeo/examples/[figures,scheme]
+
+* More examples from Chao-Kuei Hung, these examples show some smart
+use of DrGeo for Physcis Teachers.
+
+* New and updated translations: Czech, Danish, Dutch, French, German,
+Italian, Norvegian, Polish, Serbian, Swedish.
+
+* Rhydwen Volsik contributed an interesting figure with a lot of loci
+and scripts, this figure gave me the opportunity to optimise a bit the
+locus sampling.
+
+* Continue extending the DSF API. The following Scheme functions were
+defined:
+
+ * make-circleLength
+ * make-lineSlope
+ * make-arcLength
+ * make-orientedAngle
+
+Changes in 0.9.9
+
+* Impement a quick and cool PNG exporter. It works as the PostScript
+and LaTeX exporters. It required the Image Magick package.
+
+* Continue extending the DSF API. The following Scheme functions were
+defined:
+
+ . make-arc
+ . make-freeValue
+ . make-pointOnCurve
+ . make-middle2Points
+ . make-translation
+ . make-rotation
+ . make-translation
+ . make-scale
+ . make-symmetry
+ . make-reflexion
+ . make-orthogonal
+ . make-parallel
+ . make-locus
+ . make-circleSegment
+ . make-circleRadius
+ . make-intersection
+ . make-distancePointCircle
+ . make-vectorNorm
+ . make-segmentLength
+ . make-polygon
+ . make-geometricAngle
+ . make-distancePointLine
+ . make-distancePointPoint
+
+These functions are used through higher level prototypes as explained
+at the 0.9.8 release change log bellow.
+
+* Extend the user manual in French to cover the Dr. Geo Scheme Figure
+feature. The manual is distributed separately. The latest version can
+always be fetched from OFSET CVS at SourceForge.
+
+* Updated Azerbaijani, Chinese (Simplified), Chinese (Traditional),
+Czech, Dutch, French, German, Gujarti, Italian, Polish, Portuguese,
+Serbian, Spanish, Swedish translations.
+
+* Enhancement in the macro system. Script can now be integrated into
+macro (Feature request from Marcel Birthelmer).
+
+
+Changes in 0.9.8 
+
+As usual Dr. Geo brings innovation ;-)
+
+With this release we are proud to introduce our Dr. Geo Scheme Figure
+(DSF) feature. In the following release, we will concentrate in
+enhancing, stabilising and documenting it. Eventually advices from the
+Scheme community will be seek.
+
+Here follow some description about the DSF.
+
+* Set up the Dr. Geo Scheme Figure (DSF) interface to let the user
+defines figure as Scheme code. From the interface point of view, we
+have added the File->Evaluate menu command which let the user loads and
+evaluates a DSF. The cool things about DSF are:
+
+ - Figure are mostly written in a rather natural language, this is the
+easy part
+
+ - But the coooolest aspect is that DSF is just Scheme code, which
+mean you can define a figure recursively or you can abstract even
+higher the way you construct your figure. Let's say defining a triangle
+model over the DSF API then using it into your figure definition.
+
+Also a multi-lingual interface will be supported. We have already set
+up the specific system to let user define figure in their native
+language.
+
+Here are some examples:
+
+1. An empty figure
+
+(new-figure "MyFigure")
+
+
+2.  A figure with some free points defined by coordinates
+(new-figure "Figure")
+(lets Point "A" free 1 2)
+(lets Point "B" free 5 4)
+
+3. A figure with higher level definition
+
+(define  (triangle p1 p2 p3)
+  (Segment "" extremity p1 p2)
+  (Segment "" extremity p2 p3)
+  (Segment "" extremity p1 p3))
+
+(new-figure "My triangle")
+
+(lets Point "A" free 0 0)
+(lets Point "B" free 5 0)
+(lets Point "C" free 0 5)
+(triangle A B C)
+
+
+Scheme is a very high level language, perfect to manipulate abstract
+knowledge.  We have made a wise choice using it with Dr.Geo, the DSF
+shows again how cool is Scheme with geometry concept. Stay tuned with
+coming cool development.
+
+Other changes in this version are:
+
+* Enhancement in the localisation.
+
+* Fix a misbehaviour in the tab system.
+
+* Updated Indian, German, French and Swedish translations.
+
+Changes in 0.9.7
+
+* Add the getAngle function in the DGS API. This method expects one
+parameter, a reference to an angle object, it returns one measure in
+DEGREE. To get a measure in RADIAN, use the getValue function.
+
+* First implementation to turn Dr. Geo as a TeXmacs plug-in. It is
+experimental and still very buggy. However when installing Dr.Geo, the
+ plugin for TeXmacs is installed. From TeXmacs the plug-in can be
+found in Text->Session->Dr. Geo
+
+* Implement a minimal unit grid. It can be display per figure, also it
+is saved a long the figure.
+
+* Implement an automatic upgrade system for the user preferences
+file. The system is mostly entirely implemented in Scheme. This will
+avoid problem seen when upgrading Dr. Geo from one version to a
+subsequent one.
+
+* Updated translations of the user interface in Czech, Dutch, French,
+German, Italian, Marathi, Polish, Portuguese, Spanish and Swedish.
+
+Changes in 0.9.6
+
+* Implement the Printing Area Tool: it is used to instruct DrGeo which
+area should be used when exporting to EPS and LaTeX. When defined the
+Printing Area is saved a long with the geometric figure. This feature
+is required to make a TeXmacs plug-in (to come in a next release).
+
+* In numeric::update(), cache the numericPrecision value instead of
+fetching it from the configuration file, this speed up the rendering.
+
+* Vertical and horizontal adjustment are correctly set when loading a
+figure.
+
+Changes in 0.9.5
+
+* When creating several free values, Dr. Geo was crashing
+
+* The user can now select the number of digit printed for the value
+objects. User should remove the ~/.drgeo file, otherwise Dr.Geo will
+crash.
+
+* The zoom level and the figure position are now saved.
+
+Changes in 0.8.4
+
+* The official extension for figure and session documents is .fgeo.
+For session file containing only macro-construction. We use .mgeo
+
+* When loading a file the path is recorded so at the next load operation
+ the file dialog point at the same location
+
+* New complete transaltion in Italian and Dutch of the DrGenius interface.
+The user manual should follow.
+
+Changes in 0.8.3
+
+* The English documentation has been review by David Bucknell. This
+version of the DrGenius manual should be in good English :) However, I
+have decided to not maintain it anymore. Therefore, we are looking for
+ a new volunteer with good English writing to take over it.
+
+* The French documentation is now the source documentation, where new
+stuff are written first. The documentation improvements are in the
+"DGS par l'exemple", "Méthode de référence pour DGS", "Masquer des
+outils dans l'interface", "Ouvrir un fichier"
+
+* The API has been widely extended and documented (in the French
+manual for now).
+
+* Locus rendering improvement. The locus is cuted when two consecutive
+points are too far away from each other.
+
+* Bug fixes: creating a circle equation does not make Dr.Genius to
+crash any more.
+
+* Free value and script edition are now undoable.
+
+* We record into a static variable sessionPathName a full filename to
+the last saved session. (request from JPG)
+
+Changes in 0.8.2
+
+* Improve the locus sampling. Some internal change was needed, which
+may eventually cause strange behavior from DrGenius, if you note such
+things, thanks to report it.
+
+* Flickering issue with tip fixed. The tips appearing over item of a
+figure do not make the figure to flicker anymore.
+
+* Tips rendering has been improved.
+
+* In select mode, when the user presses the mouse button with the
+cursor over the bacrground or when she finished dragging an item, the
+item becomes unselected.
+
+* When a value owns a name we display it on the figure as "name =
+value" (Request from Michel Brissaud).
+
+Changes in 0.8.0/0.8.1
+
+* Fix a cast problem which make impossible to compile DrGenius with
+recent version of GCC.
+
+* Remove a bug which make impossible to select the Preferences menu
+entry.
+
+* Internal changes to the specific view toolbar. Now each view has its
+own toolbar instance instead of a shared one. This allow toolbar
+customization for each view.
+
+* New dialog to customize the toolbar of a geometric view. The custome
+toolbar is locked with a password which allow a teacher to block the
+access to some tools.
+
+* Various update in the french and english documentations.
+
+* For now macro-construction are not handled by the undo/redo mecanism:
+we have to empty the queue to avoid crash problem
+
+Changes in 0.7.1
+
+* Patch from Christophe Merlet to compile DrGenius with gcc 3.2.1
+
+* Improve the UI: a pop up toolbar is not closed anymore when the
+mouse cursor leaves it. Instead the user need to clic somewhere to
+close it.
+
+* Remove a bugs which made DrGenius to hang when the user closed a
+view or the application.
+
+Changes in 0.7.0
+
+* Straight line name are printed in the drawing area.
+
+* When exporting to EPS, print first the polygon(s) then the other
+item(s) of the figure.
+
+* French translation of the DrGenius User Manual, which is also the
+online help -- Thanks to Jean-Philippe Georget.
+
+* Fix the problem with Dr.Genius saying error when saving a file
+althought the file was correctly saved.
+
+* When the user close the style dialog, the name object is updated
+with the name provided in the dialog.
+
+* The whole figure can be moved while pressing CONTROL and the mouse
+button 1.
+
+* Polygon are now displayed correctly in PostScript file. Thanks to
+Jean-Philippe Georget for the bug report.
+
+* Removed the empty menu entries cut, copy and paste. These ones will
+probably never be implemented.
+
+* Fixed bug in the postscript exporter: arc circle method used to
+print geometric angle.
+
+
+Changes in 0.6.2
+
+* The position in the figure area of the angle of type ANGLE_2VEC was
+not saved, remove this bug.
+
+* Implement rotation, symmetry, relfexion, translation and scale for
+polygon object. It should be handy to teach/demonstrate these
+tranformations.
+
+* Complete theb DrGeo API: (getCoordinates a1) return in a list the
+coordinates of a point or vector.
+
+* Translation of the documentation in spanish by Adrian Ulises
+Soto. Update the documentation organization to centralise common
+documentation layout in the Doc/drgeniusCommon.tex file. The localised
+documentation go in their respective folder (i.e. spanish localisation
+goes in the Doc/es folder)
+
+* Remove the gtk_layout widget from the drawing area, there is a problem
+when resizing the figure area. I will look at that issue latter so
+user can plug GTK+ widget in the figure area.
+
+* Several scripts with the same input items parameters can be created,
+it was a limitation in previous DrGenius version.
+
+* Script can be created without any input parameter. The user just has
+to click on the background of the figure to create such a script.
+
+* Remove a bug with tooltips (i.e. tools tips foreground color becoming
+grey instead of black)
+
+Changes in 0.6.1
+
+* New text view. Therefore, text view can included in DrGenius
+session. This text view may be remplaced with the GtkMathMl widget.
+
+* Add an affordance to the top level button of the DrGeo toolbar (a
+small green triangle indicating there is more under the top level
+button).
+
+* Add the toolbar button to change an object property.
+
+* Move the button to select an object to the top level toolbar so it
+is more convenient.
+
+* Remove several Bugs.
+
+* Connect the help button of the various Dr. Genius dialog to the help
+file.
+
+* Improve the documentation.
+
+* New icons for the Dr. Genius Guile Script (Include provision for the
+DGS widget)
+
+Changes in 0.6.0
+
+* Implement Guile scriptability. Script item can be added in the
+figure. The 0.6.X releases will focus on the developpement of a
+suitable API for guile and the developpement of a documentation.
+The examples/figures folder contains a figure example, script1.xml
+To know the actual API, check drgeo_scm_interface.[cc/h] source code. 
+
+Changes in 0.5.15
+
+* Implement a description feature for each open figure in
+ a tree. A description tree is attached in a vertical panel 
+at the right of a figure.
+
+Changes in 0.5.14
+
+* New polygon object. This include defining default color setup, style
+setup. Also implemented for the Postscript & LaTeX drawable.
+
+Changes in 0.5.13
+
+* Fix bugs that prevent the localisation to work correctly.
+
+* Bug fixes in the tips behavior.
+
+* Fix problem with GOB >= 1.0.10.
+
+Changes in 0.5.12
+
+* Various bugs fix: black screen bug, flickering mouse/tops bugs,
+parallel line bug.
+
+* New user preference dialog: the user can adjust the default file
+names, undo/redo level, geometric object style. All the preferences
+are saved.
+
+* Redesigned style dialog. The new dialogs are more
+intuitive. Different dialogs are used according to the geometric
+object.
+
+* New preference dialogs. These dialogs are used to adjust specific
+data of geometric object. (ie the coordinate of a free point and the
+value of a free value object).
+
+* Due to change in GNU Gettext, the message system in DrGenius is
+partially broken, I hope to fix it soon.
+
+Changes in 0.5.11
+
+* The Genius calculator has been removed, the autoconf/automake files
+cleaned.
+
+* Figure can be renamed, the function is in the Edit menu.
+
+Changes in 0.5.10
+
+* Multi level UNDO/REDO feature for geometric figures.
+
+Changes to 0.5.5 from 0.5.6
+
+* Geometric engine rewriten from scratch. It is very tiny now, more
+  easy to maintain and extend. The save format of the geometric figure
+  and macro-construction has changed. Look drgeo/DevelopersFAQ to know
+  more.
+

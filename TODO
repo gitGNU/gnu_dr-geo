@@ -1,0 +1,117 @@
+QUICK TODO LIST
+===============
+
+. Documentation:
+
+	- Dans la section Guile Script ajouter un exemple décrivant
+plus simplement la fonctionnalité
+	- Ajouter une bibliographie sur Scheme
+
+
+TASK LIST 
+=========
+
+(no priority order)
+-------------------
+
+. Ajouter un menu dans la barre de menu de la liste des fenêtres
+
+. Ajouter un menu dans la barre de menu de la liste des macros
+
+. Design a exporter to OpenOffice.org Draw, should be easy for any one
+knowing the OpenOffice.org Draw format.
+
+. Port to Windows32 and MacOSX. This should be quite easy as Dr.Geo
+only depends on GTK+2, LibGlade2, LibXml2 and LibGuile. Any help to do
+that would be appreciated.
+
+. Move all the icones under the 'others' menu icon in the
+toolbar. Then remove the 'others' icon from the toolbar
+
+. Make Dr.Genius TeXmacs aware so that DrGenius can send directly to
+TeXmacs an .eps output of an opened figure.
+
+. Display the name of the circle and line object along the object in
+the figure area.
+-in progresse, done for line-
+
+. Write a documentation.
+-in progress-
+
+. Implement a virtual getDescription method for the geometricObject
+class, cleaner way!!!
+
+. Add a script feature of the figure. The script is a human readable
+description of a figure construction.
+-done-
+
+. Add a polygon feature, with filled option. The polygon will not be
+an object as the other, it can be used to emphasis region on a figure.
+-done-
+
+. Make the UNDO/REDO mechanism to work with the macro-construction.
+
+. Make the macro-construction be nice with the descriptive view of a
+figure: plot the imput element and the resulting element.
+
+. Fix the annoying that says can't save figure even when the figure is
+saved.
+-done-
+
+. Implemeting Guile scriptability for menus, buttons and geometric
+figure. Typically guile script will be embedded in the xml file format
+so new menus and new buttons could be defined for a specific
+figure. Button with guile callback will be placed in a dedicated place
+holder. Default icons buttons may also be hidden using guile commands.
+
+. Improve locus sampling
+-In progress-
+
+. Defining a DrGeo API to be used for guile scriptability.
+-Done-
+
+. Implementing a guile based console, so user can play interactively
+from the console with a geometric figure.
+
+. Implement a geometry property checker. Can be based on Guile or even
+on CLIPS a 1st generation expert system
+(http://www.ghg.net/clips/CLIPS.html).
+
+. CORBA use for distance control over a figure: tutoring with
+Dr. Genius. A tutor and a learner can interact on the same figure but
+from different geographic location.
+
+. Redesign the icon of the locus button.
+
+. Design a new icon for the property function, now only available from
+the popup menu.
+-done-
+
+. Add a script feature of the figure. The script is a human readable
+description of a figure construction.
+ -done-
+
+. Add a polygon feature, with filled option. The polygon will not be
+an object as the other, it can be used to emphasis region on a figure.
+ -done-
+
+. Fix the flicker mouse annoyance when the mouse move around the
+figure without dragging anything 
+ -done-
+
+. Macro creation and playing.
+ -done-
+
+. Style mode for the basic object
+ -done-
+
+. Fixe buggy line & half-line methods
+ -done-
+
+. Zoom function
+ -done-
+
+. Undo/redo
+ -done-
+
+

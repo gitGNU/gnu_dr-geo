@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<drgenius>
+  <drgeo name="circle-locus.xml">
+    <point id="818AFD8" type="Free" color="Red" thickness="Dashed" style="Cross" filled="False" masked="False" name="O">
+      <x>2.783333</x>
+      <y>7.600000</y>
+    </point>
+    <point id="818B0B0" type="Free" color="Red" thickness="Dashed" style="Cross" filled="False" masked="False" name="A">
+      <x>3.783333</x>
+      <y>7.400000</y>
+    </point>
+    <circle id="818B170" type="2pts" color="Black" thickness="Normal" style="Cross" filled="False" masked="False" name="C">
+      <parent ref="818AFD8"/>
+      <parent ref="818B0B0"/>
+    </circle>
+    <point id="818B280" type="On_curve" color="Red" thickness="Dashed" style="Cross" filled="False" masked="False" name="B">
+      <value>0.247467</value>
+      <parent ref="818B170"/>
+    </point>
+    <angle id="818B340" type="3pts" color="Black" thickness="Normal" style="Cross" filled="False" masked="False" name="AOB">
+      <parent ref="818B0B0"/>
+      <parent ref="818AFD8"/>
+      <parent ref="818B280"/>
+    </angle>
+    <point id="818B480" type="Free" color="Red" thickness="Dashed" style="Cross" filled="False" masked="False" name="D1">
+      <x>-5.316667</x>
+      <y>6.000000</y>
+    </point>
+    <point id="818B540" type="Free" color="Red" thickness="Dashed" style="Cross" filled="False" masked="False" name="D2">
+      <x>1.483333</x>
+      <y>4.600000</y>
+    </point>
+    <line id="818B600" type="2pts" color="Black" thickness="Normal" style="Cross" filled="False" masked="False" name="(D1D2)">
+      <parent ref="818B480"/>
+      <parent ref="818B540"/>
+    </line>
+    <line id="818B720" type="Rotation" color="Black" thickness="Normal" style="Cross" filled="False" masked="False" name="">
+      <parent ref="818B600"/>
+      <parent ref="818B480"/>
+      <parent ref="818B340"/>
+    </line>
+    <line id="818B7D8" type="perpendicular" color="Black" thickness="Normal" style="Cross" filled="False" masked="False" name="">
+      <parent ref="818B540"/>
+      <parent ref="818B720"/>
+    </line>
+    <point id="818B890" type="Intersection" color="Red" thickness="Dashed" style="Cross" filled="False" masked="False" name="I" extra="135829075">
+      <parent ref="818B7D8"/>
+      <parent ref="818B720"/>
+    </point>
+    <locus id="818B950" type="None" color="Red" thickness="Normal" style="Cross" filled="False" masked="False" name="">
+      <parent ref="818B280"/>
+      <parent ref="818B890"/>
+    </locus>
+  </drgeo>
+</drgenius>

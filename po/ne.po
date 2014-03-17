@@ -1,0 +1,2222 @@
+# translation of drgeo.HEAD.po to Nepali
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# Pawan Chitrakar <pawan@mpp.org.np>, 2005.
+# Kapil Timilsina <lipak21@gmail.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: drgeo.HEAD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-07-26 23:59+0200\n"
+"PO-Revision-Date: 2005-06-10 03:21-0400\n"
+"Last-Translator: Kapil Timilsina <lipak21@gmail.com>\n"
+"Language-Team: Nepali <info@mpp.org.np>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9.1\n"
+"Plural-Forms: nplural=2;plural=(n!=1)\n"
+
+#: drgenius_main.cc:56
+#, c-format
+msgid ""
+"Command line options:\n"
+"Term under [] are options, || means OR:\n"
+"   drgeo [--file geo_file_name || macro_file_name] [geo_file_name.fgeo] "
+"[macro_file_name.mgeo] [--evaluate dsf_file_name] [--texmacs] [--help]\n"
+"\n"
+"--file       : to load a Dr. Geo file\n"
+"--evaluate   : to load and evaluate a Dr. Geo Scheme Figure (DSF)\n"
+"--texmacs    : start Dr. Geo as a TeXmacs plug-in\n"
+"--help       : this help summary\n"
+"\n"
+"Several files can be loaded using a --file command for each\n"
+"\n"
+msgstr ""
+"आदेश पङ्त्ति बिकल्प:\n"
+"टर्म भित्र [] बिकल्पहरु, || मतलब अथवा:\n"
+"   ड्रेगो [--फाइल गियो_फाइल_नाम || म्याक्रो_फाइल_नाम] [गियो_फाइल_नाम.एफगियो] "
+"[म्याक्रो_फाइल_नाम.एमगियो] [--मूल्याङ्कन गर्नुहोस् डिएसएफ_फाइल_नाम] [--टेक्सम्याक्स] [--"
+"मद्दत]\n"
+"\n"
+"--फाइल       : ड्र. गियो फाइल लोड गर्नको लागि\n"
+"--मूल्याङ्कन गर्नुहोस्   :ड्र. गियो स्किमा फाइल मूल्याङ्कन र लोड गर्न(डिएसएफ)\n"
+"--टेक्सम्याक्स    : टेक्सम्याक्स प्लग-इन सरह ड्र. गियो फाइल शुरु गर्नुहोस्\n"
+"--मद्दत       : यसले सारांशलाई मद्दत गर्दछ\n"
+"\n"
+"सर्भर फाइल लोड गर्न सकिन्छ --प्रत्येकको लागि फाइल आदेश प्रयोग गरेर\n"
+"\n"
+
+#: drgenius_main.cc:160
+#, c-format
+msgid ""
+"\n"
+"Miss a filename in --file\n"
+"\n"
+msgstr ""
+"\n"
+"फाइलमा फाइलनाम छोडिदिनुहोस्\n"
+"\n"
+
+#: drgenius_main.cc:172
+#, c-format
+msgid ""
+"\n"
+"Miss a filename to evaluate in --evaluate\n"
+"\n"
+msgstr ""
+"\n"
+"मूल्याङ्कन--मा मूल्याङ्कन गर्न फाइल छोड्नुहोस्\n"
+"\n"
+
+#: drgenius_main.cc:196
+#, c-format
+msgid "Unknown file type: %s (try .fgeo, .mgeo)\n"
+msgstr "अज्ञात फाइल प्रकार: %s (एफगियो, .एमगियो प्रयास गर्नुहोस्)\n"
+
+#: drgenius_main.cc:200
+#, c-format
+msgid ""
+"\n"
+"Unknows command: %s\n"
+msgstr ""
+"\n"
+"अज्ञात आदेश: %s\n"
+
+#: drgenius_mdi.cc:99
+msgid "Welcome to GNU Dr. Geo - Free Interactive geometry by OFSET"
+msgstr "जिएनयु ड्र. गियोमा स्वागत छ - निशुल्ल अन्तरक्रियाशिल ज्यामिति अफसेट द्वारा"
+
+#: drgenius_mdi.cc:149
+#, c-format
+msgid "Error loading file '%s'"
+msgstr "फाइल लोड गर्दा गल्ती '%s'"
+
+#: drgenius_mdi.cc:592
+msgid "Are you sure to quit Dr. Geo?"
+msgstr "के तपाई ड्र. गियोबाट बाहिर निस्कन चाहनुहुन्छ?"
+
+#: drgenius_mdi.cc:643 drgenius_mdi.cc:703
+#, c-format
+msgid "Can't open file '%s'"
+msgstr "फाइल खोल्न सकिँदैन '%s'"
+
+#: drgenius_mdi.cc:668
+msgid "Open..."
+msgstr "खोल्नुहोस्..."
+
+#: drgenius_mdi.cc:727
+msgid "Evaluate..."
+msgstr "मूल्याङ्कन गर्नुहोस्..."
+
+#: drgenius_mdi.cc:767 drgenius_mdi.cc:797
+#, c-format
+msgid "Error saving to '%s'!"
+msgstr "'%s'! मा गल्ती बचत"
+
+#: drgenius_mdi.cc:829 drgenius_mdi.cc:859 drgenius_mdi.cc:890
+#: drgenius_mdi.cc:925
+#, c-format
+msgid "Error exporting to '%s'!"
+msgstr "'%s'! मा गल्ती निर्यात हुँदैछ"
+
+#: drgenius_mdi.cc:943
+#, c-format
+msgid ""
+"Error exporting to '%s'!\n"
+"Exporting to PNG required the Image Magick package.\n"
+"Install it and try again!"
+msgstr ""
+"'%s'! मा गल्ती निर्यात हुँदैछ\n"
+"पिएनजि चित्र म्याजिक प्याकेज चाहिएर निर्यात हुँदैछ.\n"
+"स्थापना गरेर फेरि प्रयास गर्नुहोला!"
+
+#: drgenius_mdi.cc:972
+msgid "Define the printing area"
+msgstr "प्रिन्ट गर्ने क्षेत्रलाई परिभाषित गर्नुहोस्"
+
+#: drgenius_mdi.cc:1003 drgenius_mdi.cc:1087 drgenius_mdi.cc:1112
+#: drgenius_mdi.cc:1138 drgenius_mdi.cc:1165 drgenius_mdi.cc:1192
+#, c-format
+msgid ""
+"File '%s' exists!\n"
+"Overwrite?"
+msgstr ""
+"फाइल '%s' हट्यो!\n"
+"अधिलेखन?"
+
+#: drgenius_mdi.cc:1027
+msgid "Save As..."
+msgstr "यस रुपमा बचत गर्नुहोस्"
+
+#: drgenius_mdi.cc:1215 drgenius_mdi.cc:1865
+msgid "Interactive 2D Figure"
+msgstr "अन्तरक्रियाशिल २डि आकृति"
+
+#: drgenius_mdi.cc:1216
+msgid "Console"
+msgstr "कनसोल"
+
+#: drgenius_mdi.cc:1217 drgenius_mdi.cc:1866
+msgid "Text Buffer"
+msgstr "पाठ बफर"
+
+#: drgenius_mdi.cc:1241
+msgid "Type"
+msgstr "प्रकार"
+
+#: drgenius_mdi.cc:1246 glade/drgeo2.glade.h:68
+msgid "Name"
+msgstr "नाम"
+
+#. Next we add the list of avalaible macro-construction
+#: drgenius_mdi.cc:1280 drgenius_mdi.cc:1872 glade/drgeo2.glade.h:66
+msgid "Macro-construction"
+msgstr "म्याक्रो-निर्माण"
+
+#: drgenius_mdi.cc:1365
+msgid "Error printing the current figure!"
+msgstr "हालको आकृति प्रिन्टमा गल्ती!"
+
+#: drgenius_mdi.cc:1409
+msgid ""
+"Only geometric figure\n"
+"can be exported to Flydraw!"
+msgstr ""
+"ज्यामिति आकृति मात्र\n"
+"फ्लाइड्रमा निर्यात हुन सक्छ!"
+
+#: drgenius_mdi.cc:1426 drgenius_mdi.cc:1478 drgenius_mdi.cc:1529
+#: drgenius_mdi.cc:1585 glade/drgeoMDI.glade.h:43
+msgid "Export As..."
+msgstr "यस रुपमा निर्यात गर्नुहोस्"
+
+#: drgenius_mdi.cc:1461
+msgid ""
+"Only geomteric figure\n"
+"can be exported to LaTex!"
+msgstr ""
+"मात्र ज्यामिति आकृति\n"
+"लाटेक्समा निर्यात हुन सक्छ!"
+
+#: drgenius_mdi.cc:1513
+msgid ""
+"Only geomteric figure\n"
+"can be exported to PostScript!"
+msgstr ""
+"मात्र ज्यामिति आकृति\n"
+"पोस्टस्क्रिप्टमा निर्यात हुन सक्छ!"
+
+#: drgenius_mdi.cc:1566
+msgid ""
+"Only geomteric figure\n"
+"can be exported to PNG!"
+msgstr ""
+"मात्र ज्यामिति आकृति\n"
+"पिएनजिमा निर्यात हुन सक्छ!"
+
+#: drgenius_mdi.cc:1705
+msgid "Are you sure to close this figure?"
+msgstr "तपाई साँच्चै यो आकृति बन्द गर्न चाहनुहुन्छ?"
+
+#: drgenius_mdi.cc:1729
+msgid "About Dr. Geo"
+msgstr "ड्र. गियोको बारेमा"
+
+#. VERSION
+#: drgenius_mdi.cc:1742
+#, fuzzy
+msgid ""
+"\n"
+"Free Interactive Geometry\n"
+"\n"
+"(c) Copyright 1996-2005 H. Fernandes  \n"
+"(c) Copyright 2000 L. Gauthier\n"
+"(c) Copyright 2000-2005 OFSET\n"
+"Translation: translator_name"
+msgstr ""
+"\n"
+"निशुल्क अन्तरक्रियाशिल ज्यामिति\n"
+"\n"
+"(c) प्रतिलिपि अधिकार १९९६-२००० एच. फर्नान्डेस  \n"
+"(c) प्रतिलिपि अधिकार २००० एल. गाउथियर\n"
+"(c) प्रतिलिपि अधिकार २०००-२००३ अफसेट\n"
+"अनुवाद: अनुवादकको_नाम"
+
+#: drgenius_mdi.cc:1826
+msgid "Save Session As..."
+msgstr "सिस्सन यस रुपमा बचत गर्नुहोस्"
+
+#: drgenius_mdi.cc:1921 geo/drgeo_control.cc:812
+msgid "Play a recorded macro-construction"
+msgstr "रेकर्ड गरिएको म्याक्रो-निर्माण शुरु गर्नुहोस्"
+
+#: drgenius_mdi.cc:1976
+#, fuzzy
+msgid "Select a free point to animate it"
+msgstr "लोकस: खुला बिन्दु र भरोसा बिन्दु चान्नुहोस्"
+
+#: drgeo.desktop.in.h:1
+msgid "Dr.Geo"
+msgstr "ड्र. गियो"
+
+#: drgeo.desktop.in.h:2
+msgid "Dr.Geo Math Tool"
+msgstr "ड्र.गियो हिसाब उपकरण"
+
+#: drgeo_adaptDialog.cc:404
+msgid ""
+"Password does not match\n"
+" Access denied!"
+msgstr ""
+"पासवर्ड मिलेन\n"
+" पहुँच डिनाइड!"
+
+#. create a new name
+#: editor_view.cc:42
+#, c-format
+msgid "Text %d"
+msgstr "पाठ %d"
+
+#: geo_view.cc:32
+#, c-format
+msgid "Figure %d"
+msgstr "आकृति %d"
+
+#: geo_view.cc:132
+msgid "Items"
+msgstr "चीजहरु"
+
+#: geo/drgeo_angle.cc:210 geo/drgeo_angle.cc:241
+msgid "this angle %1"
+msgstr "यो कोण %१"
+
+#: geo/drgeo_angle.cc:285
+#, c-format
+msgid "Geometric angle:: %s"
+msgstr "ज्यामितिय कोण:: %s"
+
+#: geo/drgeo_angle.cc:286 geo/drgeo_angle.cc:288 geo/drgeo_arcCircle.cc:377
+#: geo/drgeo_circle.cc:359 geo/drgeo_halfLine.cc:260 geo/drgeo_line.cc:320
+#: geo/drgeo_numeric.cc:481 geo/drgeo_numeric.cc:486 geo/drgeo_numeric.cc:503
+#: geo/drgeo_numeric.cc:510 geo/drgeo_numeric.cc:517 geo/drgeo_numeric.cc:518
+#: geo/drgeo_point.cc:445 geo/drgeo_point.cc:446 geo/drgeo_polygon.cc:289
+#, c-format
+msgid "Point %s"
+msgstr "बिन्दु %s"
+
+#: geo/drgeo_angle.cc:287
+#, c-format
+msgid "Vertex %s"
+msgstr "भर्टेक्स %s"
+
+#: geo/drgeo_angle.cc:292
+#, c-format
+msgid "Oriented angle:: %s"
+msgstr "अभिमुखीकरण बिन्दु:: %s"
+
+#: geo/drgeo_angle.cc:293 geo/drgeo_angle.cc:294 geo/drgeo_numeric.cc:461
+#: geo/drgeo_numeric.cc:491 geo/drgeo_numeric.cc:496
+#, c-format
+msgid "Vector %s"
+msgstr "भेक्टर %s"
+
+#: geo/drgeo_arcCircle.cc:282 geo/drgeo_arcCircle.cc:286
+msgid "this arc %1"
+msgstr "यो खण्ड %१"
+
+#: geo/drgeo_arcCircle.cc:335
+#, c-format
+msgid "Rotate arc-circle:: %s"
+msgstr "खण्ड-वृत्त घुमाउनुहोस्:: %s"
+
+#: geo/drgeo_arcCircle.cc:336 geo/drgeo_arcCircle.cc:344
+#: geo/drgeo_arcCircle.cc:351
+#, c-format
+msgid "Transformed arc-circle %s"
+msgstr "बदलिएको खण्ड-वृत्त %s"
+
+#: geo/drgeo_arcCircle.cc:338 geo/drgeo_arcCircle.cc:346
+#: geo/drgeo_arcCircle.cc:369 geo/drgeo_circle.cc:319 geo/drgeo_circle.cc:327
+#: geo/drgeo_circle.cc:350 geo/drgeo_circle.cc:358 geo/drgeo_circle.cc:366
+#: geo/drgeo_circle.cc:375 geo/drgeo_halfLine.cc:221 geo/drgeo_halfLine.cc:229
+#: geo/drgeo_halfLine.cc:252 geo/drgeo_line.cc:282 geo/drgeo_line.cc:290
+#: geo/drgeo_line.cc:312 geo/drgeo_point.cc:383 geo/drgeo_point.cc:391
+#: geo/drgeo_point.cc:413 geo/drgeo_polygon.cc:297 geo/drgeo_polygon.cc:305
+#: geo/drgeo_polygon.cc:328 geo/drgeo_segment.cc:223 geo/drgeo_segment.cc:231
+#: geo/drgeo_segment.cc:254 geo/drgeo_vector.cc:248 geo/drgeo_vector.cc:256
+#: geo/drgeo_vector.cc:279
+#, c-format
+msgid "Center %s"
+msgstr "केन्द्र %s"
+
+#: geo/drgeo_arcCircle.cc:339 geo/drgeo_circle.cc:320
+#: geo/drgeo_halfLine.cc:222 geo/drgeo_line.cc:283 geo/drgeo_point.cc:384
+#: geo/drgeo_polygon.cc:298 geo/drgeo_segment.cc:224 geo/drgeo_vector.cc:249
+#, c-format
+msgid "Angle %s"
+msgstr "कोण %s"
+
+#: geo/drgeo_arcCircle.cc:343 geo/drgeo_arcCircle.cc:350
+#, c-format
+msgid "Symmetric arc-circle:: %s"
+msgstr "सिमेट्रिक खण्ड-वृत्त:: %s"
+
+#: geo/drgeo_arcCircle.cc:353 geo/drgeo_circle.cc:334
+#: geo/drgeo_halfLine.cc:236 geo/drgeo_line.cc:297 geo/drgeo_point.cc:398
+#: geo/drgeo_polygon.cc:312 geo/drgeo_segment.cc:238 geo/drgeo_vector.cc:263
+#, c-format
+msgid "Reflexion axe %s"
+msgstr "फर्काइएको खण्ड %s"
+
+#: geo/drgeo_arcCircle.cc:358
+#, c-format
+msgid "Translate arc-circle:: %s"
+msgstr "खण्ड-वृत्त अनुवाद गर्नुहोस्:: %s"
+
+#: geo/drgeo_arcCircle.cc:359
+#, c-format
+msgid "Translated arc-circle %s"
+msgstr "अनुवाद गरिएको खण्ड-वृत्त %s"
+
+#: geo/drgeo_arcCircle.cc:361 geo/drgeo_circle.cc:342
+#: geo/drgeo_halfLine.cc:244 geo/drgeo_line.cc:305 geo/drgeo_point.cc:406
+#: geo/drgeo_polygon.cc:320 geo/drgeo_segment.cc:246 geo/drgeo_vector.cc:271
+#, c-format
+msgid "Vector of translation %s"
+msgstr "अनुवादको भेक्टर %s"
+
+#: geo/drgeo_arcCircle.cc:366
+#, c-format
+msgid "Scale arc-circle:: %s"
+msgstr "माप खण्ड-वृत्त:: %s"
+
+#: geo/drgeo_arcCircle.cc:367
+#, c-format
+msgid "Scaled arc-circle %s"
+msgstr "माप गरिएको खण्ड-वृत्त %s"
+
+#: geo/drgeo_arcCircle.cc:370 geo/drgeo_circle.cc:351
+#: geo/drgeo_halfLine.cc:253 geo/drgeo_line.cc:313 geo/drgeo_point.cc:414
+#: geo/drgeo_polygon.cc:329 geo/drgeo_segment.cc:255 geo/drgeo_vector.cc:280
+#, c-format
+msgid "Factor %s"
+msgstr "फ्याक्टर %s"
+
+#: geo/drgeo_arcCircle.cc:375
+#, c-format
+msgid "Arc-circle defined by three points:: %s"
+msgstr "खण्ड-वृत्त तीन बिन्दुबाट परिभाषित:: %s"
+
+#: geo/drgeo_arcCircle.cc:376 geo/drgeo_arcCircle.cc:378
+#: geo/drgeo_segment.cc:261 geo/drgeo_segment.cc:262 geo/drgeo_vector.cc:287
+#, c-format
+msgid "Extremity %s"
+msgstr "एक्सट्रिमिटि %s"
+
+#: geo/drgeo_circle.cc:258 geo/drgeo_circle.cc:262
+msgid "this circle %1"
+msgstr "यो वृत्त %१"
+
+#: geo/drgeo_circle.cc:316
+#, c-format
+msgid "Rotate circle:: %s"
+msgstr "वृत्त घुमाउनुहोस्:: %s"
+
+#: geo/drgeo_circle.cc:317 geo/drgeo_circle.cc:325 geo/drgeo_circle.cc:332
+#, c-format
+msgid "Transformed circle %s"
+msgstr "वृत्त बदल्नुहोस् %s"
+
+#: geo/drgeo_circle.cc:324 geo/drgeo_circle.cc:331
+#, c-format
+msgid "Symmetric circle:: %s"
+msgstr "सिमेट्रिक वृत्त:: %s"
+
+#: geo/drgeo_circle.cc:339
+#, c-format
+msgid "Translate circle:: %s"
+msgstr "वृत्त अनुवाद गर्नुहोस्:: %s"
+
+#: geo/drgeo_circle.cc:340
+#, c-format
+msgid "Translated circle %s"
+msgstr "अनुवाद गरिएको वृत्त %s"
+
+#: geo/drgeo_circle.cc:347
+#, c-format
+msgid "Scale circle:: %s"
+msgstr "माप वृत्त:: %s"
+
+#: geo/drgeo_circle.cc:348
+#, c-format
+msgid "Scaled circle %s"
+msgstr "माप गरिएको वृत्त %s"
+
+#: geo/drgeo_circle.cc:356
+#, c-format
+msgid "Circle defined by its center and a point:: %s"
+msgstr "केन्द्र र बिन्दुबाट परिभाषित वृत्त:: %s"
+
+#: geo/drgeo_circle.cc:364
+#, c-format
+msgid "Circle defined by its center and a segment:: %s"
+msgstr "केन्द्र र बिभाजकबाट परिभाषित वृत्त:: %s"
+
+#: geo/drgeo_circle.cc:367
+#, c-format
+msgid "Radius from segment %s"
+msgstr "बिभाजकबाट ब्यास %s"
+
+#: geo/drgeo_circle.cc:373
+#, c-format
+msgid "Circle defined by its center and radius:: %s"
+msgstr "केन्द्र र ब्यासबाट परिभाषित वृत्त:: %s"
+
+#: geo/drgeo_circle.cc:376
+#, c-format
+msgid "Radius %s"
+msgstr "ब्यास %s"
+
+#: geo/drgeo_control.cc:254
+msgid "Free point: click on the plane or over a curve"
+msgstr "खुला बिन्दु: प्लेन वा बक्ररेखामा क्लिक गर्नुहोस्"
+
+#: geo/drgeo_control.cc:276
+msgid "Middle: select two points or a segment"
+msgstr "मध्यम: दुई बिन्दुहरु वा बिभाजक छनोट गर्नुहोस्"
+
+#: geo/drgeo_control.cc:298
+msgid "Intersection(s): select two curves"
+msgstr "इन्टरसेक्सन: दुई बक्ररेखाहरु छान्नुहोस्"
+
+#: geo/drgeo_control.cc:319
+msgid "Coordinate point: select two numbers (its coordinates)"
+msgstr "अक्षांश बिन्दु: दुई नम्बरहरु (यसको अक्षांशहरु) छनोट गर्नुहोस्"
+
+#: geo/drgeo_control.cc:340
+msgid "Line: select two points"
+msgstr "पङ्त्ति: दुई बिन्दुहरु छनोट गर्नुहोस्"
+
+#: geo/drgeo_control.cc:361
+msgid "Ray: select its origin then another point"
+msgstr "रे: यसको मूल अरु बिन्दुभन्दा छनोट गर्नुहोस्"
+
+#: geo/drgeo_control.cc:382
+msgid "Segment: select its extremities"
+msgstr "बिभाजक: यसको एकस्ट्रिमिटिज छान्नुहोस्"
+
+#: geo/drgeo_control.cc:404
+msgid "Vector: select its origin and extremity"
+msgstr "भेक्टर: यसको मूल र एक्सट्रिमिटि छनोट गर्नुहोस्"
+
+#: geo/drgeo_control.cc:425
+msgid "Circle: select its center and a point or its radius (number or segment)"
+msgstr "वृत्त: यसको केन्द्र र बिन्दु वा यसको ब्यास (नम्बर वा बिभाजक) छनोट गर्नुहोस्"
+
+#: geo/drgeo_control.cc:446
+msgid "Arc: select three points"
+msgstr "खण्ड: तीन बिन्दुहरु छनोट गर्नुहोस्"
+
+#: geo/drgeo_control.cc:467
+msgid "Locus: select a free point and a dependent point"
+msgstr "लोकस: खुला बिन्दु र भरोसा बिन्दु चान्नुहोस्"
+
+#: geo/drgeo_control.cc:488
+msgid "Polygon: select its vertices, then click over the first one"
+msgstr "बहुभुज: यसको भर्टिसेस छान्नुहोस्, त्यसपछि पहिलोमा क्लिक गर्नुहोस्"
+
+#: geo/drgeo_control.cc:508
+msgid ""
+"Parallel line: select a point and a direction (line, ray, segment, vector) "
+msgstr "समानान्तर पङ्त्ति: बिन्दु र दिशा छनोट गर्नुहोस् (पङ्त्ति, रे, बिभाजक, भेक्टर) "
+
+#: geo/drgeo_control.cc:528
+msgid ""
+"Orthogonal line: select a point and a direction (line, ray, segment, vector)"
+msgstr "अर्थोगोनल पङ्त्ति: बिन्दु र दिशा छनोट गर्नुहोस् (पङ्त्ति, रे, बिभाजक, भेक्टर)"
+
+#: geo/drgeo_control.cc:548
+msgid "Axial symmetry: select a geometric object and a line"
+msgstr "एक्सियल सिमेट्री: ज्यामितिय वस्तु र पङ्त्ति छनोट गर्नुहोस्"
+
+#: geo/drgeo_control.cc:568
+msgid "Central symmetry: select a geometric object and the center"
+msgstr "केन्द्रित सिमेट्री: ज्यामितिय वस्तु र केन्द्र छनोट गर्नुहोस्"
+
+#: geo/drgeo_control.cc:588
+msgid "Translation: select a geometric object and a vector"
+msgstr "अनुवाद: ज्यामितिय वस्तु र भेक्टर छनोट गर्नुहोस्"
+
+#: geo/drgeo_control.cc:608
+msgid ""
+"Rotation: select a geometric object, the center and an angle or a scalar"
+msgstr "परिक्रमण: ज्यामितिय वस्तु छान्नुहोस्, केन्द्र र कोण वा स्केलर"
+
+#: geo/drgeo_control.cc:628
+msgid "Scale: select a geometric object, the center and a scalar"
+msgstr "माप: ज्यामितिय वस्तु छनोट गर्नुहोस्, केन्द्र र स्केलर"
+
+#: geo/drgeo_control.cc:648
+msgid ""
+"Numeric: click on the back to edit a free value or select geometric object"
+"(s) to calculate distance"
+msgstr ""
+"सङ्ख्यात्मक: खुला मान सम्पादन गर्न पछाडि मा क्लिक गर्नुहोस् वा ज्यामितिय वस्तु छनोट "
+"गर्नुहोस् दूरी नाप्नको लागि"
+
+#: geo/drgeo_control.cc:668
+msgid ""
+"Angle: select three points (geometric angle) or two vectors (oriented angle)"
+msgstr "कोण: तीन बिन्दुहरु (ज्यामितिय कोण) वा दुई भेक्टरहरु (अभिमुखी कोण) छान्नुहोस्"
+
+#: geo/drgeo_control.cc:688
+msgid "Coordinates & Equation: select a point, a vector, a line or a circle"
+msgstr "अक्षांश र समीकरण: बिन्दु छनोट गर्नुहोस्, भेक्टर, पङ्त्ति वा वृत्त"
+
+#: geo/drgeo_control.cc:709
+msgid "Script: select n objects (n >=0) then click on the background"
+msgstr "स्क्रिप्ट: एन वस्तुहरु छान्नुहोस् (एन >=०) भए पृष्ठभूमिमा क्लिक गर्नुहोस्"
+
+#: geo/drgeo_control.cc:729
+msgid "Delete object: select the object to delete"
+msgstr "वस्तु मेटाउनुहोस्: वस्तु मेटाउनको लागि छनोट गर्नुहोस्"
+
+#: geo/drgeo_control.cc:749
+msgid "Look: select the object to change its look"
+msgstr "हेर्नुहोस्: दृष्य परिवर्तन गर्नको लागि वस्तु छनोट गर्नुहोस्"
+
+#: geo/drgeo_control.cc:769
+msgid "Property: select the object to change its property"
+msgstr "गुण: गुण परिवर्तन गर्नको लागि वस्तु छनोट गर्नुहोस्"
+
+#: geo/drgeo_control.cc:790
+msgid "Construct a macro-construction "
+msgstr "म्याक्रो-निर्माण निर्माण गर्नुहोस् "
+
+#: geo/drgeo_control.cc:937
+msgid "Select: select and move an object"
+msgstr "छनोट: छनोट गरेर वस्तुलाई चलाउनुहोस्"
+
+#: geo/drgeo_dialog.cc:62
+msgid "Enter a value"
+msgstr "मान राख्नुहोस्"
+
+#: geo/drgeo_equation.cc:173 geo/drgeo_equation.cc:182
+msgid "the equation of %1"
+msgstr "%१ को समीकरण"
+
+#: geo/drgeo_equation.cc:230
+#, c-format
+msgid "Line's equation:: %s"
+msgstr "पङ्त्ति समीकरण:: %s"
+
+#: geo/drgeo_equation.cc:231 geo/drgeo_numeric.cc:471 geo/drgeo_numeric.cc:511
+#, c-format
+msgid "Line %s"
+msgstr "पङ्त्ति %s"
+
+#: geo/drgeo_equation.cc:235
+#, c-format
+msgid "Circle's equation:: %s"
+msgstr "वृत्तको समीकरण:: %s"
+
+#: geo/drgeo_equation.cc:236 geo/drgeo_numeric.cc:466 geo/drgeo_numeric.cc:504
+#, c-format
+msgid "Circle %s"
+msgstr "वृत्त %s"
+
+#: geo/drgeo_gtkhelpers.cc:98
+#, c-format
+msgid ""
+"This help directory does not exist:\n"
+"'%s'\n"
+"Maybe the manual is not installed or it is not yet translated in your "
+"language.\n"
+"\n"
+"If you want to translate the manual contact ofset@ofset.org."
+msgstr ""
+"यो मद्दत डाइरेक्टरी हट्दैन:\n"
+"'%s'\n"
+"पक्कै पनि मानवचालित स्थापित भएको छैन वा यो तपाईको भाषामा अनुवाद भएको छैन\n"
+"\n"
+"यदि तपाई मानवचालित अनुवाद गर्न चाहनुहुन्छ भने सम्पर्क गर्नुहोस् ofset@ofset.org."
+
+#: geo/drgeo_gtkhelpers.cc:117
+msgid ""
+"A default online manual\n"
+"in English will be used."
+msgstr ""
+"पूर्वनिर्धारित अनलाइन मानवचालित\n"
+"अङ्ग्रेजीमा प्रयोग हुन्छ"
+
+#: geo/drgeo_gtkhelpers.cc:129
+msgid "No default online manual can be found."
+msgstr "कुनै पूर्वनिर्धारित अनलाइन मानवचालित प्राप्त भएन"
+
+#: geo/drgeo_halfLine.cc:152 geo/drgeo_halfLine.cc:170
+msgid "this half-line %1"
+msgstr "यो आधा-पङ्त्ति %१"
+
+#: geo/drgeo_halfLine.cc:218
+#, c-format
+msgid "Rotate half-line:: %s"
+msgstr "आधा-पङ्त्ति परिक्रमण गर्नुहोस्:: %s"
+
+#: geo/drgeo_halfLine.cc:219 geo/drgeo_halfLine.cc:227
+#: geo/drgeo_halfLine.cc:234
+#, c-format
+msgid "Transformed half-line %s"
+msgstr "आधा-पङ्त्ति बदल्नुहोस् %s"
+
+#: geo/drgeo_halfLine.cc:226 geo/drgeo_halfLine.cc:233
+#, c-format
+msgid "Symmetric half-line:: %s"
+msgstr "आधा-पङ्त्तिलाई सिमेट्रिक गर्नुहोस्:: %s"
+
+#: geo/drgeo_halfLine.cc:241
+#, c-format
+msgid "Translate half-line:: %s"
+msgstr "आधा-पङ्त्ति अनुवाद गर्नुहोस्:: %s"
+
+#: geo/drgeo_halfLine.cc:242
+#, c-format
+msgid "Translated half-line %s"
+msgstr "आधा-पङ्त्ति अनुवाद भयो %s"
+
+#: geo/drgeo_halfLine.cc:249
+#, c-format
+msgid "Scale half-line:: %s"
+msgstr "आधा-पङ्त्तिको माप:: %s"
+
+#: geo/drgeo_halfLine.cc:250
+#, c-format
+msgid "Scaled half-line %s"
+msgstr "आधा-पङ्त्ति माप भयो %s"
+
+#: geo/drgeo_halfLine.cc:258
+#, c-format
+msgid "Half-line defined by two points:: %s"
+msgstr "दुई बिन्दुहरुबाट परिभाषित आधा-पङ्त्ति:: %s"
+
+#: geo/drgeo_halfLine.cc:259 geo/drgeo_vector.cc:286
+#, c-format
+msgid "Origin %s"
+msgstr "मूल %s"
+
+#: geo/drgeo_line.cc:202 geo/drgeo_line.cc:220
+msgid "this line %1"
+msgstr "यो पङ्त्ति %१"
+
+#: geo/drgeo_line.cc:279
+#, c-format
+msgid "Rotate line:: %s"
+msgstr "परिक्रमण पङ्त्ति:: %s"
+
+#: geo/drgeo_line.cc:280 geo/drgeo_line.cc:288 geo/drgeo_line.cc:295
+#, c-format
+msgid "Transformed line %s"
+msgstr "बदलिएको पङ्त्ति %s"
+
+#: geo/drgeo_line.cc:287 geo/drgeo_line.cc:294
+#, c-format
+msgid "Symmetric line:: %s"
+msgstr "सिमेट्रिक पङ्त्ति:: %s"
+
+#: geo/drgeo_line.cc:302
+#, c-format
+msgid "Translate line:: %s"
+msgstr "अनुवाद पङ्त्ति:: %s"
+
+#: geo/drgeo_line.cc:303
+#, c-format
+msgid "Translated line %s"
+msgstr "अनुवाद गरिएको पङ्त्ति %s"
+
+#: geo/drgeo_line.cc:310
+#, c-format
+msgid "Scale line:: %s"
+msgstr "माप पङ्त्ति:: %s"
+
+#: geo/drgeo_line.cc:311
+#, c-format
+msgid "Scaled line %s"
+msgstr "माप गरिएको पङ्त्ति %s"
+
+#: geo/drgeo_line.cc:318
+#, c-format
+msgid "Line going through two points:: %s"
+msgstr "दुई बिन्दुहरुमा गएको पङ्त्ति:: %s"
+
+#: geo/drgeo_line.cc:319 geo/drgeo_line.cc:327 geo/drgeo_line.cc:333
+#: geo/drgeo_line.cc:339
+#, c-format
+msgid "Point  %s"
+msgstr "बिन्दु  %s"
+
+#: geo/drgeo_line.cc:325
+#, c-format
+msgid "Line defined by a point and its slope:: %s"
+msgstr "बिन्दु र यसको स्लोपबाट परिभाषित पङ्त्ति:: %s"
+
+#: geo/drgeo_line.cc:328
+#, c-format
+msgid "Slope %s"
+msgstr "स्लोप %s"
+
+#: geo/drgeo_line.cc:332
+#, c-format
+msgid "Parallel line:: %s"
+msgstr "समानान्तर पङ्त्ति:: %s"
+
+#: geo/drgeo_line.cc:334 geo/drgeo_line.cc:340
+#, c-format
+msgid "Direction %s"
+msgstr "दिशा %s"
+
+#: geo/drgeo_line.cc:338
+#, c-format
+msgid "Perpendicular line:: %s"
+msgstr "सिधा पङ्त्ति:: %s"
+
+#. compute the string length
+#: geo/drgeo_locus.cc:303 geo/drgeo_locus.cc:312
+msgid "%1's locus when %2 describes %3"
+msgstr "%१ को लोकस जब %२ बर्णन गर्छ %३"
+
+#: geo/drgeo_locus.cc:350
+#, c-format
+msgid "Locus:: %s"
+msgstr "लोकस:: %s"
+
+#: geo/drgeo_locus.cc:351
+#, c-format
+msgid "Free point on curve %s"
+msgstr "खुला बिन्दु बक्ररेखामा %s"
+
+#: geo/drgeo_locus.cc:353
+#, c-format
+msgid "Constrained point %s"
+msgstr "कन्सट्रेन गरिएको बिन्दु %s"
+
+#: geo/drgeo_numeric.cc:275 geo/drgeo_numeric.cc:281
+msgid "%1's length"
+msgstr "%१ को लम्बाइ"
+
+#: geo/drgeo_numeric.cc:286 geo/drgeo_numeric.cc:292
+msgid "%1's magnitude"
+msgstr "%१ को गुरुत्व"
+
+#: geo/drgeo_numeric.cc:297 geo/drgeo_numeric.cc:303
+msgid "%1's perimeter"
+msgstr "%१ को परिणिति"
+
+#: geo/drgeo_numeric.cc:308 geo/drgeo_numeric.cc:314
+msgid "the slope of %1"
+msgstr "%१ को स्लोप"
+
+#: geo/drgeo_numeric.cc:322 geo/drgeo_numeric.cc:332
+msgid "the distance between %1 and %2"
+msgstr "%१ र %२ बीचको दूरी"
+
+#: geo/drgeo_numeric.cc:345 geo/drgeo_numeric.cc:351
+msgid "the abscissa of %1"
+msgstr "%१ को एब्सकिस्सा"
+
+#: geo/drgeo_numeric.cc:357 geo/drgeo_numeric.cc:363
+msgid "the ordinate of %1"
+msgstr "%१ को ओर्डिनेट"
+
+#: geo/drgeo_numeric.cc:367 geo/drgeo_value.cc:52
+msgid "this value"
+msgstr "यो मान"
+
+#: geo/drgeo_numeric.cc:451
+#, c-format
+msgid "Free value:: %s"
+msgstr "खुला मान:: %s"
+
+#: geo/drgeo_numeric.cc:455
+#, c-format
+msgid "Segment's length:: %s"
+msgstr "बिभाजकको लम्बाइ:: %s"
+
+#: geo/drgeo_numeric.cc:456 geo/drgeo_point.cc:440
+#, c-format
+msgid "Segment %s"
+msgstr "बिभाजक %s"
+
+#: geo/drgeo_numeric.cc:460
+#, c-format
+msgid "Vector's norm:: %s"
+msgstr "भेक्टरको नर्म:: %s"
+
+#: geo/drgeo_numeric.cc:465
+#, c-format
+msgid "Circle's perimeter:: %s"
+msgstr "वृत्तको परिणिति:: %s"
+
+#: geo/drgeo_numeric.cc:470
+#, c-format
+msgid "Line's slope:: %s"
+msgstr "पङ्त्तिको स्लोप:: %s"
+
+#: geo/drgeo_numeric.cc:475
+#, c-format
+msgid "Arc-circle's length:: %s"
+msgstr "खण्ड-वृत्तको लम्बाइ:: %s"
+
+#: geo/drgeo_numeric.cc:476
+#, c-format
+msgid "Arc-circle %s"
+msgstr "खण्ड-वृत्त %s"
+
+#: geo/drgeo_numeric.cc:480
+#, c-format
+msgid "Point's abscissa:: %s"
+msgstr "बिन्दुको एब्सकिस्सा:: %s"
+
+#: geo/drgeo_numeric.cc:485
+#, c-format
+msgid "Point's ordinate:: %s"
+msgstr "बिन्दुको ओर्डिनेट:: %s"
+
+#: geo/drgeo_numeric.cc:490
+#, c-format
+msgid "Vector's abscissa:: %s"
+msgstr "भेक्टरको एब्सकिस्सा:: %s"
+
+#: geo/drgeo_numeric.cc:495
+#, c-format
+msgid "Vector's ordinate:: %s"
+msgstr "भेक्टरको अर्डिनेट:: %s"
+
+#: geo/drgeo_numeric.cc:501
+#, c-format
+msgid "Distance between a point and a circle:: %s"
+msgstr "बिन्दु र वृत्त बीचको दूरी:: %s"
+
+#: geo/drgeo_numeric.cc:509
+#, c-format
+msgid "Distance between a point and a line:: %s"
+msgstr "बिन्दु र पङ्त्ति बीचको दूरी:: %s"
+
+#: geo/drgeo_numeric.cc:516
+#, c-format
+msgid "Distance between two points:: %s"
+msgstr "दुई बिन्दुहरुको दूरी:: %s"
+
+#: geo/drgeo_point.cc:380
+#, c-format
+msgid "Rotate point:: %s"
+msgstr "परिक्रमण बिन्दु:: %s"
+
+#: geo/drgeo_point.cc:381 geo/drgeo_point.cc:389 geo/drgeo_point.cc:396
+#, c-format
+msgid "Transformed point %s"
+msgstr "बदलिएको बिन्दु %s"
+
+#: geo/drgeo_point.cc:388 geo/drgeo_point.cc:395
+#, c-format
+msgid "Symmetric point:: %s"
+msgstr "सिमेट्रिक बिन्दु:: %s"
+
+#: geo/drgeo_point.cc:403
+#, c-format
+msgid "Translate point:: %s"
+msgstr "अनुवाद बिन्दु:: %s"
+
+#: geo/drgeo_point.cc:404
+#, c-format
+msgid "Translated point %s"
+msgstr "अनुवाद गरिएको बिन्दु %s"
+
+#: geo/drgeo_point.cc:411
+#, c-format
+msgid "Scale point:: %s"
+msgstr "माप बिन्दु:: %s"
+
+#: geo/drgeo_point.cc:412
+#, c-format
+msgid "Scaled point %s"
+msgstr "माप गरिएको बिन्दु %s"
+
+#: geo/drgeo_point.cc:418
+#, c-format
+msgid "Coordinate point:: %s"
+msgstr "अक्षांश बिन्दु:: %s"
+
+#: geo/drgeo_point.cc:419
+#, c-format
+msgid "Abscissa %s"
+msgstr "एब्सकिस्सा %s"
+
+#: geo/drgeo_point.cc:420
+#, c-format
+msgid "Ordinate %s"
+msgstr "अर्डिनेट %s"
+
+#: geo/drgeo_point.cc:424
+#, c-format
+msgid "Free point:: %s"
+msgstr "खुला बिन्दु:: %s"
+
+#: geo/drgeo_point.cc:428
+#, c-format
+msgid "Free point on curve:: %s"
+msgstr "बक्ररेखामा खुला बिन्दु:: %s"
+
+#: geo/drgeo_point.cc:429 geo/drgeo_point.cc:434 geo/drgeo_point.cc:435
+#, c-format
+msgid "Curve %s"
+msgstr "बक्ररेखा %s"
+
+#: geo/drgeo_point.cc:433
+#, c-format
+msgid "Intersection point:: %s"
+msgstr "इन्टरसेक्सन बिन्दु:: %s"
+
+#: geo/drgeo_point.cc:439
+#, c-format
+msgid "Middle of segment:: %s"
+msgstr "बिभाजकको मध्य:: %s"
+
+#: geo/drgeo_point.cc:444
+#, c-format
+msgid "Middle of two points:: %s"
+msgstr "दुई बुन्दुहरुको मध्यम:: %s"
+
+#: geo/drgeo_point.cc:482 geo/drgeo_point.cc:486
+msgid "this point %1"
+msgstr "यो बिन्दु %१"
+
+#: geo/drgeo_polygon.cc:287
+#, c-format
+msgid "Polygon:: %s"
+msgstr "बहुभुज:: %s"
+
+#: geo/drgeo_polygon.cc:294
+#, c-format
+msgid "Rotate polygon:: %s"
+msgstr "बहुभुज परिक्रमण गर्नुहोस्:: %s"
+
+#: geo/drgeo_polygon.cc:295 geo/drgeo_polygon.cc:303 geo/drgeo_polygon.cc:310
+#, c-format
+msgid "Transformed polygon %s"
+msgstr "बदलिएको बहुभुज:: %s"
+
+#: geo/drgeo_polygon.cc:302 geo/drgeo_polygon.cc:309
+#, c-format
+msgid "Symmetric polygon:: %s"
+msgstr "सिमेट्रिक बहुभुज:: %s"
+
+#: geo/drgeo_polygon.cc:317
+#, c-format
+msgid "Translate polygon:: %s"
+msgstr "अनुवाद बहुभुज:: %s"
+
+#: geo/drgeo_polygon.cc:318
+#, c-format
+msgid "Translated polygon %s"
+msgstr "अनुवाद गरिएको बहुभुज %s"
+
+#: geo/drgeo_polygon.cc:325
+#, c-format
+msgid "Scale polygon:: %s"
+msgstr "माप बहुभुज:: %s"
+
+#: geo/drgeo_polygon.cc:326
+#, c-format
+msgid "Scaled polygon %s"
+msgstr "माप गरिएको बहुभुज %s"
+
+#: geo/drgeo_polygon.cc:383 geo/drgeo_polygon.cc:407
+msgid "this polygon %1"
+msgstr "यो बहुभुज %१"
+
+#: geo/drgeo_repere.cc:148 geo/drgeo_repere.cc:161
+msgid "this reference frame %1"
+msgstr "यो सन्दर्भ फ्रेम %१"
+
+#: geo/drgeo_scm_helper.cc:91
+#, c-format
+msgid "Error! Just got the following error tag: %s\n"
+msgstr "गल्ती! तलको गल्ती ट्याग भेटियो: %s\n"
+
+#: geo/drgeo_script.cc:158
+msgid "Unprintable result"
+msgstr "प्रिन्ट गर्न नसकिने परिणाम"
+
+#: geo/drgeo_script.cc:171 geo/drgeo_script.cc:175
+msgid "this script %1"
+msgstr "यो स्क्रिप्ट %१"
+
+#: geo/drgeo_script.cc:223
+#, c-format
+msgid "Script:: %s"
+msgstr "स्क्रिप्ट:: %s"
+
+#: geo/drgeo_script.cc:225
+#, c-format
+msgid "Object %s"
+msgstr "वस्तु %s"
+
+#: geo/drgeo_segment.cc:153 geo/drgeo_segment.cc:171
+msgid "this segment %1"
+msgstr "यो बिभाजक %१"
+
+#: geo/drgeo_segment.cc:220
+#, c-format
+msgid "Rotate segment:: %s"
+msgstr "परिक्रमण बिभाजक:: %s"
+
+#: geo/drgeo_segment.cc:221 geo/drgeo_segment.cc:229 geo/drgeo_segment.cc:236
+#, c-format
+msgid "Transformed segment %s"
+msgstr "बदलिएको बिभाजक %s"
+
+#: geo/drgeo_segment.cc:228 geo/drgeo_segment.cc:235
+#, c-format
+msgid "Symmetric segment:: %s"
+msgstr "सिमेट्रिक बिभाजक:: %s"
+
+#: geo/drgeo_segment.cc:243
+#, c-format
+msgid "Translate segment:: %s"
+msgstr "अनुवाद बिभाजक:: %s"
+
+#: geo/drgeo_segment.cc:244
+#, c-format
+msgid "Translated segment %s"
+msgstr "अनुवाद गरिएको बिभाजक %s"
+
+#: geo/drgeo_segment.cc:251
+#, c-format
+msgid "Scale segment:: %s"
+msgstr "माप बिभाजक:: %s"
+
+#: geo/drgeo_segment.cc:252
+#, c-format
+msgid "Scaled segment %s"
+msgstr "माप गरिएको बिभाजक %s"
+
+#: geo/drgeo_segment.cc:260
+#, c-format
+msgid "Segment defined by its extremities:: %s"
+msgstr "यसको एक्सट्रिमिटिजबाट परिभाषित बिभाजक:: %s"
+
+#: geo/drgeo_tool.cc:950
+#, c-format
+msgid "Remove %s?"
+msgstr "हटाउनुहोस् %s?"
+
+#: geo/drgeo_tool.cc:953
+msgid "Remove selected item?"
+msgstr "छानिएको चीज हटाउन चाहनुहुन्छ?"
+
+#: geo/drgeo_vector.cc:170 geo/drgeo_vector.cc:188
+msgid "this vector %1"
+msgstr "यो भेक्टर %१"
+
+#: geo/drgeo_vector.cc:245
+#, c-format
+msgid "Rotate vector:: %s"
+msgstr "परिक्रमण भेक्टर:: %s"
+
+#: geo/drgeo_vector.cc:246 geo/drgeo_vector.cc:254 geo/drgeo_vector.cc:261
+#, c-format
+msgid "Transformed vector %s"
+msgstr "बदलिएको भेक्टर %s"
+
+#: geo/drgeo_vector.cc:253 geo/drgeo_vector.cc:260
+#, c-format
+msgid "Symmetric vector:: %s"
+msgstr "सिमेट्रिक भेक्टर:: %s"
+
+#: geo/drgeo_vector.cc:268
+#, c-format
+msgid "Translate vector:: %s"
+msgstr "अनुवाद भेक्टर:: %s"
+
+#: geo/drgeo_vector.cc:269
+#, c-format
+msgid "Translated vector %s"
+msgstr "अनुवाद गरिएको भेक्टर %s"
+
+#: geo/drgeo_vector.cc:276
+#, c-format
+msgid "Scale vector:: %s"
+msgstr "माप भेक्टर:: %s"
+
+#: geo/drgeo_vector.cc:277
+#, c-format
+msgid "Scaled vector %s"
+msgstr "माप गरिएको भेक्टर %s"
+
+#: geo/drgeo_vector.cc:285
+#, c-format
+msgid "Vector defined by two points:: %s"
+msgstr "दुई बिन्दुबाट परिभाषित भेक्टर:: %s"
+
+#: glade/drgenius2.glade.h:1 glade/drgeo2.glade.h:1
+msgid "*"
+msgstr "*"
+
+#: glade/drgenius2.glade.h:2
+msgid "Angle"
+msgstr "कोण"
+
+#: glade/drgenius2.glade.h:3
+msgid "Arc-Circle"
+msgstr "खण्ड-वृत्त"
+
+#: glade/drgenius2.glade.h:4
+msgid "Circle"
+msgstr "वृत्त"
+
+#: glade/drgenius2.glade.h:5 glade/drgeo2.glade.h:33
+msgid "Color"
+msgstr "रङ्ग"
+
+#: glade/drgenius2.glade.h:6
+msgid ""
+"Default figure name used when a new figure is created. This name is combined "
+"with a numeric indicator"
+msgstr ""
+"पूर्वनिर्धारित आकृति नाम जब नयाँ आकृति निर्माण गरियो. यो नाम संख्यात्मक संकेतनसँग जोडिएको "
+"छ"
+
+#: glade/drgenius2.glade.h:7
+msgid ""
+"Default file name used to export a geometric figure to the Flydraw format"
+msgstr "पूर्वनिर्धारित फाइल नाम ज्यामितिय आकृति निर्यात गर्न फ्लाइड्र ढाँचाको लागि"
+
+#: glade/drgenius2.glade.h:8
+msgid ""
+"Default file name used to export a geometric figure to the LaTeX format "
+"(pstricks extension)"
+msgstr ""
+"पूर्वनिर्धारित फाइल नाम ज्यामितिय आकृति निर्यात गर्न लाटेक्स ढाँचा (पिस्ट्रिक्स एक्सटेन्सन) "
+"को लागि"
+
+#: glade/drgenius2.glade.h:9
+msgid ""
+"Default file name used to export a geometric figure to the encapsulated "
+"PostScript format"
+msgstr ""
+"पूर्वनिर्धारित फाइल नाम ज्यामितिय आकृति निर्यात गर्न इन्काप्सुलेटेड पोस्टस्क्रिप्ट ढाँचाको "
+"लागि"
+
+#: glade/drgenius2.glade.h:10
+msgid "Default file name used to save a geometric figure"
+msgstr "पूर्वनिर्धारित फाइलनाम ज्यामितिय अाकृति बचत गर्नको लागि"
+
+#: glade/drgenius2.glade.h:11
+msgid ""
+"Default file name used to save a session (several documents in one file)"
+msgstr "पूर्वनिर्धारित फाइलनाम सिस्सन (तुप्रै लिखत एउटा फाइलमा) बचत गर्नको लागि"
+
+#: glade/drgenius2.glade.h:12
+msgid "Default value"
+msgstr "पूर्वनिर्धारित मान"
+
+#: glade/drgenius2.glade.h:13
+msgid "Defaut file name"
+msgstr "पूर्वनिर्धारित फाइल नाम"
+
+#: glade/drgenius2.glade.h:14
+msgid "Figure name"
+msgstr "आकृति नाम"
+
+#: glade/drgenius2.glade.h:15
+msgid "Flydraw:"
+msgstr "फ्लाइड्र:"
+
+#: glade/drgenius2.glade.h:16
+msgid "Geometric figure "
+msgstr "ज्यामितिय आकृति "
+
+#: glade/drgenius2.glade.h:17
+msgid "Global preferences"
+msgstr "ग्लोबल प्राथमिकताहरु"
+
+#: glade/drgenius2.glade.h:18
+msgid "Half-Line"
+msgstr "आधा-पङ्त्ति"
+
+#: glade/drgenius2.glade.h:19
+msgid "Html viewer"
+msgstr "एचटिएमएल दर्शक"
+
+#: glade/drgenius2.glade.h:20
+msgid "LaTeX:"
+msgstr "लेटेक्स:"
+
+#: glade/drgenius2.glade.h:21 glade/drgeo2.glade.h:58
+msgid "Large"
+msgstr "ठूलो"
+
+#: glade/drgenius2.glade.h:22
+msgid "Line"
+msgstr "पङ्त्ति"
+
+#: glade/drgenius2.glade.h:23
+msgid "Locus"
+msgstr "लोकस"
+
+#: glade/drgenius2.glade.h:24 glade/drgeo2.glade.h:69
+msgid "Normal"
+msgstr "साधारण"
+
+#: glade/drgenius2.glade.h:25
+msgid "Number of undo/redo operations. 0 for infinite undo/redo level"
+msgstr "अन्डु/रेडु कार्यहरुको संख्या. ० इनफिनिट अन्डु/रेडु तहको लागि"
+
+#: glade/drgenius2.glade.h:26
+msgid "Numeric Precision"
+msgstr "संख्यात्मक प्रेसिसन"
+
+#: glade/drgenius2.glade.h:27
+msgid "Object Aspect"
+msgstr "वस्तु भाव"
+
+#: glade/drgenius2.glade.h:28 glade/drgeo2.glade.h:77
+msgid "Point"
+msgstr "बिन्दु॒"
+
+#: glade/drgenius2.glade.h:29
+msgid "Polygon"
+msgstr "बहुभुज"
+
+#: glade/drgenius2.glade.h:30
+msgid "PostScript:"
+msgstr "पोस्टस्क्रिप्ट:"
+
+#: glade/drgenius2.glade.h:31
+msgid "Save a Dr Genius session"
+msgstr "ड्र जिनियस सत्र बचत गर्नुहोस्"
+
+#: glade/drgenius2.glade.h:32
+msgid "Save all"
+msgstr "सबै बचत गर्नुहोस्"
+
+#: glade/drgenius2.glade.h:33
+msgid "Save selection"
+msgstr "छनोट बचत गर्नुहोस्"
+
+#: glade/drgenius2.glade.h:34
+msgid "Scalar"
+msgstr "स्केलर"
+
+#: glade/drgenius2.glade.h:35
+msgid "Segment"
+msgstr "कुनै वस्तु छुट्याईएको"
+
+#: glade/drgenius2.glade.h:36
+msgid "Select Color"
+msgstr "रङ्ग छनोट गर्नुहोस्"
+
+#: glade/drgenius2.glade.h:37
+msgid "Select data to save"
+msgstr "डाटा बचत गर्न छनोट गर्नुहोस्"
+
+#: glade/drgenius2.glade.h:38
+msgid "Session:"
+msgstr "सत्र:"
+
+#: glade/drgenius2.glade.h:39 glade/drgeo2.glade.h:96
+msgid "Shape"
+msgstr "आकार"
+
+#: glade/drgenius2.glade.h:40 glade/drgeo2.glade.h:97
+msgid "Size"
+msgstr "आकार"
+
+#: glade/drgenius2.glade.h:41 glade/drgeo2.glade.h:98
+msgid "Small"
+msgstr "सानो"
+
+#: glade/drgenius2.glade.h:42 glade/drgeo2.glade.h:99
+msgid "Style"
+msgstr "शैलि"
+
+#: glade/drgenius2.glade.h:43
+msgid "Undo/Redo levels"
+msgstr "अन्डु/रेडु तहहरु"
+
+#: glade/drgenius2.glade.h:44
+msgid "Vector"
+msgstr "भेक्टर"
+
+#: glade/drgenius2.glade.h:45
+msgid "dillo "
+msgstr "डिल्लो "
+
+#: glade/drgenius2.glade.h:46
+msgid "galeon -x "
+msgstr "ग्यालियोन -एक्स "
+
+#: glade/drgenius2.glade.h:47
+msgid "konqueror "
+msgstr "कोनक्विरर "
+
+#: glade/drgenius2.glade.h:48
+msgid "mozilla "
+msgstr "मोजिला "
+
+#: glade/drgeo2.glade.h:3
+#, no-c-format
+msgid "100%"
+msgstr "१००%"
+
+#: glade/drgeo2.glade.h:5 glade/drgeoMDI.glade.h:2
+#, no-c-format
+msgid "125%"
+msgstr "१२५%"
+
+#: glade/drgeo2.glade.h:7 glade/drgeoMDI.glade.h:4
+#, no-c-format
+msgid "150%"
+msgstr "१५०%"
+
+#: glade/drgeo2.glade.h:9 glade/drgeoMDI.glade.h:6
+#, no-c-format
+msgid "175%"
+msgstr "१७५%"
+
+#: glade/drgeo2.glade.h:11 glade/drgeoMDI.glade.h:8
+#, no-c-format
+msgid "200%"
+msgstr "२००%"
+
+#: glade/drgeo2.glade.h:13 glade/drgeoMDI.glade.h:10
+#, no-c-format
+msgid "25%"
+msgstr "२५%"
+
+#: glade/drgeo2.glade.h:15 glade/drgeoMDI.glade.h:12
+#, no-c-format
+msgid "50%"
+msgstr "५०%"
+
+#: glade/drgeo2.glade.h:17 glade/drgeoMDI.glade.h:14
+#, no-c-format
+msgid "75%"
+msgstr "७५%"
+
+#: glade/drgeo2.glade.h:18
+msgid "Abscissa"
+msgstr "एब्सकिसा"
+
+#: glade/drgeo2.glade.h:19
+msgid "Adjust the line style"
+msgstr "पङ्त्ति शेली समायोजन गर्नुहोस्"
+
+#: glade/drgeo2.glade.h:20
+msgid "Adjust the point style"
+msgstr "बिन्दु शैली समायोजन गर्नुहोस्"
+
+#: glade/drgeo2.glade.h:21
+msgid "Adjust the value style"
+msgstr "मान शैली समायोजन गर्नुहोस्"
+
+#: glade/drgeo2.glade.h:22
+msgid "Adjust the zoom factor"
+msgstr "जूम फ्याक्टर समायोजन गर्नुहोस्"
+
+#: glade/drgeo2.glade.h:23 glade/drgeoMDI.glade.h:15
+msgid "Angle defined by three points or two vectors"
+msgstr "तीन बिन्दुहरु र दुई भेक्टरबाट परिभाषित बिन्दु"
+
+#: glade/drgeo2.glade.h:24 glade/drgeoMDI.glade.h:24
+msgid "Arc circle defined by three points"
+msgstr "तीन बिन्दुहरुबाट परिभाषित खण्ड वृत्त"
+
+#: glade/drgeo2.glade.h:25
+msgid "Avalaible macro-construction"
+msgstr "उपलब्ध म्याक्रो-निर्माण"
+
+#: glade/drgeo2.glade.h:26 glade/drgeoMDI.glade.h:25
+msgid ""
+"Axial symmetry of an object. When ambiguity, the first selected line is the "
+"line to transform"
+msgstr ""
+"वस्तुको अक्ष्यात्मक सिमेट्रि. जब एम्बिगिटि हुन्छ, पहिलो छनोट पङ्त्ति बदल्नुको लागि हो"
+
+#: glade/drgeo2.glade.h:27
+msgid "Build a macro construction"
+msgstr "म्याक्रो निर्माण बनाउनुहोस्"
+
+#: glade/drgeo2.glade.h:28
+msgid "Build a macro-construction"
+msgstr "म्याक्रो-निर्माण बनाउनुहोस्"
+
+#: glade/drgeo2.glade.h:29 glade/drgeoMDI.glade.h:26
+msgid ""
+"Central symmetry of an object. When ambiguity, the first selected point is "
+"the point to transform"
+msgstr "वस्तुको मध्य सिमेट्रि. जब एम्बिगिटि हुन्छ, पहिलो छनोट बिन्दु बदल्नुको लागि हो"
+
+#: glade/drgeo2.glade.h:30 glade/drgeoMDI.glade.h:29
+msgid "Change the property of an object"
+msgstr "वस्तुको गुण परिवर्तन गर्नुहोस्"
+
+#: glade/drgeo2.glade.h:31
+msgid "Change the style of an object"
+msgstr "वस्तुको शैली परिवर्तन गर्नुहोस्"
+
+#: glade/drgeo2.glade.h:32 glade/drgeoMDI.glade.h:30
+msgid "Circle defines by center and point, radius or segment"
+msgstr "केन्द्र र बिन्दुबाट परिभाषित वृत्त, ब्यास वा बिभाजक"
+
+#: glade/drgeo2.glade.h:34
+msgid "Construct a macro"
+msgstr "म्याक्रो निर्माण गर्नुहोस्"
+
+#: glade/drgeo2.glade.h:35
+msgid "Create curve"
+msgstr "बक्ररेखा निर्माण गर्नुहोस्"
+
+#: glade/drgeo2.glade.h:36
+msgid "Create numeric object"
+msgstr "संख्यात्मक वस्तु निर्माण गर्नुहोस्"
+
+#: glade/drgeo2.glade.h:37
+msgid "Create point"
+msgstr "बिन्दु निर्माण गर्नुहोस्"
+
+#: glade/drgeo2.glade.h:38
+msgid "Curve"
+msgstr "वक्र"
+
+#: glade/drgeo2.glade.h:39
+msgid "Custome User Interface"
+msgstr "अनुकूलन प्रयोगकर्ता इन्टरफेस"
+
+#: glade/drgeo2.glade.h:40
+msgid "Custome User Interface in the current view"
+msgstr "हालको दृष्यमा अनुकूलन प्रयोगकर्ता इन्टरफेस"
+
+#: glade/drgeo2.glade.h:41 glade/drgeoMDI.glade.h:38
+msgid "Delete an object and its relatives"
+msgstr "वस्तु र यसको सम्बन्धितहरु मेटाउनुहोस्"
+
+#: glade/drgeo2.glade.h:42
+msgid "Description"
+msgstr "बर्णन"
+
+#: glade/drgeo2.glade.h:43 glade/drgeoMDI.glade.h:39
+msgid "Distance between objects, curve length, or edit free value"
+msgstr "वस्तुहरु बीच दूरी, बक्र लम्बाइ, खुला मान सम्पादन गर्नुहोस्"
+
+#: glade/drgeo2.glade.h:44
+msgid "Edit Scheme script"
+msgstr "स्किम स्क्रिप्ट सम्पादन गर्नुहोस्"
+
+#: glade/drgeo2.glade.h:45
+msgid "Edit value"
+msgstr "मान सम्पादन गर्नुहोस्"
+
+#: glade/drgeo2.glade.h:46
+msgid "Enter the macro-construction description there"
+msgstr "त्यहाँ म्याक्रो वर्णन राख्नुहोस्"
+
+#: glade/drgeo2.glade.h:47
+msgid "Enter the macro-construction name there"
+msgstr "म्याक्रो-निर्माण नाम त्यहाँ राख्नुहोस्"
+
+#: glade/drgeo2.glade.h:48
+msgid "Enter the name of this view:"
+msgstr "यस दृष्यको नाम घुसाउनुहोस्:"
+
+#: glade/drgeo2.glade.h:49
+msgid "Execute"
+msgstr "कार्यान्वयन गर्नुहोस्"
+
+#: glade/drgeo2.glade.h:50
+msgid "Execute a macro-construction"
+msgstr "म्याक्रो-निर्माणको कार्यान्वयन गर्नुहोस्"
+
+#: glade/drgeo2.glade.h:51
+msgid "Execute pre-built macro"
+msgstr "पूर्व-निर्मित म्याक्रोको कार्यान्वयन गर्नुहोस्"
+
+#: glade/drgeo2.glade.h:52
+msgid "Free point properties"
+msgstr "खुला बिन्दु गुणहरु"
+
+#: glade/drgeo2.glade.h:53
+msgid "Give a name and a description"
+msgstr "नाम र वर्णन दिनुहोस्"
+
+#: glade/drgeo2.glade.h:54 glade/drgeoMDI.glade.h:55
+msgid "Guile script using objects as input parameters"
+msgstr "आगत परामितिमा गिल स्क्रिप्टको प्रयोग"
+
+#: glade/drgeo2.glade.h:55 glade/drgeoMDI.glade.h:56
+msgid "Half-Line defined by two points, the first selected point is the origin"
+msgstr "दुई बिन्दुबाट परिभाषित आधा-पङ्त्ति, पहिलो छनोट बिन्दु मूल हो"
+
+#: glade/drgeo2.glade.h:56
+msgid "Input"
+msgstr "आयात"
+
+#: glade/drgeo2.glade.h:57
+msgid "Intro"
+msgstr "इन्ट्रु"
+
+#: glade/drgeo2.glade.h:59 glade/drgeoMDI.glade.h:58
+msgid "Line defined by two points"
+msgstr "दुई बिन्दुहरुबाट परिभाषित पङ्त्ति"
+
+#: glade/drgeo2.glade.h:60 glade/drgeoMDI.glade.h:59
+msgid ""
+"Line passing through one point and orthogonal to a line, half-line, etc."
+msgstr "एक बिन्दु र अर्थोजोनल पङ्त्ति, आधा-पङ्त्ति, इत्यादिमा पङ्त्ति यस मार्फत छिर्दछ"
+
+#: glade/drgeo2.glade.h:61 glade/drgeoMDI.glade.h:60
+msgid "Line passing through one point and parallel to a line, half-line, etc."
+msgstr "एक बिन्दु र समानान्तर पङ्त्ति, आधा-पङ्त्ति, इत्यादिमा पङ्त्ति यस मार्फत छिर्दछ"
+
+#: glade/drgeo2.glade.h:62
+msgid "Lock"
+msgstr "बन्द गर्नुहोस्"
+
+#: glade/drgeo2.glade.h:63
+msgid "Lock the interface"
+msgstr "इन्टरफेसमा ताल्चा लगाउनुहोस्"
+
+#: glade/drgeo2.glade.h:64 glade/drgeoMDI.glade.h:61
+msgid "Locus defined by a free point and a relative point"
+msgstr "सम्बन्धित बिन्दु र खुला बिन्दुबाट परिभाषित लोकस"
+
+#: glade/drgeo2.glade.h:65
+msgid "Macro name"
+msgstr "म्याक्रो नाम"
+
+#: glade/drgeo2.glade.h:67
+msgid "Masked"
+msgstr "मकुन्डो"
+
+#: glade/drgeo2.glade.h:70
+msgid "Not masked"
+msgstr "मकुन्डो नभएको"
+
+#: glade/drgeo2.glade.h:71
+msgid "Numeric"
+msgstr "संख्यात्मक"
+
+#: glade/drgeo2.glade.h:72
+msgid "Ordinate"
+msgstr "अक्षांश"
+
+#: glade/drgeo2.glade.h:73
+msgid "Other"
+msgstr "अन्य"
+
+#: glade/drgeo2.glade.h:74
+msgid "Output"
+msgstr "प्रतिफल"
+
+#: glade/drgeo2.glade.h:75
+msgid "Password to lock the changes to the interface: "
+msgstr "इन्टरफेसको परिवर्तनमा ताल्चा गगाउनुहोस्"
+
+#: glade/drgeo2.glade.h:76
+msgid "Password to unlock the changes to the interface:"
+msgstr "इन्टरफेसको परिवर्तनमा ताल्चा नलगाउनको लागि पासवर्ड:"
+
+#: glade/drgeo2.glade.h:78 glade/drgeoMDI.glade.h:65
+msgid "Point given its coordinates"
+msgstr "अक्षांशमा दिइएको बिन्दु"
+
+#: glade/drgeo2.glade.h:79 glade/drgeoMDI.glade.h:66
+msgid "Point on an object or the background plane"
+msgstr "वस्तु वा पृष्ठभूमि प्लेनमा दिइएको बिन्दु"
+
+#: glade/drgeo2.glade.h:80
+msgid ""
+"Polygon defined by n points. Last choosen point must be the initial point to "
+"terminate the selection"
+msgstr ""
+"एन बिन्दुबाट परिभाषित बहुभुज. छनोटलाई अन्त्य गर्न अन्तिम छनोट बिन्दु नै इनिसियल बिन्दु "
+"हुनुपर्छ"
+
+#: glade/drgeo2.glade.h:81
+msgid "Press this button to mask the object"
+msgstr "वस्तुलाई मकुन्डो लगाउन यो बटन प्रेस गर्नुहोस्"
+
+#: glade/drgeo2.glade.h:82
+msgid "Press this button to unmask the object"
+msgstr "वस्तुलाई मकुन्डो नलगाउन यो बटन प्रेस गर्नुहोस्"
+
+#: glade/drgeo2.glade.h:83
+msgid "Print Figure"
+msgstr "प्रिन्ट आकृति"
+
+#: glade/drgeo2.glade.h:84
+msgid "Re-lock the interface"
+msgstr "इन्टरफेसमा पुन-ताल्चा लगाउनुहोस्"
+
+#: glade/drgeo2.glade.h:85
+msgid "Rename the view"
+msgstr "दृष्यलाई पुन नामाकरण गर्नुहोस्"
+
+#: glade/drgeo2.glade.h:86 glade/drgeoMDI.glade.h:75
+msgid ""
+"Rotation of an object. When ambiguity, the first selected point is the point "
+"to rotate"
+msgstr "वस्तुको परिक्रम. जब एम्बिगिटि हुन्छ, बिन्दु परिक्रम गर्न पहिलो छनोटको बिन्दु हो"
+
+#: glade/drgeo2.glade.h:87 glade/drgeoMDI.glade.h:78
+msgid ""
+"Scale an object. When ambiguity, the first selected point is the point to "
+"transform"
+msgstr "वस्तुको माप. एम्बिगिटि गर्दा, बिन्दुलाई बदल्न पहिलो छनोटको बिन्दु हो"
+
+#: glade/drgeo2.glade.h:88
+msgid "Scheme script using objects as input parameters"
+msgstr "वस्तुहरु आयात परामितिहरु सरह प्रयोग गर्न स्किम स्क्रिप्ट"
+
+#: glade/drgeo2.glade.h:89
+msgid "Script"
+msgstr "लिपि"
+
+#: glade/drgeo2.glade.h:90 glade/drgeoMDI.glade.h:79
+msgid "Segment defined by two points"
+msgstr "दुई बिन्दुबाट परिभाषित बिभाजक"
+
+#: glade/drgeo2.glade.h:91
+msgid "Select a macro-construction then the figure items"
+msgstr "आकृति चीजहरु पछि म्याक्रो-निर्माण छनोट गर्नुहोस्"
+
+#: glade/drgeo2.glade.h:92
+msgid "Select and move an object"
+msgstr "वस्तुलाई छनोट गरी चलाउनुहोस्"
+
+#: glade/drgeo2.glade.h:93
+msgid "Select input parameters"
+msgstr "आयात परामितितहरु छनोट गर्नुहोस्"
+
+#: glade/drgeo2.glade.h:94
+msgid "Select output parameters"
+msgstr "निर्यात परामितिहरु छनोट गर्नुहोस्"
+
+#: glade/drgeo2.glade.h:95
+msgid "Select printer: "
+msgstr "प्रिन्टर छनोट गर्नुहोस्: "
+
+#: glade/drgeo2.glade.h:100 glade/drgeoMDI.glade.h:82
+msgid "The midpoint of a segment or between two points"
+msgstr "दुई बिन्दहरु बीचको वा बिभाजकको मध्यबिन्दु"
+
+#: glade/drgeo2.glade.h:101 glade/drgeoMDI.glade.h:83
+msgid "The point(s) of intersection between two objects"
+msgstr "दुई वस्तुहरु बीचको इन्टरसेक्सन बिन्दुहरु"
+
+#: glade/drgeo2.glade.h:102
+msgid ""
+"This interface has already been locked.\n"
+"Enter the previously used password for this view: "
+msgstr ""
+"यो इन्टरफेसमा ताला लागिसक्यो.\n"
+"पूर्व प्रयोगमा भएको पासवर्ड यसको दृष्यलाई हर्नलाई प्रयोग गर्नुहोस्"
+
+#: glade/drgeo2.glade.h:104
+msgid ""
+"To build a macro-construction,\n"
+"\n"
+"1. First select the input parameters\n"
+"2. Next select the output parameters,\n"
+"3. Last chose a name and a description."
+msgstr ""
+"म्याक्रो-निर्माण बनाउनको लागि,\n"
+"\n"
+"१. पहिलोमा आयात परामितिहरु छनोट गर्नुहोस्\n"
+"२. पछि निर्यात परामितिहरु छनोट गर्नुहोस्,\n"
+"३. अन्तिममा नाम र वर्णन छान्नुहोस्."
+
+#: glade/drgeo2.glade.h:109
+msgid ""
+"To play a macro-construction,\n"
+"\n"
+"1. First select a macro-construction from the list,\n"
+"2. Select items on the figure. Only relevant items \n"
+"to the selected macro-construction are selectable.\n"
+"Once enought items are selected, the macro is \n"
+"automaticly executed.\n"
+"To start press the button \"next\"."
+msgstr ""
+"म्याक्रो-निर्माण शुरु गर्नको लागि,\n"
+"\n"
+"१. पहिलोमा सूचीबाट म्याक्रो-निर्माण छनोट गर्नुहोस्,\n"
+"२. आकृतिमा चीजहरु छनोट गर्नुहोस्. रेलिभेन्ट चीजहरु मात्र \n"
+"छनोट गरिएको म्याक्रो-निर्माण छनोटको लागि.\n"
+"पर्याप्त चीजहरु छनोट गरिन्छ, मयाक्रो \n"
+"स्वत कार्यान्वयन हुन्छ.\n"
+"शुरु गर्नको लागि \"पछिल्लो\" बटन प्रेस गर्नुहोस्."
+
+#: glade/drgeo2.glade.h:117
+msgid "Tools based on properties and transformations"
+msgstr "गुणहरु र बदलहरुमा आधारित उपकरणहरु"
+
+#: glade/drgeo2.glade.h:118 glade/drgeoMDI.glade.h:84
+msgid ""
+"Translation of an object. When ambiguity, the first selected vector is the "
+"vector to translate"
+msgstr "वस्तुको अनुवाद. एम्बिगिटि गर्दा, पहिलो छनोटको भेक्टरलाई अनुवाद गरिन्छ"
+
+#: glade/drgeo2.glade.h:119
+msgid "Unlock"
+msgstr "ताला नलगाइएको"
+
+#: glade/drgeo2.glade.h:120 glade/drgeoMDI.glade.h:86
+msgid "Vector and point coordinates, line and circle equation"
+msgstr "भेक्टर र बिन्दु अक्षांशहरु, पङ्त्ति र वृत्त समिकरण"
+
+#: glade/drgeo2.glade.h:121 glade/drgeoMDI.glade.h:87
+msgid "Vector defined by two points"
+msgstr "दुई बिन्दुबाट परिभाषित भेक्टर"
+
+#: glade/drgeo2.glade.h:122
+msgid "Visibility"
+msgstr "दृश्यात्मक"
+
+#: glade/drgeo2.glade.h:123
+msgid "Write down your description there."
+msgstr "तपाईको बिवरण त्यहाँ राख्नुहोस्."
+
+#: glade/drgeo2.glade.h:124
+msgid "You can edit the description"
+msgstr "तपाई बिवरण सम्पादन गर्न सक्नुहुन्छ"
+
+#: glade/drgeo2.glade.h:125
+msgid "macro"
+msgstr "म्याक्रो"
+
+#: glade/drgeo2.glade.h:126
+msgid "other"
+msgstr "अर्को"
+
+#: glade/drgeo2.glade.h:127
+msgid "transformation"
+msgstr "बदल्ने काम"
+
+#: glade/drgeoMDI.glade.h:16
+#, fuzzy
+msgid "Animate a free point on a curve at speed 1"
+msgstr "खुला बिन्दु बक्ररेखामा %s"
+
+#: glade/drgeoMDI.glade.h:17
+#, fuzzy
+msgid "Animate a free point on a curve at speed 2"
+msgstr "खुला बिन्दु बक्ररेखामा %s"
+
+#: glade/drgeoMDI.glade.h:18
+#, fuzzy
+msgid "Animate a free point on a curve at speed 3"
+msgstr "खुला बिन्दु बक्ररेखामा %s"
+
+#: glade/drgeoMDI.glade.h:19
+#, fuzzy
+msgid "Animate a free point on a curve at speed 4"
+msgstr "खुला बिन्दु बक्ररेखामा %s"
+
+#: glade/drgeoMDI.glade.h:20
+msgid "Animation x1"
+msgstr ""
+
+#: glade/drgeoMDI.glade.h:21
+msgid "Animation x2"
+msgstr ""
+
+#: glade/drgeoMDI.glade.h:22
+msgid "Animation x3"
+msgstr ""
+
+#: glade/drgeoMDI.glade.h:23
+msgid "Animation x4"
+msgstr ""
+
+#: glade/drgeoMDI.glade.h:27
+msgid "Change the User Interface of the current figure"
+msgstr "हालको आकृतिको प्रयोगकर्ता इन्टरफेस परिवर्तन गर्नुहोस्"
+
+#: glade/drgeoMDI.glade.h:28
+msgid "Change the look of an object"
+msgstr "वस्तुको हेराइ परिवर्तन गर्नुहोस्"
+
+#: glade/drgeoMDI.glade.h:31
+msgid "Create a new geometric figure"
+msgstr "नयाँ ज्यामितिय आकृति निर्माण गर्नुहोस्"
+
+#: glade/drgeoMDI.glade.h:32
+msgid "Create a new text"
+msgstr "नयाँ पाठ निर्माण गर्नुहोस्"
+
+#: glade/drgeoMDI.glade.h:34
+#, no-c-format
+msgid "Default 100%"
+msgstr "पूर्वनिर्धारित १००%"
+
+#: glade/drgeoMDI.glade.h:35
+msgid "Define a macro-construction"
+msgstr "म्याक्रो-निर्माण परिभाषित गर्नुहोस्"
+
+#: glade/drgeoMDI.glade.h:36
+msgid "Define exporting area"
+msgstr "निर्यातित क्षेत्र परिभाषित गर्नुहोस्"
+
+#: glade/drgeoMDI.glade.h:37
+msgid "Define the exporting area"
+msgstr "निर्यातित क्षेत्र परिभाषित गर्नुहोस्"
+
+#: glade/drgeoMDI.glade.h:40
+msgid "Dr Geo"
+msgstr "ड्र गियो"
+
+#: glade/drgeoMDI.glade.h:41
+msgid "Evaluate a figure defined in Scheme"
+msgstr "स्किममा परिभाषित आकृतिको मूल्याङ्कन गर्नुहोस्"
+
+#: glade/drgeoMDI.glade.h:42
+msgid "Execute a pre-built macro-construction"
+msgstr "पूर्व-निर्मित म्याक्रो-निर्माणलाई कार्यान्वयन गर्नुहोस्"
+
+#: glade/drgeoMDI.glade.h:44
+msgid "Export current figure to Flydraw (for WIMS)"
+msgstr "(विम्सको लागि) फ्लाइड्रमा हालको आकृति निर्यात गर्नुहोस्"
+
+#: glade/drgeoMDI.glade.h:45
+msgid "Export current figure to LaTeX (using PSTrick package)"
+msgstr "(पिएसट्रिक प्याकेज प्रयोग गरि) हालको आकृति लटेक्समा निर्यात गर्नुहोस्"
+
+#: glade/drgeoMDI.glade.h:46
+msgid "Export current figure to PNG (image format)"
+msgstr "(चित्र ढाँचा) पिएनजिमा हालको आकृति निर्यात गर्नुहोस्"
+
+#: glade/drgeoMDI.glade.h:47
+msgid "Export current figure to PostScript (eps)"
+msgstr "पोस्टस्क्रिप्ट (इप्स) मा हालको आकृति निर्यात गर्नुहोस्"
+
+#: glade/drgeoMDI.glade.h:48
+msgid "Export figure to Flydraw"
+msgstr "फ्लाइड्रमा आकृति निर्यात गर्नुहोस्"
+
+#: glade/drgeoMDI.glade.h:49
+msgid "Export figure to LaTeX"
+msgstr "लटेक्समा आकृति निर्यात गर्नुहोस्"
+
+#: glade/drgeoMDI.glade.h:50
+msgid "Export figure to PNG"
+msgstr "पिएनजिमा आकृति निर्यात गर्नुहोस्"
+
+#: glade/drgeoMDI.glade.h:51
+msgid "Export figure to PostScript"
+msgstr "पोस्टस्क्रिप्टमा आकृति निर्यात गर्नुहोस्"
+
+#: glade/drgeoMDI.glade.h:52
+msgid "Export preferences"
+msgstr "प्राथमिकताहरु निर्यात गर्नुहोस्"
+
+#: glade/drgeoMDI.glade.h:53
+msgid "Free _point"
+msgstr "खुला _बिन्दु"
+
+#: glade/drgeoMDI.glade.h:54
+msgid "Grid"
+msgstr "ग्रिड"
+
+#: glade/drgeoMDI.glade.h:57
+msgid "Help"
+msgstr "मद्दत"
+
+#: glade/drgeoMDI.glade.h:62
+msgid "M_ove an object"
+msgstr "वस्तु चलाउनुहोस्"
+
+#: glade/drgeoMDI.glade.h:63
+msgid "New Figure"
+msgstr "नयाँ आकृति"
+
+#: glade/drgeoMDI.glade.h:64
+msgid "New Text"
+msgstr "नयाँ पाठ"
+
+#: glade/drgeoMDI.glade.h:67
+msgid "Polygon defined by three points or more"
+msgstr "तीन बिन्दुहरु वा बढिबाट परिभाषित बहुभुज"
+
+#: glade/drgeoMDI.glade.h:68
+msgid "Preferences"
+msgstr "प्राथमिकताहरु"
+
+#: glade/drgeoMDI.glade.h:69
+msgid "Preferences set up"
+msgstr "प्राथमिकताहरुको सेट अप"
+
+#: glade/drgeoMDI.glade.h:70
+msgid "Re_name"
+msgstr "नाम फेर्नुहोस"
+
+#: glade/drgeoMDI.glade.h:71
+msgid "Remove exporting area"
+msgstr "निर्यातित क्षेत्र हटाउनुहोस्"
+
+#: glade/drgeoMDI.glade.h:72
+msgid "Remove the exporting area"
+msgstr "निर्यातित क्षेत्र हटाउनुहोस्"
+
+#: glade/drgeoMDI.glade.h:73
+msgid "Rename"
+msgstr "पुन: नामाकरण"
+
+#: glade/drgeoMDI.glade.h:74
+msgid "Rename the current view"
+msgstr "हालको दृष्यलाई पुन नामाकरण गर्नुहोस्"
+
+#: glade/drgeoMDI.glade.h:76
+msgid "Save _multiple"
+msgstr "बहुमुखीय बचत गर्नुहोस्"
+
+#: glade/drgeoMDI.glade.h:77
+msgid "Save several data (figures, macro-constructions.) in one file"
+msgstr "साधारण डाटा बचत गर्नुहोस् (आकृतिहरु, म्याक्रो-निर्माण एक फाइलमा)"
+
+#: glade/drgeoMDI.glade.h:80
+msgid "Show or hide the grid"
+msgstr "ग्रिड देखाउनुहोस् वा लुकाउनुहोस्"
+
+#: glade/drgeoMDI.glade.h:81
+msgid "Show or hide the unit grid in the current view"
+msgstr "हालको दृष्यमा एकाइ ग्रिड देखाउनुहोस् वा लुकाउनुहोस्"
+
+#: glade/drgeoMDI.glade.h:85
+msgid "User manual"
+msgstr "मानवचालित प्रयोगकर्ता"
+
+#: glade/drgeoMDI.glade.h:88
+msgid "Windows"
+msgstr "सन्झ्यालहरु"
+
+#: glade/drgeoMDI.glade.h:90
+#, no-c-format
+msgid "Zoom to 100%"
+msgstr "१००% मा जूम"
+
+#: glade/drgeoMDI.glade.h:92
+#, no-c-format
+msgid "Zoom to 125%"
+msgstr "१२५% मा जूम"
+
+#: glade/drgeoMDI.glade.h:94
+#, no-c-format
+msgid "Zoom to 150%"
+msgstr "१५०% मा जूम"
+
+#: glade/drgeoMDI.glade.h:96
+#, no-c-format
+msgid "Zoom to 175%"
+msgstr "१७५% मा जूम"
+
+#: glade/drgeoMDI.glade.h:98
+#, no-c-format
+msgid "Zoom to 200%"
+msgstr "२००% मा जूम"
+
+#: glade/drgeoMDI.glade.h:100
+#, no-c-format
+msgid "Zoom to 25%"
+msgstr "२५% मा जूम"
+
+#: glade/drgeoMDI.glade.h:102
+#, no-c-format
+msgid "Zoom to 50%"
+msgstr "५०% मा जूम"
+
+#: glade/drgeoMDI.glade.h:104
+#, no-c-format
+msgid "Zoom to 75%"
+msgstr "७५% मा जूम"
+
+#: glade/drgeoMDI.glade.h:105
+msgid "_About"
+msgstr "_बारेमा"
+
+#: glade/drgeoMDI.glade.h:106
+msgid "_Angle"
+msgstr "_कोण"
+
+#: glade/drgeoMDI.glade.h:107
+#, fuzzy
+msgid "_Animation"
+msgstr "_बदल्ने काम"
+
+#: glade/drgeoMDI.glade.h:108
+msgid "_Arc Circle"
+msgstr "_खण्ड वृत्त"
+
+#: glade/drgeoMDI.glade.h:109
+msgid "_Axial Symmetry"
+msgstr "_अक्ष सिमेट्री"
+
+#: glade/drgeoMDI.glade.h:110
+msgid "_Central Symmetry"
+msgstr "_मध्य सिमेट्री"
+
+#: glade/drgeoMDI.glade.h:111
+msgid "_Circle"
+msgstr "_वृत्त"
+
+#: glade/drgeoMDI.glade.h:112
+msgid "_Construct Macro"
+msgstr "म्याक्रो निर्माण गर्नुहोस्"
+
+#: glade/drgeoMDI.glade.h:113
+msgid "_Contents"
+msgstr "विषयसूचीहरु"
+
+#: glade/drgeoMDI.glade.h:114
+msgid "_Coordinates"
+msgstr "_अक्षांशहरु"
+
+#: glade/drgeoMDI.glade.h:115
+msgid "_Coordinates & Equation"
+msgstr "_अक्षांश र समिकरण"
+
+#: glade/drgeoMDI.glade.h:116
+msgid "_Curve"
+msgstr "_बक्र"
+
+#: glade/drgeoMDI.glade.h:117
+msgid "_Custom Interface"
+msgstr "_अनुकूलन इन्टरफेस"
+
+#: glade/drgeoMDI.glade.h:118
+msgid "_Delete an Object"
+msgstr "वस्तु मेटाउनुहोस्"
+
+#: glade/drgeoMDI.glade.h:119
+msgid "_Distance & Length"
+msgstr "दूरी र लम्बाइ"
+
+#: glade/drgeoMDI.glade.h:120
+msgid "_Edit"
+msgstr "_सम्पादन गर्नुहोस्"
+
+#: glade/drgeoMDI.glade.h:121
+msgid "_Evaluate"
+msgstr "_मूल्याङ्कन गर्नुहोस्"
+
+#: glade/drgeoMDI.glade.h:122
+msgid "_Execute Macro"
+msgstr "_म्याक्रो कार्यान्वयन गर्नुहोस्"
+
+#: glade/drgeoMDI.glade.h:123
+msgid "_Figure"
+msgstr "_आकृति"
+
+#: glade/drgeoMDI.glade.h:124
+msgid "_File"
+msgstr "फाईल"
+
+#: glade/drgeoMDI.glade.h:125
+msgid "_Geometric Locus"
+msgstr "ज्यामितिय लोकस"
+
+#: glade/drgeoMDI.glade.h:126
+msgid "_Half-line"
+msgstr "आधा-पङ्त्ति"
+
+#: glade/drgeoMDI.glade.h:127
+msgid "_Help"
+msgstr "मद्दत"
+
+#: glade/drgeoMDI.glade.h:128
+msgid "_Intersection"
+msgstr "_इन्टरसेक्सन"
+
+#: glade/drgeoMDI.glade.h:129
+msgid "_Line"
+msgstr "_पङ्त्ति"
+
+#: glade/drgeoMDI.glade.h:130
+msgid "_Look"
+msgstr "_हेराइ"
+
+#: glade/drgeoMDI.glade.h:131
+msgid "_Macro"
+msgstr "_म्याक्रो"
+
+#: glade/drgeoMDI.glade.h:132
+msgid "_Macro-constructions"
+msgstr "_म्याक्रो-निर्माणहरु"
+
+#: glade/drgeoMDI.glade.h:133
+msgid "_Middle"
+msgstr "_मध्यम"
+
+#: glade/drgeoMDI.glade.h:134
+msgid "_Numeric"
+msgstr "_संख्यात्मक"
+
+#: glade/drgeoMDI.glade.h:135
+msgid "_Orthogonal Line"
+msgstr "_अर्थोजोनल पङ्त्ति"
+
+#: glade/drgeoMDI.glade.h:136
+msgid "_Other"
+msgstr "_अन्य"
+
+#: glade/drgeoMDI.glade.h:137
+msgid "_Parallel Line"
+msgstr "_समानान्तर पङ्त्ति"
+
+#: glade/drgeoMDI.glade.h:138
+msgid "_Point"
+msgstr "_बिन्दु"
+
+#: glade/drgeoMDI.glade.h:139
+msgid "_Polygon"
+msgstr "_बहुभुज"
+
+#: glade/drgeoMDI.glade.h:140
+msgid "_Property"
+msgstr "_गुण"
+
+#: glade/drgeoMDI.glade.h:141
+msgid "_Rotation"
+msgstr "_परिक्रम"
+
+#: glade/drgeoMDI.glade.h:142
+msgid "_Scale"
+msgstr "_माप"
+
+#: glade/drgeoMDI.glade.h:143
+msgid "_Script"
+msgstr "_लिपि"
+
+#: glade/drgeoMDI.glade.h:144
+msgid "_Segment"
+msgstr "_बिभाजक"
+
+#: glade/drgeoMDI.glade.h:145
+msgid "_Text"
+msgstr "_पाठ"
+
+#: glade/drgeoMDI.glade.h:146
+msgid "_Transformation"
+msgstr "_बदल्ने काम"
+
+#: glade/drgeoMDI.glade.h:147
+msgid "_Translation"
+msgstr "_अनुवाद"
+
+#: glade/drgeoMDI.glade.h:148
+msgid "_Vector"
+msgstr "_भेक्टर"
+
+#: glade/drgeoMDI.glade.h:149
+msgid "_Zoom"
+msgstr "_दृश्य "

@@ -1,0 +1,2259 @@
+# translation of drgeo.po to Basque
+# translation of drgeo-zuzenduta.po to Basque
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# Hizkuntza Politikarako Sailburuordetza <hizkpol@ej-gv.es>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: eu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-07-26 23:59+0200\n"
+"PO-Revision-Date: 2005-05-05 15:28+0200\n"
+"Last-Translator: Hizkuntza Politikarako Sailburuordetza <hizkpol@ej-gv.es>\n"
+"Language-Team:  <itzulpena@euskalgnu.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9.1\n"
+"Plural-Forms: Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: drgenius_main.cc:56
+#, c-format
+msgid ""
+"Command line options:\n"
+"Term under [] are options, || means OR:\n"
+"   drgeo [--file geo_file_name || macro_file_name] [geo_file_name.fgeo] "
+"[macro_file_name.mgeo] [--evaluate dsf_file_name] [--texmacs] [--help]\n"
+"\n"
+"--file       : to load a Dr. Geo file\n"
+"--evaluate   : to load and evaluate a Dr. Geo Scheme Figure (DSF)\n"
+"--texmacs    : start Dr. Geo as a TeXmacs plug-in\n"
+"--help       : this help summary\n"
+"\n"
+"Several files can be loaded using a --file command for each\n"
+"\n"
+msgstr ""
+"Komando-lerroko aukerak:\n"
+"[] arteko terminoak aukerak dira, || ikurrak OR esan nahi du:\n"
+"   drgeo [--file geo_fitxategi_izena || makro_fitxategiaren_izena] "
+"[geo_fitxategi_izena.fgeo] [makro_fitxategi_izena.mgeo] [--evaluate "
+"dsf_fitxategi_izena] [--texmacs] [--help]\n"
+"\n"
+"--file       : Dr. Geo fitxategia kargatzeko\n"
+"--evaluate   : Dr. Geo-ren Scheme-n irudi (DSF) bat kargatzeko eta "
+"ebaluatzeko\n"
+"--texmacs    : abiarazi Dr. Geo TeXmacs plugin gisa\n"
+"--help       : laguntza-laburpen hau\n"
+"\n"
+"Hainbat fitxategi karga daitezke bakoitzerako --file komandoa erabiliz\n"
+"\n"
+
+#: drgenius_main.cc:160
+#, c-format
+msgid ""
+"\n"
+"Miss a filename in --file\n"
+"\n"
+msgstr ""
+"\n"
+"Fitxategi-izen bat falta da hemen: --file\n"
+"\n"
+
+#: drgenius_main.cc:172
+#, c-format
+msgid ""
+"\n"
+"Miss a filename to evaluate in --evaluate\n"
+"\n"
+msgstr ""
+"\n"
+"Ebaluatzeko fitxategi-izen bat falta da hemen: --evaluate\n"
+"\n"
+
+#: drgenius_main.cc:196
+#, c-format
+msgid "Unknown file type: %s (try .fgeo, .mgeo)\n"
+msgstr "Fitxategi-mota ezezaguna: %s (saiatu .fgeo, .mgeo)\n"
+
+#: drgenius_main.cc:200
+#, c-format
+msgid ""
+"\n"
+"Unknows command: %s\n"
+msgstr ""
+"\n"
+"Komando ezezaguna: %s\n"
+
+#: drgenius_mdi.cc:99
+msgid "Welcome to GNU Dr. Geo - Free Interactive geometry by OFSET"
+msgstr ""
+"Ongi etorri GNU Dr. Geo-ra - Geometria interaktibo librea OFSETek eskainia"
+
+#: drgenius_mdi.cc:149
+#, c-format
+msgid "Error loading file '%s'"
+msgstr "Errorea '%s' fitxategia kargatzean"
+
+#: drgenius_mdi.cc:592
+msgid "Are you sure to quit Dr. Geo?"
+msgstr "Ziur zaude Dr. Geo-tik irten nahi duzula?"
+
+#: drgenius_mdi.cc:643 drgenius_mdi.cc:703
+#, c-format
+msgid "Can't open file '%s'"
+msgstr "Ezin da '%s' fitxategia ireki"
+
+#: drgenius_mdi.cc:668
+msgid "Open..."
+msgstr "Ireki..."
+
+#: drgenius_mdi.cc:727
+msgid "Evaluate..."
+msgstr "Ebaluatu..."
+
+#: drgenius_mdi.cc:767 drgenius_mdi.cc:797
+#, c-format
+msgid "Error saving to '%s'!"
+msgstr "Errorea '%s'(e)n gordetzean!"
+
+#: drgenius_mdi.cc:829 drgenius_mdi.cc:859 drgenius_mdi.cc:890
+#: drgenius_mdi.cc:925
+#, c-format
+msgid "Error exporting to '%s'!"
+msgstr "Errorea '%s'(e)ra esportatzean!"
+
+#: drgenius_mdi.cc:943
+#, c-format
+msgid ""
+"Error exporting to '%s'!\n"
+"Exporting to PNG required the Image Magick package.\n"
+"Install it and try again!"
+msgstr ""
+"Errorea '%s'(e)ra esportatzean!\n"
+"PNG formatura esportatzeko Image Magick paketea behar da.\n"
+"Instalatu eta saiatu berriro!"
+
+#: drgenius_mdi.cc:972
+msgid "Define the printing area"
+msgstr "Definitu inprimatze-area"
+
+#: drgenius_mdi.cc:1003 drgenius_mdi.cc:1087 drgenius_mdi.cc:1112
+#: drgenius_mdi.cc:1138 drgenius_mdi.cc:1165 drgenius_mdi.cc:1192
+#, c-format
+msgid ""
+"File '%s' exists!\n"
+"Overwrite?"
+msgstr ""
+"'%s' fitxategia badago!\n"
+"Gainidatzi?"
+
+#: drgenius_mdi.cc:1027
+msgid "Save As..."
+msgstr "Gorde honela..."
+
+#: drgenius_mdi.cc:1215 drgenius_mdi.cc:1865
+msgid "Interactive 2D Figure"
+msgstr "2D irudi interaktiboa"
+
+#: drgenius_mdi.cc:1216
+msgid "Console"
+msgstr "Kontsola"
+
+#: drgenius_mdi.cc:1217 drgenius_mdi.cc:1866
+msgid "Text Buffer"
+msgstr "Testu-bufferra"
+
+#: drgenius_mdi.cc:1241
+msgid "Type"
+msgstr "Mota"
+
+#: drgenius_mdi.cc:1246 glade/drgeo2.glade.h:68
+msgid "Name"
+msgstr "Izena"
+
+#. Next we add the list of avalaible macro-construction
+#: drgenius_mdi.cc:1280 drgenius_mdi.cc:1872 glade/drgeo2.glade.h:66
+msgid "Macro-construction"
+msgstr "Makro-eraikuntza"
+
+#: drgenius_mdi.cc:1365
+msgid "Error printing the current figure!"
+msgstr "Errorea uneko irudia inprimatzean!"
+
+#: drgenius_mdi.cc:1409
+msgid ""
+"Only geometric figure\n"
+"can be exported to Flydraw!"
+msgstr ""
+"Irudi geometrikoak bakarrik\n"
+"esporta daitezke Flydraw-era!"
+
+#: drgenius_mdi.cc:1426 drgenius_mdi.cc:1478 drgenius_mdi.cc:1529
+#: drgenius_mdi.cc:1585 glade/drgeoMDI.glade.h:43
+msgid "Export As..."
+msgstr "Esportatu honela...:"
+
+#: drgenius_mdi.cc:1461
+msgid ""
+"Only geomteric figure\n"
+"can be exported to LaTex!"
+msgstr ""
+"Irudi geometrikoak bakarrik\n"
+"esporta daitezke LaTex-era!"
+
+#: drgenius_mdi.cc:1513
+msgid ""
+"Only geomteric figure\n"
+"can be exported to PostScript!"
+msgstr ""
+"Irudi geometrikoak bakarrik\n"
+"esporta daitezke PostScript-era!"
+
+#: drgenius_mdi.cc:1566
+msgid ""
+"Only geomteric figure\n"
+"can be exported to PNG!"
+msgstr ""
+"Irudi geometrikoak bakarrik\n"
+"esporta daitezke PNGra!"
+
+#: drgenius_mdi.cc:1705
+msgid "Are you sure to close this figure?"
+msgstr "Ziur zaude irudi hau itxi nahi duzula?"
+
+#: drgenius_mdi.cc:1729
+msgid "About Dr. Geo"
+msgstr "Dr. Geo-ri buruz"
+
+#. VERSION
+#: drgenius_mdi.cc:1742
+#, fuzzy
+msgid ""
+"\n"
+"Free Interactive Geometry\n"
+"\n"
+"(c) Copyright 1996-2005 H. Fernandes  \n"
+"(c) Copyright 2000 L. Gauthier\n"
+"(c) Copyright 2000-2005 OFSET\n"
+"Translation: translator_name"
+msgstr ""
+"\n"
+"Geometria Interactivo Librea\n"
+"\n"
+"(c) Copyright 1996-2000 H. Fernandes  \n"
+"(c) Copyright 2000 L. Gauthier\n"
+"(c) Copyright 2000-2003 OFSET\n"
+"Itzulpena: Hizkuntza Politikarako Sailburuordetza (hizkpol@ej-gv.es)"
+
+#: drgenius_mdi.cc:1826
+msgid "Save Session As..."
+msgstr "Gorde saioa honela..."
+
+#: drgenius_mdi.cc:1921 geo/drgeo_control.cc:812
+msgid "Play a recorded macro-construction"
+msgstr "Erreproduzitu grabatutako makro-eraikuntza bat"
+
+#: drgenius_mdi.cc:1976
+#, fuzzy
+msgid "Select a free point to animate it"
+msgstr "Leku geometrikoa: hautatu puntu libre bat eta haren mendeko puntu bat"
+
+#: drgeo.desktop.in.h:1
+msgid "Dr.Geo"
+msgstr "Dr.Geo"
+
+#: drgeo.desktop.in.h:2
+msgid "Dr.Geo Math Tool"
+msgstr "Dr.Geo-ren matematika-tresna"
+
+#: drgeo_adaptDialog.cc:404
+msgid ""
+"Password does not match\n"
+" Access denied!"
+msgstr ""
+"Pasahitza ez dator bat\n"
+" Sarbidea ukatuta!"
+
+#. create a new name
+#: editor_view.cc:42
+#, c-format
+msgid "Text %d"
+msgstr "%d testua"
+
+#: geo_view.cc:32
+#, c-format
+msgid "Figure %d"
+msgstr "%d irudia"
+
+#: geo_view.cc:132
+msgid "Items"
+msgstr "Elementuak"
+
+#: geo/drgeo_angle.cc:210 geo/drgeo_angle.cc:241
+msgid "this angle %1"
+msgstr "angelu hau %1"
+
+#: geo/drgeo_angle.cc:285
+#, c-format
+msgid "Geometric angle:: %s"
+msgstr "Angelu geometrikoa:: %s"
+
+#: geo/drgeo_angle.cc:286 geo/drgeo_angle.cc:288 geo/drgeo_arcCircle.cc:377
+#: geo/drgeo_circle.cc:359 geo/drgeo_halfLine.cc:260 geo/drgeo_line.cc:320
+#: geo/drgeo_numeric.cc:481 geo/drgeo_numeric.cc:486 geo/drgeo_numeric.cc:503
+#: geo/drgeo_numeric.cc:510 geo/drgeo_numeric.cc:517 geo/drgeo_numeric.cc:518
+#: geo/drgeo_point.cc:445 geo/drgeo_point.cc:446 geo/drgeo_polygon.cc:289
+#, c-format
+msgid "Point %s"
+msgstr "%s puntua"
+
+#: geo/drgeo_angle.cc:287
+#, c-format
+msgid "Vertex %s"
+msgstr "%s erpina"
+
+#: geo/drgeo_angle.cc:292
+#, c-format
+msgid "Oriented angle:: %s"
+msgstr "Orientatutako angelua:: %s"
+
+#: geo/drgeo_angle.cc:293 geo/drgeo_angle.cc:294 geo/drgeo_numeric.cc:461
+#: geo/drgeo_numeric.cc:491 geo/drgeo_numeric.cc:496
+#, c-format
+msgid "Vector %s"
+msgstr "%s bektorea"
+
+#: geo/drgeo_arcCircle.cc:282 geo/drgeo_arcCircle.cc:286
+msgid "this arc %1"
+msgstr "arku hau %1"
+
+#: geo/drgeo_arcCircle.cc:335
+#, c-format
+msgid "Rotate arc-circle:: %s"
+msgstr "Zirkunferentzia-arkuaren biraketa:: %s"
+
+#: geo/drgeo_arcCircle.cc:336 geo/drgeo_arcCircle.cc:344
+#: geo/drgeo_arcCircle.cc:351
+#, c-format
+msgid "Transformed arc-circle %s"
+msgstr "%s zirkunferentzia-arku eraldatua"
+
+#: geo/drgeo_arcCircle.cc:338 geo/drgeo_arcCircle.cc:346
+#: geo/drgeo_arcCircle.cc:369 geo/drgeo_circle.cc:319 geo/drgeo_circle.cc:327
+#: geo/drgeo_circle.cc:350 geo/drgeo_circle.cc:358 geo/drgeo_circle.cc:366
+#: geo/drgeo_circle.cc:375 geo/drgeo_halfLine.cc:221 geo/drgeo_halfLine.cc:229
+#: geo/drgeo_halfLine.cc:252 geo/drgeo_line.cc:282 geo/drgeo_line.cc:290
+#: geo/drgeo_line.cc:312 geo/drgeo_point.cc:383 geo/drgeo_point.cc:391
+#: geo/drgeo_point.cc:413 geo/drgeo_polygon.cc:297 geo/drgeo_polygon.cc:305
+#: geo/drgeo_polygon.cc:328 geo/drgeo_segment.cc:223 geo/drgeo_segment.cc:231
+#: geo/drgeo_segment.cc:254 geo/drgeo_vector.cc:248 geo/drgeo_vector.cc:256
+#: geo/drgeo_vector.cc:279
+#, c-format
+msgid "Center %s"
+msgstr "%s zentroa "
+
+#: geo/drgeo_arcCircle.cc:339 geo/drgeo_circle.cc:320
+#: geo/drgeo_halfLine.cc:222 geo/drgeo_line.cc:283 geo/drgeo_point.cc:384
+#: geo/drgeo_polygon.cc:298 geo/drgeo_segment.cc:224 geo/drgeo_vector.cc:249
+#, c-format
+msgid "Angle %s"
+msgstr "%s angelua"
+
+#: geo/drgeo_arcCircle.cc:343 geo/drgeo_arcCircle.cc:350
+#, c-format
+msgid "Symmetric arc-circle:: %s"
+msgstr "Zirkunferentzia-arku simetrikoa:: %s"
+
+#: geo/drgeo_arcCircle.cc:353 geo/drgeo_circle.cc:334
+#: geo/drgeo_halfLine.cc:236 geo/drgeo_line.cc:297 geo/drgeo_point.cc:398
+#: geo/drgeo_polygon.cc:312 geo/drgeo_segment.cc:238 geo/drgeo_vector.cc:263
+#, c-format
+msgid "Reflexion axe %s"
+msgstr "%s islapen-ardatza"
+
+#: geo/drgeo_arcCircle.cc:358
+#, c-format
+msgid "Translate arc-circle:: %s"
+msgstr "Zirkunferentzia-arkuaren translazioa:: %s"
+
+#: geo/drgeo_arcCircle.cc:359
+#, c-format
+msgid "Translated arc-circle %s"
+msgstr "%s translazioa egindako zirkunferentzia-arkua "
+
+#: geo/drgeo_arcCircle.cc:361 geo/drgeo_circle.cc:342
+#: geo/drgeo_halfLine.cc:244 geo/drgeo_line.cc:305 geo/drgeo_point.cc:406
+#: geo/drgeo_polygon.cc:320 geo/drgeo_segment.cc:246 geo/drgeo_vector.cc:271
+#, c-format
+msgid "Vector of translation %s"
+msgstr "%s translazio-bektorea"
+
+#: geo/drgeo_arcCircle.cc:366
+#, c-format
+msgid "Scale arc-circle:: %s"
+msgstr "Eskalatu zirkunferentzia-arkua:: %s"
+
+#: geo/drgeo_arcCircle.cc:367
+#, c-format
+msgid "Scaled arc-circle %s"
+msgstr "Zirkunferentzia-arku eskaladuna %s"
+
+#: geo/drgeo_arcCircle.cc:370 geo/drgeo_circle.cc:351
+#: geo/drgeo_halfLine.cc:253 geo/drgeo_line.cc:313 geo/drgeo_point.cc:414
+#: geo/drgeo_polygon.cc:329 geo/drgeo_segment.cc:255 geo/drgeo_vector.cc:280
+#, c-format
+msgid "Factor %s"
+msgstr "%s faktorea"
+
+#: geo/drgeo_arcCircle.cc:375
+#, c-format
+msgid "Arc-circle defined by three points:: %s"
+msgstr "Hiru puntuk definitutako zirkunferentzia-arkua:: %s"
+
+#: geo/drgeo_arcCircle.cc:376 geo/drgeo_arcCircle.cc:378
+#: geo/drgeo_segment.cc:261 geo/drgeo_segment.cc:262 geo/drgeo_vector.cc:287
+#, c-format
+msgid "Extremity %s"
+msgstr "%s muturra"
+
+#: geo/drgeo_circle.cc:258 geo/drgeo_circle.cc:262
+msgid "this circle %1"
+msgstr "Zirkulu hau %1"
+
+#: geo/drgeo_circle.cc:316
+#, c-format
+msgid "Rotate circle:: %s"
+msgstr "Zirkuluaren biraketa:: %s"
+
+#: geo/drgeo_circle.cc:317 geo/drgeo_circle.cc:325 geo/drgeo_circle.cc:332
+#, c-format
+msgid "Transformed circle %s"
+msgstr "%s zirkulu eraldatua"
+
+#: geo/drgeo_circle.cc:324 geo/drgeo_circle.cc:331
+#, c-format
+msgid "Symmetric circle:: %s"
+msgstr "Zirkulu simetrikoa:: %s"
+
+#: geo/drgeo_circle.cc:339
+#, c-format
+msgid "Translate circle:: %s"
+msgstr "Zirkuluaren translazioa:: %s"
+
+#: geo/drgeo_circle.cc:340
+#, c-format
+msgid "Translated circle %s"
+msgstr "%s translazioa egindako zirkulua "
+
+#: geo/drgeo_circle.cc:347
+#, c-format
+msgid "Scale circle:: %s"
+msgstr "Eskalatu zirkulua:: %s"
+
+#: geo/drgeo_circle.cc:348
+#, c-format
+msgid "Scaled circle %s"
+msgstr "%s zirkulu eskalatua"
+
+#: geo/drgeo_circle.cc:356
+#, c-format
+msgid "Circle defined by its center and a point:: %s"
+msgstr "Zentroak eta puntu batek definitutako zirkulua:: %s"
+
+#: geo/drgeo_circle.cc:364
+#, c-format
+msgid "Circle defined by its center and a segment:: %s"
+msgstr "Zentroak eta segmentu batek definitutako zirkulua:: %s"
+
+#: geo/drgeo_circle.cc:367
+#, c-format
+msgid "Radius from segment %s"
+msgstr "Erradioa %s segmentuaren arabera"
+
+#: geo/drgeo_circle.cc:373
+#, c-format
+msgid "Circle defined by its center and radius:: %s"
+msgstr "Zentroak eta erradioak definitutako zirkulua:: %s"
+
+#: geo/drgeo_circle.cc:376
+#, c-format
+msgid "Radius %s"
+msgstr "%s erradioa"
+
+#: geo/drgeo_control.cc:254
+msgid "Free point: click on the plane or over a curve"
+msgstr "Puntu librea: egin klik planoan edo kurba batean"
+
+#: geo/drgeo_control.cc:276
+msgid "Middle: select two points or a segment"
+msgstr "Erdigunea: hautatu bi puntu edo segmentu bat"
+
+#: geo/drgeo_control.cc:298
+msgid "Intersection(s): select two curves"
+msgstr "Elkargunea(k): hautatu bi kurba"
+
+#: geo/drgeo_control.cc:319
+msgid "Coordinate point: select two numbers (its coordinates)"
+msgstr "Koordenatuek definitutako puntua: hautatu bi zenbaki (koordenatuak)"
+
+#: geo/drgeo_control.cc:340
+msgid "Line: select two points"
+msgstr "Zuzena: hautatu bi puntu"
+
+#: geo/drgeo_control.cc:361
+msgid "Ray: select its origin then another point"
+msgstr "Zuzenerdia: hautatu jatorria eta beste puntu bat"
+
+#: geo/drgeo_control.cc:382
+msgid "Segment: select its extremities"
+msgstr "Segmentua: hautatu muturrak"
+
+#: geo/drgeo_control.cc:404
+msgid "Vector: select its origin and extremity"
+msgstr "Bektorea: hautatu jatorria eta muturrak"
+
+#: geo/drgeo_control.cc:425
+msgid "Circle: select its center and a point or its radius (number or segment)"
+msgstr ""
+"Zirkulua: hautatu zentroa eta puntu bat edo erradioa (zenbakia edo segmentua)"
+
+#: geo/drgeo_control.cc:446
+msgid "Arc: select three points"
+msgstr "Arkua: hautatu hiru puntu"
+
+#: geo/drgeo_control.cc:467
+msgid "Locus: select a free point and a dependent point"
+msgstr "Leku geometrikoa: hautatu puntu libre bat eta haren mendeko puntu bat"
+
+#: geo/drgeo_control.cc:488
+msgid "Polygon: select its vertices, then click over the first one"
+msgstr "Poligonoa: hautatu erpinak eta egin klik lehenengoaren gainean"
+
+#: geo/drgeo_control.cc:508
+msgid ""
+"Parallel line: select a point and a direction (line, ray, segment, vector) "
+msgstr ""
+"Zuzen paraleloa: hautatu puntu bat eta noranzko bat (lerroa, zuzenerdia, "
+"segmentua, bektorea) "
+
+#: geo/drgeo_control.cc:528
+msgid ""
+"Orthogonal line: select a point and a direction (line, ray, segment, vector)"
+msgstr ""
+"Zuzen ortogonala: hautatu puntu bat eta noranzko bat (lerroa, zuzenerdia, "
+"segmentua, bektorea)"
+
+#: geo/drgeo_control.cc:548
+msgid "Axial symmetry: select a geometric object and a line"
+msgstr "Ardatz-simetria: hautatu objektu geometriko bat eta zuzen bat"
+
+#: geo/drgeo_control.cc:568
+msgid "Central symmetry: select a geometric object and the center"
+msgstr "Simetria zentrala: hautatu objektu geometriko bat eta zentroa"
+
+#: geo/drgeo_control.cc:588
+msgid "Translation: select a geometric object and a vector"
+msgstr "Translazioa: hautatu objektu geometriko bat eta bektore bat"
+
+#: geo/drgeo_control.cc:608
+msgid ""
+"Rotation: select a geometric object, the center and an angle or a scalar"
+msgstr ""
+"Biraketa: hautatu objektu geometriko bat, zentroa eta angelu bat edo eskalar "
+"bat "
+
+#: geo/drgeo_control.cc:628
+msgid "Scale: select a geometric object, the center and a scalar"
+msgstr "Eskala: hautatu objektu geometriko bat, zentroa eta eskalar bat"
+
+#: geo/drgeo_control.cc:648
+msgid ""
+"Numeric: click on the back to edit a free value or select geometric object"
+"(s) to calculate distance"
+msgstr ""
+"Zenbakizkoa: egin klik atzean balio libre bat editatzeko edo hautatu objektu "
+"geometrikoa(k) distantzia kalkulatzeko"
+
+#: geo/drgeo_control.cc:668
+msgid ""
+"Angle: select three points (geometric angle) or two vectors (oriented angle)"
+msgstr ""
+"Angelua: hautatu hiru puntu (angelu geometrikoa) edo bi bektore "
+"(orientatutako angelua)"
+
+#: geo/drgeo_control.cc:688
+msgid "Coordinates & Equation: select a point, a vector, a line or a circle"
+msgstr ""
+"Koordenatuak eta ekuazioa: hautatu puntu bat, bektore bat, lerro bat edo "
+"zirkulu bat"
+
+#: geo/drgeo_control.cc:709
+msgid "Script: select n objects (n >=0) then click on the background"
+msgstr "Script-a: hautatu n objektu (n>=0) eta egin klik atzeko planoan "
+
+#: geo/drgeo_control.cc:729
+msgid "Delete object: select the object to delete"
+msgstr "Ezabatu objektua: hautatu ezabatu beharreko objektua"
+
+#: geo/drgeo_control.cc:749
+msgid "Look: select the object to change its look"
+msgstr "Itxura: hautatu itxura aldatu beharreko objektua"
+
+#: geo/drgeo_control.cc:769
+msgid "Property: select the object to change its property"
+msgstr "Propietateak: hautatu propietateak aldatu beharreko objektua"
+
+#: geo/drgeo_control.cc:790
+msgid "Construct a macro-construction "
+msgstr "Eraiki makro-eraikuntza bat "
+
+#: geo/drgeo_control.cc:937
+msgid "Select: select and move an object"
+msgstr "Hautapena: Hautatu eta aldatu lekuz objektu bat"
+
+#: geo/drgeo_dialog.cc:62
+msgid "Enter a value"
+msgstr "Sartu balio bat"
+
+#: geo/drgeo_equation.cc:173 geo/drgeo_equation.cc:182
+msgid "the equation of %1"
+msgstr "%1(r)en ekuazioa"
+
+#: geo/drgeo_equation.cc:230
+#, c-format
+msgid "Line's equation:: %s"
+msgstr "Zuzenaren ekuazioa:: %s"
+
+#: geo/drgeo_equation.cc:231 geo/drgeo_numeric.cc:471 geo/drgeo_numeric.cc:511
+#, c-format
+msgid "Line %s"
+msgstr "%s zuzena"
+
+#: geo/drgeo_equation.cc:235
+#, c-format
+msgid "Circle's equation:: %s"
+msgstr "Zirkunferentziaren ekuazioa:: %s"
+
+#: geo/drgeo_equation.cc:236 geo/drgeo_numeric.cc:466 geo/drgeo_numeric.cc:504
+#, c-format
+msgid "Circle %s"
+msgstr "%s zirkulua"
+
+#: geo/drgeo_gtkhelpers.cc:98
+#, c-format
+msgid ""
+"This help directory does not exist:\n"
+"'%s'\n"
+"Maybe the manual is not installed or it is not yet translated in your "
+"language.\n"
+"\n"
+"If you want to translate the manual contact ofset@ofset.org."
+msgstr ""
+"Laguntza-direktorio hau ez da existitzen:\n"
+"'%s'\n"
+"Baliteke eskuliburua instalatuta ez egotea edo oraindik zure hizkuntzara "
+"itzuli gabe egotea.\n"
+"\n"
+"Eskuliburua kontsultatu nahi baduzu, jo helbide honetara: ofset@ofset.org."
+
+#: geo/drgeo_gtkhelpers.cc:117
+msgid ""
+"A default online manual\n"
+"in English will be used."
+msgstr ""
+"Lineako eskuliburu lehenetsi bat\n"
+"(ingelesez dago) erabiliko da."
+
+#: geo/drgeo_gtkhelpers.cc:129
+msgid "No default online manual can be found."
+msgstr "Ezin da lineako eskuliburu lehenetsirik aurkitu."
+
+#: geo/drgeo_halfLine.cc:152 geo/drgeo_halfLine.cc:170
+msgid "this half-line %1"
+msgstr "zuzenerdi hau %1"
+
+#: geo/drgeo_halfLine.cc:218
+#, c-format
+msgid "Rotate half-line:: %s"
+msgstr "Zuzenerdiaren biraketa:: %s"
+
+#: geo/drgeo_halfLine.cc:219 geo/drgeo_halfLine.cc:227
+#: geo/drgeo_halfLine.cc:234
+#, c-format
+msgid "Transformed half-line %s"
+msgstr "%s zuzenerdi eraldatua"
+
+#: geo/drgeo_halfLine.cc:226 geo/drgeo_halfLine.cc:233
+#, c-format
+msgid "Symmetric half-line:: %s"
+msgstr "Zuzenerdi simetrikoa:: %s"
+
+#: geo/drgeo_halfLine.cc:241
+#, c-format
+msgid "Translate half-line:: %s"
+msgstr "Zuzenerdiaren translazioa:: %s"
+
+#: geo/drgeo_halfLine.cc:242
+#, c-format
+msgid "Translated half-line %s"
+msgstr "%s translazioa egindako zuzenerdia"
+
+#: geo/drgeo_halfLine.cc:249
+#, c-format
+msgid "Scale half-line:: %s"
+msgstr "Eskalatu zuzenerdia:: %s"
+
+#: geo/drgeo_halfLine.cc:250
+#, c-format
+msgid "Scaled half-line %s"
+msgstr "%s zuzenerdi eskalatua"
+
+#: geo/drgeo_halfLine.cc:258
+#, c-format
+msgid "Half-line defined by two points:: %s"
+msgstr "Bi puntuk definitutako zuzenerdia:: %s"
+
+#: geo/drgeo_halfLine.cc:259 geo/drgeo_vector.cc:286
+#, c-format
+msgid "Origin %s"
+msgstr "Jatorrizko %s"
+
+#: geo/drgeo_line.cc:202 geo/drgeo_line.cc:220
+msgid "this line %1"
+msgstr "%1 zuzen hau "
+
+#: geo/drgeo_line.cc:279
+#, c-format
+msgid "Rotate line:: %s"
+msgstr "Zuzenaren biraketa:: %s"
+
+#: geo/drgeo_line.cc:280 geo/drgeo_line.cc:288 geo/drgeo_line.cc:295
+#, c-format
+msgid "Transformed line %s"
+msgstr "%s zuzen eraldatua"
+
+#: geo/drgeo_line.cc:287 geo/drgeo_line.cc:294
+#, c-format
+msgid "Symmetric line:: %s"
+msgstr "Zuzen simetrikoa:: %s"
+
+#: geo/drgeo_line.cc:302
+#, c-format
+msgid "Translate line:: %s"
+msgstr "Zuzenaren translazioa:: %s"
+
+#: geo/drgeo_line.cc:303
+#, c-format
+msgid "Translated line %s"
+msgstr "%s translazioa egindako zuzena "
+
+#: geo/drgeo_line.cc:310
+#, c-format
+msgid "Scale line:: %s"
+msgstr "Eskalatu zuzena:: %s"
+
+#: geo/drgeo_line.cc:311
+#, c-format
+msgid "Scaled line %s"
+msgstr "%s zuzen eskalatua"
+
+#: geo/drgeo_line.cc:318
+#, c-format
+msgid "Line going through two points:: %s"
+msgstr "Bi puntutatik pasatzen den zuzena:: %s"
+
+#: geo/drgeo_line.cc:319 geo/drgeo_line.cc:327 geo/drgeo_line.cc:333
+#: geo/drgeo_line.cc:339
+#, c-format
+msgid "Point  %s"
+msgstr "%s puntua"
+
+#: geo/drgeo_line.cc:325
+#, c-format
+msgid "Line defined by a point and its slope:: %s"
+msgstr "Puntu batek eta maldak definitutako zuzena:: %s"
+
+#: geo/drgeo_line.cc:328
+#, c-format
+msgid "Slope %s"
+msgstr "%s malda"
+
+#: geo/drgeo_line.cc:332
+#, c-format
+msgid "Parallel line:: %s"
+msgstr "Zuzen paraleloa:: %s"
+
+#: geo/drgeo_line.cc:334 geo/drgeo_line.cc:340
+#, c-format
+msgid "Direction %s"
+msgstr "%s noranzkoa"
+
+#: geo/drgeo_line.cc:338
+#, c-format
+msgid "Perpendicular line:: %s"
+msgstr "Zuzen perpendikularra:: %s"
+
+#. compute the string length
+#: geo/drgeo_locus.cc:303 geo/drgeo_locus.cc:312
+msgid "%1's locus when %2 describes %3"
+msgstr "%1'(r)en leku geometrikoa %2(e)k %3 deskribatzen duenean"
+
+#: geo/drgeo_locus.cc:350
+#, c-format
+msgid "Locus:: %s"
+msgstr "Leku geometrikoa:: %s"
+
+#: geo/drgeo_locus.cc:351
+#, c-format
+msgid "Free point on curve %s"
+msgstr "Puntu librea %s kurban"
+
+#: geo/drgeo_locus.cc:353
+#, c-format
+msgid "Constrained point %s"
+msgstr "%s puntu murriztua"
+
+#: geo/drgeo_numeric.cc:275 geo/drgeo_numeric.cc:281
+msgid "%1's length"
+msgstr "%1(r)en luzera"
+
+#: geo/drgeo_numeric.cc:286 geo/drgeo_numeric.cc:292
+msgid "%1's magnitude"
+msgstr "%1(r)en magnitudea"
+
+#: geo/drgeo_numeric.cc:297 geo/drgeo_numeric.cc:303
+msgid "%1's perimeter"
+msgstr "%1(r)en perimetroa"
+
+#: geo/drgeo_numeric.cc:308 geo/drgeo_numeric.cc:314
+msgid "the slope of %1"
+msgstr "%1(r)en malda"
+
+#: geo/drgeo_numeric.cc:322 geo/drgeo_numeric.cc:332
+msgid "the distance between %1 and %2"
+msgstr "%1(r)en eta %2(r)en arteko distantzia"
+
+#: geo/drgeo_numeric.cc:345 geo/drgeo_numeric.cc:351
+msgid "the abscissa of %1"
+msgstr "%1(r)en abzisa"
+
+#: geo/drgeo_numeric.cc:357 geo/drgeo_numeric.cc:363
+msgid "the ordinate of %1"
+msgstr "%1(r)en ordenatua"
+
+#: geo/drgeo_numeric.cc:367 geo/drgeo_value.cc:52
+msgid "this value"
+msgstr "balio hau"
+
+#: geo/drgeo_numeric.cc:451
+#, c-format
+msgid "Free value:: %s"
+msgstr "Balio librea:: %s"
+
+#: geo/drgeo_numeric.cc:455
+#, c-format
+msgid "Segment's length:: %s"
+msgstr "Segmentuaren luzera:: %s"
+
+#: geo/drgeo_numeric.cc:456 geo/drgeo_point.cc:440
+#, c-format
+msgid "Segment %s"
+msgstr "%s segmentua"
+
+#: geo/drgeo_numeric.cc:460
+#, c-format
+msgid "Vector's norm:: %s"
+msgstr "Bektorearen norma:: %s"
+
+#: geo/drgeo_numeric.cc:465
+#, c-format
+msgid "Circle's perimeter:: %s"
+msgstr "Zirkunferentziaren perimetroa:: %s"
+
+#: geo/drgeo_numeric.cc:470
+#, c-format
+msgid "Line's slope:: %s"
+msgstr "Zuzenaren malda:: %s"
+
+#: geo/drgeo_numeric.cc:475
+#, c-format
+msgid "Arc-circle's length:: %s"
+msgstr "Zirkunferentzia-arkuaren luzera:: %s"
+
+#: geo/drgeo_numeric.cc:476
+#, c-format
+msgid "Arc-circle %s"
+msgstr "%s zirkunferentzia-arkua"
+
+#: geo/drgeo_numeric.cc:480
+#, c-format
+msgid "Point's abscissa:: %s"
+msgstr "Puntuaren abzisa:: %s"
+
+#: geo/drgeo_numeric.cc:485
+#, c-format
+msgid "Point's ordinate:: %s"
+msgstr "Puntuaren ordenatua:: %s"
+
+#: geo/drgeo_numeric.cc:490
+#, c-format
+msgid "Vector's abscissa:: %s"
+msgstr "Bektorearen abzisa:: %s"
+
+#: geo/drgeo_numeric.cc:495
+#, c-format
+msgid "Vector's ordinate:: %s"
+msgstr "Bektorearen ordenatua:: %s"
+
+#: geo/drgeo_numeric.cc:501
+#, c-format
+msgid "Distance between a point and a circle:: %s"
+msgstr "Puntu baten eta zirkunferentzia baten arteko distantzia:: %s"
+
+#: geo/drgeo_numeric.cc:509
+#, c-format
+msgid "Distance between a point and a line:: %s"
+msgstr "Puntu baten eta zuzen baten arteko distantzia:: %s"
+
+#: geo/drgeo_numeric.cc:516
+#, c-format
+msgid "Distance between two points:: %s"
+msgstr "Bi punturen arteko distantzia:: %s"
+
+#: geo/drgeo_point.cc:380
+#, c-format
+msgid "Rotate point:: %s"
+msgstr "Puntuaren biraketa:: %s"
+
+#: geo/drgeo_point.cc:381 geo/drgeo_point.cc:389 geo/drgeo_point.cc:396
+#, c-format
+msgid "Transformed point %s"
+msgstr "%s puntu eraldatua"
+
+#: geo/drgeo_point.cc:388 geo/drgeo_point.cc:395
+#, c-format
+msgid "Symmetric point:: %s"
+msgstr "Puntu simetrikoa:: %s"
+
+#: geo/drgeo_point.cc:403
+#, c-format
+msgid "Translate point:: %s"
+msgstr "Puntuaren translazioa:: %s"
+
+#: geo/drgeo_point.cc:404
+#, c-format
+msgid "Translated point %s"
+msgstr "%s translazioa egindako puntua "
+
+#: geo/drgeo_point.cc:411
+#, c-format
+msgid "Scale point:: %s"
+msgstr "Eskalatu puntua:: %s"
+
+#: geo/drgeo_point.cc:412
+#, c-format
+msgid "Scaled point %s"
+msgstr "%s puntu eskalatua"
+
+#: geo/drgeo_point.cc:418
+#, c-format
+msgid "Coordinate point:: %s"
+msgstr "Koordenatuek definitutako puntua:: %s"
+
+#: geo/drgeo_point.cc:419
+#, c-format
+msgid "Abscissa %s"
+msgstr "%s abzisa"
+
+#: geo/drgeo_point.cc:420
+#, c-format
+msgid "Ordinate %s"
+msgstr "%s ordenatua"
+
+#: geo/drgeo_point.cc:424
+#, c-format
+msgid "Free point:: %s"
+msgstr "Puntu librea:: %s"
+
+#: geo/drgeo_point.cc:428
+#, c-format
+msgid "Free point on curve:: %s"
+msgstr "Puntu librea kurban:: %s"
+
+#: geo/drgeo_point.cc:429 geo/drgeo_point.cc:434 geo/drgeo_point.cc:435
+#, c-format
+msgid "Curve %s"
+msgstr "%s kurba"
+
+#: geo/drgeo_point.cc:433
+#, c-format
+msgid "Intersection point:: %s"
+msgstr "Ebaketa-puntua:: %s"
+
+#: geo/drgeo_point.cc:439
+#, c-format
+msgid "Middle of segment:: %s"
+msgstr "Segmentu baten erdia:: %s"
+
+#: geo/drgeo_point.cc:444
+#, c-format
+msgid "Middle of two points:: %s"
+msgstr "Bi punturen erdia:: %s"
+
+#: geo/drgeo_point.cc:482 geo/drgeo_point.cc:486
+msgid "this point %1"
+msgstr "puntu hau %1"
+
+#: geo/drgeo_polygon.cc:287
+#, c-format
+msgid "Polygon:: %s"
+msgstr "Poligonoa:: %s"
+
+#: geo/drgeo_polygon.cc:294
+#, c-format
+msgid "Rotate polygon:: %s"
+msgstr "Poligonoaren biraketa:: %s"
+
+#: geo/drgeo_polygon.cc:295 geo/drgeo_polygon.cc:303 geo/drgeo_polygon.cc:310
+#, c-format
+msgid "Transformed polygon %s"
+msgstr "%s poligono eraldatua"
+
+#: geo/drgeo_polygon.cc:302 geo/drgeo_polygon.cc:309
+#, c-format
+msgid "Symmetric polygon:: %s"
+msgstr "Poligono simetrikoa:: %s"
+
+#: geo/drgeo_polygon.cc:317
+#, c-format
+msgid "Translate polygon:: %s"
+msgstr "Poligonoaren translazioa:: %s"
+
+#: geo/drgeo_polygon.cc:318
+#, c-format
+msgid "Translated polygon %s"
+msgstr "%s translazioa egindako poligonoa"
+
+#: geo/drgeo_polygon.cc:325
+#, c-format
+msgid "Scale polygon:: %s"
+msgstr "Eskalatu poligonoa:: %s"
+
+#: geo/drgeo_polygon.cc:326
+#, c-format
+msgid "Scaled polygon %s"
+msgstr "%s poligono eskalatua"
+
+#: geo/drgeo_polygon.cc:383 geo/drgeo_polygon.cc:407
+msgid "this polygon %1"
+msgstr "poligono hau %1"
+
+#: geo/drgeo_repere.cc:148 geo/drgeo_repere.cc:161
+msgid "this reference frame %1"
+msgstr "erreferentzia-marko hau %1"
+
+#: geo/drgeo_scm_helper.cc:91
+#, c-format
+msgid "Error! Just got the following error tag: %s\n"
+msgstr "Errorea! Errore-etiketa hau eskuratu da: %s\n"
+
+#: geo/drgeo_script.cc:158
+msgid "Unprintable result"
+msgstr "Inprimatu ezin den emaitza"
+
+#: geo/drgeo_script.cc:171 geo/drgeo_script.cc:175
+msgid "this script %1"
+msgstr "script hau %1"
+
+#: geo/drgeo_script.cc:223
+#, c-format
+msgid "Script:: %s"
+msgstr "Script-a:: %s"
+
+#: geo/drgeo_script.cc:225
+#, c-format
+msgid "Object %s"
+msgstr "%s objektua"
+
+#: geo/drgeo_segment.cc:153 geo/drgeo_segment.cc:171
+msgid "this segment %1"
+msgstr "segmentu hau %1"
+
+#: geo/drgeo_segment.cc:220
+#, c-format
+msgid "Rotate segment:: %s"
+msgstr "Segmentuaren biraketa:: %s"
+
+#: geo/drgeo_segment.cc:221 geo/drgeo_segment.cc:229 geo/drgeo_segment.cc:236
+#, c-format
+msgid "Transformed segment %s"
+msgstr "%s segmentu eraldatua"
+
+#: geo/drgeo_segment.cc:228 geo/drgeo_segment.cc:235
+#, c-format
+msgid "Symmetric segment:: %s"
+msgstr "Segmentu simetrikoa:: %s"
+
+#: geo/drgeo_segment.cc:243
+#, c-format
+msgid "Translate segment:: %s"
+msgstr "Segmentuaren translazioa:: %s"
+
+#: geo/drgeo_segment.cc:244
+#, c-format
+msgid "Translated segment %s"
+msgstr "%s translazioa egindako segmentua "
+
+#: geo/drgeo_segment.cc:251
+#, c-format
+msgid "Scale segment:: %s"
+msgstr "Eskalatu segmentua:: %s"
+
+#: geo/drgeo_segment.cc:252
+#, c-format
+msgid "Scaled segment %s"
+msgstr "%s segmentu eskalatua"
+
+#: geo/drgeo_segment.cc:260
+#, c-format
+msgid "Segment defined by its extremities:: %s"
+msgstr "Muturrek definitutako segmentua:: %s"
+
+#: geo/drgeo_tool.cc:950
+#, c-format
+msgid "Remove %s?"
+msgstr "%s kendu?"
+
+#: geo/drgeo_tool.cc:953
+msgid "Remove selected item?"
+msgstr "Hautatutako elementua kendu?"
+
+#: geo/drgeo_vector.cc:170 geo/drgeo_vector.cc:188
+msgid "this vector %1"
+msgstr "bektore hau %1"
+
+#: geo/drgeo_vector.cc:245
+#, c-format
+msgid "Rotate vector:: %s"
+msgstr "Bektorearen biraketa:: %s"
+
+#: geo/drgeo_vector.cc:246 geo/drgeo_vector.cc:254 geo/drgeo_vector.cc:261
+#, c-format
+msgid "Transformed vector %s"
+msgstr "%s bektore eraldatua"
+
+#: geo/drgeo_vector.cc:253 geo/drgeo_vector.cc:260
+#, c-format
+msgid "Symmetric vector:: %s"
+msgstr "Bektore simetrikoa:: %s"
+
+#: geo/drgeo_vector.cc:268
+#, c-format
+msgid "Translate vector:: %s"
+msgstr "Bektorearen translazioa:: %s"
+
+#: geo/drgeo_vector.cc:269
+#, c-format
+msgid "Translated vector %s"
+msgstr "%s translazioa egindako bektorea "
+
+#: geo/drgeo_vector.cc:276
+#, c-format
+msgid "Scale vector:: %s"
+msgstr "Eskalatu bektorea:: %s"
+
+#: geo/drgeo_vector.cc:277
+#, c-format
+msgid "Scaled vector %s"
+msgstr "%s bektore eskalatua"
+
+#: geo/drgeo_vector.cc:285
+#, c-format
+msgid "Vector defined by two points:: %s"
+msgstr "Bi puntuk definitutako bektorea:: %s"
+
+#: glade/drgenius2.glade.h:1 glade/drgeo2.glade.h:1
+msgid "*"
+msgstr "*"
+
+#: glade/drgenius2.glade.h:2
+msgid "Angle"
+msgstr "Angelua"
+
+#: glade/drgenius2.glade.h:3
+msgid "Arc-Circle"
+msgstr "Zirkunferentzia-arkua"
+
+#: glade/drgenius2.glade.h:4
+msgid "Circle"
+msgstr "Zirkulua"
+
+#: glade/drgenius2.glade.h:5 glade/drgeo2.glade.h:33
+msgid "Color"
+msgstr "Kolorea"
+
+#: glade/drgenius2.glade.h:6
+msgid ""
+"Default figure name used when a new figure is created. This name is combined "
+"with a numeric indicator"
+msgstr ""
+"Irudi berri bat sortutakoan erabiltzen den irudi-izen lehenetsia. Izen hori "
+"zenbakizko adierazle batekin konbinatzen da"
+
+#: glade/drgenius2.glade.h:7
+msgid ""
+"Default file name used to export a geometric figure to the Flydraw format"
+msgstr ""
+"Irudi geometriko bat Flydraw formatura esportatzeko erabiltzen den fitxategi-"
+"izen lehentsia"
+
+#: glade/drgenius2.glade.h:8
+msgid ""
+"Default file name used to export a geometric figure to the LaTeX format "
+"(pstricks extension)"
+msgstr ""
+"Irudi geometriko bat LaTeX formatura esportatzeko erabiltzen den fitxategi-"
+"izen lehentsia (pstricks luzapena)"
+
+#: glade/drgenius2.glade.h:9
+msgid ""
+"Default file name used to export a geometric figure to the encapsulated "
+"PostScript format"
+msgstr ""
+"Irudi geometriko bat PostScript kapsulatuaren formatura esportatzeko "
+"erabiltzen den fitxategi-izen lehenetsia"
+
+#: glade/drgenius2.glade.h:10
+msgid "Default file name used to save a geometric figure"
+msgstr "Irudi geometrikoak gordetzeko erabiltzen den fitxategi-izen lehenetsia"
+
+#: glade/drgenius2.glade.h:11
+msgid ""
+"Default file name used to save a session (several documents in one file)"
+msgstr ""
+"Saio bat gordetzeko erabiltzen den fitxategi-izen lehenetsia (hainbat "
+"dokumentu fitxategi bakar batean)"
+
+#: glade/drgenius2.glade.h:12
+msgid "Default value"
+msgstr "Balio lehenetsia"
+
+#: glade/drgenius2.glade.h:13
+msgid "Defaut file name"
+msgstr "Fitxategi-izen lehenetsia"
+
+#: glade/drgenius2.glade.h:14
+msgid "Figure name"
+msgstr "Irudiaren izena"
+
+#: glade/drgenius2.glade.h:15
+msgid "Flydraw:"
+msgstr "Flydraw:"
+
+#: glade/drgenius2.glade.h:16
+msgid "Geometric figure "
+msgstr "Irudi geometrikoa "
+
+#: glade/drgenius2.glade.h:17
+msgid "Global preferences"
+msgstr "Hobespen orokorrak"
+
+#: glade/drgenius2.glade.h:18
+msgid "Half-Line"
+msgstr "Zuzenerdia"
+
+#: glade/drgenius2.glade.h:19
+msgid "Html viewer"
+msgstr "HTML ikustailea"
+
+#: glade/drgenius2.glade.h:20
+msgid "LaTeX:"
+msgstr "LaTeX:"
+
+#: glade/drgenius2.glade.h:21 glade/drgeo2.glade.h:58
+msgid "Large"
+msgstr "Handia"
+
+#: glade/drgenius2.glade.h:22
+msgid "Line"
+msgstr "Zuzena"
+
+#: glade/drgenius2.glade.h:23
+msgid "Locus"
+msgstr "Leku geometrikoa"
+
+#: glade/drgenius2.glade.h:24 glade/drgeo2.glade.h:69
+msgid "Normal"
+msgstr "Normala"
+
+#: glade/drgenius2.glade.h:25
+msgid "Number of undo/redo operations. 0 for infinite undo/redo level"
+msgstr ""
+"Desegiteko/berregiteko eragiketa-kopurua. 0 desegiteko/berregiteko maila "
+"infiniturako da"
+
+#: glade/drgenius2.glade.h:26
+msgid "Numeric Precision"
+msgstr "Zenbaki-zehaztasuna"
+
+#: glade/drgenius2.glade.h:27
+msgid "Object Aspect"
+msgstr "Objektuaren aspektua"
+
+#: glade/drgenius2.glade.h:28 glade/drgeo2.glade.h:77
+msgid "Point"
+msgstr "Puntua"
+
+#: glade/drgenius2.glade.h:29
+msgid "Polygon"
+msgstr "Poligonoa"
+
+#: glade/drgenius2.glade.h:30
+msgid "PostScript:"
+msgstr "PostScript:"
+
+#: glade/drgenius2.glade.h:31
+msgid "Save a Dr Genius session"
+msgstr "Gorde Dr Genius-en saioa"
+
+#: glade/drgenius2.glade.h:32
+msgid "Save all"
+msgstr "Gorde dena"
+
+#: glade/drgenius2.glade.h:33
+msgid "Save selection"
+msgstr "Gorde hautapena"
+
+#: glade/drgenius2.glade.h:34
+msgid "Scalar"
+msgstr "Eskalarra"
+
+#: glade/drgenius2.glade.h:35
+msgid "Segment"
+msgstr "Segmentua"
+
+#: glade/drgenius2.glade.h:36
+msgid "Select Color"
+msgstr "Hautatu kolorea"
+
+#: glade/drgenius2.glade.h:37
+msgid "Select data to save"
+msgstr "Hautatu gorde beharreko datuak"
+
+#: glade/drgenius2.glade.h:38
+msgid "Session:"
+msgstr "Saioa:"
+
+#: glade/drgenius2.glade.h:39 glade/drgeo2.glade.h:96
+msgid "Shape"
+msgstr "Forma"
+
+#: glade/drgenius2.glade.h:40 glade/drgeo2.glade.h:97
+msgid "Size"
+msgstr "Tamaina"
+
+#: glade/drgenius2.glade.h:41 glade/drgeo2.glade.h:98
+msgid "Small"
+msgstr "Txikia"
+
+#: glade/drgenius2.glade.h:42 glade/drgeo2.glade.h:99
+msgid "Style"
+msgstr "Estiloa"
+
+#: glade/drgenius2.glade.h:43
+msgid "Undo/Redo levels"
+msgstr "Desegiteko/Berregiteko mailak"
+
+#: glade/drgenius2.glade.h:44
+msgid "Vector"
+msgstr "Bektorea"
+
+#: glade/drgenius2.glade.h:45
+msgid "dillo "
+msgstr "dillo "
+
+#: glade/drgenius2.glade.h:46
+msgid "galeon -x "
+msgstr "galeon -x "
+
+#: glade/drgenius2.glade.h:47
+msgid "konqueror "
+msgstr "konqueror "
+
+#: glade/drgenius2.glade.h:48
+msgid "mozilla "
+msgstr "mozilla "
+
+#: glade/drgeo2.glade.h:3
+#, no-c-format
+msgid "100%"
+msgstr "100%"
+
+#: glade/drgeo2.glade.h:5 glade/drgeoMDI.glade.h:2
+#, no-c-format
+msgid "125%"
+msgstr "125%"
+
+#: glade/drgeo2.glade.h:7 glade/drgeoMDI.glade.h:4
+#, no-c-format
+msgid "150%"
+msgstr "150%"
+
+#: glade/drgeo2.glade.h:9 glade/drgeoMDI.glade.h:6
+#, no-c-format
+msgid "175%"
+msgstr "175%"
+
+#: glade/drgeo2.glade.h:11 glade/drgeoMDI.glade.h:8
+#, no-c-format
+msgid "200%"
+msgstr "200%"
+
+#: glade/drgeo2.glade.h:13 glade/drgeoMDI.glade.h:10
+#, no-c-format
+msgid "25%"
+msgstr "25%"
+
+#: glade/drgeo2.glade.h:15 glade/drgeoMDI.glade.h:12
+#, no-c-format
+msgid "50%"
+msgstr "50%"
+
+#: glade/drgeo2.glade.h:17 glade/drgeoMDI.glade.h:14
+#, no-c-format
+msgid "75%"
+msgstr "75%"
+
+#: glade/drgeo2.glade.h:18
+msgid "Abscissa"
+msgstr "Abzisa"
+
+#: glade/drgeo2.glade.h:19
+msgid "Adjust the line style"
+msgstr "Doitu lerro-estiloab"
+
+#: glade/drgeo2.glade.h:20
+msgid "Adjust the point style"
+msgstr "Doitu puntu-estiloa"
+
+#: glade/drgeo2.glade.h:21
+msgid "Adjust the value style"
+msgstr "Doitu balio-estiloa"
+
+#: glade/drgeo2.glade.h:22
+msgid "Adjust the zoom factor"
+msgstr "Doitu zoom-faktorea"
+
+#: glade/drgeo2.glade.h:23 glade/drgeoMDI.glade.h:15
+msgid "Angle defined by three points or two vectors"
+msgstr "Hiru puntuk edo bi bektorek definitutako angelua"
+
+#: glade/drgeo2.glade.h:24 glade/drgeoMDI.glade.h:24
+msgid "Arc circle defined by three points"
+msgstr "Hiru puntuk definitutako zirkunferentzia-arkua"
+
+#: glade/drgeo2.glade.h:25
+msgid "Avalaible macro-construction"
+msgstr "Makro-eraikuntza erabilgarria"
+
+#: glade/drgeo2.glade.h:26 glade/drgeoMDI.glade.h:25
+msgid ""
+"Axial symmetry of an object. When ambiguity, the first selected line is the "
+"line to transform"
+msgstr ""
+"Objektu baten ardatz-simetria. Anbiguotasuna dagoenean, hautatutako lehen "
+"zuzena eraldatu beharreko zuzena da"
+
+#: glade/drgeo2.glade.h:27
+msgid "Build a macro construction"
+msgstr "Eraiki makro-eraikuntza bat"
+
+#: glade/drgeo2.glade.h:28
+msgid "Build a macro-construction"
+msgstr "Eraiki makro-eraikuntza bat"
+
+#: glade/drgeo2.glade.h:29 glade/drgeoMDI.glade.h:26
+msgid ""
+"Central symmetry of an object. When ambiguity, the first selected point is "
+"the point to transform"
+msgstr ""
+"Objektu baten simetria zentrala. Anbiguotasuna dagoenean, hautatutako lehen "
+"puntua eraldatu beharreko puntua da"
+
+#: glade/drgeo2.glade.h:30 glade/drgeoMDI.glade.h:29
+msgid "Change the property of an object"
+msgstr "Aldatu objektu baten propietateak"
+
+#: glade/drgeo2.glade.h:31
+msgid "Change the style of an object"
+msgstr "Aldatu objektu baten estiloa"
+
+#: glade/drgeo2.glade.h:32 glade/drgeoMDI.glade.h:30
+msgid "Circle defines by center and point, radius or segment"
+msgstr "Zentroak, puntu batek, erradioak edo segmentuak definitutako zirkulua"
+
+#: glade/drgeo2.glade.h:34
+msgid "Construct a macro"
+msgstr "Eraiki makro bat"
+
+#: glade/drgeo2.glade.h:35
+msgid "Create curve"
+msgstr "Sortu kurba"
+
+#: glade/drgeo2.glade.h:36
+msgid "Create numeric object"
+msgstr "Sortu zenbakizko objektua"
+
+#: glade/drgeo2.glade.h:37
+msgid "Create point"
+msgstr "Sortu puntua"
+
+#: glade/drgeo2.glade.h:38
+msgid "Curve"
+msgstr "Kurba"
+
+#: glade/drgeo2.glade.h:39
+msgid "Custome User Interface"
+msgstr "Pertsonalizatu erabiltzaile-interfazea"
+
+#: glade/drgeo2.glade.h:40
+msgid "Custome User Interface in the current view"
+msgstr "Pertsonalizatu erabiltzaile-interfazea uneko ikuspegian"
+
+#: glade/drgeo2.glade.h:41 glade/drgeoMDI.glade.h:38
+msgid "Delete an object and its relatives"
+msgstr "Ezabatu objektu bat eta hari loturikoak"
+
+#: glade/drgeo2.glade.h:42
+msgid "Description"
+msgstr "Azalpena"
+
+#: glade/drgeo2.glade.h:43 glade/drgeoMDI.glade.h:39
+msgid "Distance between objects, curve length, or edit free value"
+msgstr "Objektuen arteko distantzia, kurba-luzera edo editatu balio librea"
+
+#: glade/drgeo2.glade.h:44
+msgid "Edit Scheme script"
+msgstr "Editatu Scheme script-a"
+
+#: glade/drgeo2.glade.h:45
+msgid "Edit value"
+msgstr "Editatu balioa"
+
+#: glade/drgeo2.glade.h:46
+msgid "Enter the macro-construction description there"
+msgstr "Sartu makro-eraikuntzaren azalpena hor"
+
+#: glade/drgeo2.glade.h:47
+msgid "Enter the macro-construction name there"
+msgstr "Sartu han makro-eraikuntzaren izena hor"
+
+#: glade/drgeo2.glade.h:48
+msgid "Enter the name of this view:"
+msgstr "Sartu ikuspegi honen izena:"
+
+#: glade/drgeo2.glade.h:49
+msgid "Execute"
+msgstr "Exekutatu"
+
+#: glade/drgeo2.glade.h:50
+msgid "Execute a macro-construction"
+msgstr "Exekutatu makro-eraikuntza bat"
+
+#: glade/drgeo2.glade.h:51
+msgid "Execute pre-built macro"
+msgstr "Exekutatu aurrez eraikitako makroa"
+
+#: glade/drgeo2.glade.h:52
+msgid "Free point properties"
+msgstr "Puntu libreen propietateak"
+
+#: glade/drgeo2.glade.h:53
+msgid "Give a name and a description"
+msgstr "Hautatu izen bat eta azalpen bat"
+
+#: glade/drgeo2.glade.h:54 glade/drgeoMDI.glade.h:55
+msgid "Guile script using objects as input parameters"
+msgstr "Guile script-a objektuak sarrera-parametro gisa erabiliz"
+
+#: glade/drgeo2.glade.h:55 glade/drgeoMDI.glade.h:56
+msgid "Half-Line defined by two points, the first selected point is the origin"
+msgstr ""
+"Bi puntuk definitutako zuzenerdia, hautatutako lehen puntua jatorria da"
+
+#: glade/drgeo2.glade.h:56
+msgid "Input"
+msgstr "Sarrera"
+
+#: glade/drgeo2.glade.h:57
+msgid "Intro"
+msgstr "Intro"
+
+#: glade/drgeo2.glade.h:59 glade/drgeoMDI.glade.h:58
+msgid "Line defined by two points"
+msgstr "Bi puntuk definitutako zuzena"
+
+#: glade/drgeo2.glade.h:60 glade/drgeoMDI.glade.h:59
+msgid ""
+"Line passing through one point and orthogonal to a line, half-line, etc."
+msgstr ""
+"Puntu batetik pasatzen den zuzena, zuzen, zuzenerdi. etab. batekiko "
+"ortogonalki "
+
+#: glade/drgeo2.glade.h:61 glade/drgeoMDI.glade.h:60
+msgid "Line passing through one point and parallel to a line, half-line, etc."
+msgstr ""
+"Puntu batetik pasatzen den zuzena, zuzen, zuzenerdi. etab. batekiko "
+"paraleloki"
+
+#: glade/drgeo2.glade.h:62
+msgid "Lock"
+msgstr "Blokeatu"
+
+#: glade/drgeo2.glade.h:63
+msgid "Lock the interface"
+msgstr "Blokeatu interfazea"
+
+#: glade/drgeo2.glade.h:64 glade/drgeoMDI.glade.h:61
+msgid "Locus defined by a free point and a relative point"
+msgstr ""
+"Puntu libre batek eta hari lotutako puntu batek definitutako leku geometrikoa"
+
+#: glade/drgeo2.glade.h:65
+msgid "Macro name"
+msgstr "Makroaren izena"
+
+#: glade/drgeo2.glade.h:67
+msgid "Masked"
+msgstr "Maskaratuta"
+
+#: glade/drgeo2.glade.h:70
+msgid "Not masked"
+msgstr "Maskararik gabe"
+
+#: glade/drgeo2.glade.h:71
+msgid "Numeric"
+msgstr "Zenbakizkoa"
+
+#: glade/drgeo2.glade.h:72
+msgid "Ordinate"
+msgstr "Ordenatua"
+
+#: glade/drgeo2.glade.h:73
+msgid "Other"
+msgstr "Bestelakoak"
+
+#: glade/drgeo2.glade.h:74
+msgid "Output"
+msgstr "Irteera"
+
+#: glade/drgeo2.glade.h:75
+msgid "Password to lock the changes to the interface: "
+msgstr "Interfazearen aldaketak blokeatzeko pasahitza: "
+
+#: glade/drgeo2.glade.h:76
+msgid "Password to unlock the changes to the interface:"
+msgstr "Interfazearen aldaketak desblokeatzeko pasahitza:"
+
+#: glade/drgeo2.glade.h:78 glade/drgeoMDI.glade.h:65
+msgid "Point given its coordinates"
+msgstr "Koordenatu bidez definitutako puntua"
+
+#: glade/drgeo2.glade.h:79 glade/drgeoMDI.glade.h:66
+msgid "Point on an object or the background plane"
+msgstr "Puntua objektu batean edo atzeko planoan"
+
+#: glade/drgeo2.glade.h:80
+msgid ""
+"Polygon defined by n points. Last choosen point must be the initial point to "
+"terminate the selection"
+msgstr ""
+"n puntuk definitutako poligonoa. Azkena hautatutako puntuak hasierako puntua "
+"izan behar du hautapena bukatzeko"
+
+#: glade/drgeo2.glade.h:81
+msgid "Press this button to mask the object"
+msgstr "Sakatu botoi hau objektua ezkutatzeko"
+
+#: glade/drgeo2.glade.h:82
+msgid "Press this button to unmask the object"
+msgstr "Sakatu botoi hau objektua bistaratzeko"
+
+#: glade/drgeo2.glade.h:83
+msgid "Print Figure"
+msgstr "Inprimatu irudia"
+
+#: glade/drgeo2.glade.h:84
+msgid "Re-lock the interface"
+msgstr "Berriro blokeatu interfazea"
+
+#: glade/drgeo2.glade.h:85
+msgid "Rename the view"
+msgstr "Aldatu ikuspegiaren izena"
+
+#: glade/drgeo2.glade.h:86 glade/drgeoMDI.glade.h:75
+msgid ""
+"Rotation of an object. When ambiguity, the first selected point is the point "
+"to rotate"
+msgstr ""
+"Objektu baten biraketa. Anbiguotasuna dagoenean, hautatutako lehen puntua "
+"biratu beharreko puntua da"
+
+#: glade/drgeo2.glade.h:87 glade/drgeoMDI.glade.h:78
+msgid ""
+"Scale an object. When ambiguity, the first selected point is the point to "
+"transform"
+msgstr ""
+"Eskalatu objektu bat. Anbiguotasuna dagoenean, hautatutako lehen puntua "
+"eraldatu beharreko puntua da"
+
+#: glade/drgeo2.glade.h:88
+msgid "Scheme script using objects as input parameters"
+msgstr "Scheme script-a objektuak sarrera-parametro gisa erabiliz"
+
+#: glade/drgeo2.glade.h:89
+msgid "Script"
+msgstr "Script-a"
+
+#: glade/drgeo2.glade.h:90 glade/drgeoMDI.glade.h:79
+msgid "Segment defined by two points"
+msgstr "Bi puntuk definitutako segmentua"
+
+#: glade/drgeo2.glade.h:91
+msgid "Select a macro-construction then the figure items"
+msgstr "Hautatu makro-eraikuntza bat eta gero irudiaren elementuak"
+
+#: glade/drgeo2.glade.h:92
+msgid "Select and move an object"
+msgstr "Hautatu eta aldatu lekuz objektu bat"
+
+#: glade/drgeo2.glade.h:93
+msgid "Select input parameters"
+msgstr "Hautatu sarrera-parametroak"
+
+#: glade/drgeo2.glade.h:94
+msgid "Select output parameters"
+msgstr "Hautatu irteera-parametroak"
+
+#: glade/drgeo2.glade.h:95
+msgid "Select printer: "
+msgstr "Hautatu inprimagailua: "
+
+#: glade/drgeo2.glade.h:100 glade/drgeoMDI.glade.h:82
+msgid "The midpoint of a segment or between two points"
+msgstr "Segmentu baten edo bi punturen arteko erdigunea"
+
+#: glade/drgeo2.glade.h:101 glade/drgeoMDI.glade.h:83
+msgid "The point(s) of intersection between two objects"
+msgstr "Bi objekturen arteko ebaketa-puntua(k)"
+
+#: glade/drgeo2.glade.h:102
+msgid ""
+"This interface has already been locked.\n"
+"Enter the previously used password for this view: "
+msgstr ""
+"Interfaze hau lehendik blokeatuta dago.\n"
+"Sartu aurrez erabilitako pasahitza ikuspegi honetarako: "
+
+#: glade/drgeo2.glade.h:104
+msgid ""
+"To build a macro-construction,\n"
+"\n"
+"1. First select the input parameters\n"
+"2. Next select the output parameters,\n"
+"3. Last chose a name and a description."
+msgstr ""
+"Makro-eraikuntza bat sortzeko,\n"
+"\n"
+"1. Lehenbizi, hautatu sarrera-parametroak\n"
+"2. Ondoren, hautatu irteera-parametroak,\n"
+"3. Azkenik, aukeratu izen bat eta azalpen bat."
+
+#: glade/drgeo2.glade.h:109
+msgid ""
+"To play a macro-construction,\n"
+"\n"
+"1. First select a macro-construction from the list,\n"
+"2. Select items on the figure. Only relevant items \n"
+"to the selected macro-construction are selectable.\n"
+"Once enought items are selected, the macro is \n"
+"automaticly executed.\n"
+"To start press the button \"next\"."
+msgstr ""
+"Makro-eraikuntza bat exekutatzeko,\n"
+"\n"
+"1. Lehenik, hautatu zerrendako makro-eraikuntza bat,\n"
+"2. Hautatu irudiko elementuak. Hautatutako makro-eraikuntza exekutatzeko\n"
+"behar diren makro-eraikuntzak bakarrik daude hautagarri.\n"
+"Nahikoa elementu hautatutakoan, makroa \n"
+"automatikoki exekutatuko da.\n"
+"Hasteko, sakatu \"Hurrengoa\" botoia."
+
+#: glade/drgeo2.glade.h:117
+msgid "Tools based on properties and transformations"
+msgstr "Propietateetan eta eraldaketetan oinarritutako tresnak"
+
+#: glade/drgeo2.glade.h:118 glade/drgeoMDI.glade.h:84
+msgid ""
+"Translation of an object. When ambiguity, the first selected vector is the "
+"vector to translate"
+msgstr ""
+"Objektu baten translazioa. Anbiguotasuna dagoenean, hautatutako lehen "
+"bektorea translazioa egin beharreko bektorea da"
+
+#: glade/drgeo2.glade.h:119
+msgid "Unlock"
+msgstr "Desblokeatu"
+
+#: glade/drgeo2.glade.h:120 glade/drgeoMDI.glade.h:86
+msgid "Vector and point coordinates, line and circle equation"
+msgstr ""
+"Bektore baten eta puntu baten koordenatuak, zuzenaren eta zirkuluaren "
+"ekuazioa"
+
+#: glade/drgeo2.glade.h:121 glade/drgeoMDI.glade.h:87
+msgid "Vector defined by two points"
+msgstr "Bi puntuk definitutako bektorea"
+
+#: glade/drgeo2.glade.h:122
+msgid "Visibility"
+msgstr "Ikusgaitasuna"
+
+#: glade/drgeo2.glade.h:123
+msgid "Write down your description there."
+msgstr "Idatzi han zure azalpena."
+
+#: glade/drgeo2.glade.h:124
+msgid "You can edit the description"
+msgstr "Azalpena edita dezakezu"
+
+#: glade/drgeo2.glade.h:125
+msgid "macro"
+msgstr "makroa"
+
+#: glade/drgeo2.glade.h:126
+msgid "other"
+msgstr "bestelakoa"
+
+#: glade/drgeo2.glade.h:127
+msgid "transformation"
+msgstr "eraldaketa"
+
+#: glade/drgeoMDI.glade.h:16
+#, fuzzy
+msgid "Animate a free point on a curve at speed 1"
+msgstr "Puntu librea %s kurban"
+
+#: glade/drgeoMDI.glade.h:17
+#, fuzzy
+msgid "Animate a free point on a curve at speed 2"
+msgstr "Puntu librea %s kurban"
+
+#: glade/drgeoMDI.glade.h:18
+#, fuzzy
+msgid "Animate a free point on a curve at speed 3"
+msgstr "Puntu librea %s kurban"
+
+#: glade/drgeoMDI.glade.h:19
+#, fuzzy
+msgid "Animate a free point on a curve at speed 4"
+msgstr "Puntu librea %s kurban"
+
+#: glade/drgeoMDI.glade.h:20
+msgid "Animation x1"
+msgstr ""
+
+#: glade/drgeoMDI.glade.h:21
+msgid "Animation x2"
+msgstr ""
+
+#: glade/drgeoMDI.glade.h:22
+msgid "Animation x3"
+msgstr ""
+
+#: glade/drgeoMDI.glade.h:23
+msgid "Animation x4"
+msgstr ""
+
+#: glade/drgeoMDI.glade.h:27
+msgid "Change the User Interface of the current figure"
+msgstr "Aldatu uneko irudiaren erabiltzaile-interfazea"
+
+#: glade/drgeoMDI.glade.h:28
+msgid "Change the look of an object"
+msgstr "Aldatu objektu baten itxura"
+
+#: glade/drgeoMDI.glade.h:31
+msgid "Create a new geometric figure"
+msgstr "Sortu beste irudi geometriko bat"
+
+#: glade/drgeoMDI.glade.h:32
+msgid "Create a new text"
+msgstr "Sortu beste testu bat"
+
+#: glade/drgeoMDI.glade.h:34
+#, no-c-format
+msgid "Default 100%"
+msgstr "Lehenetsia % 100"
+
+#: glade/drgeoMDI.glade.h:35
+msgid "Define a macro-construction"
+msgstr "Definitu makro-eraikuntza bat"
+
+#: glade/drgeoMDI.glade.h:36
+msgid "Define exporting area"
+msgstr "Definitu esportatze-area"
+
+#: glade/drgeoMDI.glade.h:37
+msgid "Define the exporting area"
+msgstr "Definitu esportatze-area"
+
+#: glade/drgeoMDI.glade.h:40
+msgid "Dr Geo"
+msgstr "Dr Geo"
+
+#: glade/drgeoMDI.glade.h:41
+msgid "Evaluate a figure defined in Scheme"
+msgstr "Ebaluatu Scheme lengoaian definitutako irudia"
+
+#: glade/drgeoMDI.glade.h:42
+msgid "Execute a pre-built macro-construction"
+msgstr "Exekutatu aurrez eraikitako makro-eraikuntza bat"
+
+#: glade/drgeoMDI.glade.h:44
+msgid "Export current figure to Flydraw (for WIMS)"
+msgstr "Esportatu uneko irudia Flydraw formatura (WIMS-erako)"
+
+#: glade/drgeoMDI.glade.h:45
+msgid "Export current figure to LaTeX (using PSTrick package)"
+msgstr "Esportatu uneko irudia LaTeX formatura (PSTrick paketea erabili)"
+
+#: glade/drgeoMDI.glade.h:46
+msgid "Export current figure to PNG (image format)"
+msgstr "Esportatu uneko irudia PNG formatura (irudi-formatua)"
+
+#: glade/drgeoMDI.glade.h:47
+msgid "Export current figure to PostScript (eps)"
+msgstr "Esportatu uneko irudia PostScript-era (eps)"
+
+#: glade/drgeoMDI.glade.h:48
+msgid "Export figure to Flydraw"
+msgstr "Esportatu irudia Flydraw-era"
+
+#: glade/drgeoMDI.glade.h:49
+msgid "Export figure to LaTeX"
+msgstr "Esportatu irudia LaTeX-era"
+
+#: glade/drgeoMDI.glade.h:50
+msgid "Export figure to PNG"
+msgstr "Esportatu irudia PNGra"
+
+#: glade/drgeoMDI.glade.h:51
+msgid "Export figure to PostScript"
+msgstr "Esportatu irudia PostScript-era"
+
+#: glade/drgeoMDI.glade.h:52
+msgid "Export preferences"
+msgstr "Esportatzeko hobespenak"
+
+#: glade/drgeoMDI.glade.h:53
+msgid "Free _point"
+msgstr "_Puntu librea"
+
+#: glade/drgeoMDI.glade.h:54
+msgid "Grid"
+msgstr "Sareta"
+
+#: glade/drgeoMDI.glade.h:57
+msgid "Help"
+msgstr "Laguntza"
+
+#: glade/drgeoMDI.glade.h:62
+msgid "M_ove an object"
+msgstr "Aldatu _lekuz objektu bat"
+
+#: glade/drgeoMDI.glade.h:63
+msgid "New Figure"
+msgstr "Irudi berria"
+
+#: glade/drgeoMDI.glade.h:64
+msgid "New Text"
+msgstr "Testu berria"
+
+#: glade/drgeoMDI.glade.h:67
+msgid "Polygon defined by three points or more"
+msgstr "Hiru puntuk edo gehiagok definitutako poligonoa"
+
+#: glade/drgeoMDI.glade.h:68
+msgid "Preferences"
+msgstr "Hobespenak"
+
+#: glade/drgeoMDI.glade.h:69
+msgid "Preferences set up"
+msgstr "Hobespenen konfigurazioa"
+
+#: glade/drgeoMDI.glade.h:70
+msgid "Re_name"
+msgstr "Al_datu izena"
+
+#: glade/drgeoMDI.glade.h:71
+msgid "Remove exporting area"
+msgstr "Kendu esportatze-area"
+
+#: glade/drgeoMDI.glade.h:72
+msgid "Remove the exporting area"
+msgstr "Kendu esportatze-area"
+
+#: glade/drgeoMDI.glade.h:73
+msgid "Rename"
+msgstr "Aldatu izena"
+
+#: glade/drgeoMDI.glade.h:74
+msgid "Rename the current view"
+msgstr "Aldatu uneko ikuspegiaren izena"
+
+#: glade/drgeoMDI.glade.h:76
+msgid "Save _multiple"
+msgstr "Gorde _hainbat batera"
+
+#: glade/drgeoMDI.glade.h:77
+msgid "Save several data (figures, macro-constructions.) in one file"
+msgstr "Gorde hainbat datu (irudiak, makro-eraikuntzak) fitxategi batean"
+
+#: glade/drgeoMDI.glade.h:80
+msgid "Show or hide the grid"
+msgstr "Erakutsi edo ezkutatu sareta"
+
+#: glade/drgeoMDI.glade.h:81
+msgid "Show or hide the unit grid in the current view"
+msgstr "Erakutsi edo ezkutatu unitate-sareta uneko ikuspegian"
+
+#: glade/drgeoMDI.glade.h:85
+msgid "User manual"
+msgstr "Eskuliburua"
+
+#: glade/drgeoMDI.glade.h:88
+msgid "Windows"
+msgstr "Leihoak"
+
+#: glade/drgeoMDI.glade.h:90
+#, no-c-format
+msgid "Zoom to 100%"
+msgstr "Zooma % 100"
+
+#: glade/drgeoMDI.glade.h:92
+#, no-c-format
+msgid "Zoom to 125%"
+msgstr "Zooma % 125"
+
+#: glade/drgeoMDI.glade.h:94
+#, no-c-format
+msgid "Zoom to 150%"
+msgstr "Zooma % 150"
+
+#: glade/drgeoMDI.glade.h:96
+#, no-c-format
+msgid "Zoom to 175%"
+msgstr "Zooma % 175"
+
+#: glade/drgeoMDI.glade.h:98
+#, no-c-format
+msgid "Zoom to 200%"
+msgstr "Zooma % 200"
+
+#: glade/drgeoMDI.glade.h:100
+#, no-c-format
+msgid "Zoom to 25%"
+msgstr "Zooma % 25"
+
+#: glade/drgeoMDI.glade.h:102
+#, no-c-format
+msgid "Zoom to 50%"
+msgstr "Zooma % 50"
+
+#: glade/drgeoMDI.glade.h:104
+#, no-c-format
+msgid "Zoom to 75%"
+msgstr "Zooma % 75"
+
+#: glade/drgeoMDI.glade.h:105
+msgid "_About"
+msgstr "Honi _buruz"
+
+#: glade/drgeoMDI.glade.h:106
+msgid "_Angle"
+msgstr "_Angelua"
+
+#: glade/drgeoMDI.glade.h:107
+#, fuzzy
+msgid "_Animation"
+msgstr "_Eraldaketa"
+
+#: glade/drgeoMDI.glade.h:108
+msgid "_Arc Circle"
+msgstr "_Zirkunferentzia-arkua"
+
+#: glade/drgeoMDI.glade.h:109
+msgid "_Axial Symmetry"
+msgstr "A_rdatz-simetria"
+
+#: glade/drgeoMDI.glade.h:110
+msgid "_Central Symmetry"
+msgstr "Simetria zentrala"
+
+#: glade/drgeoMDI.glade.h:111
+msgid "_Circle"
+msgstr "_Zirkulua"
+
+#: glade/drgeoMDI.glade.h:112
+msgid "_Construct Macro"
+msgstr "_Sortu markoa"
+
+#: glade/drgeoMDI.glade.h:113
+msgid "_Contents"
+msgstr "_Edukia"
+
+#: glade/drgeoMDI.glade.h:114
+msgid "_Coordinates"
+msgstr "_Koordenatuak"
+
+#: glade/drgeoMDI.glade.h:115
+msgid "_Coordinates & Equation"
+msgstr "Koor_denatuak eta ekuazioa"
+
+#: glade/drgeoMDI.glade.h:116
+msgid "_Curve"
+msgstr "_Kurba"
+
+#: glade/drgeoMDI.glade.h:117
+msgid "_Custom Interface"
+msgstr "_Interfaze pertsonalizatua"
+
+#: glade/drgeoMDI.glade.h:118
+msgid "_Delete an Object"
+msgstr "Ezaba_tu objektu bat"
+
+#: glade/drgeoMDI.glade.h:119
+msgid "_Distance & Length"
+msgstr "Distantz_ia eta luzera"
+
+#: glade/drgeoMDI.glade.h:120
+msgid "_Edit"
+msgstr "_Editatu"
+
+#: glade/drgeoMDI.glade.h:121
+msgid "_Evaluate"
+msgstr "_Ebaluatu"
+
+#: glade/drgeoMDI.glade.h:122
+msgid "_Execute Macro"
+msgstr "_Exekutatu makroa"
+
+#: glade/drgeoMDI.glade.h:123
+msgid "_Figure"
+msgstr "_Irudia"
+
+#: glade/drgeoMDI.glade.h:124
+msgid "_File"
+msgstr "_Fitxategia"
+
+#: glade/drgeoMDI.glade.h:125
+msgid "_Geometric Locus"
+msgstr "_Leku geometrikoa"
+
+#: glade/drgeoMDI.glade.h:126
+msgid "_Half-line"
+msgstr "_Zuzenerdia"
+
+#: glade/drgeoMDI.glade.h:127
+msgid "_Help"
+msgstr "Lag_untza"
+
+#: glade/drgeoMDI.glade.h:128
+msgid "_Intersection"
+msgstr "_Elkargunea"
+
+#: glade/drgeoMDI.glade.h:129
+msgid "_Line"
+msgstr "_Zuzena"
+
+#: glade/drgeoMDI.glade.h:130
+msgid "_Look"
+msgstr "It_xura"
+
+#: glade/drgeoMDI.glade.h:131
+msgid "_Macro"
+msgstr "_Makroa"
+
+#: glade/drgeoMDI.glade.h:132
+msgid "_Macro-constructions"
+msgstr "_Makro-eraikuntza"
+
+#: glade/drgeoMDI.glade.h:133
+msgid "_Middle"
+msgstr "_Erdia"
+
+#: glade/drgeoMDI.glade.h:134
+msgid "_Numeric"
+msgstr "_Zenbakizkoa"
+
+#: glade/drgeoMDI.glade.h:135
+msgid "_Orthogonal Line"
+msgstr "Zuzen orto_gonala"
+
+#: glade/drgeoMDI.glade.h:136
+msgid "_Other"
+msgstr "_Bestelakoak"
+
+#: glade/drgeoMDI.glade.h:137
+msgid "_Parallel Line"
+msgstr "Zuzen _paraleloa"
+
+#: glade/drgeoMDI.glade.h:138
+msgid "_Point"
+msgstr "Pu_ntua"
+
+#: glade/drgeoMDI.glade.h:139
+msgid "_Polygon"
+msgstr "_Poligonoa"
+
+#: glade/drgeoMDI.glade.h:140
+msgid "_Property"
+msgstr "_Propietatea"
+
+#: glade/drgeoMDI.glade.h:141
+msgid "_Rotation"
+msgstr "_Biraketa"
+
+#: glade/drgeoMDI.glade.h:142
+msgid "_Scale"
+msgstr "_Eskala"
+
+#: glade/drgeoMDI.glade.h:143
+msgid "_Script"
+msgstr "_Script-a"
+
+#: glade/drgeoMDI.glade.h:144
+msgid "_Segment"
+msgstr "_Segmentua"
+
+#: glade/drgeoMDI.glade.h:145
+msgid "_Text"
+msgstr "_Testua"
+
+#: glade/drgeoMDI.glade.h:146
+msgid "_Transformation"
+msgstr "_Eraldaketa"
+
+#: glade/drgeoMDI.glade.h:147
+msgid "_Translation"
+msgstr "_Translazioa"
+
+#: glade/drgeoMDI.glade.h:148
+msgid "_Vector"
+msgstr "_Bektorea"
+
+#: glade/drgeoMDI.glade.h:149
+msgid "_Zoom"
+msgstr "_Zooma"

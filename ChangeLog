@@ -1,0 +1,2657 @@
+2005-07-16  Pawan Chitrakar  <pawan@nplinux.org>
+
+	* configure.in: Added ne in ALL_LINGUAS
+
+2005-07-15  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* Shortcuts fixes: Ctrl+W was used in two places: for WIMS
+	exporter and to close a figure. Remove the WIMS one. Add shortcuts
+	(Ctrl+1, Ctrll+2,...) for the different animation step.
+
+	* drgenius_mdi.cc (setAnimationMode): If already in animation
+	mode, just change the animation step. That way the user can change
+	the animation step while a point is animated.
+
+	* configure.ac: Increment to version 1.1.0
+
+2005-07-14  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* Youpi! First working prototype to animate free point on curve.
+
+2005-06-27  Kjartan Maraas  <kmaraas@gnome.org>
+
+	* configure.ac: Fix up the Norwegian entries in ALL_LINGUAS.
+
+2005-05-05  I�aki Larra�aga  <dooteo@euskalgnu.org>
+
+	* configure.ac: Added "eu" (Basque) to ALL_LINGUAS.
+
+2005-04-01  Steve Murphy  <murf@e-tools.com>
+
+        * configure.in: Added "rw" to ALL_LINGUAS.
+
+2005-03-13  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* examples/scheme/tilings.scm: New interesting example from Adrian
+	Ulises Soto. It expose different step when constructing self
+	repeating shape.
+
+2005-02-24  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* examples/scheme/Makefile.am (scheme_DATA): New Koch.scm example
+	from Mohamed Choubane. Beware it is intensively recursive.
+
+2005-01-20  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* plugin/drgeo/progs/tm_drgeo: Improved plugin by Adrian Ulises
+	Soto. The improvment let the user write Scheme code then DrGeo
+	evaluate it.
+
+2005-01-17  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* plugin/drgeo/progs/tm_drgeo: Bash script to invoke Dr.Geo from
+	the Dr. Geo TeXmacs plugin.
+
+	* plugin/drgeo/progs/init-drgeo.scm: Simplified version of the
+	script relying on external bash script to invoke Dr. Geo.
+
+2005-01-04  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* plugin/drgeo/progs/init-drgeo.scm (drgeo): Improved init file
+	from Adrian Soto.
+	
+
+2005-01-01  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* geo_view.cc (scaleToZoom): Patch from Andreas Jochens to get
+	DrGeo compile under AMD64/GCC4.0.
+
+2004-12-02  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* configure.ac: Add locales nb_NO and no_NO.
+
+2004-08-17  Hilaire Fernandes  <hilaire@lilliput>
+
+	* drgenius_mdi.cc (newGeometricDocument,newTextDocument): Check if
+	the document is valid before adding it in the document list.
+	(setMacroMenuItemDescription): Update the tooltips of a macro menu
+	item.
+
+2004-08-16  Hilaire Fernandes  <hilaire@lilliput>
+
+	* drgenius_mdi.cc (addMacroMenuItem): Add the a macro in the macro
+	menu. Also the macro description is display as a tooltips of the
+	menu item. Very handy to use quickly macro-construction.
+	(on_macroMenu_cb): Callback for the macro menu. When one item of
+	this menu is selected, it will move Dr. Geo in a dialog less macro
+	play mode.
+	(addView): Check if v->name() is not NULL before installing a new
+	menu item entry in the Windows menu. Normally it should not be
+	NULL put it appears there are weird things when reading a DrGenius
+	libxml-1 generated file with DrGeo libxml-2.
+
+2004-08-15  Hilaire Fernandes  <hilaire@lilliput>
+
+	* drgenius_mdi.cc (renameView): Rename Windows menu item as well.
+	(addView): Add a menu item in Windows menu.
+	(removeView): Remove the matching menu item in the Windows menu.
+
+	* drgenius_mdi.h (class drgeniusMDI): Add two pointers
+	p_windowsMenu and p_macroMenu to hold a reference to these top
+	menus.
+
+2004-08-12  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* Redesign the locus icon button.
+
+2004-06-06  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_adaptDialog.cc: Bug fixes, widgetScript is not yet
+	implemented, remove it for now from the toolName table.
+
+	* drgenius_mdi.cc (reconcile_grayout_widget): Rename and Grid
+	short cut need to be set unsensitive when necessary.
+
+2004-06-05  Hilaire Fernandes  <hilaire@lilliput>
+
+	* geo_view.cc (updateUserInterface): Handle the shortcut as well.
+
+2004-04-29  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* examples/figures/Makefile.am (figures_DATA): Add two figures
+	from Marcel Birthelmer.
+
+2004-04-26  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_adaptDialog.cc (on_unlockDialog_response): Conditional use
+	of libcrypt.
+
+	Export all the callback dynamicly linked by libglade.
+
+2004-03-29  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* examples/scheme/steiner.scm (l1): Contribed example from Mohamed
+	Choubane.
+
+2004-03-29  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_mdi.cc (print_view): Just send EPS directly to the
+	printer. There are somes issues with stuff printed out of the
+	clipping area (bounding-box).
+
+2004-03-12  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_mdi.cc (print_figure_cb): Check for pstoedit software
+	before proceding further.
+
+2004-03-03  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_mdi.cc (rename_view_string): The view is renamed only
+	if the user explicitly click on
+	(rename_view_string): We do not need the child parameter as we are
+	using mid->activeView() to get the current view.
+
+2004-02-27  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* examples/figures/Makefile.am (figures_DATA): New physic example
+	from Georges Khaznadar.
+
+2004-02-26  Adam Weinberger  <adamw@FreeBSD.org>
+
+	* configure.ac: Added 'en_CA' (Canadian English) to ALL_LINGUAS.
+
+2004-02-01  Robert Sedak  <robert.sedak@sk.htnet.hr>
+
+        * configure.ac: Added "hr" (Croatian) to ALL_LINGUAS.
+
+2004-01-20  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_init.cc (drgeoInit): Load the Dutch synonyms.
+
+2004-01-13  Laurent Dhima  <laurenti@alblinux.net>
+
+	* configure.ac: Added "sq" to ALL_LINGUAS.
+
+2004-01-08  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* examples/figures/Makefile.am (figures_DATA): Add 2 nice examples
+	from Hung Chao-Kue.
+
+2003-10-26  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_main.cc (main_prog): Replace make- by drgeoMake- to
+	avoid conflicts.
+
+2003-10-25  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* glade/Makefile.am (icons_DATA): Rename drgenius.png to
+	drgeo.png.
+
+2003-10-22  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_mdi.cc (on_about_activate): Add credits for the
+	translators.
+
+2003-10-08  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* examples/figures/Makefile.am (figures_DATA):New intersting
+	examples from Rhydwen Volsik.
+
+2003-10-07  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_mdi.cc (on_about_activate): Pack the OFSET logo.
+
+2003-09-29  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_main.cc (main_prog): Small patch from Sebastian Kapfer
+	to fix an infinit loop when parsing line command parameters.
+
+2003-09-23  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_main.cc (main_prog): Add getDirection and getNormal
+	Scheme methods.
+
+2003-09-20  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* examples/scheme/square.scm (monCarre): Fix this example.
+
+2003-09-17  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_init.cc (drgeoInit): Load Serbian constant definitions.
+
+2003-09-16  Danilo Å egan  <dsegan@gmx.net>
+
+	* configure.ac: Added "sr" and "sr@Latn" to ALL_LINGUAS.
+
+2003-09-14  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* configure.ac (AC_CONFIG_FILES): Add examples/scheme/Makefile
+
+	* examples/Makefile.am (SUBDIRS): Add scheme.
+
+	* examples/scheme/Makefile.am (scheme_DATA): Add a Scheme folfer
+	to hold Dr. Geo Scheme Figure examples.
+
+2003-09-13  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* NEWS: Update the information for the 0.9.9 release.
+
+	* drgenius_mdi.cc (really_export_figure_png): Export to PNG.
+	(really_export_figure_png): To export the PNG we generate a
+	temporary EPS from where we get our 300 DPI bitmap.
+	(really_export_figure_png): The resulting converted image is set
+	with a color depth of 4 bits, the white is transparent, and the
+	DPI at conversion time is set to 300.
+	(export_figure_to_png_cb): For now use the :psFile value as the
+	defaut name when exporting to PNG.
+
+	* drgenius_main.cc (main_prog): Registered make-distancePointLine
+	Scheme function;
+
+2003-09-12  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* Style dialog open at random poision, i.e. the window manager
+	decides i.e. the user can decide.
+	
+2003-09-02  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_main.cc (main_prog): Register make-circleRadius and
+	make-circleSegment Scheme functions.
+	(main_prog): Register the make-parallel and make-orthogonal Scheme
+	functions.
+
+2003-09-01  Christian Rose  <menthos@menthos.com>
+
+	* configure.ac: The language code for Gujarati is "gu",
+	*not* "gj".
+
+2003-09-01  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_main.cc (main_prog): Register the transformation Scheme
+	functions.
+
+2003-09-01  Metin Amiroff  <metin@karegen.com>
+
+	configure.in: Added "az" in ALL_LINGUAS.
+
+2003-08-30  Wang Jian  <lark@linux.net.cn>
+
+	* configure.in: Added "zh_CN" to ALL_LINGUAS.
+
+2003-08-30  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_mdi.cc (evaluateScmFigure): reconcile de grayout widget
+	once the evaluation is finished.
+
+	* examples/scheme old some examples of the Dr. Geo Scheme Figure
+	(DSF)
+	
+	* drgenius_main.cc (main_prog): Record the C functions as Scheme
+	functions.
+
+2003-08-27  Abel Cheung  <maddog@linux.org.hk>
+
+	* configure.ac: Added "ml" "zh_TW" to ALL_LINGUAS.
+
+2003-08-26  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* examples/figures/Makefile.am (figures_DATA): Add saleria.fgeo
+
+2003-08-24  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_mdi.cc (renameView): Patch from Sebastian Kapfer to fix
+	the notebook menu, GTK+ does not updated it when the label of the
+	tabname is changed.
+
+2003-08-23  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_config.cc (updateDialogFromUserPreferences): Mark
+	drgeoConfigGet(":figureName") call to be translated. (see bellow)
+
+	* geo_view.cc (geoView): Mark the string "Items" and
+	drgeoConfigGet(":figureName") call to be translated. Therefore
+	default figure name appears localised at first use of the
+	software.
+	
+	* drgenius_mdi.cc (addView): Patch from Sebastian Kapfer
+	<sebastian_kapfer@web.de> to fix a misbehaviour in the tab.
+
+2003-08-18  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_main.cc (main_prog): Add the Scheme function make-line,
+	make-ray, make-vector, make-circle to instanciate this basic
+	objects.
+	(main_prog): Add the -e --evaluate command line option to load and
+	evaluate a DSF.
+
+2003-08-17  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_init.cc (drgeoInit): At start up load the Dr. Geo Scheme
+	interface.
+
+2003-08-16  Abel Cheung  <maddog@linux.org.hk>
+
+	* drgenius_main.cc: Make use of GETTEXT_PACKAGE.
+	* configure.ac: Remove some old macros.
+	* Makefile.am, drgeo.desktop: .desktop -> .desktop.in
+
+2003-08-16  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_mdi.cc (evaluateScmFigure): New method to evaluate a
+	Scheme figure.
+	(evaluate_cb, evaluate_ok_cb): Our callback and helper to let the
+	user chooses the file to evaluate as a Scheme figure.
+
+2003-08-12  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* configure.ac: Add the DrGeo plugin for TeXmacs relative in
+	the plugin/ folder.
+
+2003-08-08  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_main.cc (main_prog): Record the getAngle function in
+	 GUILE.
+
+2003-08-03  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_main.cc (main_prog): In the --texmacs test, arg should
+	be incremented only when entering this mode.
+
+2003-08-03  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_mdi.cc (gridItem_cb): Callback to show/unshow the grid.
+	(newGeometricDocument): We use a normal menu item instead of a
+	toggle one to represent the command to show or hide the grid
+
+2003-07-27  Duarte Loreto <happyguy_pt@hotmail.com>
+
+        * conigure.ac: Added Portuguese (pt) to ALL_LINGUAS.
+
+2003-07-27  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_mdi.cc (on_drgeoMain_delete_event): When texmacsMode,
+	export the current figure to the standard output as EPS.
+
+2003-07-27  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_main.cc: texmacsMode is a global boolean variable to
+	specify if Dr. Geo is in TeXmacs mode.
+
+	* scm/drgeo_config.scm (drgeoConfigLoadAndUpdate): New method
+	which automaticaly load and eventually update the user preferences
+	with new attributes comming from a newer default configuration
+	file.
+
+2003-07-20  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* geo_view.cc (geoView): Recompose the bounding box from the XML
+	document.
+
+	* drgenius_config.cc (cachePreferedValue): Cache the
+	:numericPrecision value in an integer, this speeds up the read of
+	this value when used in 
+
+2003-07-19  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_mdi.cc (define_printing_area_cb): Callback to set
+	Dr.Geo in the printing_area_mode
+
+2003-07-18  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_main.cc (main_prog): Providing bad command line
+	argument crashed Dr.Geo.
+
+	* geo_view.cc (scaleToZoom, zoomToScale): Helper function to
+	convert scale (float) to/from the zoom factor (integer)
+
+2003-07-18  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* geo_view.cc (geoView): We fetch the scale and drawable origin
+	coordinates from here, just after we instantiate the drawable of
+	the geometric figure.
+	(geoView): Adjust the user interface accoring to the scale fetch
+	from the saved document.
+
+2003-07-13  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_config.cc (on_numeric_changed): Add the numerical
+	precision feature.
+
+	* scm/preferences.scm: Add :numericPrecision attribute name.
+
+2003-07-05  Christophe Merlet  <redfox@redfoxcenter.org>
+
+	* drgeo.desktop: Little fixes.
+
+2003-06-16  Abel Cheung  <maddog@linux.org.hk>
+
+	* configure.in: Removed ko and pt from ALL_LINGUAS (empty translation,
+	  not updated for 5 yrs)
+
+2003-06-15  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_mdi.cc (on_entryRenameView_activate): We want the
+	dialog to be activated when the user press "Return"
+
+2003-06-15  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_mdi.cc (openSession): When opening a session with one
+	or multiple elements the filename is record in the view child or
+	the sessionPathName variable.
+
+2003-06-15  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_view.cc (setName): Method to change the view name. The
+	mecanism to rename view was a bit broken, fix it.
+
+2003-06-12  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_mdi.cc (save_multiple_cb): _ (text[0]) for
+	macro-construction.
+	
+
+2003-06-10  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* editor_view.cc (saveNode): Implement the text view.
+
+2003-06-09  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* Release 0.9.3 various fixes in the user interface and
+	localisation.
+
+2003-06-08  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_mdi.cc (setActiveView): Recouncil the widget when
+	switching the active view.
+
+2003-06-08  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_mdi.cc (addView): Set the notebook scrollable.
+
+2003-02-01  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_menus.c: We record into a static sessionPathName a full
+	filename to the last saved session. (request from JPG)
+
+2003-01-29  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* Doc/drgeniusCommon.tex: New environment drgeniusAPI, plus a set
+	of helpers macros to handle the API related paragraph.
+
+2002-12-28  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_adaptDialog.cc (updateDrgeoDialog): Update the adapt
+	dialog according to the actual logical state in the corresponding
+	drgeoFigure instance.
+
+2003-01-26  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* Doc/drgeniusCommon.tex: \drgeniusIndex macro for HTML and LaTeX
+	index.
+
+2002-12-26  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_adaptDialog.cc (getSensitiveStateByName): Return the state
+	(in fact the sensitivity of the pixamp packed in the button) of
+	the widget button according to its name in the adaptDialog.
+
+	* Makefile.am (drgenius_LDADD): We are using the crypt library,
+	part of the libc6, to lock the user interface.
+
+2002-12-25  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_adaptDialog.cc (on_toolHide_clicked): The pixmap packed
+	into the button is used to toggle the avalaible/unavalaible state
+	of a tool. The pixmap sensitivity is FALSE when the tool is
+	unavalaible, otherwise it is TRUE.
+	(on_xxxMenuHide_clicked): The top button (with a green shape) can
+	used to select/unselct all the tool in their relative toolbar.
+
+2002-12-24  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* Makefile.am (drgenius_SOURCES): Add the
+	drgeo_adaptDialgo.[cc/h]. These ones contain code to adapt the
+	dialogs of the geometry engine view.
+
+	* drgenius_mdi.c (createFigureToolbar): A toolbar instance is
+	created for each view, therefore user changes in the interface
+	take place in each view
+
+2002-12-21  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_menus.c (reconcile_grayout_widget): Hum! This is the
+	Rename menu entry which is not senitive when no figures are open,
+	not the Preferences entry.
+	(edit_menu): Add a customize menu entry to adpat the User
+	Interface per figure.
+
+2002-12-09  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* glade/drgeo.glade: The mini toolbars are set to modal so they do
+	not disappear anymore when the user leave them, the user must
+	click somewhere to close it.
+
+2002-11-11  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_menus.c (edit_menu): Removed the empty menu entries
+	cut, copy and paste. These ones will probably never be
+	implemented.
+
+2002-05-27  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* examples/figures/Makefile.am (figures_DATA): Contributed figure
+	by Adrian Ulises Soto.
+
+2002-05-12  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* glade/Makefile.am (icons_DATA): Add an icon for the property
+	toolbar menu entry.
+
+2002-05-04  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_help.h: Add help topic for the Dr. Genius preference
+	dialog.
+
+	* drgenius_main.c: Include the drgenius_help.h from here. Other
+	part of DrGenius can fetch the help index with an "extern
+	GnomeHelpMenuEntry drgeniusHelp[];" instruction. 
+
+	* drgenius_help.h: This file contains the GnomeHelpMenuEntry
+	structure for Dr. Genius.
+
+2002-04-13  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* glade/Makefile.am: Add the script.xpm and widget-script.xpm
+	icons.
+
+2002-03-29  Laurent Gauthier  <lolo@seul.org>
+
+	* TODO: Indicate my intent to work on the undo/redo support for
+	macro constructions.
+
+2002-03-17  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* configure.in: Add the Doc dir in the AC_OUTPUT parameters list.
+
+2002-03-09  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_menus.c (reconcile_grayout_widget): Editor mdi child
+	does not need the save feature, it does not make sense to save
+	drgenius file with the content of a plain text buffer, so it is
+	grey out.
+
+	* drgenius_mdi.c (drgenius_mdi_session_open): Clarify the way
+	open/new child is handled. Better use of object oriented
+	feature for drgenius mdi child.
+
+2001-10-07  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_menus.c (edit_menu): Turn the PROPERTY menu entry to a
+	PREFERENCES menu entry.
+
+2002-01-12  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_main.c (main_prog): Dr.Genius Guile function must be defined
+	before we open any drgenius file.
+
+2001-08-06  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_main.c (main): Set NUMERIC locale to C type whatever
+	the user locale.
+
+2001-07-27  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* glade/Makefile.am (icons_DATA): Add line icons.
+
+2001-07-24  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_menus.c (on_propertyBox_changed): Set initial state of
+	the property box to unchanged.
+
+2001-07-22  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_menus.c (about_cb): Update the Dr. Genius about dialog
+	to reflect its new situation.
+
+2001-07-21  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_menus.c (property_box_cb): Define a new property box
+	for Dr. Genius.
+
+2001-07-18  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_main.c (main): Fix the command line parsing code.
+
+2001-03-08  Christophe Merlet  <christophe@merlet.net>
+
+	* drgenius.desktop: Added French strings.
+
+2001-01-22  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_menus.c (rename_view_cb,rename_view_string_cb): Add
+	methods to change the name of the MDI child view.
+
+2001-01-02  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_menus.c (about_cb): Update the DrGenius home page URL.
+
+2000-12-14  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* configure.in: Check if extra ncurses/ is required or not. Thanks
+	to Vladimir Tamara <vtamara@gnu.org>.
+	
+2000-11-28  Martin NorbÃ€ck  <d95mback@dtek.chalmers.se>
+
+	* drgenius.desktop: Added Swedish translation.
+
+2000-11-04  Zbigniew Chyla  <cyba@gnome.pl>
+
+	* drgenius.desktop: Added Polish translation.
+
+2000-10-26  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_menus.c (undo_cb, redo_cb): Use a the DrGeniusMdiChild
+	undo/redo methods to call the specific undo/redo method of the
+	child. Now only DrGeoMDIMethod override these methods.
+	(reconcile_grayout_widget): This was reconcile_save, I rename it
+	more accurately. It handles the undo/redo according to the view.
+
+2000-09-11  Jesus Bravo Alvarez  <jba@pobox.com>
+
+	* configure.in: Added Galician (gl) to ALL_LINGUAS
+	* *.desktop: Added Galician translation
+
+2000-08-14  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgenius_mdi.c (app_created_handler): From there are defined the
+	specific toolbars per Dr Genius child category. A Gnome dock item
+	is used in the GnomeApp to hold the specific child toolbar.
+	(child_changed_handler): From this handler, the child toolbar is
+	changed when the user change of active child.
+	(app_deleted_handler): When there is no more active child, this
+	handler removes the last child toolbar from the active GnomeApp.
+
+2000-07-29  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* configure.in (LINGUAS): Force LINGUAS to ALL_LINGUAS, at least I
+	got the locale installed after a "make install". If there is a
+	nicer way please tell me.
+
+	The Canvas code is no more compiled in drgenius because it's
+	unmaintained, if some one wants to take it, he/she can check the
+	0.5.7 release to see what it's about.
+
+2000-07-15  Robert Brady  <rwb197@zepler.org>
+
+	* configure.in: Add en_GB.
+
+2000-06-21  Hilaire Fernandes  <hilaire@seul.org>
+
+	* Rename drgenius all these dr-genius files.
+
+	* drgenius.spec.in:  Updated outdated field.
+
+2000-06-10  Yukihiro Nakai <nakai@gnome.gr.jp>
+
+	* configure.in: Add Japanese to ALL_LINGUAS
+
+2000-06-07  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgenius_menus.c (really_export_figure_latex_cb): Exporting to
+	LaTex now popup a file selection dialog.
+
+2000-05-28  Laurent Gauthier  <lolo@seul.org>
+
+	* configure.in (GMP_LIB): Fix for the detection of GMP 3.x, please
+	test.  Implemented witht the help of Fabrice.Bellet@creatis.insa-lyon.fr.
+
+Sun May 21 03:44:02 2000  George Lebl <jirka@5z.com>
+
+	* lib/**/Makefile.am: fix builds where builddir!=srcdir
+
+Sun May 21 01:01:31 2000  George Lebl <jirka@5z.com>
+
+	* configure.in,Makefile.am,gobobjs/Makefile.am: remove the gob
+	  subtree, and require gob as a separate package
+
+2000-05-20  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgeo_view.cc (exportFigureToLatex): This function is a bridge
+	between drgenius_menu and drgeo_figure.
+
+	* drgenius_menus.c (export_figure_to_latex_cb): Add "Export figure
+	to Latex" in the File menu.
+
+2000-05-17  Laurent Gauthier  <lolo@seul.org>
+
+	* exemples/figures/Makefile.am (EXTRA_DIST): Added a few xml files
+	to demonstrate and test some Dr. Genius features.  More to come.
+
+2000-04-18  Pablo Saratxaga <pablo@mandrakesoft.com>
+
+	* configure.in (ALL_LINGUAS): added Catalan
+
+2000-04-16  Valek Filippov  <frob@df.ru>
+
+	* dr-genius.desktop: Added russian translation.
+	* configure.in (ALL_LINGUAS): Added russian translation.
+
+2000-03-11  Alastair McKinstry  <mckinstry@computer.org>
+
+	* dr-genius.desktop: Added Irish translation.
+
+	* configure.in (ALL_LINGUAS): Added Irish (ga) translation.
+
+2000-02-21  Aaron Lehmann  <aaronl@vitelus.com>
+
+	* Fix a few strings for consitancy. Take out some completed items from TODO.
+
+2000-02-15  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgenius_menus.c (toolbar): Use icons provide by FrÃ©dÃ©ric
+	Toussaint for the toolbar.
+
+Fri Feb 11 19:08:53 2000  George Lebl <jirka@5z.com>
+
+	* configure.in,acconfig.h,genius/genius.c: use ncurses by default
+	  but fallback to termcap if not found
+
+2000-02-11  Aaron Lehmann  <aaronl@vitelus.com>
+
+	* drgenius_menus.c (about_cb): Fix English in about box
+
+2000-02-10  Aaron Lehmann  <aaronl@vitelus.com>
+
+	* drgenius_mdi.c (remove_view_handler): Remove debugging printf
+
+2000-02-10  Hilaire Fernandes  <hilaire@seul.org>
+
+	* Makefile.am (SUBDIRS): Add glade in the list, so its content is
+	installed.
+
+2000-02-09  Aaron Lehmann  <aaronl@vitelus.com>
+
+	* drgenius_menus.c (open_ok_cb): Fix segfault in file type detection
+
+	* drgenius_mdi.c (drgenius_mdi_session_open): Ignore case in XML tags
+
+Wed Feb 09 15:36:06 2000  George Lebl <jirka@5z.com>
+
+	* configure.in: the thing should now check for tgetent in ncurses
+	  and curses if it fails for termcap.  I dunno how that works as
+	  I haven't tried it, perhaps the headers might have to be changed
+	  too
+
+Tue Feb 08 21:38:54 2000  George Lebl <jirka@5z.com>
+
+	* genius_stuff.c: update to the new functions
+
+Tue Feb 08 20:02:36 2000  George Lebl <jirka@5z.com>
+
+	* icons: this should be used for normal icons
+
+	* glade/{*.xpm,*.glade}: glade files and replated xpm files
+
+	* configure.in: add all those Makefiles
+
+Sun Feb 06 15:35:12 2000  George Lebl <jirka@5z.com>
+
+	* drgenius_menus.c: small spell fix in the about box and use the
+	  DRGENIUS_GLADEDIR define
+
+	* Makefile.am: define a DRGENIUS_GLADEDIR
+
+2000-02-04  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgenius_menus.c (on_sessionSaveAll_clicked): Written, so the
+	user just click this button to save all data in Dr Genius
+	(actually figure & macro, but more will come).
+
+2000-01-30  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgenius_mdi.c (drgenius_mdi_figure_open): Now use the GOB The
+	GTK+ Object Builder for DrGeo MDI child.
+	(drgenius_mdi_session_open): This is the default action when a
+	figure is open from the menu. This parse the XML tree and send the
+	a xmlNodePtr to the respective owner, actually only Dr Geo figure,
+	but soon macro-construction, and all the other view.
+
+2000-01-26  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgenius_menus.c (is_clist_row_selected): From a suggestion of 
+	Rodrigo Moya. This function let me know which row are selected.
+
+2000-01-25  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgeo_view.cc (drgeo_create_view): Attach remove_drgeogtkdrawable_cb
+	to the destoy event of each drgeo view.
+
+Sun Jan 23 16:27:14 2000  George Lebl <jirka@5z.com>
+
+	* Applied patch from Aaron Lehmann <aaronl@vitelus.com> for the
+	  canvas thingie
+
+2000-01-19  Yuri Syrota  <rasta@renome.rovno.ua>
+
+	* configure.in: Added "uk" to ALL_LINGUAS.
+	
+Sun Jan 16 01:11:11 2000  George Lebl <jirka@5z.com>
+
+	* drgenius_main.c: fix a warning
+
+2000-01-14  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgenius_menus.c (save_multiple_cb): Add the macro-construction name 
+	to the sessionsSelectList gtk clist.
+
+	* drgeo_view.cc (firstMacroName, nextMacroName): Helper functions to get 
+	the names of avalaible macros in the registry.
+
+1999-12-19  Hilaire Fernandes  <hilaire@seul.org>
+
+	* Update the autoconf/automake file to get a proper installation. New icons
+	directory to put the GUI icons and glade files. When installing, this goes 
+	to /usr/local/share/pixmaps/dr-genius/ .
+
+	* drgenius_menus.c (about_cb): Add the nice mascot from Frederic Toussaint 
+	and put the acronym.
+	
+
+1999-12-18-00:54 Nils <nbarth@fas.harvard.edu>
+
+	* Added all my GEL files to the repository, which include
+	  a rearrangement of lib.gel and LOTS of new functions.
+          (incidentally, this is the first time I've noted anything in the
+	   main ChangeLog)
+	
+1999-12-16  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgenius_menus.c (save_multiple_cb): Here is the the dialog for 
+	multiple save in XML. I have to use a GTKDialog as Libglade seems
+	to not support GnomeDialog right now, we can adjust latter. The 
+	interface is reentrant so the user can adjust the list of available
+	object by just recall File->Save multiple. Need to add list of available
+	macro.
+
+Mon Dec 13 23:43:05 1999  George Lebl <jirka@5z.com>
+
+	* gobobjs/*.gob: update the header files, and explicitly add the
+	  object headers, this reduces the number of subdependencies of the
+	  generated headers which used to include everything themselves
+
+Mon Dec 13 21:00:44 1999  George Lebl <jirka@5z.com>
+
+	* genius_stuff.[ch]: the GEL initialization stuff
+
+	* drgenius_mdi.c: use the new console child
+
+	* drgenius_main.c: use the new genius_stuff for init
+
+Mon Dec 13 00:43:52 1999  George Lebl <jirka@5z.com>
+
+	* drgenius_mdi.c: use new geledit-mdi-child call to just add
+	  view if we already have an open file of the same name
+
+Sat Dec 11 13:50:21 1999  George Lebl <jirka@5z.com>
+
+	* genius_stuff.[ch]: not yet finished replacement for genius_view
+	  with the init stuff which will be working with the console child
+	  when finished
+
+Sun Nov 28 23:46:20 1999  George Lebl <jirka@5z.com>
+
+	* genius_view.[ch],drgenius_main.c: use the drgenius-readline-helper
+	  program for the interactive stuff to avoid readline braindamage
+
+	* drgenius_main.c: actually init with corba, though we don't use
+	  corba yet, we will
+
+	* Makefile.am: link with corba stuff
+
+1999-11-21  Hilaire Fernandes  <hilaire@seul.org>
+
+	* configure.in : add makefile.am for the exemples directory. 
+
+Tue Nov 16 01:51:24 1999  George Lebl <jirka@5z.com>
+
+	* gobobjs/drgenius-mdi-child.gob: merge the save signals into one
+
+	* drgenius_menus.c: handle save and save as
+
+	* drgeo_view.(h|cc): handle saving using the drgenius-mdi-child
+	  save signal
+
+	* gobobjs/geledit-mdi-child.gob,gobobjs/Makefile.am: new child
+	  object which takes over for geledit_view and does saving as well
+	  as well as handeling multiple views
+
+	* drgenius_mdi.c: change to make the new geledit-mdi-child to make
+	  a new gel editor
+
+	* Makefile.am,geledit_view.[ch]: geledit_view is removed
+
+	* gobobjs/gel-text.gob: handle multiple views, saving and fix
+	  recoloring
+
+Mon Nov 15 00:57:39 1999  George Lebl <jirka@5z.com>
+
+	* gobobjs/drgenius-mdi-child.gob: new MDI child object derived
+	  from GnomeMDIGenericChild and it stores filename, the view type
+	  and will handle saving for us too.
+
+	* drgenius_menus.c,drgenius_mdi.[ch]: Start using the above child,
+	  but I didn't yet implement the saving thing so Save still points
+	  directly into the drgeo_view.cc which is evil.  We need code
+	  to check the type of the view and decide which saving routine
+	  to call.  I also got rid of the per view closing functions since
+	  they didn't make sense, one should just connect to destroy handler
+	  of the view.
+
+Sat Nov 13 22:24:39 1999  George Lebl <jirka@5z.com>
+
+	* gobobjs/gel-text.gob: rework dynamic coloring by queing recoloring
+	  of lines.  There is still some flicker, but this is simpler
+	  then doing recoloring only when absolutely necessary. Also changed
+	  the load_file method to take a filename rather then FILE *, and
+	  store the filename in our object structure.
+
+	* geledit_view.c: use the new load_file method and get rid of
+	  the EditView structure and dead recoloring code
+
+	* drgenius_menus.c: when we can't find a file to open, don't close
+	  the filebox, just display an errordialog with the file dialog
+	  as parent. Also don't display the file dialog as modal as
+	  there is no need for this
+
+Sat Nov 13 16:58:40 1999  George Lebl <jirka@5z.com>
+
+	* gobobjs/gel-text.gob: a bit more work on colorizing keyboard
+	  input
+
+Sat Nov 13 15:21:37 1999  George Lebl <jirka@5z.com>
+
+	* gobobjs/{Makefile.am,gel-text.gob},Makefile.am: separate directory
+	  for gob objects becouse of automake braindeadness about built
+	  sources, this is the GelText widget that is a GtkText with GEL
+	  color syntax highlighting (not finished)
+
+	* geledit_view.c: use GelText and remove the Stream source which was
+	  put into GelText now
+
+	* Makefile.am: add gob to built process
+
+	* configure.in: add gob to build process and create a NOINST_GOB file
+	  to make the included gob source not install
+
+1999-10-28  Laurent Gauthier  <lolo@seul.org>
+
+	* drgenius_main.c (main): removed the need for drgeo_init(), and
+	therefore no need to include drgeo/drgeo.h.
+
+Sat Oct 23 22:58:07 1999  George Lebl  <jirka@5z.com>
+
+	* drgeo_view.(cc|h),drgenius_menus.[ch],drgenius_mdi.[ch]: move
+	  file open to drgenius_menus and remove my broken hack of the
+	  old open strategy, there is a proper GEL view open/close
+	  function now and we can make new files
+
+Sat Oct 23 17:34:46 1999  George Lebl  <jirka@5z.com>
+
+	* geledit_view.c: set adjustments when recoloring
+
+Sat Oct 23 17:08:19 1999  George Lebl  <jirka@5z.com>
+
+	* geledit_view.c: implement a very simple and dumb recoloring
+	  scheme for syntax coloring
+
+Sat Oct 23 14:01:29 1999  George Lebl  <jirka@5z.com>
+
+	* genius_view.[ch],geledit_view.[ch]: declare extern GnomeMDI, and
+	  in geledit, actually insert the text widget for the filename
+
+Sat Oct 23 13:52:25 1999  George Lebl  <jirka@5z.com>
+
+	* Makefile.am: add geledit_view.[ch], and add header files as
+	  otherwise make dist wouldn't work
+
+	* geledit_view.[ch]: the very beginnings try at a gel file editor
+
+	* drgenius_mdi.c: try to figure out by extention what file
+	  type we have
+
+1999-10-17  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgenius_main.c (main): add drgeo_init(), this initialises popup menu
+
+1999-10-17  Laurent Gauthier  <lolo@seul.org>
+
+	* drgeo_view.cc, drgenius_menus.c, drgenius_mdi.c: "Open", "Save"
+	and "Save As..." menu entries are now implemented.
+
+Mon Sep 27 19:26:41 1999  George Lebl  <jirka@5z.com>
+
+	* genius_view.c: add support for the new parameters
+
+Sun Sep 26 21:36:14 1999  George Lebl  <jirka@5z.com>
+
+	* Makefile.am: remove dr-genius.c and add dr-genius as the only
+	  target
+
+	* genius_view.c: make the copyright notice display say that it
+	  is Dr.Genius, not Genius :)
+
+Sun Sep 26 21:13:02 1999  George Lebl  <jirka@5z.com>
+
+	* drgenius_main.c: call genius_init from genius_view.c to initialize
+	  the calculator
+
+	* genius_view.c: some preliminary work to get readline, zvt and
+	  genius to behave properly when they don't have a free reign over
+	  the process
+
+1999-09-25  Kjartan Maraas  <kmaraas@online.no>
+
+	* da.po: Added da to ALL_LINGUAS.
+	
+1999-09-23   Laurent Gauthier <lolo@seul.org>
+
+	* Makefile.am: added information necessary to create the
+	  dr-genius2 executable which is the prototype of DrGenius with
+	  MDI support.  Run 'make dr-genius2' to create it.
+
+	* drgenius_main.c, drgenius_mdi.c, drgenius_mdi.h: New files.
+	
+	* drgenius_menus.c, drgenius_menus.h: New files.
+
+	* genius_view.h, genius_view.c:  This where you will have to plug
+	  your code George.  This is where the creation of a new MDI view
+	  is handled for the Genius part of DrGenius.
+
+	* drgeo_view.h, drgeo_view.c:  New files.  This is where the
+	  creation of a new MDI view is handled for the DrGeo part of
+	  DrGenius. 
+
+1999-09-19  Hilaire Fernandes  <hilaire@seul.org>
+
+	* Configure/Makefile: add entry for Dr Geo
+
+1999-09-18  Pablo Saratxaga <pablo@mandrakesoft.com>
+
+	* genius/eval.c: fixed little english typo
+
+1999-09-07  Tomas Ogren  <stric@ing.umu.se>
+
+	* genius/eval.c: Fixed a typo
+
+Mon Sep 06 14:38:44 1999  George Lebl  <jirka@5z.com>
+
+	* Release 0.4.6: last Genius before integration with Dr.Geo
+
+Mon Sep 06 09:43:16 1999  George Lebl  <jirka@5z.com>
+
+	* src/lexer.l: accept E+ for floats as well
+
+Sun Sep 05 17:06:23 1999  George Lebl  <jirka@5z.com>
+
+	* src/gnome-genius.c,src/funclib.c: rework the info/error dialogs
+	  and make them display in a textbox if there is too much text,
+	  also rework how info's and errors are printed to screen so that
+	  we don't hang (for example on 'help')
+
+Sun Sep 05 14:16:20 1999  George Lebl  <jirka@5z.com>
+
+	* src/lexer.l: read E as well for exponents in floats
+
+Thu Sep 02 14:05:50 1999  George Lebl  <jirka@5z.com>
+
+	* Release 0.4.5
+
+Thu Sep 02 14:00:19 1999  George Lebl  <jirka@5z.com>
+
+	* src/mpwrap.c: don't check/free values after mpw_clear again
+
+1999-09-03  Zbigniew Chyla  <chyla@alice.ci.pwr.wroc.pl>
+
+        * configure.in (ALL_LINGUAS): Added pl.
+
+Wed Sep 01 20:36:01 1999  George Lebl  <jirka@5z.com>
+
+	* src/calc.h,src/eval.c,src/genius.c,src/gnome-genius.c: add an
+	  option for limitting the number of errors printed out
+
+	* README: document the above option and full_expressions
+
+Wed Sep 01 19:50:41 1999  George Lebl  <jirka@5z.com>
+
+	* src/eval.[ch],src/parse.y: backdivision for matrices
+
+	* src/funclib.c: don't allow trying exp of non-square matrices
+
+Fri Aug 20 22:06:43 1999  George Lebl  <jirka@5z.com>
+
+	* src/mpwrap.c: get around a gmp bug with converting negative
+	  rationals to floats
+
+	* src/calc.c,configure.in,aclocal.h: if wordexp is not present
+	  use an ugly shell popen hack to try to do the same, but it's
+	  not 100% working
+
+Tue Aug 17 22:25:44 1999  George Lebl  <jirka@5z.com>
+
+	* src/eval.c,src/calc.[ch],src/util.[ch],funclib.c: made the thing
+	  not print out huge expressions by default
+
+	* src/genius.c,src/gnome-genius.c: added options for the maximum
+	  size thing
+
+	* src/funclib.c: fixed getting some arguments
+
+1999-08-09  Tomas Ogren  <stric@ing.umu.se>
+
+	* configure.in (ALL_LINGUAS): 'de' does exist (it's revived).
+
+1999-08-08  Anders Carlsson  <anders.carlsson@tordata.se>
+
+	* configure.in (ALL_LINGUAS): Removed 'de' since no .po file exists
+	for that language.
+
+1999-08-08  Tomas Ogren  <stric@ing.umu.se>
+
+	* configure.in: Removed 'ga', it was removed from cvs (and
+	  contained 1 translated message)
+
+Mon Aug 02 08:08:41 1999  George Lebl  <jirka@5z.com>
+
+	* src/mpwrap.c,src/testplugin.c: fix coshbug and testplugin not
+	  including config.h reported by
+	  Jeroen Nijhof <J.H.B.Nijhof@aston.ac.uk>
+
+Wed Jul 28 02:09:51 1999  George Lebl  <jirka@5z.com>
+
+	* src/*: removed unused variables
+
+	* src/{test.plugin.in,plugin.[ch],plugread*.c,genius.c,gnome-genius.c}:
+	  added a GUI parameter to plugin description to specify if this
+	  plugin is GUI only, and don't even add it to the list on the
+	  command line version
+
+	* src/{calc.c,eval.[ch],funclib.c}: change parameter setting getting
+	  routines and do a preprocessing run on the tree to set and get
+	  the parameters as vars
+
+	* README,NEWS: updated
+
+Tue Jul 27 05:33:47 1999  George Lebl  <jirka@5z.com>
+
+	* src/{parse.y,lexer.l,eval.c}: added mod evaluation
+
+	* src/{lib.gel,funclib.c}: added some more help strings
+
+	* src/{eval.[ch],funclib.c}: added way to call gel functions
+	  internally and implemented a simple exp for matrixes that has
+	  the correct result
+
+Thu Jul 15 05:13:35 1999  George Lebl  <jirka@5z.com>
+
+	* src/lib.gel: much nicer/faster way of computing fibbonachi numbers
+	  from njh@cs.monash.edu.au
+
+Fri Jul 02 06:50:54 1999  George Lebl  <jirka@5z.com>
+
+	* src/{lexer.l,parse.y,calc.c,plugread*.c,plugin.h}: added a plugin
+	  toplevel command to load in plugins, and for loading files I use
+	  wordexp call since that actually does the right thing instead of
+	  splitting at spaces and glob
+
+Tue Jun 22 06:51:08 1999  George Lebl  <jirka@5z.com>
+
+	* Release 0.4.4
+
+Fri Jun 18 05:25:27 1999  George Lebl  <jirka@5z.com>
+
+	* configure.in: added check for glib 1.2+, and for gmodule
+
+	* src/Makefile.am: add building of test.plugin, building of a test
+	  plugin shared lib, installing some headers etc ...
+
+	* src/plugin.[ch]: the plugin loading "interface" using gmodule
+
+	* src/gnome-genius.c: add a menu for loading plugins
+
+	* src/plug_api.h: a very simple beginning plugin API
+
+Tue Jun 15 02:26:19 1999  George Lebl  <jirka@5z.com>
+
+	* src/lexer.l: apply fix from Squeak <squeak@xirr.com>
+
+Mon Jun 14 07:04:44 1999  George Lebl  <jirka@5z.com>
+
+	* src/eval.c: fix memleak 
+
+1999-06-05  Tomas Ogren  <stric@ing.umu.se>
+
+	* src/genius.c: Fixed some i18n and a grammatical error
+	* configure.in: Added sv to ALL_LINGUAS
+
+Tue Jun 01 10:18:17 1999  George Lebl  <jirka@5z.com>
+
+	* src/mpwrap.c: fix problems with negative exponents in mpw_pow_z
+
+Mon May 31 13:05:26 1999  George Lebl  <jirka@5z.com>
+
+	* src/mpwrap.c: fixed a bug with negative small integer exponents 
+
+	* src/geniustests.txt: added tests for the above
+
+Fri May 28 11:19:40 1999  George Lebl  <jirka@5z.com>
+
+	* src/*.c: include config.h in all the files, there were some which
+	  didn't have this (whoops)
+
+Thu May 27 09:02:28 1999  George Lebl  <jirka@5z.com>
+
+	* src/eval.c: apply fix from Squeak <squeak@xirr.com> to fix segfault
+
+Wed May 26 19:37:15 1999  George Lebl  <jirka@5z.com>
+
+	* Release 0.4.3
+
+Mon May 24 16:35:51 1999  George Lebl  <jirka@5z.com>
+
+	* src/{lexer.l,parser.y}: fixed up a bit the new syntax and took out
+	  the define keyword
+
+	* src/{inter.c,calc.c}: fixed problems with the test parser
+
+	* src/{structs.h,parser.y,eval.c,funclib.c,calc.c,compil.c}:
+	  implemented quoted matrixes
+
+Mon May 17 23:55:50 1999  George Lebl  <jirka@5z.com>
+
+	* src/parse.y: took out the old way (bc) of writing function as we
+	  will need the "{}" for sets, added some set rules, but no
+	  functionality
+
+	* src/strucs.h,src/*.c: changed ETree to be a union of structs to
+	  do the polymorphism in a nicer manner and to allow more future
+	  extention, this requires some changes to any code using ETree's
+	  (if anybody has done anything like that)
+
+	* src/*.c: fixed miscellaneous bugs
+
+	* configure.in: raised version
+
+1999-05-18 03:27 1999  Tomas Ãgren  <stric@ing.umu.se>
+
+	* src/*.c: Fixed i18n support
+
+Thu May 13 00:50:33 1999  George Lebl  <jirka@5z.com>
+
+	* src/plugread*.[ch]: new routine that has a gnome and a dumb
+	  non-gnome implementation so it's separated into two files
+
+	* src/calc.[ch]: add ability to read a list of .plugin files
+	  (no plugin functionality yet!)
+
+	* src/{genius.c,gnome-genius.c,Makefile.am}: move lib.cgel into
+	  a /gel/ subdirectory when installed and add a plugins directory
+	  as well to add .plugin files into
+
+	* src/test.plugin: just a simple test file
+
+Wed May 12 01:34:04 1999  George Lebl  <jirka@5z.com>
+
+	* src/{calc.[ch],inter.[ch],genius.c,gnome-genius.c}: instead of
+	  the ugly interactive mode hack, I now do test parses, which is
+	  not extremely efficent, but it's only in interactive mode and
+	  it works perfectly and more cleanly
+
+Tue May 11 23:57:41 1999  George Lebl  <jirka@5z.com>
+
+	* src/mpwrap.c: small optimization and minor correction on mpwl_move
+
+	* src/{eval.[ch],dict.[ch]}: minor optimizations wrt to removing
+	  redundunt node copying
+
+Tue May 11 01:10:45 1999  George Lebl  <jirka@5z.com>
+
+	* src/mpwrap.c: fix reduction of fractions on small integer
+	  division
+
+Mon May 10 21:01:42 1999  George Lebl  <jirka@5z.com>
+
+	* Release 0.4.2
+
+Mon May 10 20:52:18 1999  George Lebl  <jirka@5z.com>
+
+	* src/*,po/*: try to get NLS to work but I just can't get it
+	  working
+
+Mon May 10 18:45:53 1999  George Lebl  <jirka@5z.com>
+
+	* src/calc.[ch]: separated evalexp into more logical functions,
+	  removed do_interrupts from state
+
+	* src/{genius.c,gnome-genius.c,inter.c,calc.c}: handle interrupts
+	  in input as well and handle SIGINT in genius.c
+
+Mon May 10 02:11:03 1999  George Lebl  <jirka@5z.com>
+
+	* src/inter.[ch]: this file contains the readline stuff now as
+	  it is separated from the rest of the code. It contains a HACK
+	  however to figure out the bounds of a single expression in the
+	  same way that the lexer/parser do. This is of course not
+	  possible without a parser, but it should be ok for normal use
+	  and only differs in functionality in cases of errors (or should)
+
+	* src/{genius.c,gnome-genius.c,calc.c,lexer.l}: get rid of readline
+	  stuff that is now in inter
+
+	* src/gnome-genius.c: add a Load file menu item which is the same
+	  as the load command
+
+	* src/Makefile.am: add inter.[ch]
+
+	* src/parse.y: accept unary '+' as well as a no op
+
+	* src/geniustests.txt: add some simple tests
+
+Sat May 08 15:15:50 1999  George Lebl  <jirka@5z.com>
+
+	* src/matrixw.c: don't use padding of 10 but 0.1 of the size to a
+	  maximum of 10 for allocation of new space, this improves the
+	  performance by about 15% in calculations heavy on allocation of
+	  new small matrices. Also fixed a segfault in reallocating matrix
+	  to a larger size
+
+	* configure.in: raise version number
+
+Sat May 08 14:09:21 1999  George Lebl  <jirka@5z.com>
+
+	* src/dict.c: Make "ans" be a synomym for "Ans" to make matlab
+	  people happy
+
+	* src/funclib.c: is_rational,is_integer,is_complex and is_float, now
+	  never fail, they just return 0, also added is_real as well
+
+	* src/lib.gel: updated to use the above fact to make the argument
+	  tests nicer and faster
+
+	* README: updated for the above
+
+Fri May 07 20:25:04 1999  George Lebl  <jirka@5z.com>
+
+	* src/{eval.[ch],calc.c}: add a vector element operator
+
+	* src/lib.gel: fix the delrowcol function and add a pascal
+	  function
+
+	* README: update
+
+Fri May 07 14:50:54 1999  George Lebl  <jirka@5z.com>
+
+	* src/eval.c: correct check for matrix dimensions on multiplication
+
+Thu May 06 21:20:01 1999  George Lebl  <jirka@5z.com>
+
+	* src/{dict.[ch],eval.c}: don't look up the dereference in the
+	  immediate context when assigning to a function argument
+
+	* src/geniustests.txt: add test for the above
+
+Thu May 06 17:48:02 1999  George Lebl  <jirka@5z.com>
+
+	* src/matrixw.c: fix a segfault on matrix size setting
+
+Thu May 06 00:26:37 1999  George Lebl  <jirka@5z.com>
+
+	* Release 0.4.1
+
+Tue May 04 02:05:00 1999  George Lebl  <jirka@5z.com>
+
+	* src/gnome-genius.c: add some terminal options and make ^C do
+	  interrupt of calculations
+
+1999-05-03  Havoc Pennington  <hp@pobox.com>
+
+	* configure.in: Check for termcap, then use -ltermcap in the
+	readline check only if termcap was found (some readlines don't 
+	require -ltermcap apparently)
+
+Mon May 03 00:46:15 1999  George Lebl  <jirka@5z.com>
+
+	* src/gnome-genius.c: minor cleanup and maybe fix a segfault
+
+Sun May 02 23:43:31 1999  George Lebl  <jirka@5z.com>
+
+	* src/gnome-genius.c: add new options for max digits and precision
+
+	* src/genius.c: set calcstate_hook
+
+	* src/mpwrap.c: nicer pi calculation and some sanity checks plus
+	  removing of caches if precision changed
+
+	* src/funclib.c: add functions for changing calcstate and dumping
+	  cached vars when precision changes
+
+	* src/calc.c: add the abitily to change precision and some fixes
+	  to initialization
+
+	* README: updated with new functions
+
+Sun May 02 20:10:38 1999  George Lebl  <jirka@5z.com>
+
+	* src/gnome-genius.c: more work on the ui, don't start new processes
+	  anymore, just set the fd for the terminal so that the terminal
+	  writes everything into readline directly without a need for
+	  an external process
+
+	* src/calc.[ch]: added infoout function for information messages,
+	  changed evalexp interface to be more sane, load and save the
+	  help documentation database for the functions that are being
+	  stored (and only those)
+
+	* src/funclib.c: use infoout for warranty and such
+
+	* configure.in: raise version and fix readline check to work with
+	  readline 4.0
+
+Sun May 02 12:56:12 1999  George Lebl  <jirka@5z.com>
+
+	* src/{genius.c,gnome-genius.c}: add a missing \n and put colors
+	  inside gnome-genius and add an option on where to write errors
+
+Sun May 02 02:18:09 1999  George Lebl  <jirka@5z.com>
+
+	* src/gnome-genius.c: the start of the promised overhaul
+	  of the gui version, now uses zvt and so behaves somewhat
+	  like the command line version but with gui config
+
+	* src/calc.[ch]: hooks for checking for events inside evalnode,
+	  way to set parameters while in evaluation, online function
+	  documentation stuff
+
+	* src/funclib.c: document a bunch of routines with the new
+	  descriptions, and add help and sethelp functions
+
+	* src/calc.c: do tilde expansion using readline's functions
+
+	* configure.in,src/{lexer.l,calc.c,genius.c}: readline is now
+	  required to compile genius
+
+	* README: updated for the help functions
+
+Sat May 01 04:13:42 1999  George Lebl  <jirka@5z.com>
+
+	* Release 0.4.0
+
+Sat May 01 04:08:05 1999  George Lebl  <jirka@5z.com>
+
+	* src/lib.gel: added abs,adj and delrowcol functions
+
+	* src/eval.c: implement integer powers for matricies, absolute
+	  value and division
+
+	* src/geniustests.txt: added some tests
+
+	* README: updated for new functions
+
+Fri Apr 30 17:09:14 1999  George Lebl  <jirka@5z.com>
+
+	* src/{lexer.l,parse.y,eval.[ch],calc.c}: add a 'for in do' for
+	  loop, for iterating over the elements of a matrix
+
+	* src/lib.gel: added a whole bunch of statistical functions and
+	  use the above construct more over the whole library
+
+	* src/{calc.[ch],genius.c,gnome-genius.c,lexer.l}: at least for
+	  parsing errors, display line numbers and file information
+
+	* src/geniustests.txt: added a bit of tests
+
+	* README: added description of the new construct and of the new
+	  functions
+
+Fri Apr 30 01:51:49 1999  George Lebl  <jirka@5z.com>
+
+	* src/lexer.l: add <> as an alternative !=
+
+	* src/{eval.[ch],parse.y}: make new node type, SPACER, and
+	  push it for parenthesised nodes
+
+	* src/{eval.[ch],calc.c}: add new node type, COMPARISON_NODE,
+	  and just before evaluation, replace all comparison operators
+	  by comparison nodes, using spacers as stops so that parenthesis
+	  are still honored, then remove the spacers, also add evaluation
+	  and prining of the COMPARISON_NODE, with this change, ambiguous
+	  comparison expressions are now handled better in terms of math
+	  (e.g. 3<x<=7 is possible), also added evaluation of strings for
+	  all the comparison operators
+
+	* src/geniustests.txt: added a bunch of tests
+
+	* TODO: removed the comparison item
+
+	* README: updated about the comparison operator changes
+
+Thu Apr 29 15:38:55 1999  George Lebl  <jirka@5z.com>
+
+	* src/{eval.[ch],dict.[ch],calc.c}: pass functions by value, and
+	  differentiate between functions and variables, when evaluating a
+	  function without (...) return a function node with the function.
+	  this breaks compatibility a bit
+
+	* src/lib.gel: use functions by value everywhere
+
+	* src/geniustests.txt: update
+
+	* README: change stuff relating to function calling and references
+
+	* TODO: remove what was done
+
+Thu Apr 29 13:55:54 1999  George Lebl  <jirka@5z.com>
+
+	* src/{lexer.l,parse.y}: a much much nicer syntax for writing
+	  functions the old one is still there but is depreceated
+
+	* src/geniustests.txt: updated for the new stuff above
+
+	* src/lib.gel: updated for the new stuff
+
+	* README: updated
+
+	* TODO: add entries for 0.4.0
+
+	* configure.in: raise version to distinguish cvs from released
+
+Thu Apr 29 09:00:36 1999  George Lebl  <jirka@5z.com>
+
+	* src/lib.gel: changed catallan to catalan
+
+	* src/eval.c: a !,- operators for matrixes, <=> operator for strings
+
+	* src/{compil.[ch],eval.c,dict.c,calc.[ch],genius.c,gnome-genius.c}:
+	  created "compiled" GEL files, to make startup much faster,
+	  functions are not actually even parsed until they are needed
+
+	* src/Makefile.am: compile and install lib.cgel
+
+	* src/geniustests.txt: small update
+
+	* README: updates
+
+Wed Apr 28 21:51:48 1999  George Lebl  <jirka@5z.com>
+
+	* src/eval.c: add == and != to matrix support and != for strings
+
+Wed Apr 28 18:03:19 1999  George Lebl  <jirka@5z.com>
+
+	* src/matop.[ch]: implemented an internal version of the
+	  gauss algorithm and put some matrix operations in this file 
+	  and added a determinant function
+
+	* src/eval.c: take out the matrix multiplication from here
+
+	* src/matrixw.c: fix a problem with matrix refcounting
+
+	* src/funclib.c: added the det,ref and rref functions
+
+	* src/lib.gel: added rad2deg,deg2rad,minimize,diagonal and
+	  swaprow functions, and took out the ref and rref functions
+
+	* README: updated
+
+Wed Apr 28 00:35:29 1999  George Lebl  <jirka@5z.com>
+
+	* src/mpwrap.[ch]: add_ui sub_ui and ui_sub routines added
+
+	* src/{eval.[ch],calc.c,parse.y,lexer.l}: added an iterative for
+	  loop
+
+	* src/lexer.l: added null to be '.' so that printouts are legal GEL
+
+	* src/lib.gel: added catallan, adjoint and string functions and
+	  avoided new reserved words
+
+	* src/geniustests.txt: added a couple new tests
+
+	* README: updated
+
+Mon Apr 26 02:27:24 1999  George Lebl  <jirka@5z.com>
+
+	* src/mpwrap.c: complete complex number support (hopefully) and
+	  a whole bunch of fixes
+
+Sat Apr 24 18:24:53 1999  George Lebl  <jirka@5z.com>
+
+	* Release 0.3.2
+
+Sat Apr 24 18:20:00 1999  George Lebl  <jirka@5z.com>
+
+	* src/funclib.c: fix prime function to return correct values
+
+	* src/{funclib.c,lib.gel}: added functionality to call scalar
+	  type functions with matrixes to work on node by node basis
+
+	* src/geniustests.txt: added a couple of tests
+
+	* README: updated
+
+Sat Apr 24 16:49:22 1999  George Lebl  <jirka@5z.com>
+
+	* src/mpwrap.c: use a trick from bc for calculating atan close to 1
+
+Thu Apr 22 22:51:15 1999  George Lebl  <jirka@5z.com>
+
+	* src/mpwrap.c: added a somewhat working arctan and implement
+	  ln for complex numbers, also fix some errors with errors :)
+
+	* src/lib.gel: implement a whole bunch of trigonometric functions
+	  and a bunch of other functions
+
+	* README: updated
+
+Thu Apr 22 19:02:52 1999  George Lebl  <jirka@5z.com>
+
+	* src/{calc.c,genius.c,gnome-genius.c,eval.c}: ignore SIGINT, and
+	  in calculations halt calculations on SIGINT
+
+Thu Apr 22 15:49:37 1999  George Lebl  <jirka@5z.com>
+
+	* src/{mpwrap.[ch],funclib.c}: added jacobi,legendre and
+	  perfect_square functions from gmp
+
+	* src/lib.gel: add infsum,infsum2,convol,convol_vec,matsum and
+	  matprod functions
+
+	* src/geniustests.txt: add some tests
+
+	* README: updated
+
+Thu Apr 22 02:39:19 1999  George Lebl  <jirka@5z.com>
+
+	* src/lib.gel: test for complexness of arguments
+
+	* src/{mpwrap.[ch],funclib.c}: move reduction of sin/cos arguments
+	  to the sin cos functions in mpwrap, added sinh/cosh variety and
+	  added handeling of complex numbers for sin/cos/sinh/cosh/abs/exp,
+	  also added float function to make things floating
+
+	* src/{mpwrap.[ch],genius.c,calc.c,gnome-genius.c}: remove the
+	  ugly make_floats_ints hack since it is just not a correct
+	  thing to do
+
+	* src/mpwrap.c: when printing out complex numbers with imaginary
+	  part negative, don't print '+'
+
+	* README: add the sinh/cosh/float functions
+
+Tue Apr 20 15:30:07 1999  Erik Walthinsen <omega@cse.ogi.edu>
+
+	* added spec.in file and changed Makefile.am/configure.in to match
+
+Fri Apr 16 23:11:54 1999  George Lebl  <jirka@5z.com>
+
+	* src/funclib.c: added a set_size function which returns a new
+	  matrix of a specified size with the old one in it as it fit
+
+	* src/geniustests.txt: update
+
+	* README: update
+
+Fri Apr 16 22:58:01 1999  George Lebl  <jirka@5z.com>
+
+	* src/{parse.y,lexer.l,eval.c,calc.c}: added the range operator
+	  for matrix indexes, and this adds a lot more flexibility to
+	  manipulating matrixes.
+
+	* src/parse.y: added an implicit null node if ';' is at the end
+	  of a parenthesis or a block, so that it can act somewhat
+	  like a terminator instead of just a separator
+
+	* src/geniustests.txt: added a whole bunch of new tests for new
+	  things
+
+	* README: updated for the above changes
+
+	* src/lexer.l: always display secondary prompt from the lexer as
+	  this is the correct behaviour
+
+Fri Apr 16 20:38:37 1999  George Lebl  <jirka@5z.com>
+
+	* src/eval.c: fix segfault on errors of matrix index evaluating
+
+	* src/matrixw.c: fix set_region for matrixes of different ->tr
+	  value
+
+	* src/geniustests.txt: add tests for the above
+
+Fri Apr 16 20:03:03 1999  George Lebl  <jirka@5z.com>
+
+	* src/{matrix.[ch],matrixw.[ch],eval.c,calc.c,funclib.c,structs.h}:
+	  implement wrappers around matrices, to not store 0 nodes, to
+	  do a copy-on-write kind of allocation, which increases memory
+	  efficency and speed by an order of magnitude
+
+	* src/eval.c: don't reevaluate variables, unless they are called
+	  as functions with ()
+
+	* src/geniustests.txt: updated with a couple of new tests
+
+Fri Apr 16 01:14:22 1999  George Lebl  <jirka@5z.com>
+
+	* src/mpwrap.c,src/funclib.c,src/mymath.[ch]: remove mymath.[ch],
+	  rewrite functions in native gmp and moved them to mpwrap
+
+Thu Apr 15 20:26:46 1999  George Lebl  <jirka@5z.com>
+
+	* Release 0.3.1
+
+Thu Apr 15 20:24:47 1999  George Lebl  <jirka@5z.com>
+
+	* src/{eval.c,dict.c,parse.y,lexer.l,calc.c}: fix many memory
+	  leaks
+
+	* src/genius.c: added a switch to run in non-readline mode although
+	  that doesn't work too well
+
+	* configure.in,src/*.c: added the standard gnome compile warnings
+	  and corrected the ones I could
+
+	* src/{parse.y,lexer.l}: add syntax for future replacement of the
+	  GET_ROW and GET_COLUMN by GET_RANGE which will be far more
+	  flexible (and won't change current syntax)
+
+	* src/lib.gel: (rref) corrected out of bounds problem for some
+	  matrixes
+
+Thu Apr 15 16:40:47 1999  George Lebl  <jirka@5z.com>
+
+	* src/lexer.l,src/calc.c,src/util.[ch]: accept escaped characters
+	  inside strings, print escaped strings
+
+	* src/lexer.l,src/calc.c: add a load command that loads files with
+	  gel code
+
+	* README: update
+
+Thu Apr 15 04:08:58 1999  George Lebl  <jirka@5z.com>
+
+	* src/matrix.c: fix segfault problem with setting a matrix size
+
+Wed Apr 14 12:22:30 1999  George Lebl  <jirka@5z.com>
+
+	* src/lib.gel: got rid of the gauss function and replaced it with
+	  more general ref and rref functions, and added a trace function
+
+	* src/mpwrap.c: fixed an integer division bug with negative
+	  denominators
+
+	* src/geniustests.txt: added more tests
+
+	* README: updated for the above changes
+
+Wed Apr 14 04:13:42 1999  George Lebl  <jirka@5z.com>
+
+	* src/eval.c: 'or' and 'and' now evaluate their arguments as they
+	  go instead of all of them upfront, so that the conditial
+	  evaluation tricks works as well.
+
+	* src/{lexer.l,parse.y,eval.[ch],calc.c}: added break and continue
+	  statements for loops
+
+	* src/lib.gel: implemented gauss, a function to solve systems of
+	  equations using the gauss method
+
+	* src/geniustests.txt: added some new tests for new things
+
+	* src/funclib.c: added is_value_only function to test matrixes
+	  for being all value matrixes
+
+	* README: updated
+
+Tue Apr 13 23:56:08 1999  George Lebl  <jirka@5z.com>
+
+	* src/mpwrap.c: fix a segfault bug with multiplication
+
+	* src/funclib.c: add derpoly and der2poly functions that take
+	  derivatives of polynomials
+
+	* src/eval.[ch],src/funclib.c: add a new function to speed up some
+	  operations when making new value nodes
+
+	* README: update for the above functions
+
+Tue Apr 13 21:04:54 1999  George Lebl  <jirka@5z.com>
+
+	* src/funclib.c: add two new functions is_function and
+	  is_function_ref, usefull for checking arguments
+
+	* src/lib.gel: check arguments better for library functions
+
+	* src/eval.c: keep a fake token around when evaluating a reference
+	  to an anonymous function so that we can retrieve the function
+	  later
+
+	* src/funclib.c: add rows and columns function for checking sizes
+	  of matrixes
+
+	* README: update for new functions
+
+Tue Apr 13 19:44:47 1999  George Lebl  <jirka@5z.com>
+
+	* src/funclib.c: added a whole bunch of polynomial manipulation
+	  functions, now that we can do vectors
+
+	* src/geniustests.txt: added tests for the above
+
+	* README: updated for polynomials
+
+	* configure.in: raise to 0.3.1 so that it doesn't get confused with
+	  the released version
+
+	* po/*: updates from release 0.3.0
+
+	* src/Makefile.am: updates from release 0.3.0
+
+Tue Apr 13 01:16:35 1999  George Lebl  <jirka@5z.com>
+
+	* src/{parse.y,eval.c}: add new transpose "'" operator
+
+	* src/funclib.c: add is_value,is_matrix,is_string functions
+
+	* src/eval.c: implemented matrix +,- and *
+
+	* README: update
+
+	* NEWS: move stuff from Changes-0.2 and add new changes for this
+	  relese (0.3)
+
+	* configure.in: raise version to 0.3.0
+
+Mon Apr 12 16:32:14 1999  George Lebl  <jirka@5z.com>
+
+	* src/funclib.c,README: added some documentation of the built in
+	  functions and change isnull to is_null for consistency
+
+Mon Apr 12 16:06:05 1999  George Lebl  <jirka@5z.com>
+
+	* src/eval.c: add string concatenation, and added error handeling
+	  to primitives, and unified the macros for primitives and
+	  logical operations
+
+Mon Apr 12 04:23:35 1999  George Lebl  <jirka@5z.com>
+
+	* src/eval.c: switched around the order of the indicies for
+	  matricies, to be mathematically correct (row,column) not
+	  (column,row), and implemented all the @(...,...) operations,
+	  including with the equals sign. Plus fixed some error checking
+	  for undefined references all over the place and references on
+	  setting are not global anymore to be consistent
+
+	* src/geniustests.txt: added tests for new operations
+
+	* src/mymath.c,src/funclib.c: implemented "e" using exp(1)
+
+Sun Apr 11 15:46:05 1999  George Lebl  <jirka@5z.com>
+
+	* src/calc.c: small fixes and some sanitizing, the thing still leaks
+	  like hell
+
+Sun Apr 11 15:21:11 1999  George Lebl  <jirka@5z.com>
+
+	* src/{parse.y,eval.[ch],mpwrap.c}: fix outrageous memory leaks
+
+Sun Apr 11 03:05:52 1999  George Lebl  <jirka@5z.com>
+
+	* src/{geniustests.txt,mpwrap.c}: add a couple of tests, and fix
+	  division of integers
+
+Sun Apr 11 02:54:16 1999  George Lebl  <jirka@5z.com>
+
+	* src/funclib.c: new functions: prime (for experiments with smaller
+	  primes, returns the nth prime for n<=100000), and lcm
+
+Sun Apr 11 02:52:36 1999  George Lebl  <jirka@5z.com>
+
+	* src/{eval.c,calc.c,parse.y,lexer.l}: add bailout and exception
+	  operators so that we may do nice errors from gel functions
+
+	* src/lib.gel: implement argument checking
+
+	* src/{eval.c,calc.c,funclib.c,util.c,Makefile.am},configure.in:
+	  make a define when using gnome ... and when not using it don't
+	  include gnome.h and define _() to be a no-op
+
+Fri Apr 09 17:26:55 1999  George Lebl  <jirka@5z.com>
+
+	* src/mpwrap.c: sped up exp and ln and implemented floating point
+	  pow function using those, exp might be off in precision bits,
+	  someone with more clue then I has to look at that I guess
+
+Fri Apr 09 01:55:07 1999  George Lebl  <jirka@5z.com>
+
+	* src/mpwrap.c: very minor improvements and changes ... these
+	  algorithms really do suck
+
+Thu Apr 08 20:25:18 1999  George Lebl  <jirka@5z.com>
+
+	* src/mpwrap.[ch],src/funclib.c: add exp and ln functions
+
+	* src/mpwrap.c: fix small leak
+
+Mon Apr 05 03:54:10 1999  George Lebl  <jirka@5z.com>
+
+	* src/lexer.l: allow _'s in function names
+
+	* src/funclib.c: implement is_rational,is_float,is_integer and
+	  error (which prints an error) functions
+
+	* src/geniustests.txt: added new tests for new features
+
+Mon Apr 05 03:30:28 1999  George Lebl  <jirka@5z.com>
+
+	* src/{parse.y,lexer.l}: change matrix index syntax
+
+	* src/eval.c: implement evaluation of simple matrix index, This
+	  doesn't yet do setting of matrix values, which will become a bit
+	  tricky
+
+	* src/funclib.c: implement I function (identity matrix)
+
+	* src/mpwrap.c: implement mpw_get_long function
+
+Mon Apr 05 01:21:01 1999  George Lebl  <jirka@5z.com>
+
+	* src/calc.c: set Ans to the last answer
+
+	* README: updated a bit and added a section on matrix entry
+
+Fri Apr 02 15:50:45 1999  George Lebl  <jirka@5z.com>
+
+	* src/matrix.h: add parenth for the matrix_index macro to avoid
+	  weird problems
+
+	* src/geniustests.txt: added a test for previously non-working
+	  matrix expansion
+
+	* src/{funclib.c,calc.[ch],genius.c,gnome-genius.c}: made the
+	  pretty printing done only when in command line interactive
+	  mode
+
+Fri Apr 02 02:20:01 1999  George Lebl  <jirka@5z.com>
+
+	* src/eval.c: hopefully finished the correct expanding/evaluating of
+	  matrices, and the basic matrix handeling
+
+	* src/calc.c: printing of matricies
+
+	* src/lexer.l: added alternative way of entering matricies
+
+	* src/structs.h,src/matrix.c: small fixes
+
+	* src/parse.y: get rid of debug info
+
+	* src/geniustests.txt: added tests for matrix expansion
+
+	* configure.in: raise version to 0.2.2
+
+Thu Apr 01 02:36:39 1999  George Lebl  <jirka@5z.com>
+
+	* src/genius.c,src/gnome-genius.c: look for the library file in the
+	  current directory as well
+
+	* src/parse.y,src/matrix.[ch]: more work on the matrix stuff,
+	  hopefully finished the matrix ADT, and finished parsing and
+	  reading of a matrix
+
+Thu Mar 25 01:11:32 1999  George Lebl  <jirka@5z.com>
+
+	* src/lib.gel: added nCr, nPr and fib(for fibonacci numbers), dumb
+	  and simple functions
+
+	* src/lexer.l: accept string longer then one character
+
+	* src/funclib.c: print functions don't print "'s around strings
+
+Thu Feb 18 23:50:19 1999  George Lebl  <jirka@5z.com>
+
+	* src/genius.c,src/gnome-genius.c: read <prefix>/share/genius/lib.gel
+	  and ~/.gnomeinit on startup as gel programs
+
+	* src/funclib.c: set error_num=0 on error to keep the expression
+
+	* src/lib.gel,Makefile.am: new library file, now has prod and sum
+	  functions
+
+Thu Feb 18 01:39:52 1999  George Lebl  <jirka@5z.com>
+
+	* src/mpwrap.[ch]: implemented floor,ceil,trunc,abs and corrected
+	  round
+
+	* src/parse.y,eval.c: added |<expr>| absoulte operator
+
+	* src/funclib.c: added floor,ceil,trunc,min and max functions
+
+Thu Feb 11 02:29:17 1999  George Lebl  <jirka@5z.com>
+
+	* src/mpwrap.[ch],src/funclib.c: added a gcd function and fixed a
+	  couple of errors
+
+Thu Feb 11 02:03:48 1999  George Lebl  <jirka@5z.com>
+
+	* src/mpwrap.[ch]: _move function to speed up working with
+	  temporaries, and on the fly allocation of gmp structs
+	  for more speed and less memory usage
+
+Thu Feb 11 00:51:12 1999  George Lebl  <jirka@5z.com>
+
+	* src/mpwrap.[ch]: add native int type for faster calculation,
+	  but gains are fairly minimal, corrected errors with negative
+	  exponentiation on integers
+
+	* src/{eval.c,calc.c,dict.[ch],parer.y,lexer.l}: fixed a whole
+	  bunch of errors, segfaults and memory leaks, and implemented
+	  a token system somewhat like the x atoms to avoid hash table
+	  lookups. This can speed up execution quite a bit.
+
+Sat Jan 09 06:56:31 1999  George Lebl  <jirka@5z.com>
+
+        * gnome-genius.c: standardize menus and use appbar for menu hints
+
+1999-01-02  Christopher Blizzard  <blizzard@appliedtheory.com>
+
+	* src/Makefile.am: Add rules to generate the parse.h file.
+
+Wed Dec  2 22:23:40 PST 1998 Manish Singh <yosh@gimp.org>
+
+	* lexer.l: fix small typo
+
+Mon Nov 30 02:29:55 1998  George Lebl  <jirka@5z.com>
+
+	* src/*: merge in the GEL2 language stuff, the old GEL is dead,
+	  long live the new GEL
+
+Thu Nov 26 21:55:59 EST 1998 Gregory McLean <gregm@comstar.net>
+
+	* gnome-genius.c : gtk_clist changes to sync with new gtk.
+
+Thu Nov  19 16:20:16 CST 1998 Richard Hestilow <hestgray@ionet.net>
+
+	* gnome-genius.c, gnome-genius-ide.c: Added underscore accelerators, no
+	longer right justify "Help" menu either.
+
+Sat Nov  7 22:10:05 PST 1998 Manish Singh <yosh@gimp.org>
+
+	* gnome-genius.c
+	* gnome-genius-ide.c: commented out bogus GNOME_APP_UI_HELP entry.
+	Updated for new gnome-init params
+
+Mon Sep 28 22:05:19 1998  George Lebl  <jirka@5z.com>
+
+	* src/mpwrap.c: fixed a couple of bugs
+
+Sat Sep 19 15:05:42 1998  George Lebl  <jirka@5z.com>
+
+	* src/mpwrap.c: optimized use of gmp vars with a copy-on-write
+	  type alg, and got rid of a few temp gmp vars for common special
+	  cases, this makes genius about twice as fast on my tests
+
+Fri Sep 18 20:31:29 1998  George Lebl  <jirka@5z.com>
+
+	* src/eval.c: profiling, I will need to make a copy-on-write
+	  type varibales for the gmp variables, in large computations,
+	  genius goes nuts with gmp calls
+
+Fri Sep 18 18:22:39 1998  George Lebl  <jirka@5z.com>
+
+	* src/genius.c: fix bug to allow processing of more then one
+	  expression per file
+
+	* src/{calc.[ch],genius.c,gnome-genius.c,funclib.c}: made the
+	  output function utilize file handles as well for saner use with
+	  the command line
+
+	* src/{lexer.l,parser.y}: add possibility of changing the ntoation
+	  within an expression (this was just too cool not to add, but I
+	  doubt it's all that usefull)
+
+Fri Sep 18 01:22:06 1998  George Lebl  <jirka@5z.com>
+
+	* src/{eval.c,calc.c,structs.h,mpwrap.[ch]}: cleanups in structures
+	  and memory handling
+
+Thu Sep 17 01:17:54 1998  George Lebl  <jirka@5z.com>
+
+	* src/matrix.[ch]: more matrix lowlevel work
+
+	* src/{eval.c,dict.c}: keep a free list of tree_t/func_t nodes and
+	  fix a memory leak
+
+Sun Sep 13 23:45:11 1998  George Lebl  <jirka@5z.com>
+
+	* src/lexer.l: better prompt, comments
+
+        * src/{parse.y,calc.c,eval.c}: NULL command '.', it makes the
+	  expression return empty string (null)
+
+        * src/funclib.c: print function
+
+	* src/genius.c: act like a real unix interpretor, so one can now
+	  write genius scripts
+
+1998-09-14  Nuno Ferreira  <nmrf@rnl.ist.utl.pt>
+
+	* po/pt.po: Updated.
+
+Sun Sep 13 19:21:49 PDT 1998 Manish Singh <yosh@gimp.org>
+
+	* configure.in: correct test for -lgmp2 case
+
+Sun Sep 13 03:26:50 1998  George Lebl  <jirka@5z.com>
+
+	* configure.in,src/{lexer.l,calc.c,genius.c}: make it possible to
+	  build even if readline isn't found
+
+Sun Sep 13 01:21:46 1998  George Lebl  <jirka@5z.com>
+
+	* genius.c: now fully functional command line version
+
+	* funclib.c: couple of administrative functions
+
+	* parse.y,lexer.l: add some matrix reading code (far from done)
+
+	* parse.y,lexer.l,calc.[ch]: make it work with the command line
+	  version and readline
+
+Thu Sep 10 21:32:10 1998  George Lebl  <jirka@5z.com>
+
+	* src/parse.y: added grammar for matrixes, now to just fill in
+	  the code:)
+
+	* src/geniustest.pl: made it print out the number of errors encountered
+
+Thu Sep 10 15:56:58 1998  George Lebl  <jirka@5z.com>
+
+	* src/parse.y: more general index grammar
+
+Thu Sep 10 15:43:07 1998  George Lebl  <jirka@5z.com>
+
+	* src/parse.y: start on the grammar for matrix support
+
+Wed Sep 09 23:39:49 1998  George Lebl  <jirka@5z.com>
+
+	* Restructuring, there will be 3 programs in the future,
+	  gnome (the command line script like interface), gnome-genius
+	  which will basically be the current one, and gnome-genius-ide
+	  which will be the IDE style interface
+
+Wed Sep 09 23:10:51 1998  George Lebl  <jirka@5z.com>
+
+	* src/dict.[ch],src/structs.h: made a dictinary hash, plus made
+	  stacks into glists, should be faster and less memory hungry now
+
+Sat Aug 08 23:38:43 1998  George Lebl  <jirka@5z.com>
+
+	* genius.c: added a dumb scientific frame, it's dumb and ugly,
+	  the interface really does need to be reworked
+
+1998-07-01  Nuno Ferreira  <nmrf@rnl.ist.utl.pt>
+
+	* genius.desktop: Added Portuguese translation.
+
+1998-06-10  Chris Lahey  <clahey@umich.edu>
+
+	* geniustest.c: #included <stdio.h> for std{err,in}.
+
+Thu May 14 07:52:40 1998  George Lebl  <jirka@5z.com>
+
+	* mpwrap.c: convert imaginary to integer if it's 0
+	  when uncomplexifying, complex support in mod most
+	  likely makes no sense
+
+Thu May 14 07:23:48 1998  George Lebl  <jirka@5z.com>
+
+	* mpwrap.c: hunted down a sigfpe, and added complex
+	  division (all that is missing now is pow and mod)
+
+	* genius.c: cleanups, fixed bug where the properties
+	  could only be shown once.
+
+Thu May 14 04:57:34 1998  George Lebl  <jirka@5z.com>
+
+	* genius.c: fixup the errorbox show code
+
+Sat Apr 25 21:28:38 1998  Havoc Pennington  <hp@pobox.com>
+
+	* genius.c: Use GnomePropertyBox. This basically involved
+	reversing tmpstate and curstate in setup_calc; before we 
+	saved original in tmpstate while changing curstate, now
+	we change tmpstate and copy back to curstate on apply.
+	Also declare tmpstate static, since it's used after the
+	function returns.
+
+Tue Apr 21 14:45:41 1998  George Lebl  <jirka@5z.com>
+
+	* genius.c: get sane defaults when config file is
+	  not found
+
+Tue Apr 14 01:04:46 1998  George Lebl  <jirka@5z.com>
+
+	* *.[chly], README: copyright notice updates,
+	  README updates
+
+Wed Apr 08 02:13:23 1998  George Lebl  <jirka@5z.com>
+
+	* mpwrap.c: fixed a bug in mpwl_pow_ui, and made
+	  functions to do powers of mpz's instead of ui, to
+	  eliminate a stupid limit.
+
+Wed Mar 27 13:19:00 CST 1998 Arturo Espinosa <arturo@nuclecu.unam.mx>
+
+        * genius.c: Final touches for the properties dialog by arturo & aspuru.
+	
+Wed Mar 27 12:41:00 CST 1998 Alan Aspuru Guzik <aspuru@eros.pquim.unam.mx>
+
+        * genius.c: The thing now saves and loads its properties.
+
+Wed Mar 27 12:00:00 CST 1998 Arturo Espinosa <arturo@nuclecu.unam.mx>
+
+        * genius.c: Modal dialog for properties (used to be options).
+	
+Wed Mar 25 22:15:18 CST 1998 Arturo Espinosa <arturo@nuclecu.unam.mx>
+
+        * genius.c: Clean-up. gnome_config & gnome_stock stuff.
+	
+Tue Mar 24 20:28:32 1998  George Lebl  <jirka@5z.com>
+
+	* lexer.l: generate an error on base >36 integers
+	  (parse error)
+
+	* mpwrap.c: radically faster power function for
+	  float^ui, but this improves everything except
+	  rat^int and int^int, thx to Havoc Pennington
+	  for pointing that out.
+
+Sat Mar 21 15:31:20 1998  Tom Tromey  <tromey@cygnus.com>
+
+	* genius.c: Use gnome_message_box_*, not gnome_messagebox_*.
+
+Sun Mar  8 16:37:50 1998  Tom Tromey  <tromey@cygnus.com>
+
+	* calc.h: Renamed error_t to calc_error_t.
+
+	* Makefile.am (INCLUDES): Added GNOME_INCLUDEDIR.
+
+	* genius.c (main): Use new gnome_init.
+
+Mon Mar 02 14:25:47 1998  George Lebl  <jirka@5z.com>
+
+	* mpwrap.[ch]: partial support for complex numbers
+
+	* funclib.c: a few new functions
+
+	* parse.y,lexer.l: cleanup imaginary numbers
+
+1998-03-01  Raja R Harinath  <harinath@cs.umn.edu>
+
+	* genius.c (addkey): `current_pos' is now part of GtkEditable, not
+	GtkEntry. 
+
+Thu Feb 26 22:57:39 1998  Tom Tromey  <tromey@cygnus.com>
+
+	* Makefile.am (BUILT_SOURCES): New macro.
+
+1998-02-19  Federico Mena Quintero  <federico@nuclecu.unam.mx>
+
+	* genius.c (main): Added app_id "genius".
+
+1998-02-19  Carsten Schaar  <nhadcasc@fs-maphy.uni-hannover.de>
+
+	* Makefile.am (genius_LDADD): Added '$(INTLLIBS)'
+	(geniustest_LDADD): Added '$(INTLLIBS)'
+
+Tue Feb 17 21:32:43 1998  Miguel de Icaza  <miguel@nuclecu.unam.mx>
+
+	* Internationalization.
+
+Tue Feb 17 21:24:17 KST 1998  Changwoo Ryu  <cwryu@adam.kaist.ac.kr>
+
+	* genius.c (geniuserrorbox): Fixed gnome_messagebox use.
+
+Thu Feb 05 01:21:44 1998  George Lebl  <jirka@5z.com>
+
+	* genius.c: clist now expands the column according to the
+	  largest entry, result has white background, and the
+	  clist has two columns so that expresison and result
+	  line up
+
+Fri Jan 30 12:33:04 1998  Tom Tromey  <tromey@cygnus.com>
+
+	* Makefile.am (EXTRA_DIST): Include genius.desktop.
+	(geniustest_LDADD): Include $(INTLLIBS).
+	(genius_LDADD): Likewise.
+
+Thu Jan 29 03:45:15 1998  George Lebl  <jirka@5z.com>
+
+	* util.c: fixed stack pop (this was an ugly bug)
+
+Thu Jan 29 02:07:37 1998  George Lebl  <jirka@5z.com>
+
+	* util.[ch],calc.c,eval.[ch]: using GList for stacks now
+	  which makes some parts better, can't really use them
+	  for context stacks though
+
+1998-01-28  Raja R Harinath  <harinath@cs.umn.edu>
+
+	* Makefile.am: Don't install geniustest.  Misc fixes.
+
+Tue Jan 27 20:52:56 1998  George Lebl  <jirka@5z.com>
+
+	* eval.c: fixed unitialized variable use
+
+Mon Jan 26 00:35:15 1998  George Lebl  <jirka@5z.com>
+
+	* genius.c: chage Quit to Exit, use CList, when row
+	  is selected it is put into the entrybox
+
+Tue Jan 13 22:21:25 1998  George Lebl  <jirka@5z.com>
+
+	* mpwrap.c: if the result would be complex, an error is
+	  returned for now
+
+Tue Jan 13 21:24:10 1998  George Lebl  <jirka@5z.com>
+
+	* parse.y: UMINUS and NEG bind more closely then ^
+
+	* mpwrap.c: fixed a cosmetic error in format_float with 0.0
+	  displaying 0. instead of 0
+
+Tue Jan 13 19:49:29 1998  George Lebl  <jirka@5z.com>
+
+	* mymath.c: e is calculated as a float not rational :)
+
+	* mpwrap.[ch]: new function, mpw_make_float
+
+Mon Jan 12 02:54:50 1998  George Lebl  <jirka@5z.com>
+
+	* Makefile.am,geniustest.c,geniustest.pl,geniustests.txt: simple
+	  files for testing may be a base for a command line
+	  implementation of genius (geniustests.txt are some tests)
+
+	* eval.c: fixed YET ANOTHER BUG in copynode (didn't set new
+	  args to NULL when the old ones were NULL, STUPID!)
+
+	* mymath.c: fixed a small memory leak in getpi
+
+	* mpwrap.c: fixed pow_ui, fixed pow_q
+
+Sun Jan 11 19:03:13 1998  George Lebl  <jirka@5z.com>
+
+	* funclib.[ch]: ported to mp wrappers
+
+	* util.c: a minor bug fixed in my_realloc
+
+Sun Jan 11 19:00:12 1998  George Lebl  <jirka@5z.com>
+
+	* mpwrap.c,mpwrap.h,Makefile.am: added the MP wrapper functions.
+
+	* mymath.[ch]: ported to the new mp wrappers
+
+	* calc.[ch]: ported to mp wrappers
+
+	* eval.[ch],structs.h,lexer.l,parse.y: ported to the new wrappers
+
+	* eval.c: fixed a bug in copynode
+
+Sat Jan 10 15:41:27 1998  George Lebl  <jirka@5z.com>
+
+	* eval.c: "while" now works right
+
+	* README: examples updated to work
+
+	* eval.[ch],calc.c: took out primstr, and reimplemented a
+	  better function in calc.c, this one now has the right output
+	  (only spits out infix notation)
+
+	* calc.h: added all prototypes
+
+	* calc.c: got rid of some unused vars, added #include "dict.h"
+
+	* eval.c: got rid of some unused vars
+
+	* dict.[ch]: d_initcontext is now void not int
+
+	* struct.h,dict.[ch],calc.c,eval.c,lexer.l: slight changes in naming
+	  to be more consistent
+
+	* calc.[ch],genius.c: added function to add missing parentheses
+	  on the end of expression to calc, and made it do just that
+	  in genius.c
+
+	* genius.c: the entrybox is cleared after an expression is evaluated
+
+Sat Jan 10 00:45:07 1998  George Lebl  <jirka@5z.com>
+
+	* lexer.l,parse.y,eval.[ch]: added logical and,or,xor and not
+	  operators. ! was not touched and still means factorial
+
+	* README: updated
+
+	* Makefile.am: using YACCFLAGS for arguments instead fo YACC
+
+	* eval.c,calc.c: messed with the expression printing to at
+	  least print something debuggable before making it right
+
+	* eval.c: secondright is now copied, this fixes ifelse
+
+	* lexer.l: fixed a bug in argument references during parse
+
+	* eval.c: while doesn't check for a number (it does it's
+	  own evaluation), but it still seems broken
+
+Fri Jan 09 21:05:18 1998  George Lebl  <jirka@5z.com>
+
+	* genius.c: couple of minor changes, Ctrl-Q now also quits
+
+	* eval.[ch]: added if,while and ifelse construct operations, also
+	  reversed how branches returns the argument (it was wrong) and
+	  made a function for telling which ones should get evaluated during
+	  calculations (evalnode)
+
+	* structs.h, eval.[ch]: added a secondright argument to primitives
+	  since ifelse needs it
+
+	* parse.y: added the parsing info for while,if,ifelse. lexer already
+	  included it
+
+	* eval.c: split up evalnode to several functions
+
+	* README: updated
+
+	* eval.h: took out an obscolete prototype
+
+	* eval.[ch],parse.y,lexer.l: added comparison operators,
+	  ==,!=,<=>,>,<,>=,<=
+
+	* genius.c: ! taken out of the numpad, % put in
+
+Fri Jan 09 16:17:38 1998  George Lebl  <jirka@5z.com>
+
+	* eval.c: fixed another bug in copynode, this fixes some segfaults,
+	  and makes global functions work, local ones still segfault
+
+	* eval.c: fixed a bug in evaluation, first evaluate left THEN
+	  the right side. this caused trouble with separators and
+	  function declarations
+
+	* calc.c: the parse error message now says "before" instead of
+	  "at" since it makes more sense
+
+Fri Jan 09 02:08:11 1998  George Lebl  <jirka@5z.com>
+
+	* eval.[ch],parse.y,lexer.l,dict.c: took function declaration from
+	  parse time to execution time. Still segfaults all over the place
+
+	* eval.c: fixed copynode, added function for adding fake function
+	  nodes for declarations
+
+Thu Jan 08 00:11:22 1998  George Lebl  <jirka@5z.com>
+
+	* README: updated to reflect the changes
+
+	* COPYING: added
+
+	* genius.c: make floats ints is now disabled by default as
+	  it is not too intuitive, meaning it might not do what a user
+	  expects
+
+Wed Jan 07 23:44:13 1998  George Lebl  <jirka@5z.com>
+
+	* dict.[ch]: addfunc now returns a pointer to the actual created
+	  record
+
+	* eval.[ch],parse.y,lexer.y: added a separator primitive, all it does is
+	  right side. meaning you can have more expressions after each other
+	  and taht will return the value of the last one
+
+	* dict.[ch]: created dictionary contexts so that local
+	  variables/functions are possible
+
+	* eval.[ch],parse.y,lexer.y,funclib.c: added user function support, not
+	  yet completely finished, but it is working quite nicely already,
+	  recursion does not yet work and I know what's the problem and will
+	  fix it, though there are not yet any structures for programming,
+	  there are many MANY small changes around these files to support this
+
+Tue Jan 06 18:38:17 1998  George Lebl  <jirka@5z.com>
+
+	* eval.[ch],parse.y: added mod ('%') operator
+
+Tue Jan 06 15:38:49 1998  George Lebl  <jirka@5z.com>
+
+	* genius.c: Make use of the app widget, get rid of buttons in favor of
+	  menus, use gnome_init instead of gtk_init, add #include <gnome.h>
+
+Mon Jan 05 23:14:56 1998  George Lebl  <jirka@5z.com>
+
+	* eval.c,calc.c,structs.h: changed some tree_t internals to
+	  match the new constant names
+
+	* eval.c,struct.c: it should be now possible to evaluate user
+	  which are just compiled into evaluation trees
+
+	* util.[ch]: took out makelc
+
+	* dict.[ch]: made searches case sensitive and added support for
+	  user functions
+
+	* lexer.l,parser.y: added support for no-argument user functions
+	  (variables) setting
+
+	* calc.c: fixed a bug so that the builtin functions don't get
+	  added again and again
+
+	* eval.[ch]: added the '=' operation and changed evalexp to be able
+	  to set variables
+
+Sun Jan 04 23:50:25 1998  George Lebl  <jirka@5z.com>
+
+	* genius.c: accelerator stuff revamped, and all is done through
+	  the keypress event, nothing will happen on empty string
+
+Sun Jan 04 22:59:28 1998  George Lebl  <jirka@5z.com>
+
+	* genius.c: Got the keybindings to work, so it can be completely
+	  keyboard driven. ^C quits \n runs calculations.
+
+Sun Jan 04 20:57:01 1998  George Lebl  <jirka@5z.com>
+
+	* calc.[ch],eval.c,genius.c: implemented calcstate structure,
+	  instead of separate variables
+
+	* genius.c: added some options for the new calcstate structure
+	  these are the make results floats and scientific notation
+
+	* calc.c: if the number of digits is reduced the number is now
+	  rounded, implemented scientific notation, implemented conversion
+	  to floats, some cleanup, a typo fixed
+
+	* lexer.l: can now read integers in scientific notation as
+	  floats
+
+	* structs.h,calc.c,eval.c: changed some enum constants' names to
+	  be more meaningful
+
+	* dict.c: small typo to make builtin functions
+
+	* eval.c: some cleanup, reduced the number of temporaries used in
+	  some operations, put switch statements in the code instead of
+	  some if/else structures
+
+	* mymath.c: mympf_pow_ui now safely works when rop and op are one
+	  and the same number (it will still not use a temp when the numbers
+	  are in fact different)
+
+Sat Jan 03 16:57:17 1998  George Lebl  <jirka@5z.com>
+
+	* calc.c, eval.c: it's possible to have functions in uncomputed
+	  expressions, they will display properly
+
+	* funclib.[ch]: deleted test_op ("test" function), added functions
+	  "cos", "tan", "pi", "e"
+
+	* mymath.[ch]: created these files for some helper gmp functions
+
+	* eval.c: taken out mympf_pow_ui and put it into mymath.[ch]
+	  added an ugly ans slow temporary way to do exponentials of
+	  floats, it converts it to a rational first
+
+Sat Jan 03 12:48:31 1998  George Lebl  <jirka@5z.com>
+
+	* genius.[ch]: deleted old unused functions, added prototypes
+	  to genius.h, added errorreporting functions
+
+	* calc.c, eval.c: now use the error reporting function
+
+Sat Jan 03 02:18:55 1998  George Lebl  <jirka@5z.com>
+
+	* eval.[ch], calc.c, parse.y: the stack is now a structure of type
+	  evalstack_t, it's a dynamic array now
+
+	* eval.c: added #include "util.h"
+
+	* util.c: made my_realloc safer
+
+	* funclib.c: added #include <gmp.h>
+
+	* funclib.[ch]: sine function added ("sin"), works only for -pi<x<pi
+
+Sat Jan 03 00:37:52 1998  George Lebl  <jirka@5z.com>
+
+	* util.c: proper casting in makelc
+
+	* dict.c: makebifunc now doesn't segfault.
+
+	* dict.c: d_addfunc fixed, it adds dictinary entries now
+
+	* eval.c: added NULL checking to freetree and freetree now does
+	  freeargs, not freenode and makefuncd sets n->left and right to
+	  NULL ... that made ugly segfaults
+
+	* eval.c: evalnode now evaluates function args correctly
+
+Fri Jan 02 21:21:27 1998  George Lebl  <jirka@5z.com>
+
+	* calc.h: removed FACTORIAL_ERROR since it's not a fatal error
+
+	* eval.c: Should be able to run functions from funclib
+
+	* funclib.[ch]: removed funclib_exec function since that's
+	  obscolete, added addall and test_op functions and there's a
+	  "test" function returns sum of three arguments (no typechecking
+	  is done and they have to be integers! it's just a testroutine)
+
+	* calc.c: added #include "funclib.h", and it will add all the
+	  funclib functions the first time evalexpr is run.
+

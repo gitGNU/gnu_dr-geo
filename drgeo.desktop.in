@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+_Name=Dr.Geo
+_Comment=Dr.Geo Math Tool
+Exec=drgeo
+Icon=gnome-drgenius.png
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=GNOME;Application;Education;Math;

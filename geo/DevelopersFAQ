@@ -1,0 +1,396 @@
+Copyright Hilaire Fernandes 1999-2000
+hilaire@seul.org
+
+
+1. How to build a new class object ? (DEPRECIATED)
+
+2. How is build a xml Dr Genius File ?
+
+3. Indenting your code to the Gnome style
+
+
+1. How to build a new class object ?
+
+I will work with an example : a point define by a circle and its curvilign abscissa
+
+a. build a new class :
+
+. first determine the object type :
+ it can be FIG_POINT, FIG_DROITE, etc. This is a generic type. It means FIG_POINT represents different kind of point (free, on a line, etc). This leads us to :
+. the classe type : let says POINT_CE_CU for a point on a circle and positionned with its curvilign abscissa, define it.
+. next what kind of parent : two pointers on cercle_c and valeur_c generic class
+So the new class could look like :
+
+class point_sur_cercle_curviligne:public point_c {
+// we get all the methods from point_c as drawing and mouse intersection method
+ public:
+// all stuff public, some people think it's evil ;) , what do you think ?
+  valeur_c *abscissa;
+  cercle_c *circle;
+ point_sur_cercle_curviligne (void):point_c () {
+// we need this empty methods when we load a geo file
+  classe = POINT_CE_CU;
+// the type is set when the point_c constructor is called
+}
+ point_sur_cercle_curviligne (double x, double y, liste_elem & lp):point_c ()
+{
+figure_c *parent1, *parent2;
+
+classe = POINT_CE_CU;
+parent1 = (figure_c *) lp.lire (1);
+parent2 = (figure_c *) lp.lire (2);
+if (parent1->type == FIG_CERCLE) {
+ circle = (cercle_c *) parent1;
+ abscissa = (valeur_c *) parent2;
+}
+else {
+ circle = (cercle_c *) parent2;
+ abscissa = (valeur_c *) parent1;
+}
+
+/* next compute the coordinate of our new point */
+ actualise ();
+ init_nom ();
+}
+
+// define the needed methods, in this exemple you can look at the point_sur_cercle , the methods will be quite close
+  void move (int mx, int my);
+  // move by vector (mx,my)
+  void actualise ();
+  // recompute point position
+  void sauve_disk (FILE * f);
+  // save its onwn data to f
+  void lire_disk (FILE * f);
+  char dependance (figure_c * fig);
+  // check if the fig object is a parent of this object
+}
+
+Write the methode in geoclass.cc (subject to change for the location, choose the apropriate file)
+
+b. says to the construction method we have a new class object :
+
+. in file mode_obj.h : 
+   .look for class creer_point_repere_c:... how we create a new kind of point object given its abscissa, this tells us thereis 1 mode (#define NB_MOD 1), increment this to 2.
+   . next in method reset, we saw mode16 and cas_possible16 variable
+   . at the begining of the fill search for cas_possibe16, and put cas_possibe16[2]
+. in file var_decl.h :
+   . seek for mode16 and add :
+           {FIG_CERCLE, FIG_VALEUR, NO_OBJECT}},
+   . in cas_possible16 declaration change 1 to 2 and add one 1 in the assignement
+
+c. add the construction call
+
+. in file main.cc :
+   . search for point_repere method
+   . in the switch-case block add a case 1:  block with the apropriate calls
+       
+
+d. says to the load & macro procedure there is a new kind of object 
+
+. in file traite.cc :
+   . in lire_figure & creer_objet methods add the apropriate case POINT_CI_CU
+
+
+That's it!
+
+
+2. How is build a xml Dr Genius File ?
+
+In a xml Dr Genius file we can put several geometric figures and text 
+to be loaded in the Dr Genius calculator.
+
+<drgenius>
+<drgeo name=CDATA>
+<!-- This declare a new figure -->
+</drgeo>
+<text name=CDATA>
+<!-- A buffer with some text -->
+</text>
+<macro name=CDATA>
+<!-- This declare a new macro-construction -->
+</macro>
+</drgenius>
+
+
+Dr Geo XML save format v2.0
+
+Several drgeo element can be declared, each one will open a new view with name 
+taken from the drgeo attribute, in a drgeo element we can find the following 
+elements :
+
+In the texte bellow, transformations is a synonym for Rotation|Symmetry|Reflexion|Translation|Scale
+The detail is exposed for the point object, the logic is the same with the other geometric object
+
+<!-- Point Object defined below -->
+
+<geometricObject 
+        id="unique-object-id" 
+	type="objectType"
+        color="Black|DarkGrey|Grey|White|DarkGreen|Green|DarkBlue|Blue|Bordeaux|Red
+	        |Orange|Yellow"
+	thickness="Dashed|Normal|Thick" (Represent the size for point element)
+        style="Round|Cross|Rectangular|RoundEmpty|RectangularEmpty"
+        filled="True|False" (For (semi-)closed area: circle, arc-circle, polygon)
+        masked="True|False|Alway"     
+ <!-- This is macro stuff, alway is for macro intermediate item, never visibe -->
+	name=CDATA>
+<!-- All but id & type attribute are optional -->
+
+<!-- Variable list of children, depending on the type attributes -->
+</geometricObject>
+
+<point type="Rotation|Symmetry|Reflexion|Translation|Scale|Coordinate
+             |Free|On_curve|Intersection|Middle_segment|Middle_2pts">
+
+if type == "Rotation|Scale"
+<parent ref="point"/> (transformed point, the transformed object alway appear first)
+<parent ref="point"/> (center)
+<parent ref="numeric"/> (angle|factor)
+
+if type == ../..
+
+../..
+
+"Symmetry"
+point, point
+
+"Reflexion"
+point, line
+
+"Translation"
+point, vector
+
+"Coordinate"
+numeric, numeric
+
+"free"
+<x>abscissa</x>
+<y>ordinate</y>
+
+"On_curve"
+curve (ie line|halfLine|segment|circle|arcCircle|locus)
+<value>abscissa</value>
+
+"Intersection"
+curve, curve
+
+plus an additional attribute "extra" representing the intersection
+point number.
+
+"Middle_segment"
+segment
+
+"Middle_2pts"
+point, point
+
+</point>
+
+<!-- Line Object defined below -->
+
+<line type="transformations|2pts|pt_slope|parallel|perpendicular">
+
+"2pts"
+point, point
+
+"pt_slope"
+point, numeric
+
+"parallel"
+point, direction (ie line|halfLine|segment|vector)
+
+"perpendicular"
+point, direction
+
+</line>
+
+<!-- Half-Line Object defined below -->
+
+<halfLine type "transformations|2pts">
+
+"2pts"
+point point
+
+</halfLine>
+
+
+<!-- Segment Object defined below -->
+
+<segment type="transformations|2pts">
+
+idem
+
+</segment>
+
+<!-- Vector Object defined below -->
+
+<vector type="transformations|2pts">
+idem
+</vector>
+
+<!-- Circle Object defined below -->
+
+<circle type="transformations|2pts|segment|radius">
+
+"2pts"
+point, point
+
+"segment"
+point, segment
+
+"raduis"
+point, numeric
+
+</circle>
+
+<!-- Arc Circle Object defined below -->
+
+<arcCircle type="transformations|3pts">
+
+"3pts"
+point, point, point
+
+</arcCircle>
+
+
+<!-- Locus Object defined below -->
+
+<locus type="None">
+
+point (free on curve), point (constrained)
+
+</locus>
+
+<polygon type="npts|transformations">
+"npts"
+point, point, ... point (n points)
+</points>
+
+<!-- angle object -->
+<angle type="3pts|vectors">
+<parent .../>
+<x>abscissa</x>
+<y>ordiante</y>
+</angle>
+
+<!-- Numeric object defined below -->
+
+<numeric type="segment_length|vector_norm|distance_2pts|distance_pt_line|circle_perimeter
+               |slope|arc_length|value|pt_abscissa|pt_ordinate|vector_abscissa
+               |vector_ordinate">
+"segment"
+segment
+<x>abscissa</x>
+<y>ordinate</y>
+
+"vector_norm"
+vector
+<x>abscissa</x>
+<y>ordinate</y>
+
+
+
+"distance_2pts"
+point, point
+<x>abscissa</x>
+<y>ordinate</y>
+
+"distance_pt_line"
+point, line
+<x>abscissa</x>
+<y>ordinate</y>
+
+"circle_perimeter"
+circle
+<x>abscissa</x>
+<y>ordinate</y>
+
+"slope"
+line
+<x>abscissa</x>
+<y>ordinate</y>
+
+"arc_length"
+arcCircle
+<x>abscissa</x>
+<y>ordinate</y>
+
+"value"
+<value>number</value>
+<x>abscissa</x>
+<y>ordinate</y>
+
+"pt_abscissa"
+point
+<x>abscissa</x>
+<y>ordinate</y>
+
+"pt_ordinate"
+point
+<x>abscissa</x>
+<y>ordinate</y>
+
+"vector_abscissa"
+point
+<x>abscissa</x>
+<y>ordinate</y>
+
+"vector_ordinate"
+point
+<x>abscissa</x>
+<y>ordinate</y>
+
+</numeric>
+
+<!-- Equation Object defined below -->
+
+<equation type="line|circle">
+
+ <parent ref="line"/>
+ <parent ref="circle"/>
+ <x>abscissa on screen</x>
+ <y>ordinate on screen</y>
+</equation>
+
+<script type="nitems">
+<x>abscissa on screen</x>
+<y>ordinate on screen</y>
+0 to n <parent ref="geometricObject"/>
+<code>Guile code</code>
+</script>
+
+Several macro element can be declared, each one correspond to one
+macro-construction with name taken from the macro attribute, in 
+a macro element we find :
+
+<macro name="bidon">
+ <description>
+  <!-- Detailed description of the macro-construction can go there -->
+  <!-- It's an optionnal element -->
+ </description>
+  <!-- List of the input parameter -->
+ <input>
+  <Kernel cactegory=CDATA/>
+  [...]	      
+ </input>
+ <intermediate>
+  <!-- intermediate kernel, final = "True" means it's -->
+  <!-- also a final element (visible) -->
+  <!-- some element are illegal there as free point -->
+  <kernel type=CDATA  category=CDATA extra=CDATA final="True|False">
+   <parent ref=CDATA/>
+   [...]
+  </kernel>
+  [...]
+ </intermediate>
+</macro>	
+
+
+Note : The ref attribute of the kernel element is the number of
+appearance of kernel in the macro, starting with the value of 1.
+
+
+3. Indenting your code to the Gnome style
+
+The Gnome style is the Linux style.
+You can indent you code with the following command:
+'indent -i8 -br -ce coco.c'

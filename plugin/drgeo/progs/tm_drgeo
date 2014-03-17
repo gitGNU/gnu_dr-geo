@@ -1,0 +1,86 @@
+#!/bin/bash
+#
+# tm_drgeo 
+# ==============================================================================
+# bash script for interfacing drgeo from TeXmacs
+# needs option --texmacs for compatibility with TeXmacs interface convention and user information
+# ==============================================================================
+# usage within TeXmacs:
+# =====================
+# The plugin opens DrGeo.  Draw, load or evaluate the figures.  For each figure
+# do as if you were to exit the DrGeo program (It won't exit).
+# To display the figures in TeXmacs, hit return in the DrGeo Session.
+
+
+if [ "$1" != "--texmacs" ]
+then
+	echo tm_drgeo. This script should be started only from TeXmacs.
+	exit
+fi	
+
+
+# control characters
+tmp=`echo DATA_BEGIN=X DATA_END=Y DATA_ESCAPE=Z | tr "XYZ" "\002\005\027" `
+eval $tmp
+	
+# startup banner
+echo -n $DATA_BEGIN
+echo -n verbatim:
+echo -n "$(drgeo --version)"
+echo -n $DATA_BEGIN
+echo "verbatim:"
+echo "This is the Dr Geo plugin by Adrian Soto, Hilaire Fernandes."
+echo "DrGeo is Free Software, covered by the GNU General Public License, and comes WITHOUT ANY WARRANTY WHATSOEVER."
+echo "To use it, please do the following:"
+echo "1.-(optional)Write the scheme code you want to evaluate separating" 
+echo "    lines with SHIFT-RETURN"
+echo "2.- Hit the return key in the drgeo prompt inside TeXmacs."
+echo "3.- Edit the drawing, make a new one, load or evaluate a different"
+echo "    geometric figure in the DrGeo program."
+echo "4.- In the DrGeo Program, choose the part of the"
+echo "    figure that you want in the Texmacs document.  Do it inside the DrGeo program"
+echo "    with  File->Export Preferences->Define Exporting Area."
+echo "5.- Close the DrGeo program as usual. (It wont close; but, rather,"
+echo "    will create the texmacs-ready figure)."
+echo "6.- Repeat steps 2 through 5 as many times as needed."
+echo "If you create more than one figure in step 5, then the rest of the figures will be shown the next time you hit the return key in the texmacs prompt."
+echo "To close the session, or to try a different scheme code, click in the  button having the thread and scissors in the Texmacs menu."
+echo -n "Have fun."
+echo -n $DATA_END
+echo -n $DATA_END
+
+OLD_DIR=`pwd`
+TEMP_DIR=~/.TeXmacs/system/tmp
+if [ -d $TEMP_DIR ]
+then
+	cd $TEMP_DIR
+else	
+	mkdir -p $TEMP_DIR
+	cd $TEMP_DIR
+fi
+
+# defining primary temp file name
+TEMP_FILE=drgeotmp
+while [ 1 ]; do
+	# prompt
+	echo -n $DATA_BEGIN
+	echo -n channel:prompt
+	echo -n $DATA_END 
+	echo -n DR.GEO'] '
+	echo -n $DATA_END 
+	 
+	#read a line from stdin
+	read input
+
+	#create .scm file
+	echo $input | cat > $TEMP_FILE.scm
+	drgeo --evaluate $TEMP_FILE.scm --texmacs 2>/dev/null
+done
+cd $OLD_DIR
+
+
+
+
+
+
+

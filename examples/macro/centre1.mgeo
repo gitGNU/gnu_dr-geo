@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<drgenius>
+  <macro name="centre et cercle cir">
+    <description>&#201;tant donn&#233; trois points, trace le centre et le cercle passant par 
+ses trois points</description>
+    <input>
+      <kernel category="2"/>
+      <kernel category="2"/>
+      <kernel category="2"/>
+    </input>
+    <intermediate>
+      <kernel type="1024" category="1" extra="0" final="False">
+        <parent ref="2"/>
+        <parent ref="3"/>
+      </kernel>
+      <kernel type="32" category="32" extra="0" final="False">
+        <parent ref="2"/>
+        <parent ref="3"/>
+      </kernel>
+      <kernel type="256" category="8" extra="0" final="False">
+        <parent ref="4"/>
+        <parent ref="5"/>
+      </kernel>
+      <kernel type="1024" category="1" extra="0" final="False">
+        <parent ref="2"/>
+        <parent ref="1"/>
+      </kernel>
+      <kernel type="32" category="32" extra="0" final="False">
+        <parent ref="1"/>
+        <parent ref="2"/>
+      </kernel>
+      <kernel type="256" category="8" extra="0" final="False">
+        <parent ref="7"/>
+        <parent ref="8"/>
+      </kernel>
+      <kernel type="256" category="1" extra="0" final="True">
+        <parent ref="6"/>
+        <parent ref="9"/>
+      </kernel>
+      <kernel type="32" category="128" extra="0" final="True">
+        <parent ref="10"/>
+        <parent ref="1"/>
+      </kernel>
+    </intermediate>
+  </macro>
+</drgenius>

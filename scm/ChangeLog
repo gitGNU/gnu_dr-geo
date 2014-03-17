@@ -1,0 +1,133 @@
+2005-01-01  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_interface_constant_es.scm: Updated Spanish synonym and
+	fixes.
+		
+
+2004-11-13  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_interface_constant[_fr].scm (on-line): Add the synonym
+	on-line as it is more correct thant on-curve.
+
+2004-08-29  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_interface_constant_es.scm: Updated Spanish synonyms.
+
+2004-01-20  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* Makefile.am (scm_DATA): Added the Dutch synonyms.
+
+2003-10-26  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_interface.scm: Replace make-* by drgeoMake-* to avoid
+	conflicts.
+
+2003-10-19  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_interface_constant_es.scm: Added Spanish synonyms.
+
+2003-09-24  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_interface.scm (Numeric): Add circle-length prototype.
+
+2003-09-19  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_interface_constant.scm (3points, 3pts): New symbol.
+	(point-circle): New symbol.
+
+	* drgeo_scm_interface.scm (Arc): Define prototype for Arc.
+
+2003-09-18  Danilo Šegan  <dsegan@gmx.net>
+
+	* drgeo_scm_interface_constant_sr.scm: Cleaned up, added a couple
+	of more definitions and tested. 
+
+2003-09-17  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_interface_constant_sr.scm (ekstremum): Change
+	extremity to extremities.
+
+2003-09-17  Danilo Šegan  <dsegan@gmx.net>
+
+	* Makefile.am: Added drgeo_scm_interface_constant_sr.scm to
+	scm_DATA.
+
+2003-09-16  Danilo Šegan  <dsegan@gmx.net>
+
+	* drgeo_scm_interface_constant_sr.scm: Added Serbian translation
+	(untested).
+
+2003-09-13  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_interface_constant_fr.scm: Translated
+	various command and constant.
+
+	* drgeo_scm_interface_constant.scm (point-line): Defined.
+
+	* drgeo_scm_interface.scm (Numeric): point-line cas prototype.
+
+2003-09-12  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_interface.scm: I was buggy, I sent the Scheme
+	prototype reference instead of its address with Dr. Geo
+	(idList): Given a list of prototype, return its id list.
+
+2003-09-10  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* preferences.scm (:htmlViewer): Use Dillo as the defaut web
+	viewer.
+
+2003-09-02  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_interface_constant_fr.scm (perpendiculaire): Add the
+	constant and its translations.
+
+	* drgeo_scm_interface.scm (Circle): Implement the type
+	center-radius and center-segment.
+
+2003-09-01  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_interface_constant_fr.scm: French translation of the
+	transformation names.
+
+	* drgeo_scm_interface_constant.scm: Constant to name the
+	transformations.
+
+	* drgeo_scm_interface.scm: Set the object prototypes more object
+	oriented regarding their instance creation: the transformed object
+	creation is now handled directly by the base prototype
+	Geometric-Object, thus reducing code duplication.
+	(Geometric-Object): Implement the geometric transformation
+	messages.
+
+2003-08-29  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_interface.scm (Numeric): Implement the Scheme
+	prototype Numeric
+
+2003-08-26  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_interface.scm (Point): Write the rotation part of the
+	prototype.
+	
+2003-08-22  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_interface_constant_fr.scm: Updated French translation,
+	we can use accented letter.
+
+2003-08-20  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_interface_constant_fr.scm: The various constants and
+	synonymes translated in French.
+
+	* drgeo_scm_interface_constant.scm: To hold constants used in the
+	Scheme interface.
+
+2003-08-17  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* Makefile.am (scm_DATA): drgeo_scm_interface.scm is installed in
+	$(datadir)/drgeo/scm
+
+	* drgeo_scm_interface.scm: This is the Scheme part of the Dr. Geo
+	Scheme interface.
+
