@@ -114,7 +114,7 @@ geoView::geoView (xmlNodePtr drgeoXml):
 		      false, false,0);
 
   paned = gtk_hpaned_new ();
-  gtk_paned_set_position (GTK_PANED (paned), 1);
+  gtk_paned_set_position (GTK_PANED (paned), 0);
   gtk_box_pack_start (GTK_BOX (p_geoView),
 		      paned,
 		      true, true,0);
