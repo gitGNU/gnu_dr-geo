@@ -4,7 +4,7 @@ encodedir = $(datadir)/drgeo/encode
 
 SUBDIRS = 
 
-INCLUDES = \
+AM_CPPFLAGS = \
 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 	\
 	-DLOCALEDIR=\"$(datadir)/locale\" 		\
 	-DLIBRARY_DIR=\""$(datadir)/geo/"\"		\

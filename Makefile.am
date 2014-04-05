@@ -4,7 +4,8 @@ scmdir = $(datadir)/drgeo/scm
 appicondir = $(datadir)/pixmaps
 SUBDIRS = po geo examples icons glade scm plugin encode
 
-INCLUDES = \
+ACLOCAL_AMFLAGS = -I m4
+AM_CPPFLAGS= \
 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 	\
 	-DDRGEO_GLADEDIR=\""$(gladedir)"\"		\
 	-DDRGEO_SCMDIR=\""$(scmdir)"\"			\

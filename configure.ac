@@ -1,10 +1,11 @@
-AC_INIT(drgeo,1.1.0,http://bugzilla.gnome.org/enter_bug.cgi?product=drgeo)
+AC_INIT(drgeo,1.1.0,http://bugzilla.gnome.org/enter_bug.cgi?product=drgeo,GNU Dr. Geo)
 
 AC_CONFIG_SRCDIR([geo/drgeo_point.cc])
 
 AC_PROG_INTLTOOL
+AC_CONFIG_MACRO_DIR([m4])
 
-AM_INIT_AUTOMAKE(AC_PACKAGE_NAME, AC_PACKAGE_VERSION)
+AM_INIT_AUTOMAKE
 AM_CONFIG_HEADER(config.h)
 
 AM_MAINTAINER_MODE
