@@ -24,7 +24,7 @@
 #ifndef DRGEO_SCM_INTERFACE_H
 #define DRGEO_SCM_INTERFACE_H
 
-#include <guile/gh.h>
+#include <libguile.h>
 #include "drgeo_figure.h"
 
 /* define scm_interface into a class */

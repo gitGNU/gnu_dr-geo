@@ -22,7 +22,7 @@
  * 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-#include <guile/gh.h>
+#include <libguile.h>
 #include <glib.h>
 
 void
@@ -30,15 +30,15 @@ drgeoInit ()
 {
   SCM ret;
   // Code to handle user configurations
-  ret = gh_load (DRGEO_SCMDIR"/drgeo_config.scm");
+  ret = scm_c_primitive_load (DRGEO_SCMDIR"/drgeo_config.scm");
   // The Dr. Geo Scheme interface
-  ret = gh_load (DRGEO_SCMDIR"/drgeo_scm_interface.scm");
+  ret = scm_c_primitive_load (DRGEO_SCMDIR"/drgeo_scm_interface.scm");
   // The Scheme interface constants and synonymes and their
   // translations in other national language
-  ret = gh_load (DRGEO_SCMDIR"/drgeo_scm_interface_constant.scm");
-  ret = gh_load (DRGEO_SCMDIR"/drgeo_scm_interface_constant_fr.scm");
-  ret = gh_load (DRGEO_SCMDIR"/drgeo_scm_interface_constant_sr.scm");
-  ret = gh_load (DRGEO_SCMDIR"/drgeo_scm_interface_constant_es.scm");
-  ret = gh_load (DRGEO_SCMDIR"/drgeo_scm_interface_constant_nl.scm");
+  ret = scm_c_primitive_load (DRGEO_SCMDIR"/drgeo_scm_interface_constant.scm");
+  ret = scm_c_primitive_load (DRGEO_SCMDIR"/drgeo_scm_interface_constant_fr.scm");
+  ret = scm_c_primitive_load (DRGEO_SCMDIR"/drgeo_scm_interface_constant_sr.scm");
+  ret = scm_c_primitive_load (DRGEO_SCMDIR"/drgeo_scm_interface_constant_es.scm");
+  ret = scm_c_primitive_load (DRGEO_SCMDIR"/drgeo_scm_interface_constant_nl.scm");
 }
 

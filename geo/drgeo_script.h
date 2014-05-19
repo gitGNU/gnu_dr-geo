@@ -24,7 +24,7 @@
 #ifndef DRGEO_SCRIPT_H
 #define DRGEO_SCRIPT_H
 
-#include <guile/gh.h>
+#include <libguile.h>
 #include "drgeo_value.h"
 
 class script:public value

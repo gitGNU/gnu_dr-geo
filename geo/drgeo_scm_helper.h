@@ -25,7 +25,7 @@
 #define DRGEO_SCM_HELPER_H
 
 #include <gtk/gtk.h>
-#include <guile/gh.h>
+#include <libguile.h>
 #include "drgeo_drgeoVector.h"
 
 drgeoPoint & scmCoord2drgeoPoint (SCM x, SCM y);

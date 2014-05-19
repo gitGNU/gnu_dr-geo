@@ -21,7 +21,7 @@
  * 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-#include <guile/gh.h>
+#include <libguile.h>
 #include "config.h"
 #include "drgeo_script.h"
 #include "drgeo_drawable.h"
@@ -104,7 +104,7 @@ script::~script ()
   g_free (scriptCode);
 
   tmpScript = g_strdup_printf ("(undefine script%d)", this);
-  gh_eval_str (tmpScript);
+  scm_c_eval_string (tmpScript);
   g_free (tmpScript);
   //      scm_gc();
 }
@@ -132,7 +132,7 @@ script::update (drgeoDrawable & area)
     }
   tmp1 = g_strconcat (tmpScript, ")", NULL);
   g_free (tmpScript);
-  ret = gh_eval_str_with_catch (tmp1, standard_handler);
+  ret = scm_internal_catch (tmp1, standard_handler);
   g_free (tmp1);
   /* there is no gh_ equivalent in the guile interface,
      therefore I use the internal stuff */
@@ -257,7 +257,7 @@ script::setScript (gchar * scriptCode)
   tmp1 = g_strconcat (tmpScript, ")", scriptCode, ")", NULL);
   g_free (tmpScript);
   /* define the procedure in the Guile interpretor */
-  gh_eval_str_with_catch (tmp1, standard_handler);
+  scm_internal_catch (tmp1, standard_handler);
   g_free (tmp1);
 }
 

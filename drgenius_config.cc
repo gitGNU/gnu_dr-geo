@@ -46,7 +46,7 @@ drgeoConfigSetGen(gchar *attr, gchar *value, gchar *conf)
   scm = g_strconcat ("(set! ",conf, " (drgeoConfigSet '",
 		     attr, " \"", value, "\" ", conf, "))",
 		     NULL);
-  gh_eval_str (scm);
+  scm_c_eval_string (scm);
   g_free (scm);
 
 }
@@ -77,7 +77,7 @@ drgeoConfigGet (gchar *attr)
   scm = g_strconcat ("(drgeoConfigGet '",
 		     attr, "  userConf)",
 		     NULL);
-  ret = gh_eval_str (scm);
+  ret = scm_c_eval_string (scm);
   g_free (scm);
   g_free(value);
   value = gh_scm2newstr (ret, NULL);
@@ -195,7 +195,7 @@ loadUserPreferences ()
 		       "/preferences.scm\" \"", filename, "\"))", NULL);
     
   
-  gh_eval_str (scm);
+  scm_c_eval_string (scm);
   g_free (scm);
 
   g_free (filename);
@@ -212,7 +212,7 @@ saveUserPreferences ()
   
   scm = g_strconcat ("(drgeoConfigSave \"", filename, "\" userConf)", NULL);
 
-  gh_eval_str (scm);
+  scm_c_eval_string (scm);
   g_free (scm);
   g_free (filename);
 }
@@ -223,7 +223,7 @@ updateDialogFromUserPreferences (GtkObject * d)
   GtkWidget *w;
 
   /* First set a copy of the user preferences */
-  gh_eval_str ("(define dialogConf userConf)");
+  scm_c_eval_string ("(define dialogConf userConf)");
   
 
   /***********/
@@ -403,7 +403,7 @@ updateUserPreferencesFromDialog (GtkObject * d)
 {
   GtkWidget *w;
 
-  gh_eval_str ("(define userConf dialogConf)");
+  scm_c_eval_string ("(define userConf dialogConf)");
 
   cachePreferedValue ();
 

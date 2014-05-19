@@ -207,7 +207,7 @@ drgeniusMDI::evaluateScmFigure (gchar *filename)
   /* Just evaluate the scheme figure. All specifics stuffs as creating
      the tabs figures are handle from the scheme definition */
 
-  gh_eval_file_with_catch (filename, standard_handler);
+  scm_internal_catch (filename, standard_handler);
   reconcile_grayout_widget ();
 }
 

@@ -25,7 +25,7 @@
 #ifndef DRGENIUS_CONFIG_H
 #define DRGENIUS_CONFIG_H
 
-#include <guile/gh.h>
+#include <libguile.h>
 #include <glade/glade.h>
 #include <gtk/gtk.h>
 #include <gmodule.h>

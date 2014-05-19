@@ -24,7 +24,7 @@
 #ifndef DRGEO_SCM_API_H
 #define DRGEO_SCM_API_H
 
-#include <guile/gh.h>
+#include <libguile.h>
 
 
 #ifdef __cplusplus
