@@ -67,7 +67,7 @@ ScmInterface::make_freePoint (SCM name, SCM x, SCM y)
 	   FALSE, figure->getFigureList());
   setObjectName (name, item);
   figure->addToFigureListNoRedraw (item, TRUE);
-  return gh_ulong2scm ((unsigned long) item);
+  return scm_from_ulong ((unsigned long) item);
 }
 SCM
 ScmInterface::make_pointOnCurve (SCM name, SCM c, SCM v)
@@ -75,13 +75,13 @@ ScmInterface::make_pointOnCurve (SCM name, SCM c, SCM v)
   geometricObject *item;
 
   parents->vide ();
-  parents->ajoute ((void *) gh_scm2ulong (c));
+  parents->ajoute ((void *) scm_to_ulong (c));
 
   item = (geometricObject *) 
-    new point (gh_scm2double (v), *parents, FALSE, figure->getFigureList ());
+    new point (scm_to_double (v), *parents, FALSE, figure->getFigureList ());
   setObjectName (name, item);
   figure->addToFigureListNoRedraw (item, TRUE);
-  return gh_ulong2scm ((unsigned long) item);
+  return scm_from_ulong ((unsigned long) item);
 }
 SCM 
 ScmInterface::make_middle2Points (SCM name, SCM p1, SCM p2)
@@ -89,13 +89,13 @@ ScmInterface::make_middle2Points (SCM name, SCM p1, SCM p2)
   geometricObject *item;
 
   parents->vide ();
-  parents->ajoute ((void *) gh_scm2ulong (p1));
-  parents->ajoute ((void *) gh_scm2ulong (p2));
+  parents->ajoute ((void *) scm_to_ulong (p1));
+  parents->ajoute ((void *) scm_to_ulong (p2));
   item = (geometricObject *) new
     point (*parents, MIDDLE_2PTS, FALSE, figure->getFigureList (), 0);
   setObjectName (name, item);
   figure->addToFigureListNoRedraw (item, TRUE);
-  return gh_ulong2scm ((unsigned long) item);  
+  return scm_from_ulong ((unsigned long) item);  
 }
 SCM 
 ScmInterface::make_middleSegment (SCM name, SCM s)
@@ -103,12 +103,12 @@ ScmInterface::make_middleSegment (SCM name, SCM s)
   geometricObject *item;
 
   parents->vide ();
-  parents->ajoute ((void *) gh_scm2ulong (s));
+  parents->ajoute ((void *) scm_to_ulong (s));
   item = (geometricObject *) new
     point (*parents, MIDDLE_SEGMENT, FALSE, figure->getFigureList (), 0);
   setObjectName (name, item);
   figure->addToFigureListNoRedraw (item, TRUE);
-  return gh_ulong2scm ((unsigned long) item);  
+  return scm_from_ulong ((unsigned long) item);  
 }
 SCM
 ScmInterface::make_intersection (SCM name, SCM obj1, SCM obj2, SCM k)
@@ -116,16 +116,16 @@ ScmInterface::make_intersection (SCM name, SCM obj1, SCM obj2, SCM k)
   geometricObject *item;
   gint myK;
 
-  myK = gh_scm2int (k);
+  myK = scm_to_int (k);
 
   parents->vide ();
-  parents->ajoute ((void *) gh_scm2ulong (obj1));
-  parents->ajoute ((void *) gh_scm2ulong (obj2));
+  parents->ajoute ((void *) scm_to_ulong (obj1));
+  parents->ajoute ((void *) scm_to_ulong (obj2));
   item = (geometricObject *) new
     point (*parents, INTERSECTION, FALSE, figure->getFigureList (), myK);
   setObjectName (name, item);
   figure->addToFigureListNoRedraw (item, TRUE);
-  return gh_ulong2scm ((unsigned long) item);    
+  return scm_from_ulong ((unsigned long) item);    
 }
 
 SCM
@@ -134,13 +134,13 @@ ScmInterface::make_rotation (SCM name, SCM object, SCM c, SCM a)
   geometricObject *item, *myObject;
   objectCategory category;
   
-  myObject = (geometricObject *)  gh_scm2ulong (object);
+  myObject = (geometricObject *)  scm_to_ulong (object);
   category = myObject->getCategory ();
 
   parents->vide ();
   parents->ajoute ((void *) myObject);
-  parents->ajoute ((void *) gh_scm2ulong (c));
-  parents->ajoute ((void *) gh_scm2ulong (a));
+  parents->ajoute ((void *) scm_to_ulong (c));
+  parents->ajoute ((void *) scm_to_ulong (a));
 
 
   if (category & POINT)
@@ -180,7 +180,7 @@ ScmInterface::make_rotation (SCM name, SCM object, SCM c, SCM a)
 
   setObjectName (name, item);
   figure->addToFigureListNoRedraw (item, TRUE);
-  return gh_ulong2scm ((unsigned long) item); 
+  return scm_from_ulong ((unsigned long) item); 
 }
 SCM
 ScmInterface::make_scale (SCM name, SCM object, SCM c, SCM f)
@@ -188,13 +188,13 @@ ScmInterface::make_scale (SCM name, SCM object, SCM c, SCM f)
   geometricObject *item, *myObject;
   objectCategory category;
   
-  myObject = (geometricObject *)  gh_scm2ulong (object);
+  myObject = (geometricObject *)  scm_to_ulong (object);
   category = myObject->getCategory ();
 
   parents->vide ();
   parents->ajoute ((void *) myObject);
-  parents->ajoute ((void *) gh_scm2ulong (c));
-  parents->ajoute ((void *) gh_scm2ulong (f));
+  parents->ajoute ((void *) scm_to_ulong (c));
+  parents->ajoute ((void *) scm_to_ulong (f));
 
 
   if (category & POINT)
@@ -234,7 +234,7 @@ ScmInterface::make_scale (SCM name, SCM object, SCM c, SCM f)
 
   setObjectName (name, item);
   figure->addToFigureListNoRedraw (item, TRUE);
-  return gh_ulong2scm ((unsigned long) item); 
+  return scm_from_ulong ((unsigned long) item); 
 }
 SCM
 ScmInterface::make_symmetry (SCM name, SCM object, SCM c)
@@ -242,12 +242,12 @@ ScmInterface::make_symmetry (SCM name, SCM object, SCM c)
   geometricObject *item, *myObject;
   objectCategory category;
   
-  myObject = (geometricObject *)  gh_scm2ulong (object);
+  myObject = (geometricObject *)  scm_to_ulong (object);
   category = myObject->getCategory ();
 
   parents->vide ();
   parents->ajoute ((void *) myObject);
-  parents->ajoute ((void *) gh_scm2ulong (c));
+  parents->ajoute ((void *) scm_to_ulong (c));
 
   if (category & POINT)
     item = (geometricObject *) new
@@ -286,7 +286,7 @@ ScmInterface::make_symmetry (SCM name, SCM object, SCM c)
 
   setObjectName (name, item);
   figure->addToFigureListNoRedraw (item, TRUE);
-  return gh_ulong2scm ((unsigned long) item); 
+  return scm_from_ulong ((unsigned long) item); 
 }
 SCM
 ScmInterface::make_reflexion (SCM name, SCM object, SCM d)
@@ -294,12 +294,12 @@ ScmInterface::make_reflexion (SCM name, SCM object, SCM d)
   geometricObject *item, *myObject;
   objectCategory category;
   
-  myObject = (geometricObject *)  gh_scm2ulong (object);
+  myObject = (geometricObject *)  scm_to_ulong (object);
   category = myObject->getCategory ();
 
   parents->vide ();
   parents->ajoute ((void *) myObject);
-  parents->ajoute ((void *) gh_scm2ulong (d));
+  parents->ajoute ((void *) scm_to_ulong (d));
 
   if (category & POINT)
     item = (geometricObject *) new
@@ -338,7 +338,7 @@ ScmInterface::make_reflexion (SCM name, SCM object, SCM d)
 
   setObjectName (name, item);
   figure->addToFigureListNoRedraw (item, TRUE);
-  return gh_ulong2scm ((unsigned long) item); 
+  return scm_from_ulong ((unsigned long) item); 
 }
 SCM
 ScmInterface::make_translation (SCM name, SCM object, SCM v)
@@ -346,12 +346,12 @@ ScmInterface::make_translation (SCM name, SCM object, SCM v)
   geometricObject *item, *myObject;
   objectCategory category;
   
-  myObject = (geometricObject *)  gh_scm2ulong (object);
+  myObject = (geometricObject *)  scm_to_ulong (object);
   category = myObject->getCategory ();
 
   parents->vide ();
   parents->ajoute ((void *) myObject);
-  parents->ajoute ((void *) gh_scm2ulong (v));
+  parents->ajoute ((void *) scm_to_ulong (v));
 
   if (category & POINT)
     item = (geometricObject *) new
@@ -386,7 +386,7 @@ ScmInterface::make_translation (SCM name, SCM object, SCM v)
 
   setObjectName (name, item);
   figure->addToFigureListNoRedraw (item, TRUE);
-  return gh_ulong2scm ((unsigned long) item); 
+  return scm_from_ulong ((unsigned long) item); 
 }
 SCM
 ScmInterface::make_segmentExtremity (SCM name, SCM p1, SCM p2)
@@ -394,13 +394,13 @@ ScmInterface::make_segmentExtremity (SCM name, SCM p1, SCM p2)
   geometricObject *item;
 
   parents->vide ();
-  parents->ajoute ((void *) gh_scm2ulong (p1));
-  parents->ajoute ((void *) gh_scm2ulong (p2));
+  parents->ajoute ((void *) scm_to_ulong (p1));
+  parents->ajoute ((void *) scm_to_ulong (p2));
   item = (geometricObject *) new
     segment (*parents, SEGMENT_2PTS, FALSE, figure->getFigureList ());
   setObjectName (name, item);
   figure->addToFigureListNoRedraw (item, TRUE);
-  return gh_ulong2scm ((unsigned long) item);  
+  return scm_from_ulong ((unsigned long) item);  
 }
 
 SCM
@@ -409,13 +409,13 @@ ScmInterface::make_line (SCM name, SCM p1, SCM p2)
   geometricObject *item;
 
   parents->vide ();
-  parents->ajoute ((void *) gh_scm2ulong (p1));
-  parents->ajoute ((void *) gh_scm2ulong (p2));
+  parents->ajoute ((void *) scm_to_ulong (p1));
+  parents->ajoute ((void *) scm_to_ulong (p2));
   item = (geometricObject *) new
     line (*parents, LINE_2PTS, FALSE, figure->getFigureList ());
   setObjectName (name, item);
   figure->addToFigureListNoRedraw (item, TRUE);
-  return gh_ulong2scm ((unsigned long) item);  
+  return scm_from_ulong ((unsigned long) item);  
 }
 SCM
 ScmInterface::make_parallel (SCM name, SCM p, SCM d)
@@ -423,13 +423,13 @@ ScmInterface::make_parallel (SCM name, SCM p, SCM d)
   geometricObject *item;
 
   parents->vide ();
-  parents->ajoute ((void *) gh_scm2ulong (p));
-  parents->ajoute ((void *) gh_scm2ulong (d));
+  parents->ajoute ((void *) scm_to_ulong (p));
+  parents->ajoute ((void *) scm_to_ulong (d));
   item = (geometricObject *) new
     line (*parents, LINE_PAR_DIRECTION, FALSE, figure->getFigureList ());
   setObjectName (name, item);
   figure->addToFigureListNoRedraw (item, TRUE);
-  return gh_ulong2scm ((unsigned long) item);  
+  return scm_from_ulong ((unsigned long) item);  
 }
 SCM
 ScmInterface::make_orthogonal (SCM name, SCM p, SCM d)
@@ -437,13 +437,13 @@ ScmInterface::make_orthogonal (SCM name, SCM p, SCM d)
   geometricObject *item;
 
   parents->vide ();
-  parents->ajoute ((void *) gh_scm2ulong (p));
-  parents->ajoute ((void *) gh_scm2ulong (d));
+  parents->ajoute ((void *) scm_to_ulong (p));
+  parents->ajoute ((void *) scm_to_ulong (d));
   item = (geometricObject *) new
     line (*parents, LINE_PER_DIRECTION, FALSE, figure->getFigureList ());
   setObjectName (name, item);
   figure->addToFigureListNoRedraw (item, TRUE);
-  return gh_ulong2scm ((unsigned long) item);  
+  return scm_from_ulong ((unsigned long) item);  
 }
 
 SCM
@@ -452,13 +452,13 @@ ScmInterface::make_ray (SCM name, SCM p1, SCM p2)
   geometricObject *item;
 
   parents->vide ();
-  parents->ajoute ((void *) gh_scm2ulong (p1));
-  parents->ajoute ((void *) gh_scm2ulong (p2));
+  parents->ajoute ((void *) scm_to_ulong (p1));
+  parents->ajoute ((void *) scm_to_ulong (p2));
   item = (geometricObject *) new
     halfLine (*parents, HALFLINE_2PTS, FALSE, figure->getFigureList ());
   setObjectName (name, item);
   figure->addToFigureListNoRedraw (item, TRUE);
-  return gh_ulong2scm ((unsigned long) item);  
+  return scm_from_ulong ((unsigned long) item);  
 }
 
 SCM
@@ -467,13 +467,13 @@ ScmInterface::make_vector (SCM name, SCM p1, SCM p2)
   geometricObject *item;
 
   parents->vide ();
-  parents->ajoute ((void *) gh_scm2ulong (p1));
-  parents->ajoute ((void *) gh_scm2ulong (p2));
+  parents->ajoute ((void *) scm_to_ulong (p1));
+  parents->ajoute ((void *) scm_to_ulong (p2));
   item = (geometricObject *) new
     vector (*parents, VECTOR_2PTS, FALSE, figure->getFigureList ());
   setObjectName (name, item);
   figure->addToFigureListNoRedraw (item, TRUE);
-  return gh_ulong2scm ((unsigned long) item);  
+  return scm_from_ulong ((unsigned long) item);  
 }
 
 SCM
@@ -482,13 +482,13 @@ ScmInterface::make_circle2Points (SCM name, SCM p, SCM c)
   geometricObject *item;
 
   parents->vide ();
-  parents->ajoute ((void *) gh_scm2ulong (p));
-  parents->ajoute ((void *) gh_scm2ulong (c));
+  parents->ajoute ((void *) scm_to_ulong (p));
+  parents->ajoute ((void *) scm_to_ulong (c));
   item = (geometricObject *) new
     circle (*parents, CIRCLE_2PTS, FALSE, figure->getFigureList ());
   setObjectName (name, item);
   figure->addToFigureListNoRedraw (item, TRUE);
-  return gh_ulong2scm ((unsigned long) item);  
+  return scm_from_ulong ((unsigned long) item);  
 }
 SCM
 ScmInterface::make_circleRadius (SCM name, SCM p, SCM r)
@@ -496,13 +496,13 @@ ScmInterface::make_circleRadius (SCM name, SCM p, SCM r)
   geometricObject *item;
 
   parents->vide ();
-  parents->ajoute ((void *) gh_scm2ulong (p));
-  parents->ajoute ((void *) gh_scm2ulong (r));
+  parents->ajoute ((void *) scm_to_ulong (p));
+  parents->ajoute ((void *) scm_to_ulong (r));
   item = (geometricObject *) new
     circle (*parents, CIRCLE_VALUE, FALSE, figure->getFigureList ());
   setObjectName (name, item);
   figure->addToFigureListNoRedraw (item, TRUE);
-  return gh_ulong2scm ((unsigned long) item);  
+  return scm_from_ulong ((unsigned long) item);  
 }
 SCM
 ScmInterface::make_circleSegment (SCM name, SCM p, SCM s)
@@ -510,13 +510,13 @@ ScmInterface::make_circleSegment (SCM name, SCM p, SCM s)
   geometricObject *item;
 
   parents->vide ();
-  parents->ajoute ((void *) gh_scm2ulong (p));
-  parents->ajoute ((void *) gh_scm2ulong (s));
+  parents->ajoute ((void *) scm_to_ulong (p));
+  parents->ajoute ((void *) scm_to_ulong (s));
   item = (geometricObject *) new
     circle (*parents, CIRCLE_SEGMENT, FALSE, figure->getFigureList ());
   setObjectName (name, item);
   figure->addToFigureListNoRedraw (item, TRUE);
-  return gh_ulong2scm ((unsigned long) item);  
+  return scm_from_ulong ((unsigned long) item);  
 }
 
 SCM 
@@ -525,14 +525,14 @@ ScmInterface::make_arc (SCM name, SCM p1, SCM p2, SCM p3)
   geometricObject *item;
 
   parents->vide ();
-  parents->ajoute ((void *) gh_scm2ulong (p1));
-  parents->ajoute ((void *) gh_scm2ulong (p2));
-  parents->ajoute ((void *) gh_scm2ulong (p3));
+  parents->ajoute ((void *) scm_to_ulong (p1));
+  parents->ajoute ((void *) scm_to_ulong (p2));
+  parents->ajoute ((void *) scm_to_ulong (p3));
   item = (geometricObject *) new
     arcCircle (*parents, ARCCIRCLE_3PTS, FALSE, figure->getFigureList ());
   setObjectName (name, item);
   figure->addToFigureListNoRedraw (item, TRUE);
-  return gh_ulong2scm ((unsigned long) item);  
+  return scm_from_ulong ((unsigned long) item);  
 }
 SCM
 ScmInterface::make_locus (SCM name, SCM p1, SCM p2)
@@ -540,13 +540,13 @@ ScmInterface::make_locus (SCM name, SCM p1, SCM p2)
   geometricObject *item;
 
   parents->vide ();
-  parents->ajoute ((void *) gh_scm2ulong (p1));
-  parents->ajoute ((void *) gh_scm2ulong (p2));
+  parents->ajoute ((void *) scm_to_ulong (p1));
+  parents->ajoute ((void *) scm_to_ulong (p2));
   item = (geometricObject *) new
     locus (*parents, FALSE, figure->getFigureList ());
   setObjectName (name, item);
   figure->addToFigureListNoRedraw (item, TRUE);
-  return gh_ulong2scm ((unsigned long) item);  
+  return scm_from_ulong ((unsigned long) item);  
 }
 
 SCM
@@ -555,16 +555,16 @@ ScmInterface::make_polygon (SCM name, SCM list)
   geometricObject *item;
 
   parents->vide ();
-  while (!gh_null_p (list))
+  while (!scm_is_null (list))
     {
-      parents->ajoute ((void *) gh_scm2ulong (gh_car(list)));
-      list = gh_cdr (list);
+      parents->ajoute ((void *) scm_to_ulong (scm_car(list)));
+      list = scm_cdr (list);
     }
   item = (geometricObject *) new polygon (*parents, POLYGON_NPTS, 
 					  FALSE, figure->getFigureList ());
   setObjectName (name, item);
   figure->addToFigureListNoRedraw (item, TRUE);
-  return gh_ulong2scm ((unsigned long) item);  
+  return scm_from_ulong ((unsigned long) item);  
 }
 
 
@@ -574,11 +574,11 @@ ScmInterface::make_freeValue (SCM name, SCM x, SCM y, SCM v)
   geometricObject *item;
 
   item = (geometricObject *) new numeric (scmCoord2drgeoPoint (x, y), 
-					  gh_scm2double (v), 
+					  scm_to_double (v), 
 					  (numericType) FREE_VALUE, false);
   setObjectName (name, item);
   figure->addToFigureListNoRedraw (item, TRUE);
-  return gh_ulong2scm ((unsigned long) item);
+  return scm_from_ulong ((unsigned long) item);
 }
 
 SCM
@@ -587,14 +587,14 @@ ScmInterface::make_segmentLength (SCM name, SCM x, SCM y, SCM s)
   geometricObject *item;
 
   parents->vide ();
-  parents->ajoute ((void *) gh_scm2ulong (s));
+  parents->ajoute ((void *) scm_to_ulong (s));
 
   item = (geometricObject *) new numeric (scmCoord2drgeoPoint (x, y), *parents,
 					  (numericType) SEGMENT_LENGTH, false,
 					  figure->getFigureList ());
   setObjectName (name, item);
   figure->addToFigureListNoRedraw (item, TRUE);
-  return gh_ulong2scm ((unsigned long) item);
+  return scm_from_ulong ((unsigned long) item);
 }
 SCM
 ScmInterface::make_vectorNorm (SCM name, SCM x, SCM y, SCM s)
@@ -602,14 +602,14 @@ ScmInterface::make_vectorNorm (SCM name, SCM x, SCM y, SCM s)
   geometricObject *item;
 
   parents->vide ();
-  parents->ajoute ((void *) gh_scm2ulong (s));
+  parents->ajoute ((void *) scm_to_ulong (s));
 
   item = (geometricObject *) new numeric (scmCoord2drgeoPoint (x, y), *parents,
 					  (numericType) VECTOR_NORM, false,
 					  figure->getFigureList ());
   setObjectName (name, item);
   figure->addToFigureListNoRedraw (item, TRUE);
-  return gh_ulong2scm ((unsigned long) item);
+  return scm_from_ulong ((unsigned long) item);
 }
 SCM
 ScmInterface::make_distancePointCircle (SCM name, SCM x, SCM y, 
@@ -618,15 +618,15 @@ ScmInterface::make_distancePointCircle (SCM name, SCM x, SCM y,
   geometricObject *item;
 
   parents->vide ();
-  parents->ajoute ((void *) gh_scm2ulong (p));
-  parents->ajoute ((void *) gh_scm2ulong (c));
+  parents->ajoute ((void *) scm_to_ulong (p));
+  parents->ajoute ((void *) scm_to_ulong (c));
 
   item = (geometricObject *) new numeric (scmCoord2drgeoPoint (x, y), *parents,
 					  (numericType) DISTANCE_PT_CIRCLE, false,
 					  figure->getFigureList ());
   setObjectName (name, item);
   figure->addToFigureListNoRedraw (item, TRUE);
-  return gh_ulong2scm ((unsigned long) item);
+  return scm_from_ulong ((unsigned long) item);
 }
 
 SCM
@@ -635,15 +635,15 @@ ScmInterface::make_distancePointLine (SCM name, SCM x, SCM y, SCM p, SCM l)
   geometricObject *item;
 
   parents->vide ();
-  parents->ajoute ((void *) gh_scm2ulong (p));
-  parents->ajoute ((void *) gh_scm2ulong (l));
+  parents->ajoute ((void *) scm_to_ulong (p));
+  parents->ajoute ((void *) scm_to_ulong (l));
 
   item = (geometricObject *) new numeric (scmCoord2drgeoPoint (x, y), *parents,
 					  (numericType) DISTANCE_PT_LINE, false,
 					  figure->getFigureList ());
   setObjectName (name, item);
   figure->addToFigureListNoRedraw (item, TRUE);
-  return gh_ulong2scm ((unsigned long) item);
+  return scm_from_ulong ((unsigned long) item);
 }
 
 SCM
@@ -652,15 +652,15 @@ ScmInterface::make_distancePointPoint (SCM name, SCM x, SCM y, SCM p1, SCM p2)
   geometricObject *item;
 
   parents->vide ();
-  parents->ajoute ((void *) gh_scm2ulong (p1));
-  parents->ajoute ((void *) gh_scm2ulong (p2));
+  parents->ajoute ((void *) scm_to_ulong (p1));
+  parents->ajoute ((void *) scm_to_ulong (p2));
 
   item = (geometricObject *) new numeric (scmCoord2drgeoPoint (x, y), *parents,
 					  (numericType) DISTANCE_2PTS, false,
 					  figure->getFigureList ());
   setObjectName (name, item);
   figure->addToFigureListNoRedraw (item, TRUE);
-  return gh_ulong2scm ((unsigned long) item);
+  return scm_from_ulong ((unsigned long) item);
 }
 
 SCM
@@ -669,14 +669,14 @@ ScmInterface::make_circleLength (SCM name, SCM x, SCM y, SCM c)
   geometricObject *item;
 
   parents->vide ();
-  parents->ajoute ((void *) gh_scm2ulong (c));
+  parents->ajoute ((void *) scm_to_ulong (c));
 
   item = (geometricObject *) new numeric (scmCoord2drgeoPoint (x, y), *parents,
 					  (numericType) CIRCLE_PERIMETER, false,
 					  figure->getFigureList ());
   setObjectName (name, item);
   figure->addToFigureListNoRedraw (item, TRUE);
-  return gh_ulong2scm ((unsigned long) item);
+  return scm_from_ulong ((unsigned long) item);
 }
 
 SCM
@@ -685,14 +685,14 @@ ScmInterface::make_lineSlope (SCM name, SCM x, SCM y, SCM l)
   geometricObject *item;
 
   parents->vide ();
-  parents->ajoute ((void *) gh_scm2ulong (l));
+  parents->ajoute ((void *) scm_to_ulong (l));
 
   item = (geometricObject *) new numeric (scmCoord2drgeoPoint (x, y), *parents,
 					  (numericType) LINE_SLOPE, false,
 					  figure->getFigureList ());
   setObjectName (name, item);
   figure->addToFigureListNoRedraw (item, TRUE);
-  return gh_ulong2scm ((unsigned long) item);
+  return scm_from_ulong ((unsigned long) item);
 }
 
 SCM
@@ -701,14 +701,14 @@ ScmInterface::make_arcLength (SCM name, SCM x, SCM y, SCM arc)
   geometricObject *item;
 
   parents->vide ();
-  parents->ajoute ((void *) gh_scm2ulong (arc));
+  parents->ajoute ((void *) scm_to_ulong (arc));
 
   item = (geometricObject *) new numeric (scmCoord2drgeoPoint (x, y), *parents,
 					  (numericType) ARC_CIRCLE_LENGTH, false,
 					  figure->getFigureList ());
   setObjectName (name, item);
   figure->addToFigureListNoRedraw (item, TRUE);
-  return gh_ulong2scm ((unsigned long) item);
+  return scm_from_ulong ((unsigned long) item);
 }
 
 SCM
@@ -718,16 +718,16 @@ ScmInterface::make_geometricAngle (SCM name, SCM p1, SCM p2, SCM p3)
   drgeoPoint p;
 
   parents->vide ();
-  parents->ajoute ((void *) gh_scm2ulong (p1));
-  parents->ajoute ((void *) gh_scm2ulong (p2));
-  parents->ajoute ((void *) gh_scm2ulong (p3));
+  parents->ajoute ((void *) scm_to_ulong (p1));
+  parents->ajoute ((void *) scm_to_ulong (p2));
+  parents->ajoute ((void *) scm_to_ulong (p3));
 
   item = (geometricObject *) new angle (p, *parents,
 					(angleType) ANGLE_3PTS, false,
 					figure->getFigureList ());
   setObjectName (name, item);
   figure->addToFigureListNoRedraw (item, TRUE);
-  return gh_ulong2scm ((unsigned long) item);
+  return scm_from_ulong ((unsigned long) item);
 }
 
 SCM
@@ -736,38 +736,38 @@ ScmInterface::make_orientedAngle (SCM name, SCM x, SCM y, SCM v1, SCM v2)
   geometricObject *item;
 
   parents->vide ();
-  parents->ajoute ((void *) gh_scm2ulong (v1));
-  parents->ajoute ((void *) gh_scm2ulong (v2));
+  parents->ajoute ((void *) scm_to_ulong (v1));
+  parents->ajoute ((void *) scm_to_ulong (v2));
 
   item = (geometricObject *) new angle (scmCoord2drgeoPoint (x, y), *parents,
 					(angleType) ANGLE_2VEC, false,
 					figure->getFigureList ());
   setObjectName (name, item);
   figure->addToFigureListNoRedraw (item, TRUE);
-  return gh_ulong2scm ((unsigned long) item);
+  return scm_from_ulong ((unsigned long) item);
 }
 
 void 
 ScmInterface::change_color (SCM item, SCM color)
 {
-  ((geometricObject *)gh_scm2ulong(item))->getStyle ().color = 
-    ((drgeoColorType) gh_scm2int(color));
+  ((geometricObject *)scm_to_ulong(item))->getStyle ().color = 
+    ((drgeoColorType) scm_to_int(color));
   figure->getDrawable ()->refresh ();
 }
 
 void 
 ScmInterface::change_thickness (SCM item, SCM thickness)
 {
-  ((geometricObject *)gh_scm2ulong(item))->getStyle ().thick = 
-    ((drgeoThicknessType) gh_scm2int(thickness));
+  ((geometricObject *)scm_to_ulong(item))->getStyle ().thick = 
+    ((drgeoThicknessType) scm_to_int(thickness));
   figure->getDrawable ()->refresh ();
 }
 
 void 
 ScmInterface::change_pointShape (SCM item, SCM shape)
 {
-  ((geometricObject *)gh_scm2ulong(item))->getStyle ().pointShape = 
-    ((drgeoPointType) gh_scm2int(shape));
+  ((geometricObject *)scm_to_ulong(item))->getStyle ().pointShape = 
+    ((drgeoPointType) scm_to_int(shape));
   figure->getDrawable ()->refresh ();
 }
 
@@ -776,11 +776,11 @@ ScmInterface::change_masked (SCM item)
 {
   masked myMask;
 
-  myMask = ((geometricObject *)gh_scm2ulong(item))->getStyle ().mask;
+  myMask = ((geometricObject *)scm_to_ulong(item))->getStyle ().mask;
   if (myMask == yes)
-    ((geometricObject *)gh_scm2ulong(item))->getStyle ().mask = no;
+    ((geometricObject *)scm_to_ulong(item))->getStyle ().mask = no;
   else
-    ((geometricObject *)gh_scm2ulong(item))->getStyle ().mask = yes;    
+    ((geometricObject *)scm_to_ulong(item))->getStyle ().mask = yes;    
 }
 
 
@@ -789,7 +789,7 @@ ScmInterface::setObjectName (SCM name, geometricObject *item)
 {
   gchar *str;
 
-  str = gh_scm2newstr (name, NULL);
+  str = scm_to_locale_string (name, NULL);
   item->setName (str); 
   g_free (str);
   item->initName ();
@@ -807,11 +807,11 @@ drgeo_scm_make_figure (SCM name)
   mdi->newGeometricDocument (NULL);
   figure = ((geoView *) mdi->activeView ())->figure ();
 
-  str = gh_scm2newstr (name, NULL);
+  str = scm_to_locale_string (name, NULL);
   mdi->renameView (((drgeoGtkDrawable *) figure->getDrawable())->getGeoView (), str);
   g_free (str);
 
-  return gh_ulong2scm ((unsigned long) figure);
+  return scm_from_ulong ((unsigned long) figure);
 
 }
 
@@ -821,7 +821,7 @@ drgeo_scm_make_figure (SCM name)
 
 /* Define some macro to make our life easier */
 
-#define SCM_INTERFACE(fig) (((drgeoFigure *)gh_scm2ulong(fig))->getScmInterface ())
+#define SCM_INTERFACE(fig) (((drgeoFigure *)scm_to_ulong(fig))->getScmInterface ())
 
 SCM
 drgeo_scm_make_freePoint (SCM figure, SCM name, SCM x, SCM y)
@@ -833,7 +833,7 @@ drgeo_scm_make_freePoint (SCM figure, SCM name, SCM x, SCM y)
   if (interface)
     return interface->make_freePoint (name, x, y);
   else
-    return gh_ulong2scm(0);
+    return scm_from_ulong(0);
 }
 SCM
 drgeo_scm_make_pointOnCurve (SCM figure, SCM name, SCM c, SCM a)
@@ -845,7 +845,7 @@ drgeo_scm_make_pointOnCurve (SCM figure, SCM name, SCM c, SCM a)
   if (interface)
     return interface->make_pointOnCurve (name, c, a);
   else
-    return gh_ulong2scm(0);
+    return scm_from_ulong(0);
 }
 
 SCM
@@ -858,7 +858,7 @@ drgeo_scm_make_middle2Points (SCM figure, SCM name, SCM p1, SCM p2)
   if (interface)
     return interface->make_middle2Points (name, p1, p2);
   else
-    return gh_ulong2scm(0);
+    return scm_from_ulong(0);
 }
 
 SCM
@@ -871,7 +871,7 @@ drgeo_scm_make_middleSegment (SCM figure, SCM name, SCM s)
   if (interface)
     return interface->make_middleSegment (name, s);
   else
-    return gh_ulong2scm(0);
+    return scm_from_ulong(0);
 }
 SCM
 drgeo_scm_make_intersection (SCM figure, SCM name, SCM obj1, SCM obj2, SCM k)
@@ -883,7 +883,7 @@ drgeo_scm_make_intersection (SCM figure, SCM name, SCM obj1, SCM obj2, SCM k)
   if (interface)
     return interface->make_intersection (name, obj1, obj2, k);
   else
-    return gh_ulong2scm(0);
+    return scm_from_ulong(0);
 }
 /***********************/
 /* THE TRANSFORMATIONS */
@@ -898,7 +898,7 @@ drgeo_scm_make_rotation (SCM figure, SCM name, SCM object, SCM c, SCM a)
   if (interface)
     return interface->make_rotation (name, object, c, a);
   else
-    return gh_ulong2scm(0);
+    return scm_from_ulong(0);
 }
 SCM 
 drgeo_scm_make_scale (SCM figure, SCM name, SCM object, SCM c, SCM f)
@@ -910,7 +910,7 @@ drgeo_scm_make_scale (SCM figure, SCM name, SCM object, SCM c, SCM f)
   if (interface)
     return interface->make_scale (name, object, c, f);
   else
-    return gh_ulong2scm(0);
+    return scm_from_ulong(0);
 }
 SCM 
 drgeo_scm_make_symmetry (SCM figure, SCM name, SCM object, SCM c)
@@ -922,7 +922,7 @@ drgeo_scm_make_symmetry (SCM figure, SCM name, SCM object, SCM c)
   if (interface)
     return interface->make_symmetry (name, object, c);
   else
-    return gh_ulong2scm(0);
+    return scm_from_ulong(0);
 }
 SCM 
 drgeo_scm_make_reflexion (SCM figure, SCM name, SCM object, SCM d)
@@ -934,7 +934,7 @@ drgeo_scm_make_reflexion (SCM figure, SCM name, SCM object, SCM d)
   if (interface)
     return interface->make_reflexion (name, object, d);
   else
-    return gh_ulong2scm(0);
+    return scm_from_ulong(0);
 }
 SCM 
 drgeo_scm_make_translation (SCM figure, SCM name, SCM object, SCM v)
@@ -946,7 +946,7 @@ drgeo_scm_make_translation (SCM figure, SCM name, SCM object, SCM v)
   if (interface)
     return interface->make_translation (name, object, v);
   else
-    return gh_ulong2scm(0);
+    return scm_from_ulong(0);
 }
 
 
@@ -960,7 +960,7 @@ drgeo_scm_make_segmentExtremity (SCM figure, SCM name, SCM p1, SCM p2)
   if (interface)
     return interface->make_segmentExtremity (name, p1, p2);
   else
-    return gh_ulong2scm (0);
+    return scm_from_ulong (0);
 }
 
 SCM
@@ -973,7 +973,7 @@ drgeo_scm_make_line (SCM figure, SCM name, SCM p1, SCM p2)
   if (interface)
     return interface->make_line (name, p1, p2);
   else
-    return gh_ulong2scm(0);
+    return scm_from_ulong(0);
 }
 SCM
 drgeo_scm_make_parallel (SCM figure, SCM name, SCM p, SCM d)
@@ -985,7 +985,7 @@ drgeo_scm_make_parallel (SCM figure, SCM name, SCM p, SCM d)
   if (interface)
     return interface->make_parallel (name, p, d);
   else
-    return gh_ulong2scm(0);
+    return scm_from_ulong(0);
 }
 SCM
 drgeo_scm_make_orthogonal (SCM figure, SCM name, SCM p, SCM d)
@@ -997,7 +997,7 @@ drgeo_scm_make_orthogonal (SCM figure, SCM name, SCM p, SCM d)
   if (interface)
     return interface->make_orthogonal (name, p, d);
   else
-    return gh_ulong2scm(0);
+    return scm_from_ulong(0);
 }
 
 SCM
@@ -1010,7 +1010,7 @@ drgeo_scm_make_ray (SCM figure, SCM name, SCM p1, SCM p2)
   if (interface)
     return interface->make_ray (name, p1, p2);
   else
-    return gh_ulong2scm(0);
+    return scm_from_ulong(0);
 }
 
 SCM
@@ -1023,7 +1023,7 @@ drgeo_scm_make_vector (SCM figure, SCM name, SCM p1, SCM p2)
   if (interface)
     return interface->make_vector (name, p1, p2);
   else
-    return gh_ulong2scm(0);
+    return scm_from_ulong(0);
 }
 
 SCM
@@ -1036,7 +1036,7 @@ drgeo_scm_make_circle2Points (SCM figure, SCM name, SCM c, SCM p)
   if (interface)
     return interface->make_circle2Points (name, c, p);
   else
-    return gh_ulong2scm(0);
+    return scm_from_ulong(0);
 }
 SCM
 drgeo_scm_make_circleRadius (SCM figure, SCM name, SCM c, SCM r)
@@ -1048,7 +1048,7 @@ drgeo_scm_make_circleRadius (SCM figure, SCM name, SCM c, SCM r)
   if (interface)
     return interface->make_circleRadius (name, c, r);
   else
-    return gh_ulong2scm(0);
+    return scm_from_ulong(0);
 }
 SCM
 drgeo_scm_make_circleSegment (SCM figure, SCM name, SCM c, SCM s)
@@ -1060,7 +1060,7 @@ drgeo_scm_make_circleSegment (SCM figure, SCM name, SCM c, SCM s)
   if (interface)
     return interface->make_circleSegment (name, c, s);
   else
-    return gh_ulong2scm(0);
+    return scm_from_ulong(0);
 }
 
 SCM 
@@ -1073,7 +1073,7 @@ drgeo_scm_make_arc (SCM figure, SCM name, SCM p1, SCM p2, SCM p3)
   if (interface)
     return interface->make_arc (name, p1, p2, p3);
   else
-    return gh_ulong2scm(0);
+    return scm_from_ulong(0);
 }
 
 
@@ -1087,7 +1087,7 @@ drgeo_scm_make_locus (SCM figure, SCM name, SCM p1, SCM p2)
   if (interface)
     return interface->make_locus (name, p1, p2);
   else
-    return gh_ulong2scm(0);
+    return scm_from_ulong(0);
 }
 
 SCM
@@ -1100,7 +1100,7 @@ drgeo_scm_make_polygon (SCM figure, SCM name, SCM list)
   if (interface)
     return interface->make_polygon (name, list);
   else
-    return gh_ulong2scm(0);
+    return scm_from_ulong(0);
 }
 
 
@@ -1114,7 +1114,7 @@ drgeo_scm_make_freeValue (SCM figure, SCM name, SCM x, SCM y, SCM v)
   if (interface)
     return interface->make_freeValue (name, x, y, v);
   else
-    return gh_ulong2scm(0);
+    return scm_from_ulong(0);
 }
 SCM
 drgeo_scm_make_segmentLength (SCM figure, SCM name, SCM x, SCM y, SCM s)
@@ -1126,7 +1126,7 @@ drgeo_scm_make_segmentLength (SCM figure, SCM name, SCM x, SCM y, SCM s)
   if (interface)
     return interface->make_segmentLength (name, x, y, s);
   else
-    return gh_ulong2scm(0);
+    return scm_from_ulong(0);
 }
 SCM
 drgeo_scm_make_vectorNorm (SCM figure, SCM name, SCM x, SCM y, SCM v)
@@ -1138,7 +1138,7 @@ drgeo_scm_make_vectorNorm (SCM figure, SCM name, SCM x, SCM y, SCM v)
   if (interface)
     return interface->make_vectorNorm (name, x, y, v);
   else
-    return gh_ulong2scm(0);
+    return scm_from_ulong(0);
 }
 SCM
 drgeo_scm_make_distancePointCircle (SCM figure, SCM name, SCM x, SCM y, SCM p, SCM c)
@@ -1150,7 +1150,7 @@ drgeo_scm_make_distancePointCircle (SCM figure, SCM name, SCM x, SCM y, SCM p, S
   if (interface)
     return interface->make_distancePointCircle (name, x, y, p, c);
   else
-    return gh_ulong2scm(0);
+    return scm_from_ulong(0);
 }
 
 SCM 
@@ -1163,7 +1163,7 @@ drgeo_scm_make_distancePointLine (SCM figure, SCM name, SCM x, SCM y, SCM p, SCM
   if (interface)
     return interface->make_distancePointLine (name, x, y, p, l);
   else
-    return gh_ulong2scm(0);
+    return scm_from_ulong(0);
 }
 
 SCM 
@@ -1176,7 +1176,7 @@ drgeo_scm_make_distancePointPoint (SCM figure, SCM name, SCM x, SCM y, SCM p1, S
   if (interface)
     return interface->make_distancePointPoint (name, x, y, p1, p2);
   else
-    return gh_ulong2scm(0);
+    return scm_from_ulong(0);
 }
 
 SCM 
@@ -1189,7 +1189,7 @@ drgeo_scm_make_circleLength (SCM figure, SCM name, SCM x, SCM y, SCM c)
   if (interface)
     return interface->make_circleLength (name, x, y, c);
   else
-    return gh_ulong2scm(0);
+    return scm_from_ulong(0);
 }
 
 SCM 
@@ -1202,7 +1202,7 @@ drgeo_scm_make_lineSlope (SCM figure, SCM name, SCM x, SCM y, SCM l)
   if (interface)
     return interface->make_lineSlope (name, x, y, l);
   else
-    return gh_ulong2scm(0);
+    return scm_from_ulong(0);
 }
 
 SCM 
@@ -1215,7 +1215,7 @@ drgeo_scm_make_arcLength (SCM figure, SCM name, SCM x, SCM y, SCM arc)
   if (interface)
     return interface->make_arcLength (name, x, y, arc);
   else
-    return gh_ulong2scm(0);
+    return scm_from_ulong(0);
 }
 
 SCM
@@ -1228,7 +1228,7 @@ drgeo_scm_make_geometricAngle (SCM figure, SCM name, SCM p1, SCM p2, SCM p3)
   if (interface)
     return interface->make_geometricAngle (name, p1, p2, p3);
   else
-    return gh_ulong2scm(0);
+    return scm_from_ulong(0);
 }
 
 SCM
@@ -1241,7 +1241,7 @@ drgeo_scm_make_orientedAngle (SCM figure, SCM name, SCM x, SCM y, SCM v1, SCM v2
   if (interface)
     return interface->make_orientedAngle (name, x, y, v1, v2);
   else
-    return gh_ulong2scm(0);
+    return scm_from_ulong(0);
 }
 
 SCM

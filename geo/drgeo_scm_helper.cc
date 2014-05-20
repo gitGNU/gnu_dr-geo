@@ -38,7 +38,7 @@ drgeoPoint &
 scmCoord2drgeoPoint (SCM x, SCM y)
 {
   static drgeoPoint t;
-  t.set (gh_scm2double (x), gh_scm2double (y));
+  t.set (scm_to_double (x), scm_to_double (y));
   return t;
 }
 
@@ -46,7 +46,7 @@ drgeoPoint &
 scmList2drgeoVector (SCM l)
 {
   static drgeoVector t;
-  t.set (gh_scm2double (gh_car (l)), gh_scm2double (gh_cadr (l)));
+  t.set (scm_to_double (scm_car (l)), scm_to_double (scm_cadr (l)));
   return t;
 }
 
@@ -56,7 +56,7 @@ scmVector2drgeoVector (SCM v)
   static drgeoVector t;
   static gdouble gv[2];
 
-  gh_scm2doubles (v, gv);
+  scm_to_doubles (v, gv);
   t.set (gv[0], gv[1]);
   return t;
 }
@@ -66,9 +66,9 @@ SCM
 drgeoPoint2scmList (drgeoPoint & p)
 {
   static SCM x, y;
-  x = gh_double2scm (p.getX ());
-  y = gh_double2scm (p.getY ());
-  return gh_list (x, y, SCM_UNDEFINED);
+  x = scm_make_real (p.getX ());
+  y = scm_make_real (p.getY ());
+  return scm_list_n (x, y, SCM_UNDEFINED);
 }
 
 

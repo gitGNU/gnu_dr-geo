@@ -138,7 +138,7 @@ script::update (drgeoDrawable & area)
      therefore I use the internal stuff */
   if (SCM_NFALSEP (scm_real_p (ret)))
     {
-      setValue (gh_scm2double (ret));
+      setValue (scm_to_double (ret));
       if (name ? strlen (name) : 0)
 	{
 	  tmp = g_strdup_printf ("%%s = %%.%df",numericPrecision);      
@@ -152,8 +152,8 @@ script::update (drgeoDrawable & area)
 	  g_free (tmp);
 	}      
     }
-  else if (gh_string_p (ret))
-    setString (gh_scm2newstr (ret, NULL));
+  else if (scm_is_string (ret))
+    setString (scm_to_locale_string (ret, NULL));
   else
     setString (g_strdup (_("Unprintable result")));
 }

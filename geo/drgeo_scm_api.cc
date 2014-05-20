@@ -61,11 +61,11 @@ drgeo_scm_getAbscissa (SCM object)
 {
   static gdouble d;
 
-  item = (geometricObject *) gh_scm2ulong (object);
+  item = (geometricObject *) scm_to_ulong (object);
   if (item->getCategory () & FREE_PT_ON_CURVE)
     {
       d = ((point *) item)->getAbscissa ();
-      return gh_double2scm (d);
+      return scm_make_real (d);
     }
   /* This is not a point object */
   return SCM_UNSPECIFIED;
@@ -82,9 +82,9 @@ drgeo_scm_getAbscissa (SCM object)
 SCM
 drgeo_scm_setAbscissa (SCM object, SCM x)
 {
-  item = (geometricObject *) gh_scm2ulong (object);
+  item = (geometricObject *) scm_to_ulong (object);
   if (item->getCategory () & FREE_PT_ON_CURVE)
-    ((point *) item)->setAbscissa (gh_scm2double (x));
+    ((point *) item)->setAbscissa (scm_to_double (x));
   return SCM_UNSPECIFIED;
 }
 
@@ -101,7 +101,7 @@ drgeo_scm_getCoordinates (SCM object)
 {
   static drgeoPoint p;
 
-  item = (geometricObject *) gh_scm2ulong (object);
+  item = (geometricObject *) scm_to_ulong (object);
   if (item->getCategory () & POINT)
     {
       p = ((point *) item)->getCoordinate ();
@@ -128,7 +128,7 @@ drgeo_scm_getUnit (SCM object)
 {
   static drgeoVector v;
 
-  item = (geometricObject *) gh_scm2ulong (object);
+  item = (geometricObject *) scm_to_ulong (object);
   if (item->getCategory () & DIRECTION)
     {
       v = ((direction *) item)->getDirection ();
@@ -151,7 +151,7 @@ drgeo_scm_getNormal (SCM object)
 {
   static drgeoVector v;
 
-  item = (geometricObject *) gh_scm2ulong (object);
+  item = (geometricObject *) scm_to_ulong (object);
   if (item->getCategory () & DIRECTION)
     {
       v = ((direction *) item)->getNormal ();
@@ -172,7 +172,7 @@ drgeo_scm_getNormal (SCM object)
 SCM
 drgeo_scm_setCoordinates (SCM object, SCM coord)
 {
-  item = (geometricObject *) gh_scm2ulong (object);
+  item = (geometricObject *) scm_to_ulong (object);
   if (item->getCategory () & FREE_PT)
     ((point *) item)->setCoordinate (scmList2drgeoVector (coord));
   return SCM_UNSPECIFIED;
@@ -191,14 +191,14 @@ drgeo_scm_getSlope (SCM object)
   static drgeoVector v;
   static gdouble p;
 
-  item = (geometricObject *) gh_scm2ulong (object);
+  item = (geometricObject *) scm_to_ulong (object);
   if (item->getCategory () & DIRECTION)
     {
       v = ((direction *) item)->getDirection ();
       if (v.getX () != 0)
 	{
 	  p = v.getY () / v.getX ();
-	  return gh_double2scm (p);
+	  return scm_make_real (p);
 	}
     }
   return SCM_UNSPECIFIED;
@@ -217,11 +217,11 @@ drgeo_scm_getNorm (SCM object)
 {
   static gdouble p;
 
-  item = (geometricObject *) gh_scm2ulong (object);
+  item = (geometricObject *) scm_to_ulong (object);
   if (item->getCategory () & VECTOR)
     {
       p = ((vector *) item)->getDirection ().norm ();
-      return gh_double2scm (p);
+      return scm_make_real (p);
     }
   return SCM_UNSPECIFIED;
 }
@@ -239,22 +239,22 @@ drgeo_scm_getLength (SCM object)
 {
   static gdouble l;
 
-  item = (geometricObject *) gh_scm2ulong (object);
+  item = (geometricObject *) scm_to_ulong (object);
   if (item->getCategory () & SEGMENT)
     {
       l = ((segment *) item)->getDirection ().norm ();
-      return gh_double2scm (l);
+      return scm_make_real (l);
     }
   else if (item->getCategory () & CIRCLE)
     {
       l = 2 * M_PI * ((circle *) item)->getRadius ();
-      return gh_double2scm (l);
+      return scm_make_real (l);
     }
   else if (item->getCategory () & ARC_CIRCLE)
     {
       l = ABS (((arcCircle *) item)->getLength ()) *
 	((arcCircle *) item)->getRadius ();
-      return gh_double2scm (l);
+      return scm_make_real (l);
     }
   return SCM_UNSPECIFIED;
 }
@@ -271,7 +271,7 @@ drgeo_scm_getCenter (SCM object)
 {
   static drgeoPoint p;
 
-  item = (geometricObject *) gh_scm2ulong (object);
+  item = (geometricObject *) scm_to_ulong (object);
   if (item->getCategory () & CIRCLE)
     {
       p = ((circle *) item)->getCenter ();
@@ -297,16 +297,16 @@ drgeo_scm_getRadius (SCM object)
 {
   static gdouble r;
 
-  item = (geometricObject *) gh_scm2ulong (object);
+  item = (geometricObject *) scm_to_ulong (object);
   if (item->getCategory () & CIRCLE)
     {
       r = ((circle *) item)->getRadius ();
-      return gh_double2scm (r);
+      return scm_make_real (r);
     }
   else if (item->getCategory () & ARC_CIRCLE)
     {
       r = ((arcCircle *) item)->getRadius ();
-      return gh_double2scm (r);
+      return scm_make_real (r);
     }
   /* This is not a value object */
   return SCM_UNSPECIFIED;
@@ -324,11 +324,11 @@ drgeo_scm_getValue (SCM object)
 {
   static gdouble d;
 
-  item = (geometricObject *) gh_scm2ulong (object);
+  item = (geometricObject *) scm_to_ulong (object);
   if (item->getCategory () & VALUE)
     {
       d = ((value *) item)->getValue ();
-      return gh_double2scm (d);
+      return scm_make_real (d);
     }
   /* This is not a value object */
   return SCM_UNSPECIFIED;
@@ -344,9 +344,9 @@ drgeo_scm_getValue (SCM object)
 SCM
 drgeo_scm_setValue (SCM object, SCM v)
 {
-  item = (geometricObject *) gh_scm2ulong (object);
+  item = (geometricObject *) scm_to_ulong (object);
   if (item->getType () & FREE_VALUE)
-    ((value *) item)->setValue (gh_scm2double (v));
+    ((value *) item)->setValue (scm_to_double (v));
   return SCM_UNSPECIFIED;
 }
 
@@ -362,11 +362,11 @@ drgeo_scm_getAngle (SCM object)
 {
   static gdouble d;
 
-  item = (geometricObject *) gh_scm2ulong (object);
+  item = (geometricObject *) scm_to_ulong (object);
   if (item->getCategory () & ANGLE)
     {
       d = 180 * ((value *) item)->getValue () / M_PI;
-      return (gh_double2scm (d));
+      return (scm_make_real (d));
     }
   /* This is not an angle object */
   return SCM_UNSPECIFIED;
@@ -383,7 +383,7 @@ drgeo_scm_getAngle (SCM object)
 SCM
 drgeo_scm_move (SCM object, SCM t)
 {
-  item = (geometricObject *) gh_scm2ulong (object);
+  item = (geometricObject *) scm_to_ulong (object);
   item->move (scmVector2drgeoVector (t));
   return SCM_UNSPECIFIED;
 }
