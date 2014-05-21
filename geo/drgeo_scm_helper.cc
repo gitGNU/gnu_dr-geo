@@ -56,7 +56,10 @@ scmVector2drgeoVector (SCM v)
   static drgeoVector t;
   static gdouble gv[2];
 
-  scm_to_doubles (v, gv);
+  for (int i=0, n=scm_c_array_length(v); i<n; ++i) 
+  { 
+    gv[i] = scm_to_double(scm_c_array_ref_1(v, i));
+  }
   t.set (gv[0], gv[1]);
   return t;
 }

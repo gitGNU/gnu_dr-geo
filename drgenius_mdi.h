@@ -27,7 +27,7 @@
 
 #include <gtk/gtk.h>
 #include <gmodule.h>
-
+#include <libguile.h>
 #include "drgeo_printer.h"
 #include "xmlinclude.h"
 #include "drgenius_view.h"
@@ -73,6 +73,9 @@ class drgeniusMDI
   GList *p_viewList;
   
 };
+
+//thunk declaration for scm_internal_catch
+extern SCM thunk(void *data);
 
 // Helper functions to get the name of avalaible macro in the registry
 char *firstMacroName ();

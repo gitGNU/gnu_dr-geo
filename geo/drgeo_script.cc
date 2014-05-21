@@ -26,6 +26,7 @@
 #include "drgeo_script.h"
 #include "drgeo_drawable.h"
 #include "drgeo_scm_helper.h"
+#include "drgenius_mdi.h"
 
 extern int numericPrecision;
 
@@ -132,7 +133,7 @@ script::update (drgeoDrawable & area)
     }
   tmp1 = g_strconcat (tmpScript, ")", NULL);
   g_free (tmpScript);
-  ret = scm_internal_catch (tmp1, standard_handler);
+  ret = scm_internal_catch(SCM_BOOL_T, thunk, (void *)tmp1, standard_handler, NULL);
   g_free (tmp1);
   /* there is no gh_ equivalent in the guile interface,
      therefore I use the internal stuff */
@@ -153,7 +154,7 @@ script::update (drgeoDrawable & area)
 	}      
     }
   else if (scm_is_string (ret))
-    setString (scm_to_locale_string (ret, NULL));
+    setString (scm_to_locale_string (ret));
   else
     setString (g_strdup (_("Unprintable result")));
 }
@@ -257,7 +258,7 @@ script::setScript (gchar * scriptCode)
   tmp1 = g_strconcat (tmpScript, ")", scriptCode, ")", NULL);
   g_free (tmpScript);
   /* define the procedure in the Guile interpretor */
-  scm_internal_catch (tmp1, standard_handler);
+  scm_internal_catch(SCM_BOOL_T, thunk, (void *)tmp1, standard_handler, NULL);
   g_free (tmp1);
 }
 

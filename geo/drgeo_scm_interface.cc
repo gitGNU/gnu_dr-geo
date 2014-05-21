@@ -789,7 +789,7 @@ ScmInterface::setObjectName (SCM name, geometricObject *item)
 {
   gchar *str;
 
-  str = scm_to_locale_string (name, NULL);
+  str = scm_to_locale_string (name);
   item->setName (str); 
   g_free (str);
   item->initName ();
@@ -807,7 +807,7 @@ drgeo_scm_make_figure (SCM name)
   mdi->newGeometricDocument (NULL);
   figure = ((geoView *) mdi->activeView ())->figure ();
 
-  str = scm_to_locale_string (name, NULL);
+  str = scm_to_locale_string (name);
   mdi->renameView (((drgeoGtkDrawable *) figure->getDrawable())->getGeoView (), str);
   g_free (str);
 

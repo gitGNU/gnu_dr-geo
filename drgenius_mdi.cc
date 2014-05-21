@@ -201,13 +201,18 @@ drgeniusMDI::openSession (gchar *filename)
   reconcile_grayout_widget ();
 }
 
+SCM thunk(void * data)
+{
+    return scm_c_eval_string((char *)data);
+}
+
 void
 drgeniusMDI::evaluateScmFigure (gchar *filename)
 {
   /* Just evaluate the scheme figure. All specifics stuffs as creating
      the tabs figures are handle from the scheme definition */
 
-  scm_internal_catch (filename, standard_handler);
+   scm_internal_catch(SCM_BOOL_T, thunk, (void *)filename, standard_handler, NULL);
   reconcile_grayout_widget ();
 }
 

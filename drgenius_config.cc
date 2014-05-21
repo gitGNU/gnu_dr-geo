@@ -80,7 +80,7 @@ drgeoConfigGet (gchar *attr)
   ret = scm_c_eval_string (scm);
   g_free (scm);
   g_free(value);
-  value = scm_to_locale_string (ret, NULL);
+  value = scm_to_locale_string (ret);
   return value;
 }
 
