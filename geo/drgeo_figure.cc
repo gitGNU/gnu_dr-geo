@@ -347,7 +347,7 @@ gboolean drgeoFigure::exportToPostScript (const gchar * fileName)
   if (!(fileHandle = fopen (fileName, "w")))
     return FALSE;
 
-  ret = exportToPostScriptHandle (fileHandle, g_basename (fileName));
+  ret = exportToPostScriptHandle (fileHandle, g_path_get_basename (fileName));
 
   fclose (fileHandle);
   return ret;

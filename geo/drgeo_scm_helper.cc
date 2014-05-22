@@ -69,8 +69,8 @@ SCM
 drgeoPoint2scmList (drgeoPoint & p)
 {
   static SCM x, y;
-  x = scm_make_real (p.getX ());
-  y = scm_make_real (p.getY ());
+  x = scm_from_double (p.getX ());
+  y = scm_from_double (p.getY ());
   return scm_list_n (x, y, SCM_UNDEFINED);
 }
 

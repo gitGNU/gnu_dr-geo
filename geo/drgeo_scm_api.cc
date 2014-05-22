@@ -65,7 +65,7 @@ drgeo_scm_getAbscissa (SCM object)
   if (item->getCategory () & FREE_PT_ON_CURVE)
     {
       d = ((point *) item)->getAbscissa ();
-      return scm_make_real (d);
+      return scm_from_double (d);
     }
   /* This is not a point object */
   return SCM_UNSPECIFIED;
@@ -198,7 +198,7 @@ drgeo_scm_getSlope (SCM object)
       if (v.getX () != 0)
 	{
 	  p = v.getY () / v.getX ();
-	  return scm_make_real (p);
+	  return scm_from_double (p);
 	}
     }
   return SCM_UNSPECIFIED;
@@ -221,7 +221,7 @@ drgeo_scm_getNorm (SCM object)
   if (item->getCategory () & VECTOR)
     {
       p = ((vector *) item)->getDirection ().norm ();
-      return scm_make_real (p);
+      return scm_from_double (p);
     }
   return SCM_UNSPECIFIED;
 }
@@ -243,18 +243,18 @@ drgeo_scm_getLength (SCM object)
   if (item->getCategory () & SEGMENT)
     {
       l = ((segment *) item)->getDirection ().norm ();
-      return scm_make_real (l);
+      return scm_from_double (l);
     }
   else if (item->getCategory () & CIRCLE)
     {
       l = 2 * M_PI * ((circle *) item)->getRadius ();
-      return scm_make_real (l);
+      return scm_from_double (l);
     }
   else if (item->getCategory () & ARC_CIRCLE)
     {
       l = ABS (((arcCircle *) item)->getLength ()) *
 	((arcCircle *) item)->getRadius ();
-      return scm_make_real (l);
+      return scm_from_double (l);
     }
   return SCM_UNSPECIFIED;
 }
@@ -301,12 +301,12 @@ drgeo_scm_getRadius (SCM object)
   if (item->getCategory () & CIRCLE)
     {
       r = ((circle *) item)->getRadius ();
-      return scm_make_real (r);
+      return scm_from_double (r);
     }
   else if (item->getCategory () & ARC_CIRCLE)
     {
       r = ((arcCircle *) item)->getRadius ();
-      return scm_make_real (r);
+      return scm_from_double (r);
     }
   /* This is not a value object */
   return SCM_UNSPECIFIED;
@@ -328,7 +328,7 @@ drgeo_scm_getValue (SCM object)
   if (item->getCategory () & VALUE)
     {
       d = ((value *) item)->getValue ();
-      return scm_make_real (d);
+      return scm_from_double (d);
     }
   /* This is not a value object */
   return SCM_UNSPECIFIED;
@@ -366,7 +366,7 @@ drgeo_scm_getAngle (SCM object)
   if (item->getCategory () & ANGLE)
     {
       d = 180 * ((value *) item)->getValue () / M_PI;
-      return (scm_make_real (d));
+      return (scm_from_double (d));
     }
   /* This is not an angle object */
   return SCM_UNSPECIFIED;

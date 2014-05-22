@@ -1421,7 +1421,7 @@ export_figure_to_flydraw_cb (GtkWidget * widget, gpointer data)
   /* if we have a filename */
   if (child->filename ())
     {
-      split = g_strsplit (g_basename (child->filename ()), ".", 2);
+      split = g_strsplit (g_path_get_basename (child->filename ()), ".", 2);
       fileName = g_strconcat (split[0], ".draw", NULL);
       g_strfreev (split);
     }
@@ -1473,7 +1473,7 @@ export_figure_to_latex_cb (GtkWidget * widget, gpointer data)
   /* if we have a filename */
   if (child->filename ())
     {
-      split = g_strsplit (g_basename (child->filename ()), ".", 2);
+      split = g_strsplit (g_path_get_basename (child->filename ()), ".", 2);
       fileName = g_strconcat (split[0], ".tex", NULL);
       g_strfreev (split);
     }
@@ -1524,7 +1524,7 @@ export_figure_to_postscript_cb (GtkWidget * widget, gpointer data)
   /* if we have a filename */
   if (child->filename())
     {
-      split = g_strsplit (g_basename (child->filename()), ".", 2);
+      split = g_strsplit (g_path_get_basename (child->filename()), ".", 2);
       fileName = g_strconcat (split[0], ".eps", NULL);
       g_strfreev (split);
     }
@@ -1577,13 +1577,13 @@ export_figure_to_png_cb (GtkWidget * widget, gpointer data)
   /* if we have a filename */
   if (child->filename())
     {
-      split = g_strsplit (g_basename (child->filename()), ".", 2);
+      split = g_strsplit (g_path_get_basename (child->filename()), ".", 2);
       fileName = g_strconcat (split[0], ".png", NULL);
       g_strfreev (split);
     }
   else
     {
-      split = g_strsplit (g_basename (drgeoConfigGet (":psFile")), ".", 2);
+      split = g_strsplit (g_path_get_basename (drgeoConfigGet (":psFile")), ".", 2);
       fileName = g_strconcat (split[0], ".png", NULL);
       g_strfreev (split);
     }
