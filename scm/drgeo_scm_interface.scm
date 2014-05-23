@@ -140,7 +140,7 @@
                   ((middle-segment) (send parent 'init (drgeoMake-middleSegment 
 							currentFigure myName
 							(send (car Lopt) 'id))))
-		  ((coordinate) ())
+		  ((coordinate) '())
 		  ;; line, line (no circle and arc)
 		  ((intersection) (send parent 'init (drgeoMake-intersection
 						     currentFigure myName

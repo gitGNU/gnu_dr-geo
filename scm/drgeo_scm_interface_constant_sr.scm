@@ -27,21 +27,21 @@
 ;;
 
 ;; Basic definitions
-(define дефиниши define)
-(define некасу lets)
-(define нека let)
-(define постави! set!)
-(define ако if)
-(define почни begin)
+(define-syntax дефиниши (syntax-rules () ((_ args ...) (define args ...))))
+(define-syntax некасу (syntax-rules () ((_ args ...) (lets args ...))))
+(define-syntax нека (syntax-rules () ((_ args ...) (let args ...))))
+(define-syntax постави! (syntax-rules () ((_ args ...) (set! args ...))))
+(define-syntax ако (syntax-rules () ((_ args ...) (if args ...))))
+(define-syntax почни (syntax-rules () ((_ args ...) (begin args ...))))
 
-(define definiši define)
-(define definisi define)
-(define nekasu lets)
-(define neka let)
-(define postavi! set!)
-(define ako if)
-(define pocni begin)
-(define počni begin)
+(define-syntax definiši (syntax-rules () ((_ args ...) (define args ...))))
+(define-syntax definisi (syntax-rules () ((_ args ...) (define args ...))))
+(define-syntax nekasu (syntax-rules () ((_ args ...) (lets args ...))))
+(define-syntax neka (syntax-rules () ((_ args ...) (let args ...))))
+(define-syntax postavi! (syntax-rules () ((_ args ...) (set! args ...))))
+(define-syntax ako (syntax-rules () ((_ args ...) (if args ...))))
+(define-syntax pocni (syntax-rules () ((_ args ...) (begin args ...))))
+(define-syntax počni (syntax-rules () ((_ args ...) (begin args ...))))
 
 
 ;; Color taken from geo/couleur.h
