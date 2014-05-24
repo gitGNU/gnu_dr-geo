@@ -28,24 +28,24 @@
 #include "drgeo_drgeoStyle.h"
 #include "drgeo_latexdrawable.h"
 
-static gchar *latexPointSize[3] =
+static gchar const *latexPointSize[3] =
   { "dotscale=1.5,", "dotscale=2.5,", "dotscale=2.5," };
 
-static gchar *latexPointType[5] =
+static gchar const *latexPointType[5] =
   { "dotstyle=*,", "", "dotstyle=square*,", "dotstyle=o,",
 "dotstlye=square*," };
 
-static gchar *latexLineType[4] =
+static gchar const *latexLineType[4] =
   { "linestyle=dotted,", "linestyle=dashed,", "", "linewidth=0.05," };
 
-static gchar *latexLineColor[DRGEO_NUMBER_COLOR] =
+static gchar const *latexLineColor[DRGEO_NUMBER_COLOR] =
   { "linecolor=black", "linecolor=darkgrey", "linecolor=gray",
 "linecolor=white",
   "linecolor=green", "linecolor=green", "linecolor=blue", "linecolor=blue",
   "linecolor=red", "linecolor=red", "linecolor=yellow", "linecolor=yellow"
 };
 
-static gchar *latexColor[DRGEO_NUMBER_COLOR] =
+static gchar const *latexColor[DRGEO_NUMBER_COLOR] =
   { "black", "darkgrey", "gray", "white",
   "green", "green", "blue", "blue",
   "red", "red", "yellow", "yellow"
@@ -138,7 +138,7 @@ drgeoLatexDrawable::
 drawSegment (drgeoStyle & style, drgeoPoint & start, drgeoPoint & end)
 {
   drgeoPoint p1, p2;
-  char *thickness;
+  char const *thickness;
 
   p2 = areaToLatex (end);
   p1 = areaToLatex (start);
@@ -167,7 +167,7 @@ drgeoLatexDrawable::
 drawCircle (drgeoStyle & style, drgeoPoint & center, double radius)
 {
   drgeoPoint p;
-  char *thickness;
+  char const *thickness;
 
   p = areaToLatex (center);
   if (style.mask == yes)
@@ -186,7 +186,7 @@ drawArc (drgeoStyle & style, drgeoPoint & center, double radius,
 	 double start, double length)
 {
   drgeoPoint p;
-  char *thickness;
+  char const *thickness;
 
   p = areaToLatex (center);
   if (style.mask == yes)

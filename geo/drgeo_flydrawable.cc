@@ -28,22 +28,22 @@
 #include "drgeo_drgeoStyle.h"
 #include "drgeo_flydrawable.h"
 
-static gchar *flyPointSize[3] =
+static gchar const *flyPointSize[3] =
   { "3", "5", "7" };
 
-static gchar *flyLineCommand[4] =
+static gchar const *flyLineCommand[4] =
   { "dline", "line", "line" }; 
 
-static gchar *flyLineWidth[4] =
+static gchar const *flyLineWidth[4] =
   { "0", "1", "1", "2" }; 
 
-static gchar *flyLineColor[DRGEO_NUMBER_COLOR] =
+static gchar const *flyLineColor[DRGEO_NUMBER_COLOR] =
   { "black", "darkgrey", "gray", "white",
   "green", "mediumspringgreen", "blue", "skyblue",
   "crimson", "orangered", "gold", "lemonchiffon"
 };
 
-static gchar *flyColor[DRGEO_NUMBER_COLOR] =
+static gchar const *flyColor[DRGEO_NUMBER_COLOR] =
   { "black", "darkgrey", "gray", "white",
   "green", "mediumspringgreen", "blue", "skyblue",
   "crimson", "orangered", "gold", "lemonchiffon"
@@ -185,8 +185,8 @@ drgeoFlyDrawable::
 drawSegment (drgeoStyle & style, drgeoPoint & start, drgeoPoint & end)
 {
   drgeoPoint p1, p2;
-  char *command;
-  char *thickness;
+  char const *command;
+  char const *thickness;
 
   p2 = areaToFly (end);
   p1 = areaToFly (start);
@@ -222,7 +222,7 @@ drgeoFlyDrawable::
 drawCircle (drgeoStyle & style, drgeoPoint & center, double radius)
 {
   drgeoPoint p;
-  char *thickness;
+  char const *thickness;
 
   p = areaToFly (center);
   if (style.mask == yes)
@@ -246,7 +246,7 @@ drawArc (drgeoStyle & style, drgeoPoint & center, double radius,
 	 double start, double length)
 {
   drgeoPoint p;
-  char *thickness;
+  char const *thickness;
 
   p = areaToFly (center);
   if (style.mask == yes)

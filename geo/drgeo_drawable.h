@@ -91,7 +91,7 @@ public:
   {
     return .0;
   }
-  virtual void showTip (drgeoPoint & where, char *text)
+  virtual void showTip (drgeoPoint & where, char const *text)
     {}
   virtual void removeTip ()
     {}

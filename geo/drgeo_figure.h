@@ -1,8 +1,8 @@
 /*
  *  Dr Geo an interactive geometry software
  * (C) Copyright Hilaire Fernandes  1997-1999
- * hilaire@ofset.org 
- * 
+ * hilaire@ofset.org
+ *
  *
  *
  *
@@ -12,7 +12,7 @@
  * any later version
  *
  * This program is distributed in the hope that it will entertaining,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of 
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILTY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
  * Publis License for more details.
  *
@@ -144,7 +144,7 @@ public:
   {
     return mode;
   }
-  // Manipulate the selected figure item (geometricObject) 
+  // Manipulate the selected figure item (geometricObject)
   // It's used to construct new figure item depending on the mode
   liste_elem *getSelection ();
   liste_elem *getFigureList ()
@@ -176,7 +176,7 @@ public:
   void flashSelection (bool drawGrey);
 
 
-  // Return the list of figure item that are close to the mouse 
+  // Return the list of figure item that are close to the mouse
   // and relevant to the current mode
   liste_elem *mouseSelection (drgeoPoint & mouse);
   void filterItems (liste_elem &items, objectCategory categories);
@@ -294,7 +294,7 @@ private:
   // The current mode we are in.
   gint mode;
 
-  // All the figure item and the moveable figure item liste 
+  // All the figure item and the moveable figure item liste
   // free_figure_list is included in figure_list
   // FIXME: freeFigureList is obsolete?
   liste_elem figureList, freeFigureList;
@@ -311,7 +311,7 @@ private:
   liste_elem highlightItem;
 
   // This points to the appropriate build* depending on the current
-  // mode. 
+  // mode.
   buildParametersListForGeometricObject *itemFilter;
 
   // Hash table used in the undo/redo mecanism

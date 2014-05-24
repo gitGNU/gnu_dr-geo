@@ -113,7 +113,7 @@ on_styleDialog_delete (GtkWidget * widget, GdkEventAny * e,
 // Helper functions
 static void
 connectWithData (GladeXML * tree, drgeoGtkStyleDialog * d,
-		 gchar * widgetName, GtkSignalFunc f, gint data)
+		 gchar const * widgetName, GtkSignalFunc f, gint data)
 {
   GtkWidget *widget;
 

@@ -48,7 +48,7 @@ static gdouble PostScriptScale = (25.0 * 11 / 9.7);
 static gdouble PostScriptDotSize[3] = { 4.0, 5.0, 6.0 };
 
 /* This are arbitrary values */
-static gchar *postscriptLineWidth[4] =
+static gchar const *postscriptLineWidth[4] =
   { "%% set line style to Invisible\n0 setlinewidth\n",
   "%% set line style to Dashed\n0.4 setlinewidth [3] 0 setdash\n",
   "%% set line style to Normal\n0.8 setlinewidth [] 0 setdash\n",
@@ -59,7 +59,7 @@ static gchar *postscriptLineWidth[4] =
    values are right !
    this should be normalize toward 1 values
 */
-static gchar *postscriptColor[DRGEO_NUMBER_COLOR] =
+static gchar const *postscriptColor[DRGEO_NUMBER_COLOR] =
   { "%% set color to black\n0 0 0 setrgbcolor\n",
   "%% set color to dark gray\n0.35294117647 0.35294117647 0.35294117647 setrgbcolor\n",
   "%% set color to gray\n0.66666666667 0.66666666667 0.66666666667 setrgbcolor\n",

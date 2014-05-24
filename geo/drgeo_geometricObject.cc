@@ -27,14 +27,14 @@
 #include "liste_elem.h"
 #include "drgenius_config.h"
 
-static char *colorName[DRGEO_NUMBER_COLOR] = {
+static char const *colorName[DRGEO_NUMBER_COLOR] = {
   "Black", "DarkGrey", "Grey", "White", "DarkGreen", "Green", "DarkBlue",
     "Blue",
   "Bordeaux", "Red", "Orange", "Yellow"
 };
 
-static char *thicknessName[3] = { "Dashed", "Normal", "Thick" };
-static char *styleName[5] =
+static char const *thicknessName[3] = { "Dashed", "Normal", "Thick" };
+static char const *styleName[5] =
   { "Round", "Cross", "Rectangular", "RoundEmpty", "RectangularEmpty" };
 
 geometricObject::
