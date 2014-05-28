@@ -1,0 +1,20 @@
+(new-figure "Triangle")
+
+(define (triangle p1 p2 p3 n)
+  (let* ((s1 (Segment "" extremities    p1 p2))
+         (s2 (Segment "" extremities    p2 p3))
+         (s3 (Segment "" extremities    p3 p1))
+         (pe (Line    "" orthogonal     p3 s3))
+         (ci (Circle  "" center-segment p3 s2))
+         (p4 (Point   "" intersection2  pe ci)))
+    (send pe masked)
+    (send ci masked)
+    (send p4 masked)
+    (if (> n 0)
+       (triangle p1 p3 p4 (- n 1)))))
+
+
+(lets Point "O" free  0  0)
+(lets Point "A" free -1  0)
+(lets Point "B" free -1  1)
+(triangle O A B 15)

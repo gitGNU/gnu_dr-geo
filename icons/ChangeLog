@@ -1,0 +1,14 @@
+2003-10-25  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* Makefile.am (appicon_DATA): Remove unused
+	gnome-drgenius.png. Rename file drgenius- to drgeo-.
+
+2000-02-15  Hilaire Fernandes  <hilaire@seul.org>
+
+	* Makefile.am (EXTRA_DIST): Added inline icons for the main
+	toolbar.
+
+Sun Feb 06 15:36:06 2000  George Lebl <jirka@5z.com>
+
+	* Makefile.am: install glade files into $(datadir)/dr-genius/
+

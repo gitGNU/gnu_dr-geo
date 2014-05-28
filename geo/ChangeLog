@@ -1,0 +1,2304 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2005-07-12  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_tool.h (class drgeoAnimationDialogLess): drgeoTool to
+	handle animation.
+
+2004-11-22  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_locus.cc (geometricObject): Small fix to prevent crash
+	when selecting improper points to define a locus.
+
+2004-11-08  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* define.h: Get MACRO_NAME_WIDTH a bit larger. I should get rid of
+	this soon.
+
+2004-11-03  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_figure.cc (redo, undo): Check itemFilter is not null.
+
+2004-10-17  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_figure.cc (redo,undo): Reset the selection itemFilter when
+	a undo or redo command is executed. Thanks to Adrian to report
+	this bug.
+
+2004-08-17  Hilaire Fernandes  <hilaire@lilliput>
+
+	* drgeo_macro.cc (setDescription): Update the macro menu item as
+	well.
+
+2004-08-16  Hilaire Fernandes  <hilaire@lilliput>
+
+	* drgeo_drawable.h (class drgeoDrawableUI): Add class
+	macroPlayToolDialogLess:drgeoTool to handle macro interaction in
+	dialog less mode.
+
+	* drgeo_gtkmacro.cc (handleFinish): When a macro is just
+	constructed add it as well in the macro menu.
+
+	* drgeo_tool.h (class drgeoMacroPlayToolDialogLess): Implement a
+	dialog less macro player to be used directly from the macro menu
+	in the top bar.
+
+2004-08-15  Hilaire Fernandes  <hilaire@lilliput>
+
+	* drgeo_macro.cc (kernel_position): Handle SCRIPT without parent
+	aswell.
+2004-08-14  Hilaire Fernandes  <hilaire@lilliput>
+
+	* drgeo_macro.cc (checkParameters): We want intermediate object
+	SCRIPT without parent to be checked as valid. Such script can be
+	usefull awell.
+
+	* macro.cc (createItem): Handle the FREE_PT so it gets its correct
+	coordinates according the model used to constrcut the macro.
+	(xmlLoadKernel): Scan for the coordinates of the FREE_PT.
+	(xmlLoadKernel): Pay attention, we can now have intermediate
+	object without any parent relation.
+	(xmlLoadKernel, xmlSaveKernel): Handle NUMERIC/FREE_VALUE
+
+	* drgeo_point.cc (getExtra): For FREE point returns a 2-array with
+	the coordinate of the point.
+
+	* drgeo_macro.cc (checkParameters): Let the macro-handle
+	Locus. May be strange.
+	(checkParameters): Free point can now pass the macro check
+	validity.
+	(kernel_position): We need to take care of the case of FREE_PT
+	object as there is no parents.
+
+	* macro.cc (createItem): Now handle FREE_PT_ON_CURVE so it gets
+	its correct abscissa coordinate according to the model used to
+	construct the macro.
+	(xmlSaveKernel, xmlLoadKernel): Handle the category
+	FREE_PT_ON_CURVE.
+
+	* drgeo_point.cc (getExtra): For ON_CURVE point, it returns now
+	the curve abscissa. That way, when the object is constructed from
+	a macro, it is set to the same position as the model point used
+	when creating the macro-construction.
+
+2004-06-06  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_control.cc (updateUserInterface): It is now logically a
+	method of this class and its sub-classes, in particular
+	drgeoToolbar.
+
+	* drgeo_control.h (class drgeoControl):
+	updateUserInterfaceInterface () method.
+
+2004-06-05  Hilaire Fernandes  <hilaire@lilliput>
+
+	* drgeo_control.cc (setShortcutControlerWidget): Set up the short
+	cut.
+
+2004-06-05  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_toolbar.cc (shortcutWidget): Shortcut tool bar.
+
+2004-05-31  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_command.cc (execute): Check if the name is a NULL pointer
+	and handle it differently.
+
+	* drgeo_gtkstyle.cc (setName): Better we check for empty string
+	and convert it as NULL pointer. Is there any problem with utf-8
+	and empty string?
+
+	* drgeo_geometricObject.cc (setName): Check if new name value is
+	NULL.
+
+2004-03-03  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_gtkhelpers.cc (gtk_menu_append_label): Append a label to a
+	menu.
+
+2004-01-15  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_figure.cc (searchLostNode): Clean up method to look at
+	lost macro node.
+	(dependantItems): Now this method should clean up correclty the
+	lost nodes (well I hope so :)
+
+	* liste_elem.cc (substract): Subsract a list from another one.
+
+	* drgeo_figure.cc (dependantItems): The code to search for the
+	lost node frommacro construction, remove it for now, this avoid
+	crash. However a global clean up function should be written to
+	remove the lost node (ie unused hidden item comming from macro
+	construction)
+	(searchChildren): This method retrieves all the relatives (direct
+	and indirect) of a given geometricObject item.
+	(hideRemovedItems,dependantItems): Clean up, use the
+	searchChildren method.
+
+2004-01-13  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_tool.cc (handleChoice): String message must be free. 
+
+2004-01-06  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_angle.cc (update): Use the correct UTF-8 '°' charcarter:
+	now angle are correctly printed, this fix bug 871576
+
+2003-11-24  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_flydrawable.cc: Export filter to flydraw (for WIMS)
+	contributed by Odile Bennasy (obennasy@ofset.org).
+	(drawLine): Use the helper method clipLine and clipHalfLine.
+	(drgeoFlyDrawable): We want %f(loat) not %s(tring) in the fprintf
+	function.
+
+	* Makefile.am (libgeo_a_SOURCES): Add drgeo_flydrawable.*
+
+2003-11-20  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_gtkhelpers.cc (open_help_cb): Check in 'c' for the default
+	help file.
+
+2003-11-16  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_drawable.cc (clipLine, clipHalfLine): Move some codes of
+	the drgeo_gtkdrawable and drgeo_latexdrawable class in this two
+	methods. By the way drgeo_latexdrawable is shorter so it should be
+	easier to write new ouput filter from the drgeo_latexdrawable.
+
+2003-11-06  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_postscriptdrawable.cc (drgeoPostScriptDrawable): Add
+	Latin1 font definition when exporting a figure as a EPS file, that
+	way accent character are corretly handled.
+
+2003-11-05  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_postscriptdrawable.cc (drawText): When exporting to
+	PostScript convert the string to iso8859-1, this really fix
+	nothing as the character of the charmap are not printed
+	correctly. What is the way to handle accent characters with
+	PostScript?
+
+2003-11-02  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_arcCircle.cc, drgeo_circle.cc (update): Take the absolute
+	value of the scale factor when computing the radius of the
+	transforme arc or circle.
+	
+	
+2003-10-27  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_dialog.cc (get_edited_value): Mark the string with _()
+	instead of N_().
+
+	* drgeo_numeric.cc (value): Fixed bug: distance_pt_circle was net
+	tested.
+	(save): Fixed bug: distance_pt_circle was not set correctly.
+
+2003-10-22  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_geometricObject.h: Remove strins, simplify the strinsmsg
+	instead.
+
+2003-10-19  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* macro.cc (xmlLoadKernel): When extra is set in the saved macro
+	but the macro kernel is not a script or a constrained point, set
+	it to NULL.
+
+2003-10-15  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* traite.cc (needUpdate): When calculating a locus, I set up a new
+	technique to compute the exact list of items needing to be
+	udpated, this should speed a bit the locus rendering.
+
+2003-10-12  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_locus.cc (getIntersection): An experimental Intersection
+	with locus, it actually only computes one intersection with
+	another curve. The intersection is only a look up in the sampling
+	table of the locus.
+	(getPointAt): Replace the macro SAMPLE_LOCUS by the variable
+	sampleNumber. The locus is a sampling of variable size, which
+	length is sampleNumber.
+
+2003-10-06  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_interface.cc (make_orientedAngle): Implemented.
+	(drgeo_scm_make_orientedAngle): Implemented.
+
+2003-10-05  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_interface.cc (make_lineSlope): Implemented.
+	(drgeo_scm_make_lineSlope): Implemented.
+	(make_arcLength): Implemented.
+	(drgeo_scm_make_arcLength): Implemented.
+
+2003-09-27  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_interface.cc (setObjectName): Do not updateDescription
+	for each newly created object. Instead it should be done once at
+	the end (or until the next figure). This really speed up the
+	evaluation of Dr. Geo Scheme Figure.
+
+	* drgeo_command.cc (execute): I Forgot a break at the end of the
+	drgeoValue case. It produce a funny bug making floating value
+	unselectable. Luckily, after a couple of hours searching to fix
+	this problem, I fall asleep in front of my computer then when I
+	awoke the bug was starring at me!
+
+2003-09-26  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_geometricObject.cc (strinsmsg): Still need some update to
+	be UTF-8. I am still surprise how it cannot crash with this code.
+
+	* drgeo_postscriptdrawable.cc: Adjust PostScriptScale so the one
+	unit is 1cm when a figure is exported to PostScript.
+
+2003-09-24  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_interface.cc (make_circleLength): Implemented.
+
+2003-09-23  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_api.cc (drgeo_scm_getNormal): Implemented.
+	(drgeo_scm_getDirection): Implemented.
+
+	* drgeo_scm_api.h: New methods drgeo_scm_getDirection and
+	drgeo_scm_getNormal.
+
+2003-09-22  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* macro.cc (createItem): Add the script case.
+
+	* drgeo_script.cc (getExtra): Return the script code in a void*.
+
+	* drgeo_point.cc (getExtra): Dedicated getExtra method, return the
+	extra value for intersection point, NULL otherwise.
+
+2003-09-22  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_point.h (class point): Add a int extra attribute.
+
+	* drgeo_geometricObject.cc (getExtra): Return NULL by default,
+	meaning no extra attributes.
+
+	* drgeo_geometricObject.h (class geometricObject): extra attribute
+	is no more an geometricObject attribute, it is defined in sub
+	object needing it. .
+
+	* macro.cc (xmlLoadKernel,xmlSaveKernel): Treat extra as void *. It is used now
+	for intersection point and script, holding different kind of
+	value, in the first case it can be casted to a int* and the later
+	as a gchar*.
+
+	* macro.h (class noyau_macro): Turn the int extra as a void *
+	extra, therefore we can use it to hold extra data concerning
+	arbitrary DrGeo object.
+
+2003-09-19  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_interface.cc (drgeo_scm_make_arc): Implemented.
+	(scm_make_arc): Implemented.
+
+2003-09-14  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_interface.cc (make_distancePointPoint): Implemented.
+	(drgeo_scm_make_distancePointPoint): Implemented.
+
+2003-09-13  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_interface.cc (make_distancePointLine): Implemented.
+	(drgeo_scm_make_distancePointLine): Implemented.
+
+2003-09-12  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_interface.cc (make_geometricAngle): Implemented.
+	(drgeo_scm_make_geometricAngle): Implemented.
+	(make_polygon): Implemented.
+	(drgeo_scm_make_polygon): Implemented.
+
+2003-09-03  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_interface.cc (make_segmentLength): Implemented
+	(make_vectorNorm): Implemented
+	(make_distancePointCircle): Implemented
+
+2003-09-02  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_interface.cc (make_intersection): Implement the C++
+	method and the wrapper to Scheme function.
+	(make_circleRadius): Implemented
+	(make_circleSegment): Implemented
+	(make_locus): Implemented
+	(make_parallel): Implemented
+	(make_orthogonal): Implemented
+
+2003-09-01  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_interface.cc (drgeo_scm_make_rotation): Generic
+	function to construct a rotated object.
+	(make_rotation): Implement the rotation API to all object.
+	(drgeo_scm_make_translation): Implement the various wrapper to the
+	transformation methods.
+	(make_translation): Implement the various transformations Scheme
+	methods.
+
+2003-08-30  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_point.cc (point): Ensure abscissa belongs to [0 ; 1]
+
+	* drgeo_scm_interface.cc (make_middle2Points): Implemented C++
+	method.
+	(drgep_scm_make_pointOnCurve): Implemented wrapper to the C++
+	method.
+
+	* drgeo_point.cc (point): New constructor. It used to implement
+	the make-pointOnCurve method. It directly receive the point
+	abscissa on the curve.
+
+2003-08-29  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_interface.cc (drgeo_scm_make_freeValue): Implemented
+	wrapper to the C++ method.
+	(make_freeValue): Implemented C++ method.
+
+2003-08-26  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_interface.cc (make_pointRotate): Implemented.
+	(drgeo_scm_make_pointRotate): Implemented.
+
+2003-08-20  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_interface.cc (change_thickness): Implemented.
+	(change_pointShape): Implemented.
+	(change_masked): Implemented.
+
+2003-08-19  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_interface.cc (setObjectName): Turn it as a
+	ScmInterface method, also reinit the object name as well the
+	description.
+	(make_middleSegment): Implemented.
+	(change_color): Implemented.
+
+2003-08-18  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_interface.cc (drgeo_scm_make_middle2Points):
+	Instanciate the middle of two points.
+
+2003-08-17  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_interface.cc (drgeo_scm_make_freePoint): Check if any
+	figure was defined by a (new-figure) command. If not just return
+	NULL, as we may go no wehere otherwise.
+	(drgeo_scm_make_segmentExtremity): Function to call the relative
+	method to create a segment according to its extremity.
+
+2003-08-16  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_helper.cc (standard_handler): A very basic error
+	handler when evaluating Scheme code.	
+
+2003-08-15  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_interface.cc (make_freePoint): This function is a
+	wrapper to the make_freePoint method of the ScmInterface object.
+
+	* drgeo_figure.cc (getScmInterface): Return the associated
+	scmInterface of the figure.
+
+2003-08-14  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_helper.[h,cc]: Group here the helper method to the scm
+	interface and API.
+
+	* drgeo_scm_api.[h,cc] : Rename more appropriately the
+	drgeo_scm_interface to drgeo_scm_api. The first will be reserved
+	to define the scm interface to build geometric figure from scheme
+	code.
+
+2003-08-08  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_interface.cc (drgeo_scm_getAngle): Return a measure of
+	an angle in degree.
+
+2003-08-02  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_gtkdrawable.cc (showGrid): This method show a grid.
+
+2003-07-29  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_control.cc: Add mdi->setMessage ("...") calls with
+	appropriate messages.
+
+2003-07-27  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_figure.cc (exportToPostScriptHandle): This method expects
+	a file handle and a name to export a encapsulated PostScript. We
+	use this method to export an EPS to the stand output.
+
+2003-07-20  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_figure.cc (saveAs): Save the bounding box in a
+	"boundingBox" element. The coordinate of the box are attributes of
+	this element: tl_x, tl_y, br_x, br_y (tl is top-left and br is
+	bottom-right)
+
+2003-07-20  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_gtkdrawable.cc (updateAdjustments): Update the adjustment
+	according to the origin coordinates.
+
+2003-07-19  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* define.h (toolbarmode): new PRINTING_AREA_MODE to select the
+	printing area.
+
+2003-07-19  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_drawable.cc (drgeoDrawableUI): Instantiate a
+	drgeoPrintingAreaTool.
+
+2003-07-19  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_tool.h (class drgeoPrintingAreaTool): A new tool to define
+	 a printing area.
+	
+	* drgeo_gtkdrawable.cc (showPrintingArea): Method to instruct the
+	drawable to display the printing area. It is mainly a
+	gtk_widget_queue_draw call.
+	(_showPrintingArea): This method does the real job above.
+	(unsetPrintingArea): Remove the printing area.
+
+2003-07-18  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* couleur.h (drgeoColorType): Add drgeoColorPrintingArea to hold
+	back color used to draw the printing area.
+
+2003-07-18  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* xml.cc (xml_set_double_prop, xml_set_int_prop): Helper functions
+	to save XML attributes.
+
+2003-07-18  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_drawable.cc (getScale): Method to access the current scale
+	of the drawable.
+
+2003-07-13  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_numeric.cc (update): Set (with the help of Pierre
+	Jarillon) the dynamic numerical precision feature asked by Andrea.
+
+2003-07-10  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_dialog.cc (get_edited_value): When creating new free
+	value, Dr.Geo could crash at the second or third creation.
+
+2003-04-24  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_control.h: Set callback within extern "C"
+
+2003-04-04  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_control.h (class drgeoControl): Split the
+	setControlerWidget to match each part of the toolbar set, so we
+	can use it to setup the popup menu and the toolbars
+
+2003-04-02  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_figure.h (enum drgeoToolId): Adjust the control names.
+
+2003-02-01  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_gtkproperty.cc (setScript):  The setScript method call a
+	drgeoCommand when a script is edited.
+
+	* drgeo_command.cc (execute): The drgeoCommand is now script
+	aware.
+
+	* drgeo_command.h (enum drgeoAttributeType): Added drgeoScript as
+	an attribute.
+
+	* drgeo_gtkproperty.cc (setValue): The setValue method call a
+	drgeoCommand when a free value is edited.
+
+	* drgeo_gtkstyle.h: Remove deprecated method setExpression (this
+	is handle by the gtkProperty dialog)
+
+	* drgeo_equation.cc (equation,save): Bugs fix.
+
+	* drgeo_script.cc (update): When a script owns a name and it
+	returns a double we display it on the figure as "name = value"
+	(Request from Michel Brissaud).
+
+	* drgeo_numeric.cc (update): When a value owns a name we display
+	it on the figure as "name = value" (Request from Michel Brissaud).
+
+2003-01-30  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_script.cc (dgs_error_cb): We keep track of the opened
+	error message dialog, and we pop up only one at a time.
+
+2003-01-30  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_interface.cc (drgeo_scm_*): Various new procedures for
+	the Scheme interface has been written.
+
+2003-01-30  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_point.cc (setCoordinate): Set a coordinate method (usefull
+	for the DGS)
+
+2003-01-26  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_locus.cc (draw): Ensure the distance between two samples
+	is 'small enought' to draw the segment.
+
+2003-01-24  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_command.cc (execute): Only update the description when all
+	the item are deleted.
+
+	* drgeo_locus.cc (update): Fix a nasty bug in a condition test
+	which make the all thing going into an infinite loop.
+
+	* drgeo_figure.cc (drgeoFigure): Do not update when loading a
+	figure as there are no drawable associated yet. The drawable, when
+	intiated, will refresh the figure.
+
+	
+2003-01-24  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_geometricObject.h (class geometricObject): The update
+	method now expect a drgeoDrawable argument. It is used mainl by
+	the locus object to get bounding box of the used drawable (Gtk,
+	PostScript, LaTeX
+
+	* drgeo_macro.cc (add):
+
+	* drgeo_gtkproperty.cc (refresh): Do not need to call updateItems,
+	this is done from the refresh call.
+
+	* drgeo_figure.cc (redraw): We need to update the item each time
+	we redraw, in case the user move the whole figure with scroll bar
+	or whatever, this is needed because of the locus object which not
+	only depends on its parents but also on the screen position.
+
+	* drgeo_locus.cc (update): FIXME, UGLY HACK: improvment when
+	sampling a locus, now we search for point offscreen, this save a
+	lot of sample, however this is slower. I still need to make this
+	cleaner,
+	(ie giving as argument to the update method the drawable are)
+
+2003-01-23  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_drgeoVector.h: New family operator <<,>> to compare to
+	vector. True when *at least* one of the coordinate is lower or
+	greater.
+
+2003-01-17  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_tool.cc (removeTip): Helper static function to cleanly
+	erase a tip from a figure (i.e. redraw the figure without
+	flickering.)
+	(handleRelease, handlePress): In select mode, when the user
+	presses the mouse button with the cursor over the bacrground or
+	when she finished dragging an item, the item becomes unselected.
+	Replace when possible drawable->refresh() call by a removeTip()
+	call
+
+	* drgeo_gtkdrawable.cc (showTip): Try to make the tip a bit more
+	normalized in its height.
+
+	* drgeo_gtkdrawable.h (FONT_TIP_HEIGHT): This where we hold the
+	font height for the figure tips.
+
+2003-01-04  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_figure.cc (emptyUndoQueueAll): Remove all the undo
+	operation from the undo queue.
+
+	* drgeo_macro.cc (add): For now macro-construction are not handled
+	by the undo/redo mecanism: we have to empty the queue to avoid
+	crash problem
+
+2002-12-28  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_menu.cc (build_drgeo_popup_menu): Record into
+	popup_menu_item[] the widget representing the different item of
+	the popup menu in a figure.
+	(reconcile_popup_menu): Use the popup_menu_item[] to hide/show the
+	menu item which the corresponding tools are unenabled/enabled.
+	(on_moveItem_clicked): The move button is on the toolbar, not need
+	to cache the relevent sub-toolbar.
+
+	* drgeo_figure.cc (xmlBuildItem): Handle the customUI element
+	within a drgeo xml tree.
+	(saveAs): Save the logical state of the user interface
+	custolization.
+
+2002-12-27  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_gtkstyle.cc (hide): When the dialog is closed, check if an
+	item was selected before setting the new name, otherwise it
+	crashes.
+
+2002-12-26  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_figure.cc (get/setPassword): These methods help us to
+	manipulate the password used to lock the interface changes.
+	(get/setToolState): These methods help us to get and set a tool
+	state in the user interface. This is only the logical part, the
+	physical part is handled within the drgeo_mdi_child object.
+
+2002-12-22  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_gtkproperty.cc (on_scriptDialog*): Various script to
+	replace the GnomeDialog by a GtkDialog for the script dialog. 
+
+2002-12-20  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_postscriptdrawable.cc (drgeoPostScriptDrawable): Add the
+	filename to the eps description. Can be usefull.
+
+2002-11-22  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_latexdrawable.cc (drawLine): Fix a big when computing the
+	worldBottom value. Display the line name.
+
+2002-11-21  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_drgeoStyle.h (class drgeoStyle): Add a name member user
+	when the item name must be printed into the drawing area (for line
+	and circle).
+
+	* drgeo_gtkdrawable.cc (drawLine): The straight line name is now
+	displayed into the drawing area.
+	
+2002-11-19  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_equation.cc (update): Fix an error in the determination of
+	a straight line equation.
+
+2002-11-18  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_postscriptdrawable.cc (drawPolygon): Polygon outline
+	should not be drawn by default.
+ 
+2002-11-17  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_figure.cc (exportToPostScript): When exporting to EPS,
+	print first the polygon then the other item of the figure.
+
+	* drgeo_gtkdrawable.cc (setCursor): Add a cursor type when moving
+	the whole figure. Also we have some mechanism to keep track of the
+	previous cursor.
+
+2002-11-16  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_gtkstyle.cc (hide): When the user close the style dialog,
+	the name object is updated with the name provided in the dialog.
+
+	* drgeo_gtkdrawable.cc (drawing_area_button_press_cb): In case the
+	CONTROL key was pressed we set up the moveX and moveY value to the
+	actual mouse position.
+	(drawing_area_move_cb): Check if the user want to move the whole
+	figure (CONTROL and BUTTON1 pressed)
+	(moveWholeFigure): Change  the adjustment according to the user move.
+
+2002-11-10  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_postscriptdrawable.cc (drawPolygon): Polygon should be
+	displayed correctly in PostScript file. Thanks to Jean-Philippe
+	Georget for the bug report.
+
+2002-06-22  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_postscriptdrawable.cc (drawArc): Add a moveto instruction.
+	This removes a bug in the Arc circle method.
+
+2002-06-20  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_script.cc (update): Use the setValue and setString when
+	appropriate.
+
+	* drgeo_string.cc (setString): This method get a string, we do not
+	need to rallocate it, we just copy its reference.
+
+	* drgeo_numeric.cc (update): Use the value::setValue method to set
+	the val value, this is the proper way.
+
+2002-06-19  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_script.cc (update): Use the SCM_REALP macro to check if
+	the returned value of a drgeo_script is a real number.
+
+2002-06-16  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_script.cc (~script): Undefine the scheme procedure behind
+	the script item.
+
+2002-06-15  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_angle.cc (save): We should save the position of the angle
+	value when the angle is of type ANGLE_2VEC, this type of angle is
+	not attached to any other item, its position is user editable.
+
+	* drgeo_postscriptdrawable.cc (drawPolygon), 
+	* drgeo_latexdrawable.cc (drawPolygon), 
+	* drgeo_gtkdrawable.cc (drawPolygon): Rewrite these methods as we
+	send a list of the point coordinates instead of a list of the
+	point objects.
+
+	* define.h (enum polygonType): its value should be set to 32 and
+	not 1 as the 1, 2, 4, 8, 16 are reserved for transformation.
+
+	* drgeo_polygon.cc (getVertices): Major rewrite of the polygon
+	methods: polygon can now be transformed by reflexion, symmetry,
+	rotation, scale and translation.
+
+	* drgeo_polygon.h (class polygon): Two new attributes and
+	associated methods: vertices (getVertices), it holds a copy of the
+	polygon vertices - numberVertex (getNumberVertex), it hold the
+	number of the polygon vertex.
+
+2002-06-14  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_buildObject.cc (buildSymmetry, buildTranslation,
+	buildReflexion, buildRotation, buildScale): Can use polygon as
+	input parameter.
+
+	* var_decl.h (mode9,mode10,mode11,mode12,mode20): Polygon can be
+	used as input item when in transformation mode
+	(symmetry, reflexion, rotation, translation and scale)
+
+2002-06-09  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_interface.cc (drgeo_scm_getCoordinates): New function
+	in the DrGeo API. This one return a list of the coordinates of the
+	point or the vector given in argument.
+
+	* drgeo_script.cc (update): Use the gh_real_p predicate (real? in
+	guile) instead of the gh_number_p ones. We do not handle complex
+	number yet ;-) Hum! It's look like the real? predicate is not
+	implemented within the C interface of Guile, so I have to revert
+	to the number? predicate :(
+
+	* drgeo_buildObject.cc (buildScript): We do not want to check for
+	'equivalent script' (script build with the same input parameters)
+	to determine if the on-construction script is
+	constructible. Indeed, a script is more characterised by its body
+	guile script.
+
+	* drgeo_figure.cc (addToSelection): Script can be created without
+	input parameter. To create a such script, the user directly click
+	on the background.
+
+2002-06-02  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_gtkdrawable.cc (showTip): Set the font_gc foreground to
+	black before printing a tip otherwise a tip may look grey in some
+	situation.
+
+	* drgeo_gtkdrawable.cc (drawing_area_configure_cb)
+	(drgeoGtkDrawable): Remove the gtk_layout widget from where was
+	packed the drawing_area. There is some issue I need to fix on it
+	as an incorrect resizing bug.
+
+2002-05-13  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_gtkproperty.cc (edit): Connect the help button of the
+	script dialog to the Dr Genius help.
+
+2002-05-12  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_menu.cc (toolbar_icon_clicked): This method us used with
+	toolbar icons.
+	(on_styleItem_clicked2): Use this callback for button docked in
+	the toolbar (In this case the widget must not be hidden).
+
+2002-05-05  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_numeric.cc (initName): The name variable is reserved for
+	the object not its parents. Use parentName as a temporary
+	holder. Remove the bug with the name of free numeric (bug
+	submitted by Laurent Gauthier).
+
+2002-05-04  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_gtkstyle.cc (edit): Connect the Help button of the style
+	dialog to the Dr.Genius help.
+
+2002-05-01  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* macro.cc (createItem): Polygon can be created from
+	macro-construction as well.
+
+	* drgeo_gtkproperty.cc (refresh): Update the figure items before
+	we redraw them, otherwise some changes in the figure are not
+	considered (This removes a bug submitted by Laurent Gauthier).
+
+	* drgeo_macro.cc, macro.cc, drgeo_command.cc: Update the various
+	methods to use the updateItems method of the drgeoFigure object.
+
+	* drgeo_figure.cc (updateItems): This method replaces the function
+	updateItems(liste_elem &) in the traite[.h,.cc] files.
+
+	* drgeo_script.cc (initName): The name of the script is used to
+	composed the tip as "this script %1" where %1 is replaced by the
+	scrit name.
+
+2002-04-13  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_menu.cc (macro_construction_menu): Add widget script menu
+	entry plus widget script and script button to the toolbar.
+
+	* drgeo_drgeoStyle.h (class drgeoStyle): Add a widget member to
+	the drgeoStyle object. This gpointer is used to keep a reference
+	of a widget representation of the incoming button plugable in the
+	drawable area.
+
+2002-04-12  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_gtkdrawable.cc (drgeoGtkDrawable): The drawing area is
+	added to a GtkLayout container.
+	(drawing_area_configure_cb): the drawing area has to be manualy
+	resized when packed in a GtkLayout.
+
+	* drgeo_gtkdrawable.h: Add a GtkLayout member, bascily the drawing
+	area is add to this GtkLayout, in this layout other GtkWidget can
+	be added as well.
+
+2002-03-24  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_geometricObject.h (class geometricObject): add a
+	graphicItem (gpointer) argument to the geometricOject. This
+	argument is used to keep reference of the graphic representation
+	of the geometricObject (more probably a GnomeCanvasItem).
+
+2001-10-20  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_angle.cc (updateDescription): Random crash because of an
+	uncorrect array size.
+
+2001-10-14  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_locus.h (class locus): Add curve relative methods
+	(getPointAt, GetClosestPoint and getAbscissa) so that placing a
+	point on a locus is less broken. Applicated to locus, these
+	methods are a bit broken as they usuasly works with continuum but a
+	locus in DrGenius is a sample.
+
+2001-10-13  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_arcCircle.cc (arcCircle): Fix various bugs in REFLEXION
+	and SYMMETRIC related methods.
+
+2001-10-07  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_angle.cc (updateDescription): Forgot to add this method to
+	the angle object. Without it, DrGenius crashes when the user
+	creates an angle.
+
+2002-01-13  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_gtkstyle.cc: Style dialog can handle NUMERIC, EQUATION and
+	SCRIPT categories.
+
+	* drgeo_numeric.cc (updateDescription): Add a description for the
+	FREE_VALUE type, without it DrGenius sadly crashed when user
+	created a free value.
+
+	* drgeo_geometricObject.cc (geometricObject): Set default color to
+	black.
+
+	* drgeo_postscriptdrawable.cc (drawText): Add a fontColor
+	parameter to the method.
+
+	* drgeo_latexdrawable.cc (drawText): Add a fontColor parameter to
+	the method, the parameter is not yet used in the method (i.e. need
+	to get the psTricks doc!)
+
+	* drgeo_gtkdrawable.cc (drawText): Add a fontColor parameter to
+	the method so we can change font color.
+
+	* drgeo_scm_interface.cc (drgeo_scm_getValue): Method to fetch the
+	value of a value object (i.e. coordinates, free value, curve
+	abscissa, distance, script)
+
+2002-01-12  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_gtkdrawable.cc (drgeoGtkDrawable): drawable_area must have
+	"figure" attribute which is now the MdiChild view widget.
+
+2002-01-11  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_scm_interface.cc (drgeo_scm_getAbscissa): Method to fetch
+	the abscissa of a point contained in another object.
+
+2001-11-25  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_script.cc (setScript): Add an error handler script
+	function (taken from GuileRepl of Ariel Rios.
+
+	* drgeo_scm_interface.cc (drgeo_scm_move): This is the first
+	interface method between guile and the drgeo engine. It just moves
+	a drgeo object according to a vector, it used as (move a1 v) where
+	a1 is an object and v a vector.
+ 
+	* drgeo_script.cc (setScript): The user script is encapsulated in
+	a scm procedure. The procedure is defined and declared when the
+	the script is modified and not at each update of the script
+	object.
+	(update): The scm procedure is called from a gh_eval_str, the
+	procedure is already defined and declared.
+	(script): We need to call setScript to insert the script in the
+	guile namespace.
+
+2001-11-04  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_gtkproperty.cc (updateScriptItemWithScriptDialog): Update
+	the drawable when a script is updated.
+
+2001-11-02  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_figure.cc (xmlBuildItem): Add script object construction.
+
+2001-11-01  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_geometricObject.cc (geometricObject): Use
+	updateDescription method to free the description instead of
+	rewritting the code.
+
+	* drgeo_buildObject.cc (buildScript): Set a default script, so it
+	is not void anymore by default.
+	
+	* drgeo_figure.cc (mouseSelection): Range shoud go to SCRIPT_MODE.
+
+	* drgeo_buildObject.cc (buildScript): Method to build a
+	script. Need some more hack so the SSE is invoked before/jsut
+	after the creation of the script item.
+
+	* drgeo_gtkproperty.cc (edit): Add a case to open the Simple
+	Script Editor (SSE).
+
+	* drgeo_script.h (class script): Add the methode getScript and
+	setScript.
+
+2001-10-14  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_script.[h,cc]: Add the script object. 
+
+>>>>>>> 1.28.2.10
+2001-09-30  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_polygon.cc (initName): When possible, compute the name of
+	 the polygon item based on its summit.
+
+	* Complete the text description feature on all objects.
+
+2001-09-28  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_point.cc (updateDescription): This method create the text
+	description of the current object (its definition and the list of
+	its ancestor)
+	(updateDescription): Completed text description for the point
+	object.
+
+2001-09-26  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_gtkdrawable.cc (descriptionselected): Update code to
+	GtkCTree widget.
+	(addDescriptionItem): Include the parent items as leaf.
+
+2001-09-23  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_gtkdrawable.cc
+	(descriptionUnselected,descriptionSelected): Signal functions of
+	the unselect-row, select-row signals over the description
+	GtkCList.
+
+2001-08-09  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_postscriptdrawable.cc (drawPolygon): Implement the
+	drawPolygon for the PostScript drawable. 
+
+	* drgeo_latexdrawable.cc (drawPolygon): Define drawPolygon method
+	for the LaTeX drawable.
+	(drawLine, etc.): Remove unecessary code checking the current mode.
+
+2001-08-08  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* mode_obj.h (class buildParametersListForPolygon:): Design the
+	selection mode to create a polygon object.
+
+	* var_decl.h (mode21): This a dummy array to handle the selection
+	of object to create a polygon. We do not use the traditional
+	mecanism for the polygon mode. Insteat we overload the methods of
+	the buildParametersListForGeometricObject class.
+ 
+	* drgeo_gtkdrawable.cc (drawPolygon): Method to render polygon in
+	a GdkDrawable.
+
+	* drgeo_drawable.h: Add virtual method drawPolygon.
+
+2001-08-06  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_tool.cc (handleMouseAt): Now tooltips will be updated when
+	the mouse moves from one geometric object to another.
+
+	* drgeo_point.cc (draw): Adjust the offset used to display a point
+	name.
+
+	* drgeo_gtkdrawable.cc (drawPoint): Set special background style
+	(yellow - dashed - thin) when the method is invoked by a hidden
+	point.
+
+2001-08-05  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_gtkdrawable.cc (drawPoint, drawSegment, draw*): Remove
+	unnecessary check in for masked object (this is handled in the
+	draw object method of the object).
+
+	* drgeo_command.cc (execute): Add drgeoVisible case.
+
+	* drgeo_command.h (drgeoAttributeType): Define new type
+	drgeoVisible for undo/redo operation to mask/unmask object.
+
+	* drgeo_gtkproperty.cc (edit): Define dialog to edit value
+	property.
+
+	* drgeo_figure.cc (mouseSelection,addToSelection): In
+	PROPERTY_MODE, we only consider geometric object relevant to this
+	mode (ie categories FREE_POINT and NUMERIC of type FREE_VALUE)
+
+2001-07-27  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_gtkstyle.cc (edit): The style dialog are build when
+	required. There are three different style dialog depending on the
+	geometric object.
+	(edit): Complete the style dialgo code for all objects.
+
+	* drgeo_gtkdrawable.cc (drawPoint): Draw an empty circle on topp
+	of a filled circle to get a correct rendering of point marked as
+	filled circle.
+
+2001-07-25  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_figure.cc (addToUndoQueue): Compare the actual number of
+	undo operation to the user preference 'drgeoUndo', if required
+	delete the oldest undo operation.
+
+2001-07-24  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_postscriptdrawable.cc (drawSegment): Update the
+	PostScriptDrawPoint method to the new style model.
+
+	* drgeo_latexdrawable.cc (drawLine): Update the
+	LatexDrawPoint method to the new style model.
+
+2001-07-23  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_gtkdrawable.cc (drawPoint): Re-implementing the
+	GtkDrawPoint, same must be done for Latex and PS versions.
+
+	* drgeo_drgeoStyle.h (drgeoPointSize): Enumeration for the
+	geometric object size, mainly point. Make the header compatible
+	with pure C.
+	(class drgeoStyle ): The style for geometric object is now more
+	explicit in its behavior.
+
+2001-07-21  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_gtkproperty.cc (hide): Clear the selection list when we
+	close the dialog, so the selected item does not blink anymore when
+	the property dialog is closed.
+	(edit): The property dialog is rebuilded only when the user select
+	a different category of geometricObject.
+
+	* drgeo_tool.cc (handleChoice): We want the selected item which
+	property are edited to blink: we stack it in the selection list
+	of the figure object.
+
+	* drgeo_figure.cc (addToSelection): We want the selected item
+	which property are edited to blink, so the user can easily see it.
+
+	* drgeo_gtkproperty.cc (on_freePointAbscissaEntry_activate): Use
+	the drgeoGtkPropertyDialog::moveItem method so the change to the
+	item is stacked into the undo stack.
+
+2001-07-20  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_tool.h (drgeoPropertyTool): Tool to handle the property
+	dialog.
+
+	* drgeo_gtkstyle.cc (edit): Replace sprintf by the safer snprintf
+	functions.
+
+2001-07-19  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_gtkproperty.h (class drgeoGtkPropertyDialog): Object to
+	handle the geometryObject property.
+
+	* drgeo_drawable.h: Add the abstract drgeoPropertyDialog.
+
+	* drgeo_menu.cc (drgeo_menu): Add a property entry in the
+	drgeo_menu.
+
+2001-06-10  Hilaire Fernandes  <hilaire@ilios>
+
+	* drgeo_drawable.h: New virtual methods startCleanRendering,
+	updateRendering, endCleanRendering to manipulate the double
+	buffering feature from the drgeoTool object. Remove the black
+	screen bug.
+
+2001-06-09  Hilaire Fernandes  <hilaire@ilios>
+
+	* drgeo_tool.cc (handleMouseAt): The mouse cursor is no more flashy when
+	moving around. The tips are no more flashy.
+
+2001-03-14  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_line.cc (line): Hum this "parallele" french speeling had
+	the consequence to break the build parallel line function.
+
+2000-11-10  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_command.cc (drgeoCreateItemCommand): Check if the parent
+	already has a key in the hash table before adding it. If yes,
+	updade the XML backup with the curent key of the parent.
+
+2000-11-05  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_command.cc (~drgeoCreateItemCommand): Remove the key of
+	the item created by this command when deleting this command.
+	(replaceParentKey): This method is used to update the xml backup
+	to adjust their key on the <parent> element .
+
+	* drgeo_figure.cc (addToUndoQueue): Empty the undo queue from the
+	current point to the end and add a new command in the queue.
+	(removeKeyFromHash): This method remove a key from the undo hash.
+
+	* drgeo_numeric.cc (save): Apparently I forgot - at least a 5
+	month bug - to implement the code to save free value on XML file.
+
+2000-11-04  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_gtkmacro.cc (drgeoGtkStyleDialog): Change the signal for
+	the button callback from "clicked" to "pressed". This avoid
+	redundant call to the callback when changing the state of the
+	button.
+
+	* drgeo_drgeoVector.cc (operator -): New method to get the
+	opposite vector
+
+	* drgeo_command.h (class drgeoMoveItemCommand): Command to handle
+	undo/redo when moving an item.
+
+	* traite.h (updateItems): Translate mise_a_jour to updateItems.
+
+	* drgeo_figure.cc (getKeyFromValueOnHash): Get the key with value
+	matching the specified value.
+	(getValueFromKeyOnHash): Get value form specified key.  These two
+	function are used in the undo/redo mecanism and the associated
+	hash table.
+
+2000-10-29  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_command.cc (drgeoRemoveItemCommand): Command to create an
+	object.
+	(execute): Finaly use the same method as in
+	drgeoRemoveItemCommand::unexecute.
+
+	* drgeo_figure.cc (addToSelection): The new constructed items are
+	first temporarily in a GList before their construction and
+	inclusion through the undo pipe.
+	(updateUndoHashValue): This method upadate the hash table value
+	matching the oldValue.
+
+	* drgeo_buildObject.h (build*): This functions now retrun a
+	geometricObject reference so we can use it for inclusion in the
+	undo/redo pipe.
+
+2000-10-28  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* traite.cc (usedItem): Check with better boundary.
+
+	* drgeo_geometricObject.cc (dependOn): Check up to the parents so
+	we can check for relative dependence.
+
+2000-10-27  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_figure.cc (redo/undo): Better clear the various list
+	containing reference to geometric item when performing a
+	redo/undo.
+
+2000-10-26  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_vector.cc (vector,save): The origin of a representer
+	vector was not saved, fix that.
+
+	* drgeo_figure.cc (redo, undo): This methods call the command.
+
+2000-10-24  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_figure.cc (addUndoHash): Add key/value to the undo hash
+	table. Usually only parent of item are concerned by this
+	operation.
+
+	* drgeo_command.cc (drgeoRemoveItemCommannd): Command to remove an
+	item.
+
+2000-10-23  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_figure.cc (updateUndoHash): This method update the hash
+	table used in the undo process, especially when item are deleted
+	or created. It update key (item id) / value (item ref.), this
+	method concerns parent item which were delete and recreated.
+
+2000-10-22  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_figure.h: undoHash is hash table used in the undo/redo
+	mecanism. undoLevel is double list containing the undo/redo
+	chunck. It holds a reference to the actual undo chunk. The next
+	element refers to an undo operation, the previous to a redo
+	operation.
+
+2000-09-19  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_gtkdrawable.cc (showTip): Shift a bit the tooltip
+	position.
+
+	* drgeo_drawable.h (setCursor): Virtual method to change the
+	cursor shape.
+
+2000-08-15  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_gtkdrawable.cc (moveCallback): Here is handled double
+	buffering when required - the user moves the figure. Double
+	buffering is dynamicly used: buffer created when a move process
+	starts then freed at stops. The process is X-server side so it
+	should be usable with X-terminal.
+
+	* drgeo_gtkdrawable.h: Add 2 GdkPixmap* private members:
+	doubleBuffering and paintThere. The first one hold a reference of
+	a GdkPixmap to process double buffering, the second one hold the
+	reference of the GdkDrawable where the drawing process take place.
+ 
+	* drgeo_gtkdrawable.cc (drgeoGtkDrawable): Add
+	GDK_POINTER_MOTION_HINT_MASK to the set_events call. This make the
+	refresh more responsible when long calculation is required for the
+	figure.
+
+2000-08-14  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* The DrGeoMDIChild has a specific tool-bar using the Frédéric
+	Toussaint icons.
+
+	* drgeo_menu.h: Various handlers for the DrGeoMDIChild tool-bar.
+
+	* drgeo_menu.cc (on_menuBar_orientation_changed): When the
+	DrGeoMDIChild tool-bar changes of orientation, this handler
+	changes the orientation of the sub-bars and the Gtk separators of
+	the tool-bar.
+
+2000-07-01  Hilaire Fernandes  <hilaire@ofset.org>
+
+	* drgeo_figure.cc (drgeoFigure, saveAs, exportToXXX): Fix a
+	problem with locale when saving, loading or exporting geometric
+	figure. Before doing such operation, I first switch to the 'C'
+	locale so floating number are always like 3.14 and not 3,14 as
+	this can happen with french locale for example. Thanks to Frédéric
+	Bonnaud to show me this problem.
+
+2000-06-19  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgeo_postscriptdrawable.[cc/h]: Patch from Frédéric Bonnaud
+	(tux.le.pengouin@free.fr) to export eps file. I rework it a bit to
+	make it dependable from drgeo_latexdrawable object. Hopefully it's
+	a bit smaller.
+
+2000-05-24  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgeo_gtkdrawable.cc (drawSegment): I clarify the situation
+	between invisible (in situation when it needs to be displayed) and
+	visible dashed line. Invisible line are displayed dashed with two
+	colors: yellow and the original. Visible dashed line are displayed
+	as expected.
+
+2000-05-21  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgeo_latexdrawable.cc (drawText): Put text using the rput
+	command of pstricks.
+
+	* drgeo_figure.cc (exportToLatex): Set default size of paper to
+	A4.
+
+	* drgeo_latexdrawable.cc: Point, segment, line, half-line, circle,
+	arc circle can be exported to latex. The object are clipped inside
+	a frame.
+
+2000-05-20  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgeo_menu.cc (drgeo_zoom_xxx_cb): Change the zoom factors.  
+
+	* drgeo_gtkdrawable.cc (drgeoGtkDrawable): Change the scale for a
+	zoom of 100% to 30 so that when exporting to latex the figure are
+	not too big.
+
+	* drgeo_drawable.h: Add method getAreaCenter() and getAreaSize(),
+	so we can get info about the area. Make some virtual method not
+	pure virtual as I don't need them in the latexDrawable and
+	probably in other kind of drawable we may implement in future.
+
+	* drgeo_figure.cc (exportToLatex): This method build a
+	latexDrawable and draw the figure inside (in a file, eh!).
+
+	* Makefile.am (CXXFLAGS): Use -O2 optimizing flag. This make the
+	locus engine a bit faster.
+
+2000-05-19  Hilaire Fernandes  <hilaire@seul.org>
+
+	* define.h (LOCUS_SAMPLE): Change to 120 samples per locus. This
+	doesn't mean there is 120 samples per locus. It's a maximum size.
+
+	* drgeo_locus.cc (update): Improve a bit: in particular the
+	distance limit was wrong. If one sample goes wrong try to decrease
+	the sampling step to catch a good one.
+
+2000-05-18  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgeo_locus.cc (update): Implement a variable step sampler for
+	locus. Not that good yet.
+
+2000-05-17  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgeo_gtkmacro.cc (setExpression): When changing a free value
+	the update was not performed. Fix that.
+	(edit): When geometricObject's name attribute is void, set an
+	empty string in the text edit widget of the style dialog.
+
+	* drgeo_point.cc (save): The extra attribute of intersection point
+	was not saved/loaded. Fix that.
+
+2000-05-16  Laurent Gauthier <lolo@seul.org>
+
+	* drgeo_angle.cc (save): when saving an angle object it was saved
+	as a "line" object.  This was wrong.  Now saved as an "angle"
+	object.
+
+2000-05-07  Hilaire Fernandes  <hilaire@seul.org>
+
+	* All the geometric engine has been rewritten, i should note that
+	somewhere --> A lot of work has been done there.
+
+	* define.h: Remove obsolete macro.
+
+	* drgeo_tool.cc (handleChoice): Check if item->getName () is not
+	NULL as object name are now dynamicly allocated.
+
+2000-03-09  Hilaire Fernandes  <hilaire@seul.org>
+
+	* segment.h (class
+	reflexion_segment/symetrie/rotation/homothetie): Today I got the
+	bad luck to get a bug appear during a teaching lesson with my
+	students. Fix that!! parents () method was not overload during
+	heritage.
+
+2000-03-08  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgeo_figure.cc (xmlSetName): Object name was not updated
+	correctly when loaded. Fix that.
+
+	* drgeo_gtkdrawable.cc (setScale): Upate the rulers when the user
+	zoom on the figure.
+	(showTip): Tooltips are displayed inside a yellow box. FIXME: I've
+	to use ascent and descent font attribute. Using Gtk tooltips may
+	even be better.
+
+2000-02-12  Hilaire Fernandes  <hilaire@seul.org>
+
+	* macro.h (macro, setDescription): Bugs fix.
+
+2000-02-10  Hilaire Fernandes  <hilaire@seul.org>
+
+	* Makefile.am (gladedir): Adapt the gladedir path so the .glade
+	get a chance to be find.
+
+Tue Feb 08 20:00:40 2000  George Lebl <jirka@5z.com>
+
+	* drgeo_gtkmacro.cc,drgeo_gtkdrawable.cc,Makefile.am: use the
+	  DRGENIUS_GLADEDIR correctly
+
+Sun Feb 06 22:06:17 2000  George Lebl <jirka@5z.com>
+
+	* drgeo_menu.cc: add a terminator to one of the menus to make it
+	  actually run on my box :)
+
+Sun Feb 06 15:37:14 2000  George Lebl <jirka@5z.com>
+
+	* Makefile.am: define DRGENIUS_GLADEDIR
+
+	* drgeo_gtkdrawable.cc,drgeo_gtkmacro.cc: use the above define to
+	  find .glade files
+
+2000-02-03  Hilaire Fernandes  <hilaire@seul.org>
+
+	* DevelopersFAQ: Aie! The XML macro implementation was partialy
+	broken and cause some macro not valid once saved. This one resolve
+	the issue.
+
+2000-02-02  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgeo_macro.cc (add): Bug fixes: update all the figure after the
+	macro is played.
+
+	* macro.h (macro): Better boundary check.
+	(setDescription): Better boundary check.
+
+2000-01-31  Hilaire Fernandes  <hilaire@seul.org>
+
+	* macro.cc (loadKernel): Helper function to load intermediate and
+	output kernel from a XML tree. Used to construct a macro. The
+	xmllNodePtr should point on kernel element.
+	(drgeoMacroRegistry::load): Load & build a macro from a XML tree
+	in the macro registry.
+
+2000-01-27  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgeo_macro.cc (createMacro): Bug fixes, input kernel macro
+	must have the param_f set to false.
+
+2000-01-25  Hilaire Fernandes  <hilaire@seul.org>
+
+	* xml.cc (xml_get_value_char): Fix a minor bug so we can parse
+	signed char correctly.
+
+2000-01-22  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgeo_gtkmacro.cc (style_size_button_cb): Correct cast without
+	warning and crash ;-).
+
+	* drgeo_dialog.cc (drgeo_size_button_cb): Fix the warning, 
+	the casts are somewhat tricky.
+
+2000-01-21  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgeo_gtkmacro.cc (hdrgeoGtkMacroPlayDialog::andleSelect): 
+	Inform the player of the newly selected macro. Update 
+	the dialog text buffer with the macro description.
+	(play_delete_event_cb): Fixed.
+
+	* drgeo_macro.cc (drgeoMacroPlayer::itemsUnderMouseForMacro): 
+	This method check if an item is selectable regarding the selected
+	macro and already selected itetms.
+
+	* drgeo_gtkmacro.cc (drgeoGtkMacroPlayDialog::handleUnSelect): 
+	Update macro description buffer in case the user change it.	
+	(drgeoGtkMacroPlayDialog::add): Call the macro player to add
+	an item. From there, no item type check - regarding the macro -
+	are necessary, this has been done in drgeoFigure::mouseSelection.
+	When enought items are selected for the selected macro, we
+	promptly play the macro.
+
+	* drgeo_figure.cc (mouseSelection): From there, we select correct 
+	item regarding the selected macro and the already selected item.
+
+2000-01-20  Hilaire Fernandes  <hilaire@seul.org>
+
+	* macro.h (class macro): Add a new method setDescription() 
+	so we can change the description of a macro-construction.
+	(macro::macro): Check string size before the copy of the
+	name and description.
+
+	* drgeo_gtkmacro.cc (delete_event_cb): Fixed, cause seg. fault
+	when closing the drgeoMacroBuildDialog. The 'delete_event' callback
+	expect 3 arguments.
+	(drgeoGtkMacroPlayDialog): Now use the glade dialog box.
+
+	* drgeo_tool.cc (drgeoMacroPlayTool::initialize): 
+	Now use the drgeoMacroPlayer.
+
+	* drgeo_macro.h: New class drgeoMacroPlayer 
+	to playe macro construction.
+
+2000-01-19  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgeo_gtkmacro.h: Use glade designed druid dialog to 
+	build a macro-construction. (Caution : you have to install dr-genius
+	so the .glade files are properly installed).
+
+2000-01-15  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgeo_gtkmacro.cc (add): Remove re-selected items from the input
+	or input gtk_clist.
+
+	* drgeo_macro.h: Add drgeoMacroDescriptionMode to the 
+	enum drgeoMacroMode, so we can use it in the setMode method.
+
+	* drgeo_figure.cc (setSelection): At least write this method.
+
+	* drgeo_macro.h : When building macro-construction, make the selected
+	items bink.
+
+2000-01-13  Hilaire Fernandes  <hilaire@seul.org>
+
+	* macro.cc (xmlAddKernel): This function add a macro kernel in the three.
+	(drgeoMacroRegistry::save): Written. Not tested.
+
+	* macro.h: In class drgeoMacroRegistry add the function 
+	load () and save (). load () built a macro given a macro XML tree.
+	save () build a macro XML tree given a macro name.
+
+	* DevelopersFAQ: I should not work too late. My last proposal was just 
+	non sense. I hope this one is ok :).
+	(Note): Well I update it again, ref attribute is an order-number and not an
+	arbitrary unique string, I don't want to go through hash table, this
+	is not as necessary as in the figure.
+
+2000-01-12  Hilaire Fernandes  <hilaire@seul.org>
+
+	* DevelopersFAQ: Proposal for encoding macro-construction
+	in XML.
+
+	* drgeo_gtkdrawable.cc (drawPoint): Add the style.
+	(drawSegment): Add the style.
+	(drawCircle): Add the style.
+	(drawArc): Add the style.
+	
+	I still need a proper solution to display invisible object
+	when in MISE_EN_FORME_MODE !
+
+	* drgeo_menu.cc (drgeo_select_cb, etc.): Add a refresh-area call, 
+	so invisible object can appear or disappear depending on the
+	mode we move.
+
+	* drgeo_figure.cc (mouseSelection, itemsUnderMouse): 
+	Proper handle of invisible object.
+
+2000-01-10  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgeo_menu.cc (drgeo_menu): Add a zoom menu entrty to the
+	popup menu.
+
+1999-12-13  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgeo_gtkdrawable.cc (on_zoom_valeur_changed): Signal handler for 
+	the zoom combo. Laurent, the combo widget come from the glade file.
+
+1999-12-06  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgeo_figure.cc (xmlBuildItem): Finish encoding all the XML load item.
+
+1999-12-04  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgeo_figure.cc (xmlBuildItem): The load xml structure is mostly 
+	there. Only three item type are loaded but this all the same for  
+	the other item, I just have to write it. We need a common interface
+	to load and save in XML.
+
+1999-12-03  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgeo_figure.h: Add flag blinkOn to toggle on/off the blinking 
+	selection.
+	Add the methode addToFigureListNoRedraw() to item to selection list 
+	without	redrawing it.
+
+1999-12-01  Hilaire Fernandes  <hilaire@seul.org>
+
+
+	* drgeo_figure.h: Add a new constructor to the drgeoFigure class.
+	This constructor expect an xmlNodePtr on a <drgeo> element. The xml
+	file should be open from the mdi level and send to the respective view
+	builder the interesting tree. 
+	Add the static function xmlBuildItem() and xmlInsertParent.
+	This is helper function to build a Dr Geo figure from a XML file.
+	
+
+1999-11-28  Hilaire Fernandes  <hilaire@seul.org>
+
+	* XML save mode support for all geometric object..
+
+	* DevelopersFAQ(XML spec): Change <parent id=""/> to <parent ref=""/>.
+	Add two elements x and y to represent display coordinate.
+
+1999-11-27  Hilaire Fernandes  <hilaire@seul.org>
+
+	* Start adding support for xml save format. Only freepoint element
+	has been added (class point2). However, it's still possible to
+	load the old binary Dr Geo *.geo files.
+
+	* drgeo_figure.cc (saveAs): This function can ony save on xml
+	format. I've a problem somewhere in
+	drgenius_menus.c/really_save_cb complaining it can't save the
+	figure, even if saved.
+
+	* classbase.h (class figure_c): figure_c::sauve_disk() now reserve
+	as first parameter an XML node tree instead of a FILE handle.
+
+	* geoclass.cc (save_attribute): New function. This saves the
+	attributes of the item in parameter in the tree. The element is
+	already created, so xmlSetProp is only needed.
+	(xmlsAddParent) : Create a <parent> element with a correct
+	attribute.
+
+1999-11-26  Laurent Gauthier  <lolo@seul.org>
+
+	* drgeo_gtkdrawable.cc: Fixed Yellow and Blue colors.
+	
+	* drgeo_figure.cc: Removed creation of style dialog.  It is now
+	handled by drgeoStyleTool. 
+
+	* drgeo_tool.cc: created new drgeoStyleTool that will show the
+	style dialog as soon as you select an item on the figure.  The
+	dialog is automatically updated when you select an other item on
+	the figure.  That way it is easy to change the style of several
+	items.
+
+1999-11-19  Laurent Gauthier  <lolo@seul.org>
+
+	* drgeo_gtkdrawable.cc: Fixed a problem with the drgeoColorBlue
+	color, which was in fact wrongly defined as grey.
+
+	* drgeo_gtkmacro.cc (drgeoGtkStyleDialog): Now changed the way the
+	style dialog is handled.  It is now created and manipulated
+	completely outside of drgeoFigure class.  The dialog itself is
+	created by invoking a method from drgeoDrawableUI class.
+
+	* drgeo_figure.cc, drgeo_drawable.cc: Moved the time out handler
+	for blinking outside of the drgeoFigure as well.  This is to have
+	no code dependent on GNOME or Gtk in drgeoFigure class and in all
+	the figure_c sub-classes.
+
+1999-11-24  Hilaire Fernandes  <hilaire@seul.org>
+
+	* DevelopersFAQ : Put there the specification for the xml file format 
+	in Dr Geo figure.
+
+1999-11-16  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgeo_figure.h/cc: Add a mechanism to highlight the selected element.
+	Selected element are taken from drgeoFigure:selection list. So to 
+	highlight an item just push it in drgeoFigure::selection list.
+	Add static flashSelection method. This method is attached to a timer 
+	for each new drgeoFigure instance. 
+	Add highlightItem list also, so flashSelection() can know which element
+	are highlit. 
+
+1999-11-16  Laurent Gauthier  <lolo@seul.org>
+
+	* macro.cc (play): macro execution is now almost working.  There
+	is still a small bug I don't get yet, but I will find it, damnit! :-)
+
+1999-11-14  Laurent Gauthier  <lolo@seul.org>
+
+	* We now have a graphical interface to play macros, but it is
+	still not completely working.
+	
+	* drgeo_drawable.h (drgeoDrawableUI): Added a method named
+	createMacroPlayDialog to create a dialog to play macros.
+	
+	* drgeo_gtkdrawable.h (drgeoGtkDrawableUI): Added a method named
+	createMacroPlayDialog to create a drgeoGtkMacroPlayDialog.
+
+	* macro.cc (drgeoMacroRegistry): Created this new class.
+
+	* drgeo_tool.cc (drgeoMacroPlayTool): Created this new class.
+	
+	* drgeo_menu.cc: Plugged the new tool to play macros in the menus.
+
+	* drgeo_gtkmacro.cc (drgeoMacroPlayDialog): Created this new class
+	which is managing the dialog interface to play macros.
+
+1999-11-11  Laurent Gauthier  <lolo@seul.org>
+
+	* drgeo_figure.h: Changed the name of all the build* members of
+	the class drgeoFigure, to have a name ending with Filter.  This
+	name is matching more precisely the meaning of these objects.  Of
+	course I have adapted the code to match this change in
+	drgeo_figure.cc and also drgeo_menu.cc.  I have also updated the
+	comment describing their role in drgeo_figure.h, please Hilaire
+	could you check that the information is correct.
+
+1999-11-13  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgeo_gtkdrawable.cc (drawHalfLine): Implement external clipping.
+
+1999-11-12  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgeo_gtkdrawable.cc (drawLine): Implement external clipping.
+
+	* drgeo_type.cc/h : New files for drgeo type definitions. For now
+	compexe and vecteur_s (ie point_s, drgeoCoord). There is no more
+	class drgeoCoord. To compute a distance do sqrt((a-m)*(a-m)).
+	Remove the complexe.cc/h files.
+
+1999-11-11  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgeo.cc/Makefile.am: Remove the drgeo.cc file
+
+1999-11-09  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgeo_gtkdrawable.cc (drgeoGtkDrawable): Add a Dr Geo toolbar 
+	to each figure view.
+
+1999-11-04  Hilaire Fernandes  <hilaire@seul.org>
+
+	* mode_obj.h (class creer_figure_c): add void type to 
+	creer_figure_c::init_class function.
+
+1999-10-30  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgeo_dialog.cc (drgeo_change_name_cb): Written.
+	(drgeo_change_expression_cb): Written.
+
+1999-10-29  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgeo_dialog.cc (pack_drgeo_style_component): Adjust the different
+	radio buttons to the characteristics of the selected item.
+	Add a static variable selected_figure to be used in the style dialog
+	callback. Finish coding all the callback but the text entry ones.
+	Graphic routine need to be updated as line width, point shape and filled
+	items.
+
+	* geoclass.cc (sauver_parametre_base, lire_parametre_base):
+	Now read/save the style parameters (filled figure and shape).
+
+	* drgeo_figure.h: In class drgeoStyle add pointShape member.
+
+	* drgeo_tool.cc (handleChoice): Check item for null.
+
+	* main.cc/h, traite.cc/h : Remove dead code. Moved in class drgeoMacro.
+	
+	* drgeo_macro.cc (checkParameters): Written.
+	(createMacro): Written.
+
+	* drgeo_macro.h: Remove drgeoMacro class. Instead use macro class
+	included from macro.cc/h files.
+	(addInput, addOutput): Additional check and condition.
+
+	* drgeo_macro.cc (kernel_position): New function to build the macro
+	builder (this is almost position_noyau from traite.cc).
+
+1999-10-28  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgeo_dialog.cc: Remove dead code (delete_dialog function).
+
+	* drgeo_tool.cc (handleChoice): several fixes.
+
+	* finisih coding the style dialog box. Nothing connected yet.
+
+1999-10-28  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgeo_menu.cc (drgeo_menu): add an entry in the popup menu to
+	change the style of an object.
+
+1999-10-28  Laurent Gauthier  <lolo@seul.org>
+
+	* drgeo_gtkdrawable.cc: removed the need for drgeo_init() by
+	initializing the popup menu at drgeoDrawableUI creation time.
+
+1999-10-28  Laurent Gauthier  <lolo@seul.org>
+
+	* drgeo_menu.cc: activated "macro creation" menu.  Modified code
+	to use drgeoDrawableUI class instead of simply drgeoDrawable.
+	Updated the code for the drgeoDeleteTool.
+
+	* drgeo_macro.cc/h: new code related to macro creation.  Hilaire
+	please look into drgeo_macro.cc, you have code to produce there
+	:-).  Just in case you were wondering what to do next.
+
+	* drgeo_gtkmacro.cc/h: new code related to macro creation.  This
+	code is creating a dialog.  It is not complete yet.
+
+	* drgeo_drawable.cc: reorganization of the drgeoDrawable class,
+	there is now a new class named drgeoDrawableUI, which is extending
+	drgeoDrawable with user interaction methods.  In particular new
+	important new methods are:
+	  - bool askOkCancel (char *message);
+	  - void macroBuildDialog (drgeoMacroBuilder *builder);
+	
+	* drgeo_figure.cc: removed method partialRedraw as this case is
+	now directly handled by the redraw method.  Added two new methods
+	named hideRemovedItems (figure_c *item) and showRemovedItems ().
+	The confirmation for deletion is now handled by the
+	drgeoDeleteTool class, and this addToSelection method is just
+	doing the remove unconditionnally (please code this hilaire :-).
+	This change is solving problem of expose event.
+
+1999-10-28  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgeo_dialog.cc (drgeo_style_dialog): New function that popup a dialog
+	to change the style of an object
+	(pack_drgeo_style_component): this function pack the style tools on 
+	a dialog
+
+	* Makefile.am (libdrgeo_a_SOURCES): Change drgeo.c to drgeo.cc, it's
+	incredible how c++ and c files doesn't mix well.
+
+	* drgeo_gtkdrawable.h: Move color array in public, I need this for 
+	the style dialog
+
+1999-10-27  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgeo_drawable.cc (refresh): modification to execut partialRedraw when 
+	expose event occure
+
+	* drgeo_figure.cc (addToSelection): start implementing the delete
+	object code. There is some problem with the expose event as in this
+	case we don't want to display the object to delete.
+
+	* drgeo_menu.cc (drgeo_delete_cb): add this method and a the entry
+	"Delete an object" in the popup menu
+
+	* drgeo_dialog.cc (delete_item_confirmation): new method who supply
+	a modal messagebox to confirm deletion.
+
+	* drgeo_figure.h: new method doesItemExist, this is almost
+	fig_existe from the traite.* files.
+	Add getFigureList method, I will remove it latter (this is for the
+	locus builder function in main.cc)
+
+	* main.h: Change the parameter list of the builder function and use
+	the addToFigureList and doesItemExist methods
+
+1999-10-26  Hilaire Fernandes  <hilaire@seul.org>
+
+	* add files drgeo_dialog.[cc/h], this is where are created 
+	dialogs. There, new dialog to enter free value, this use the 
+	gnome_number_entry so the user can popup a calculator.
+	However the history list of the entry is not working yet.
+	To use this new dialog, the user must be in "Distance & length"
+	mode and click on the background, the dialog will appear.
+
+	* drgeo.c (drgeo_init): call to build_drgeo_widget(), this
+	function init nothing now
+
+	* drgeo_figure.*: new method addToFigureList to add item to
+	figureList and freeFigureList. Should simplify code in main.cc
+
+	* vecteur.cc (appartient): put back the correct shape for
+	a vector. This time, the arrow has a fixed size.
+
+	* angle.cc (dessine): put back the shape (arcCircle or square) 
+	of geometric angle formed by three point
+
+	* main.cc (coordonnees): compute the offset to place the coordinates
+
+	* coordonnees.cc (dessine): put back the vertical line for 
+	the coordinates
+
+	* angle.cc (dessine): place correctly the angle measure string
+
+	* adjuste the actualise methods to use stringWidth and stringHeight
+	when need
+
+	* drgeo_gtkdrawable.cc (drawText): Remove the hard coded offset.
+	The offset will be supplied at object creation.
+
+	* drgeo_drawable.h, drgeo_gtkdrawable.*: add stringWidth and 
+	stringHeight methods
+	Add offset parameter to drawText method
+
+	* drgeo_figure.cc (mouseSelection): Remove range parameter, use 
+	drgeoDrawable to get the range
+	(itemsUnderMouse): Remove range, sous_souris and figureList parameter
+	as the function is now a drgeoFigure method it can get them directly 
+	throught the class
+
+1999-10-23  Hilaire Fernandes  <hilaire@seul.org>
+
+	* traite.cc (mise_a_jour): small optimisation
+
+	* lieu.cc (dessine): use the pixeltoWorld method
+
+	* drgeo_drawable.h drgeogtkdrawable: add pixelToWorld & worldToPixel 
+	methods to drgeoDrawable
+
+	* traite.cc: remove dead code
+
+	* drgeo_figure.h: add a macro pointer (selectedMacro)
+
+1999-10-21  Laurent Gauthier  <lolo@seul.org>
+
+	* traite.cc (fig_du_plan_sous_souris): now its a method of
+	drgeoFigure class.
+	
+	* drgeo_figure.cc (drgeoFigure::itemsUnderMouse): new private
+	method coming from traite.cc:fig_du_plan_sous_souris().
+
+	* drgeo_tool.cc (drgeoSelectTool::handleChoice): clear selection
+	before adding a new item.  This fixes a small problem in the
+	select tool, when moving items.
+	(drgeoBuildTool): removing dead code.  It makes this class a lot
+	simpler and more to the point.
+
+	* drgeo_gtkdrawable.cc (drgeoGtkDrawable::pressCallback): now
+	handlePress() is invoked only when button 1 is pressed.  This
+	fixes a small problem with the contextual menu.
+	
+1999-10-20  Hilaire Fernandes  <hilaire@seul.org>
+
+	* lieu.cc: remove the dummy mise_a_jour()
+	update actualise function
+
+	* traite.cc (mise_a_jour): add liste_elem * parameter
+
+1999-10-19  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgeo_menu.cc: add the callback for all construction but the macro.
+	Well, this means almost all the construction tool are back :)
+	Laurent, there is a bug with the selectTool I can't find.
+
+	* Remove the file drgeo_menu.c and add the file drgeo_menu.cc
+
+1999-10-18  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgeo_menu.c: add a 'Move an object' item on the popup menu. Add callback
+
+	* drgeo_drawable.cc (drgeoDrawable): initialise selectTool and buildTool pointer
+
+	* drgeo_drawable.h: add pointer to drgeoSelectTool and drgeoBuildTool
+
+1999-10-18  Laurent Gauthier  <lolo@seul.org>
+
+	* demi_droite.cc (dessine): fixed a bug.  The vector directing the
+	half-line was badly computed.
+
+	* drgeo_gtkdrawable.cc: adapted the code for popup menus a little
+	bit.  We no longer need a global initialization at startup.
+
+1999-10-17  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgeo_tool.h: new class drgeoBuildTool to handle event mechanism 
+	in the construction of geometric objects. Make a review Laurent, 
+	c'est pratiquement la même que drgeoSelectTool
+
+	* drgeo_gtkdrawable.cc (drgeoGtkDrawable): attach a popup menu to 
+	the drawing area
+
+	* Makefile.am (libdrgeo_a_SOURCES): add new files drgeo_menu.[h/c] 
+	and drgeo.c
+
+1999-10-17  Laurent Gauthier  <lolo@seul.org>
+
+	* GNOME code: the open, save and save as... menus are now
+	working. 
+
+	* lieu.cc (actualise): removed references to function
+	mise_a_jour().
+
+	* traite.cc: temporary hacks to have the code working.
+
+	* gui.cc, gui.h, graphic.cc, graphic.h: removed.  Also removed
+	dead code from traite.cc and main.cc.
+
+1999-10-16  Laurent Gauthier  <lolo@seul.org>
+
+	* drgeo_figure.cc (saveAs): All the save operation are done in the
+	new file now.
+
+1999-10-14  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgeo_figure.cc (drgeoFigure): mode is set by default 
+	to SOURIS_SELECT_MODE
+
+1999-10-14  Laurent Gauthier  <lolo@seul.org>
+
+	* drgeo_tool.cc: Improved drgeoSelectTool to support move and
+	select mode at the same time.  The most powerful feature is that
+	it is now easy to select one item using a popup menu and then move
+	it with the mouse.  Try it.
+
+	* drgeo_figure.cc: temporarily modified addToSelection().
+
+	* other: fixed problems in actualise methods, the old methods
+	where doing computation with pixels on screen.  Not everything is
+	fixed yet.
+
+1999-10-10  Laurent Gauthier  <lolo@seul.org>
+
+	* drgeo_gtkdrawable.cc (drawArc): added this new method to draw
+	arcs.
+	
+	* drgeo_gtkdrawable.cc: adapted most of the drawing methods to use
+	color information while drawing.
+
+1999-10-09  Laurent Gauthier  <lolo@seul.org>
+
+	* classbase.h (class figure_c): adding a drgeoStyle member to
+	class figure_c.  This is where the style (color, etc...)
+	information for the item.  This data is passed to the drawing
+	routines.  Adapted all the source files that needed it.
+
+1999-10-10  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgeo_drawable.cc (refresh): change xxx to FALSE. Laurent, if you want 
+	line choose another figure, in droite_euler.geo they are hidden :)
+
+	* drgeo_figure.cc (redraw): update the comment about the redraw() parameter
+
+1999-10-09  Laurent Gauthier  <lolo@seul.org>
+
+	* demi_droite.cc (dessine): Now using drawHalfLine.
+
+	* segment.cc (dessine): Now using drawSegment.
+
+1999-10-08  Laurent Gauthier  <lolo@seul.org>
+
+	* drgeo_figure.cc (redraw): Updated comments.  Please Hilaire
+	could you explain the meaning of the parameter of redraw().
+
+1999-10-07  Laurent Gauthier  <lolo@seul.org>
+
+	* drgeo_tool.cc (drgeoSelectTool): temporary hack to hide tips
+	when they are no longer needed.  I will implement a better
+	solution later.
+
+1999-10-05  Laurent Gauthier  <lolo@seul.org>
+
+	* drgeo_drawable.* (setTool): added a new method to set the
+	current tool.  This tool is an object of class drgeoTool (or a
+	sub-class) that defines the response of the application to the
+	user interaction.  Have a look to definition of the
+	drgeoSelectTool class in drgeo_tool.cc for an example.
+
+	* drgeo_tool.h: Defined a new drgeoTool class and some sub-classes
+	that inherit from it.
+
+	* drgeo_figure.cc (addToSelection): made some fixes for the case
+	where buildItem is NULL.
+	(mouseSelection): idem.
+	(drgeoFigure): default value for buildItem is NULL.
+
+	* Other: various changes and fixes, the application when you open
+	a new figure is displaying the file droite_euler.geo.  This is
+	hard coded for now (used for testing purpose).
+
+	* Hilaire:  I think that using the new drgeoTool mechanism we will
+	be able to get rid of the way addToSelection is implemented right
+	now (in particular the parameter for the mouse position can be
+	removed).  In my view creation of new items must be handled using
+	this mechanism.
+
+1999-10-02  Laurent Gauthier  <lolo@seul.org>
+
+	* drgeo_drawable.h (drgeoDrawable): showTip was not declared
+	as a pure virtual method, and this was preventing link with
+	very unclear error messages.
+
+1999-09-30  Hilaire Fernandes  <hilaire@seul.org>
+
+	* geometric class files: update dessine method of all geometric
+	objects
+
+	* Makefile.am: remove drgeo entry
+	(libdrgeo_a_SOURCES): add files to compile
+
+	* traite.cc (fig_du_plan_sous_souris): add parameters in
+	the declaration list
+
+	* drgeo_figure.h: add liste_elem macroInput and macroOutput variables
+
+	* traite.cc (fig_existe): add liste_elem & parameter in 
+	the declaration list
+
+1999-09-30  Laurent Gauthier  <lolo@seul.org>
+
+	* drgeo_drawable.h (drgeoDrawable): Added definition of pure
+	virtual methods drawLine, drawHalfLine, drawSegment.
+
+	* drgeo_gtkdrawable.h (drgeoGtkDrawable): Added appropriate method
+	prototypes.
+
+	* drgeo_gtkdrawable.cc (drawHalfLine): Implemented, but not yet
+	tested. 
+	(drawSegment): Implemented, but not yet tested.
+	(drawLine): Infinished.
+
+1999-09-28  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgeo_figure.cc (addToSelection): add convention on parameter & 
+	complete the prototype
+
+	* classbase.h (class figure_c & derived class): in function dessine
+	change ecran parameter type to drgeoDrawable
+
+	* traite.cc (fig_existe): add parameter liste_elem & liste_figure
+
+	* geometric class files: remove gettext header, conflict with gnome 
+	header
+
+	* drgeo_figure.h/.cc: cleaning to allow compilation of dr-genius2
+
+1999-09-28  Laurent Gauthier  <lolo@seul.org>
+
+	* drgeo_*: Changes to make the code compile.  Actually drgeoDrawable
+	and drgeoGtkDrawable are compiling.  Please Hilaire could you have a
+	look at drgeo_figure.cc.  There are big compilation problems right
+	now.
+
+	* drgeo_figure.h (drgeoFigure): replaced all references to
+	(liste_elem) by (liste_elem *) in parameters of methods and return
+	values as I feel its much more appropriate.
+	
+	* drgeo_*: Implementation of the various methods greatly
+	improved.  Removed some debugging code.
+	
+	* Makefile.am (libdrgeo_a_SOURCES): Added drgeo_figure.cc, but the
+	compilation is currently broken.
+
+
+1999-09-26  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgeo_figure.cc (redraw): add hidden flag to specify if hidden items
+	must be redrawn
+
+	* main.cc (coordonnees): Laurent, I got a problem there:
+	I need to place some text with a pixel offset from a point item
+
+	* main.h/.cc: change parameters list of functions point_libre() until
+	coordonnees() and their internals to be MDI compliant
+
+	* drgeo_figure.h: add &drgeoCoord parameter to addToSelection
+
+	* drgeo_figure.cc (mouseSelection): updated to use mouse &
+	range parameters
+
+	* geometric class files: updated the member function appartient
+	to receive real world mouse coordinates and range factor
+
+	* coordonnees.cc/valeur.cc/equation.cc (appartient): 
+	Can't use the range argument here, 
+	I need to convert pixel (size) in real world coordinate.
+
+1999-09-25  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgeo_drawable.h: change float to double. I need this when 
+	point are sent to the `infinit'
+
+1999-09-25    <lolo@seul.org>
+
+	* drgeo_figure.h: Updated prototypes for drag and drop methods.
+	
+	* drgeo_figure.cc (isSaved): fixed the name of the method (was
+	  usSaved).
+
+	* dgreo_figure.h/cc (mouseSelection): the method is now receiving
+	  the coordinates of the mouse as a parameter, and also a range
+	  for proximity.
+
+1999-09-25  Hilaire Fernandes  <hilaire@seul.org>
+
+	* mode_obj.cc (utilisable1): Rewritten
+
+	* drgeo_figure.cc:  start defining drgeoFigure member functions
+	(drgeoFigure): both written
+	(save): written
+	(saveAs): written, actually it doesn't change fileName
+	(clear): written, no redraw is performed from there
+	(redraw): written
+
+1999-09-24  Hilaire Fernandes  <hilaire@seul.org>
+
+	* drgeo_figure.h: prototype for the drgeoFigure class
+
+	* drgeo_drawable.cc/.h: add copyright notice 
+
+	* drgeo_drawable.h: move drgeoFigure class in drgeo_figure.h
+
+	* drgeo_figure.h/.cc: new files for the drgeoFigure class
+
+1999-09-23   Laurent Gauthier <lolo@seul.org>
+
+	* Makefile.am (libdrgeo_a_SOURCES): Changed the content of the
+	  drgeo library.  It is now composed of only two files (for now)
+	  drgeo_drawable.cc and drgeo_gtkdrawable.cc that are the start of
+	  the infrastructure I'm proposing for DrGeo.
+
+	* drgeo_drawable.cc, drgeo_drawable.h:  New files implementing the
+	  generic drgeoDrawable class.
+	
+	* drgeo_gtkdrawable.cc, drgeo_gtkdrawable.h:  New files
+	  implementing the specific drgeoGtkDrawable class.
+
+1999-08-27    <hilaire@seul.org>
+
+	* src/gui.cc: Fix bug preventing Dr Geo to work with gtk lib > 1.2.3
+
+1999-08-18  Hilaire Fernandes  <hilaire.fernandes@iname.com>
+
+	* src/main.cc: move in the variable drgeoversion
+

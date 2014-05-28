@@ -1,0 +1,72 @@
+Dr. Geo an OFSET development
+===============================
+
+**********************************************************************
+
+ REPORTING BUGS							
+
+	Because Dr Geo is developped as a free software, it needs
+	you, users to report bugs.
+	If you find a bug do not hesitate to report it to
+	<ofset-drgenius-dev@lists.sourceforge.net>, if you can also 
+	send a file showing the bug in action, it's even better.
+		
+**********************************************************************
+
+
+Dr. Geo was at the beginning a merge of the genius calculator and
+Dr. Geo, an interactive geometry software. In fact all the geometry
+software has been rewritten, in the mean time the maintainer lose
+interest in the development of the genius calculator.  So instead of
+keeping unmaintained code which I can't maintain I decided to remove
+the calculator and I replace it with a scheme interpretor.
+
+CVS ACCESS
+==========
+
+To get the newest Dr. Geo source from the CVS, you need to have cvs
+installed, next you need to setup a few environmental variables.
+
+The first command you need is:
+export CVSROOT=':pserver:anonymous@anoncvs.gnome.org:/cvs/gnome'
+You might want to put this in your login script. 
+
+Then do the command:
+cvs login
+(there is no password, just hit return)
+
+cvs -z3 checkout drgeo
+
+
+To compile from the CVS you need to do the following:
+
+aclocal
+autoheader
+automake -a
+libtoolize -f
+intltoolize 
+autoconf
+autoheader
+./configure --prefix=/usr
+make
+
+
+Then for additional compilation, only the last step has to be done.
+Eventually when updating the CVS module you may need to restart all the
+steps.
+
+
+TAGS FOR EMACS
+==============
+
+
+You can build a list of tags to be used under Emacs with the following
+commands:
+
+etags --members *.c *.cc *.h geo/*.cc geo/*.h
+
+
+
+
+Hilaire Fernandes
+<hilaire@ofset.org>

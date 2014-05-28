@@ -1,0 +1,2404 @@
+# traducción de es.po al Spanish
+# translation of drgeo.HEAD.es.po to Spanish
+# Adrian Soto <adrianmatematico@yahoo.com.mx>
+# Miguel de Icaza,computo,622-4680 <miguel@metropolis.nuclecu.unam.mx>, 1998.
+# Pablo Saratxaga <pablo@mandrakesoft.com>, 1999,2000.
+# Francisco Javier F. Serrador <serrador@arrakis.es>, 2003.
+# Adrian Soto <adrianmatematico@yahoo.com.mx>, 2003,2004.
+# Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2004.
+msgid ""
+msgstr ""
+"Project-Id-Version: es\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-07-26 23:59+0200\n"
+"PO-Revision-Date: 2005-01-09 18:59-0700\n"
+"Last-Translator: Adrian Soto <adrianmatematico@yahoo.com.mx>\n"
+"Language-Team: Spanish <traductores@es.gnome.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.3.1\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: drgenius_main.cc:56
+#, c-format
+msgid ""
+"Command line options:\n"
+"Term under [] are options, || means OR:\n"
+"   drgeo [--file geo_file_name || macro_file_name] [geo_file_name.fgeo] "
+"[macro_file_name.mgeo] [--evaluate dsf_file_name] [--texmacs] [--help]\n"
+"\n"
+"--file       : to load a Dr. Geo file\n"
+"--evaluate   : to load and evaluate a Dr. Geo Scheme Figure (DSF)\n"
+"--texmacs    : start Dr. Geo as a TeXmacs plug-in\n"
+"--help       : this help summary\n"
+"\n"
+"Several files can be loaded using a --file command for each\n"
+"\n"
+msgstr ""
+"Opciones de línea de comandos:\n"
+"Los términos entre [] son opciones, || significa OR:\n"
+"   drgeo [--file geo_file_name || macro_file_name] [geo_file_name.fgeo] "
+"[macro_file_name.mgeo] [--evaluate dsf_file_name] [--texmacs] [--help]\n"
+"\n"
+"--file    : para cargar un archivo Dr. Geo\n"
+"--evaluate   : para cargar y evaluar una figura scheme  de Dr. Geo  (DSF)\n"
+"--texmacs: iniciar Dr.Geo como un complemento TeXmacs\n"
+"--help    : este resumen de ayuda\n"
+"\n"
+"Se pueden cargar varios archivos usando un comando --file para cada uno\n"
+"\n"
+
+#: drgenius_main.cc:160
+#, c-format
+msgid ""
+"\n"
+"Miss a filename in --file\n"
+"\n"
+msgstr ""
+"\n"
+"Falta un nombre de archivo en --file\n"
+"\n"
+
+#: drgenius_main.cc:172
+#, c-format
+msgid ""
+"\n"
+"Miss a filename to evaluate in --evaluate\n"
+"\n"
+msgstr ""
+"\n"
+"Falta un nombre de archivo para evaluar en --evaluate\n"
+
+#: drgenius_main.cc:196
+#, c-format
+msgid "Unknown file type: %s (try .fgeo, .mgeo)\n"
+msgstr "Tipo de archivo desconocido: %s (intente .fgeo, .mgeo)\n"
+
+#: drgenius_main.cc:200
+#, c-format
+msgid ""
+"\n"
+"Unknows command: %s\n"
+msgstr ""
+"\n"
+"Comando desconocido: %s\n"
+
+#: drgenius_mdi.cc:99
+msgid "Welcome to GNU Dr. Geo - Free Interactive geometry by OFSET"
+msgstr "Bienvenido a GNU Dr. Geo - Geometría interactiva libre por OFSET"
+
+#: drgenius_mdi.cc:149
+#, c-format
+msgid "Error loading file '%s'"
+msgstr "Error al cargar el archivo «%s» "
+
+#: drgenius_mdi.cc:592
+msgid "Are you sure to quit Dr. Geo?"
+msgstr "¿Está seguro de querer salir de Dr. Geo?"
+
+#: drgenius_mdi.cc:643 drgenius_mdi.cc:703
+#, c-format
+msgid "Can't open file '%s'"
+msgstr "Imposible abrir el archivo «%s»"
+
+#: drgenius_mdi.cc:668
+msgid "Open..."
+msgstr "Abrir..."
+
+#: drgenius_mdi.cc:727
+msgid "Evaluate..."
+msgstr "Evaluar...."
+
+#: drgenius_mdi.cc:767 drgenius_mdi.cc:797
+#, c-format
+msgid "Error saving to '%s'!"
+msgstr "Error al guardar archivo  «%s»!"
+
+#: drgenius_mdi.cc:829 drgenius_mdi.cc:859 drgenius_mdi.cc:890
+#: drgenius_mdi.cc:925
+#, c-format
+msgid "Error exporting to '%s'!"
+msgstr "¡Error al exportar «%s»!"
+
+#: drgenius_mdi.cc:943
+#, c-format
+msgid ""
+"Error exporting to '%s'!\n"
+"Exporting to PNG required the Image Magick package.\n"
+"Install it and try again!"
+msgstr ""
+"Error al exportar «%s»\n"
+"Para exportar al formato PNG se requiere el paquete ImageMagick.\n"
+"Instálelo y vuelva a intentarlo!"
+
+#: drgenius_mdi.cc:972
+msgid "Define the printing area"
+msgstr "Definir el área de impresión"
+
+#: drgenius_mdi.cc:1003 drgenius_mdi.cc:1087 drgenius_mdi.cc:1112
+#: drgenius_mdi.cc:1138 drgenius_mdi.cc:1165 drgenius_mdi.cc:1192
+#, c-format
+msgid ""
+"File '%s' exists!\n"
+"Overwrite?"
+msgstr ""
+"¡El archivo «%s» ya existe!\n"
+"¿Lo sobreescribo?"
+
+#: drgenius_mdi.cc:1027
+msgid "Save As..."
+msgstr "Guardar como..."
+
+#: drgenius_mdi.cc:1215 drgenius_mdi.cc:1865
+msgid "Interactive 2D Figure"
+msgstr "Figura 2D Interactiva"
+
+#: drgenius_mdi.cc:1216
+msgid "Console"
+msgstr "Consola"
+
+#: drgenius_mdi.cc:1217 drgenius_mdi.cc:1866
+msgid "Text Buffer"
+msgstr "Búfer de Texto"
+
+#: drgenius_mdi.cc:1241
+msgid "Type"
+msgstr "Tipo"
+
+#: drgenius_mdi.cc:1246 glade/drgeo2.glade.h:68
+msgid "Name"
+msgstr "Nombre"
+
+#. Next we add the list of avalaible macro-construction
+#: drgenius_mdi.cc:1280 drgenius_mdi.cc:1872 glade/drgeo2.glade.h:66
+msgid "Macro-construction"
+msgstr "Macro"
+
+#: drgenius_mdi.cc:1365
+msgid "Error printing the current figure!"
+msgstr "Error imprimiendo la figura actual."
+
+#: drgenius_mdi.cc:1409
+msgid ""
+"Only geometric figure\n"
+"can be exported to Flydraw!"
+msgstr ""
+"Sólo las figuras geométricas\n"
+"pueden ser exportadas a Flydraw"
+
+#: drgenius_mdi.cc:1426 drgenius_mdi.cc:1478 drgenius_mdi.cc:1529
+#: drgenius_mdi.cc:1585 glade/drgeoMDI.glade.h:43
+msgid "Export As..."
+msgstr "Exportar como..."
+
+#: drgenius_mdi.cc:1461
+msgid ""
+"Only geomteric figure\n"
+"can be exported to LaTex!"
+msgstr ""
+"Sólo las figuras geométricas\n"
+"pueden ser exportadas a LaTex"
+
+#: drgenius_mdi.cc:1513
+msgid ""
+"Only geomteric figure\n"
+"can be exported to PostScript!"
+msgstr ""
+"Sólo las figuras geométricas\n"
+"pueden ser exportadas a PostScript"
+
+#: drgenius_mdi.cc:1566
+msgid ""
+"Only geomteric figure\n"
+"can be exported to PNG!"
+msgstr ""
+"Sólo las figuras geométricas\n"
+"pueden ser exportadas a PNG"
+
+#: drgenius_mdi.cc:1705
+msgid "Are you sure to close this figure?"
+msgstr "¿Seguro que quiere cerrar esta figura?"
+
+#: drgenius_mdi.cc:1729
+msgid "About Dr. Geo"
+msgstr "Acerca de Dr Geo"
+
+#. VERSION
+#: drgenius_mdi.cc:1742
+#, fuzzy
+msgid ""
+"\n"
+"Free Interactive Geometry\n"
+"\n"
+"(c) Copyright 1996-2005 H. Fernandes  \n"
+"(c) Copyright 2000 L. Gauthier\n"
+"(c) Copyright 2000-2005 OFSET\n"
+"Translation: translator_name"
+msgstr ""
+"\n"
+"Geometría Libre Interactiva\n"
+"(c) Copyright 1996-2000 H. Fernandes  \n"
+"(c) Copyright 2000 L. Gauthier\n"
+"(c) Copyright 2000-2003 OFSET\n"
+"Traducción: Adrian Soto\n"
+"            Miguel de Icaza\n"
+"            Pablo Saratxaga\n"
+"            Francisco Javier F. Serrador"
+
+#: drgenius_mdi.cc:1826
+msgid "Save Session As..."
+msgstr "Guardar Sesión Como..."
+
+#: drgenius_mdi.cc:1921 geo/drgeo_control.cc:812
+msgid "Play a recorded macro-construction"
+msgstr "Ejecute una macro grabada"
+
+#: drgenius_mdi.cc:1976
+#, fuzzy
+msgid "Select a free point to animate it"
+msgstr ""
+"Lugar geométrico: seleccione un punto libre y un punto vinculado al primero"
+
+#: drgeo.desktop.in.h:1
+msgid "Dr.Geo"
+msgstr "Dr.Geo"
+
+#: drgeo.desktop.in.h:2
+msgid "Dr.Geo Math Tool"
+msgstr "Herramienta Matemática  de Dr. Geo"
+
+#: drgeo_adaptDialog.cc:404
+msgid ""
+"Password does not match\n"
+" Access denied!"
+msgstr ""
+"La contraseña no coincide\n"
+" Acceso denegado"
+
+#. create a new name
+#: editor_view.cc:42
+#, c-format
+msgid "Text %d"
+msgstr "Texto %d"
+
+#: geo_view.cc:32
+#, c-format
+msgid "Figure %d"
+msgstr "Figura %d"
+
+#: geo_view.cc:132
+msgid "Items"
+msgstr "Elementos"
+
+#: geo/drgeo_angle.cc:210 geo/drgeo_angle.cc:241
+msgid "this angle %1"
+msgstr "este ángulo %1"
+
+#: geo/drgeo_angle.cc:285
+#, c-format
+msgid "Geometric angle:: %s"
+msgstr "Ángulo geométrico:: %s"
+
+#: geo/drgeo_angle.cc:286 geo/drgeo_angle.cc:288 geo/drgeo_arcCircle.cc:377
+#: geo/drgeo_circle.cc:359 geo/drgeo_halfLine.cc:260 geo/drgeo_line.cc:320
+#: geo/drgeo_numeric.cc:481 geo/drgeo_numeric.cc:486 geo/drgeo_numeric.cc:503
+#: geo/drgeo_numeric.cc:510 geo/drgeo_numeric.cc:517 geo/drgeo_numeric.cc:518
+#: geo/drgeo_point.cc:445 geo/drgeo_point.cc:446 geo/drgeo_polygon.cc:289
+#, c-format
+msgid "Point %s"
+msgstr "Punto %s"
+
+#: geo/drgeo_angle.cc:287
+#, c-format
+msgid "Vertex %s"
+msgstr "Vértice %s"
+
+#: geo/drgeo_angle.cc:292
+#, c-format
+msgid "Oriented angle:: %s"
+msgstr "Ángulo orientado:: %s"
+
+#: geo/drgeo_angle.cc:293 geo/drgeo_angle.cc:294 geo/drgeo_numeric.cc:461
+#: geo/drgeo_numeric.cc:491 geo/drgeo_numeric.cc:496
+#, c-format
+msgid "Vector %s"
+msgstr "Vector %s"
+
+#: geo/drgeo_arcCircle.cc:282 geo/drgeo_arcCircle.cc:286
+msgid "this arc %1"
+msgstr "este arco %1"
+
+#: geo/drgeo_arcCircle.cc:335
+#, c-format
+msgid "Rotate arc-circle:: %s"
+msgstr "Rotación de un  arco de círculo:: %s"
+
+#: geo/drgeo_arcCircle.cc:336 geo/drgeo_arcCircle.cc:344
+#: geo/drgeo_arcCircle.cc:351
+#, c-format
+msgid "Transformed arc-circle %s"
+msgstr "Arco de círculo  inicial %s "
+
+#: geo/drgeo_arcCircle.cc:338 geo/drgeo_arcCircle.cc:346
+#: geo/drgeo_arcCircle.cc:369 geo/drgeo_circle.cc:319 geo/drgeo_circle.cc:327
+#: geo/drgeo_circle.cc:350 geo/drgeo_circle.cc:358 geo/drgeo_circle.cc:366
+#: geo/drgeo_circle.cc:375 geo/drgeo_halfLine.cc:221 geo/drgeo_halfLine.cc:229
+#: geo/drgeo_halfLine.cc:252 geo/drgeo_line.cc:282 geo/drgeo_line.cc:290
+#: geo/drgeo_line.cc:312 geo/drgeo_point.cc:383 geo/drgeo_point.cc:391
+#: geo/drgeo_point.cc:413 geo/drgeo_polygon.cc:297 geo/drgeo_polygon.cc:305
+#: geo/drgeo_polygon.cc:328 geo/drgeo_segment.cc:223 geo/drgeo_segment.cc:231
+#: geo/drgeo_segment.cc:254 geo/drgeo_vector.cc:248 geo/drgeo_vector.cc:256
+#: geo/drgeo_vector.cc:279
+#, c-format
+msgid "Center %s"
+msgstr "Centro %s"
+
+#: geo/drgeo_arcCircle.cc:339 geo/drgeo_circle.cc:320
+#: geo/drgeo_halfLine.cc:222 geo/drgeo_line.cc:283 geo/drgeo_point.cc:384
+#: geo/drgeo_polygon.cc:298 geo/drgeo_segment.cc:224 geo/drgeo_vector.cc:249
+#, c-format
+msgid "Angle %s"
+msgstr "Ángulo %s"
+
+#: geo/drgeo_arcCircle.cc:343 geo/drgeo_arcCircle.cc:350
+#, c-format
+msgid "Symmetric arc-circle:: %s"
+msgstr "Simetría aplicada a un arco de círculo:: %s"
+
+#: geo/drgeo_arcCircle.cc:353 geo/drgeo_circle.cc:334
+#: geo/drgeo_halfLine.cc:236 geo/drgeo_line.cc:297 geo/drgeo_point.cc:398
+#: geo/drgeo_polygon.cc:312 geo/drgeo_segment.cc:238 geo/drgeo_vector.cc:263
+#, c-format
+msgid "Reflexion axe %s"
+msgstr "Eje de reflexión %s"
+
+#: geo/drgeo_arcCircle.cc:358
+#, c-format
+msgid "Translate arc-circle:: %s"
+msgstr "Traslacíon de un arco de círculo:: %s"
+
+#: geo/drgeo_arcCircle.cc:359
+#, c-format
+msgid "Translated arc-circle %s"
+msgstr "Arco de círculo %s inicial"
+
+#: geo/drgeo_arcCircle.cc:361 geo/drgeo_circle.cc:342
+#: geo/drgeo_halfLine.cc:244 geo/drgeo_line.cc:305 geo/drgeo_point.cc:406
+#: geo/drgeo_polygon.cc:320 geo/drgeo_segment.cc:246 geo/drgeo_vector.cc:271
+#, c-format
+msgid "Vector of translation %s"
+msgstr "Vector de traslación %s"
+
+#: geo/drgeo_arcCircle.cc:366
+#, c-format
+msgid "Scale arc-circle:: %s"
+msgstr "Arco de círculo hecho a escala:: %s"
+
+#: geo/drgeo_arcCircle.cc:367
+#, c-format
+msgid "Scaled arc-circle %s"
+msgstr "Arco de círculo inicial %s "
+
+#: geo/drgeo_arcCircle.cc:370 geo/drgeo_circle.cc:351
+#: geo/drgeo_halfLine.cc:253 geo/drgeo_line.cc:313 geo/drgeo_point.cc:414
+#: geo/drgeo_polygon.cc:329 geo/drgeo_segment.cc:255 geo/drgeo_vector.cc:280
+#, c-format
+msgid "Factor %s"
+msgstr "Factor %s"
+
+#: geo/drgeo_arcCircle.cc:375
+#, c-format
+msgid "Arc-circle defined by three points:: %s"
+msgstr "Arco de círculo definido por tres puntos:: %s"
+
+#: geo/drgeo_arcCircle.cc:376 geo/drgeo_arcCircle.cc:378
+#: geo/drgeo_segment.cc:261 geo/drgeo_segment.cc:262 geo/drgeo_vector.cc:287
+#, c-format
+msgid "Extremity %s"
+msgstr "Extremo %s"
+
+#: geo/drgeo_circle.cc:258 geo/drgeo_circle.cc:262
+msgid "this circle %1"
+msgstr "este círculo %1"
+
+#: geo/drgeo_circle.cc:316
+#, c-format
+msgid "Rotate circle:: %s"
+msgstr "Rotación de un círculo:: %s"
+
+#: geo/drgeo_circle.cc:317 geo/drgeo_circle.cc:325 geo/drgeo_circle.cc:332
+#, c-format
+msgid "Transformed circle %s"
+msgstr "Círculo original %s"
+
+#: geo/drgeo_circle.cc:324 geo/drgeo_circle.cc:331
+#, c-format
+msgid "Symmetric circle:: %s"
+msgstr "Simetría aplicada a un círculo:: %s"
+
+#: geo/drgeo_circle.cc:339
+#, c-format
+msgid "Translate circle:: %s"
+msgstr "Traslación de un círculo:: %s"
+
+#: geo/drgeo_circle.cc:340
+#, c-format
+msgid "Translated circle %s"
+msgstr "Círculo original %s"
+
+#: geo/drgeo_circle.cc:347
+#, c-format
+msgid "Scale circle:: %s"
+msgstr "Círculo hecho a escala:: %s"
+
+#: geo/drgeo_circle.cc:348
+#, c-format
+msgid "Scaled circle %s"
+msgstr "Círculo original %s"
+
+#: geo/drgeo_circle.cc:356
+#, c-format
+msgid "Circle defined by its center and a point:: %s"
+msgstr "Círculo definido por su centro y un punto:: %s"
+
+#: geo/drgeo_circle.cc:364
+#, c-format
+msgid "Circle defined by its center and a segment:: %s"
+msgstr "Círculo definido por su centro y un segmento:: %s"
+
+#: geo/drgeo_circle.cc:367
+#, c-format
+msgid "Radius from segment %s"
+msgstr "Radio tomado de un segmento %s"
+
+#: geo/drgeo_circle.cc:373
+#, c-format
+msgid "Circle defined by its center and radius:: %s"
+msgstr "Círculo definido por su centro y radio:: %s"
+
+#: geo/drgeo_circle.cc:376
+#, c-format
+msgid "Radius %s"
+msgstr "Radio %s"
+
+#: geo/drgeo_control.cc:254
+msgid "Free point: click on the plane or over a curve"
+msgstr "Punto libre: haga click en el plano o sobre una curva"
+
+#: geo/drgeo_control.cc:276
+msgid "Middle: select two points or a segment"
+msgstr "Punto Medio: seleccione dos puntos o un segmento"
+
+#: geo/drgeo_control.cc:298
+msgid "Intersection(s): select two curves"
+msgstr "Intersección(es):  seleccione dos curvas"
+
+#: geo/drgeo_control.cc:319
+msgid "Coordinate point: select two numbers (its coordinates)"
+msgstr ""
+"Punto definido por coordenadas:  seleccione dos números, (sus coordenadas)"
+
+#: geo/drgeo_control.cc:340
+msgid "Line: select two points"
+msgstr "Línea Recta: Seleccione dos puntos"
+
+#: geo/drgeo_control.cc:361
+msgid "Ray: select its origin then another point"
+msgstr "Semirrecta(Rayo): seleccione su origen y después otro punto"
+
+#: geo/drgeo_control.cc:382
+msgid "Segment: select its extremities"
+msgstr "Segmento: seleccione sus extremos"
+
+#: geo/drgeo_control.cc:404
+msgid "Vector: select its origin and extremity"
+msgstr "Vector: seleccione su origen y su extremo"
+
+#: geo/drgeo_control.cc:425
+msgid "Circle: select its center and a point or its radius (number or segment)"
+msgstr ""
+"Círculo: seleccione su centro, y (a)un punto, o (b)valor numérico del radio, "
+"o (c)un segmento"
+
+#: geo/drgeo_control.cc:446
+msgid "Arc: select three points"
+msgstr "Arco: seleccione tres puntos"
+
+#: geo/drgeo_control.cc:467
+msgid "Locus: select a free point and a dependent point"
+msgstr ""
+"Lugar geométrico: seleccione un punto libre y un punto vinculado al primero"
+
+#: geo/drgeo_control.cc:488
+msgid "Polygon: select its vertices, then click over the first one"
+msgstr ""
+"Polígono: seleccione los vértices y, para terminar, haga nuevamente click "
+"sobre el primero seleccionado"
+
+#: geo/drgeo_control.cc:508
+msgid ""
+"Parallel line: select a point and a direction (line, ray, segment, vector) "
+msgstr ""
+"Recta paralela: seleccione un punto y una dirección (línea,rayo, segmento,"
+"vector)"
+
+#: geo/drgeo_control.cc:528
+msgid ""
+"Orthogonal line: select a point and a direction (line, ray, segment, vector)"
+msgstr ""
+"Recta perpendicular: seleccione un punto y una dirección (recta, semirrecta,"
+"segmento o vector)"
+
+#: geo/drgeo_control.cc:548
+msgid "Axial symmetry: select a geometric object and a line"
+msgstr ""
+"Simetría axial(Reflexión en una recta): seleccione un objeto geométrico y "
+"una recta"
+
+#: geo/drgeo_control.cc:568
+msgid "Central symmetry: select a geometric object and the center"
+msgstr ""
+"Simetría central: seleccione un objeto geométrico y el centro de simetría"
+
+#: geo/drgeo_control.cc:588
+msgid "Translation: select a geometric object and a vector"
+msgstr "Traslación: seleccione un objeto geométrico y un vector"
+
+#: geo/drgeo_control.cc:608
+msgid ""
+"Rotation: select a geometric object, the center and an angle or a scalar"
+msgstr ""
+"Rotación: seleccione un objeto geométrico, el centro de rotación y un ángulo "
+"o un valor numérico"
+
+#: geo/drgeo_control.cc:628
+msgid "Scale: select a geometric object, the center and a scalar"
+msgstr ""
+"Hacer a escala(Homotecia): seleccione un objeto geométrico, el centro "
+"(centro de homotecia) y un valor numérico"
+
+#: geo/drgeo_control.cc:648
+msgid ""
+"Numeric: click on the back to edit a free value or select geometric object"
+"(s) to calculate distance"
+msgstr ""
+"Valor Numérico: haga click en el fondo para escribir un valor numérico libre "
+"o seleccione un(os) objeto(s) geométrico(s) para calcular distancias o "
+"perímetros"
+
+#: geo/drgeo_control.cc:668
+msgid ""
+"Angle: select three points (geometric angle) or two vectors (oriented angle)"
+msgstr ""
+"Ángulo: seleccione tres puntos (ángulo geométrico) o dos vectores (ángulo "
+"orientado)"
+
+#: geo/drgeo_control.cc:688
+msgid "Coordinates & Equation: select a point, a vector, a line or a circle"
+msgstr ""
+"Coordenadas y ecuación: seleccione un punto, un vector, una línea o un "
+"círculo"
+
+#: geo/drgeo_control.cc:709
+msgid "Script: select n objects (n >=0) then click on the background"
+msgstr "Script: seleccione n objetos (n>=0), y  después haga click en el fondo"
+
+#: geo/drgeo_control.cc:729
+msgid "Delete object: select the object to delete"
+msgstr "Borrar objeto: seleccione el objeto a borrar"
+
+#: geo/drgeo_control.cc:749
+msgid "Look: select the object to change its look"
+msgstr "Apariencia: seleccione el objeto cuya apariencia desee cambiar"
+
+#: geo/drgeo_control.cc:769
+msgid "Property: select the object to change its property"
+msgstr "Propiedades: seleccione el objeto cuyas propiedades desee cambiar"
+
+#: geo/drgeo_control.cc:790
+msgid "Construct a macro-construction "
+msgstr "Construya una macro"
+
+#: geo/drgeo_control.cc:937
+msgid "Select: select and move an object"
+msgstr "Selección: seleccione un objeto y muévalo"
+
+#: geo/drgeo_dialog.cc:62
+msgid "Enter a value"
+msgstr "Escriba un número"
+
+#: geo/drgeo_equation.cc:173 geo/drgeo_equation.cc:182
+msgid "the equation of %1"
+msgstr "la ecuación de %1"
+
+#: geo/drgeo_equation.cc:230
+#, c-format
+msgid "Line's equation:: %s"
+msgstr "Ecuación de la recta:: %s"
+
+#: geo/drgeo_equation.cc:231 geo/drgeo_numeric.cc:471 geo/drgeo_numeric.cc:511
+#, c-format
+msgid "Line %s"
+msgstr "Recta %s"
+
+#: geo/drgeo_equation.cc:235
+#, c-format
+msgid "Circle's equation:: %s"
+msgstr "Ecuación del círculo:: %s"
+
+#: geo/drgeo_equation.cc:236 geo/drgeo_numeric.cc:466 geo/drgeo_numeric.cc:504
+#, c-format
+msgid "Circle %s"
+msgstr "Círculo %s"
+
+#: geo/drgeo_gtkhelpers.cc:98
+#, c-format
+msgid ""
+"This help directory does not exist:\n"
+"'%s'\n"
+"Maybe the manual is not installed or it is not yet translated in your "
+"language.\n"
+"\n"
+"If you want to translate the manual contact ofset@ofset.org."
+msgstr ""
+"Este directorio de ayuda no existe:\n"
+"«%s»\n"
+"Quizá el manual no está instalado o no está traducido todavía a su idioma.\n"
+"\n"
+"Si quiere traducir el manual escriba a ofset@ofset.org"
+
+#: geo/drgeo_gtkhelpers.cc:117
+msgid ""
+"A default online manual\n"
+"in English will be used."
+msgstr ""
+"Un manual preestablecido\n"
+"(en inglés) será usado"
+
+#: geo/drgeo_gtkhelpers.cc:129
+msgid "No default online manual can be found."
+msgstr "No se pudo encontrar el manual en linea predeterminado."
+
+#: geo/drgeo_halfLine.cc:152 geo/drgeo_halfLine.cc:170
+msgid "this half-line %1"
+msgstr "esta semirrecta %1"
+
+#: geo/drgeo_halfLine.cc:218
+#, c-format
+msgid "Rotate half-line:: %s"
+msgstr "Rotación de  semirrecta:: %s"
+
+#: geo/drgeo_halfLine.cc:219 geo/drgeo_halfLine.cc:227
+#: geo/drgeo_halfLine.cc:234
+#, c-format
+msgid "Transformed half-line %s"
+msgstr "Semirrecta original %s"
+
+#: geo/drgeo_halfLine.cc:226 geo/drgeo_halfLine.cc:233
+#, c-format
+msgid "Symmetric half-line:: %s"
+msgstr "Simetría aplicada a una semirrecta:: %s"
+
+#: geo/drgeo_halfLine.cc:241
+#, c-format
+msgid "Translate half-line:: %s"
+msgstr "Traslación de una semirrecta:: %s"
+
+#: geo/drgeo_halfLine.cc:242
+#, c-format
+msgid "Translated half-line %s"
+msgstr "Semirrecta original %s"
+
+#: geo/drgeo_halfLine.cc:249
+#, c-format
+msgid "Scale half-line:: %s"
+msgstr "Semirrecta hecha a escala(Homotecia):: %s"
+
+#: geo/drgeo_halfLine.cc:250
+#, c-format
+msgid "Scaled half-line %s"
+msgstr "Semirrecta original %s"
+
+#: geo/drgeo_halfLine.cc:258
+#, c-format
+msgid "Half-line defined by two points:: %s"
+msgstr "Semirrecta definida por dos puntos:: %s"
+
+#: geo/drgeo_halfLine.cc:259 geo/drgeo_vector.cc:286
+#, c-format
+msgid "Origin %s"
+msgstr "Origen %s"
+
+#: geo/drgeo_line.cc:202 geo/drgeo_line.cc:220
+msgid "this line %1"
+msgstr "esta recta %1"
+
+#: geo/drgeo_line.cc:279
+#, c-format
+msgid "Rotate line:: %s"
+msgstr "Rotación de una recta:: %s"
+
+#: geo/drgeo_line.cc:280 geo/drgeo_line.cc:288 geo/drgeo_line.cc:295
+#, c-format
+msgid "Transformed line %s"
+msgstr "Recta original %s"
+
+#: geo/drgeo_line.cc:287 geo/drgeo_line.cc:294
+#, c-format
+msgid "Symmetric line:: %s"
+msgstr "Simetría aplicada a una recta:: %s"
+
+#: geo/drgeo_line.cc:302
+#, c-format
+msgid "Translate line:: %s"
+msgstr "Traslación de una recta:: %s"
+
+#: geo/drgeo_line.cc:303
+#, c-format
+msgid "Translated line %s"
+msgstr "Recta  original %s"
+
+#: geo/drgeo_line.cc:310
+#, c-format
+msgid "Scale line:: %s"
+msgstr "Recta hecha a  escala (Homotecia):: %s"
+
+#: geo/drgeo_line.cc:311
+#, c-format
+msgid "Scaled line %s"
+msgstr "Recta original %s"
+
+#: geo/drgeo_line.cc:318
+#, c-format
+msgid "Line going through two points:: %s"
+msgstr "Recta que pasa por dos puntos:: %s"
+
+#: geo/drgeo_line.cc:319 geo/drgeo_line.cc:327 geo/drgeo_line.cc:333
+#: geo/drgeo_line.cc:339
+#, c-format
+msgid "Point  %s"
+msgstr "Punto %s"
+
+#: geo/drgeo_line.cc:325
+#, c-format
+msgid "Line defined by a point and its slope:: %s"
+msgstr "Recta definida por un punto y su pendiente:: %s"
+
+#: geo/drgeo_line.cc:328
+#, c-format
+msgid "Slope %s"
+msgstr "Pendiente %s"
+
+#: geo/drgeo_line.cc:332
+#, c-format
+msgid "Parallel line:: %s"
+msgstr "Recta Paralela:: %s"
+
+#: geo/drgeo_line.cc:334 geo/drgeo_line.cc:340
+#, c-format
+msgid "Direction %s"
+msgstr "Dirección %s"
+
+#: geo/drgeo_line.cc:338
+#, c-format
+msgid "Perpendicular line:: %s"
+msgstr "Recta perpendicular:: %s"
+
+#. compute the string length
+#: geo/drgeo_locus.cc:303 geo/drgeo_locus.cc:312
+msgid "%1's locus when %2 describes %3"
+msgstr "El lugar geométrico de %1 cuando %2 se mueve en %3"
+
+#: geo/drgeo_locus.cc:350
+#, c-format
+msgid "Locus:: %s"
+msgstr "Lugar geométrico:: %s"
+
+#: geo/drgeo_locus.cc:351
+#, c-format
+msgid "Free point on curve %s"
+msgstr "Punto libre sobre una curva %s"
+
+#: geo/drgeo_locus.cc:353
+#, c-format
+msgid "Constrained point %s"
+msgstr "Punto %s vinculado al punto libre"
+
+#: geo/drgeo_numeric.cc:275 geo/drgeo_numeric.cc:281
+msgid "%1's length"
+msgstr "la longitud de %1"
+
+#: geo/drgeo_numeric.cc:286 geo/drgeo_numeric.cc:292
+msgid "%1's magnitude"
+msgstr "la magnitud(norma) de %1"
+
+#: geo/drgeo_numeric.cc:297 geo/drgeo_numeric.cc:303
+msgid "%1's perimeter"
+msgstr "el perímetro de %1"
+
+#: geo/drgeo_numeric.cc:308 geo/drgeo_numeric.cc:314
+msgid "the slope of %1"
+msgstr "la pendiente de %1"
+
+#: geo/drgeo_numeric.cc:322 geo/drgeo_numeric.cc:332
+msgid "the distance between %1 and %2"
+msgstr "la distancia entre %1 y %2"
+
+#: geo/drgeo_numeric.cc:345 geo/drgeo_numeric.cc:351
+msgid "the abscissa of %1"
+msgstr "la abscisa de %1"
+
+#: geo/drgeo_numeric.cc:357 geo/drgeo_numeric.cc:363
+msgid "the ordinate of %1"
+msgstr "la ordenada de %1"
+
+#: geo/drgeo_numeric.cc:367 geo/drgeo_value.cc:52
+msgid "this value"
+msgstr "este valor numérico"
+
+#: geo/drgeo_numeric.cc:451
+#, c-format
+msgid "Free value:: %s"
+msgstr "Valor numérico libre:: %s"
+
+#: geo/drgeo_numeric.cc:455
+#, c-format
+msgid "Segment's length:: %s"
+msgstr "Longitud de un segmento :: %s"
+
+#: geo/drgeo_numeric.cc:456 geo/drgeo_point.cc:440
+#, c-format
+msgid "Segment %s"
+msgstr "Segmento %s"
+
+#: geo/drgeo_numeric.cc:460
+#, c-format
+msgid "Vector's norm:: %s"
+msgstr "Magnitud(norma) de un vector:: %s"
+
+#: geo/drgeo_numeric.cc:465
+#, c-format
+msgid "Circle's perimeter:: %s"
+msgstr "Perímetro de un círculo:: %s"
+
+#: geo/drgeo_numeric.cc:470
+#, c-format
+msgid "Line's slope:: %s"
+msgstr "Pendiente de una recta:: %s"
+
+#: geo/drgeo_numeric.cc:475
+#, c-format
+msgid "Arc-circle's length:: %s"
+msgstr "Longitud de un arco de círculo:: %s"
+
+#: geo/drgeo_numeric.cc:476
+#, c-format
+msgid "Arc-circle %s"
+msgstr "Arco de círculo %s"
+
+#: geo/drgeo_numeric.cc:480
+#, c-format
+msgid "Point's abscissa:: %s"
+msgstr "Abscisa de un punto:: %s"
+
+#: geo/drgeo_numeric.cc:485
+#, c-format
+msgid "Point's ordinate:: %s"
+msgstr "Ordenada de un punto:: %s"
+
+#: geo/drgeo_numeric.cc:490
+#, c-format
+msgid "Vector's abscissa:: %s"
+msgstr "Abscisa de un vector:: %s"
+
+#: geo/drgeo_numeric.cc:495
+#, c-format
+msgid "Vector's ordinate:: %s"
+msgstr "Ordenada de un vector:: %s"
+
+#: geo/drgeo_numeric.cc:501
+#, c-format
+msgid "Distance between a point and a circle:: %s"
+msgstr "Distancia entre un punto y un círculo:: %s"
+
+#: geo/drgeo_numeric.cc:509
+#, c-format
+msgid "Distance between a point and a line:: %s"
+msgstr "Distancia entre un punto y una recta:: %s"
+
+#: geo/drgeo_numeric.cc:516
+#, c-format
+msgid "Distance between two points:: %s"
+msgstr "Distancia entre dos puntos:: %s"
+
+#: geo/drgeo_point.cc:380
+#, c-format
+msgid "Rotate point:: %s"
+msgstr "Rotación de un punto:: %s"
+
+#: geo/drgeo_point.cc:381 geo/drgeo_point.cc:389 geo/drgeo_point.cc:396
+#, c-format
+msgid "Transformed point %s"
+msgstr "Punto original %s"
+
+#: geo/drgeo_point.cc:388 geo/drgeo_point.cc:395
+#, c-format
+msgid "Symmetric point:: %s"
+msgstr "Simetría aplicada a un punto:: %s"
+
+#: geo/drgeo_point.cc:403
+#, c-format
+msgid "Translate point:: %s"
+msgstr "Traslación de un punto:: %s"
+
+#: geo/drgeo_point.cc:404
+#, c-format
+msgid "Translated point %s"
+msgstr "Punto original %s"
+
+#: geo/drgeo_point.cc:411
+#, c-format
+msgid "Scale point:: %s"
+msgstr "Punto hecho a escala(Homotecia):: %s"
+
+#: geo/drgeo_point.cc:412
+#, c-format
+msgid "Scaled point %s"
+msgstr "Punto original %s"
+
+#: geo/drgeo_point.cc:418
+#, c-format
+msgid "Coordinate point:: %s"
+msgstr "Punto definido por sus coordenadas:: %s"
+
+#: geo/drgeo_point.cc:419
+#, c-format
+msgid "Abscissa %s"
+msgstr "Abscisa %s"
+
+#: geo/drgeo_point.cc:420
+#, c-format
+msgid "Ordinate %s"
+msgstr "Ordenada %s"
+
+#: geo/drgeo_point.cc:424
+#, c-format
+msgid "Free point:: %s"
+msgstr "Punto libre:: %s"
+
+#: geo/drgeo_point.cc:428
+#, c-format
+msgid "Free point on curve:: %s"
+msgstr "Punto libre sobre una curva:: %s"
+
+#: geo/drgeo_point.cc:429 geo/drgeo_point.cc:434 geo/drgeo_point.cc:435
+#, c-format
+msgid "Curve %s"
+msgstr "Curva %s"
+
+#: geo/drgeo_point.cc:433
+#, c-format
+msgid "Intersection point:: %s"
+msgstr "Punto de intersección:: %s"
+
+#: geo/drgeo_point.cc:439
+#, c-format
+msgid "Middle of segment:: %s"
+msgstr "Mitad de un segmento:: %s"
+
+#: geo/drgeo_point.cc:444
+#, c-format
+msgid "Middle of two points:: %s"
+msgstr "Mitad de dos puntos:: %s"
+
+#: geo/drgeo_point.cc:482 geo/drgeo_point.cc:486
+msgid "this point %1"
+msgstr "este punto %1"
+
+#: geo/drgeo_polygon.cc:287
+#, c-format
+msgid "Polygon:: %s"
+msgstr "Polígono:: %s"
+
+#: geo/drgeo_polygon.cc:294
+#, c-format
+msgid "Rotate polygon:: %s"
+msgstr "Rotación de un polígono:: %s"
+
+#: geo/drgeo_polygon.cc:295 geo/drgeo_polygon.cc:303 geo/drgeo_polygon.cc:310
+#, c-format
+msgid "Transformed polygon %s"
+msgstr "Polígono original %s"
+
+#: geo/drgeo_polygon.cc:302 geo/drgeo_polygon.cc:309
+#, c-format
+msgid "Symmetric polygon:: %s"
+msgstr "Simetría aplicada a un polígono:: %s"
+
+#: geo/drgeo_polygon.cc:317
+#, c-format
+msgid "Translate polygon:: %s"
+msgstr "Traslación de un polígono:: %s"
+
+#: geo/drgeo_polygon.cc:318
+#, c-format
+msgid "Translated polygon %s"
+msgstr "Polígono original %s"
+
+#: geo/drgeo_polygon.cc:325
+#, c-format
+msgid "Scale polygon:: %s"
+msgstr "Polígono hecho a escala(homotecia):: %s"
+
+#: geo/drgeo_polygon.cc:326
+#, c-format
+msgid "Scaled polygon %s"
+msgstr "Polígono original %s"
+
+#: geo/drgeo_polygon.cc:383 geo/drgeo_polygon.cc:407
+msgid "this polygon %1"
+msgstr "este polígono %1"
+
+#: geo/drgeo_repere.cc:148 geo/drgeo_repere.cc:161
+msgid "this reference frame %1"
+msgstr "este marco de referencia %1"
+
+#: geo/drgeo_scm_helper.cc:91
+#, c-format
+msgid "Error! Just got the following error tag: %s\n"
+msgstr "Error. Se obtuvo el siguiente error: %s\n"
+
+#: geo/drgeo_script.cc:158
+msgid "Unprintable result"
+msgstr "Resultado no imprimible"
+
+#: geo/drgeo_script.cc:171 geo/drgeo_script.cc:175
+msgid "this script %1"
+msgstr "este script %1"
+
+#: geo/drgeo_script.cc:223
+#, c-format
+msgid "Script:: %s"
+msgstr "Script:: %s"
+
+#: geo/drgeo_script.cc:225
+#, c-format
+msgid "Object %s"
+msgstr "Objeto %s"
+
+#: geo/drgeo_segment.cc:153 geo/drgeo_segment.cc:171
+msgid "this segment %1"
+msgstr "este segmento %1"
+
+#: geo/drgeo_segment.cc:220
+#, c-format
+msgid "Rotate segment:: %s"
+msgstr "Rotación de un segmento:: %s"
+
+#: geo/drgeo_segment.cc:221 geo/drgeo_segment.cc:229 geo/drgeo_segment.cc:236
+#, c-format
+msgid "Transformed segment %s"
+msgstr "Segmento original %s"
+
+#: geo/drgeo_segment.cc:228 geo/drgeo_segment.cc:235
+#, c-format
+msgid "Symmetric segment:: %s"
+msgstr "Simetría aplicada a un segmento:: %s"
+
+#: geo/drgeo_segment.cc:243
+#, c-format
+msgid "Translate segment:: %s"
+msgstr "Traslación de un segmento:: %s"
+
+#: geo/drgeo_segment.cc:244
+#, c-format
+msgid "Translated segment %s"
+msgstr "Segmento original %s"
+
+#: geo/drgeo_segment.cc:251
+#, c-format
+msgid "Scale segment:: %s"
+msgstr "Segmento hecho a escala (Homotecia):: %s"
+
+#: geo/drgeo_segment.cc:252
+#, c-format
+msgid "Scaled segment %s"
+msgstr "Segmento original %s"
+
+#: geo/drgeo_segment.cc:260
+#, c-format
+msgid "Segment defined by its extremities:: %s"
+msgstr "Segmento de recta definido por sus extremos:: %s"
+
+#: geo/drgeo_tool.cc:950
+#, c-format
+msgid "Remove %s?"
+msgstr "¿Quitar %s ?"
+
+#: geo/drgeo_tool.cc:953
+msgid "Remove selected item?"
+msgstr "¿Quitar el objeto seleccionado?"
+
+#: geo/drgeo_vector.cc:170 geo/drgeo_vector.cc:188
+msgid "this vector %1"
+msgstr "este vector %1"
+
+#: geo/drgeo_vector.cc:245
+#, c-format
+msgid "Rotate vector:: %s"
+msgstr "Rotación de un vector:: %s"
+
+#: geo/drgeo_vector.cc:246 geo/drgeo_vector.cc:254 geo/drgeo_vector.cc:261
+#, c-format
+msgid "Transformed vector %s"
+msgstr "Vector original %s"
+
+#: geo/drgeo_vector.cc:253 geo/drgeo_vector.cc:260
+#, c-format
+msgid "Symmetric vector:: %s"
+msgstr "Simetría aplicada a un vector:: %s"
+
+#: geo/drgeo_vector.cc:268
+#, c-format
+msgid "Translate vector:: %s"
+msgstr "Traslación de un vector:: %s"
+
+#: geo/drgeo_vector.cc:269
+#, c-format
+msgid "Translated vector %s"
+msgstr "Vector original %s"
+
+#: geo/drgeo_vector.cc:276
+#, c-format
+msgid "Scale vector:: %s"
+msgstr "Vector hecho a escala(Homotecia):: %s"
+
+#: geo/drgeo_vector.cc:277
+#, c-format
+msgid "Scaled vector %s"
+msgstr "Vector original %s"
+
+#: geo/drgeo_vector.cc:285
+#, c-format
+msgid "Vector defined by two points:: %s"
+msgstr "Vector definido por dos puntos:: %s"
+
+#: glade/drgenius2.glade.h:1 glade/drgeo2.glade.h:1
+msgid "*"
+msgstr "*"
+
+#: glade/drgenius2.glade.h:2
+msgid "Angle"
+msgstr "Ángulo"
+
+#: glade/drgenius2.glade.h:3
+msgid "Arc-Circle"
+msgstr "Arco de círculo"
+
+#: glade/drgenius2.glade.h:4
+msgid "Circle"
+msgstr "Círculo"
+
+#: glade/drgenius2.glade.h:5 glade/drgeo2.glade.h:33
+msgid "Color"
+msgstr "Color"
+
+#: glade/drgenius2.glade.h:6
+msgid ""
+"Default figure name used when a new figure is created. This name is combined "
+"with a numeric indicator"
+msgstr ""
+"Nombre predeterminado de la figura que es usado cuando una nueva figura es\n"
+"creada.  A este nombre se le agrega un indicador numérico"
+
+#: glade/drgenius2.glade.h:7
+msgid ""
+"Default file name used to export a geometric figure to the Flydraw format"
+msgstr ""
+"Nombre predeterminado del archivo usado para exportar una figura geométrica "
+"al formato Flydraw"
+
+#: glade/drgenius2.glade.h:8
+msgid ""
+"Default file name used to export a geometric figure to the LaTeX format "
+"(pstricks extension)"
+msgstr ""
+"Nombre predeterminado del archivo usado para exportar una figura geométrica\n"
+"al formato LaTex (la extensión usada por pstricks)"
+
+#: glade/drgenius2.glade.h:9
+msgid ""
+"Default file name used to export a geometric figure to the encapsulated "
+"PostScript format"
+msgstr ""
+"Nombre predeterminado del archivo usado para exportar una figura geométrica "
+"al formato PostScript encapsulado (eps)"
+
+#: glade/drgenius2.glade.h:10
+msgid "Default file name used to save a geometric figure"
+msgstr ""
+"Nombre predeterminado del archivo usado para guardar\n"
+" una figura geométrica"
+
+#: glade/drgenius2.glade.h:11
+msgid ""
+"Default file name used to save a session (several documents in one file)"
+msgstr ""
+"El nombre de archivo predeterminado usado para guardar una sesión (varios "
+"documentos en un solo archivo)"
+
+#: glade/drgenius2.glade.h:12
+msgid "Default value"
+msgstr "Valor predeterminado"
+
+#: glade/drgenius2.glade.h:13
+msgid "Defaut file name"
+msgstr "Nombre de archivo predeterminado"
+
+#: glade/drgenius2.glade.h:14
+msgid "Figure name"
+msgstr "Nombre de la figura"
+
+#: glade/drgenius2.glade.h:15
+msgid "Flydraw:"
+msgstr "Flydraw:"
+
+#: glade/drgenius2.glade.h:16
+msgid "Geometric figure "
+msgstr "Figura geométrica"
+
+#: glade/drgenius2.glade.h:17
+msgid "Global preferences"
+msgstr "Preferencias globales"
+
+#: glade/drgenius2.glade.h:18
+msgid "Half-Line"
+msgstr "Semirrecta"
+
+#: glade/drgenius2.glade.h:19
+msgid "Html viewer"
+msgstr "Visor HTML"
+
+#: glade/drgenius2.glade.h:20
+msgid "LaTeX:"
+msgstr "LaTeX:"
+
+#: glade/drgenius2.glade.h:21 glade/drgeo2.glade.h:58
+msgid "Large"
+msgstr "Grande"
+
+#: glade/drgenius2.glade.h:22
+msgid "Line"
+msgstr "Recta"
+
+#: glade/drgenius2.glade.h:23
+msgid "Locus"
+msgstr "Lugar geométrico"
+
+#: glade/drgenius2.glade.h:24 glade/drgeo2.glade.h:69
+msgid "Normal"
+msgstr "Normal"
+
+#: glade/drgenius2.glade.h:25
+msgid "Number of undo/redo operations. 0 for infinite undo/redo level"
+msgstr ""
+"La cantidad de operaciones de hacer/deshacer.  El valor 0 es para un nivel "
+"de hacer/deshacer infinito"
+
+#: glade/drgenius2.glade.h:26
+msgid "Numeric Precision"
+msgstr "Precisión numérica"
+
+#: glade/drgenius2.glade.h:27
+msgid "Object Aspect"
+msgstr "Apariencia(Aspecto) de los objetos"
+
+#: glade/drgenius2.glade.h:28 glade/drgeo2.glade.h:77
+msgid "Point"
+msgstr "Punto"
+
+#: glade/drgenius2.glade.h:29
+msgid "Polygon"
+msgstr "Polígono"
+
+#: glade/drgenius2.glade.h:30
+msgid "PostScript:"
+msgstr "PostScript:"
+
+#: glade/drgenius2.glade.h:31
+msgid "Save a Dr Genius session"
+msgstr "Guardar una sesión de Dr Genius"
+
+#: glade/drgenius2.glade.h:32
+msgid "Save all"
+msgstr "Guardar todo"
+
+#: glade/drgenius2.glade.h:33
+msgid "Save selection"
+msgstr "Guardar selección"
+
+#: glade/drgenius2.glade.h:34
+msgid "Scalar"
+msgstr "Número (escalar)"
+
+#: glade/drgenius2.glade.h:35
+msgid "Segment"
+msgstr "Segmento"
+
+#: glade/drgenius2.glade.h:36
+msgid "Select Color"
+msgstr "Seleccionar Color"
+
+#: glade/drgenius2.glade.h:37
+msgid "Select data to save"
+msgstr "Seleccionar datos a guardar"
+
+#: glade/drgenius2.glade.h:38
+msgid "Session:"
+msgstr "Sesión:"
+
+#: glade/drgenius2.glade.h:39 glade/drgeo2.glade.h:96
+msgid "Shape"
+msgstr "Forma"
+
+#: glade/drgenius2.glade.h:40 glade/drgeo2.glade.h:97
+msgid "Size"
+msgstr "Tamaño"
+
+#: glade/drgenius2.glade.h:41 glade/drgeo2.glade.h:98
+msgid "Small"
+msgstr "Pequeño"
+
+#: glade/drgenius2.glade.h:42 glade/drgeo2.glade.h:99
+msgid "Style"
+msgstr "Estilo"
+
+#: glade/drgenius2.glade.h:43
+msgid "Undo/Redo levels"
+msgstr "Niveles de Hacer/Deshacer"
+
+#: glade/drgenius2.glade.h:44
+msgid "Vector"
+msgstr "Vector"
+
+#: glade/drgenius2.glade.h:45
+msgid "dillo "
+msgstr "dillo "
+
+#: glade/drgenius2.glade.h:46
+msgid "galeon -x "
+msgstr "galeon -x "
+
+#: glade/drgenius2.glade.h:47
+msgid "konqueror "
+msgstr "konqueror "
+
+#: glade/drgenius2.glade.h:48
+msgid "mozilla "
+msgstr "mozilla "
+
+#: glade/drgeo2.glade.h:3
+#, no-c-format
+msgid "100%"
+msgstr "100%"
+
+#: glade/drgeo2.glade.h:5 glade/drgeoMDI.glade.h:2
+#, no-c-format
+msgid "125%"
+msgstr "125%"
+
+#: glade/drgeo2.glade.h:7 glade/drgeoMDI.glade.h:4
+#, no-c-format
+msgid "150%"
+msgstr "150%"
+
+#: glade/drgeo2.glade.h:9 glade/drgeoMDI.glade.h:6
+#, no-c-format
+msgid "175%"
+msgstr "175%"
+
+#: glade/drgeo2.glade.h:11 glade/drgeoMDI.glade.h:8
+#, no-c-format
+msgid "200%"
+msgstr "200%"
+
+#: glade/drgeo2.glade.h:13 glade/drgeoMDI.glade.h:10
+#, no-c-format
+msgid "25%"
+msgstr "25%"
+
+#: glade/drgeo2.glade.h:15 glade/drgeoMDI.glade.h:12
+#, no-c-format
+msgid "50%"
+msgstr "50%"
+
+#: glade/drgeo2.glade.h:17 glade/drgeoMDI.glade.h:14
+#, no-c-format
+msgid "75%"
+msgstr "75%"
+
+#: glade/drgeo2.glade.h:18
+msgid "Abscissa"
+msgstr "Abscisa"
+
+#: glade/drgeo2.glade.h:19
+msgid "Adjust the line style"
+msgstr "Ajustar el estilo de línea"
+
+#: glade/drgeo2.glade.h:20
+msgid "Adjust the point style"
+msgstr "Ajustar el estilo de punto"
+
+#: glade/drgeo2.glade.h:21
+msgid "Adjust the value style"
+msgstr "Ajustar el estilo de los valores numéricos"
+
+#: glade/drgeo2.glade.h:22
+msgid "Adjust the zoom factor"
+msgstr "Ajustar el factor de acercamiento(Zoom)"
+
+#: glade/drgeo2.glade.h:23 glade/drgeoMDI.glade.h:15
+msgid "Angle defined by three points or two vectors"
+msgstr "Ángulo definido por tres puntos o dos vectores"
+
+#: glade/drgeo2.glade.h:24 glade/drgeoMDI.glade.h:24
+msgid "Arc circle defined by three points"
+msgstr "Arco de círculo definido por tres puntos"
+
+#: glade/drgeo2.glade.h:25
+msgid "Avalaible macro-construction"
+msgstr "Macros disponibles"
+
+#: glade/drgeo2.glade.h:26 glade/drgeoMDI.glade.h:25
+msgid ""
+"Axial symmetry of an object. When ambiguity, the first selected line is the "
+"line to transform"
+msgstr ""
+"Simetría axial (reflexión en una recta) aplicada a un objeto.  Cuando haya "
+"ambigüedad, la primera recta\n"
+"seleccionada es la recta a transformar"
+
+#: glade/drgeo2.glade.h:27
+msgid "Build a macro construction"
+msgstr "Crear una macro"
+
+#: glade/drgeo2.glade.h:28
+msgid "Build a macro-construction"
+msgstr "Crear una macro"
+
+#: glade/drgeo2.glade.h:29 glade/drgeoMDI.glade.h:26
+msgid ""
+"Central symmetry of an object. When ambiguity, the first selected point is "
+"the point to transform"
+msgstr ""
+"Simetría central aplicada a un objeto.  Cuando haya ambigüedad, el primer "
+"punto\n"
+"seleccionado es el punto a transformar"
+
+#: glade/drgeo2.glade.h:30 glade/drgeoMDI.glade.h:29
+msgid "Change the property of an object"
+msgstr "Cambiar las propiedades de un objeto"
+
+#: glade/drgeo2.glade.h:31
+msgid "Change the style of an object"
+msgstr "Cambiar el estilo de un objeto"
+
+#: glade/drgeo2.glade.h:32 glade/drgeoMDI.glade.h:30
+msgid "Circle defines by center and point, radius or segment"
+msgstr ""
+"Círculo definido por su centro, y por (a)un punto, o (b)valor numérico del "
+"radio, o (c)un segmento"
+
+#: glade/drgeo2.glade.h:34
+msgid "Construct a macro"
+msgstr "Construir una macro"
+
+#: glade/drgeo2.glade.h:35
+msgid "Create curve"
+msgstr "Crear curva"
+
+#: glade/drgeo2.glade.h:36
+msgid "Create numeric object"
+msgstr "Crear objeto numérico"
+
+#: glade/drgeo2.glade.h:37
+msgid "Create point"
+msgstr "Crear punto"
+
+#: glade/drgeo2.glade.h:38
+msgid "Curve"
+msgstr "Curva"
+
+#: glade/drgeo2.glade.h:39
+msgid "Custome User Interface"
+msgstr "Personalizar interfaz de usuario"
+
+#: glade/drgeo2.glade.h:40
+msgid "Custome User Interface in the current view"
+msgstr "Personalizar interfaz de usuario en la vista actual"
+
+#: glade/drgeo2.glade.h:41 glade/drgeoMDI.glade.h:38
+msgid "Delete an object and its relatives"
+msgstr "Borrar un objeto y los que dependan de él"
+
+#: glade/drgeo2.glade.h:42
+msgid "Description"
+msgstr "Descripción"
+
+#: glade/drgeo2.glade.h:43 glade/drgeoMDI.glade.h:39
+msgid "Distance between objects, curve length, or edit free value"
+msgstr ""
+"Distancia entre objetos, longitud de curvas,\n"
+" o escribir un valor libre"
+
+#: glade/drgeo2.glade.h:44
+msgid "Edit Scheme script"
+msgstr "Editar un script Scheme"
+
+#: glade/drgeo2.glade.h:45
+msgid "Edit value"
+msgstr "Editar valor numérico"
+
+#: glade/drgeo2.glade.h:46
+msgid "Enter the macro-construction description there"
+msgstr "Escriba allí la descripción de la macro"
+
+#: glade/drgeo2.glade.h:47
+msgid "Enter the macro-construction name there"
+msgstr "Escriba allí el nombre de la macro"
+
+#: glade/drgeo2.glade.h:48
+msgid "Enter the name of this view:"
+msgstr "Escriba el nombre de esta vista:"
+
+#: glade/drgeo2.glade.h:49
+msgid "Execute"
+msgstr "Ejecutar"
+
+#: glade/drgeo2.glade.h:50
+msgid "Execute a macro-construction"
+msgstr "Ejecutar una macro"
+
+#: glade/drgeo2.glade.h:51
+msgid "Execute pre-built macro"
+msgstr "Ejecutar macro previamente construida"
+
+#: glade/drgeo2.glade.h:52
+msgid "Free point properties"
+msgstr "Propiedades de puntos libres"
+
+#: glade/drgeo2.glade.h:53
+msgid "Give a name and a description"
+msgstr "Escoja un nombre y una descripción"
+
+#: glade/drgeo2.glade.h:54 glade/drgeoMDI.glade.h:55
+msgid "Guile script using objects as input parameters"
+msgstr "Script Guile que usa objetos como parámetros de entrada"
+
+#: glade/drgeo2.glade.h:55 glade/drgeoMDI.glade.h:56
+msgid "Half-Line defined by two points, the first selected point is the origin"
+msgstr ""
+"Semirrecta definida por dos puntos, el primer \n"
+"punto seleccionado es el origen"
+
+#: glade/drgeo2.glade.h:56
+msgid "Input"
+msgstr "Entrada"
+
+#: glade/drgeo2.glade.h:57
+msgid "Intro"
+msgstr "Intro"
+
+#: glade/drgeo2.glade.h:59 glade/drgeoMDI.glade.h:58
+msgid "Line defined by two points"
+msgstr "Recta definida por dos puntos"
+
+#: glade/drgeo2.glade.h:60 glade/drgeoMDI.glade.h:59
+msgid ""
+"Line passing through one point and orthogonal to a line, half-line, etc."
+msgstr ""
+"Recta que pasa por un punto y que es perpendicular a otra recta,\n"
+" semirrecta, etc."
+
+#: glade/drgeo2.glade.h:61 glade/drgeoMDI.glade.h:60
+msgid "Line passing through one point and parallel to a line, half-line, etc."
+msgstr ""
+"Recta que pasa por un punto y que es paralela a otra recta, \n"
+"semirrecta, etc."
+
+#: glade/drgeo2.glade.h:62
+msgid "Lock"
+msgstr "Bloquear"
+
+#: glade/drgeo2.glade.h:63
+msgid "Lock the interface"
+msgstr "Bloquear la interfaz"
+
+#: glade/drgeo2.glade.h:64 glade/drgeoMDI.glade.h:61
+msgid "Locus defined by a free point and a relative point"
+msgstr ""
+"Lugar geométrico definido por un punto\n"
+"libre y un punto con restricciones"
+
+#: glade/drgeo2.glade.h:65
+msgid "Macro name"
+msgstr "Nombre de la macro"
+
+#: glade/drgeo2.glade.h:67
+msgid "Masked"
+msgstr "Ocultar"
+
+#: glade/drgeo2.glade.h:70
+msgid "Not masked"
+msgstr "Sin ocultar"
+
+#: glade/drgeo2.glade.h:71
+msgid "Numeric"
+msgstr "Valores Numérico"
+
+#: glade/drgeo2.glade.h:72
+msgid "Ordinate"
+msgstr "Ordenada"
+
+#: glade/drgeo2.glade.h:73
+msgid "Other"
+msgstr "Otros"
+
+#: glade/drgeo2.glade.h:74
+msgid "Output"
+msgstr "Salida"
+
+#: glade/drgeo2.glade.h:75
+msgid "Password to lock the changes to the interface: "
+msgstr "Contraseña para bloquear cambios a la interfaz"
+
+#: glade/drgeo2.glade.h:76
+msgid "Password to unlock the changes to the interface:"
+msgstr "Contraseña para desbloquear cambios a la interfaz:"
+
+#: glade/drgeo2.glade.h:78 glade/drgeoMDI.glade.h:65
+msgid "Point given its coordinates"
+msgstr "Punto, dadas sus coordenadas"
+
+#: glade/drgeo2.glade.h:79 glade/drgeoMDI.glade.h:66
+msgid "Point on an object or the background plane"
+msgstr "Punto sobre un objeto o sobre el plano de fondo"
+
+#: glade/drgeo2.glade.h:80
+msgid ""
+"Polygon defined by n points. Last choosen point must be the initial point to "
+"terminate the selection"
+msgstr ""
+"Polígono definido por n puntos.  El último\n"
+" punto seleccionado debe ser el punto inicial\n"
+" de modo que la selección pueda terminar"
+
+#: glade/drgeo2.glade.h:81
+msgid "Press this button to mask the object"
+msgstr "Presione este botón para ocultar el objeto"
+
+#: glade/drgeo2.glade.h:82
+msgid "Press this button to unmask the object"
+msgstr "Presione este botón para hacer visible el objeto"
+
+#: glade/drgeo2.glade.h:83
+msgid "Print Figure"
+msgstr "Imprimir figura"
+
+#: glade/drgeo2.glade.h:84
+msgid "Re-lock the interface"
+msgstr "Re-bloquear la interfaz"
+
+#: glade/drgeo2.glade.h:85
+msgid "Rename the view"
+msgstr "Renombrar la vista"
+
+#: glade/drgeo2.glade.h:86 glade/drgeoMDI.glade.h:75
+msgid ""
+"Rotation of an object. When ambiguity, the first selected point is the point "
+"to rotate"
+msgstr ""
+"Rotación de un objeto.  Cuando haya ambigüedad, el primer punto\n"
+" seleccionado es el punto a rotar"
+
+#: glade/drgeo2.glade.h:87 glade/drgeoMDI.glade.h:78
+msgid ""
+"Scale an object. When ambiguity, the first selected point is the point to "
+"transform"
+msgstr ""
+"Hacer a escala un objeto (Aplicar una homotecia a un objeto).  \n"
+"Cuando haya ambigüedad, el primer punto seleccionado es el punto a "
+"transformar"
+
+#: glade/drgeo2.glade.h:88
+msgid "Scheme script using objects as input parameters"
+msgstr "Script Scheme que usa objetos como parámetros de entrada"
+
+#: glade/drgeo2.glade.h:89
+msgid "Script"
+msgstr "Script"
+
+#: glade/drgeo2.glade.h:90 glade/drgeoMDI.glade.h:79
+msgid "Segment defined by two points"
+msgstr "Segmento de recta definido por dos puntos"
+
+#: glade/drgeo2.glade.h:91
+msgid "Select a macro-construction then the figure items"
+msgstr "Seleccione una macro,  después los elementos que la macro requiera"
+
+#: glade/drgeo2.glade.h:92
+msgid "Select and move an object"
+msgstr "Seleccionar y mover un objeto"
+
+#: glade/drgeo2.glade.h:93
+msgid "Select input parameters"
+msgstr "Seleccione los parámetros de entrada"
+
+#: glade/drgeo2.glade.h:94
+msgid "Select output parameters"
+msgstr "Seleccione los parámetros de salida"
+
+#: glade/drgeo2.glade.h:95
+msgid "Select printer: "
+msgstr "Seleccione impresora:"
+
+#: glade/drgeo2.glade.h:100 glade/drgeoMDI.glade.h:82
+msgid "The midpoint of a segment or between two points"
+msgstr "El punto medio de un segmento o de un par de puntos"
+
+#: glade/drgeo2.glade.h:101 glade/drgeoMDI.glade.h:83
+msgid "The point(s) of intersection between two objects"
+msgstr "El(los) punto(s) de intersección entre dos objetos"
+
+#: glade/drgeo2.glade.h:102
+msgid ""
+"This interface has already been locked.\n"
+"Enter the previously used password for this view: "
+msgstr ""
+"Esta interfaz ya ha sido bloqueada.\n"
+"Introduzca la contraseña usada anteriormente para esta vista: "
+
+#: glade/drgeo2.glade.h:104
+msgid ""
+"To build a macro-construction,\n"
+"\n"
+"1. First select the input parameters\n"
+"2. Next select the output parameters,\n"
+"3. Last chose a name and a description."
+msgstr ""
+"Para crear una macro,\n"
+"\n"
+"1.  Primero seleccione los parámetros de entrada,\n"
+"2.  Después seleccione los parámetros de salida,\n"
+"3.  Por último seleccione un nombre y una descripción."
+
+#: glade/drgeo2.glade.h:109
+msgid ""
+"To play a macro-construction,\n"
+"\n"
+"1. First select a macro-construction from the list,\n"
+"2. Select items on the figure. Only relevant items \n"
+"to the selected macro-construction are selectable.\n"
+"Once enought items are selected, the macro is \n"
+"automaticly executed.\n"
+"To start press the button \"next\"."
+msgstr ""
+"Para ejecutar una macro,\n"
+"\n"
+"1. Primero seleccione la macro que quiera de la lista,\n"
+"2. Seleccione objetos de la figura.  Sólo los objetos relevantes\n"
+"  para la ejecución de la macro son seleccionables.\n"
+"Una vez que suficientes objetos sean seleccionados, la macro es \n"
+"ejecutada automáticamente.\n"
+"  Para comenzar, presione el botón «siguiente»."
+
+#: glade/drgeo2.glade.h:117
+msgid "Tools based on properties and transformations"
+msgstr "Herramientas basadas en propiedades y transformaciones"
+
+#: glade/drgeo2.glade.h:118 glade/drgeoMDI.glade.h:84
+msgid ""
+"Translation of an object. When ambiguity, the first selected vector is the "
+"vector to translate"
+msgstr ""
+"Traslación de un objeto.  Cuando haya ambigüedad, el primer\n"
+" vector seleccionado es el vector a ser trasladado"
+
+#: glade/drgeo2.glade.h:119
+msgid "Unlock"
+msgstr "Desbloquear"
+
+#: glade/drgeo2.glade.h:120 glade/drgeoMDI.glade.h:86
+msgid "Vector and point coordinates, line and circle equation"
+msgstr ""
+"Coordenadas de un vector o de un punto, ecuaciones de la recta y del círculo"
+
+#: glade/drgeo2.glade.h:121 glade/drgeoMDI.glade.h:87
+msgid "Vector defined by two points"
+msgstr "Vector definido por dos puntos"
+
+#: glade/drgeo2.glade.h:122
+msgid "Visibility"
+msgstr "Visibilidad"
+
+#: glade/drgeo2.glade.h:123
+msgid "Write down your description there."
+msgstr "Escriba allí su descripción"
+
+#: glade/drgeo2.glade.h:124
+msgid "You can edit the description"
+msgstr "Usted puede editar la descripción"
+
+#: glade/drgeo2.glade.h:125
+msgid "macro"
+msgstr "macro"
+
+#: glade/drgeo2.glade.h:126
+msgid "other"
+msgstr "otros"
+
+#: glade/drgeo2.glade.h:127
+msgid "transformation"
+msgstr "transformación"
+
+#: glade/drgeoMDI.glade.h:16
+#, fuzzy
+msgid "Animate a free point on a curve at speed 1"
+msgstr "Punto libre sobre una curva %s"
+
+#: glade/drgeoMDI.glade.h:17
+#, fuzzy
+msgid "Animate a free point on a curve at speed 2"
+msgstr "Punto libre sobre una curva %s"
+
+#: glade/drgeoMDI.glade.h:18
+#, fuzzy
+msgid "Animate a free point on a curve at speed 3"
+msgstr "Punto libre sobre una curva %s"
+
+#: glade/drgeoMDI.glade.h:19
+#, fuzzy
+msgid "Animate a free point on a curve at speed 4"
+msgstr "Punto libre sobre una curva %s"
+
+#: glade/drgeoMDI.glade.h:20
+msgid "Animation x1"
+msgstr ""
+
+#: glade/drgeoMDI.glade.h:21
+msgid "Animation x2"
+msgstr ""
+
+#: glade/drgeoMDI.glade.h:22
+msgid "Animation x3"
+msgstr ""
+
+#: glade/drgeoMDI.glade.h:23
+msgid "Animation x4"
+msgstr ""
+
+#: glade/drgeoMDI.glade.h:27
+msgid "Change the User Interface of the current figure"
+msgstr "Cambiar la interfaz de usuario de la figura actual"
+
+#: glade/drgeoMDI.glade.h:28
+msgid "Change the look of an object"
+msgstr "Cambiar la apariencia de un objeto"
+
+#: glade/drgeoMDI.glade.h:31
+msgid "Create a new geometric figure"
+msgstr "Crear una nueva figura Geométrica"
+
+#: glade/drgeoMDI.glade.h:32
+msgid "Create a new text"
+msgstr "Crear un nuevo texto"
+
+#: glade/drgeoMDI.glade.h:34
+#, no-c-format
+msgid "Default 100%"
+msgstr "Predeterminado 100%"
+
+#: glade/drgeoMDI.glade.h:35
+msgid "Define a macro-construction"
+msgstr "Definir una macro"
+
+#: glade/drgeoMDI.glade.h:36
+msgid "Define exporting area"
+msgstr "Definir área de exportación"
+
+#: glade/drgeoMDI.glade.h:37
+msgid "Define the exporting area"
+msgstr "Definir el área de exportación"
+
+#: glade/drgeoMDI.glade.h:40
+msgid "Dr Geo"
+msgstr "Dr Geo"
+
+#: glade/drgeoMDI.glade.h:41
+msgid "Evaluate a figure defined in Scheme"
+msgstr "Evalúa una figura definida en el lenguaje Scheme"
+
+#: glade/drgeoMDI.glade.h:42
+msgid "Execute a pre-built macro-construction"
+msgstr "Ejecutar macro previamente construida"
+
+#: glade/drgeoMDI.glade.h:44
+msgid "Export current figure to Flydraw (for WIMS)"
+msgstr "Exportar figura actual a Flydraw (para WIMS)"
+
+#: glade/drgeoMDI.glade.h:45
+msgid "Export current figure to LaTeX (using PSTrick package)"
+msgstr "Exportar figura actual a LaTex (Usando el paquete PSTrick)"
+
+#: glade/drgeoMDI.glade.h:46
+msgid "Export current figure to PNG (image format)"
+msgstr "Exportar figura actual a PNG (formato de imagenes)"
+
+#: glade/drgeoMDI.glade.h:47
+msgid "Export current figure to PostScript (eps)"
+msgstr "Exportar figura actual a PostScript (eps)"
+
+#: glade/drgeoMDI.glade.h:48
+msgid "Export figure to Flydraw"
+msgstr "Exportar figura a Flydraw"
+
+#: glade/drgeoMDI.glade.h:49
+msgid "Export figure to LaTeX"
+msgstr "Exportar figura a LaTex"
+
+#: glade/drgeoMDI.glade.h:50
+msgid "Export figure to PNG"
+msgstr "Exportar figura a PNG"
+
+#: glade/drgeoMDI.glade.h:51
+msgid "Export figure to PostScript"
+msgstr "Exportar figura a PostScript"
+
+#: glade/drgeoMDI.glade.h:52
+msgid "Export preferences"
+msgstr "Preferencias de exportación"
+
+#: glade/drgeoMDI.glade.h:53
+msgid "Free _point"
+msgstr "_Punto libre"
+
+#: glade/drgeoMDI.glade.h:54
+msgid "Grid"
+msgstr "Rejilla"
+
+#: glade/drgeoMDI.glade.h:57
+msgid "Help"
+msgstr "Ayuda"
+
+#: glade/drgeoMDI.glade.h:62
+msgid "M_ove an object"
+msgstr "M_over un objeto"
+
+#: glade/drgeoMDI.glade.h:63
+msgid "New Figure"
+msgstr "Figura nueva"
+
+#: glade/drgeoMDI.glade.h:64
+msgid "New Text"
+msgstr "Texto nuevo"
+
+#: glade/drgeoMDI.glade.h:67
+msgid "Polygon defined by three points or more"
+msgstr "Polígono definido por tres o más puntos"
+
+#: glade/drgeoMDI.glade.h:68
+msgid "Preferences"
+msgstr "Preferencias"
+
+#: glade/drgeoMDI.glade.h:69
+msgid "Preferences set up"
+msgstr "Ajuste de preferencias"
+
+#: glade/drgeoMDI.glade.h:70
+msgid "Re_name"
+msgstr "Re_nombrar"
+
+#: glade/drgeoMDI.glade.h:71
+msgid "Remove exporting area"
+msgstr "Eliminar área de exportación"
+
+#: glade/drgeoMDI.glade.h:72
+msgid "Remove the exporting area"
+msgstr "Eliminar el área de exportación"
+
+#: glade/drgeoMDI.glade.h:73
+msgid "Rename"
+msgstr "Renombrar"
+
+#: glade/drgeoMDI.glade.h:74
+msgid "Rename the current view"
+msgstr "Renombrar la vista actual"
+
+#: glade/drgeoMDI.glade.h:76
+msgid "Save _multiple"
+msgstr "Guardar _múltiple"
+
+#: glade/drgeoMDI.glade.h:77
+msgid "Save several data (figures, macro-constructions.) in one file"
+msgstr "Guardar varios datos (figuras, macros.) en un archivo"
+
+#: glade/drgeoMDI.glade.h:80
+msgid "Show or hide the grid"
+msgstr "Mostrar u ocultar la rejilla"
+
+#: glade/drgeoMDI.glade.h:81
+msgid "Show or hide the unit grid in the current view"
+msgstr "Mostrar u ocultar la rejilla en la vista actual"
+
+#: glade/drgeoMDI.glade.h:85
+msgid "User manual"
+msgstr "Manual de usuario"
+
+#: glade/drgeoMDI.glade.h:88
+msgid "Windows"
+msgstr "Ventanas"
+
+#: glade/drgeoMDI.glade.h:90
+#, no-c-format
+msgid "Zoom to 100%"
+msgstr "Acercamiento(Zoom) a 100%"
+
+#: glade/drgeoMDI.glade.h:92
+#, no-c-format
+msgid "Zoom to 125%"
+msgstr "Acercamiento(Zoom) a 125%"
+
+#: glade/drgeoMDI.glade.h:94
+#, no-c-format
+msgid "Zoom to 150%"
+msgstr "Acercamiento(Zoom) a 150%"
+
+#: glade/drgeoMDI.glade.h:96
+#, no-c-format
+msgid "Zoom to 175%"
+msgstr "Acercamiento(Zoom) a 175%"
+
+#: glade/drgeoMDI.glade.h:98
+#, no-c-format
+msgid "Zoom to 200%"
+msgstr "Acercamiento(Zoom) a 200%"
+
+#: glade/drgeoMDI.glade.h:100
+#, no-c-format
+msgid "Zoom to 25%"
+msgstr "Acercamiento(Zoom) a 25%"
+
+#: glade/drgeoMDI.glade.h:102
+#, no-c-format
+msgid "Zoom to 50%"
+msgstr "Acercamiento(Zoom) a 50%"
+
+#: glade/drgeoMDI.glade.h:104
+#, no-c-format
+msgid "Zoom to 75%"
+msgstr "Acercamiento(Zoom) a 75%"
+
+#: glade/drgeoMDI.glade.h:105
+msgid "_About"
+msgstr "_Acerca de"
+
+#: glade/drgeoMDI.glade.h:106
+msgid "_Angle"
+msgstr "_Ángulo"
+
+#: glade/drgeoMDI.glade.h:107
+#, fuzzy
+msgid "_Animation"
+msgstr "_Transformación"
+
+#: glade/drgeoMDI.glade.h:108
+msgid "_Arc Circle"
+msgstr "_Arco de Círculo"
+
+#: glade/drgeoMDI.glade.h:109
+msgid "_Axial Symmetry"
+msgstr "Simetría _Axial(reflexión)"
+
+#: glade/drgeoMDI.glade.h:110
+msgid "_Central Symmetry"
+msgstr "Simetría _Central"
+
+#: glade/drgeoMDI.glade.h:111
+msgid "_Circle"
+msgstr "_Círculo"
+
+#: glade/drgeoMDI.glade.h:112
+msgid "_Construct Macro"
+msgstr "_Construir Macro"
+
+#: glade/drgeoMDI.glade.h:113
+msgid "_Contents"
+msgstr "_Contenido"
+
+#: glade/drgeoMDI.glade.h:114
+msgid "_Coordinates"
+msgstr "_Coordenadas"
+
+#: glade/drgeoMDI.glade.h:115
+msgid "_Coordinates & Equation"
+msgstr "_Coordenadas y Ecuación"
+
+#: glade/drgeoMDI.glade.h:116
+msgid "_Curve"
+msgstr "_Curva"
+
+#: glade/drgeoMDI.glade.h:117
+msgid "_Custom Interface"
+msgstr "Personalizar _Interfaz "
+
+#: glade/drgeoMDI.glade.h:118
+msgid "_Delete an Object"
+msgstr "_Borrar un objeto"
+
+#: glade/drgeoMDI.glade.h:119
+msgid "_Distance & Length"
+msgstr "_Distancia y longitud"
+
+#: glade/drgeoMDI.glade.h:120
+msgid "_Edit"
+msgstr "_Editar"
+
+#: glade/drgeoMDI.glade.h:121
+msgid "_Evaluate"
+msgstr "_Evaluar"
+
+#: glade/drgeoMDI.glade.h:122
+msgid "_Execute Macro"
+msgstr "_Ejecutar una Macro"
+
+#: glade/drgeoMDI.glade.h:123
+msgid "_Figure"
+msgstr "_Figura"
+
+#: glade/drgeoMDI.glade.h:124
+msgid "_File"
+msgstr "_Archivo"
+
+#: glade/drgeoMDI.glade.h:125
+msgid "_Geometric Locus"
+msgstr "Lugar _Geométrico"
+
+#: glade/drgeoMDI.glade.h:126
+msgid "_Half-line"
+msgstr "Semirrecta"
+
+#: glade/drgeoMDI.glade.h:127
+msgid "_Help"
+msgstr "Ayuda"
+
+#: glade/drgeoMDI.glade.h:128
+msgid "_Intersection"
+msgstr "_Intersección"
+
+#: glade/drgeoMDI.glade.h:129
+msgid "_Line"
+msgstr "Recta"
+
+#: glade/drgeoMDI.glade.h:130
+msgid "_Look"
+msgstr "_Apariencia"
+
+#: glade/drgeoMDI.glade.h:131
+msgid "_Macro"
+msgstr "_Macro"
+
+#: glade/drgeoMDI.glade.h:132
+msgid "_Macro-constructions"
+msgstr "Macros"
+
+#: glade/drgeoMDI.glade.h:133
+msgid "_Middle"
+msgstr "_Mitad"
+
+#: glade/drgeoMDI.glade.h:134
+msgid "_Numeric"
+msgstr "Valor _Numérico"
+
+#: glade/drgeoMDI.glade.h:135
+msgid "_Orthogonal Line"
+msgstr "Recta Perpendicular"
+
+#: glade/drgeoMDI.glade.h:136
+msgid "_Other"
+msgstr "_Otros"
+
+#: glade/drgeoMDI.glade.h:137
+msgid "_Parallel Line"
+msgstr "Recta _Paralela"
+
+#: glade/drgeoMDI.glade.h:138
+msgid "_Point"
+msgstr "_Punto"
+
+#: glade/drgeoMDI.glade.h:139
+msgid "_Polygon"
+msgstr "_Polígono"
+
+#: glade/drgeoMDI.glade.h:140
+msgid "_Property"
+msgstr "_Propiedad"
+
+#: glade/drgeoMDI.glade.h:141
+msgid "_Rotation"
+msgstr "_Rotación"
+
+#: glade/drgeoMDI.glade.h:142
+msgid "_Scale"
+msgstr "E_scala(Homotecia)"
+
+#: glade/drgeoMDI.glade.h:143
+msgid "_Script"
+msgstr "_Script"
+
+#: glade/drgeoMDI.glade.h:144
+msgid "_Segment"
+msgstr "_Segmento"
+
+#: glade/drgeoMDI.glade.h:145
+msgid "_Text"
+msgstr "_Texto"
+
+#: glade/drgeoMDI.glade.h:146
+msgid "_Transformation"
+msgstr "_Transformación"
+
+#: glade/drgeoMDI.glade.h:147
+msgid "_Translation"
+msgstr "_Traslación"
+
+#: glade/drgeoMDI.glade.h:148
+msgid "_Vector"
+msgstr "_Vector"
+
+#: glade/drgeoMDI.glade.h:149
+msgid "_Zoom"
+msgstr "_Ampliar"
+
+#~ msgid "Guile script attached to a widget"
+#~ msgstr "Script Guile asociado a un widget"
+
+#~ msgid "Create a polygon by selecting its extremity"
+#~ msgstr "Construya un polígono seleccionando sus extremos"
+
+#~ msgid "Attach a script to a button"
+#~ msgstr "Asociar un script a un botón"
+
+#~ msgid "_Button Script"
+#~ msgstr "_Botón de script"
+
+#~ msgid "File to load"
+#~ msgstr "Archivo a cargar"
+
+#~ msgid "filename"
+#~ msgstr "Nombre del archivo"
+
+#~ msgid "%s is not a Dr Genius XML file\n"
+#~ msgstr "%s no es un archivo XML de Dr Genius\n"
+
+#~ msgid "_New..."
+#~ msgstr "_Nuevo..."
+
+#~ msgid "Undo modification"
+#~ msgstr "Deshacer modificación"
+
+#~ msgid "Redo change"
+#~ msgstr "Rehacer el cambio"
+
+#~ msgid "This does nothing; it is only a demonstration."
+#~ msgstr "Esto no hace nada; sólo es una demostración"
+
+#~ msgid "Hilaire Fernandes: main programmer, Dr Geo"
+#~ msgstr "Hilaire Fernandes: programador principal, Dr Geo"
+
+#~ msgid "The Gnome Translation Teams. Check the po/*.po files to know them"
+#~ msgstr ""
+#~ "El equipo de traducción de Gnome.  Verifique los archivos po/*.po\n"
+#~ " para conocerlos"
+
+#~ msgid "George Lebl: MDI interface design with GOB"
+#~ msgstr "George Lebl:  Diseño de interface MDI con GOB"
+
+#~ msgid "Laurent Gauthier: MDI interface, many contributions in Dr Geo code"
+#~ msgstr ""
+#~ "Laurent Gauthier: Interface MDI, muchas contribuciones en el código\n"
+#~ " de Dr Geo"
+
+#~ msgid "Frederic Toussaint: graphic art"
+#~ msgstr "Fréderic Toussaint: arte gráfico"
+
+#~ msgid "Dr Genius Home Page"
+#~ msgstr "Página principal de Dr Genius"
+
+#~ msgid "An OFSET development"
+#~ msgstr "Un desarrollo de OFSET"
+
+#~ msgid "Value"
+#~ msgstr "Valor Numérico"
+
+#~ msgid "_Style"
+#~ msgstr "E_stilo"
+
+#~ msgid "Data Name"
+#~ msgstr "Nombre de los datos"
+
+#~ msgid "Object Style"
+#~ msgstr "Estilo de los objetos"
+
+#~ msgid "Geometric figure preferences"
+#~ msgstr "Preferencias para figuras geométricas"
+
+#~ msgid "Finish macro-construction"
+#~ msgstr "Finalizar creación de la macro para su construcción"
+
+#~ msgid ""
+#~ "You've selected all the needed\n"
+#~ "information to build a macro-construction.\n"
+#~ "\n"
+#~ "Press Finish to build it!\n"
+#~ "\n"
+#~ "Or you can change selection with the Back button."
+#~ msgstr ""
+#~ "\n"
+#~ "Ha seleccionado todo la información\n"
+#~ "necesaria para crear una macro.\n"
+#~ "\n"
+#~ "Pulse «Terminar» para crearla.\n"
+#~ "\n"
+#~ "O bien puede cambiar su selección con el boton «Anterior»."
+
+#~ msgid "Tips"
+#~ msgstr "Sugerencias"
+
+#~ msgid ""
+#~ "If you select another macro-construction,\n"
+#~ "all the selected item will be unselected.\n"
+#~ "\n"
+#~ "You can edit the description text, your change\n"
+#~ "will be recorded next time you save the macro."
+#~ msgstr ""
+#~ "Si usted selecciona otra macro,\n"
+#~ "todos los objetos seleccionados dejarán de estarlo.\n"
+#~ "\n"
+#~ "Usted puede editar el texto con la descripción; sus cambios\n"
+#~ "seran guardados la vez siguiente en que guarde la macro. "
+
+#~ msgid "Calculatrice"
+#~ msgstr "Calculadora"
+
+#~ msgid "window2"
+#~ msgstr "Ventana2"
+
+#~ msgid "Save"
+#~ msgstr "Guardar"
+
+#~ msgid "Close"
+#~ msgstr "Cerrar"
+
+#~ msgid "window3"
+#~ msgstr "ventana3"

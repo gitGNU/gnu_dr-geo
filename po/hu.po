@@ -1,0 +1,2252 @@
+# Hungarian translation of drgeo.
+# Copyright (C) 2000, 2004 Free Software Foundation, Inc.
+# This file is distributed under the same license as the drgeo package.
+# Szabolcs Ban <shooby@gnome.hu>, 2000.
+# Gabor Kelemen <kelemeng@gnome.hu>, 2004, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: drgeo\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-07-26 23:59+0200\n"
+"PO-Revision-Date: 2005-07-12 16:35+0200\n"
+"Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
+"Language-Team: Hungarian <gnome@gnome.hu>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.1\n"
+
+#: drgenius_main.cc:56
+#, c-format
+msgid ""
+"Command line options:\n"
+"Term under [] are options, || means OR:\n"
+"   drgeo [--file geo_file_name || macro_file_name] [geo_file_name.fgeo] "
+"[macro_file_name.mgeo] [--evaluate dsf_file_name] [--texmacs] [--help]\n"
+"\n"
+"--file       : to load a Dr. Geo file\n"
+"--evaluate   : to load and evaluate a Dr. Geo Scheme Figure (DSF)\n"
+"--texmacs    : start Dr. Geo as a TeXmacs plug-in\n"
+"--help       : this help summary\n"
+"\n"
+"Several files can be loaded using a --file command for each\n"
+"\n"
+msgstr ""
+"Parancssori opciók:\n"
+"A [] közötti szavak opciókat, a || VAGY-ot jelölnek:\n"
+"   drgeo [--file geo_fájl_név || macro_fájl_név] [geo_fájl_név.fgeo] "
+"[macro_fájl_név.mgeo] [--evaluate dsf_fájl_név] [--texmacs] [--help]\n"
+"\n"
+"--file       : Egy Dr. Geo fájl betöltése\n"
+"--evaluate   : Egy Dr. Geo Scheme Figure (DSF) betöltése és kiértékelése\n"
+"--texmacs    : Dr. Geo indítása TeXmacs bővítményként\n"
+"--help       : Ez a súgószöveg\n"
+"\n"
+"Egyszere több fájl is betölthető egy-egy --file kapcsolóval mindegyikhez\n"
+"\n"
+
+#: drgenius_main.cc:160
+#, c-format
+msgid ""
+"\n"
+"Miss a filename in --file\n"
+"\n"
+msgstr ""
+"\n"
+"Hiányzik a fájlnév a --file kapcsolóhoz\n"
+"\n"
+
+#: drgenius_main.cc:172
+#, c-format
+msgid ""
+"\n"
+"Miss a filename to evaluate in --evaluate\n"
+"\n"
+msgstr ""
+"\n"
+"Hiányzik a kiértékelendő fájl neve a --evaluate kapcsolóhoz\n"
+"\n"
+
+#: drgenius_main.cc:196
+#, c-format
+msgid "Unknown file type: %s (try .fgeo, .mgeo)\n"
+msgstr "Ismeretlen fájltípus: %s (próbálja .fgeo vagy .mgeo fájlokkal)\n"
+
+#: drgenius_main.cc:200
+#, c-format
+msgid ""
+"\n"
+"Unknows command: %s\n"
+msgstr ""
+"\n"
+"Ismeretlen parancs: %s\n"
+
+#: drgenius_mdi.cc:99
+msgid "Welcome to GNU Dr. Geo - Free Interactive geometry by OFSET"
+msgstr "Üdvözli a GNU Dr. Geo - az OFSET nyílt interaktív geometriaszoftvere"
+
+#: drgenius_mdi.cc:149
+#, c-format
+msgid "Error loading file '%s'"
+msgstr "Hiba a következő fájl betöltése közben: '%s'"
+
+#: drgenius_mdi.cc:592
+msgid "Are you sure to quit Dr. Geo?"
+msgstr "Valóban kilép a Dr. Geo-ból?"
+
+#: drgenius_mdi.cc:643 drgenius_mdi.cc:703
+#, c-format
+msgid "Can't open file '%s'"
+msgstr "Nem lehet megnyitni '%s' fájlt"
+
+#: drgenius_mdi.cc:668
+msgid "Open..."
+msgstr "Megnyitás..."
+
+#: drgenius_mdi.cc:727
+msgid "Evaluate..."
+msgstr "Kiértékelés..."
+
+#: drgenius_mdi.cc:767 drgenius_mdi.cc:797
+#, c-format
+msgid "Error saving to '%s'!"
+msgstr "Hiba a következőbe mentés közben: %s!"
+
+#: drgenius_mdi.cc:829 drgenius_mdi.cc:859 drgenius_mdi.cc:890
+#: drgenius_mdi.cc:925
+#, c-format
+msgid "Error exporting to '%s'!"
+msgstr "Hiba a következőbe exportálás közben: %s !"
+
+#: drgenius_mdi.cc:943
+#, c-format
+msgid ""
+"Error exporting to '%s'!\n"
+"Exporting to PNG required the Image Magick package.\n"
+"Install it and try again!"
+msgstr ""
+"Hiba a következőbe exportálás közben: %s !\n"
+"A PNG formátumba exportáláshoz szükséges az Image Magick csomag.\n"
+"Előbb telepítse és ezután próbálja újra!"
+
+#: drgenius_mdi.cc:972
+msgid "Define the printing area"
+msgstr "A nyomtatandó terület megadása"
+
+#: drgenius_mdi.cc:1003 drgenius_mdi.cc:1087 drgenius_mdi.cc:1112
+#: drgenius_mdi.cc:1138 drgenius_mdi.cc:1165 drgenius_mdi.cc:1192
+#, c-format
+msgid ""
+"File '%s' exists!\n"
+"Overwrite?"
+msgstr ""
+"%s fájl már létezik!\n"
+"Felülírja?"
+
+#: drgenius_mdi.cc:1027
+msgid "Save As..."
+msgstr "Mentés másként..."
+
+#: drgenius_mdi.cc:1215 drgenius_mdi.cc:1865
+msgid "Interactive 2D Figure"
+msgstr "Interaktív 2D alakzat"
+
+#: drgenius_mdi.cc:1216
+msgid "Console"
+msgstr "Konzol"
+
+#: drgenius_mdi.cc:1217 drgenius_mdi.cc:1866
+msgid "Text Buffer"
+msgstr "Szöveges puffer"
+
+#: drgenius_mdi.cc:1241
+msgid "Type"
+msgstr "Típus"
+
+#: drgenius_mdi.cc:1246 glade/drgeo2.glade.h:68
+msgid "Name"
+msgstr "Név"
+
+#. Next we add the list of avalaible macro-construction
+#: drgenius_mdi.cc:1280 drgenius_mdi.cc:1872 glade/drgeo2.glade.h:66
+msgid "Macro-construction"
+msgstr "Makrók"
+
+#: drgenius_mdi.cc:1365
+msgid "Error printing the current figure!"
+msgstr "Hiba a jelenlegi alakzat nyomtatásakor!"
+
+#: drgenius_mdi.cc:1409
+msgid ""
+"Only geometric figure\n"
+"can be exported to Flydraw!"
+msgstr ""
+"Csak geometriai alakzatot\n"
+"lehet Flydrawba exportálni!"
+
+#: drgenius_mdi.cc:1426 drgenius_mdi.cc:1478 drgenius_mdi.cc:1529
+#: drgenius_mdi.cc:1585 glade/drgeoMDI.glade.h:43
+msgid "Export As..."
+msgstr "Exportálás másként..."
+
+#: drgenius_mdi.cc:1461
+msgid ""
+"Only geomteric figure\n"
+"can be exported to LaTex!"
+msgstr ""
+"Csak geometriai alakzatot\n"
+"lehet LaTexba exportálni!"
+
+#: drgenius_mdi.cc:1513
+msgid ""
+"Only geomteric figure\n"
+"can be exported to PostScript!"
+msgstr ""
+"Csak geometriai alakzatot\n"
+"lehet PostScript-be exportálni!"
+
+#: drgenius_mdi.cc:1566
+msgid ""
+"Only geomteric figure\n"
+"can be exported to PNG!"
+msgstr ""
+"Csak geometriai alakzatot\n"
+"lehet PNG-be exportálni!"
+
+#: drgenius_mdi.cc:1705
+msgid "Are you sure to close this figure?"
+msgstr "Valóban bezárja ezt az alakzatot?"
+
+#: drgenius_mdi.cc:1729
+msgid "About Dr. Geo"
+msgstr "A Dr. Geo névjegye"
+
+#. VERSION
+#: drgenius_mdi.cc:1742
+#, fuzzy
+msgid ""
+"\n"
+"Free Interactive Geometry\n"
+"\n"
+"(c) Copyright 1996-2005 H. Fernandes  \n"
+"(c) Copyright 2000 L. Gauthier\n"
+"(c) Copyright 2000-2005 OFSET\n"
+"Translation: translator_name"
+msgstr ""
+"\n"
+"Nyílt, interaktív geometria\n"
+"\n"
+"(c) Copyright 1996-2000 H. Fernandes  \n"
+"(c) Copyright 2000 L. Gauthier\n"
+"(c) Copyright 2000-2003 OFSET\n"
+"Fordította: Kelemen Gábor"
+
+#: drgenius_mdi.cc:1826
+msgid "Save Session As..."
+msgstr "Munkamenet mentése mint..."
+
+#: drgenius_mdi.cc:1921 geo/drgeo_control.cc:812
+msgid "Play a recorded macro-construction"
+msgstr "Makró végrehajtása"
+
+#: drgenius_mdi.cc:1976
+#, fuzzy
+msgid "Select a free point to animate it"
+msgstr "Ponthalmaz: válasszon egy szabad és egy függő pontot"
+
+#: drgeo.desktop.in.h:1
+msgid "Dr.Geo"
+msgstr "Dr.Geo"
+
+#: drgeo.desktop.in.h:2
+msgid "Dr.Geo Math Tool"
+msgstr "Dr.Geo interaktív geometria"
+
+#: drgeo_adaptDialog.cc:404
+msgid ""
+"Password does not match\n"
+" Access denied!"
+msgstr ""
+"A jelszó nem egyezik\n"
+" Hozzáférés megtagadva!"
+
+#. create a new name
+#: editor_view.cc:42
+#, c-format
+msgid "Text %d"
+msgstr "Szöveg %d"
+
+#: geo_view.cc:32
+#, c-format
+msgid "Figure %d"
+msgstr "Alakzat %d"
+
+#: geo_view.cc:132
+msgid "Items"
+msgstr "Elemek"
+
+#: geo/drgeo_angle.cc:210 geo/drgeo_angle.cc:241
+msgid "this angle %1"
+msgstr "ez a szög %1"
+
+#: geo/drgeo_angle.cc:285
+#, c-format
+msgid "Geometric angle:: %s"
+msgstr "Geometriai szög:: %s"
+
+#: geo/drgeo_angle.cc:286 geo/drgeo_angle.cc:288 geo/drgeo_arcCircle.cc:377
+#: geo/drgeo_circle.cc:359 geo/drgeo_halfLine.cc:260 geo/drgeo_line.cc:320
+#: geo/drgeo_numeric.cc:481 geo/drgeo_numeric.cc:486 geo/drgeo_numeric.cc:503
+#: geo/drgeo_numeric.cc:510 geo/drgeo_numeric.cc:517 geo/drgeo_numeric.cc:518
+#: geo/drgeo_point.cc:445 geo/drgeo_point.cc:446 geo/drgeo_polygon.cc:289
+#, c-format
+msgid "Point %s"
+msgstr "Pont %s"
+
+#: geo/drgeo_angle.cc:287
+#, c-format
+msgid "Vertex %s"
+msgstr "Metszéspont %s"
+
+#: geo/drgeo_angle.cc:292
+#, c-format
+msgid "Oriented angle:: %s"
+msgstr "Irányított szög:: %s"
+
+#: geo/drgeo_angle.cc:293 geo/drgeo_angle.cc:294 geo/drgeo_numeric.cc:461
+#: geo/drgeo_numeric.cc:491 geo/drgeo_numeric.cc:496
+#, c-format
+msgid "Vector %s"
+msgstr "Vektor %s"
+
+#: geo/drgeo_arcCircle.cc:282 geo/drgeo_arcCircle.cc:286
+msgid "this arc %1"
+msgstr "ez az ív %1"
+
+#: geo/drgeo_arcCircle.cc:335
+#, c-format
+msgid "Rotate arc-circle:: %s"
+msgstr "Körív forgatása:: %s"
+
+#: geo/drgeo_arcCircle.cc:336 geo/drgeo_arcCircle.cc:344
+#: geo/drgeo_arcCircle.cc:351
+#, c-format
+msgid "Transformed arc-circle %s"
+msgstr "%s körív átalakítva"
+
+#: geo/drgeo_arcCircle.cc:338 geo/drgeo_arcCircle.cc:346
+#: geo/drgeo_arcCircle.cc:369 geo/drgeo_circle.cc:319 geo/drgeo_circle.cc:327
+#: geo/drgeo_circle.cc:350 geo/drgeo_circle.cc:358 geo/drgeo_circle.cc:366
+#: geo/drgeo_circle.cc:375 geo/drgeo_halfLine.cc:221 geo/drgeo_halfLine.cc:229
+#: geo/drgeo_halfLine.cc:252 geo/drgeo_line.cc:282 geo/drgeo_line.cc:290
+#: geo/drgeo_line.cc:312 geo/drgeo_point.cc:383 geo/drgeo_point.cc:391
+#: geo/drgeo_point.cc:413 geo/drgeo_polygon.cc:297 geo/drgeo_polygon.cc:305
+#: geo/drgeo_polygon.cc:328 geo/drgeo_segment.cc:223 geo/drgeo_segment.cc:231
+#: geo/drgeo_segment.cc:254 geo/drgeo_vector.cc:248 geo/drgeo_vector.cc:256
+#: geo/drgeo_vector.cc:279
+#, c-format
+msgid "Center %s"
+msgstr "%s középpont"
+
+#: geo/drgeo_arcCircle.cc:339 geo/drgeo_circle.cc:320
+#: geo/drgeo_halfLine.cc:222 geo/drgeo_line.cc:283 geo/drgeo_point.cc:384
+#: geo/drgeo_polygon.cc:298 geo/drgeo_segment.cc:224 geo/drgeo_vector.cc:249
+#, c-format
+msgid "Angle %s"
+msgstr "%s szög"
+
+#: geo/drgeo_arcCircle.cc:343 geo/drgeo_arcCircle.cc:350
+#, c-format
+msgid "Symmetric arc-circle:: %s"
+msgstr "Szimmetrikus körív:: %s"
+
+#: geo/drgeo_arcCircle.cc:353 geo/drgeo_circle.cc:334
+#: geo/drgeo_halfLine.cc:236 geo/drgeo_line.cc:297 geo/drgeo_point.cc:398
+#: geo/drgeo_polygon.cc:312 geo/drgeo_segment.cc:238 geo/drgeo_vector.cc:263
+#, c-format
+msgid "Reflexion axe %s"
+msgstr "Tükrözési tengely %s"
+
+#: geo/drgeo_arcCircle.cc:358
+#, c-format
+msgid "Translate arc-circle:: %s"
+msgstr "Körív eltolása:: %s"
+
+#: geo/drgeo_arcCircle.cc:359
+#, c-format
+msgid "Translated arc-circle %s"
+msgstr "%s körív eltolva"
+
+#: geo/drgeo_arcCircle.cc:361 geo/drgeo_circle.cc:342
+#: geo/drgeo_halfLine.cc:244 geo/drgeo_line.cc:305 geo/drgeo_point.cc:406
+#: geo/drgeo_polygon.cc:320 geo/drgeo_segment.cc:246 geo/drgeo_vector.cc:271
+#, c-format
+msgid "Vector of translation %s"
+msgstr "Eltolás vektora %s"
+
+#: geo/drgeo_arcCircle.cc:366
+#, c-format
+msgid "Scale arc-circle:: %s"
+msgstr "Körív átméretezése:: %s"
+
+#: geo/drgeo_arcCircle.cc:367
+#, c-format
+msgid "Scaled arc-circle %s"
+msgstr "%s körív átméretezve"
+
+#: geo/drgeo_arcCircle.cc:370 geo/drgeo_circle.cc:351
+#: geo/drgeo_halfLine.cc:253 geo/drgeo_line.cc:313 geo/drgeo_point.cc:414
+#: geo/drgeo_polygon.cc:329 geo/drgeo_segment.cc:255 geo/drgeo_vector.cc:280
+#, c-format
+msgid "Factor %s"
+msgstr "Arány %s"
+
+#: geo/drgeo_arcCircle.cc:375
+#, c-format
+msgid "Arc-circle defined by three points:: %s"
+msgstr "Három pont által meghatározott körív:: %s"
+
+#: geo/drgeo_arcCircle.cc:376 geo/drgeo_arcCircle.cc:378
+#: geo/drgeo_segment.cc:261 geo/drgeo_segment.cc:262 geo/drgeo_vector.cc:287
+#, c-format
+msgid "Extremity %s"
+msgstr "Végpont %s"
+
+#: geo/drgeo_circle.cc:258 geo/drgeo_circle.cc:262
+msgid "this circle %1"
+msgstr "ez a kör %1"
+
+#: geo/drgeo_circle.cc:316
+#, c-format
+msgid "Rotate circle:: %s"
+msgstr "Kör forgatása:: %s"
+
+#: geo/drgeo_circle.cc:317 geo/drgeo_circle.cc:325 geo/drgeo_circle.cc:332
+#, c-format
+msgid "Transformed circle %s"
+msgstr "%s kör átalakítva"
+
+#: geo/drgeo_circle.cc:324 geo/drgeo_circle.cc:331
+#, c-format
+msgid "Symmetric circle:: %s"
+msgstr "Szimmetrikus kör:: %s"
+
+#: geo/drgeo_circle.cc:339
+#, c-format
+msgid "Translate circle:: %s"
+msgstr "Kör eltolása:: %s"
+
+#: geo/drgeo_circle.cc:340
+#, c-format
+msgid "Translated circle %s"
+msgstr "%s kör eltolva"
+
+#: geo/drgeo_circle.cc:347
+#, c-format
+msgid "Scale circle:: %s"
+msgstr "Kör átméretezése:: %s"
+
+#: geo/drgeo_circle.cc:348
+#, c-format
+msgid "Scaled circle %s"
+msgstr "%s kör átméretezve"
+
+#: geo/drgeo_circle.cc:356
+#, c-format
+msgid "Circle defined by its center and a point:: %s"
+msgstr "Középpontja és egy pont által meghatározott kör:: %s"
+
+#: geo/drgeo_circle.cc:364
+#, c-format
+msgid "Circle defined by its center and a segment:: %s"
+msgstr "Középpontja és egy szakasz által meghatározott kör:: %s"
+
+#: geo/drgeo_circle.cc:367
+#, c-format
+msgid "Radius from segment %s"
+msgstr "Szakasztól vett sugár %s"
+
+#: geo/drgeo_circle.cc:373
+#, c-format
+msgid "Circle defined by its center and radius:: %s"
+msgstr "Középpontja és sugara által megadott kör:: %s"
+
+#: geo/drgeo_circle.cc:376
+#, c-format
+msgid "Radius %s"
+msgstr "Sugár %s"
+
+#: geo/drgeo_control.cc:254
+msgid "Free point: click on the plane or over a curve"
+msgstr "Szabad pont: kattintson a síkon vagy egy görbén"
+
+#: geo/drgeo_control.cc:276
+msgid "Middle: select two points or a segment"
+msgstr "Középpont: válasszon két pontot vagy egy szakaszt"
+
+#: geo/drgeo_control.cc:298
+msgid "Intersection(s): select two curves"
+msgstr "Metszet: válasszon két görbét"
+
+#: geo/drgeo_control.cc:319
+msgid "Coordinate point: select two numbers (its coordinates)"
+msgstr "Pont koordinátákból: válasszon két számot (a koordinátákat)"
+
+#: geo/drgeo_control.cc:340
+msgid "Line: select two points"
+msgstr "Egyenes: válasszon két pontot"
+
+#: geo/drgeo_control.cc:361
+msgid "Ray: select its origin then another point"
+msgstr "Félegyenes: válassza ki a kezdetét és aztán egy másik pontot"
+
+#: geo/drgeo_control.cc:382
+msgid "Segment: select its extremities"
+msgstr "Szakasz: válassza ki a végpontjait"
+
+#: geo/drgeo_control.cc:404
+msgid "Vector: select its origin and extremity"
+msgstr "Vektor: válassza ki a kezdetét és a végpontját"
+
+#: geo/drgeo_control.cc:425
+msgid "Circle: select its center and a point or its radius (number or segment)"
+msgstr ""
+"Kör: válassza ki a középpontját és egy pontot vagy a sugarát (egy számot "
+"vagy egy szakaszt)"
+
+#: geo/drgeo_control.cc:446
+msgid "Arc: select three points"
+msgstr "Körív: válasszon ki három pontot"
+
+#: geo/drgeo_control.cc:467
+msgid "Locus: select a free point and a dependent point"
+msgstr "Ponthalmaz: válasszon egy szabad és egy függő pontot"
+
+#: geo/drgeo_control.cc:488
+msgid "Polygon: select its vertices, then click over the first one"
+msgstr "Sokszög: válassza ki a csúcsait, aztán kattintson az elsőre"
+
+#: geo/drgeo_control.cc:508
+msgid ""
+"Parallel line: select a point and a direction (line, ray, segment, vector) "
+msgstr ""
+"Párhuzamos egyenes: válasszon ki egy pontot és egy irányt (egyenest, "
+"félegyenest, szakaszt, vektort) "
+
+#: geo/drgeo_control.cc:528
+msgid ""
+"Orthogonal line: select a point and a direction (line, ray, segment, vector)"
+msgstr ""
+"Merőleges egyenes: válasszon ki egy pontot és egy irányt (egyenest, "
+"félegyenest, szakaszt, vektort) "
+
+#: geo/drgeo_control.cc:548
+msgid "Axial symmetry: select a geometric object and a line"
+msgstr ""
+"Tengelyes tükrözés: válasszon egy geometriai objektumot és egy egyenest"
+
+#: geo/drgeo_control.cc:568
+msgid "Central symmetry: select a geometric object and the center"
+msgstr ""
+"Középpontos tükrözés: válasszon egy geometriai objektumot és a tükrözés "
+"középpontját"
+
+#: geo/drgeo_control.cc:588
+msgid "Translation: select a geometric object and a vector"
+msgstr "Eltolás: válasszon egy geometriai objektumot és egy vektort"
+
+#: geo/drgeo_control.cc:608
+msgid ""
+"Rotation: select a geometric object, the center and an angle or a scalar"
+msgstr ""
+"Forgatás: válasszon egy geometriai objektumot, a középpontot és egy szöget "
+"vagy skalárt"
+
+#: geo/drgeo_control.cc:628
+msgid "Scale: select a geometric object, the center and a scalar"
+msgstr ""
+"Átméretezés: válasszon egy geometriai objektumot, a középpontot és egy "
+"skalárt"
+
+#: geo/drgeo_control.cc:648
+msgid ""
+"Numeric: click on the back to edit a free value or select geometric object"
+"(s) to calculate distance"
+msgstr ""
+"Szám: kattintson a háttérre egy új érték megadásához vagy válasszon "
+"geometriai objektum(oka)t távolság számításához"
+
+#: geo/drgeo_control.cc:668
+msgid ""
+"Angle: select three points (geometric angle) or two vectors (oriented angle)"
+msgstr ""
+"Szög: válasszon ki három pontot (geometriai szög) vagy két vektort "
+"(irányított szög)"
+
+#: geo/drgeo_control.cc:688
+msgid "Coordinates & Equation: select a point, a vector, a line or a circle"
+msgstr ""
+"Koordináták és egyenlet: válasszon egy pontot, vektort, egyenest vagy kört"
+
+#: geo/drgeo_control.cc:709
+msgid "Script: select n objects (n >=0) then click on the background"
+msgstr "Szkript: válasszon n (n>=0) objektumot aztán kattintson a háttérre"
+
+#: geo/drgeo_control.cc:729
+msgid "Delete object: select the object to delete"
+msgstr "Objektum törlése: válassza ki a törlendő objektumot"
+
+#: geo/drgeo_control.cc:749
+msgid "Look: select the object to change its look"
+msgstr "Kinézet: válassza ki egy objektumot a kinézetének megváltoztatásához"
+
+#: geo/drgeo_control.cc:769
+msgid "Property: select the object to change its property"
+msgstr ""
+"Tulajdonság: válasszon ki egy objektumot a tulajdonságainak "
+"megváltoztatásához"
+
+#: geo/drgeo_control.cc:790
+msgid "Construct a macro-construction "
+msgstr "Makró definiálása"
+
+#: geo/drgeo_control.cc:937
+msgid "Select: select and move an object"
+msgstr "Kiválasztás: válasszon ki egy objektumot és mozgassa"
+
+#: geo/drgeo_dialog.cc:62
+msgid "Enter a value"
+msgstr "Adjon meg egy értéket"
+
+#: geo/drgeo_equation.cc:173 geo/drgeo_equation.cc:182
+msgid "the equation of %1"
+msgstr "%1 egyenlete"
+
+#: geo/drgeo_equation.cc:230
+#, c-format
+msgid "Line's equation:: %s"
+msgstr "Egyenes egyenlete:: %s"
+
+#: geo/drgeo_equation.cc:231 geo/drgeo_numeric.cc:471 geo/drgeo_numeric.cc:511
+#, c-format
+msgid "Line %s"
+msgstr "Egyenes %s"
+
+#: geo/drgeo_equation.cc:235
+#, c-format
+msgid "Circle's equation:: %s"
+msgstr "Kör egyenlete:: %s"
+
+#: geo/drgeo_equation.cc:236 geo/drgeo_numeric.cc:466 geo/drgeo_numeric.cc:504
+#, c-format
+msgid "Circle %s"
+msgstr "Kör %s"
+
+#: geo/drgeo_gtkhelpers.cc:98
+#, c-format
+msgid ""
+"This help directory does not exist:\n"
+"'%s'\n"
+"Maybe the manual is not installed or it is not yet translated in your "
+"language.\n"
+"\n"
+"If you want to translate the manual contact ofset@ofset.org."
+msgstr ""
+"A következő súgókönyvtár nem létezik:\n"
+"'%s'\n"
+"Lehet, hogy a kézikönyv nincs telepítve vagy még nincs lefordítva magyarra.\n"
+"\n"
+"Ha le szeretné fordítani a kézikönyvet, vegye fel a kapcsolatot a következő "
+"címmel: ofset@ofset.org."
+
+#: geo/drgeo_gtkhelpers.cc:117
+msgid ""
+"A default online manual\n"
+"in English will be used."
+msgstr ""
+"Az alapértelmezett angol nyelvű\n"
+"kézikönyvet fogom használni."
+
+#: geo/drgeo_gtkhelpers.cc:129
+msgid "No default online manual can be found."
+msgstr "Nem található alapértelmezett kézikönyv."
+
+#: geo/drgeo_halfLine.cc:152 geo/drgeo_halfLine.cc:170
+msgid "this half-line %1"
+msgstr "ez a félegyenes %1"
+
+#: geo/drgeo_halfLine.cc:218
+#, c-format
+msgid "Rotate half-line:: %s"
+msgstr "Félegyenes forgatása:: %s"
+
+#: geo/drgeo_halfLine.cc:219 geo/drgeo_halfLine.cc:227
+#: geo/drgeo_halfLine.cc:234
+#, c-format
+msgid "Transformed half-line %s"
+msgstr "%s félegyenes átalakítva"
+
+#: geo/drgeo_halfLine.cc:226 geo/drgeo_halfLine.cc:233
+#, c-format
+msgid "Symmetric half-line:: %s"
+msgstr "Szimmetrikus félegyenes:: %s"
+
+#: geo/drgeo_halfLine.cc:241
+#, c-format
+msgid "Translate half-line:: %s"
+msgstr "Félegyenes eltolása:: %s"
+
+#: geo/drgeo_halfLine.cc:242
+#, c-format
+msgid "Translated half-line %s"
+msgstr "%s félegyenes eltolva"
+
+#: geo/drgeo_halfLine.cc:249
+#, c-format
+msgid "Scale half-line:: %s"
+msgstr "Félegyenes átméretezése:: %s"
+
+#: geo/drgeo_halfLine.cc:250
+#, c-format
+msgid "Scaled half-line %s"
+msgstr "%s félegyenes átméretezve"
+
+#: geo/drgeo_halfLine.cc:258
+#, c-format
+msgid "Half-line defined by two points:: %s"
+msgstr "Két pont által megadott félegyenes:: %s"
+
+#: geo/drgeo_halfLine.cc:259 geo/drgeo_vector.cc:286
+#, c-format
+msgid "Origin %s"
+msgstr "Kezdőpont %s"
+
+#: geo/drgeo_line.cc:202 geo/drgeo_line.cc:220
+msgid "this line %1"
+msgstr "ez az egyenes %1"
+
+#: geo/drgeo_line.cc:279
+#, c-format
+msgid "Rotate line:: %s"
+msgstr "Egyenes forgatása:: %s"
+
+#: geo/drgeo_line.cc:280 geo/drgeo_line.cc:288 geo/drgeo_line.cc:295
+#, c-format
+msgid "Transformed line %s"
+msgstr "%s egyenes átalakítva"
+
+#: geo/drgeo_line.cc:287 geo/drgeo_line.cc:294
+#, c-format
+msgid "Symmetric line:: %s"
+msgstr "Szimmetrikus egyenes:: %s"
+
+#: geo/drgeo_line.cc:302
+#, c-format
+msgid "Translate line:: %s"
+msgstr "Egyenes eltolása:: %s"
+
+#: geo/drgeo_line.cc:303
+#, c-format
+msgid "Translated line %s"
+msgstr "%s egyenes eltolva"
+
+#: geo/drgeo_line.cc:310
+#, c-format
+msgid "Scale line:: %s"
+msgstr "Egyenes átméretezése:: %s"
+
+#: geo/drgeo_line.cc:311
+#, c-format
+msgid "Scaled line %s"
+msgstr "%s egyenes átméretezve"
+
+#: geo/drgeo_line.cc:318
+#, c-format
+msgid "Line going through two points:: %s"
+msgstr "Két ponton átmenő egyenes:: %s"
+
+#: geo/drgeo_line.cc:319 geo/drgeo_line.cc:327 geo/drgeo_line.cc:333
+#: geo/drgeo_line.cc:339
+#, c-format
+msgid "Point  %s"
+msgstr "Pont %s"
+
+#: geo/drgeo_line.cc:325
+#, c-format
+msgid "Line defined by a point and its slope:: %s"
+msgstr "Egy pont és a meredeksége által megadott egyenes:: %s"
+
+#: geo/drgeo_line.cc:328
+#, c-format
+msgid "Slope %s"
+msgstr "Meredekség %s"
+
+#: geo/drgeo_line.cc:332
+#, c-format
+msgid "Parallel line:: %s"
+msgstr "Párhuzamos egyenes:: %s"
+
+#: geo/drgeo_line.cc:334 geo/drgeo_line.cc:340
+#, c-format
+msgid "Direction %s"
+msgstr "Irány %s"
+
+#: geo/drgeo_line.cc:338
+#, c-format
+msgid "Perpendicular line:: %s"
+msgstr "Merőleges egyenes:: %s"
+
+#. compute the string length
+#: geo/drgeo_locus.cc:303 geo/drgeo_locus.cc:312
+msgid "%1's locus when %2 describes %3"
+msgstr "%1 helye, ha %2 írja le ezt: %3"
+
+#: geo/drgeo_locus.cc:350
+#, c-format
+msgid "Locus:: %s"
+msgstr "Ponthalmaz:: %s"
+
+#: geo/drgeo_locus.cc:351
+#, c-format
+msgid "Free point on curve %s"
+msgstr "Szabad pont %s görbén"
+
+#: geo/drgeo_locus.cc:353
+#, c-format
+msgid "Constrained point %s"
+msgstr "%s függő pont"
+
+#: geo/drgeo_numeric.cc:275 geo/drgeo_numeric.cc:281
+msgid "%1's length"
+msgstr "%1 hossza"
+
+#: geo/drgeo_numeric.cc:286 geo/drgeo_numeric.cc:292
+msgid "%1's magnitude"
+msgstr "%1 kiterjedése"
+
+#: geo/drgeo_numeric.cc:297 geo/drgeo_numeric.cc:303
+msgid "%1's perimeter"
+msgstr "%1 kerülete"
+
+#: geo/drgeo_numeric.cc:308 geo/drgeo_numeric.cc:314
+msgid "the slope of %1"
+msgstr "%1 meredeksége"
+
+#: geo/drgeo_numeric.cc:322 geo/drgeo_numeric.cc:332
+msgid "the distance between %1 and %2"
+msgstr "%1 és %2 távolsága"
+
+#: geo/drgeo_numeric.cc:345 geo/drgeo_numeric.cc:351
+msgid "the abscissa of %1"
+msgstr "%1 abszcisszája"
+
+#: geo/drgeo_numeric.cc:357 geo/drgeo_numeric.cc:363
+msgid "the ordinate of %1"
+msgstr "%1 ordinátája"
+
+#: geo/drgeo_numeric.cc:367 geo/drgeo_value.cc:52
+msgid "this value"
+msgstr "ez az érték"
+
+#: geo/drgeo_numeric.cc:451
+#, c-format
+msgid "Free value:: %s"
+msgstr "Szabad érték:: %s"
+
+#: geo/drgeo_numeric.cc:455
+#, c-format
+msgid "Segment's length:: %s"
+msgstr "Szakasz hossza:: %s"
+
+#: geo/drgeo_numeric.cc:456 geo/drgeo_point.cc:440
+#, c-format
+msgid "Segment %s"
+msgstr "%s szakasz"
+
+#: geo/drgeo_numeric.cc:460
+#, c-format
+msgid "Vector's norm:: %s"
+msgstr "Vektor normája:: %s"
+
+#: geo/drgeo_numeric.cc:465
+#, c-format
+msgid "Circle's perimeter:: %s"
+msgstr "Kör kerülete:: %s"
+
+#: geo/drgeo_numeric.cc:470
+#, c-format
+msgid "Line's slope:: %s"
+msgstr "Egyenes meredeksége:: %s"
+
+#: geo/drgeo_numeric.cc:475
+#, c-format
+msgid "Arc-circle's length:: %s"
+msgstr "Körív hossza:: %s"
+
+#: geo/drgeo_numeric.cc:476
+#, c-format
+msgid "Arc-circle %s"
+msgstr "%s körív"
+
+#: geo/drgeo_numeric.cc:480
+#, c-format
+msgid "Point's abscissa:: %s"
+msgstr "Pont abszcisszája:: %s"
+
+#: geo/drgeo_numeric.cc:485
+#, c-format
+msgid "Point's ordinate:: %s"
+msgstr "Pont ordinátája:: %s"
+
+#: geo/drgeo_numeric.cc:490
+#, c-format
+msgid "Vector's abscissa:: %s"
+msgstr "Vektor abszcisszája:: %s"
+
+#: geo/drgeo_numeric.cc:495
+#, c-format
+msgid "Vector's ordinate:: %s"
+msgstr "Vektor ordinátája:: %s"
+
+#: geo/drgeo_numeric.cc:501
+#, c-format
+msgid "Distance between a point and a circle:: %s"
+msgstr "Pont és kör távolsága:: %s"
+
+#: geo/drgeo_numeric.cc:509
+#, c-format
+msgid "Distance between a point and a line:: %s"
+msgstr "Pont és egyenes távolsága:: %s"
+
+#: geo/drgeo_numeric.cc:516
+#, c-format
+msgid "Distance between two points:: %s"
+msgstr "Két pont távolsága:: %s"
+
+#: geo/drgeo_point.cc:380
+#, c-format
+msgid "Rotate point:: %s"
+msgstr "Pont forgatása:: %s"
+
+#: geo/drgeo_point.cc:381 geo/drgeo_point.cc:389 geo/drgeo_point.cc:396
+#, c-format
+msgid "Transformed point %s"
+msgstr "%s pont átalakítva"
+
+#: geo/drgeo_point.cc:388 geo/drgeo_point.cc:395
+#, c-format
+msgid "Symmetric point:: %s"
+msgstr "Szimmetrikus pont:: %s"
+
+#: geo/drgeo_point.cc:403
+#, c-format
+msgid "Translate point:: %s"
+msgstr "Pont eltolása:: %s"
+
+#: geo/drgeo_point.cc:404
+#, c-format
+msgid "Translated point %s"
+msgstr "%s pont eltolva"
+
+#: geo/drgeo_point.cc:411
+#, c-format
+msgid "Scale point:: %s"
+msgstr "Pont átméretezése:: %s"
+
+#: geo/drgeo_point.cc:412
+#, c-format
+msgid "Scaled point %s"
+msgstr "%s pont átméretezve"
+
+#: geo/drgeo_point.cc:418
+#, c-format
+msgid "Coordinate point:: %s"
+msgstr "Pont koordinátái:: %s"
+
+#: geo/drgeo_point.cc:419
+#, c-format
+msgid "Abscissa %s"
+msgstr "Abszcissza %s"
+
+#: geo/drgeo_point.cc:420
+#, c-format
+msgid "Ordinate %s"
+msgstr "Ordináta %s"
+
+#: geo/drgeo_point.cc:424
+#, c-format
+msgid "Free point:: %s"
+msgstr "Szabad pont:: %s"
+
+#: geo/drgeo_point.cc:428
+#, c-format
+msgid "Free point on curve:: %s"
+msgstr "Szabad pont a görbén:: %s"
+
+#: geo/drgeo_point.cc:429 geo/drgeo_point.cc:434 geo/drgeo_point.cc:435
+#, c-format
+msgid "Curve %s"
+msgstr "%s görbe"
+
+#: geo/drgeo_point.cc:433
+#, c-format
+msgid "Intersection point:: %s"
+msgstr "Metszéspont:: %s"
+
+#: geo/drgeo_point.cc:439
+#, c-format
+msgid "Middle of segment:: %s"
+msgstr "Szakasz középpontja:: %s"
+
+#: geo/drgeo_point.cc:444
+#, c-format
+msgid "Middle of two points:: %s"
+msgstr "Két pont távolságának felezőpontja:: %s"
+
+#: geo/drgeo_point.cc:482 geo/drgeo_point.cc:486
+msgid "this point %1"
+msgstr "ez a pont %1"
+
+#: geo/drgeo_polygon.cc:287
+#, c-format
+msgid "Polygon:: %s"
+msgstr "Sokszög:: %s"
+
+#: geo/drgeo_polygon.cc:294
+#, c-format
+msgid "Rotate polygon:: %s"
+msgstr "Sokszög forgatása:: %s"
+
+#: geo/drgeo_polygon.cc:295 geo/drgeo_polygon.cc:303 geo/drgeo_polygon.cc:310
+#, c-format
+msgid "Transformed polygon %s"
+msgstr "%s sokszög átalakítva"
+
+#: geo/drgeo_polygon.cc:302 geo/drgeo_polygon.cc:309
+#, c-format
+msgid "Symmetric polygon:: %s"
+msgstr "Szimmetrikus sokszög:: %s"
+
+#: geo/drgeo_polygon.cc:317
+#, c-format
+msgid "Translate polygon:: %s"
+msgstr "Sokszög eltolása:: %s"
+
+#: geo/drgeo_polygon.cc:318
+#, c-format
+msgid "Translated polygon %s"
+msgstr "%s sokszög eltolva"
+
+#: geo/drgeo_polygon.cc:325
+#, c-format
+msgid "Scale polygon:: %s"
+msgstr "Sokszög átméretezése:: %s"
+
+#: geo/drgeo_polygon.cc:326
+#, c-format
+msgid "Scaled polygon %s"
+msgstr "%s sokszög átméretezve"
+
+#: geo/drgeo_polygon.cc:383 geo/drgeo_polygon.cc:407
+msgid "this polygon %1"
+msgstr "ez a sokszög %1"
+
+#: geo/drgeo_repere.cc:148 geo/drgeo_repere.cc:161
+msgid "this reference frame %1"
+msgstr "ez a koordinátarendszer %1"
+
+#: geo/drgeo_scm_helper.cc:91
+#, c-format
+msgid "Error! Just got the following error tag: %s\n"
+msgstr "Hiba! Ok: %s\n"
+
+#: geo/drgeo_script.cc:158
+msgid "Unprintable result"
+msgstr "Az eredmény nem nyomtatható"
+
+#: geo/drgeo_script.cc:171 geo/drgeo_script.cc:175
+msgid "this script %1"
+msgstr "ez a szkript %1"
+
+#: geo/drgeo_script.cc:223
+#, c-format
+msgid "Script:: %s"
+msgstr "Szkript:: %s"
+
+#: geo/drgeo_script.cc:225
+#, c-format
+msgid "Object %s"
+msgstr "Objektum:: %s"
+
+#: geo/drgeo_segment.cc:153 geo/drgeo_segment.cc:171
+msgid "this segment %1"
+msgstr "ez a szakasz %1"
+
+#: geo/drgeo_segment.cc:220
+#, c-format
+msgid "Rotate segment:: %s"
+msgstr "Szakasz forgatása:: %s"
+
+#: geo/drgeo_segment.cc:221 geo/drgeo_segment.cc:229 geo/drgeo_segment.cc:236
+#, c-format
+msgid "Transformed segment %s"
+msgstr "%s szakasz átalakítva"
+
+#: geo/drgeo_segment.cc:228 geo/drgeo_segment.cc:235
+#, c-format
+msgid "Symmetric segment:: %s"
+msgstr "Szimmetrikus szakasz:: %s"
+
+#: geo/drgeo_segment.cc:243
+#, c-format
+msgid "Translate segment:: %s"
+msgstr "Szakasz eltolása:: %s"
+
+#: geo/drgeo_segment.cc:244
+#, c-format
+msgid "Translated segment %s"
+msgstr "%s szakasz eltolva"
+
+#: geo/drgeo_segment.cc:251
+#, c-format
+msgid "Scale segment:: %s"
+msgstr "Szakasz átméretezése:: %s"
+
+#: geo/drgeo_segment.cc:252
+#, c-format
+msgid "Scaled segment %s"
+msgstr "%s szakasz átméretezve"
+
+#: geo/drgeo_segment.cc:260
+#, c-format
+msgid "Segment defined by its extremities:: %s"
+msgstr "Végpontjai által megadott szakasz:: %s"
+
+#: geo/drgeo_tool.cc:950
+#, c-format
+msgid "Remove %s?"
+msgstr "%s eltávolítása?"
+
+#: geo/drgeo_tool.cc:953
+msgid "Remove selected item?"
+msgstr "Eltávolítja a kiválasztott elemet?"
+
+#: geo/drgeo_vector.cc:170 geo/drgeo_vector.cc:188
+msgid "this vector %1"
+msgstr "ez a vektor %1"
+
+#: geo/drgeo_vector.cc:245
+#, c-format
+msgid "Rotate vector:: %s"
+msgstr "Vektor forgatása:: %s"
+
+#: geo/drgeo_vector.cc:246 geo/drgeo_vector.cc:254 geo/drgeo_vector.cc:261
+#, c-format
+msgid "Transformed vector %s"
+msgstr "%s vektor átalakítva"
+
+#: geo/drgeo_vector.cc:253 geo/drgeo_vector.cc:260
+#, c-format
+msgid "Symmetric vector:: %s"
+msgstr "Szimmetrikus vektor:: %s"
+
+#: geo/drgeo_vector.cc:268
+#, c-format
+msgid "Translate vector:: %s"
+msgstr "Vektor eltolása:: %s"
+
+#: geo/drgeo_vector.cc:269
+#, c-format
+msgid "Translated vector %s"
+msgstr "%s vektor eltolva"
+
+#: geo/drgeo_vector.cc:276
+#, c-format
+msgid "Scale vector:: %s"
+msgstr "Vektor átméretezése:: %s"
+
+#: geo/drgeo_vector.cc:277
+#, c-format
+msgid "Scaled vector %s"
+msgstr "%s vektor átméretezve"
+
+#: geo/drgeo_vector.cc:285
+#, c-format
+msgid "Vector defined by two points:: %s"
+msgstr "Két pont által megadott vektor:: %s"
+
+#: glade/drgenius2.glade.h:1 glade/drgeo2.glade.h:1
+msgid "*"
+msgstr "*"
+
+#: glade/drgenius2.glade.h:2
+msgid "Angle"
+msgstr "Szög"
+
+#: glade/drgenius2.glade.h:3
+msgid "Arc-Circle"
+msgstr "Körív"
+
+#: glade/drgenius2.glade.h:4
+msgid "Circle"
+msgstr "Kör"
+
+#: glade/drgenius2.glade.h:5 glade/drgeo2.glade.h:33
+msgid "Color"
+msgstr "Szín"
+
+#: glade/drgenius2.glade.h:6
+msgid ""
+"Default figure name used when a new figure is created. This name is combined "
+"with a numeric indicator"
+msgstr ""
+"Alapértelmezett alakzatnév új alakzat létrehozásakor. A név egy sorszámmal "
+"kombinálódik."
+
+#: glade/drgenius2.glade.h:7
+msgid ""
+"Default file name used to export a geometric figure to the Flydraw format"
+msgstr ""
+"Az alapértelmezett fájlnév geometriai alakzat Flydraw formátumba "
+"exportálásánál"
+
+#: glade/drgenius2.glade.h:8
+msgid ""
+"Default file name used to export a geometric figure to the LaTeX format "
+"(pstricks extension)"
+msgstr ""
+"Az alapértelmezett fájlnév geometriai alakzat LaTeX formátumba "
+"exportálásánál (pstricks bővítmény)"
+
+#: glade/drgenius2.glade.h:9
+msgid ""
+"Default file name used to export a geometric figure to the encapsulated "
+"PostScript format"
+msgstr ""
+"Az alapértelmezett fájlnév geometriai alakzat EPS formátumba exportálásánál"
+
+#: glade/drgenius2.glade.h:10
+msgid "Default file name used to save a geometric figure"
+msgstr "Az alapértelmezett fájlnév geometriai alakzat mentéséhez"
+
+#: glade/drgenius2.glade.h:11
+msgid ""
+"Default file name used to save a session (several documents in one file)"
+msgstr ""
+"Munkamenet (több dokumentum egy fájlban) mentéséhez használt alapértelmezett "
+"fájlnév"
+
+#: glade/drgenius2.glade.h:12
+msgid "Default value"
+msgstr "Alapértelmezett érték"
+
+#: glade/drgenius2.glade.h:13
+msgid "Defaut file name"
+msgstr "Alapértelmezett fájlnév"
+
+#: glade/drgenius2.glade.h:14
+msgid "Figure name"
+msgstr "Alakzat neve"
+
+#: glade/drgenius2.glade.h:15
+msgid "Flydraw:"
+msgstr "Flydraw:"
+
+#: glade/drgenius2.glade.h:16
+msgid "Geometric figure "
+msgstr "Geometriai alakzat "
+
+#: glade/drgenius2.glade.h:17
+msgid "Global preferences"
+msgstr "Globális beállítások"
+
+#: glade/drgenius2.glade.h:18
+msgid "Half-Line"
+msgstr "Félegyenes"
+
+#: glade/drgenius2.glade.h:19
+msgid "Html viewer"
+msgstr "HTML megjelenítő"
+
+#: glade/drgenius2.glade.h:20
+msgid "LaTeX:"
+msgstr "LaTeX:"
+
+#: glade/drgenius2.glade.h:21 glade/drgeo2.glade.h:58
+msgid "Large"
+msgstr "Nagy"
+
+#: glade/drgenius2.glade.h:22
+msgid "Line"
+msgstr "Egyenes"
+
+#: glade/drgenius2.glade.h:23
+msgid "Locus"
+msgstr "Ponthalmaz"
+
+#: glade/drgenius2.glade.h:24 glade/drgeo2.glade.h:69
+msgid "Normal"
+msgstr "Normál"
+
+#: glade/drgenius2.glade.h:25
+msgid "Number of undo/redo operations. 0 for infinite undo/redo level"
+msgstr "A visszavonás/újra műveletek száma. A 0 végtelen sok műveletet jelent."
+
+#: glade/drgenius2.glade.h:26
+msgid "Numeric Precision"
+msgstr "Számok pontossága"
+
+#: glade/drgenius2.glade.h:27
+msgid "Object Aspect"
+msgstr "Objektumok kinézete"
+
+#: glade/drgenius2.glade.h:28 glade/drgeo2.glade.h:77
+msgid "Point"
+msgstr "Pont"
+
+#: glade/drgenius2.glade.h:29
+msgid "Polygon"
+msgstr "Sokszög"
+
+#: glade/drgenius2.glade.h:30
+msgid "PostScript:"
+msgstr "PostScript:"
+
+#: glade/drgenius2.glade.h:31
+msgid "Save a Dr Genius session"
+msgstr "Dr. Geo munkamenet mentése"
+
+#: glade/drgenius2.glade.h:32
+msgid "Save all"
+msgstr "Összes mentése"
+
+#: glade/drgenius2.glade.h:33
+msgid "Save selection"
+msgstr "Kijelölt mentése"
+
+#: glade/drgenius2.glade.h:34
+msgid "Scalar"
+msgstr "Skalár"
+
+#: glade/drgenius2.glade.h:35
+msgid "Segment"
+msgstr "Szakasz"
+
+#: glade/drgenius2.glade.h:36
+msgid "Select Color"
+msgstr "Szín kiválasztása"
+
+#: glade/drgenius2.glade.h:37
+msgid "Select data to save"
+msgstr "Válassza ki a menteni kívánt adatot"
+
+#: glade/drgenius2.glade.h:38
+msgid "Session:"
+msgstr "Munkamenet:"
+
+#: glade/drgenius2.glade.h:39 glade/drgeo2.glade.h:96
+msgid "Shape"
+msgstr "Forma"
+
+#: glade/drgenius2.glade.h:40 glade/drgeo2.glade.h:97
+msgid "Size"
+msgstr "Méret"
+
+#: glade/drgenius2.glade.h:41 glade/drgeo2.glade.h:98
+msgid "Small"
+msgstr "Kicsi"
+
+#: glade/drgenius2.glade.h:42 glade/drgeo2.glade.h:99
+msgid "Style"
+msgstr "Stílus"
+
+#: glade/drgenius2.glade.h:43
+msgid "Undo/Redo levels"
+msgstr "Visszavon/Újra száma"
+
+#: glade/drgenius2.glade.h:44
+msgid "Vector"
+msgstr "Vektor"
+
+#: glade/drgenius2.glade.h:45
+msgid "dillo "
+msgstr "dillo "
+
+#: glade/drgenius2.glade.h:46
+msgid "galeon -x "
+msgstr "galeon -x "
+
+#: glade/drgenius2.glade.h:47
+msgid "konqueror "
+msgstr "konqueror "
+
+#: glade/drgenius2.glade.h:48
+msgid "mozilla "
+msgstr "mozilla "
+
+#: glade/drgeo2.glade.h:3
+#, no-c-format
+msgid "100%"
+msgstr "100%"
+
+#: glade/drgeo2.glade.h:5 glade/drgeoMDI.glade.h:2
+#, no-c-format
+msgid "125%"
+msgstr "125%"
+
+#: glade/drgeo2.glade.h:7 glade/drgeoMDI.glade.h:4
+#, no-c-format
+msgid "150%"
+msgstr "150%"
+
+#: glade/drgeo2.glade.h:9 glade/drgeoMDI.glade.h:6
+#, no-c-format
+msgid "175%"
+msgstr "175%"
+
+#: glade/drgeo2.glade.h:11 glade/drgeoMDI.glade.h:8
+#, no-c-format
+msgid "200%"
+msgstr "200%"
+
+#: glade/drgeo2.glade.h:13 glade/drgeoMDI.glade.h:10
+#, no-c-format
+msgid "25%"
+msgstr "25%"
+
+#: glade/drgeo2.glade.h:15 glade/drgeoMDI.glade.h:12
+#, no-c-format
+msgid "50%"
+msgstr "50%"
+
+#: glade/drgeo2.glade.h:17 glade/drgeoMDI.glade.h:14
+#, no-c-format
+msgid "75%"
+msgstr "75%"
+
+#: glade/drgeo2.glade.h:18
+msgid "Abscissa"
+msgstr "Abszcissza"
+
+#: glade/drgeo2.glade.h:19
+msgid "Adjust the line style"
+msgstr "Vonalstílus beállítása"
+
+#: glade/drgeo2.glade.h:20
+msgid "Adjust the point style"
+msgstr "Pont stílusának beállítása"
+
+#: glade/drgeo2.glade.h:21
+msgid "Adjust the value style"
+msgstr "Érték stílusának beállítása"
+
+#: glade/drgeo2.glade.h:22
+msgid "Adjust the zoom factor"
+msgstr "Nagyítási arány beállítása"
+
+#: glade/drgeo2.glade.h:23 glade/drgeoMDI.glade.h:15
+msgid "Angle defined by three points or two vectors"
+msgstr "Három pont vagy két vektor által meghatározott szög"
+
+#: glade/drgeo2.glade.h:24 glade/drgeoMDI.glade.h:24
+msgid "Arc circle defined by three points"
+msgstr "Három pont által meghatározott körív"
+
+#: glade/drgeo2.glade.h:25
+msgid "Avalaible macro-construction"
+msgstr "Elérhető makrók"
+
+#: glade/drgeo2.glade.h:26 glade/drgeoMDI.glade.h:25
+msgid ""
+"Axial symmetry of an object. When ambiguity, the first selected line is the "
+"line to transform"
+msgstr ""
+"Egy objektum tengelyes tükrözése. Ha nem egyértelmű, az elsőként "
+"kiválasztott egyenes lesz tükrözve"
+
+#: glade/drgeo2.glade.h:27
+msgid "Build a macro construction"
+msgstr "Makró megadása"
+
+#: glade/drgeo2.glade.h:28
+msgid "Build a macro-construction"
+msgstr "Makró megadása"
+
+#: glade/drgeo2.glade.h:29 glade/drgeoMDI.glade.h:26
+msgid ""
+"Central symmetry of an object. When ambiguity, the first selected point is "
+"the point to transform"
+msgstr ""
+"Egy objektum középpontos tükrözése. Ha nem egyértelmű, az elsőként "
+"kiválasztott pont lesz tükrözve"
+
+#: glade/drgeo2.glade.h:30 glade/drgeoMDI.glade.h:29
+msgid "Change the property of an object"
+msgstr "Egy objektum tulajdonságainak megváltoztatása"
+
+#: glade/drgeo2.glade.h:31
+msgid "Change the style of an object"
+msgstr "Egy objektum stílusának megváltoztatása"
+
+#: glade/drgeo2.glade.h:32 glade/drgeoMDI.glade.h:30
+msgid "Circle defines by center and point, radius or segment"
+msgstr "Középpontja és egy pont, sugár vagy szakasz által megadott kör"
+
+#: glade/drgeo2.glade.h:34
+msgid "Construct a macro"
+msgstr "Makró létrehozása"
+
+#: glade/drgeo2.glade.h:35
+msgid "Create curve"
+msgstr "Görbe létrehozása"
+
+#: glade/drgeo2.glade.h:36
+msgid "Create numeric object"
+msgstr "Számobjektum létrehozása"
+
+#: glade/drgeo2.glade.h:37
+msgid "Create point"
+msgstr "Pont létrehozása"
+
+#: glade/drgeo2.glade.h:38
+msgid "Curve"
+msgstr "Görbe"
+
+#: glade/drgeo2.glade.h:39
+msgid "Custome User Interface"
+msgstr "Felhasználói felület testreszabása"
+
+#: glade/drgeo2.glade.h:40
+msgid "Custome User Interface in the current view"
+msgstr "Felhasználói felület testreszabása a jelenlegi nézetben"
+
+#: glade/drgeo2.glade.h:41 glade/drgeoMDI.glade.h:38
+msgid "Delete an object and its relatives"
+msgstr "Egy objektum és a vele kapcsolatban állók törlése"
+
+#: glade/drgeo2.glade.h:42
+msgid "Description"
+msgstr "Leírás"
+
+#: glade/drgeo2.glade.h:43 glade/drgeoMDI.glade.h:39
+msgid "Distance between objects, curve length, or edit free value"
+msgstr "Objektumok távolsága, kör hossza vagy szabad érték szerkesztése"
+
+#: glade/drgeo2.glade.h:44
+msgid "Edit Scheme script"
+msgstr "Séma-parancsfájl szerkesztése"
+
+#: glade/drgeo2.glade.h:45
+msgid "Edit value"
+msgstr "Érték szerkesztése"
+
+#: glade/drgeo2.glade.h:46
+msgid "Enter the macro-construction description there"
+msgstr "Adja meg a makró leírását"
+
+#: glade/drgeo2.glade.h:47
+msgid "Enter the macro-construction name there"
+msgstr "Adja meg a makró nevét"
+
+#: glade/drgeo2.glade.h:48
+msgid "Enter the name of this view:"
+msgstr "Adja meg ezen nézet nevét:"
+
+#: glade/drgeo2.glade.h:49
+msgid "Execute"
+msgstr "Végrehajtás"
+
+#: glade/drgeo2.glade.h:50
+msgid "Execute a macro-construction"
+msgstr "Makró végrehajtása"
+
+#: glade/drgeo2.glade.h:51
+msgid "Execute pre-built macro"
+msgstr "Előkészített makró végrehajtása"
+
+#: glade/drgeo2.glade.h:52
+msgid "Free point properties"
+msgstr "Szabad pont tulajdonságai"
+
+#: glade/drgeo2.glade.h:53
+msgid "Give a name and a description"
+msgstr "Adjon meg nevet és leírást"
+
+#: glade/drgeo2.glade.h:54 glade/drgeoMDI.glade.h:55
+msgid "Guile script using objects as input parameters"
+msgstr "Guile-parancsfájl, objektumokat használva bemeneti paraméterekként"
+
+#: glade/drgeo2.glade.h:55 glade/drgeoMDI.glade.h:56
+msgid "Half-Line defined by two points, the first selected point is the origin"
+msgstr ""
+"Két pont által megadott félegyenes, az elsőnek kiválasztott pont a kezdőpont"
+
+#: glade/drgeo2.glade.h:56
+msgid "Input"
+msgstr "Bevitel"
+
+#: glade/drgeo2.glade.h:57
+msgid "Intro"
+msgstr "Bevezetés"
+
+#: glade/drgeo2.glade.h:59 glade/drgeoMDI.glade.h:58
+msgid "Line defined by two points"
+msgstr "Két pont által megadott egyenes"
+
+#: glade/drgeo2.glade.h:60 glade/drgeoMDI.glade.h:59
+msgid ""
+"Line passing through one point and orthogonal to a line, half-line, etc."
+msgstr ""
+"Egy ponton átmenő, egy másik egyenesre, félegyenesre, stb merőleges egyenes."
+
+#: glade/drgeo2.glade.h:61 glade/drgeoMDI.glade.h:60
+msgid "Line passing through one point and parallel to a line, half-line, etc."
+msgstr ""
+"Egy ponton átmenő, egy másik egyenessel, félegyenessel, stb párhuzamos "
+"egyenes."
+
+#: glade/drgeo2.glade.h:62
+msgid "Lock"
+msgstr "Zárolás"
+
+#: glade/drgeo2.glade.h:63
+msgid "Lock the interface"
+msgstr "Felület zárolása"
+
+#: glade/drgeo2.glade.h:64 glade/drgeoMDI.glade.h:61
+msgid "Locus defined by a free point and a relative point"
+msgstr "Egy szabad és egy viszonylagos pont által megadott ponthalmaz"
+
+#: glade/drgeo2.glade.h:65
+msgid "Macro name"
+msgstr "Makró neve"
+
+#: glade/drgeo2.glade.h:67
+msgid "Masked"
+msgstr "Nem látható"
+
+#: glade/drgeo2.glade.h:70
+msgid "Not masked"
+msgstr "Látható"
+
+#: glade/drgeo2.glade.h:71
+msgid "Numeric"
+msgstr "Szám"
+
+#: glade/drgeo2.glade.h:72
+msgid "Ordinate"
+msgstr "Ordináta"
+
+#: glade/drgeo2.glade.h:73
+msgid "Other"
+msgstr "Egyéb"
+
+#: glade/drgeo2.glade.h:74
+msgid "Output"
+msgstr "Kimenet"
+
+#: glade/drgeo2.glade.h:75
+msgid "Password to lock the changes to the interface: "
+msgstr "Jelszó a felület változtatásainak zárolásához: "
+
+#: glade/drgeo2.glade.h:76
+msgid "Password to unlock the changes to the interface:"
+msgstr "Jelszó a felület változtatásainak feloldásához:"
+
+#: glade/drgeo2.glade.h:78 glade/drgeoMDI.glade.h:65
+msgid "Point given its coordinates"
+msgstr "Pont a koordinátáival megadva"
+
+#: glade/drgeo2.glade.h:79 glade/drgeoMDI.glade.h:66
+msgid "Point on an object or the background plane"
+msgstr "Pont egy objektumon vagy a háttérsíkon"
+
+#: glade/drgeo2.glade.h:80
+msgid ""
+"Polygon defined by n points. Last choosen point must be the initial point to "
+"terminate the selection"
+msgstr ""
+"N pont által megadott sokszög. A kiválasztás befejezéséhez az utolsó pont az "
+"elsőnek választott pont kell legyen."
+
+#: glade/drgeo2.glade.h:81
+msgid "Press this button to mask the object"
+msgstr "Kattintson erre a gombra az objektum elrejtéséhez"
+
+#: glade/drgeo2.glade.h:82
+msgid "Press this button to unmask the object"
+msgstr "Kattintson erre a gombra az objektum mutatásához"
+
+#: glade/drgeo2.glade.h:83
+msgid "Print Figure"
+msgstr "Alakzat nyomtatása"
+
+#: glade/drgeo2.glade.h:84
+msgid "Re-lock the interface"
+msgstr "A felület újbóli zárolása"
+
+#: glade/drgeo2.glade.h:85
+msgid "Rename the view"
+msgstr "A nézet átnevezése"
+
+#: glade/drgeo2.glade.h:86 glade/drgeoMDI.glade.h:75
+msgid ""
+"Rotation of an object. When ambiguity, the first selected point is the point "
+"to rotate"
+msgstr ""
+"Egy objektum forgatása. Ha nem egyértelmű, az elsőként kiválasztott pont "
+"lesz forgatva."
+
+#: glade/drgeo2.glade.h:87 glade/drgeoMDI.glade.h:78
+msgid ""
+"Scale an object. When ambiguity, the first selected point is the point to "
+"transform"
+msgstr ""
+"Egy objektum átméretezése. Ha nem egyértelmű, az elsőként kiválasztott pont "
+"lesz átalakítva."
+
+#: glade/drgeo2.glade.h:88
+msgid "Scheme script using objects as input parameters"
+msgstr "Séma parancsfájl, objektumokat használva bemeneti paraméterekként"
+
+#: glade/drgeo2.glade.h:89
+msgid "Script"
+msgstr "Parancsfájl"
+
+#: glade/drgeo2.glade.h:90 glade/drgeoMDI.glade.h:79
+msgid "Segment defined by two points"
+msgstr "Két pont által megadott szakasz"
+
+#: glade/drgeo2.glade.h:91
+msgid "Select a macro-construction then the figure items"
+msgstr "Válasszon egy makrót, azután az objektumokat az alakzatból"
+
+#: glade/drgeo2.glade.h:92
+msgid "Select and move an object"
+msgstr "Válasszon és mozgasson egy objektumot"
+
+#: glade/drgeo2.glade.h:93
+msgid "Select input parameters"
+msgstr "Válasszon bemeneti paramétereket"
+
+#: glade/drgeo2.glade.h:94
+msgid "Select output parameters"
+msgstr "Válasszon kimeneti paramétereket"
+
+#: glade/drgeo2.glade.h:95
+msgid "Select printer: "
+msgstr "Nyomtató kiválasztása: "
+
+#: glade/drgeo2.glade.h:100 glade/drgeoMDI.glade.h:82
+msgid "The midpoint of a segment or between two points"
+msgstr "Egy szakasz vagy két pont közti távolság felezőpontja"
+
+#: glade/drgeo2.glade.h:101 glade/drgeoMDI.glade.h:83
+msgid "The point(s) of intersection between two objects"
+msgstr "Két objektum metszéspontja(i)"
+
+#: glade/drgeo2.glade.h:102
+msgid ""
+"This interface has already been locked.\n"
+"Enter the previously used password for this view: "
+msgstr ""
+"Ez a felületet már zárolva van. Adja meg a \n"
+"korábban ehhez a nézethez használt jelszót: "
+
+#: glade/drgeo2.glade.h:104
+msgid ""
+"To build a macro-construction,\n"
+"\n"
+"1. First select the input parameters\n"
+"2. Next select the output parameters,\n"
+"3. Last chose a name and a description."
+msgstr ""
+"Egy makró létrehozásához:\n"
+"\n"
+"1. Először válassza ki a bemeneti paramétereket\n"
+"2. Ezután válassza ki a kimeneti paramétereket,\n"
+"3. Végül adjon meg neki egy nevet és a leírását."
+
+#: glade/drgeo2.glade.h:109
+msgid ""
+"To play a macro-construction,\n"
+"\n"
+"1. First select a macro-construction from the list,\n"
+"2. Select items on the figure. Only relevant items \n"
+"to the selected macro-construction are selectable.\n"
+"Once enought items are selected, the macro is \n"
+"automaticly executed.\n"
+"To start press the button \"next\"."
+msgstr ""
+"Egy makró elindításához:\n"
+"\n"
+"1. Először válasszon egy makrót a listából,\n"
+"2. Ezután válasszon ki elemeket az alakzatból.\n"
+"Csak a makróhoz szükséges elemek választhatók ki.\n"
+"Ha elég elemet választ ki, a makró automatikusan \n"
+"végrehajtódik. \n"
+"A kezdéshez kattintson az \"Előre\" gombra."
+
+#: glade/drgeo2.glade.h:117
+msgid "Tools based on properties and transformations"
+msgstr "Tulajdonságokon és átalakításokon alapuló eszközök"
+
+#: glade/drgeo2.glade.h:118 glade/drgeoMDI.glade.h:84
+msgid ""
+"Translation of an object. When ambiguity, the first selected vector is the "
+"vector to translate"
+msgstr ""
+"Egy objektum eltolása. Ha nem egyértelmű, az elsőként kijelölt vektor lesz "
+"az eltolás vektora."
+
+#: glade/drgeo2.glade.h:119
+msgid "Unlock"
+msgstr "Feloldás"
+
+#: glade/drgeo2.glade.h:120 glade/drgeoMDI.glade.h:86
+msgid "Vector and point coordinates, line and circle equation"
+msgstr "Vektor és pont koordinátái, egyenes és kör egyenlete"
+
+#: glade/drgeo2.glade.h:121 glade/drgeoMDI.glade.h:87
+msgid "Vector defined by two points"
+msgstr "Két pont által megadott vektor"
+
+#: glade/drgeo2.glade.h:122
+msgid "Visibility"
+msgstr "Láthatóság"
+
+#: glade/drgeo2.glade.h:123
+msgid "Write down your description there."
+msgstr "Írja ide a makró leírását."
+
+#: glade/drgeo2.glade.h:124
+msgid "You can edit the description"
+msgstr "A leírást szerkesztheti"
+
+#: glade/drgeo2.glade.h:125
+msgid "macro"
+msgstr "makró"
+
+#: glade/drgeo2.glade.h:126
+msgid "other"
+msgstr "más"
+
+#: glade/drgeo2.glade.h:127
+msgid "transformation"
+msgstr "átalakítás"
+
+#: glade/drgeoMDI.glade.h:16
+msgid "Animate a free point on a curve at speed 1"
+msgstr "Szabad pont animálása a görbén 1-es sebességgel"
+
+#: glade/drgeoMDI.glade.h:17
+msgid "Animate a free point on a curve at speed 2"
+msgstr "Szabad pont animálása a görbén 2-es sebességgel"
+
+#: glade/drgeoMDI.glade.h:18
+msgid "Animate a free point on a curve at speed 3"
+msgstr "Szabad pont animálása a görbén 3-as sebességgel"
+
+#: glade/drgeoMDI.glade.h:19
+msgid "Animate a free point on a curve at speed 4"
+msgstr "Szabad pont animálása a görbén 4-es sebességgel"
+
+#: glade/drgeoMDI.glade.h:20
+msgid "Animation x1"
+msgstr "Animáció - x1"
+
+#: glade/drgeoMDI.glade.h:21
+msgid "Animation x2"
+msgstr "Animáció - x2"
+
+#: glade/drgeoMDI.glade.h:22
+msgid "Animation x3"
+msgstr "Animáció - x3"
+
+#: glade/drgeoMDI.glade.h:23
+msgid "Animation x4"
+msgstr "Animáció - x4"
+
+#: glade/drgeoMDI.glade.h:27
+msgid "Change the User Interface of the current figure"
+msgstr "A jelenlegi alakzathoz tartozó felhasználói felület testreszabása"
+
+#: glade/drgeoMDI.glade.h:28
+msgid "Change the look of an object"
+msgstr "Egy objektum kinézetének megváltoztatása"
+
+#: glade/drgeoMDI.glade.h:31
+msgid "Create a new geometric figure"
+msgstr "Új geometriai alakzat létrehozása"
+
+#: glade/drgeoMDI.glade.h:32
+msgid "Create a new text"
+msgstr "Új szöveg létrehozása"
+
+#: glade/drgeoMDI.glade.h:34
+#, no-c-format
+msgid "Default 100%"
+msgstr "Alapértelmezett 100%"
+
+#: glade/drgeoMDI.glade.h:35
+msgid "Define a macro-construction"
+msgstr "Makró megadása"
+
+#: glade/drgeoMDI.glade.h:36
+msgid "Define exporting area"
+msgstr "Exportálási terület megadása"
+
+#: glade/drgeoMDI.glade.h:37
+msgid "Define the exporting area"
+msgstr "Az exportálandó terület megadása"
+
+#: glade/drgeoMDI.glade.h:40
+msgid "Dr Geo"
+msgstr "Dr Geo"
+
+#: glade/drgeoMDI.glade.h:41
+msgid "Evaluate a figure defined in Scheme"
+msgstr "Egy sémában megadott alakzat kiértékelése"
+
+#: glade/drgeoMDI.glade.h:42
+msgid "Execute a pre-built macro-construction"
+msgstr "Egy előre létrehozott makró végrehajtása"
+
+#: glade/drgeoMDI.glade.h:44
+msgid "Export current figure to Flydraw (for WIMS)"
+msgstr "A jelenlegi alakzat exportálása Flydraw-ba (WIMS-hez)"
+
+#: glade/drgeoMDI.glade.h:45
+msgid "Export current figure to LaTeX (using PSTrick package)"
+msgstr ""
+"A jelenlegi alakzat exportálása LaTeX-ba (a PSTrick csomag használatával)"
+
+#: glade/drgeoMDI.glade.h:46
+msgid "Export current figure to PNG (image format)"
+msgstr "A jelenlegi alakzat exportálása PNG (kép) formátumba"
+
+#: glade/drgeoMDI.glade.h:47
+msgid "Export current figure to PostScript (eps)"
+msgstr "A jelenlegi alakzat exportálása PostScript (eps) formátumba"
+
+#: glade/drgeoMDI.glade.h:48
+msgid "Export figure to Flydraw"
+msgstr "Alakzat exportálása Flydraw-ba"
+
+#: glade/drgeoMDI.glade.h:49
+msgid "Export figure to LaTeX"
+msgstr "Alakzat exportálása LaTeX-ba"
+
+#: glade/drgeoMDI.glade.h:50
+msgid "Export figure to PNG"
+msgstr "Alakzat exportálása PNG-be"
+
+#: glade/drgeoMDI.glade.h:51
+msgid "Export figure to PostScript"
+msgstr "Alakzat exportálása PostScript-be"
+
+#: glade/drgeoMDI.glade.h:52
+msgid "Export preferences"
+msgstr "Exportálás beállításai"
+
+#: glade/drgeoMDI.glade.h:53
+msgid "Free _point"
+msgstr "Szabad _pont"
+
+#: glade/drgeoMDI.glade.h:54
+msgid "Grid"
+msgstr "Rács"
+
+#: glade/drgeoMDI.glade.h:57
+msgid "Help"
+msgstr "Súgó"
+
+#: glade/drgeoMDI.glade.h:62
+msgid "M_ove an object"
+msgstr "Objektum _mozgatása"
+
+#: glade/drgeoMDI.glade.h:63
+msgid "New Figure"
+msgstr "Új alakzat"
+
+#: glade/drgeoMDI.glade.h:64
+msgid "New Text"
+msgstr "Új szöveg"
+
+#: glade/drgeoMDI.glade.h:67
+msgid "Polygon defined by three points or more"
+msgstr "Három vagy több pont által megadott sokszög"
+
+#: glade/drgeoMDI.glade.h:68
+msgid "Preferences"
+msgstr "Beállítások"
+
+#: glade/drgeoMDI.glade.h:69
+msgid "Preferences set up"
+msgstr "Tulajdonságok beállítása"
+
+#: glade/drgeoMDI.glade.h:70
+msgid "Re_name"
+msgstr "Át_nevezés"
+
+#: glade/drgeoMDI.glade.h:71
+msgid "Remove exporting area"
+msgstr "Exportálási terület eltávolítása"
+
+#: glade/drgeoMDI.glade.h:72
+msgid "Remove the exporting area"
+msgstr "Eltávolítja az exportálási területet"
+
+#: glade/drgeoMDI.glade.h:73
+msgid "Rename"
+msgstr "Átnevezés"
+
+#: glade/drgeoMDI.glade.h:74
+msgid "Rename the current view"
+msgstr "A jelenlegi nézet átnevezése"
+
+#: glade/drgeoMDI.glade.h:76
+msgid "Save _multiple"
+msgstr "_Több mentése"
+
+#: glade/drgeoMDI.glade.h:77
+msgid "Save several data (figures, macro-constructions.) in one file"
+msgstr "Több adatot (alakzatok, makrók) egy fájlba ment"
+
+#: glade/drgeoMDI.glade.h:80
+msgid "Show or hide the grid"
+msgstr "Rács mutatása/rejtése"
+
+#: glade/drgeoMDI.glade.h:81
+msgid "Show or hide the unit grid in the current view"
+msgstr "Megmutatja/elrejti a négyzetrácsot a jelenlegi nézetben"
+
+#: glade/drgeoMDI.glade.h:85
+msgid "User manual"
+msgstr "Felhasználói kézikönyv"
+
+#: glade/drgeoMDI.glade.h:88
+msgid "Windows"
+msgstr "Ablakok"
+
+#: glade/drgeoMDI.glade.h:90
+#, no-c-format
+msgid "Zoom to 100%"
+msgstr "Nagyítás: 100%"
+
+#: glade/drgeoMDI.glade.h:92
+#, no-c-format
+msgid "Zoom to 125%"
+msgstr "Nagyítás: 125%"
+
+#: glade/drgeoMDI.glade.h:94
+#, no-c-format
+msgid "Zoom to 150%"
+msgstr "Nagyítás: 150%"
+
+#: glade/drgeoMDI.glade.h:96
+#, no-c-format
+msgid "Zoom to 175%"
+msgstr "Nagyítás: 175%"
+
+#: glade/drgeoMDI.glade.h:98
+#, no-c-format
+msgid "Zoom to 200%"
+msgstr "Nagyítás: 200%"
+
+#: glade/drgeoMDI.glade.h:100
+#, no-c-format
+msgid "Zoom to 25%"
+msgstr "Nagyítás: 25%"
+
+#: glade/drgeoMDI.glade.h:102
+#, no-c-format
+msgid "Zoom to 50%"
+msgstr "Nagyítás: 50%"
+
+#: glade/drgeoMDI.glade.h:104
+#, no-c-format
+msgid "Zoom to 75%"
+msgstr "Nagyítás: 75%"
+
+#: glade/drgeoMDI.glade.h:105
+msgid "_About"
+msgstr "_Névjegy"
+
+#: glade/drgeoMDI.glade.h:106
+msgid "_Angle"
+msgstr "_Szög"
+
+#: glade/drgeoMDI.glade.h:107
+#, fuzzy
+msgid "_Animation"
+msgstr "Animáció"
+
+#: glade/drgeoMDI.glade.h:108
+msgid "_Arc Circle"
+msgstr "_Körív"
+
+#: glade/drgeoMDI.glade.h:109
+msgid "_Axial Symmetry"
+msgstr "_Tengelyes tükrözés"
+
+#: glade/drgeoMDI.glade.h:110
+msgid "_Central Symmetry"
+msgstr "_Középpontos tükrözés"
+
+#: glade/drgeoMDI.glade.h:111
+msgid "_Circle"
+msgstr "_Kör"
+
+#: glade/drgeoMDI.glade.h:112
+msgid "_Construct Macro"
+msgstr "_Makró létrehozása"
+
+#: glade/drgeoMDI.glade.h:113
+msgid "_Contents"
+msgstr "_Tartalom"
+
+#: glade/drgeoMDI.glade.h:114
+msgid "_Coordinates"
+msgstr "_Koordináták"
+
+#: glade/drgeoMDI.glade.h:115
+msgid "_Coordinates & Equation"
+msgstr "_Koordináták és egyenlet"
+
+#: glade/drgeoMDI.glade.h:116
+msgid "_Curve"
+msgstr "_Görbe"
+
+#: glade/drgeoMDI.glade.h:117
+msgid "_Custom Interface"
+msgstr "_Egyéni felület"
+
+#: glade/drgeoMDI.glade.h:118
+msgid "_Delete an Object"
+msgstr "Objektum _törlése"
+
+#: glade/drgeoMDI.glade.h:119
+msgid "_Distance & Length"
+msgstr "_Távolság és hossz"
+
+#: glade/drgeoMDI.glade.h:120
+msgid "_Edit"
+msgstr "S_zerkesztés"
+
+#: glade/drgeoMDI.glade.h:121
+msgid "_Evaluate"
+msgstr "Kiérték_elés"
+
+#: glade/drgeoMDI.glade.h:122
+msgid "_Execute Macro"
+msgstr "_Makró végrehajtása"
+
+#: glade/drgeoMDI.glade.h:123
+msgid "_Figure"
+msgstr "_Alakzat"
+
+#: glade/drgeoMDI.glade.h:124
+msgid "_File"
+msgstr "_Fájl"
+
+#: glade/drgeoMDI.glade.h:125
+msgid "_Geometric Locus"
+msgstr "_Ponthalmaz"
+
+#: glade/drgeoMDI.glade.h:126
+msgid "_Half-line"
+msgstr "_Félegyenes"
+
+#: glade/drgeoMDI.glade.h:127
+msgid "_Help"
+msgstr "_Súgó"
+
+#: glade/drgeoMDI.glade.h:128
+msgid "_Intersection"
+msgstr "_Metszéspont"
+
+#: glade/drgeoMDI.glade.h:129
+msgid "_Line"
+msgstr "_Egyenes"
+
+#: glade/drgeoMDI.glade.h:130
+msgid "_Look"
+msgstr "_Kinézet"
+
+#: glade/drgeoMDI.glade.h:131
+msgid "_Macro"
+msgstr "_Makró"
+
+#: glade/drgeoMDI.glade.h:132
+msgid "_Macro-constructions"
+msgstr "_Makrók"
+
+#: glade/drgeoMDI.glade.h:133
+msgid "_Middle"
+msgstr "_Középpont"
+
+#: glade/drgeoMDI.glade.h:134
+msgid "_Numeric"
+msgstr "_Szám"
+
+#: glade/drgeoMDI.glade.h:135
+msgid "_Orthogonal Line"
+msgstr "_Merőleges egyenes"
+
+#: glade/drgeoMDI.glade.h:136
+msgid "_Other"
+msgstr "_Egyéb"
+
+#: glade/drgeoMDI.glade.h:137
+msgid "_Parallel Line"
+msgstr "_Párhuzamos egyenes"
+
+#: glade/drgeoMDI.glade.h:138
+msgid "_Point"
+msgstr "_Pont"
+
+#: glade/drgeoMDI.glade.h:139
+msgid "_Polygon"
+msgstr "_Sokszög"
+
+#: glade/drgeoMDI.glade.h:140
+msgid "_Property"
+msgstr "_Tulajdonság"
+
+#: glade/drgeoMDI.glade.h:141
+msgid "_Rotation"
+msgstr "_Forgatás"
+
+#: glade/drgeoMDI.glade.h:142
+msgid "_Scale"
+msgstr "_Átméretezés"
+
+#: glade/drgeoMDI.glade.h:143
+msgid "_Script"
+msgstr "_Parancsfájl"
+
+#: glade/drgeoMDI.glade.h:144
+msgid "_Segment"
+msgstr "_Szakasz"
+
+#: glade/drgeoMDI.glade.h:145
+msgid "_Text"
+msgstr "_Szöveg"
+
+#: glade/drgeoMDI.glade.h:146
+msgid "_Transformation"
+msgstr "_Transzformáció"
+
+#: glade/drgeoMDI.glade.h:147
+msgid "_Translation"
+msgstr "_Eltolás"
+
+#: glade/drgeoMDI.glade.h:148
+msgid "_Vector"
+msgstr "_Vektor"
+
+#: glade/drgeoMDI.glade.h:149
+msgid "_Zoom"
+msgstr "_Nagyítás"

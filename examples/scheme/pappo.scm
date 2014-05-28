@@ -1,0 +1,20 @@
+(new-figure "Pappo")
+
+(define (circle n)
+(let*((r (Numeric "" free 0 0 (/ 15 ( + 6 (* n n )))))
+      (c (Point   "" free (* 5 (/ 15 ( + 6 (* n n )))) 
+                          (* 2 (* n (/ 15 ( + 6 (* n n )))))))
+      (p (Circle "" center-radius c r )))
+  (send r masked)
+  (if (> n 0)
+    (circle (- n 1)))))
+
+(circle 10)
+
+(lets Point "A" free 5 0)
+(lets Point "O" free 0   0)
+(lets Point "B" free 15 0)
+(lets Point "M" middle-2pts B O)
+(lets Circle "" 2points M O)
+(lets Circle "" 2points A O)
+(lets Line   "" 2points A O)

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<drgenius><drgeo name="Signed Distance" scale="30.000000" origin_x="0.000000" origin_y="0.000000" grid="True"><point id="8F554D0" type="Free" color="Red" thickness="Dashed" style="Rectangular" filled="False" masked="False" name="O"><x>0.033334</x><y>-0.033334</y></point><point id="8F4F020" type="Free" color="Red" thickness="Dashed" style="Rectangular" filled="False" masked="False" name=""><x>4.900000</x><y>-0.033334</y></point><line id="8F60890" type="2pts" color="Orange" thickness="Thick" style="Cross" filled="False" masked="False" name=""><parent ref="8F554D0"/><parent ref="8F4F020"/></line><point id="8F6B698" type="On_curve" color="DarkBlue" thickness="Thick" style="RoundEmpty" filled="False" masked="False" name="A"><value>0.068102</value><parent ref="8F60890"/></point><point id="8F69DC8" type="On_curve" color="DarkBlue" thickness="Thick" style="RoundEmpty" filled="False" masked="False" name="B"><value>0.158836</value><parent ref="8F60890"/></point><script id="8F9A910" type="nitems" color="Blue" thickness="Normal" style="Cross" filled="False" masked="False" name="AB"><x>-4.966667</x><y>1.166667</y><parent ref="8F60890"/><parent ref="8F6B698"/><parent ref="8F69DC8"/><code>(let* ((v (getUnit a1))
+       (a (getCoordinates a2))
+       (b (getCoordinates a3))
+       (Xab (- (car b) (car a)))
+       (Yab (- (cadr b) (cadr a))))
+  (+ (* Xab (car v)) (* Yab (cadr v))))</code></script></drgeo><text name="Read Me">This example exposes the combined use of Script and Macro-construction within Dr.Geo.
+
+Here we show how a signed distance construction can be done.
+
+First the script we constructed receives three parameters: two points and a line.
+Here is the code:
+
+(let* ((v (getUnit a1))
+       (a (getCoordinates a2))
+       (b (getCoordinates a3))
+       (Xab (- (car b) (car a)))
+       (Yab (- (cadr b) (cadr a))))
+  (+ (* Xab (car v)) (* Yab (cadr v))))
+
+Note: we use the let statement as script are always embedded in a function. The special form let*
+lets us reuse definition in the assignement (i.e. Xab reuse previous definition a and b)
+
+Basicly the math is just vec(AB).vec(v) to compute the signed distance.
+
+Next we record the macro by selecting the two points and the line as input parameter 
+then the script as the result.
+
+That's all.
+</text><macro name="signed distance"><description>Select two points on a line and the line itself.
+It returns the signed distance (mesure alg&#xE9;brique)</description><input><kernel category="4"/><kernel category="4"/><kernel category="8"/></input><intermediate><kernel type="1" category="32768" extra="(let* ((v (getUnit a1))&#10;       (a (getCoordinates a2))&#10;       (b (getCoordinates a3))&#10;       (Xab (- (car b) (car a)))&#10;       (Yab (- (cadr b) (cadr a))))&#10;  (+ (* Xab (car v)) (* Yab (cadr v))))" final="True"><parent ref="3"/><parent ref="1"/><parent ref="2"/></kernel></intermediate></macro></drgenius>

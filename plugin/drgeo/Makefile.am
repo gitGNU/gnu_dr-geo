@@ -1,0 +1,3 @@
+SUBDIRS = progs
+
+EXTRA_DIST = README

@@ -1,0 +1,3 @@
+<?xml version="1.0"?>
+<drgenius><macro name="segment"><description>Segment perpendiculaire
+S&#xE9;lectionner deux points</description><input><kernel category="2"/><kernel category="2"/></input><intermediate><kernel type="32" category="128" extra="0" final="False"><parent ref="2"/><parent ref="1"/></kernel><kernel type="32" category="128" extra="0" final="False"><parent ref="1"/><parent ref="2"/></kernel><kernel type="256" category="1" extra="1" final="False"><parent ref="3"/><parent ref="4"/></kernel><kernel type="256" category="1" extra="0" final="False"><parent ref="3"/><parent ref="4"/></kernel><kernel type="32" category="32" extra="0" final="True"><parent ref="5"/><parent ref="6"/></kernel></intermediate></macro></drgenius>
