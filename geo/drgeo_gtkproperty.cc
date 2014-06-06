@@ -231,7 +231,7 @@ drgeoGtkPropertyDialog::hide ()
 void
 drgeoGtkPropertyDialog::edit (class geometricObject * aItem)
 {
-  GladeXML *xml;
+  GtkBuilder *xml;
   GtkWidget *widget, *widget2;
   drgeoPoint p;
   gchar out[256] = "";

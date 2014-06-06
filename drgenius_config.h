@@ -38,7 +38,7 @@ static void drgeoConfigSet(gchar *attr, const gchar *value);
 static void drgeoConfigSetDialog(gchar *attr, gchar *value);
 gchar * drgeoConfigGet (gchar *attr);
 static GtkWidget * drgeoConfigWidget (gchar * item, 
-				      gchar *attr, GladeXML *xml);
+				      gchar *attr, GtkBuilder *xml);
 
 void loadUserPreferences ();
 void saveUserPreferences ();

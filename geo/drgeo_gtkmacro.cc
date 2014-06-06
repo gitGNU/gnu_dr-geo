@@ -364,7 +364,7 @@ drgeoGtkMacroBuildDialog::previousWidget ()
 drgeoGtkMacroBuildDialog::drgeoGtkMacroBuildDialog (drgeoMacroBuilder *
 						    builder)
 {
-  GladeXML *xmlDialogWidget;
+  GtkBuilder *xmlDialogWidget;
   GtkCellRenderer *renderer;
   GtkTreeViewColumn *column;
 
@@ -507,7 +507,7 @@ drgeoGtkMacroPlayDialog::add (geometricObject * item)
 
 drgeoGtkMacroPlayDialog::drgeoGtkMacroPlayDialog (drgeoMacroPlayer * player)
 {
-  GladeXML *xmlDialogWidget;
+  GtkBuilder *xmlDialogWidget;
   drgeoMacroRegistry *registry;
   macro *aMacro;
   GtkCellRenderer *renderer;

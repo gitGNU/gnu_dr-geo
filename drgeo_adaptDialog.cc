@@ -39,7 +39,7 @@
 
 extern drgeniusMDI *mdi;
 
-static GladeXML *xml = NULL;
+static GtkBuilder *xml = NULL;
 static drgeoFigure *myFigure;
 static geoView *myChild;
 static GtkWindow *dialog;
@@ -215,7 +215,7 @@ void
 on_uiAdaptDialog_response (GtkWidget * widget, gint b, gpointer data)
 {
   GtkWidget *p_dialog, *p_entry;
-  GladeXML *p_tree;
+  GtkBuilder *p_tree;
 
   switch (b)
     {

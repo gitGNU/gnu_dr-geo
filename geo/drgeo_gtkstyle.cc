@@ -111,7 +111,7 @@ on_styleDialog_delete (GtkWidget * widget, GdkEventAny * e,
 
 // Helper functions
 static void
-connectWithData (GladeXML * tree, drgeoGtkStyleDialog * d,
+connectWithData (GtkBuilder * tree, drgeoGtkStyleDialog * d,
 		 gchar const * widgetName, GtkSignalFunc f, gint data)
 {
   GtkWidget *widget;
@@ -128,7 +128,7 @@ connectWithData (GladeXML * tree, drgeoGtkStyleDialog * d,
 }
 
 static GtkWidget *
-connectAllColor (GladeXML * xml, drgeoGtkStyleDialog * d)
+connectAllColor (GtkBuilder * xml, drgeoGtkStyleDialog * d)
 {
   connectWithData (xml, d, "black",
 		   GTK_SIGNAL_FUNC (style_color_button_cb), 0);
@@ -156,7 +156,7 @@ connectAllColor (GladeXML * xml, drgeoGtkStyleDialog * d)
 }
 
 static void
-connectNameEntry (GladeXML * xml, drgeoGtkStyleDialog * d)
+connectNameEntry (GtkBuilder * xml, drgeoGtkStyleDialog * d)
 {
   GtkWidget *widget;
 
@@ -167,7 +167,7 @@ connectNameEntry (GladeXML * xml, drgeoGtkStyleDialog * d)
 }
 
 static void
-connectStyle (GladeXML * xml, drgeoGtkStyleDialog * d)
+connectStyle (GtkBuilder * xml, drgeoGtkStyleDialog * d)
 {
   connectWithData (xml, d, "dashed",
 		   GTK_SIGNAL_FUNC (style_size_button_cb), 0);
@@ -178,7 +178,7 @@ connectStyle (GladeXML * xml, drgeoGtkStyleDialog * d)
 }
 
 static void
-connectVisibility (GladeXML * xml, drgeoGtkStyleDialog * d)
+connectVisibility (GtkBuilder * xml, drgeoGtkStyleDialog * d)
 {
 
   connectWithData (xml, d, "masked",
@@ -189,7 +189,7 @@ connectVisibility (GladeXML * xml, drgeoGtkStyleDialog * d)
 
 
 static void
-adjustColorDialog (GladeXML * xml, geometricObject * item)
+adjustColorDialog (GtkBuilder * xml, geometricObject * item)
 {
   GtkWidget *widget;
 
@@ -236,7 +236,7 @@ adjustColorDialog (GladeXML * xml, geometricObject * item)
 }
 
 static void
-adjustNameEntryDialog (GladeXML * xml, geometricObject * item)
+adjustNameEntryDialog (GtkBuilder * xml, geometricObject * item)
 {
   GtkWidget *widget;
 
@@ -248,7 +248,7 @@ adjustNameEntryDialog (GladeXML * xml, geometricObject * item)
 }
 
 static void
-adjustStyleDialog (GladeXML * xml, geometricObject * item)
+adjustStyleDialog (GtkBuilder * xml, geometricObject * item)
 {
   GtkWidget *widget;
 
@@ -269,7 +269,7 @@ adjustStyleDialog (GladeXML * xml, geometricObject * item)
 }
 
 static void
-adjustVisibilityDialog (GladeXML * xml, geometricObject * item)
+adjustVisibilityDialog (GtkBuilder * xml, geometricObject * item)
 {
   GtkWidget *widget;
 

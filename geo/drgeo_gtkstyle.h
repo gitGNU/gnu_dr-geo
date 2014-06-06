@@ -48,7 +48,7 @@ private:
   drgeoGtkDrawable * drawable;
   geometricObject *item;
   GtkWidget *dialog;
-  GladeXML *xml;
+  GtkBuilder *xml;
   objectCategory category;
 };
 

@@ -46,7 +46,7 @@ hideTool (drgeoToolId i, gboolean state)
 }
 
 void drgeoControl::
-setTopControlerWidget (GladeXML *xml)
+setTopControlerWidget (GtkBuilder *xml)
 {
   fetchWidgetParent (xml, &p_menuItem[pointMenuId],
 		     "pointMenu", (gpointer) this);
@@ -65,7 +65,7 @@ setTopControlerWidget (GladeXML *xml)
 }
 
 void drgeoControl::
-setPointControlerWidget (GladeXML *xml)
+setPointControlerWidget (GtkBuilder *xml)
 {
   fetchWidgetParent (xml, &p_menuItem[pointId],
 		     "freePointItem", (gpointer) this);
@@ -78,7 +78,7 @@ setPointControlerWidget (GladeXML *xml)
 }
 
 void drgeoControl::
-setCurveControlerWidget (GladeXML *xml)
+setCurveControlerWidget (GtkBuilder *xml)
 {
   fetchWidgetParent (xml, &p_menuItem[lineId],
 		     "lineItem", (gpointer) this);
@@ -99,7 +99,7 @@ setCurveControlerWidget (GladeXML *xml)
 }
 
 void drgeoControl::
-setTransformationControlerWidget (GladeXML *xml)
+setTransformationControlerWidget (GtkBuilder *xml)
 {
   fetchWidgetParent (xml, &p_menuItem[parallelId],
 		     "parallelLineItem", (gpointer) this);
@@ -118,7 +118,7 @@ setTransformationControlerWidget (GladeXML *xml)
 }
 
 void drgeoControl::
-setNumericControlerWidget (GladeXML *xml)
+setNumericControlerWidget (GtkBuilder *xml)
 {
   fetchWidgetParent (xml, &p_menuItem[distanceId],
 		     "distanceLengthItem", (gpointer) this);
@@ -131,7 +131,7 @@ setNumericControlerWidget (GladeXML *xml)
 }
 
 void drgeoControl::
-setMacroControlerWidget (GladeXML *xml)
+setMacroControlerWidget (GtkBuilder *xml)
 {
   fetchWidgetParent (xml, &p_menuItem[buildMacroId],
 		     "constructMacroItem", (gpointer) this);
@@ -140,7 +140,7 @@ setMacroControlerWidget (GladeXML *xml)
 }
 
 void drgeoControl::
-setOtherControlerWidget (GladeXML *xml)
+setOtherControlerWidget (GtkBuilder *xml)
 {
   fetchWidgetParent (xml, &p_menuItem[deleteItemId],
 		     "deleteObjectItem", (gpointer) this);
@@ -151,7 +151,7 @@ setOtherControlerWidget (GladeXML *xml)
 }
 
 void drgeoControl::
-setShortcutControlerWidget (GladeXML *xml)
+setShortcutControlerWidget (GtkBuilder *xml)
 {
   fetchWidgetParent (xml, &p_menuItem[pointScId],
 		     "freePointItemSc", (gpointer) this);
@@ -222,7 +222,7 @@ drgeoControl::drawable ()
 
 // HELPERS
 
-void fetchWidgetParent (GladeXML *xml, GtkWidget * *w, gchar *name, gpointer parent)
+void fetchWidgetParent (GtkBuilder *xml, GtkWidget * *w, gchar *name, gpointer parent)
 {
   *w = glade_xml_get_widget (xml, name);
   gtk_object_set_data (GTK_OBJECT (*w), "parent", parent);

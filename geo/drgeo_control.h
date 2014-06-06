@@ -56,14 +56,14 @@ class drgeoControl
   virtual void updateUserInterface ();
   geoView * view ();
  protected:
-  void setTopControlerWidget (GladeXML *xml);
-  void setPointControlerWidget (GladeXML *xml);
-  void setCurveControlerWidget (GladeXML *xml);
-  void setTransformationControlerWidget (GladeXML *xml);
-  void setNumericControlerWidget (GladeXML *xml);
-  void setMacroControlerWidget (GladeXML *xml);
-  void setOtherControlerWidget (GladeXML *xml);
-  void setShortcutControlerWidget (GladeXML *xml);
+  void setTopControlerWidget (GtkBuilder *xml);
+  void setPointControlerWidget (GtkBuilder *xml);
+  void setCurveControlerWidget (GtkBuilder *xml);
+  void setTransformationControlerWidget (GtkBuilder *xml);
+  void setNumericControlerWidget (GtkBuilder *xml);
+  void setMacroControlerWidget (GtkBuilder *xml);
+  void setOtherControlerWidget (GtkBuilder *xml);
+  void setShortcutControlerWidget (GtkBuilder *xml);
   // the basic tools,common to menu and toolbar
   GtkWidget * p_menuItem[DRGEO_TOOLS_NUMBER+DRGEO_TOOLS_SHORTCUT];
   geoView *p_view;
@@ -74,7 +74,7 @@ class drgeoControl
 
 // HELPERS
 
-void fetchWidgetParent (GladeXML *xml, GtkWidget * *w, gchar *name, 
+void fetchWidgetParent (GtkBuilder *xml, GtkWidget * *w, gchar *name, 
 			gpointer parent);
 
 

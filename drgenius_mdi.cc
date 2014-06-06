@@ -54,7 +54,7 @@ extern const char* drgeniusHelp[];
 
 drgeniusMDI::drgeniusMDI ()
 {
-  GladeXML *xml;
+  GtkBuilder *xml;
   GtkWidget *w;
 
   p_activeView = NULL;
@@ -1206,7 +1206,7 @@ export_figure_png_ok_cb (GtkWidget * widget, GtkWidget * dialog)
 void
 save_multiple_cb (GtkWidget * widget, gpointer data)
 {
-  GladeXML *xmlSessionWidget;
+  GtkBuilder *xmlSessionWidget;
   GtkCellRenderer *renderer;
   GtkTreeViewColumn *column;
   GtkTreeSelection *select;
@@ -1304,7 +1304,7 @@ void
 print_figure_cb (GtkWidget * widget, gpointer data)
 {
   drgeniusView *child;
-  GladeXML *xml;  
+  GtkBuilder *xml;  
   GtkWidget *w;
   GtkOptionMenu *list;
   GtkMenu *printers;
@@ -1619,7 +1619,7 @@ gridItem_cb (GtkWidget * widget, gpointer data)
 void
 rename_view_cb (GtkWidget * widget, gpointer data)
 {
-  GladeXML *xml;  
+  GtkBuilder *xml;  
   GtkWidget *w, *entry;
 
   if (!mdi->activeView ())

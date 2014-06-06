@@ -26,7 +26,7 @@
 drgeoToolbar::drgeoToolbar (geoView *view):
   drgeoControl (view)
 {
-  GladeXML *xml;
+  GtkBuilder *xml;
   GtkWidget *w;
 
   // Build the toolbars

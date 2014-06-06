@@ -32,7 +32,7 @@ extern drgeniusMDI *mdi;
 drgeoMenu::drgeoMenu (geoView *view):
   drgeoControl (view)
 {
-  GladeXML *xml;
+  GtkBuilder *xml;
   GtkWidget *w;
 
   // Build the pop up menu 

@@ -33,7 +33,7 @@ extern int numericPrecision;
 extern drgeniusMDI *mdi;
 extern const char* drgeniusHelp[];
 static GtkDialog *propertyBox;
-static GladeXML *xmlPropertyBox;
+static GtkBuilder *xmlPropertyBox;
 
 /*
   Helper functions
@@ -85,7 +85,7 @@ drgeoConfigGet (gchar *attr)
 }
 
 static GtkWidget * drgeoConfigWidget (gchar *item, 
-				      gchar *attr, GladeXML *xml)
+				      gchar *attr, GtkBuilder *xml)
 {
   gchar *str;
   GtkWidget *w;
@@ -145,7 +145,7 @@ static void on_scalarColor_toggled (GtkToggleButton * b, gpointer colorIndex);
 
 
 static void
-connectWithData (GladeXML * tree, gchar * widgetName,
+connectWithData (GtkBuilder * tree, gchar * widgetName,
 		 GtkSignalFunc f, gint data)
 {
   GtkWidget *widget;
