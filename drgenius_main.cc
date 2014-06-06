@@ -24,7 +24,7 @@
 #include <locale.h>
 #include <config.h>
 #include <gtk/gtk.h>
-#include <glade/glade.h>
+
 #include <libguile.h>
 #include <libintl.h>
 #include <string.h>

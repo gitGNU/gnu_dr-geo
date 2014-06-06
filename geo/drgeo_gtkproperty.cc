@@ -22,7 +22,6 @@
  */
 
 #include <stdio.h>
-#include <glade/glade.h>
 
 #include "drgeo_gtkproperty.h"
 #include "drgeo_gtkdrawable.h"

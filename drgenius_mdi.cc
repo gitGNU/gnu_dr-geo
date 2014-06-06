@@ -21,7 +21,7 @@
  */
 
 #include <config.h>
-#include <glade/glade.h>
+
 #include <errno.h>
 
 #include "drgenius_mdi.h"

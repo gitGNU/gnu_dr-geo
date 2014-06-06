@@ -22,7 +22,6 @@
  * 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-#include <glade/glade.h>
 
 #include "drgeo_gtkstyle.h"
 #include "drgeo_gtkdrawable.h"

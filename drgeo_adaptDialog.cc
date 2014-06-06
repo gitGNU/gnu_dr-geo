@@ -27,7 +27,7 @@
 
 #include <string.h>
 
-#include <glade/glade.h>
+
 #include "drgeo_adaptDialog.h"
 #include "drgeo_figure.h"
 #include "drgeo_menu.h"

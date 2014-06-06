@@ -24,7 +24,7 @@
 #define DRGEO_CONTROL_H
 
 #include <gmodule.h>
-#include <glade/glade.h>
+
 
 #include "geo_view.h"
 #include "drgeo_figure.h"
