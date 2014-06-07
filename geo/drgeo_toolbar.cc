@@ -26,7 +26,8 @@
 drgeoToolbar::drgeoToolbar (geoView *view):
   drgeoControl (view)
 {
-  GtkBuilder *xml;
+  GError* error = NULL;
+  GtkBuilder *xml = gtk_builder_new ();
   GtkWidget *w;
 
   // Build the toolbars
@@ -36,7 +37,11 @@ drgeoToolbar::drgeoToolbar (geoView *view):
   // . attach a referecence of this class instance
 
 
-  xml = glade_xml_new (DRGEO_GLADEDIR"/drgeo2.glade","menuBar", NULL);
+  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/drgeo2.glade", &error))
+  {
+    g_warning ("Couldn't load builder file: %s", error->message);
+    g_error_free (error);
+  }
   setTopControlerWidget (xml);
 
   fetchWidgetParent (xml,&p_toolbar, "menuBar",
@@ -44,59 +49,54 @@ drgeoToolbar::drgeoToolbar (geoView *view):
   fetchWidgetParent (xml,&p_zoomEntry, "zoomEntry",
 		     (gpointer) this);
   gtk_entry_set_text (GTK_ENTRY (p_zoomEntry), "100%");
-  glade_xml_signal_autoconnect (xml);
+  gtk_builder_connect_signals (xml, &error);
   g_object_unref (G_OBJECT (xml));
   
 
   /* short cut bar */
-  xml = glade_xml_new (DRGEO_GLADEDIR"/drgeo2.glade","shortcutBar", NULL);
+  
   setShortcutControlerWidget (xml);
   fetchWidgetParent (xml,&p_shortcutBar, "shortcutBar",
 		     (gpointer) this);
-  glade_xml_signal_autoconnect (xml);
+  gtk_builder_connect_signals (xml, &error);
   g_object_unref (G_OBJECT (xml));
 
 
-  xml = glade_xml_new (DRGEO_GLADEDIR"/drgeo2.glade","pointBar", NULL);
-  glade_xml_signal_autoconnect (xml);
+  
+  gtk_builder_connect_signals (xml, &error);
   setPointControlerWidget (xml);
   fetchWidgetParent (xml,&p_pointBar, "pointBar", 
 		     (gpointer) this);
-  w = glade_xml_get_widget (xml, "toolbar");
+  w = GTK_WIDGET (gtk_builder_get_object(xml, "toolbar"));
   gtk_toolbar_set_tooltips (GTK_TOOLBAR (w), true);
   g_object_unref (G_OBJECT (xml));
   
-  xml = glade_xml_new (DRGEO_GLADEDIR"/drgeo2.glade","curveBar", NULL);
-  glade_xml_signal_autoconnect (xml);
+  gtk_builder_connect_signals (xml, &error);
   setCurveControlerWidget (xml);
   fetchWidgetParent (xml,&p_curveBar, "curveBar",
 		     (gpointer) this);
   g_object_unref (G_OBJECT (xml));
 
-  xml = glade_xml_new (DRGEO_GLADEDIR"/drgeo2.glade","transformationBar", NULL);
-  glade_xml_signal_autoconnect (xml);
+  gtk_builder_connect_signals (xml, &error);
   setTransformationControlerWidget (xml);
   fetchWidgetParent (xml,&p_transformationBar, 
 		     "transformationBar",
 		     (gpointer) this);
   g_object_unref (G_OBJECT (xml));
 
-  xml = glade_xml_new (DRGEO_GLADEDIR"/drgeo2.glade","numericBar", NULL);
-  glade_xml_signal_autoconnect (xml);
+  gtk_builder_connect_signals (xml, &error);
   setNumericControlerWidget (xml);
   fetchWidgetParent (xml,&p_numericBar, "numericBar",
 		     (gpointer) this);
   g_object_unref (G_OBJECT (xml));
 
-  xml = glade_xml_new (DRGEO_GLADEDIR"/drgeo2.glade","macroBar", NULL);
-  glade_xml_signal_autoconnect (xml);
+  gtk_builder_connect_signals (xml, &error);
   setMacroControlerWidget (xml);
   fetchWidgetParent (xml,&p_macroBar, "macroBar",
 		     (gpointer) this);
   g_object_unref (G_OBJECT (xml));
 
-  xml = glade_xml_new (DRGEO_GLADEDIR"/drgeo2.glade","otherBar", NULL);
-  glade_xml_signal_autoconnect (xml);
+  gtk_builder_connect_signals (xml, &error);
   setOtherControlerWidget (xml);
   fetchWidgetParent (xml,&p_otherBar, "otherBar",
 		     (gpointer) this);

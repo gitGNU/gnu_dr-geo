@@ -231,7 +231,8 @@ drgeoGtkPropertyDialog::hide ()
 void
 drgeoGtkPropertyDialog::edit (class geometricObject * aItem)
 {
-  GtkBuilder *xml;
+  GError* error = NULL;
+  GtkBuilder *xml = gtk_builder_new ();
   GtkWidget *widget, *widget2;
   drgeoPoint p;
   gchar out[256] = "";
@@ -247,22 +248,25 @@ drgeoGtkPropertyDialog::edit (class geometricObject * aItem)
 
       if (category != aItem->getCategory ())
 	{
-	  xml = glade_xml_new (DRGEO_GLADEDIR "/drgeo2.glade",
-			       "freePointPropertyDialog", NULL);
+	  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/drgeo2.glade", &error))
+	  {
+	    g_warning ("Couldn't load builder file: %s", error->message);
+	    g_error_free (error);
+	  }
 
-	  dialog = glade_xml_get_widget (xml, "freePointPropertyDialog");
+	  dialog = GTK_WIDGET (gtk_builder_get_object (xml, "freePointPropertyDialog"));
 
 	  //set transient
 	  mdi->setTransientDialog (GTK_WINDOW (dialog));
 
-	  widget = glade_xml_get_widget (xml, "abscissaEntry");
+	  widget = GTK_WIDGET (gtk_builder_get_object (xml, "abscissaEntry"));
 	  gtk_signal_connect (GTK_OBJECT (widget), "activate",
 			      GTK_SIGNAL_FUNC
 			      (on_freePointAbscissaEntry_activate),
 			      (gpointer) this);
 	  gtk_object_set_data (GTK_OBJECT (dialog), "abscissaEntry", widget);
 
-	  widget = glade_xml_get_widget (xml, "ordinateEntry");
+	  widget = GTK_WIDGET (gtk_builder_get_object (xml, "ordinateEntry"));
 	  gtk_signal_connect (GTK_OBJECT (widget), "activate",
 			      GTK_SIGNAL_FUNC
 			      (on_freePointOrdinateEntry_activate),
@@ -293,14 +297,17 @@ drgeoGtkPropertyDialog::edit (class geometricObject * aItem)
 	{
 	  if (category != aItem->getCategory ())
 	    {
-	      xml = glade_xml_new (DRGEO_GLADEDIR "/drgeo2.glade",
-				   "editValuePropertyDialog", NULL);
-	      dialog = glade_xml_get_widget (xml, "editValuePropertyDialog");
+	      if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/drgeo2.glade", &error))
+		  {
+		    g_warning ("Couldn't load builder file: %s", error->message);
+		    g_error_free (error);
+		  }
+	      dialog = GTK_WIDGET (gtk_builder_get_object (xml, "editValuePropertyDialog"));
 
 	      //set transient
 	      mdi->setTransientDialog (GTK_WINDOW (dialog));
 
-	      widget = glade_xml_get_widget (xml, "valueEntry");
+	      widget = GTK_WIDGET (gtk_builder_get_object (xml, "valueEntry"));
 	      gtk_signal_connect (GTK_OBJECT (widget), "activate",
 				  GTK_SIGNAL_FUNC
 				  (on_editValueEntry_activate),
@@ -325,21 +332,24 @@ drgeoGtkPropertyDialog::edit (class geometricObject * aItem)
       if (category != aItem->getCategory ())
 	{
 	  // the corresponding dialog is not opened
-	  xml = glade_xml_new (DRGEO_GLADEDIR "/drgeo2.glade",
-			       "scriptDialog", NULL);
-	  dialog = glade_xml_get_widget (xml, "scriptDialog");
+	  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/drgeo2.glade", &error))
+	  {
+	    g_warning ("Couldn't load builder file: %s", error->message);
+	    g_error_free (error);
+	  }
+	  dialog = GTK_WIDGET (gtk_builder_get_object (xml, "scriptDialog"));
 
 	  //set transient
 	  mdi->setTransientDialog (GTK_WINDOW (dialog));
 
-	  widget2 = glade_xml_get_widget (xml, "scriptText");
+	  widget2 = GTK_WIDGET (gtk_builder_get_object (xml, "scriptText"));
 	  gtk_object_set_data (GTK_OBJECT (dialog), "script", widget2);
 
 	  gtk_signal_connect (GTK_OBJECT (dialog), "response",
 			      GTK_SIGNAL_FUNC (on_scriptDialog_response),
 			      (gpointer) this);
 
-	  widget = glade_xml_get_widget (xml, "help");
+	  widget = GTK_WIDGET (gtk_builder_get_object (xml, "help"));
 	  gtk_signal_connect (GTK_OBJECT (widget), "clicked",
 			      GTK_SIGNAL_FUNC (open_help_cb),
 			      (gpointer) (drgeniusHelp[2]));

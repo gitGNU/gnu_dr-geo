@@ -116,7 +116,7 @@ connectWithData (GtkBuilder * tree, drgeoGtkStyleDialog * d,
 {
   GtkWidget *widget;
 
-  widget = glade_xml_get_widget (tree, widgetName);
+  widget = GTK_WIDGET (gtk_builder_get_object (tree, widgetName));
   if (widget == NULL)
     g_printerr ("Cannot find widget %s\n", widgetName);
   else
@@ -160,7 +160,7 @@ connectNameEntry (GtkBuilder * xml, drgeoGtkStyleDialog * d)
 {
   GtkWidget *widget;
 
-  widget = glade_xml_get_widget (xml, "name");
+  widget = GTK_WIDGET (gtk_builder_get_object (xml, "name"));
   gtk_signal_connect (GTK_OBJECT (widget), "activate",
 		      GTK_SIGNAL_FUNC (style_change_name_cb), NULL);
   gtk_object_set_data (GTK_OBJECT (widget), "drgeo_style", d);
@@ -196,40 +196,40 @@ adjustColorDialog (GtkBuilder * xml, geometricObject * item)
   switch (item->getStyle ().color)
     {
     case 0:
-      widget = glade_xml_get_widget (xml, "black");
+      widget = GTK_WIDGET (gtk_builder_get_object (xml, "black"));
       break;
     case 1:
-      widget = glade_xml_get_widget (xml, "darkgrey");
+      widget = GTK_WIDGET (gtk_builder_get_object (xml, "darkgrey"));
       break;
     case 2:
-      widget = glade_xml_get_widget (xml, "grey");
+      widget = GTK_WIDGET (gtk_builder_get_object (xml, "grey"));
       break;
     case 3:
-      widget = glade_xml_get_widget (xml, "white");
+      widget = GTK_WIDGET (gtk_builder_get_object (xml, "white"));
       break;
     case 4:
-      widget = glade_xml_get_widget (xml, "darkgreen");
+      widget = GTK_WIDGET (gtk_builder_get_object (xml, "darkgreen"));
       break;
     case 5:
-      widget = glade_xml_get_widget (xml, "green");
+      widget = GTK_WIDGET (gtk_builder_get_object (xml, "green"));
       break;
     case 6:
-      widget = glade_xml_get_widget (xml, "darkblue");
+      widget = GTK_WIDGET (gtk_builder_get_object (xml, "darkblue"));
       break;
     case 7:
-      widget = glade_xml_get_widget (xml, "blue");
+      widget = GTK_WIDGET (gtk_builder_get_object (xml, "blue"));
       break;
     case 8:
-      widget = glade_xml_get_widget (xml, "bordeaux");
+      widget = GTK_WIDGET (gtk_builder_get_object (xml, "bordeaux"));
       break;
     case 9:
-      widget = glade_xml_get_widget (xml, "red");
+      widget = GTK_WIDGET (gtk_builder_get_object (xml, "red"));
       break;
     case 10:
-      widget = glade_xml_get_widget (xml, "orange");
+      widget = GTK_WIDGET (gtk_builder_get_object (xml, "orange"));
       break;
     case 11:
-      widget = glade_xml_get_widget (xml, "yellow");
+      widget = GTK_WIDGET (gtk_builder_get_object (xml, "yellow"));
       break;
     }
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget), TRUE);
@@ -240,7 +240,7 @@ adjustNameEntryDialog (GtkBuilder * xml, geometricObject * item)
 {
   GtkWidget *widget;
 
-  widget = glade_xml_get_widget (xml, "name");
+  widget = GTK_WIDGET (gtk_builder_get_object (xml, "name"));
   if (item->getName ())
     gtk_entry_set_text (GTK_ENTRY (widget), item->getName ());
   else
@@ -255,13 +255,13 @@ adjustStyleDialog (GtkBuilder * xml, geometricObject * item)
   switch (item->getStyle ().thick)
     {
     case 0:
-      widget = glade_xml_get_widget (xml, "dashed");
+      widget = GTK_WIDGET (gtk_builder_get_object (xml, "dashed"));
       break;
     case 1:
-      widget = glade_xml_get_widget (xml, "normal");
+      widget = GTK_WIDGET (gtk_builder_get_object (xml, "normal"));
       break;
     case 2:
-      widget = glade_xml_get_widget (xml, "large");
+      widget = GTK_WIDGET (gtk_builder_get_object (xml, "large"));
       break;
     }
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget), TRUE);
@@ -276,10 +276,10 @@ adjustVisibilityDialog (GtkBuilder * xml, geometricObject * item)
   switch (item->getStyle ().mask)
     {
     case yes:
-      widget = glade_xml_get_widget (xml, "masked");
+      widget = GTK_WIDGET (gtk_builder_get_object (xml, "masked"));
       break;
     case no:
-      widget = glade_xml_get_widget (xml, "unmasked");
+      widget = GTK_WIDGET (gtk_builder_get_object (xml, "unmasked"));
       break;
     }
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget), TRUE);
@@ -298,12 +298,13 @@ drgeoGtkStyleDialog::hide ()
     gtk_widget_hide (dialog);
   if (item)
     setName (gtk_entry_get_text
-	     (GTK_ENTRY (glade_xml_get_widget (xml, "name"))));
+	     (GTK_ENTRY (GTK_WIDGET (gtk_builder_get_object (xml, "name")))));
 }
 
 void
 drgeoGtkStyleDialog::edit (geometricObject * aItem)
 {
+  GError* error = NULL;
   GtkWidget *widget;
   objectCategory aCategory;
 
@@ -317,12 +318,14 @@ drgeoGtkStyleDialog::edit (geometricObject * aItem)
 	  // Previous dialog was not of this category
 	  if (xml)
 	    g_object_unref  (G_OBJECT (xml));
-	  xml = glade_xml_new (DRGEO_GLADEDIR "/drgeo2.glade",
-			       "pointStyleDialog", NULL);
-
+	  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/drgeo2.glade", &error))
+	  {
+	    g_warning ("Couldn't load builder file: %s", error->message);
+	    g_error_free (error);
+	  }
 	  if (dialog)
 	    gtk_widget_destroy (dialog);
-	  dialog = glade_xml_get_widget (xml, "pointStyleDialog");
+	  dialog = GTK_WIDGET (gtk_builder_get_object (xml, "pointStyleDialog"));
 
 	  //set transient
 	  mdi->setTransientDialog (GTK_WINDOW (dialog));
@@ -345,14 +348,14 @@ drgeoGtkStyleDialog::edit (geometricObject * aItem)
 	  connectWithData (xml, this, "large",
 			   GTK_SIGNAL_FUNC (style_size_button_cb), 2);
 
-	  widget = glade_xml_get_widget (xml, "pointStyleDialogClose");
+	  widget = GTK_WIDGET (gtk_builder_get_object (xml, "pointStyleDialogClose"));
 	  gtk_signal_connect (GTK_OBJECT (widget), "clicked",
 			      GTK_SIGNAL_FUNC (on_styleDialog_close),
 			      (gpointer) this);
 	  gtk_signal_connect (GTK_OBJECT (dialog), "delete_event",
 			      GTK_SIGNAL_FUNC (on_styleDialog_delete),
 			      (gpointer) this);
-	  widget = glade_xml_get_widget (xml, "pointStyleDialogHelp");
+	  widget = GTK_WIDGET (gtk_builder_get_object (xml, "pointStyleDialogHelp"));
 	  gtk_signal_connect (GTK_OBJECT (widget), "clicked",
 			      GTK_SIGNAL_FUNC (open_help_cb),
 			      (gpointer) (drgeniusHelp[0]));
@@ -365,19 +368,19 @@ drgeoGtkStyleDialog::edit (geometricObject * aItem)
       switch (item->getStyle ().pointShape)
 	{
 	case 0:
-	  widget = glade_xml_get_widget (xml, "round");
+	  widget = GTK_WIDGET (gtk_builder_get_object (xml, "round"));
 	  break;
 	case 1:
-	  widget = glade_xml_get_widget (xml, "cross");
+	  widget = GTK_WIDGET (gtk_builder_get_object (xml, "cross"));
 	  break;
 	case 2:
-	  widget = glade_xml_get_widget (xml, "square");
+	  widget = GTK_WIDGET (gtk_builder_get_object (xml, "square"));
 	  break;
 	case 3:
-	  widget = glade_xml_get_widget (xml, "roundEmpty");
+	  widget = GTK_WIDGET (gtk_builder_get_object (xml, "roundEmpty"));
 	  break;
 	case 4:
-	  widget = glade_xml_get_widget (xml, "squareEmpty");
+	  widget = GTK_WIDGET (gtk_builder_get_object (xml, "squareEmpty"));
 	  break;
 	}
       gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget), TRUE);
@@ -385,13 +388,13 @@ drgeoGtkStyleDialog::edit (geometricObject * aItem)
       switch (item->getStyle ().thick)
 	{
 	case 0:
-	  widget = glade_xml_get_widget (xml, "small");
+	  widget = GTK_WIDGET (gtk_builder_get_object (xml, "small"));
 	  break;
 	case 1:
-	  widget = glade_xml_get_widget (xml, "normal");
+	  widget = GTK_WIDGET (gtk_builder_get_object (xml, "normal"));
 	  break;
 	case 2:
-	  widget = glade_xml_get_widget (xml, "large");
+	  widget = GTK_WIDGET (gtk_builder_get_object (xml, "large"));
 	  break;
 	}
       gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget), TRUE);
@@ -407,26 +410,29 @@ drgeoGtkStyleDialog::edit (geometricObject * aItem)
 	  // Previous dialog was not of this category
 	  if (xml)
 	    g_object_unref  (G_OBJECT (xml));
-	  xml = glade_xml_new (DRGEO_GLADEDIR "/drgeo2.glade",
-			       "lineStyleDialog", NULL);
+	  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/drgeo2.glade", &error))
+	  {
+	    g_warning ("Couldn't load builder file: %s", error->message);
+	    g_error_free (error);
+	  }
 
 	  if (dialog)
 	    gtk_widget_destroy (dialog);
-	  dialog = glade_xml_get_widget (xml, "lineStyleDialog");
+	  dialog = GTK_WIDGET (gtk_builder_get_object (xml, "lineStyleDialog"));
 
 	  //set transient
 	  mdi->setTransientDialog (GTK_WINDOW (dialog));
 
 	  connectStyle (xml, this);
 
-	  widget = glade_xml_get_widget (xml, "lineStyleDialogClose");
+	  widget = GTK_WIDGET (gtk_builder_get_object (xml, "lineStyleDialogClose"));
 	  gtk_signal_connect (GTK_OBJECT (widget), "clicked",
 			      GTK_SIGNAL_FUNC (on_styleDialog_close),
 			      (gpointer) this);
 	  gtk_signal_connect (GTK_OBJECT (dialog), "delete_event",
 			      GTK_SIGNAL_FUNC (on_styleDialog_delete),
 			      (gpointer) this);
-	  widget = glade_xml_get_widget (xml, "lineStyleDialogHelp");
+	  widget = GTK_WIDGET (gtk_builder_get_object (xml, "lineStyleDialogHelp"));
 	  gtk_signal_connect (GTK_OBJECT (widget), "clicked",
 			      GTK_SIGNAL_FUNC (open_help_cb),
 			      (gpointer) (drgeniusHelp[0]));
@@ -445,24 +451,27 @@ drgeoGtkStyleDialog::edit (geometricObject * aItem)
 	  // Previous dialog was not of this category
 	  if (xml)
 	    g_object_unref  (G_OBJECT (xml));
-	  xml = glade_xml_new (DRGEO_GLADEDIR "/drgeo2.glade",
-			       "numericStyleDialog", NULL);
+	  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/drgeo2.glade", &error))
+	  {
+	    g_warning ("Couldn't load builder file: %s", error->message);
+	    g_error_free (error);
+	  }
 
 	  if (dialog)
 	    gtk_widget_destroy (dialog);
-	  dialog = glade_xml_get_widget (xml, "numericStyleDialog");
+	  dialog = GTK_WIDGET (gtk_builder_get_object (xml, "numericStyleDialog"));
 
 	  //set transient
 	  mdi->setTransientDialog (GTK_WINDOW (dialog));
 
-	  widget = glade_xml_get_widget (xml, "numericStyleDialogClose");
+	  widget = GTK_WIDGET (gtk_builder_get_object (xml, "numericStyleDialogClose"));
 	  gtk_signal_connect (GTK_OBJECT (widget), "clicked",
 			      GTK_SIGNAL_FUNC (on_styleDialog_close),
 			      (gpointer) this);
 	  gtk_signal_connect (GTK_OBJECT (dialog), "delete-event",
 			      GTK_SIGNAL_FUNC (on_styleDialog_delete),
 			      (gpointer) this);
-	  widget = glade_xml_get_widget (xml, "numericStyleDialogHelp");
+	  widget = GTK_WIDGET (gtk_builder_get_object (xml, "numericStyleDialogHelp"));
 	  gtk_signal_connect (GTK_OBJECT (widget), "clicked",
 			      GTK_SIGNAL_FUNC (open_help_cb),
 			      (gpointer) (drgeniusHelp[0]));
@@ -481,24 +490,27 @@ drgeoGtkStyleDialog::edit (geometricObject * aItem)
 	  // Previous dialog was not of this category
 	  if (xml)
 	    g_object_unref  (G_OBJECT (xml));
-	  xml = glade_xml_new (DRGEO_GLADEDIR "/drgeo2.glade",
-			       "numericStyleDialog", NULL);
+	  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/drgeo2.glade", &error))
+	  {
+	    g_warning ("Couldn't load builder file: %s", error->message);
+	    g_error_free (error);
+	  }
 
 	  if (dialog)
 	    gtk_widget_destroy (dialog);
-	  dialog = glade_xml_get_widget (xml, "numericStyleDialog");
+	  dialog = GTK_WIDGET (gtk_builder_get_object (xml, "numericStyleDialog"));
 
 	  //set transient
 	  mdi->setTransientDialog (GTK_WINDOW (dialog));
 
-	  widget = glade_xml_get_widget (xml, "numericStyleDialogClose");
+	  widget = GTK_WIDGET (gtk_builder_get_object (xml, "numericStyleDialogClose"));
 	  gtk_signal_connect (GTK_OBJECT (widget), "clicked",
 			      GTK_SIGNAL_FUNC (on_styleDialog_close),
 			      (gpointer) this);
 	  gtk_signal_connect (GTK_OBJECT (dialog), "delete-event",
 			      GTK_SIGNAL_FUNC (on_styleDialog_delete),
 			      (gpointer) this);
-	  widget = glade_xml_get_widget (xml, "numericStyleDialogHelp");
+	  widget = GTK_WIDGET (gtk_builder_get_object (xml, "numericStyleDialogHelp"));
 	  gtk_signal_connect (GTK_OBJECT (widget), "clicked",
 			      GTK_SIGNAL_FUNC (open_help_cb),
 			      (gpointer) (drgeniusHelp[0]));

@@ -32,12 +32,18 @@ extern drgeniusMDI *mdi;
 drgeoMenu::drgeoMenu (geoView *view):
   drgeoControl (view)
 {
-  GtkBuilder *xml;
+  GError* error = NULL;
+  GtkBuilder *xml = gtk_builder_new ();
   GtkWidget *w;
 
   // Build the pop up menu 
-  xml = glade_xml_new (DRGEO_GLADEDIR"/drgeoMDI.glade","geoMenu", NULL);
-  glade_xml_signal_autoconnect (xml);
+  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/drgeoMDI.glade", &error))
+  {
+    g_warning ("Couldn't load builder file: %s", error->message);
+    g_error_free (error);
+  }
+
+  gtk_builder_connect_signals (xml, &error);
   
   // take a reference of each menu item so we can :
   // . adjust their sensitivity

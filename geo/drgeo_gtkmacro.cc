@@ -364,7 +364,8 @@ drgeoGtkMacroBuildDialog::previousWidget ()
 drgeoGtkMacroBuildDialog::drgeoGtkMacroBuildDialog (drgeoMacroBuilder *
 						    builder)
 {
-  GtkBuilder *xmlDialogWidget;
+  GError* error = NULL;
+  GtkBuilder *xmlDialogWidget = gtk_builder_new ();
   GtkCellRenderer *renderer;
   GtkTreeViewColumn *column;
 
@@ -372,18 +373,21 @@ drgeoGtkMacroBuildDialog::drgeoGtkMacroBuildDialog (drgeoMacroBuilder *
   this->builder = builder;
   this->builder->setMode (drgeoMacroStartMode);
 
-  xmlDialogWidget = glade_xml_new (DRGEO_GLADEDIR "/drgeo2.glade",
-				   "buildMacroDialog", NULL);
+  if (!gtk_builder_add_from_file (xmlDialogWidget, DRGEO_GLADEDIR "/drgeo2.glade", &error))
+  {
+    g_warning ("Couldn't load builder file: %s", error->message);
+    g_error_free (error);
+  }
 
-  p_dialog = glade_xml_get_widget (xmlDialogWidget, "buildMacroDialog");
+  p_dialog = GTK_WIDGET (gtk_builder_get_object (xmlDialogWidget, "buildMacroDialog"));
   mdi->setTransientDialog (GTK_WINDOW (p_dialog));
-  p_input = glade_xml_get_widget (xmlDialogWidget, "input");
-  p_output = glade_xml_get_widget (xmlDialogWidget, "output");
-  p_entry = glade_xml_get_widget (xmlDialogWidget, "entry");
-  p_text = glade_xml_get_widget (xmlDialogWidget, "text");
-  p_notebook = glade_xml_get_widget (xmlDialogWidget, "notebook");
-  p_next = glade_xml_get_widget (xmlDialogWidget, "next");
-  p_previous = glade_xml_get_widget (xmlDialogWidget, "previous");
+  p_input = GTK_WIDGET (gtk_builder_get_object (xmlDialogWidget, "input"));
+  p_output = GTK_WIDGET (gtk_builder_get_object (xmlDialogWidget, "output"));
+  p_entry = GTK_WIDGET (gtk_builder_get_object (xmlDialogWidget, "entry"));
+  p_text = GTK_WIDGET (gtk_builder_get_object (xmlDialogWidget, "text"));
+  p_notebook = GTK_WIDGET (gtk_builder_get_object (xmlDialogWidget, "notebook"));
+  p_next = GTK_WIDGET (gtk_builder_get_object (xmlDialogWidget, "next"));
+  p_previous = GTK_WIDGET (gtk_builder_get_object (xmlDialogWidget, "previous"));
   
   // grey the previous button as we start with the first page
   gtk_widget_set_sensitive (p_previous, false);
@@ -507,7 +511,8 @@ drgeoGtkMacroPlayDialog::add (geometricObject * item)
 
 drgeoGtkMacroPlayDialog::drgeoGtkMacroPlayDialog (drgeoMacroPlayer * player)
 {
-  GtkBuilder *xmlDialogWidget;
+  GError* error = NULL;
+  GtkBuilder *xmlDialogWidget = gtk_builder_new ();
   drgeoMacroRegistry *registry;
   macro *aMacro;
   GtkCellRenderer *renderer;
@@ -518,16 +523,19 @@ drgeoGtkMacroPlayDialog::drgeoGtkMacroPlayDialog (drgeoMacroPlayer * player)
   this->player = player;
   macroName = NULL;
   player->setMacro (NULL);
-  xmlDialogWidget = glade_xml_new (DRGEO_GLADEDIR "/drgeo2.glade",
-				   "playMacroDialog", NULL);
+  if (!gtk_builder_add_from_file (xmlDialogWidget, DRGEO_GLADEDIR "/drgeo2.glade", &error))
+  {
+    g_warning ("Couldn't load builder file: %s", error->message);
+    g_error_free (error);
+  }
 
-  p_dialog = glade_xml_get_widget (xmlDialogWidget, "playMacroDialog");
+  p_dialog = GTK_WIDGET (gtk_builder_get_object (xmlDialogWidget, "playMacroDialog"));
   mdi->setTransientDialog (GTK_WINDOW (p_dialog));
-  p_description = glade_xml_get_widget (xmlDialogWidget, "descriptionPlay");
-  p_list = glade_xml_get_widget (xmlDialogWidget, "listPlay");
-  p_notebook = glade_xml_get_widget (xmlDialogWidget, "notebook");
-  p_next = glade_xml_get_widget (xmlDialogWidget, "next");
-  p_previous = glade_xml_get_widget (xmlDialogWidget, "previous");
+  p_description = GTK_WIDGET (gtk_builder_get_object (xmlDialogWidget, "descriptionPlay"));
+  p_list = GTK_WIDGET (gtk_builder_get_object (xmlDialogWidget, "listPlay"));
+  p_notebook = GTK_WIDGET (gtk_builder_get_object (xmlDialogWidget, "notebook"));
+  p_next = GTK_WIDGET (gtk_builder_get_object (xmlDialogWidget, "next"));
+  p_previous = GTK_WIDGET (gtk_builder_get_object (xmlDialogWidget, "previous"));
 
   g_object_unref (G_OBJECT (xmlDialogWidget));
 

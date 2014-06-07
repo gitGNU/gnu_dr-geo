@@ -224,7 +224,7 @@ drgeoControl::drawable ()
 
 void fetchWidgetParent (GtkBuilder *xml, GtkWidget * *w, gchar *name, gpointer parent)
 {
-  *w = glade_xml_get_widget (xml, name);
+  *w = GTK_WIDGET (gtk_builder_get_object (xml, name));
   gtk_object_set_data (GTK_OBJECT (*w), "parent", parent);
 }
 
