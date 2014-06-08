@@ -91,7 +91,7 @@ static GtkWidget * drgeoConfigWidget (gchar *item,
   GtkWidget *w;
 
   str = g_strconcat (item, drgeoConfigGet (attr), NULL);
-  w = glade_xml_get_widget (xml, str);
+  w = GTK_WIDGET (gtk_builder_get_object (xml, str));
   if (w == NULL)
     printf ("drgenius_config::drgeoConfigWidget, can't find widget  %s\n", 
 	    str);
@@ -150,7 +150,7 @@ connectWithData (GtkBuilder * tree, gchar * widgetName,
 {
   GtkWidget *widget;
 
-  widget = glade_xml_get_widget (tree, widgetName);
+  widget = GTK_WIDGET (gtk_builder_get_object (tree, widgetName));
   if (widget == NULL)
     g_print ("Cannot find widget %s\n", widgetName);
   else
@@ -365,35 +365,35 @@ updateDialogFromUserPreferences (GtkObject * d)
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (w), TRUE);
 
   /* numeric precision */
-  w = glade_xml_get_widget (xmlPropertyBox, "drgeoNumericSpinbutton");
+  w = GTK_WIDGET (gtk_builder_get_object (xmlPropertyBox, "drgeoNumericSpinbutton"));
   gtk_spin_button_set_value (GTK_SPIN_BUTTON (w), 
 			     atof (drgeoConfigGet (":numericPrecision")));
 
 
 
-  w = glade_xml_get_widget (xmlPropertyBox, "drgeoUndoSpinbutton");
+  w = GTK_WIDGET (gtk_builder_get_object (xmlPropertyBox, "drgeoUndoSpinbutton"));
   gtk_spin_button_set_value (GTK_SPIN_BUTTON (w), 
 			     atof (drgeoConfigGet (":undoLevel")));
   
-  w = glade_xml_get_widget (xmlPropertyBox, "drgeoFigureNameEntry");
+  w = GTK_WIDGET (gtk_builder_get_object (xmlPropertyBox, "drgeoFigureNameEntry"));
   gtk_entry_set_text (GTK_ENTRY (w), _(drgeoConfigGet (":figureName")));
 
-  w = glade_xml_get_widget (xmlPropertyBox, "drgeoFileNameEntry");
+  w = GTK_WIDGET (gtk_builder_get_object (xmlPropertyBox, "drgeoFileNameEntry"));
   gtk_entry_set_text (GTK_ENTRY (w), drgeoConfigGet (":figureFile"));
 
-  w = glade_xml_get_widget (xmlPropertyBox, "drgeoFlydrawFileNameEntry");
+  w = GTK_WIDGET (gtk_builder_get_object (xmlPropertyBox, "drgeoFlydrawFileNameEntry"));
   gtk_entry_set_text (GTK_ENTRY (w), drgeoConfigGet (":flydrawFile"));
 
-  w = glade_xml_get_widget (xmlPropertyBox, "drgeoLatexFileNameEntry");
+  w = GTK_WIDGET (gtk_builder_get_object (xmlPropertyBox, "drgeoLatexFileNameEntry"));
   gtk_entry_set_text (GTK_ENTRY (w), drgeoConfigGet (":latexFile"));
 
-  w = glade_xml_get_widget (xmlPropertyBox, "drgeoPostscriptFileNameEntry");
+  w = GTK_WIDGET (gtk_builder_get_object (xmlPropertyBox, "drgeoPostscriptFileNameEntry"));
   gtk_entry_set_text (GTK_ENTRY (w), drgeoConfigGet (":psFile"));
 
-  w = glade_xml_get_widget (xmlPropertyBox, "globalSessionFileNameEntry");
+  w = GTK_WIDGET (gtk_builder_get_object (xmlPropertyBox, "globalSessionFileNameEntry"));
   gtk_entry_set_text (GTK_ENTRY (w), drgeoConfigGet (":sessionFile"));
 
-  w = glade_xml_get_widget (xmlPropertyBox, "drgeoHtmlViewerEntry");
+  w = GTK_WIDGET (gtk_builder_get_object (xmlPropertyBox, "drgeoHtmlViewerEntry"));
   gtk_entry_set_text (GTK_ENTRY (w), drgeoConfigGet (":htmlViewer"));
 
 }
@@ -414,19 +414,23 @@ updateUserPreferencesFromDialog (GtkObject * d)
 void
 initPreferencesBox ()
 {
+  GError* error = NULL;
   if (propertyBox == NULL)
     {
 
-      xmlPropertyBox = glade_xml_new (DRGEO_GLADEDIR "/drgenius2.glade",
-				      "propertybox", NULL);
-      propertyBox = (GtkDialog *) glade_xml_get_widget
-	(xmlPropertyBox, "propertybox");
+      if (!gtk_builder_add_from_file (xmlPropertyBox, DRGEO_GLADEDIR "/drgenius2.glade", &error))
+	  {
+	    g_warning ("Couldn't load builder file: %s", error->message);
+	    g_error_free (error);
+	  }
+      propertyBox = (GtkDialog *) GTK_WIDGET (gtk_builder_get_object
+	(xmlPropertyBox, "propertybox"));
       
       //set transient
       mdi->setTransientDialog (GTK_WINDOW (propertyBox));
       
 
-      glade_xml_signal_autoconnect (xmlPropertyBox);
+      gtk_builder_connect_signals (xmlPropertyBox, &error);
 
 
       /* Connect with userdata (LibGlade is not very helpfull there. */

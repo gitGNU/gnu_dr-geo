@@ -54,40 +54,45 @@ extern const char* drgeniusHelp[];
 
 drgeniusMDI::drgeniusMDI ()
 {
-  GtkBuilder *xml;
+  GError* error = NULL;
+  GtkBuilder *xml = gtk_builder_new ();
   GtkWidget *w;
 
   p_activeView = NULL;
   p_viewList = NULL;
 
   // load the Glade interface
-  xml = glade_xml_new (DRGEO_GLADEDIR"/drgeoMDI.glade","drgeoMain", NULL);
-  glade_xml_signal_autoconnect (xml);
+  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/drgeoMDI.glade", &error))
+	  {
+	    g_warning ("Couldn't load builder file: %s", error->message);
+	    g_error_free (error);
+	  }
+  gtk_builder_connect_signals (xml, &error);
 
-  p_mainWindow = GTK_WINDOW (glade_xml_get_widget (xml, "drgeoMain")); 
+  p_mainWindow = GTK_WINDOW (GTK_WIDGET (gtk_builder_get_object(xml, "drgeoMain"))); 
   gtk_window_resize (GTK_WINDOW (p_mainWindow), 640, 480);
 
-  p_drgeoMDIVbox = glade_xml_get_widget (xml, "drgeoMDIVbox"); 
-  p_undoButton = glade_xml_get_widget (xml, "undoButton"); 
-  p_undoItem = glade_xml_get_widget (xml, "undoItem");
-  p_redoButton = glade_xml_get_widget (xml, "redoButton"); 
-  p_redoItem = glade_xml_get_widget (xml, "redoItem");
-  p_renameItem = glade_xml_get_widget (xml, "renameItem");
-  p_gridItem = glade_xml_get_widget (xml, "gridItem");
-  p_renameItemSc = glade_xml_get_widget (xml, "renameItemSc");
-  p_gridItemSc = glade_xml_get_widget (xml, "gridItemSc");
-  p_customUiItem = glade_xml_get_widget (xml, "customUiItem");
-  p_saveItem = glade_xml_get_widget (xml, "saveItem");
-  p_saveAsItem = glade_xml_get_widget (xml, "saveAsItem");
-  p_saveMultipleItem = glade_xml_get_widget (xml, "saveMultipleItem");
-  p_printFigure = glade_xml_get_widget (xml, "printFigure");
-  p_exportItem = glade_xml_get_widget (xml, "exportItem");
-  p_exportPreferencesItem = glade_xml_get_widget (xml, "exportPreferencesItem");
-  p_closeItem = glade_xml_get_widget (xml, "closeItem");
-  p_drgeoStatusbar = glade_xml_get_widget (xml, "drgeoStatusbar");
-  p_windowsMenu = glade_xml_get_widget (xml, "windowsMenu");
-  p_macroMenu = glade_xml_get_widget (xml, "macroMenu");
-  p_animationMenu = glade_xml_get_widget (xml, "animationMenu");
+  p_drgeoMDIVbox = GTK_WIDGET (gtk_builder_get_object (xml, "drgeoMDIVbox")); 
+  p_undoButton = GTK_WIDGET (gtk_builder_get_object (xml, "undoButton")); 
+  p_undoItem = GTK_WIDGET (gtk_builder_get_object (xml, "undoItem"));
+  p_redoButton = GTK_WIDGET (gtk_builder_get_object (xml, "redoButton")); 
+  p_redoItem = GTK_WIDGET (gtk_builder_get_object (xml, "redoItem"));
+  p_renameItem = GTK_WIDGET (gtk_builder_get_object (xml, "renameItem"));
+  p_gridItem = GTK_WIDGET (gtk_builder_get_object (xml, "gridItem"));
+  p_renameItemSc = GTK_WIDGET (gtk_builder_get_object (xml, "renameItemSc"));
+  p_gridItemSc = GTK_WIDGET (gtk_builder_get_object (xml, "gridItemSc"));
+  p_customUiItem = GTK_WIDGET (gtk_builder_get_object (xml, "customUiItem"));
+  p_saveItem = GTK_WIDGET (gtk_builder_get_object (xml, "saveItem"));
+  p_saveAsItem = GTK_WIDGET (gtk_builder_get_object (xml, "saveAsItem"));
+  p_saveMultipleItem = GTK_WIDGET (gtk_builder_get_object (xml, "saveMultipleItem"));
+  p_printFigure = GTK_WIDGET (gtk_builder_get_object (xml, "printFigure"));
+  p_exportItem = GTK_WIDGET (gtk_builder_get_object (xml, "exportItem"));
+  p_exportPreferencesItem = GTK_WIDGET (gtk_builder_get_object (xml, "exportPreferencesItem"));
+  p_closeItem = GTK_WIDGET (gtk_builder_get_object (xml, "closeItem"));
+  p_drgeoStatusbar = GTK_WIDGET (gtk_builder_get_object (xml, "drgeoStatusbar"));
+  p_windowsMenu = GTK_WIDGET (gtk_builder_get_object (xml, "windowsMenu"));
+  p_macroMenu = GTK_WIDGET (gtk_builder_get_object (xml, "macroMenu"));
+  p_animationMenu = GTK_WIDGET (gtk_builder_get_object (xml, "animationMenu"));
 
   // set the submenu of macro and windows
   gtk_menu_item_set_submenu (GTK_MENU_ITEM (p_macroMenu), gtk_menu_new ());  gtk_menu_item_set_submenu (GTK_MENU_ITEM (p_windowsMenu), gtk_menu_new ());
@@ -1206,7 +1211,8 @@ export_figure_png_ok_cb (GtkWidget * widget, GtkWidget * dialog)
 void
 save_multiple_cb (GtkWidget * widget, gpointer data)
 {
-  GtkBuilder *xmlSessionWidget;
+  GError* error = NULL;
+  GtkBuilder *xmlSessionWidget = gtk_builder_new ();
   GtkCellRenderer *renderer;
   GtkTreeViewColumn *column;
   GtkTreeSelection *select;
@@ -1227,15 +1233,19 @@ save_multiple_cb (GtkWidget * widget, gpointer data)
   if (childNumber == 0)
     return;
 
-  xmlSessionWidget = glade_xml_new (DRGEO_GLADEDIR "/drgenius2.glade",
-				    "dialogSaveSession", NULL);
-  glade_xml_signal_autoconnect (xmlSessionWidget);
+  if (!gtk_builder_add_from_file (xmlSessionWidget, DRGEO_GLADEDIR "/drgenius2.glade", &error))
+	  {
+	    g_warning ("Couldn't load builder file: %s", error->message);
+	    g_error_free (error);
+	  }
 
-  dialog = glade_xml_get_widget (xmlSessionWidget, "dialogSaveSession");
+  gtk_builder_connect_signals (xmlSessionWidget, &error);
+
+  dialog = GTK_WIDGET (gtk_builder_get_object (xmlSessionWidget, "dialogSaveSession"));
   mdi->setTransientDialog (GTK_WINDOW (dialog));
 
   // Prepare the tree and the model
-  tree = glade_xml_get_widget (xmlSessionWidget, "treeviewSelection");
+  tree = GTK_WIDGET (gtk_builder_get_object (xmlSessionWidget, "treeviewSelection"));
   g_object_unref (G_OBJECT (xmlSessionWidget));
   // Type - Name - Adress 
   store = gtk_tree_store_new (3, G_TYPE_STRING, G_TYPE_STRING, 
@@ -1304,7 +1314,8 @@ void
 print_figure_cb (GtkWidget * widget, gpointer data)
 {
   drgeniusView *child;
-  GtkBuilder *xml;  
+  GError* error = NULL;
+  GtkBuilder *xml = gtk_builder_new ();
   GtkWidget *w;
   GtkOptionMenu *list;
   GtkMenu *printers;
@@ -1315,10 +1326,14 @@ print_figure_cb (GtkWidget * widget, gpointer data)
   if (!child)
     return;
 
-  xml = glade_xml_new (DRGEO_GLADEDIR"/drgeo2.glade","printFigureDialog", NULL);
-  glade_xml_signal_autoconnect (xml);
-  w = glade_xml_get_widget (xml, "printFigureDialog"); 
-  list = GTK_OPTION_MENU (glade_xml_get_widget (xml, "printerList")); 
+  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/drgeo2.glade", &error))
+	  {
+	    g_warning ("Couldn't load builder file: %s", error->message);
+	    g_error_free (error);
+	  }
+  gtk_builder_connect_signals (xml, &error);
+  w = GTK_WIDGET (gtk_builder_get_object (xml, "printFigureDialog")); 
+  list = GTK_OPTION_MENU (GTK_WIDGET (gtk_builder_get_object (xml, "printerList"))); 
   
   mdi->setTransientDialog (GTK_WINDOW (w));
 
@@ -1619,16 +1634,21 @@ gridItem_cb (GtkWidget * widget, gpointer data)
 void
 rename_view_cb (GtkWidget * widget, gpointer data)
 {
-  GtkBuilder *xml;  
+  GError* error = NULL;
+  GtkBuilder *xml = gtk_builder_new ();  
   GtkWidget *w, *entry;
 
   if (!mdi->activeView ())
     return;
 
-  xml = glade_xml_new (DRGEO_GLADEDIR"/drgeo2.glade","renameViewDialog", NULL);
-  glade_xml_signal_autoconnect (xml);
-  w = glade_xml_get_widget (xml, "renameViewDialog"); 
-  entry = glade_xml_get_widget (xml, "entryRenameView"); 
+  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/drgeo2.glade", &error))
+	  {
+	    g_warning ("Couldn't load builder file: %s", error->message);
+	    g_error_free (error);
+	  }
+  gtk_builder_connect_signals (xml, &error);
+  w = GTK_WIDGET (gtk_builder_get_object (xml, "renameViewDialog")); 
+  entry = GTK_WIDGET (gtk_builder_get_object (xml, "entryRenameView")); 
 
   g_signal_connect (G_OBJECT (entry), "activate",
 		    G_CALLBACK(on_entryRenameView_activate),

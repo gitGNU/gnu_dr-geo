@@ -39,7 +39,8 @@
 
 extern drgeniusMDI *mdi;
 
-static GtkBuilder *xml = NULL;
+static GError* error = NULL;
+static GtkBuilder *xml = gtk_builder_new ();
 static drgeoFigure *myFigure;
 static geoView *myChild;
 static GtkWindow *dialog;
@@ -77,35 +78,39 @@ adaptDrgeoDialog (geoView * child)
   myFigure = child->figure ();
   myChild = child;
 
-  xml = glade_xml_new (DRGEO_GLADEDIR "/drgeo2.glade", "uiAdaptDialog", NULL);
-  dialog = GTK_WINDOW (glade_xml_get_widget (xml, "uiAdaptDialog"));
-  glade_xml_signal_autoconnect (xml);
+  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/drgeo2.glade", &error))
+	  {
+	    g_warning ("Couldn't load builder file: %s", error->message);
+	    g_error_free (error);
+	  }
+  dialog = GTK_WINDOW (GTK_WIDGET (gtk_builder_get_object (xml, "uiAdaptDialog")));
+  gtk_builder_connect_signals (xml, &error);
 
   mdi->setTransientDialog (GTK_WINDOW (dialog));
 
   /* Force the toolbar style, we do not want the default one from the Gnome Desktop */
-  w = glade_xml_get_widget (xml, "tb0");
+  w = GTK_WIDGET (gtk_builder_get_object (xml, "tb0"));
   gtk_toolbar_set_style (GTK_TOOLBAR (w), GTK_TOOLBAR_ICONS);
   // FIXME gtk_toolbar_set_button_relief (GTK_TOOLBAR (w), GTK_RELIEF_HALF);
-  w = glade_xml_get_widget (xml, "tb1");
+  w = GTK_WIDGET (gtk_builder_get_object (xml, "tb1"));
   gtk_toolbar_set_style (GTK_TOOLBAR (w), GTK_TOOLBAR_ICONS);
   // FIXME gtk_toolbar_set_button_relief (GTK_TOOLBAR (w), GTK_RELIEF_NONE);
-  w = glade_xml_get_widget (xml, "tb2");
+  w = GTK_WIDGET (gtk_builder_get_object (xml, "tb2"));
   gtk_toolbar_set_style (GTK_TOOLBAR (w), GTK_TOOLBAR_ICONS);
   // FIXME gtk_toolbar_set_button_relief (GTK_TOOLBAR (w), GTK_RELIEF_NONE);
-  w = glade_xml_get_widget (xml, "tb2");
+  w = GTK_WIDGET (gtk_builder_get_object (xml, "tb2"));
   gtk_toolbar_set_style (GTK_TOOLBAR (w), GTK_TOOLBAR_ICONS);
   // FIXME gtk_toolbar_set_button_relief (GTK_TOOLBAR (w), GTK_RELIEF_NONE);
-  w = glade_xml_get_widget (xml, "tb3");
+  w = GTK_WIDGET (gtk_builder_get_object (xml, "tb3"));
   gtk_toolbar_set_style (GTK_TOOLBAR (w), GTK_TOOLBAR_ICONS);
   // FIXME gtk_toolbar_set_button_relief (GTK_TOOLBAR (w), GTK_RELIEF_NONE);
-  w = glade_xml_get_widget (xml, "tb4");
+  w = GTK_WIDGET (gtk_builder_get_object (xml, "tb4"));
   gtk_toolbar_set_style (GTK_TOOLBAR (w), GTK_TOOLBAR_ICONS);
   // FIXME gtk_toolbar_set_button_relief (GTK_TOOLBAR (w), GTK_RELIEF_NONE);
-  w = glade_xml_get_widget (xml, "tb5");
+  w = GTK_WIDGET (gtk_builder_get_object (xml, "tb5"));
   gtk_toolbar_set_style (GTK_TOOLBAR (w), GTK_TOOLBAR_ICONS);
   // FIXME gtk_toolbar_set_button_relief (GTK_TOOLBAR (w), GTK_RELIEF_NONE);
-  w = glade_xml_get_widget (xml, "tb6");
+  w = GTK_WIDGET (gtk_builder_get_object (xml, "tb6"));
   gtk_toolbar_set_style (GTK_TOOLBAR (w), GTK_TOOLBAR_ICONS);
   // FIXME gtk_toolbar_set_button_relief (GTK_TOOLBAR (w), GTK_RELIEF_NONE);
 
@@ -215,7 +220,8 @@ void
 on_uiAdaptDialog_response (GtkWidget * widget, gint b, gpointer data)
 {
   GtkWidget *p_dialog, *p_entry;
-  GtkBuilder *p_tree;
+  GError* error = NULL;
+  GtkBuilder *p_tree = gtk_builder_new (); 
 
   switch (b)
     {
@@ -232,10 +238,13 @@ on_uiAdaptDialog_response (GtkWidget * widget, gint b, gpointer data)
       if (myFigure->getPassword ())
 	{
 	  /* Ask the previous password when it is not null */
-	  p_tree = glade_xml_new (DRGEO_GLADEDIR "/drgeo2.glade",
-				"relockDialog", NULL);
-	  p_dialog = glade_xml_get_widget (p_tree, "relockDialog");
-	  p_entry = glade_xml_get_widget (p_tree, "relockEntry");
+	  if (!gtk_builder_add_from_file (p_tree, DRGEO_GLADEDIR "/drgeo2.glade", &error))
+	  {
+	    g_warning ("Couldn't load builder file: %s", error->message);
+	    g_error_free (error);
+	  }
+	  p_dialog = GTK_WIDGET (gtk_builder_get_object (p_tree, "relockDialog"));
+	  p_entry = GTK_WIDGET (gtk_builder_get_object (p_tree, "relockEntry"));
 	  mdi->setTransientDialog (GTK_WINDOW (p_dialog));
 	  
 	  g_signal_connect (G_OBJECT (p_dialog), "response",
@@ -245,10 +254,13 @@ on_uiAdaptDialog_response (GtkWidget * widget, gint b, gpointer data)
 	}
       else
 	{
-	  p_tree = glade_xml_new (DRGEO_GLADEDIR "/drgeo2.glade",
-				"lockDialog", NULL);
-	  p_dialog = glade_xml_get_widget (p_tree, "lockDialog");
-	  p_entry = glade_xml_get_widget (p_tree, "lockEntry");
+	  if (!gtk_builder_add_from_file (p_tree, DRGEO_GLADEDIR "/drgeo2.glade", &error))
+	  {
+	    g_warning ("Couldn't load builder file: %s", error->message);
+	    g_error_free (error);
+	  }
+	  p_dialog = GTK_WIDGET (gtk_builder_get_object (p_tree, "lockDialog"));
+	  p_entry = GTK_WIDGET (gtk_builder_get_object (p_tree, "lockEntry"));
 	  mdi->setTransientDialog (GTK_WINDOW (p_dialog));
 	  
 	  g_signal_connect (G_OBJECT (p_dialog), "response",
@@ -261,10 +273,13 @@ on_uiAdaptDialog_response (GtkWidget * widget, gint b, gpointer data)
       /* Unock */
       if (myFigure->getPassword ())
 	{
-	  p_tree = glade_xml_new (DRGEO_GLADEDIR "/drgeo2.glade",
-				"unlockDialog", NULL);
-	  p_dialog = glade_xml_get_widget (p_tree, "unlockDialog");
-	  p_entry = glade_xml_get_widget (p_tree, "unlockEntry");
+	  if (!gtk_builder_add_from_file (p_tree, DRGEO_GLADEDIR "/drgeo2.glade", &error))
+	  {
+	    g_warning ("Couldn't load builder file: %s", error->message);
+	    g_error_free (error);
+	  }
+	  p_dialog = GTK_WIDGET (gtk_builder_get_object (p_tree, "unlockDialog"));
+	  p_entry = GTK_WIDGET (gtk_builder_get_object (p_tree, "unlockEntry"));
 	  mdi->setTransientDialog (GTK_WINDOW (p_dialog));
 	  
 	  g_signal_connect (G_OBJECT (p_dialog), "response",
@@ -436,7 +451,7 @@ getSensitiveStateByName (gchar * buttonName)
 {
   // the sensitivity is on the image of the button
   return getSensitiveState 
-    (GTK_BIN(glade_xml_get_widget (xml, buttonName))->child);
+    (GTK_BIN(GTK_WIDGET (gtk_builder_get_object (xml, buttonName)))->child);
 }
 
 void
@@ -444,6 +459,6 @@ setSensitiveState (gchar * button, gboolean state)
 {
   GtkWidget *w;
 
-  w = glade_xml_get_widget (xml, button);
+  w = GTK_WIDGET (gtk_builder_get_object (xml, button));
   gtk_widget_set_sensitive (GTK_BIN (w)->child, state);
 }
