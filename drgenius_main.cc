@@ -71,10 +71,6 @@ main_prog (void *closure, int argc, char *argv[])
 
   gtk_init (&argc, &argv);
 
-  /* Init Glade stuff */
-  glade_init ();
-
-
   setlocale (LC_NUMERIC, "C");
 
   /* Load Scm code */
