@@ -25,232 +25,1452 @@
 #include <math.h>
 
 #include "couleur.h"
-#include "drgeo_drgeoStyle.h"
 #include "drgeo_dxfdrawable.h"
 
-static gchar *dxfPointSize[3] =
-  { "dotscale=1.5,", "dotscale=2.5,", "dotscale=2.5," };
-
-static gchar *dxfPointType[5] =
-  { "dotstyle=*,", "", "dotstyle=square*,", "dotstyle=o,",
-"dotstlye=square*," };
-
-static gchar *dxfLineType[4] =
-  { "linestyle=dotted,", "linestyle=dashed,", "", "linewidth=0.05," };
-
-static gchar *dxfLineColor[DRGEO_NUMBER_COLOR] =
-  { "linecolor=black", "linecolor=darkgrey", "linecolor=gray",
-"linecolor=white",
-  "linecolor=green", "linecolor=green", "linecolor=blue", "linecolor=blue",
-  "linecolor=red", "linecolor=red", "linecolor=yellow", "linecolor=yellow"
-};
-
-static gchar *dxfColor[DRGEO_NUMBER_COLOR] =
-  { "black", "darkgrey", "gray", "white",
-  "green", "green", "blue", "blue",
-  "red", "red", "yellow", "yellow"
-};
-
 drgeodxfDrawable::
-drgeodxfDrawable (drgeoFigure * figure, FILE * fileHandle,
-		    drgeoPoint origin, drgeoPoint size, gdouble scale)
+drgeodxfDrawable (drgeoFigure * figure, FILE * fileHandle)
 {
   this->figure = figure;
   this->fileHandle = fileHandle;
-  this->origin = origin;
-  this->size = size;
-  this->scale = scale;
-  fprintf (fileHandle, "\\begin{pspicture*}(0,0)(%f,%f)\n",
-	   size.getX (), size.getY ());
-  /* set the default color and shape of the object */
-  /* point are by defaut red cross */
-  fprintf (fileHandle, "\\psset{dotstyle=x, dotscale=2.0, linewidth=0.02}\n");
-  /* draw the frame where will be located the figure */
-  fprintf (fileHandle, "\\psframe(0,0)(%f,%f)\n", size.getX (), size.getY ());
+
+// Header
+fprintf(fileHandle, "999 \ndxfrw 0.5.8 \n0 \nSECTION \n2 \nHEADER \n9 \n");
+fprintf(fileHandle, "$ACADVER \n1 \nAC1021 \n9 \n$HANDSEED \n5 \n20000 \n9");
+fprintf(fileHandle, "\n$DWGCODEPAGE \n3 \nANSI_1252 \n9 \n$INSBASE \n10 \n0");
+fprintf(fileHandle, "\n20 \n0 \n30 \n0 \n9 \n$EXTMIN \n10 \n31.75 \n20 \n60");
+fprintf(fileHandle, "\n30 \n0 \n9 \n$EXTMAX \n10 \n99.75 \n20 \n100.5 \n30");
+fprintf(fileHandle, "\n0 \n9 \n$LIMMIN \n10 \n0 \n20 \n0 \n9 \n$LIMMAX \n10");
+fprintf(fileHandle, "\n420 \n20 \n297 \n9 \n$ORTHOMODE \n70 \n0 \n9 \n");
+fprintf(fileHandle, "$LTSCALE \n40 \n1 \n9 \n$TEXTSTYLE \n7 \nSTANDARD \n9");
+fprintf(fileHandle, "\n$DIMASZ \n40 \n2.5 \n9 \n$DIMSCALE \n40 \n1 \n9 \n");
+fprintf(fileHandle, "$DIMEXO \n40 \n0.625 \n9 \n$DIMEXE \n40 \n1.25 \n9 \n");
+fprintf(fileHandle, "$DIMTXT \n40 \n2.5 \n9 \n$DIMTSZ \n40 \n0 \n9 \n");
+fprintf(fileHandle, "$DIMAUNIT \n70 \n0 \n9 \n$DIMADEC \n70 \n0 \n9 \n");
+fprintf(fileHandle, "$DIMLUNIT \n70 \n2 \n9 \n$DIMSTYLE \n2 \nSTANDARD \n");
+fprintf(fileHandle, "9 \n$DIMGAP \n40 \n0.625 \n9 \n$DIMTIH \n70 \n0 \n9");
+fprintf(fileHandle, "\n$LUNITS \n70 \n2 \n9 \n$LUPREC \n70 \n4 \n9 \n");
+fprintf(fileHandle, "$AUNITS \n70 \n0 \n9 \n$AUPREC \n70 \n2 \n9 \n");
+fprintf(fileHandle, "$SPLINESEGS \n70 \n8 \n9 \n$SNAPSTYLE \n70 \n0 \n9 \n");
+fprintf(fileHandle, "$PINSBASE \n10 \n0 \n20 \n0 \n30 \n0 \n9 \n$PLIMMIN");
+fprintf(fileHandle, "\n10 \n0 \n20 \n0 \n9 \n$PLIMMAX \n10 \n210 \n20 \n");
+fprintf(fileHandle, "297 \n9 \n$INSUNITS \n70 \n4 \n9 \n$PSVPSCALE \n40 \n");
+fprintf(fileHandle, "1 \n0 \nENDSEC \n0 \nSECTION \n2 \nCLASSES \n0 \nENDSE");
+
+
+// Blocks
+fprintf(fileHandle, "0 \nSECTION \n2 \nBLOCKS \n0 \nBLOCK \n5 \n20 \n330");
+fprintf(fileHandle, "\n 1F \n100 \nAcDbEntity \n8 \n0 \n100 \nAcDbBlockBegin");
+fprintf(fileHandle, "\n 2 \n*Model_Space \n70 \n0 \n10 \n0 \n20 \n0 \n30\n");
+fprintf(fileHandle, "0 \n3 \n*Model_Space \n1 \n0 \nENDBLK \n5 \n21 \n330\n");
+fprintf(fileHandle, "1F \n100 \nAcDbEntity \n8 \n0 \n100 \nAcDbBlockEnd \n0");
+fprintf(fileHandle, "\n BLOCK \n5 \n1C \n330 \n1B \n100 \nAcDbEntity \n8 \n");
+fprintf(fileHandle, "0 \n100 \nAcDbBlockBegin \n2 \n*Paper_Space \n70 \n0");
+fprintf(fileHandle, "\n 10 \n0 \n20 \n0 \n30 \n0 \n3 \n*Paper_Space \n1");
+fprintf(fileHandle, "\n 0 \nENDBLK \n5 \n1D \n330 \n1F \n100 \nAcDbEntity");
+fprintf(fileHandle, "\n 8 \n0 \n100 \nAcDbBlockEnd \n0 \nENDSEC \n0 \n");
+fprintf(fileHandle, "SECTION \n2 \nENTITIES");
+
+// CLASSES AND TABLES
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "SECTION\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "CLASSES\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "ENDSEC\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "SECTION\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "TABLES\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "TABLE\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "VPORT\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "8\n");
+fprintf(fileHandle, "330\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbSymbolTable\n");
+fprintf(fileHandle, "70\n");
+fprintf(fileHandle, "1\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "VPORT\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "31\n");
+fprintf(fileHandle, "330\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbSymbolTableRecord\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbViewportTableRecord\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "*ACTIVE\n");
+fprintf(fileHandle, "70\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "10\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "20\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "11\n");
+fprintf(fileHandle, "1\n");
+fprintf(fileHandle, "21\n");
+fprintf(fileHandle, "1\n");
+fprintf(fileHandle, "12\n");
+fprintf(fileHandle, "121.125\n");
+fprintf(fileHandle, "22\n");
+fprintf(fileHandle, "69.125\n");
+fprintf(fileHandle, "13\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "23\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "14\n");
+fprintf(fileHandle, "10\n");
+fprintf(fileHandle, "24\n");
+fprintf(fileHandle, "10\n");
+fprintf(fileHandle, "15\n");
+fprintf(fileHandle, "10\n");
+fprintf(fileHandle, "25\n");
+fprintf(fileHandle, "10\n");
+fprintf(fileHandle, "16\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "26\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "36\n");
+fprintf(fileHandle, "1\n");
+fprintf(fileHandle, "17\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "27\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "37\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "40\n");
+fprintf(fileHandle, "150.75\n");
+fprintf(fileHandle, "41\n");
+fprintf(fileHandle, "1.68988391376\n");
+fprintf(fileHandle, "42\n");
+fprintf(fileHandle, "50\n");
+fprintf(fileHandle, "43\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "44\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "50\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "51\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "71\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "72\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "73\n");
+fprintf(fileHandle, "1\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "3\n");
+fprintf(fileHandle, "75\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "76\n");
+fprintf(fileHandle, "1\n");
+fprintf(fileHandle, "77\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "78\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "281\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "65\n");
+fprintf(fileHandle, "1\n");
+fprintf(fileHandle, "110\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "120\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "130\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "111\n");
+fprintf(fileHandle, "1\n");
+fprintf(fileHandle, "121\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "131\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "112\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "122\n");
+fprintf(fileHandle, "1\n");
+fprintf(fileHandle, "132\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "79\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "146\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "348\n");
+fprintf(fileHandle, "10020\n");
+fprintf(fileHandle, "60\n");
+fprintf(fileHandle, "7\n");
+fprintf(fileHandle, "61\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "292\n");
+fprintf(fileHandle, "1\n");
+fprintf(fileHandle, "282\n");
+fprintf(fileHandle, "1\n");
+fprintf(fileHandle, "141\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "142\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "63\n");
+fprintf(fileHandle, "250\n");
+fprintf(fileHandle, "421\n");
+fprintf(fileHandle, "3358443\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "ENDTAB\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "TABLE\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "LTYPE\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "330\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbSymbolTable\n");
+fprintf(fileHandle, "70\n");
+fprintf(fileHandle, "4\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "LTYPE\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "14\n");
+fprintf(fileHandle, "330\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbSymbolTableRecord\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbLinetypeTableRecord\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "ByBlock\n");
+fprintf(fileHandle, "70\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "3\n");
+fprintf(fileHandle, "\n");
+fprintf(fileHandle, "72\n");
+fprintf(fileHandle, "65\n");
+fprintf(fileHandle, "73\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "40\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "LTYPE\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "15\n");
+fprintf(fileHandle, "330\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbSymbolTableRecord\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbLinetypeTableRecord\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "ByLayer\n");
+fprintf(fileHandle, "70\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "3\n");
+fprintf(fileHandle, "\n");
+fprintf(fileHandle, "72\n");
+fprintf(fileHandle, "65\n");
+fprintf(fileHandle, "73\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "40\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "LTYPE\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "16\n");
+fprintf(fileHandle, "330\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbSymbolTableRecord\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbLinetypeTableRecord\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "Continuous\n");
+fprintf(fileHandle, "70\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "3\n");
+fprintf(fileHandle, "Solid line\n");
+fprintf(fileHandle, "72\n");
+fprintf(fileHandle, "65\n");
+fprintf(fileHandle, "73\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "40\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "LTYPE\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "32\n");
+fprintf(fileHandle, "330\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbSymbolTableRecord\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbLinetypeTableRecord\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "DOT\n");
+fprintf(fileHandle, "70\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "3\n");
+fprintf(fileHandle, "Dot . . . . . . . . . . . . . . . . . . . . . .\n");
+fprintf(fileHandle, "72\n");
+fprintf(fileHandle, "65\n");
+fprintf(fileHandle, "73\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "40\n");
+fprintf(fileHandle, "6.35\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "-6.35\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "LTYPE\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "33\n");
+fprintf(fileHandle, "330\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbSymbolTableRecord\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbLinetypeTableRecord\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "DOT2\n");
+fprintf(fileHandle, "70\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "3\n");
+fprintf(fileHandle, "Dot (.5x) .....................................\n");
+fprintf(fileHandle, "72\n");
+fprintf(fileHandle, "65\n");
+fprintf(fileHandle, "73\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "40\n");
+fprintf(fileHandle, "3.175\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "-3.175\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "LTYPE\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "34\n");
+fprintf(fileHandle, "330\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbSymbolTableRecord\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbLinetypeTableRecord\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "DOTX2\n");
+fprintf(fileHandle, "70\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "3\n");
+fprintf(fileHandle, "Dot (2x) .  .  .  .  .  .  .  .  .  .  .  .  .\n");
+fprintf(fileHandle, "72\n");
+fprintf(fileHandle, "65\n");
+fprintf(fileHandle, "73\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "40\n");
+fprintf(fileHandle, "12.7\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "-12.7\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "LTYPE\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "35\n");
+fprintf(fileHandle, "330\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbSymbolTableRecord\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbLinetypeTableRecord\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "DASHED\n");
+fprintf(fileHandle, "70\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "3\n");
+fprintf(fileHandle, "Dot . . . . . . . . . . . . . . . . . . . . . .\n");
+fprintf(fileHandle, "72\n");
+fprintf(fileHandle, "65\n");
+fprintf(fileHandle, "73\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "40\n");
+fprintf(fileHandle, "19.05\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "12.7\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "-6.35\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "LTYPE\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "36\n");
+fprintf(fileHandle, "330\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbSymbolTableRecord\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbLinetypeTableRecord\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "DASHED2\n");
+fprintf(fileHandle, "70\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "3\n");
+fprintf(fileHandle, "Dashed (.5x) _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n");
+fprintf(fileHandle, "72\n");
+fprintf(fileHandle, "65\n");
+fprintf(fileHandle, "73\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "40\n");
+fprintf(fileHandle, "9.525\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "6.35\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "-3.175\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "LTYPE\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "37\n");
+fprintf(fileHandle, "330\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbSymbolTableRecord\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbLinetypeTableRecord\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "DASHEDX2\n");
+fprintf(fileHandle, "70\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "3\n");
+fprintf(fileHandle, "Dashed (2x) ____  ____  ____  ____  ____  ___\n");
+fprintf(fileHandle, "72\n");
+fprintf(fileHandle, "65\n");
+fprintf(fileHandle, "73\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "40\n");
+fprintf(fileHandle, "38.1\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "25.4\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "-12.7\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "LTYPE\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "38\n");
+fprintf(fileHandle, "330\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbSymbolTableRecord\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbLinetypeTableRecord\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "DASHDOT\n");
+fprintf(fileHandle, "70\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "3\n");
+fprintf(fileHandle, "Dash dot __ . __ . __ . __ . __ . __ . __ . __\n");
+fprintf(fileHandle, "72\n");
+fprintf(fileHandle, "65\n");
+fprintf(fileHandle, "73\n");
+fprintf(fileHandle, "4\n");
+fprintf(fileHandle, "40\n");
+fprintf(fileHandle, "25.4\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "12.7\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "-6.35\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "-6.35\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "LTYPE\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "39\n");
+fprintf(fileHandle, "330\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbSymbolTableRecord\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbLinetypeTableRecord\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "DASHDOT2\n");
+fprintf(fileHandle, "70\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "3\n");
+fprintf(fileHandle, "Dash dot (.5x) _._._._._._._._._._._._._._._.\n");
+fprintf(fileHandle, "72\n");
+fprintf(fileHandle, "65\n");
+fprintf(fileHandle, "73\n");
+fprintf(fileHandle, "4\n");
+fprintf(fileHandle, "40\n");
+fprintf(fileHandle, "12.7\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "6.35\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "-3.175\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "-3.175\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "LTYPE\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "3A\n");
+fprintf(fileHandle, "330\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbSymbolTableRecord\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbLinetypeTableRecord\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "DASHDOTX2\n");
+fprintf(fileHandle, "70\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "3\n");
+fprintf(fileHandle, "Dash dot (2x) ____  .  ____  .  ____  .  ___\n");
+fprintf(fileHandle, "72\n");
+fprintf(fileHandle, "65\n");
+fprintf(fileHandle, "73\n");
+fprintf(fileHandle, "4\n");
+fprintf(fileHandle, "40\n");
+fprintf(fileHandle, "50.8\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "25.4\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "-12.7\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "-12.7\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "LTYPE\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "3B\n");
+fprintf(fileHandle, "330\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbSymbolTableRecord\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbLinetypeTableRecord\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "DIVIDE\n");
+fprintf(fileHandle, "70\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "3\n");
+fprintf(fileHandle, "Divide ____ . . ____ . . ____ . . ____ . . ____\n");
+fprintf(fileHandle, "72\n");
+fprintf(fileHandle, "65\n");
+fprintf(fileHandle, "73\n");
+fprintf(fileHandle, "6\n");
+fprintf(fileHandle, "40\n");
+fprintf(fileHandle, "31.75\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "12.7\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "-6.35\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "-6.35\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "-6.35\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "LTYPE\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "3C\n");
+fprintf(fileHandle, "330\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbSymbolTableRecord\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbLinetypeTableRecord\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "DIVIDE2\n");
+fprintf(fileHandle, "70\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "3\n");
+fprintf(fileHandle, "Divide (.5x) __..__..__..__..__..__..__..__.._\n");
+fprintf(fileHandle, "72\n");
+fprintf(fileHandle, "65\n");
+fprintf(fileHandle, "73\n");
+fprintf(fileHandle, "6\n");
+fprintf(fileHandle, "40\n");
+fprintf(fileHandle, "15.875\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "6.35\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "-3.175\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "-3.175\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "-3.175\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "LTYPE\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "3D\n");
+fprintf(fileHandle, "330\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbSymbolTableRecord\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbLinetypeTableRecord\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "DIVIDEX2\n");
+fprintf(fileHandle, "70\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "3\n");
+fprintf(fileHandle, "Divide (2x) ________  .  .  ________  .  .  _\n");
+fprintf(fileHandle, "72\n");
+fprintf(fileHandle, "65\n");
+fprintf(fileHandle, "73\n");
+fprintf(fileHandle, "6\n");
+fprintf(fileHandle, "40\n");
+fprintf(fileHandle, "63.5\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "25.4\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "-12.7\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "-12.7\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "-12.7\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "LTYPE\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "3E\n");
+fprintf(fileHandle, "330\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbSymbolTableRecord\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbLinetypeTableRecord\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "BORDER\n");
+fprintf(fileHandle, "70\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "3\n");
+fprintf(fileHandle, "Border __ __ . __ __ . __ __ . __ __ . __ __ .\n");
+fprintf(fileHandle, "72\n");
+fprintf(fileHandle, "65\n");
+fprintf(fileHandle, "73\n");
+fprintf(fileHandle, "6\n");
+fprintf(fileHandle, "40\n");
+fprintf(fileHandle, "44.45\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "12.7\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "-6.35\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "12.7\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "-6.35\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "-6.35\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "LTYPE\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "3F\n");
+fprintf(fileHandle, "330\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbSymbolTableRecord\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbLinetypeTableRecord\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "BORDER2\n");
+fprintf(fileHandle, "70\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "3\n");
+fprintf(fileHandle, "Border (.5x) __.__.__.__.__.__.__.__.__.__.__.\n");
+fprintf(fileHandle, "72\n");
+fprintf(fileHandle, "65\n");
+fprintf(fileHandle, "73\n");
+fprintf(fileHandle, "6\n");
+fprintf(fileHandle, "40\n");
+fprintf(fileHandle, "22.225\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "6.35\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "-3.175\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "6.35\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "-3.175\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "-3.175\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "LTYPE\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "40\n");
+fprintf(fileHandle, "330\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbSymbolTableRecord\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbLinetypeTableRecord\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "BORDERX2\n");
+fprintf(fileHandle, "70\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "3\n");
+fprintf(fileHandle, "Border (2x) ____  ____  .  ____  ____  .  ___\n");
+fprintf(fileHandle, "72\n");
+fprintf(fileHandle, "65\n");
+fprintf(fileHandle, "73\n");
+fprintf(fileHandle, "6\n");
+fprintf(fileHandle, "40\n");
+fprintf(fileHandle, "88.9\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "25.4\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "-12.7\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "25.4\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "-12.7\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "-12.7\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "LTYPE\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "41\n");
+fprintf(fileHandle, "330\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbSymbolTableRecord\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbLinetypeTableRecord\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "CENTER\n");
+fprintf(fileHandle, "70\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "3\n");
+fprintf(fileHandle, "Center ____ _ ____ _ ____ _ ____ _ ____ _ ____\n");
+fprintf(fileHandle, "72\n");
+fprintf(fileHandle, "65\n");
+fprintf(fileHandle, "73\n");
+fprintf(fileHandle, "4\n");
+fprintf(fileHandle, "40\n");
+fprintf(fileHandle, "50.8\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "31.75\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "-6.35\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "6.35\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "-6.35\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "LTYPE\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "42\n");
+fprintf(fileHandle, "330\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbSymbolTableRecord\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbLinetypeTableRecord\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "CENTER2\n");
+fprintf(fileHandle, "70\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "3\n");
+fprintf(fileHandle, "Center (.5x) ___ _ ___ _ ___ _ ___ _ ___ _ ___\n");
+fprintf(fileHandle, "72\n");
+fprintf(fileHandle, "65\n");
+fprintf(fileHandle, "73\n");
+fprintf(fileHandle, "4\n");
+fprintf(fileHandle, "40\n");
+fprintf(fileHandle, "28.575\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "19.05\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "-3.175\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "3.175\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "-3.175\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "LTYPE\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "43\n");
+fprintf(fileHandle, "330\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbSymbolTableRecord\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbLinetypeTableRecord\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "CENTERX2\n");
+fprintf(fileHandle, "70\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "3\n");
+fprintf(fileHandle, "Center (2x) ________  __  ________  __  _____\n");
+fprintf(fileHandle, "72\n");
+fprintf(fileHandle, "65\n");
+fprintf(fileHandle, "73\n");
+fprintf(fileHandle, "4\n");
+fprintf(fileHandle, "40\n");
+fprintf(fileHandle, "101.6\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "63.5\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "-12.7\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "12.7\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "49\n");
+fprintf(fileHandle, "-12.7\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "ENDTAB\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "TABLE\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "LAYER\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "330\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbSymbolTable\n");
+fprintf(fileHandle, "70\n");
+fprintf(fileHandle, "1\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "LAYER\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "10\n");
+fprintf(fileHandle, "330\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbSymbolTableRecord\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbLayerTableRecord\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "70\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "62\n");
+fprintf(fileHandle, "7\n");
+fprintf(fileHandle, "6\n");
+fprintf(fileHandle, "CONTINUOUS\n");
+fprintf(fileHandle, "370\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "390\n");
+fprintf(fileHandle, "F\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "ENDTAB\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "TABLE\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "STYLE\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "3\n");
+fprintf(fileHandle, "330\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbSymbolTable\n");
+fprintf(fileHandle, "70\n");
+fprintf(fileHandle, "3\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "STYLE\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "44\n");
+fprintf(fileHandle, "330\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbSymbolTableRecord\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbTextStyleTableRecord\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "Standard\n");
+fprintf(fileHandle, "70\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "40\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "41\n");
+fprintf(fileHandle, "1\n");
+fprintf(fileHandle, "50\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "71\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "42\n");
+fprintf(fileHandle, "1\n");
+fprintf(fileHandle, "3\n");
+fprintf(fileHandle, "txt\n");
+fprintf(fileHandle, "4\n");
+fprintf(fileHandle, "\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "ENDTAB\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "TABLE\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "VIEW\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "6\n");
+fprintf(fileHandle, "330\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbSymbolTable\n");
+fprintf(fileHandle, "70\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "ENDTAB\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "TABLE\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "UCS\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "7\n");
+fprintf(fileHandle, "330\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbSymbolTable\n");
+fprintf(fileHandle, "70\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "ENDTAB\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "TABLE\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "APPID\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "9\n");
+fprintf(fileHandle, "330\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbSymbolTable\n");
+fprintf(fileHandle, "70\n");
+fprintf(fileHandle, "1\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "APPID\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "12\n");
+fprintf(fileHandle, "330\n");
+fprintf(fileHandle, "9\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbSymbolTableRecord\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbRegAppTableRecord\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "ACAD\n");
+fprintf(fileHandle, "70\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "ENDTAB\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "TABLE\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "DIMSTYLE\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "A\n");
+fprintf(fileHandle, "330\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbSymbolTable\n");
+fprintf(fileHandle, "70\n");
+fprintf(fileHandle, "1\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbDimStyleTable\n");
+fprintf(fileHandle, "71\n");
+fprintf(fileHandle, "1\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "DIMSTYLE\n");
+fprintf(fileHandle, "105\n");
+fprintf(fileHandle, "45\n");
+fprintf(fileHandle, "330\n");
+fprintf(fileHandle, "A\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbSymbolTableRecord\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbDimStyleTableRecord\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "Standard\n");
+fprintf(fileHandle, "70\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "40\n");
+fprintf(fileHandle, "1\n");
+fprintf(fileHandle, "41\n");
+fprintf(fileHandle, "2.5\n");
+fprintf(fileHandle, "42\n");
+fprintf(fileHandle, "0.625\n");
+fprintf(fileHandle, "43\n");
+fprintf(fileHandle, "0.38\n");
+fprintf(fileHandle, "44\n");
+fprintf(fileHandle, "1.25\n");
+fprintf(fileHandle, "45\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "46\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "47\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "48\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "140\n");
+fprintf(fileHandle, "2.5\n");
+fprintf(fileHandle, "141\n");
+fprintf(fileHandle, "0.09\n");
+fprintf(fileHandle, "142\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "143\n");
+fprintf(fileHandle, "25.4\n");
+fprintf(fileHandle, "144\n");
+fprintf(fileHandle, "1\n");
+fprintf(fileHandle, "145\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "146\n");
+fprintf(fileHandle, "1\n");
+fprintf(fileHandle, "147\n");
+fprintf(fileHandle, "0.625\n");
+fprintf(fileHandle, "148\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "71\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "72\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "73\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "74\n");
+fprintf(fileHandle, "1\n");
+fprintf(fileHandle, "75\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "76\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "77\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "78\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "79\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "170\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "171\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "172\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "173\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "174\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "175\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "176\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "177\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "178\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "179\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "271\n");
+fprintf(fileHandle, "4\n");
+fprintf(fileHandle, "272\n");
+fprintf(fileHandle, "4\n");
+fprintf(fileHandle, "273\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "274\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "275\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "276\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "277\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "278\n");
+fprintf(fileHandle, "46\n");
+fprintf(fileHandle, "279\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "280\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "281\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "282\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "283\n");
+fprintf(fileHandle, "1\n");
+fprintf(fileHandle, "284\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "285\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "286\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "288\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "289\n");
+fprintf(fileHandle, "3\n");
+fprintf(fileHandle, "340\n");
+fprintf(fileHandle, "Standard\n");
+fprintf(fileHandle, "341\n");
+fprintf(fileHandle, "\n");
+fprintf(fileHandle, "371\n");
+fprintf(fileHandle, "-2\n");
+fprintf(fileHandle, "372\n");
+fprintf(fileHandle, "-2\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "ENDTAB\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "TABLE\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "BLOCK_RECORD\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "1\n");
+fprintf(fileHandle, "330\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbSymbolTable\n");
+fprintf(fileHandle, "70\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "BLOCK_RECORD\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "1F\n");
+fprintf(fileHandle, "330\n");
+fprintf(fileHandle, "1\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbSymbolTableRecord\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbBlockTableRecord\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "*Model_Space\n");
+fprintf(fileHandle, "70\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "280\n");
+fprintf(fileHandle, "1\n");
+fprintf(fileHandle, "281\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "BLOCK_RECORD\n");
+fprintf(fileHandle, "5\n");
+fprintf(fileHandle, "1E\n");
+fprintf(fileHandle, "330\n");
+fprintf(fileHandle, "1\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbSymbolTableRecord\n");
+fprintf(fileHandle, "100\n");
+fprintf(fileHandle, "AcDbBlockTableRecord\n");
+fprintf(fileHandle, "2\n");
+fprintf(fileHandle, "*Paper_Space\n");
+fprintf(fileHandle, "70\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "280\n");
+fprintf(fileHandle, "1\n");
+fprintf(fileHandle, "281\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "ENDTAB\n");
+fprintf(fileHandle, "0\n");
+fprintf(fileHandle, "ENDSEC\n");
+
 }
 
 void
-drgeodxfDrawable::drawPoint (drgeoStyle & style, drgeoPoint & point)
+drgeodxfDrawable::drawPoint (drgeoPoint & point)
 {
-  drgeoPoint p;
+  // drgeoPoint p;
 
-  p = areaTodxf (point);
-  fprintf (fileHandle,
-	   "\\psdots[%s%s%s](%f,%f)\n",
-	   dxfPointSize[style.thick + 1],
-	   dxfPointType[style.pointShape],
-	   dxfLineColor[style.color], p.getX (), p.getY ());
+  // p = areaTodxf (point);
+  // fprintf (fileHandle,
+	 //   "\\psdots[%s%s%s](%f,%f)\n",
+	 //   dxfPointSize[style.thick + 1],
+	 //   dxfPointType[style.pointShape],
+	 //   dxfLineColor[style.color], p.getX (), p.getY ());
 }
 
 void
 drgeodxfDrawable::
-drawPolygon (drgeoStyle & style, drgeoPoint * point, gint number)
+drawPolygon (drgeoPoint * point, gint number)
 {
-  drgeoPoint p;
-  gint nb;
+  // drgeoPoint p;
+  // gint nb;
 
-  fprintf (fileHandle,
-	   "\\pspolygon[fillstyle=crosshatch, hatchcolor=%s]\n",
-	   dxfColor[style.color]);
-  for (nb = 0; nb < number; nb++)
-    {
-      p = areaTodxf (point[nb]);
-      fprintf (fileHandle, "(%f,%f)\n", p.getX (), p.getY ());
-    }
+  // fprintf (fileHandle,
+	 //   "\\pspolygon[fillstyle=crosshatch, hatchcolor=%s]\n",
+	 //   dxfColor[style.color]);
+  // for (nb = 0; nb < number; nb++)
+  //   {
+  //     p = areaTodxf (point[nb]);
+  //     fprintf (fileHandle, "(%f,%f)\n", p.getX (), p.getY ());
+  //   }
 }
 
 void
 drgeodxfDrawable::
-drawLine (drgeoStyle & style, drgeoPoint & start, drgeoPoint & end)
+drawLine (drgeoPoint & start, drgeoPoint & end)
 {
-  // start : one point on the line
-  // end : a direction vector of the line
+  // // start : one point on the line
+  // // end : a direction vector of the line
 
-  // world boundaries
-  double worldLeft, worldTop, worldRight, worldBottom, d;
+  // // world boundaries
+  // double worldLeft, worldTop, worldRight, worldBottom, d;
 
-  worldLeft = origin.getX () - size.getX () / 2;
-  worldRight = origin.getX () + size.getX () / 2;
-  worldTop = origin.getY () + size.getY () / 2;
-  worldBottom = origin.getY () - size.getY () / 2;
+  // worldLeft = origin.getX () - size.getX () / 2;
+  // worldRight = origin.getX () + size.getX () / 2;
+  // worldTop = origin.getY () + size.getY () / 2;
+  // worldBottom = origin.getY () - size.getY () / 2;
 
-  clipLine (style, start, end, worldTop, worldBottom, 
-	    worldLeft, worldRight);
+  // clipLine (style, start, end, worldTop, worldBottom, 
+	 //    worldLeft, worldRight);
 }
 
 void
 drgeodxfDrawable::
-drawHalfLine (drgeoStyle & style, drgeoPoint & start, drgeoVector & vect)
+drawHalfLine (drgeoPoint & start, drgeoVector & vect)
 {
-  double worldLeft, worldTop, worldRight, worldBottom;
+  // double worldLeft, worldTop, worldRight, worldBottom;
 
-  worldLeft = origin.getX () - size.getX () / 2;
-  worldRight = origin.getX () + size.getX () / 2;
-  worldTop = origin.getY () + size.getY () / 2;
-  worldBottom = origin.getY () - size.getY () / 2;
+  // worldLeft = origin.getX () - size.getX () / 2;
+  // worldRight = origin.getX () + size.getX () / 2;
+  // worldTop = origin.getY () + size.getY () / 2;
+  // worldBottom = origin.getY () - size.getY () / 2;
 
-  clipHalfLine (style, start, vect, worldTop, worldBottom, 
-		worldLeft, worldRight);
+  // clipHalfLine (style, start, vect, worldTop, worldBottom, 
+		// worldLeft, worldRight);
 }
 
 void
 drgeodxfDrawable::
-drawSegment (drgeoStyle & style, drgeoPoint & start, drgeoPoint & end)
+drawSegment (drgeoPoint & start, drgeoPoint & end)
 {
-  drgeoPoint p1, p2;
-  char *thickness;
+  // drgeoPoint p1, p2;
+  // char *thickness;
 
-  p2 = areaTodxf (end);
-  p1 = areaTodxf (start);
-  if (style.mask == yes)
-    thickness = dxfLineType[0];
-  else
-    thickness = dxfLineType[style.thick + 1];
-  fprintf (fileHandle,
-	   "\\psline[%s%s](%f,%f)(%f,%f)\n",
-	   thickness, dxfLineColor[style.color],
-	   p1.getX (), p1.getY (), p2.getX (), p2.getY ());
+  // p2 = areaTodxf (end);
+  // p1 = areaTodxf (start);
+  // if (style.mask == yes)
+  //   thickness = dxfLineType[0];
+  // else
+  //   thickness = dxfLineType[style.thick + 1];
+  // fprintf (fileHandle,
+	 //   "\\psline[%s%s](%f,%f)(%f,%f)\n",
+	 //   thickness, dxfLineColor[style.color],
+	 //   p1.getX (), p1.getY (), p2.getX (), p2.getY ());
 }
 
 void
 drgeodxfDrawable::
-drawCircle (drgeoStyle & style, drgeoPoint & center, drgeoPoint & point)
+drawCircle (drgeoPoint & center, drgeoPoint & point)
 {
-  double radius;
+  // double radius;
 
-  radius = (point - center).norm ();
-  drawCircle (style, center, radius);
+  // radius = (point - center).norm ();
+  // drawCircle (style, center, radius);
 }
 
 void
 drgeodxfDrawable::
-drawCircle (drgeoStyle & style, drgeoPoint & center, double radius)
+drawCircle (drgeoPoint & center, double radius)
 {
-  drgeoPoint p;
-  char *thickness;
+  // drgeoPoint p;
+  // char *thickness;
 
-  p = areaTodxf (center);
-  if (style.mask == yes)
-    thickness = dxfLineType[0];
-  else
-    thickness = dxfLineType[style.thick + 1];
-  fprintf (fileHandle, "\\pscircle[%s%s](%f,%f){%f}",
-	   thickness, dxfLineColor[style.color],
-	   p.getX (), p.getY (), radius);
+  // p = areaTodxf (center);
+  // if (style.mask == yes)
+  //   thickness = dxfLineType[0];
+  // else
+  //   thickness = dxfLineType[style.thick + 1];
+  // fprintf (fileHandle, "\\pscircle[%s%s](%f,%f){%f}",
+	 //   thickness, dxfLineColor[style.color],
+	 //   p.getX (), p.getY (), radius);
 }
 
 void
 drgeodxfDrawable::
 
-drawArc (drgeoStyle & style, drgeoPoint & center, double radius,
+drawArc (drgeoPoint & center, double radius,
 	 double start, double length)
 {
-  drgeoPoint p;
-  char *thickness;
+  // drgeoPoint p;
+  // char *thickness;
 
-  p = areaTodxf (center);
-  if (style.mask == yes)
-    thickness = dxfLineType[0];
-  else
-    thickness = dxfLineType[style.thick + 1];
-  if (length > 0)
-    fprintf (fileHandle, "\\psarc[%s%s](%f,%f){%f}{%f}{%f}",
-	     thickness, dxfLineColor[style.color],
-	     p.getX (), p.getY (), radius,
-	     start * 180.0 / M_PI, (start + length) * 180.0 / M_PI);
-  else
-    fprintf (fileHandle, "\\psarc[%s%s](%f,%f){%f}{%f}{%f}",
-	     thickness, dxfLineColor[style.color],
-	     p.getX (), p.getY (), radius,
-	     (start + length) * 180.0 / M_PI, start * 180.0 / M_PI);
+  // p = areaTodxf (center);
+  // if (style.mask == yes)
+  //   thickness = dxfLineType[0];
+  // else
+  //   thickness = dxfLineType[style.thick + 1];
+  // if (length > 0)
+  //   fprintf (fileHandle, "\\psarc[%s%s](%f,%f){%f}{%f}{%f}",
+	 //     thickness, dxfLineColor[style.color],
+	 //     p.getX (), p.getY (), radius,
+	 //     start * 180.0 / M_PI, (start + length) * 180.0 / M_PI);
+  // else
+  //   fprintf (fileHandle, "\\psarc[%s%s](%f,%f){%f}{%f}{%f}",
+	 //     thickness, dxfLineColor[style.color],
+	 //     p.getX (), p.getY (), radius,
+	 //     (start + length) * 180.0 / M_PI, start * 180.0 / M_PI);
 
 }
 
 void
 drgeodxfDrawable::
-drawText (drgeoPoint & where, char *text, drgeoColorType fontColor)
+drawText (drgeoPoint & where, char *text)
 {
-  drgeoPoint p;
+  // drgeoPoint p;
 
-  if (!text)
-    return;
-  p = areaTodxf (where);
-  if (p.getX () <= 0. || p.getY () <= 0.
-      || p.getX () > size.getX () || p.getY () > size.getY ())
-    return;
-  fprintf (fileHandle, "\\rput[bl]{0}(%f,%f){%s}\n",
-	   p.getX () + 0.1, p.getY () + 0.1, text);
-}
-
-drgeoPoint
-drgeodxfDrawable::getAreaCenter ()
-{
-  return origin;
-}
-
-drgeoPoint
-drgeodxfDrawable::getAreaSize ()
-{
-  return size;
-}
-
-
-double
-drgeodxfDrawable::pixelToWorld (int pixels)
-{
-  return (double) (((double) pixels) / (50.0 * scale));
-}
-
-int
-drgeodxfDrawable::worldToPixel (double world)
-{
-  return (int) (world * scale * 50);
-}
-
-
-/* private */
-drgeoPoint
-drgeodxfDrawable::areaTodxf (drgeoPoint p)
-{
-  return p + size / 2 - origin;
+  // if (!text)
+  //   return;
+  // p = areaTodxf (where);
+  // if (p.getX () <= 0. || p.getY () <= 0.
+  //     || p.getX () > size.getX () || p.getY () > size.getY ())
+  //   return;
+  // fprintf (fileHandle, "\\rput[bl]{0}(%f,%f){%s}\n",
+	 //   p.getX () + 0.1, p.getY () + 0.1, text);
 }
