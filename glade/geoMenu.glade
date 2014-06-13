@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk+" version="2.24"/>
+  <!-- interface-naming-policy toplevel-contextual -->
+  <object class="GtkAccelGroup" id="accelgroup1"/>
+  <object class="GtkIconFactory" id="iconfactory1">
+    <sources>
+      <source stock-id="generated-icon-rename-png" filename="rename.png"/>
+      <source stock-id="generated-icon-drgenius_new_figure-xpm" filename="drgenius_new_figure.xpm"/>
+      <source stock-id="generated-icon-grid-png" filename="grid.png"/>
+    </sources>
+  </object>
+  <object class="GtkMenu" id="geoMenu">
+    <property name="can_focus">False</property>
+    <child>
+      <object class="GtkMenuItem" id="pointMenu">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="use_action_appearance">False</property>
+        <property name="label" translatable="yes">_Point</property>
+        <property name="use_underline">True</property>
+        <child type="submenu">
+          <object class="GtkMenu" id="pointMenu_menu">
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkMenuItem" id="freePointItem">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Point on an object or the background plane</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">Free _point</property>
+                <property name="use_underline">True</property>
+                <signal name="activate" handler="drgeo_free_point_cb" swapped="no"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="middleItem">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">The midpoint of a segment or between two points</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">_Middle</property>
+                <property name="use_underline">True</property>
+                <signal name="activate" handler="drgeo_middle_point_cb" swapped="no"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="intersectionItem">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">The point(s) of intersection between two objects</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">_Intersection</property>
+                <property name="use_underline">True</property>
+                <signal name="activate" handler="drgeo_intersection_cb" swapped="no"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="coordinatesItem">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Point given its coordinates</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">_Coordinates</property>
+                <property name="use_underline">True</property>
+                <signal name="activate" handler="drgeo_mark_point_cb" swapped="no"/>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="curveMenu">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="use_action_appearance">False</property>
+        <property name="label" translatable="yes">_Curve</property>
+        <property name="use_underline">True</property>
+        <child type="submenu">
+          <object class="GtkMenu" id="curveMenu_menu">
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkMenuItem" id="lineItem">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Line defined by two points</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">_Line</property>
+                <property name="use_underline">True</property>
+                <signal name="activate" handler="drgeo_line_cb" swapped="no"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="halfLineItem">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Half-Line defined by two points, the first selected point is the origin</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">_Half-line</property>
+                <property name="use_underline">True</property>
+                <signal name="activate" handler="drgeo_half_line_cb" swapped="no"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="segmentItem">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Segment defined by two points</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">_Segment</property>
+                <property name="use_underline">True</property>
+                <signal name="activate" handler="drgeo_segment_cb" swapped="no"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="vectorItem">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Vector defined by two points</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">_Vector</property>
+                <property name="use_underline">True</property>
+                <signal name="activate" handler="drgeo_vector_cb" swapped="no"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="circleItem">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Circle defines by center and point, radius or segment</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">_Circle</property>
+                <property name="use_underline">True</property>
+                <signal name="activate" handler="drgeo_circle_cb" swapped="no"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="arcCircleItem">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Arc circle defined by three points</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">_Arc Circle</property>
+                <property name="use_underline">True</property>
+                <signal name="activate" handler="drgeo_arc_circle_cb" swapped="no"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="locusItem">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Locus defined by a free point and a relative point</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">_Geometric Locus</property>
+                <property name="use_underline">True</property>
+                <signal name="activate" handler="drgeo_locus_point_cb" swapped="no"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="polygonItem">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Polygon defined by three points or more</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">_Polygon</property>
+                <property name="use_underline">True</property>
+                <signal name="activate" handler="drgeo_polygon_cb" swapped="no"/>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="transformationMenu">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="use_action_appearance">False</property>
+        <property name="label" translatable="yes">_Transformation</property>
+        <property name="use_underline">True</property>
+        <child type="submenu">
+          <object class="GtkMenu" id="transformationMenu_menu">
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkMenuItem" id="parallelLineItem">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Line passing through one point and parallel to a line, half-line, etc.</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">_Parallel Line</property>
+                <property name="use_underline">True</property>
+                <signal name="activate" handler="drgeo_parallel_cb" swapped="no"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="orthogonalLineItem">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Line passing through one point and orthogonal to a line, half-line, etc.</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">_Orthogonal Line</property>
+                <property name="use_underline">True</property>
+                <signal name="activate" handler="drgeo_orthogonal_cb" swapped="no"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="axialSymmetryItem">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Axial symmetry of an object. When ambiguity, the first selected line is the line to transform</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">_Axial Symmetry</property>
+                <property name="use_underline">True</property>
+                <signal name="activate" handler="drgeo_reflexion_cb" swapped="no"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="centralSymmetryItem">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Central symmetry of an object. When ambiguity, the first selected point is the point to transform</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">_Central Symmetry</property>
+                <property name="use_underline">True</property>
+                <signal name="activate" handler="drgeo_symmetry_cb" swapped="no"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="translationItem">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Translation of an object. When ambiguity, the first selected vector is the vector to translate</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">_Translation</property>
+                <property name="use_underline">True</property>
+                <signal name="activate" handler="drgeo_translation_cb" swapped="no"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="rotationItem">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Rotation of an object. When ambiguity, the first selected point is the point to rotate</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">_Rotation</property>
+                <property name="use_underline">True</property>
+                <signal name="activate" handler="drgeo_rotation_cb" swapped="no"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="scaleItem">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Scale an object. When ambiguity, the first selected point is the point to transform</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">_Scale</property>
+                <property name="use_underline">True</property>
+                <signal name="activate" handler="drgeo_scale_cb" swapped="no"/>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="numericMenu">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="use_action_appearance">False</property>
+        <property name="label" translatable="yes">_Numeric</property>
+        <property name="use_underline">True</property>
+        <child type="submenu">
+          <object class="GtkMenu" id="numericMenu_menu">
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkMenuItem" id="distanceLengthItem">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Distance between objects, curve length, or edit free value</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">_Distance &amp; Length</property>
+                <property name="use_underline">True</property>
+                <signal name="activate" handler="drgeo_numeric_cb" swapped="no"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="angleItem">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Angle defined by three points or two vectors</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">_Angle</property>
+                <property name="use_underline">True</property>
+                <signal name="activate" handler="drgeo_angle_cb" swapped="no"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="coordinatesEquationItem">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Vector and point coordinates, line and circle equation</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">_Coordinates &amp; Equation</property>
+                <property name="use_underline">True</property>
+                <signal name="activate" handler="drgeo_coordinates_cb" swapped="no"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="scriptItem">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Guile script using objects as input parameters</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">_Script</property>
+                <property name="use_underline">True</property>
+                <signal name="activate" handler="drgeo_script_cb" swapped="no"/>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="macroMenu">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="use_action_appearance">False</property>
+        <property name="label" translatable="yes">_Macro</property>
+        <property name="use_underline">True</property>
+        <child type="submenu">
+          <object class="GtkMenu" id="macroMenu_menu">
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkMenuItem" id="constructMacroItem">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Define a macro-construction</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">_Construct Macro</property>
+                <property name="use_underline">True</property>
+                <signal name="activate" handler="drgeo_macro_build_cb" swapped="no"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="executeMacroItem">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Execute a pre-built macro-construction</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">_Execute Macro</property>
+                <property name="use_underline">True</property>
+                <signal name="activate" handler="drgeo_macro_play_cb" swapped="no"/>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="otherMenu">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="use_action_appearance">False</property>
+        <property name="label" translatable="yes">_Other</property>
+        <property name="use_underline">True</property>
+        <child type="submenu">
+          <object class="GtkMenu" id="otherMenu_menu">
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkMenuItem" id="deleteObjectItem">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Delete an object and its relatives</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">_Delete an Object</property>
+                <property name="use_underline">True</property>
+                <signal name="activate" handler="drgeo_delete_cb" swapped="no"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="lookItem">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Change the look of an object</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">_Look</property>
+                <property name="use_underline">True</property>
+                <signal name="activate" handler="drgeo_look_cb" swapped="no"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="propertyItem">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Change the property of an object</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">_Property</property>
+                <property name="use_underline">True</property>
+                <signal name="activate" handler="drgeo_property_cb" swapped="no"/>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="zoom1">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="use_action_appearance">False</property>
+        <property name="label" translatable="yes">_Zoom</property>
+        <property name="use_underline">True</property>
+        <child type="submenu">
+          <object class="GtkMenu" id="zoom1_menu">
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkRadioMenuItem" id="zoom100Item">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Zoom to 100%</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">Default 100%</property>
+                <property name="use_underline">True</property>
+                <property name="active">True</property>
+                <signal name="activate" handler="drgeo_zoom_100_cb" swapped="no"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkRadioMenuItem" id="zoom200Item">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Zoom to 200%</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">200%</property>
+                <property name="use_underline">True</property>
+                <property name="group">zoom100Item</property>
+                <signal name="activate" handler="drgeo_zoom_200_cb" swapped="no"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkRadioMenuItem" id="zoom175Item">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Zoom to 175%</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">175%</property>
+                <property name="use_underline">True</property>
+                <property name="group">zoom100Item</property>
+                <signal name="activate" handler="drgeo_zoom_175_cb" swapped="no"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkRadioMenuItem" id="zoom150Item">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Zoom to 150%</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">150%</property>
+                <property name="use_underline">True</property>
+                <property name="group">zoom100Item</property>
+                <signal name="activate" handler="drgeo_zoom_150_cb" swapped="no"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkRadioMenuItem" id="zoom125Item">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Zoom to 125%</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">125%</property>
+                <property name="use_underline">True</property>
+                <property name="group">zoom100Item</property>
+                <signal name="activate" handler="drgeo_zoom_125_cb" swapped="no"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkRadioMenuItem" id="zoom75Item">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Zoom to 75%</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">75%</property>
+                <property name="use_underline">True</property>
+                <property name="group">zoom100Item</property>
+                <signal name="activate" handler="drgeo_zoom_75_cb" swapped="no"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkRadioMenuItem" id="zoom50Item">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Zoom to 50%</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">50%</property>
+                <property name="use_underline">True</property>
+                <property name="group">zoom100Item</property>
+                <signal name="activate" handler="drgeo_zoom_50_cb" swapped="no"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkRadioMenuItem" id="zoom25Item">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Zoom to 25%</property>
+                <property name="use_action_appearance">False</property>
+                <property name="label" translatable="yes">25%</property>
+                <property name="use_underline">True</property>
+                <property name="group">zoom100Item</property>
+                <signal name="activate" handler="drgeo_zoom_25_cb" swapped="no"/>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="moveItem">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="use_action_appearance">False</property>
+        <property name="label" translatable="yes">M_ove an object</property>
+        <property name="use_underline">True</property>
+        <signal name="activate" handler="drgeo_select_cb" swapped="no"/>
+      </object>
+    </child>
+  </object>
+</interface>

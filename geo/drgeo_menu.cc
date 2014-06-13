@@ -37,7 +37,7 @@ drgeoMenu::drgeoMenu (geoView *view):
   GtkWidget *w;
 
   // Build the pop up menu 
-  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/drgeoMDI.glade", &error))
+  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/geoMenu.glade", &error))
   {
     g_warning ("Couldn't load builder file: %s", error->message);
     g_error_free (error);

@@ -113,7 +113,8 @@ icons_DATA = \
 glade_DATA = \
 	drgeo2.glade			\
 	drgenius2.glade			\
-	drgeoMDI.glade
+	drgeoMain.glade			\
+	geoMenu.glade
 
 EXTRA_DIST = $(icons_DATA) $(glade_DATA)
 
