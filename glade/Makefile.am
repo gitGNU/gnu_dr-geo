@@ -112,7 +112,8 @@ icons_DATA = \
 
 glade_DATA = \
 	drgeo2.glade			\
-	drgenius2.glade			\
+	propertyBox.glade		\
+	dialogSaveSession.glade		\
 	drgeoMain.glade			\
 	geoMenu.glade
 

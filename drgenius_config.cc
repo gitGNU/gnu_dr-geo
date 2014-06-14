@@ -418,7 +418,7 @@ initPreferencesBox ()
   if (propertyBox == NULL)
     {
 
-      if (!gtk_builder_add_from_file (xmlPropertyBox, DRGEO_GLADEDIR "/drgenius2.glade", &error))
+      if (!gtk_builder_add_from_file (xmlPropertyBox, DRGEO_GLADEDIR "/propertyBox.glade", &error))
 	  {
 	    g_warning ("Couldn't load builder file: %s", error->message);
 	    g_error_free (error);

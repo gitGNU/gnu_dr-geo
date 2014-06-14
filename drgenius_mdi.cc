@@ -1233,7 +1233,7 @@ save_multiple_cb (GtkWidget * widget, gpointer data)
   if (childNumber == 0)
     return;
 
-  if (!gtk_builder_add_from_file (xmlSessionWidget, DRGEO_GLADEDIR "/drgenius2.glade", &error))
+  if (!gtk_builder_add_from_file (xmlSessionWidget, DRGEO_GLADEDIR "/dialogSaveSession.glade", &error))
 	  {
 	    g_warning ("Couldn't load builder file: %s", error->message);
 	    g_error_free (error);
