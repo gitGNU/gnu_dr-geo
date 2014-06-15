@@ -373,7 +373,7 @@ drgeoGtkMacroBuildDialog::drgeoGtkMacroBuildDialog (drgeoMacroBuilder *
   this->builder = builder;
   this->builder->setMode (drgeoMacroStartMode);
 
-  if (!gtk_builder_add_from_file (xmlDialogWidget, DRGEO_GLADEDIR "/drgeo2.glade", &error))
+  if (!gtk_builder_add_from_file (xmlDialogWidget, DRGEO_GLADEDIR "/buildMacroDialog.glade", &error))
   {
     g_warning ("Couldn't load builder file: %s", error->message);
     g_error_free (error);
@@ -523,7 +523,7 @@ drgeoGtkMacroPlayDialog::drgeoGtkMacroPlayDialog (drgeoMacroPlayer * player)
   this->player = player;
   macroName = NULL;
   player->setMacro (NULL);
-  if (!gtk_builder_add_from_file (xmlDialogWidget, DRGEO_GLADEDIR "/drgeo2.glade", &error))
+  if (!gtk_builder_add_from_file (xmlDialogWidget, DRGEO_GLADEDIR "/playMacroDialog.glade", &error))
   {
     g_warning ("Couldn't load builder file: %s", error->message);
     g_error_free (error);

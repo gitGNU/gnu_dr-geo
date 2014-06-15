@@ -248,7 +248,7 @@ drgeoGtkPropertyDialog::edit (class geometricObject * aItem)
 
       if (category != aItem->getCategory ())
 	{
-	  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/drgeo2.glade", &error))
+	  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/freePointPropertyDialog.glade", &error))
 	  {
 	    g_warning ("Couldn't load builder file: %s", error->message);
 	    g_error_free (error);
@@ -297,7 +297,7 @@ drgeoGtkPropertyDialog::edit (class geometricObject * aItem)
 	{
 	  if (category != aItem->getCategory ())
 	    {
-	      if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/drgeo2.glade", &error))
+	      if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/editValuePropertyDialog.glade", &error))
 		  {
 		    g_warning ("Couldn't load builder file: %s", error->message);
 		    g_error_free (error);
@@ -332,7 +332,7 @@ drgeoGtkPropertyDialog::edit (class geometricObject * aItem)
       if (category != aItem->getCategory ())
 	{
 	  // the corresponding dialog is not opened
-	  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/drgeo2.glade", &error))
+	  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/scriptDialog.glade", &error))
 	  {
 	    g_warning ("Couldn't load builder file: %s", error->message);
 	    g_error_free (error);

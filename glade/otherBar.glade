@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk+" version="2.24"/>
+  <!-- interface-naming-policy toplevel-contextual -->
+  <object class="GtkIconFactory" id="iconfactory1">
+    <sources>
+      <source stock-id="generated-icon-eraser-png" filename="eraser.png"/>
+      <source stock-id="generated-icon-property-png" filename="property.png"/>
+      <source stock-id="generated-icon-styles-png" filename="styles.png"/>
+    </sources>
+  </object>
+  <object class="GtkWindow" id="otherBar">
+    <property name="can_focus">False</property>
+    <property name="type">popup</property>
+    <property name="title" translatable="yes">other</property>
+    <property name="resizable">False</property>
+    <property name="modal">True</property>
+    <property name="window_position">mouse</property>
+    <signal name="button-press-event" handler="on_subToolbar_clicked" swapped="no"/>
+    <child>
+      <object class="GtkToolbar" id="toolbar">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <property name="toolbar_style">icons</property>
+        <child>
+          <object class="GtkToolButton" id="deleteObjectItem">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="tooltip_text" translatable="yes">Delete an object and its relatives</property>
+            <property name="use_action_appearance">False</property>
+            <property name="use_underline">True</property>
+            <property name="stock_id">generated-icon-eraser-png</property>
+            <signal name="clicked" handler="drgeo_delete_cb" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="homogeneous">True</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkToolButton" id="lookItem">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="tooltip_text" translatable="yes">Change the style of an object</property>
+            <property name="use_action_appearance">False</property>
+            <property name="use_underline">True</property>
+            <property name="stock_id">generated-icon-styles-png</property>
+            <signal name="clicked" handler="drgeo_look_cb" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="homogeneous">True</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkToolButton" id="propertyItem">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="tooltip_text" translatable="yes">Change the property of an object</property>
+            <property name="use_action_appearance">False</property>
+            <property name="use_underline">True</property>
+            <property name="stock_id">generated-icon-property-png</property>
+            <signal name="clicked" handler="drgeo_property_cb" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="homogeneous">True</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

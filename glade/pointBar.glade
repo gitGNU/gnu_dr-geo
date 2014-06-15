@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk+" version="2.24"/>
+  <!-- interface-naming-policy toplevel-contextual -->
+  <object class="GtkIconFactory" id="iconfactory1">
+    <sources>
+      <source stock-id="generated-icon-free_point-png" filename="free_point.png"/>
+      <source stock-id="generated-icon-middle-png" filename="middle.png"/>
+      <source stock-id="generated-icon-intersection_point-png" filename="intersection_point.png"/>
+      <source stock-id="generated-icon-point_coordinate-png" filename="point_coordinate.png"/>
+    </sources>
+  </object>
+  <object class="GtkWindow" id="pointBar">
+    <property name="can_focus">False</property>
+    <property name="type">popup</property>
+    <property name="title" translatable="yes">Point</property>
+    <property name="resizable">False</property>
+    <property name="modal">True</property>
+    <property name="window_position">mouse</property>
+    <signal name="button-press-event" handler="on_subToolbar_clicked" swapped="no"/>
+    <child>
+      <object class="GtkToolbar" id="toolbar">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <property name="toolbar_style">icons</property>
+        <child>
+          <object class="GtkToolButton" id="freePointItem">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="tooltip_text" translatable="yes">Point on an object or the background plane</property>
+            <property name="use_action_appearance">False</property>
+            <property name="use_underline">True</property>
+            <property name="stock_id">generated-icon-free_point-png</property>
+            <signal name="clicked" handler="drgeo_free_point_cb" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="homogeneous">True</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkToolButton" id="middleItem">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="tooltip_text" translatable="yes">The midpoint of a segment or between two points</property>
+            <property name="use_action_appearance">False</property>
+            <property name="use_underline">True</property>
+            <property name="stock_id">generated-icon-middle-png</property>
+            <accelerator key="p" signal="clicked" modifiers="GDK_CONTROL_MASK | GDK_MOD1_MASK"/>
+            <signal name="clicked" handler="drgeo_middle_point_cb" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="homogeneous">True</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkToolButton" id="intersectionItem">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="tooltip_text" translatable="yes">The point(s) of intersection between two objects</property>
+            <property name="use_action_appearance">False</property>
+            <property name="use_underline">True</property>
+            <property name="stock_id">generated-icon-intersection_point-png</property>
+            <signal name="clicked" handler="drgeo_intersection_cb" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="homogeneous">True</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkToolButton" id="coordinatesItem">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="tooltip_text" translatable="yes">Point given its coordinates</property>
+            <property name="use_action_appearance">False</property>
+            <property name="use_underline">True</property>
+            <property name="stock_id">generated-icon-point_coordinate-png</property>
+            <signal name="clicked" handler="drgeo_mark_point_cb" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="homogeneous">True</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

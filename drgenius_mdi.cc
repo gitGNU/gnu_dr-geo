@@ -1326,7 +1326,7 @@ print_figure_cb (GtkWidget * widget, gpointer data)
   if (!child)
     return;
 
-  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/drgeo2.glade", &error))
+  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/printFigureDialog.glade", &error))
 	  {
 	    g_warning ("Couldn't load builder file: %s", error->message);
 	    g_error_free (error);
@@ -1641,7 +1641,7 @@ rename_view_cb (GtkWidget * widget, gpointer data)
   if (!mdi->activeView ())
     return;
 
-  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/drgeo2.glade", &error))
+  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/renameViewDialog.glade", &error))
 	  {
 	    g_warning ("Couldn't load builder file: %s", error->message);
 	    g_error_free (error);

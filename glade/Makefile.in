@@ -292,6 +292,28 @@ icons_DATA = \
 
 glade_DATA = \
 	drgeo2.glade			\
+	printFigureDialog.glade		\
+	renameViewDialog.glade		\
+	uiAdaptDialog.glade		\
+	relockDialog.glade		\
+	lockDialog.glade		\
+	unlockDialog.glade		\
+	menuWindow.glade		\
+	shortcutWindow.glade		\
+	pointBar.glade			\
+	curveBar.glade			\
+	transformation.glade		\
+	numericBar.glade		\
+	macroBar.glade			\
+	otherBar.glade			\
+	freePointPropertyDialog.glade	\
+	editValuePropertyDialog.glade	\
+	scriptDialog.glade		\
+	pointStyleDialog.glade		\
+	lineStyleDialog.glade		\
+	numericStyleDialog.glade	\
+	buildMacroDialog.glade		\
+	playMacroDialog.glade		\
 	propertyBox.glade		\
 	dialogSaveSession.glade		\
 	drgeoMain.glade			\

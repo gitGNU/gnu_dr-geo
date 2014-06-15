@@ -318,7 +318,7 @@ drgeoGtkStyleDialog::edit (geometricObject * aItem)
 	  // Previous dialog was not of this category
 	  if (xml)
 	    g_object_unref  (G_OBJECT (xml));
-	  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/drgeo2.glade", &error))
+	  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/pointStyleDialog.glade", &error))
 	  {
 	    g_warning ("Couldn't load builder file: %s", error->message);
 	    g_error_free (error);
@@ -410,7 +410,7 @@ drgeoGtkStyleDialog::edit (geometricObject * aItem)
 	  // Previous dialog was not of this category
 	  if (xml)
 	    g_object_unref  (G_OBJECT (xml));
-	  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/drgeo2.glade", &error))
+	  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/lineStyleDialog.glade", &error))
 	  {
 	    g_warning ("Couldn't load builder file: %s", error->message);
 	    g_error_free (error);
@@ -451,7 +451,7 @@ drgeoGtkStyleDialog::edit (geometricObject * aItem)
 	  // Previous dialog was not of this category
 	  if (xml)
 	    g_object_unref  (G_OBJECT (xml));
-	  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/drgeo2.glade", &error))
+	  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/numericStyleDialog.glade", &error))
 	  {
 	    g_warning ("Couldn't load builder file: %s", error->message);
 	    g_error_free (error);
@@ -490,7 +490,7 @@ drgeoGtkStyleDialog::edit (geometricObject * aItem)
 	  // Previous dialog was not of this category
 	  if (xml)
 	    g_object_unref  (G_OBJECT (xml));
-	  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/drgeo2.glade", &error))
+	  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/numericStyleDialog.glade", &error))
 	  {
 	    g_warning ("Couldn't load builder file: %s", error->message);
 	    g_error_free (error);

@@ -37,7 +37,7 @@ drgeoToolbar::drgeoToolbar (geoView *view):
   // . attach a referecence of this class instance
 
 
-  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/drgeo2.glade", &error))
+  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/menuWindow.glade", &error))
   {
     g_warning ("Couldn't load builder file: %s", error->message);
     g_error_free (error);
@@ -54,15 +54,23 @@ drgeoToolbar::drgeoToolbar (geoView *view):
   
 
   /* short cut bar */
-  
+  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/shortcutWindow.glade", &error))
+  {
+    g_warning ("Couldn't load builder file: %s", error->message);
+    g_error_free (error);
+  }
   setShortcutControlerWidget (xml);
   fetchWidgetParent (xml,&p_shortcutBar, "shortcutBar",
 		     (gpointer) this);
   gtk_builder_connect_signals (xml, &error);
   g_object_unref (G_OBJECT (xml));
 
-
-  
+  /* point bar */
+  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/pointBar.glade", &error))
+  {
+    g_warning ("Couldn't load builder file: %s", error->message);
+    g_error_free (error);
+  }
   gtk_builder_connect_signals (xml, &error);
   setPointControlerWidget (xml);
   fetchWidgetParent (xml,&p_pointBar, "pointBar", 
@@ -71,12 +79,24 @@ drgeoToolbar::drgeoToolbar (geoView *view):
   gtk_toolbar_set_tooltips (GTK_TOOLBAR (w), true);
   g_object_unref (G_OBJECT (xml));
   
+  /* curve bar */
+  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/curveBar.glade", &error))
+  {
+    g_warning ("Couldn't load builder file: %s", error->message);
+    g_error_free (error);
+  }
   gtk_builder_connect_signals (xml, &error);
   setCurveControlerWidget (xml);
   fetchWidgetParent (xml,&p_curveBar, "curveBar",
 		     (gpointer) this);
   g_object_unref (G_OBJECT (xml));
 
+  /* transformation bar */
+  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/transformation.glade", &error))
+  {
+    g_warning ("Couldn't load builder file: %s", error->message);
+    g_error_free (error);
+  }
   gtk_builder_connect_signals (xml, &error);
   setTransformationControlerWidget (xml);
   fetchWidgetParent (xml,&p_transformationBar, 
@@ -84,18 +104,36 @@ drgeoToolbar::drgeoToolbar (geoView *view):
 		     (gpointer) this);
   g_object_unref (G_OBJECT (xml));
 
+  /* numeric bar */
+  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/numericBar.glade", &error))
+  {
+    g_warning ("Couldn't load builder file: %s", error->message);
+    g_error_free (error);
+  }
   gtk_builder_connect_signals (xml, &error);
   setNumericControlerWidget (xml);
   fetchWidgetParent (xml,&p_numericBar, "numericBar",
 		     (gpointer) this);
   g_object_unref (G_OBJECT (xml));
 
+  /* macro bar */
+  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/macroBar.glade", &error))
+  {
+    g_warning ("Couldn't load builder file: %s", error->message);
+    g_error_free (error);
+  }
   gtk_builder_connect_signals (xml, &error);
   setMacroControlerWidget (xml);
   fetchWidgetParent (xml,&p_macroBar, "macroBar",
 		     (gpointer) this);
   g_object_unref (G_OBJECT (xml));
 
+  /* other bar */
+  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/otherBar.glade", &error))
+  {
+    g_warning ("Couldn't load builder file: %s", error->message);
+    g_error_free (error);
+  }
   gtk_builder_connect_signals (xml, &error);
   setOtherControlerWidget (xml);
   fetchWidgetParent (xml,&p_otherBar, "otherBar",

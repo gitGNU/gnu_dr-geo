@@ -78,7 +78,7 @@ adaptDrgeoDialog (geoView * child)
   myFigure = child->figure ();
   myChild = child;
 
-  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/drgeo2.glade", &error))
+  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/uiAdaptDialog.glade", &error))
 	  {
 	    g_warning ("Couldn't load builder file: %s", error->message);
 	    g_error_free (error);
@@ -238,7 +238,7 @@ on_uiAdaptDialog_response (GtkWidget * widget, gint b, gpointer data)
       if (myFigure->getPassword ())
 	{
 	  /* Ask the previous password when it is not null */
-	  if (!gtk_builder_add_from_file (p_tree, DRGEO_GLADEDIR "/drgeo2.glade", &error))
+	  if (!gtk_builder_add_from_file (p_tree, DRGEO_GLADEDIR "/relockDialog.glade", &error))
 	  {
 	    g_warning ("Couldn't load builder file: %s", error->message);
 	    g_error_free (error);
@@ -254,7 +254,7 @@ on_uiAdaptDialog_response (GtkWidget * widget, gint b, gpointer data)
 	}
       else
 	{
-	  if (!gtk_builder_add_from_file (p_tree, DRGEO_GLADEDIR "/drgeo2.glade", &error))
+	  if (!gtk_builder_add_from_file (p_tree, DRGEO_GLADEDIR "/lockDialog.glade", &error))
 	  {
 	    g_warning ("Couldn't load builder file: %s", error->message);
 	    g_error_free (error);
@@ -273,7 +273,7 @@ on_uiAdaptDialog_response (GtkWidget * widget, gint b, gpointer data)
       /* Unock */
       if (myFigure->getPassword ())
 	{
-	  if (!gtk_builder_add_from_file (p_tree, DRGEO_GLADEDIR "/drgeo2.glade", &error))
+	  if (!gtk_builder_add_from_file (p_tree, DRGEO_GLADEDIR "/unlockDialog.glade", &error))
 	  {
 	    g_warning ("Couldn't load builder file: %s", error->message);
 	    g_error_free (error);

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk+" version="2.24"/>
+  <!-- interface-naming-policy toplevel-contextual -->
+  <object class="GtkIconFactory" id="iconfactory1">
+    <sources>
+      <source stock-id="generated-icon-perpendicular-png" filename="perpendicular.png"/>
+      <source stock-id="generated-icon-central_symetry-png" filename="central_symetry.png"/>
+      <source stock-id="generated-icon-axial_symetry-png" filename="axial_symetry.png"/>
+      <source stock-id="generated-icon-parallel-png" filename="parallel.png"/>
+      <source stock-id="generated-icon-translation-png" filename="translation.png"/>
+      <source stock-id="generated-icon-rotation-png" filename="rotation.png"/>
+      <source stock-id="generated-icon-homothetie-png" filename="homothetie.png"/>
+    </sources>
+  </object>
+  <object class="GtkWindow" id="transformationBar">
+    <property name="can_focus">False</property>
+    <property name="type">popup</property>
+    <property name="title" translatable="yes">transformation</property>
+    <property name="resizable">False</property>
+    <property name="modal">True</property>
+    <property name="window_position">mouse</property>
+    <signal name="button-press-event" handler="on_subToolbar_clicked" swapped="no"/>
+    <child>
+      <object class="GtkToolbar" id="toolbar">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <property name="toolbar_style">icons</property>
+        <child>
+          <object class="GtkToolButton" id="parallelLineItem">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="tooltip_text" translatable="yes">Line passing through one point and parallel to a line, half-line, etc.</property>
+            <property name="use_action_appearance">False</property>
+            <property name="use_underline">True</property>
+            <property name="stock_id">generated-icon-parallel-png</property>
+            <signal name="clicked" handler="drgeo_parallel_cb" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="homogeneous">True</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkToolButton" id="orthogonalLineItem">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="tooltip_text" translatable="yes">Line passing through one point and orthogonal to a line, half-line, etc.</property>
+            <property name="use_action_appearance">False</property>
+            <property name="use_underline">True</property>
+            <property name="stock_id">generated-icon-perpendicular-png</property>
+            <signal name="clicked" handler="drgeo_orthogonal_cb" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="homogeneous">True</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkToolButton" id="axialSymmetryItem">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="tooltip_text" translatable="yes">Axial symmetry of an object. When ambiguity, the first selected line is the line to transform</property>
+            <property name="use_action_appearance">False</property>
+            <property name="use_underline">True</property>
+            <property name="stock_id">generated-icon-axial_symetry-png</property>
+            <signal name="clicked" handler="drgeo_reflexion_cb" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="homogeneous">True</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkToolButton" id="centralSymmetryItem">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="tooltip_text" translatable="yes">Central symmetry of an object. When ambiguity, the first selected point is the point to transform</property>
+            <property name="use_action_appearance">False</property>
+            <property name="use_underline">True</property>
+            <property name="stock_id">generated-icon-central_symetry-png</property>
+            <signal name="clicked" handler="drgeo_symmetry_cb" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="homogeneous">True</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkToolButton" id="translationItem">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="tooltip_text" translatable="yes">Translation of an object. When ambiguity, the first selected vector is the vector to translate</property>
+            <property name="use_action_appearance">False</property>
+            <property name="use_underline">True</property>
+            <property name="stock_id">generated-icon-translation-png</property>
+            <signal name="clicked" handler="drgeo_translation_cb" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="homogeneous">True</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkToolButton" id="rotationItem">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="tooltip_text" translatable="yes">Rotation of an object. When ambiguity, the first selected point is the point to rotate</property>
+            <property name="use_action_appearance">False</property>
+            <property name="use_underline">True</property>
+            <property name="stock_id">generated-icon-rotation-png</property>
+            <signal name="clicked" handler="drgeo_rotation_cb" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="homogeneous">True</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkToolButton" id="scaleItem">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="tooltip_text" translatable="yes">Scale an object. When ambiguity, the first selected point is the point to transform</property>
+            <property name="use_action_appearance">False</property>
+            <property name="use_underline">True</property>
+            <property name="stock_id">generated-icon-homothetie-png</property>
+            <signal name="clicked" handler="drgeo_scale_cb" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="homogeneous">True</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
