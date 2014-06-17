@@ -28,6 +28,13 @@ drgeoToolbar::drgeoToolbar (geoView *view):
 {
   GError* error = NULL;
   GtkBuilder *xml = gtk_builder_new ();
+  GtkBuilder *xml1 = gtk_builder_new ();
+  GtkBuilder *xml2 = gtk_builder_new ();
+  GtkBuilder *xml3 = gtk_builder_new ();
+  GtkBuilder *xml4 = gtk_builder_new ();
+  GtkBuilder *xml5 = gtk_builder_new ();
+  GtkBuilder *xml6 = gtk_builder_new ();
+  GtkBuilder *xml7 = gtk_builder_new ();
   GtkWidget *w;
 
   // Build the toolbars
@@ -54,91 +61,91 @@ drgeoToolbar::drgeoToolbar (geoView *view):
   
 
   /* short cut bar */
-  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/shortcutWindow.glade", &error))
+  if (!gtk_builder_add_from_file (xml1, DRGEO_GLADEDIR "/shortcutWindow.glade", &error))
   {
     g_warning ("Couldn't load builder file: %s", error->message);
     g_error_free (error);
   }
-  setShortcutControlerWidget (xml);
-  fetchWidgetParent (xml,&p_shortcutBar, "shortcutBar",
+  setShortcutControlerWidget (xml1);
+  fetchWidgetParent (xml1,&p_shortcutBar, "shortcutBar",
 		     (gpointer) this);
-  gtk_builder_connect_signals (xml, &error);
-  g_object_unref (G_OBJECT (xml));
+  gtk_builder_connect_signals (xml1, &error);
+  g_object_unref (G_OBJECT (xml1));
 
   /* point bar */
-  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/pointBar.glade", &error))
+  if (!gtk_builder_add_from_file (xml2, DRGEO_GLADEDIR "/pointBar.glade", &error))
   {
     g_warning ("Couldn't load builder file: %s", error->message);
     g_error_free (error);
   }
-  gtk_builder_connect_signals (xml, &error);
-  setPointControlerWidget (xml);
-  fetchWidgetParent (xml,&p_pointBar, "pointBar", 
+  gtk_builder_connect_signals (xml2, &error);
+  setPointControlerWidget (xml2);
+  fetchWidgetParent (xml2,&p_pointBar, "pointBar", 
 		     (gpointer) this);
-  w = GTK_WIDGET (gtk_builder_get_object(xml, "toolbar"));
+  w = GTK_WIDGET (gtk_builder_get_object(xml2, "toolbar"));
   gtk_toolbar_set_tooltips (GTK_TOOLBAR (w), true);
-  g_object_unref (G_OBJECT (xml));
+  g_object_unref (G_OBJECT (xml2));
   
   /* curve bar */
-  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/curveBar.glade", &error))
+  if (!gtk_builder_add_from_file (xml3, DRGEO_GLADEDIR "/curveBar.glade", &error))
   {
     g_warning ("Couldn't load builder file: %s", error->message);
     g_error_free (error);
   }
-  gtk_builder_connect_signals (xml, &error);
-  setCurveControlerWidget (xml);
-  fetchWidgetParent (xml,&p_curveBar, "curveBar",
+  gtk_builder_connect_signals (xml3, &error);
+  setCurveControlerWidget (xml3);
+  fetchWidgetParent (xml3,&p_curveBar, "curveBar",
 		     (gpointer) this);
-  g_object_unref (G_OBJECT (xml));
+  g_object_unref (G_OBJECT (xml3));
 
   /* transformation bar */
-  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/transformation.glade", &error))
+  if (!gtk_builder_add_from_file (xml4, DRGEO_GLADEDIR "/transformation.glade", &error))
   {
     g_warning ("Couldn't load builder file: %s", error->message);
     g_error_free (error);
   }
-  gtk_builder_connect_signals (xml, &error);
-  setTransformationControlerWidget (xml);
-  fetchWidgetParent (xml,&p_transformationBar, 
+  gtk_builder_connect_signals (xml4, &error);
+  setTransformationControlerWidget (xml4);
+  fetchWidgetParent (xml4,&p_transformationBar, 
 		     "transformationBar",
 		     (gpointer) this);
-  g_object_unref (G_OBJECT (xml));
+  g_object_unref (G_OBJECT (xml4));
 
   /* numeric bar */
-  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/numericBar.glade", &error))
+  if (!gtk_builder_add_from_file (xml5, DRGEO_GLADEDIR "/numericBar.glade", &error))
   {
     g_warning ("Couldn't load builder file: %s", error->message);
     g_error_free (error);
   }
-  gtk_builder_connect_signals (xml, &error);
-  setNumericControlerWidget (xml);
-  fetchWidgetParent (xml,&p_numericBar, "numericBar",
+  gtk_builder_connect_signals (xml5, &error);
+  setNumericControlerWidget (xml5);
+  fetchWidgetParent (xml5,&p_numericBar, "numericBar",
 		     (gpointer) this);
-  g_object_unref (G_OBJECT (xml));
+  g_object_unref (G_OBJECT (xml5));
 
   /* macro bar */
-  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/macroBar.glade", &error))
+  if (!gtk_builder_add_from_file (xml6, DRGEO_GLADEDIR "/macroBar.glade", &error))
   {
     g_warning ("Couldn't load builder file: %s", error->message);
     g_error_free (error);
   }
-  gtk_builder_connect_signals (xml, &error);
-  setMacroControlerWidget (xml);
-  fetchWidgetParent (xml,&p_macroBar, "macroBar",
+  gtk_builder_connect_signals (xml6, &error);
+  setMacroControlerWidget (xml6);
+  fetchWidgetParent (xml6,&p_macroBar, "macroBar",
 		     (gpointer) this);
-  g_object_unref (G_OBJECT (xml));
+  g_object_unref (G_OBJECT (xml6));
 
   /* other bar */
-  if (!gtk_builder_add_from_file (xml, DRGEO_GLADEDIR "/otherBar.glade", &error))
+  if (!gtk_builder_add_from_file (xml7, DRGEO_GLADEDIR "/otherBar.glade", &error))
   {
     g_warning ("Couldn't load builder file: %s", error->message);
     g_error_free (error);
   }
-  gtk_builder_connect_signals (xml, &error);
-  setOtherControlerWidget (xml);
-  fetchWidgetParent (xml,&p_otherBar, "otherBar",
+  gtk_builder_connect_signals (xml7, &error);
+  setOtherControlerWidget (xml7);
+  fetchWidgetParent (xml7,&p_otherBar, "otherBar",
 		     (gpointer) this);
-  g_object_unref (G_OBJECT (xml));
+  g_object_unref (G_OBJECT (xml7));
 
 }
 
