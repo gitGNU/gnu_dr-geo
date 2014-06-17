@@ -111,7 +111,6 @@ icons_DATA = \
 
 
 glade_DATA = \
-	drgeo2.glade			\
 	printFigureDialog.glade		\
 	renameViewDialog.glade		\
 	uiAdaptDialog.glade		\
