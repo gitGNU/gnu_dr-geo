@@ -67,7 +67,7 @@ class drgeniusMDI
     *p_exportItem, *p_exportPreferencesItem, *p_closeItem, 
     *p_drgeoStatusbar, *p_noteBook, *p_drgeoMDIVbox, *p_nullViewWidget,
     *p_windowsMenu, *p_macroMenu, *p_animationMenu;
-  GtkTooltips *p_tooltipsMacro;
+  GtkTooltip *p_tooltipsMacro;
   GtkWindow *p_mainWindow;
   drgeniusView *p_activeView;
   GList *p_viewList;

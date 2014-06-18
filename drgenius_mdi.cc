@@ -98,7 +98,7 @@ drgeniusMDI::drgeniusMDI ()
   gtk_menu_item_set_submenu (GTK_MENU_ITEM (p_macroMenu), gtk_menu_new ());  gtk_menu_item_set_submenu (GTK_MENU_ITEM (p_windowsMenu), gtk_menu_new ());
 
   // tooltips for the macro menu
-  p_tooltipsMacro = gtk_tooltips_new ();
+  //p_tooltipsMacro = gtk_tooltips_new ();
 
   reconcile_grayout_widget ();
   setMessage (_("Welcome to GNU Dr. Geo - Free Interactive geometry by OFSET"));
@@ -522,8 +522,9 @@ drgeniusMDI::addMacroMenuItem (gchar *name, gchar *description)
   gtk_menu_append (GTK_MENU_SHELL (w), item);
   gtk_widget_show (item);
 
-  gtk_tooltips_set_tip (GTK_TOOLTIPS (p_tooltipsMacro), item,
-			description, NULL);
+  /*gtk_tooltips_set_tip (GTK_TOOLTIPS (p_tooltipsMacro), item,
+			description, NULL);*/
+  gtk_tooltip_set_text (p_tooltipsMacro, description);
 
   g_signal_connect (G_OBJECT (item), "activate",
 		    G_CALLBACK (on_macroMenu_cb),
@@ -536,8 +537,8 @@ setMacroMenuItemDescription (gchar *name, gchar *description)
 {
   GList *children, *p;
   GtkWidget *menuItem, *label;
-  GtkTooltipsData* tips;
-  const gchar *aName;
+  //GtkTooltipsData* tips;
+  const gchar *aName, *tips;
 
   children = gtk_container_get_children 
     (GTK_CONTAINER 
@@ -556,15 +557,16 @@ setMacroMenuItemDescription (gchar *name, gchar *description)
     g_printerr ("Cannot not find macro %s in the macro menu\n",name);
   else
     {
-      tips = gtk_tooltips_data_get (menuItem);
+      tips = gtk_widget_get_tooltip_text (menuItem);
       if (tips)
       {
-	g_free(tips->tip_text);
+	//g_free(tips->tip_text);
 	tips->tip_text = g_strdup (description);
       }
       else
-	gtk_tooltips_set_tip (GTK_TOOLTIPS (p_tooltipsMacro), menuItem,
-			      description, NULL);
+	/*gtk_tooltips_set_tip (GTK_TOOLTIPS (p_tooltipsMacro), menuItem,
+			      description, NULL);*/
+	  gtk_tooltip_set_text (p_tooltipsMacro, description);
     }
   g_list_free (children);
 }
