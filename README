@@ -1,0 +1,28 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Dr. Geo v0.1
+Author: Gurjot Singh 
+<bhattigurjot@gmail.com>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Dr. Geo is an interactive geometry software.
+
+Installing:
+You must first install certain dependencies before you can run the software.
+Install them as following if you are using Ubuntu/Debian distros:
+
+sudo apt-get install autogen autotools-dev libgtk-3-dev libgtkmm-3.0-dev 
+
+
+Run following commands:
+
+glib-gettextize
+intltoolize --force
+libtoolize
+aclocal
+autoheader
+automake --add-missing
+autoconf
+./configure
+make
+
+To run:
+./src/drgeo
