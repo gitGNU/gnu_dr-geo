@@ -18,21 +18,31 @@
 #include <drgeoMDI.h>
 #include <iostream>
 
-drgeoMDI:: drgeoMDI(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& refGlade):
-Gtk::Window(cobject), builder(refGlade)
+#define UI_FILE "src/mainWindow.ui"
+
+drgeoMDI:: drgeoMDI()
 {
-	Gtk::Window* main_win = 0;
+	//Load the Glade file and instantiate its widgets
+	Glib::RefPtr<Gtk::Builder> builder;
+	builder = Gtk::Builder::create_from_file(UI_FILE);
+	
 	builder->get_widget("main_window", main_win);
 	main_win->signal_delete_event().connect( sigc::mem_fun(*this, &drgeoMDI::on_drgeo_delete_event) );
 }
 
-drgeoMDI::~drgeoMDI()
+drgeoMDI:: ~drgeoMDI()
 {
 }
+
+Gtk::Window* drgeoMDI::get_window()
+	{
+		return main_win;
+	}
 
 bool 
 drgeoMDI::on_drgeo_delete_event(GdkEventAny* event)
 {
+	delete main_win;
 	std::cout<<"Dr. Geo quits!\n";
 	true;
 

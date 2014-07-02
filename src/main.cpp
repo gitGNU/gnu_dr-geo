@@ -33,13 +33,8 @@ main (int argc, char *argv[])
     Gtk::Application::create(argc, argv,
       "dr.geo");
 
-	//Load the Glade file and instantiate its widgets
-	Glib::RefPtr<Gtk::Builder> builder;
-	builder = Gtk::Builder::create_from_file(UI_FILE);
-
-	drgeoMDI *main_win = 0;
-	builder->get_widget_derived("main_window", main_win);
-
-	return app->run(*main_win);
+	drgeoMDI win;
+	Gtk::Window *appWindow = win.get_window();	
+	app->run(*appWindow);
 }
 

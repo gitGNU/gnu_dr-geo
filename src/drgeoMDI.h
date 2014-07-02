@@ -20,15 +20,16 @@
 
 #include <gtkmm.h>
 
-class drgeoMDI : public Gtk::Window
+class drgeoMDI
 {
 	public:
-		drgeoMDI(BaseObjectType* cobject, const Glib::RefPtr<Gtk::Builder>& refGlade);
+		drgeoMDI();
 		virtual ~drgeoMDI();
+		virtual Gtk::Window* get_window();
 	protected:
 		Glib::RefPtr<Gtk::Builder> builder;
-		Gtk::Widget* main_win;
-		bool on_drgeo_delete_event(GdkEventAny* event);
+		Gtk::Window* main_win;
+		bool on_drgeo_delete_event(GdkEventAny* event);		
 };
 
 #endif /* DRGEOMDI_H */
