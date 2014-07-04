@@ -3,9 +3,6 @@
 ## Created by Anjuta
 
 
-uidir = $(pkgdatadir)/ui
-ui_DATA = mainWindow.ui
-
 
 AM_CPPFLAGS = \
 	-DPACKAGE_LOCALE_DIR=\""$(localedir)"\" \
