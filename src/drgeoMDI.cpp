@@ -15,18 +15,17 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-#include <drgeoMDI.h>
+#include "drgeoMDI.h"
+#include "drgeoDrawingArea.h"
 #include <iostream>
 
-#define UI_FILE "src/mainWindow.ui"
-
 drgeoMDI:: drgeoMDI()
-: m_Box(Gtk::ORIENTATION_VERTICAL)
+: m_vBox1(Gtk::ORIENTATION_VERTICAL)
 {	
 	set_title("Dr. Geo");
 	set_default_size(700, 500);
 
-	add(m_Box); // put a MenuBar at the top of the box and other stuff below it.
+	add(m_vBox1); // put a MenuBar at the top of the box and other stuff below it.
 
 	//Create actions for menus and toolbars:
 	m_refActionGroup = Gtk::ActionGroup::create();
@@ -119,18 +118,16 @@ drgeoMDI:: drgeoMDI()
 	//Get the menubar and add it to a container widget:
 	Gtk::Widget* pMenubar = m_refUIManager->get_widget("/MenuBar");
 	if(pMenubar)
-		m_Box.pack_start(*pMenubar, Gtk::PACK_SHRINK);
+		m_vBox1.pack_start(*pMenubar, Gtk::PACK_SHRINK);
+
+	drgeoDrawingArea *area = new drgeoDrawingArea;
+	m_vBox1.pack_start(*area, Gtk::PACK_EXPAND_WIDGET);
 
 	show_all_children();
 }
 
 drgeoMDI:: ~drgeoMDI()
 {
-}
-
-Gtk::Window* drgeoMDI::get_window()
-{
-	return main_win;
 }
 
 void drgeoMDI::on_new()

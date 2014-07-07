@@ -1,6 +1,6 @@
-// drgeoMDI.h
+// drgeoDrawingArea.h
 //
-// Copyright (C) 2014 Gurjot Singh <bhattigurjot@gmail.com>
+// Copyright (C) 2014 - Gurjot Singh <bhattigurjot@gmail.com>
 //
 // This program is free software; you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -15,35 +15,21 @@
 // You should have received a copy of the GNU General Public License
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-#ifndef DRGEOMDI_H
-#define DRGEOMDI_H
+#ifndef DRGEODRAWINGAREA_H
+#define DRGEODRAWINGAREA_H
 
-#include <gtkmm.h>
+#include <gtkmm/drawingarea.h>
 
-class drgeoMDI: public Gtk::Window
+class drgeoDrawingArea : public Gtk::DrawingArea
 {
 	public:
-		drgeoMDI();
-		virtual ~drgeoMDI();
-		
+		drgeoDrawingArea();
+		virtual ~drgeoDrawingArea();
+
 	protected:
-		Gtk::Box m_vBox1;
-		Glib::RefPtr<Gtk::UIManager> m_refUIManager;
-		Glib::RefPtr<Gtk::ActionGroup> m_refActionGroup;
-		
-	//Signal handlers:
-		void on_new();
-		void on_open();
-		void on_save();
-		void on_save_as();
-		void on_quit();
-		void on_undo();
-		void on_redo();
-		void on_cut();
-		void on_copy();
-		void on_paste();
-		void on_delete();
-		void on_about();		
+	//Override default signal handler:
+		virtual bool on_draw(const Cairo::RefPtr<Cairo::Context>& cr);
+
 };
 
-#endif /* DRGEOMDI_H */
+#endif /* DRGEODRAWINGAREA_H */

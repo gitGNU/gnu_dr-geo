@@ -19,7 +19,9 @@ bin_PROGRAMS = drgeo
 drgeo_SOURCES = \
 	main.cpp \
 	drgeoMDI.cpp \
-	drgeoMDI.h
+	drgeoMDI.h \
+	drgeoDrawingArea.cpp \
+	drgeoDrawingArea.h
 
 drgeo_LDFLAGS = 
 
