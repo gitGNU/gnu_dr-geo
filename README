@@ -1,0 +1,12 @@
+********************************************
+Dr. Geo: An Interactive Geometry Software
+********************************************
+
+Gurjot Singh <bhattigurjot@gmail.com>
+
+To compile:
+qmake
+make
+
+To run:
+./dr-geo
