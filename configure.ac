@@ -12,8 +12,6 @@ AM_SILENT_RULES([yes])
 AC_PROG_CXX
 
 
-
-
 dnl ***************************************************************************
 dnl Internationalization
 dnl ***************************************************************************
@@ -25,18 +23,16 @@ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [GETTEXT package name])
 AM_GLIB_GNU_GETTEXT
 
 
-
 LT_INIT
 
 
-
-PKG_CHECK_MODULES(DRGEO, [gtkmm-3.0 ])
-
-
+PKG_CHECK_MODULES(DRGEO, [gtk+-3.0 ])
 
 
 AC_OUTPUT([
 Makefile
 src/Makefile
 po/Makefile.in
+src/gui/Makefile
+src/gui/ui/Makefile
 ])

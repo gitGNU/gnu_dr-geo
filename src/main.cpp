@@ -15,17 +15,15 @@
 // You should have received a copy of the GNU General Public License along
 // with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#include <gtkmm.h>
-#include "drgeoMDI.h"
+#include <gtk/gtk.h>
+#include "drgeoTDI.h"
 
 int
 main (int argc, char *argv[])
 {
-	Glib::RefPtr<Gtk::Application> app =
-		Gtk::Application::create(argc, argv,
-		                         "dr.geo");
-
-	drgeoMDI win;
-	app->run(win);
+	gtk_init (&argc, &argv);
+	drgeoTDI tdi;
+	gtk_main();
+	return 0;
 }
 

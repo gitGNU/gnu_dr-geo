@@ -2,12 +2,14 @@
 
 ## Created by Anjuta
 
-
+uidir = $(pkgdatadir)/gui/ui
 
 AM_CPPFLAGS = \
-	-DPACKAGE_LOCALE_DIR=\""$(localedir)"\" \
-	-DPACKAGE_SRC_DIR=\""$(srcdir)"\" \
-	-DPACKAGE_DATA_DIR=\""$(pkgdatadir)"\" \
+	-DDRGEO_LOCALE_DIR=\""$(localedir)"\" \
+	-DDRGEO_SRC_DIR=\""$(srcdir)"\" \
+	-DDRGEO_UI_DIR=\""$(uidir)"\" \
+	-DDRGEO_DATA_DIR=\""$(pkgdatadir)"\" \
+	-I$(srcdir)/gui \
 	$(DRGEO_CFLAGS)
 
 AM_CFLAGS =\
@@ -17,21 +19,23 @@ AM_CFLAGS =\
 bin_PROGRAMS = drgeo
 
 drgeo_SOURCES = \
-	main.cpp \
-	drgeoMDI.cpp \
-	drgeoMDI.h \
-	drgeoDrawingArea.cpp \
-	drgeoDrawingArea.h
+	main.cpp 
 
-drgeo_LDFLAGS = 
+drgeo_LDFLAGS = -export-dynamic
 
-drgeo_LDADD = $(DRGEO_LIBS)
-
+drgeo_LDADD = gui/libgeo.a\
+	$(DRGEO_LIBS)
+	
 
 EXTRA_DIST = $(ui_DATA)
+
+CLEANFILES = *~ core
 
 # Remove ui directory on uninstall
 uninstall-local:
 	-rm -r $(uidir)
 	-rm -r $(pkgdatadir)
 
+
+SUBDIRS = \
+	gui
