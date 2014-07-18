@@ -18,11 +18,13 @@
 #include <gtk/gtk.h>
 #include "drgeoTDI.h"
 
+drgeoTDI *tdiPointer;
+
 int
 main (int argc, char *argv[])
 {
 	gtk_init (&argc, &argv);
-	drgeoTDI tdi;
+	tdiPointer = new drgeoTDI() ;
 	gtk_main();
 	return 0;
 }

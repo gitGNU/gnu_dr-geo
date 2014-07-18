@@ -16,7 +16,9 @@ noinst_LIBRARIES = libgeo.a
 
 libgeo_a_SOURCES = \
 	drgeoTDI.cpp \
-	drgeoTDI.h
+	drgeoTDI.h \
+	drgeoDrawingArea.cpp \
+	drgeoDrawingArea.h
 
 CLEANFILES = $(BUILT_SOURCES) 
 

@@ -18,6 +18,8 @@
 #include "drgeoTDI.h"
 #include <iostream>
 
+extern drgeoTDI *tdiPointer;
+
 drgeoTDI:: drgeoTDI()
 {	
 	GError* error = NULL;
@@ -30,17 +32,38 @@ drgeoTDI:: drgeoTDI()
 	}
 	gtk_builder_connect_signals (builder, &error);
 	mainWindow = GTK_WIDGET (gtk_builder_get_object(builder, "drgeoMainWindow"));
-	g_object_unref (G_OBJECT (builder));
+	box = GTK_BOX (gtk_builder_get_object(builder, "box1"));
 
-	gtk_widget_show (mainWindow); 
+	gtk_widget_show_all (mainWindow); 
 }
 
 drgeoTDI:: ~drgeoTDI()
 {
 }
 
+void drgeoTDI:: newTab()
+{
+	//Creates Drawing Area
+    drawAreaPointer = new drgeoDrawingArea();
+    drawArea = drawAreaPointer->createDrawArea();
+
+    //Creates Label
+    label = gtk_label_new ("Document");
+
+    //Creates Notebook, i.e TDI
+    tdiView = GTK_NOTEBOOK(gtk_notebook_new());
+    gtk_notebook_set_tab_pos (tdiView, GTK_POS_TOP);
+
+    gtk_notebook_append_page (tdiView, drawArea, label);
+
+    gtk_box_pack_start(box, GTK_WIDGET(tdiView), TRUE, TRUE, 0);
+    gtk_box_reorder_child (box, GTK_WIDGET(tdiView), 1);
+    gtk_widget_show (GTK_WIDGET(tdiView));
+}
+
 void on_new(GtkWidget *widget, gpointer user_data)
 {
+	tdiPointer->newTab();
 	std::cout << "New menu item was selected." << std::endl;
 }
 
