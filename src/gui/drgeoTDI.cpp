@@ -29,9 +29,9 @@ drgeoTDI:: drgeoTDI()
 		g_error_free (error);
 	}
 	gtk_builder_connect_signals (builder, &error);
+	mainWindow = GTK_WIDGET (gtk_builder_get_object(builder, "drgeoMainWindow"));
 	g_object_unref (G_OBJECT (builder));
 
-	mainWindow = GTK_WIDGET (gtk_builder_get_object(builder, "drgeoMainWindow"));
 	gtk_widget_show (mainWindow); 
 }
 
