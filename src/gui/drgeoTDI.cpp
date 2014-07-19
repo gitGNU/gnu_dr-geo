@@ -22,6 +22,7 @@ extern drgeoTDI *tdiPointer;
 
 drgeoTDI:: drgeoTDI()
 {	
+	newFlag = false;
 	GError* error = NULL;
 	GtkBuilder *builder = gtk_builder_new();
 
@@ -43,22 +44,30 @@ drgeoTDI:: ~drgeoTDI()
 
 void drgeoTDI:: newTab()
 {
+	static gint tabCount = 1;
 	//Creates Drawing Area
-    drawAreaPointer = new drgeoDrawingArea();
-    drawArea = drawAreaPointer->createDrawArea();
+	drawAreaPointer = new drgeoDrawingArea();
+	drawArea = drawAreaPointer->createDrawArea();
 
-    //Creates Label
-    label = gtk_label_new ("Document");
+	if(!newFlag)
+	{
+		//Creates Notebook, i.e TDI
+		tdiView = GTK_NOTEBOOK(gtk_notebook_new());
+		gtk_notebook_set_tab_pos (tdiView, GTK_POS_TOP);
 
-    //Creates Notebook, i.e TDI
-    tdiView = GTK_NOTEBOOK(gtk_notebook_new());
-    gtk_notebook_set_tab_pos (tdiView, GTK_POS_TOP);
+		gtk_box_pack_start(box, GTK_WIDGET(tdiView), TRUE, TRUE, 0);
+		gtk_box_reorder_child (box, GTK_WIDGET(tdiView), 1);
+		gtk_widget_show (GTK_WIDGET(tdiView));
 
-    gtk_notebook_append_page (tdiView, drawArea, label);
-
-    gtk_box_pack_start(box, GTK_WIDGET(tdiView), TRUE, TRUE, 0);
-    gtk_box_reorder_child (box, GTK_WIDGET(tdiView), 1);
-    gtk_widget_show (GTK_WIDGET(tdiView));
+		newFlag = true;
+	}
+	//Creates Label
+	label = gtk_label_new (g_strdup_printf (("Document %d"), tabCount++));
+	//Get Current Page
+	cPage = gtk_notebook_get_current_page (tdiView);
+	//Insert Page
+	gtk_notebook_insert_page (tdiView, drawArea, label, cPage + 1);
+	gtk_notebook_next_page (GTK_NOTEBOOK (tdiView));
 }
 
 void on_new(GtkWidget *widget, gpointer user_data)

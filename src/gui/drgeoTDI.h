@@ -38,6 +38,9 @@ class drgeoTDI
 		GtkWidget *drawArea;
 		GtkWidget *label;
 		drgeoDrawingArea *drawAreaPointer;
+
+		bool newFlag;
+		gint cPage;
 };
 
 /**Signal handlers**/
