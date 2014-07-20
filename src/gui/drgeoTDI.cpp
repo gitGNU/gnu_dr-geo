@@ -34,8 +34,10 @@ drgeoTDI:: drgeoTDI()
 	gtk_builder_connect_signals (builder, &error);
 	mainWindow = GTK_WIDGET (gtk_builder_get_object(builder, "drgeoMainWindow"));
 	box = GTK_BOX (gtk_builder_get_object(builder, "box1"));
+	closeMenuItem = GTK_WIDGET (gtk_builder_get_object(builder, "close"));
 
-	gtk_widget_show_all (mainWindow); 
+	gtk_widget_show_all (mainWindow);
+	setSensitivity();
 }
 
 drgeoTDI:: ~drgeoTDI()
@@ -70,9 +72,26 @@ void drgeoTDI:: newTab()
 	gtk_notebook_next_page (GTK_NOTEBOOK (tdiView));
 }
 
+void drgeoTDI:: closeTab()
+{
+	//Get Current Page
+	cPage = gtk_notebook_get_current_page (tdiView);
+	//Remove Page
+	gtk_notebook_remove_page (tdiView, cPage);
+}
+
+void drgeoTDI:: setSensitivity()
+{
+	if(!newFlag)
+		gtk_widget_set_sensitive (closeMenuItem, FALSE);
+	else
+		gtk_widget_set_sensitive (closeMenuItem, TRUE);
+}
+
 void on_new(GtkWidget *widget, gpointer user_data)
 {
 	tdiPointer->newTab();
+	tdiPointer->setSensitivity();
 	std::cout << "New menu item was selected." << std::endl;
 }
 
@@ -89,6 +108,12 @@ void on_save(GtkWidget *widget, gpointer user_data)
 void on_save_as(GtkWidget *widget, gpointer user_data)
 {
 	std::cout << "Save_As menu item was selected." << std::endl;
+}
+
+void on_close(GtkWidget *widget, gpointer user_data)
+{
+    tdiPointer->closeTab();
+    std::cout << "Close menu item was selected." << std::endl;
 }
 
 void on_quit(GtkWidget *widget, gpointer user_data)

@@ -30,6 +30,8 @@ class drgeoTDI
 		virtual ~drgeoTDI();
 
 		void newTab();
+		void closeTab();
+		void setSensitivity();
 
 	protected:
 		GtkWidget *mainWindow;
@@ -38,6 +40,9 @@ class drgeoTDI
 		GtkWidget *drawArea;
 		GtkWidget *label;
 		drgeoDrawingArea *drawAreaPointer;
+
+		/**Menu Items**/
+		GtkWidget *closeMenuItem;
 
 		bool newFlag;
 		gint cPage;
@@ -51,6 +56,7 @@ extern "C"
 	void on_open(GtkWidget *widget, gpointer user_data);
 	void on_save(GtkWidget *widget, gpointer user_data);
 	void on_save_as(GtkWidget *widget, gpointer user_data);
+        void on_close(GtkWidget *widget, gpointer user_data);
 	void on_quit(GtkWidget *widget, gpointer user_data);
 	void on_undo(GtkWidget *widget, gpointer user_data);
 	void on_redo(GtkWidget *widget, gpointer user_data);
