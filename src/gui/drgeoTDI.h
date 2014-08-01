@@ -41,22 +41,22 @@ class drgeoTDI
 		GtkWidget *label;
 		drgeoDrawingArea *drawAreaPointer;
 
-		/**Menu Items**/
+		/* Menu Items */
 		GtkWidget *closeMenuItem;
 
 		bool newFlag;
 		gint cPage;
 };
 
-/**Signal handlers**/
-//Define C-style functions as callbacks
+/* Signal handlers */
+/* Define C-style functions as callbacks */
 extern "C" 
 {
 	void on_new (GtkWidget *widget, gpointer user_data);
 	void on_open (GtkWidget *widget, gpointer user_data);
 	void on_save (GtkWidget *widget, gpointer user_data);
 	void on_save_as (GtkWidget *widget, gpointer user_data);
-    void on_close (GtkWidget *widget, gpointer user_data);
+	void on_close (GtkWidget *widget, gpointer user_data);
 	void on_quit (GtkWidget *widget, gpointer user_data);
 	void on_undo (GtkWidget *widget, gpointer user_data);
 	void on_redo (GtkWidget *widget, gpointer user_data);
