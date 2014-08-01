@@ -18,7 +18,9 @@ libgeo_a_SOURCES = \
 	drgeoTDI.cpp \
 	drgeoTDI.h \
 	drgeoDrawingArea.cpp \
-	drgeoDrawingArea.h
+	drgeoDrawingArea.h \
+	drgeoPainter.cpp \
+	drgeoPainter.h
 
 CLEANFILES = $(BUILT_SOURCES) 
 

@@ -21,6 +21,11 @@
 #define DRGEODRAWINGAREA_H
 
 #include <gtk/gtk.h>
+#include <iostream>
+#include "drgeoPainter.h"
+
+static cairo_surface_t *surface = NULL;
+extern gdouble x,y;
 
 class drgeoDrawingArea
 {
@@ -31,7 +36,17 @@ class drgeoDrawingArea
 		GtkWidget *drawingArea;
 		GtkWidget *createDrawArea ();
 
+		void drawPoint();
 };
 
+extern "C"
+{
+void set_surface (void);
+void paint_point (GtkWidget *widget, gdouble x, gdouble y);	
+gboolean drgeo_configure_event (GtkWidget *widget, GdkEventConfigure *event, 
+                                                        gpointer user_data);
+gboolean drgeo_draw_event (GtkWidget *widget, cairo_t *cr,  gpointer user_data);
+gboolean drgeo_clicked_event (GtkWidget *widget, GdkEventButton *event, gpointer user_data);
+}
 
 #endif /* DRGEODRAWINGAREA_H */

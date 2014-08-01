@@ -19,6 +19,7 @@
 #include <iostream>
 
 extern drgeoTDI *tdiPointer;
+drgeoDrawingArea *drawAreaPointer;
 
 drgeoTDI::drgeoTDI ()
 {	
@@ -165,6 +166,13 @@ void
 on_delete (GtkWidget *widget, gpointer user_data)
 {
 	std::cout << "Delete menu item was selected." << std::endl;
+}
+
+void 
+on_point (GtkWidget *widget, gpointer user_data)
+{
+    drawAreaPointer->drawPoint();
+	std::cout << "Point menu item was selected." << std::endl;
 }
 
 void 
