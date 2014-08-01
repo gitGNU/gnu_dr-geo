@@ -25,11 +25,11 @@
 class drgeoDrawingArea
 {
 	public:
-		drgeoDrawingArea();
-		virtual ~drgeoDrawingArea();
+		drgeoDrawingArea ();
+		virtual ~drgeoDrawingArea ();
 
 		GtkWidget *drawingArea;
-		GtkWidget *createDrawArea();
+		GtkWidget *createDrawArea ();
 
 };
 

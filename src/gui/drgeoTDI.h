@@ -26,12 +26,12 @@
 class drgeoTDI
 {
 	public:
-		drgeoTDI();
-		virtual ~drgeoTDI();
+		drgeoTDI ();
+		virtual ~drgeoTDI ();
 
-		void newTab();
-		void closeTab();
-		void setSensitivity();
+		void newTab ();
+		void closeTab ();
+		void setSensitivity ();
 
 	protected:
 		GtkWidget *mainWindow;
@@ -52,19 +52,19 @@ class drgeoTDI
 //Define C-style functions as callbacks
 extern "C" 
 {
-	void on_new(GtkWidget *widget, gpointer user_data);
-	void on_open(GtkWidget *widget, gpointer user_data);
-	void on_save(GtkWidget *widget, gpointer user_data);
-	void on_save_as(GtkWidget *widget, gpointer user_data);
-        void on_close(GtkWidget *widget, gpointer user_data);
-	void on_quit(GtkWidget *widget, gpointer user_data);
-	void on_undo(GtkWidget *widget, gpointer user_data);
-	void on_redo(GtkWidget *widget, gpointer user_data);
-	void on_cut(GtkWidget *widget, gpointer user_data);
-	void on_copy(GtkWidget *widget, gpointer user_data);
-	void on_paste(GtkWidget *widget, gpointer user_data);
-	void on_delete(GtkWidget *widget, gpointer user_data);
-	void on_about(GtkWidget *widget, gpointer user_data);	
+	void on_new (GtkWidget *widget, gpointer user_data);
+	void on_open (GtkWidget *widget, gpointer user_data);
+	void on_save (GtkWidget *widget, gpointer user_data);
+	void on_save_as (GtkWidget *widget, gpointer user_data);
+    void on_close (GtkWidget *widget, gpointer user_data);
+	void on_quit (GtkWidget *widget, gpointer user_data);
+	void on_undo (GtkWidget *widget, gpointer user_data);
+	void on_redo (GtkWidget *widget, gpointer user_data);
+	void on_cut (GtkWidget *widget, gpointer user_data);
+	void on_copy (GtkWidget *widget, gpointer user_data);
+	void on_paste (GtkWidget *widget, gpointer user_data);
+	void on_delete (GtkWidget *widget, gpointer user_data);
+	void on_about (GtkWidget *widget, gpointer user_data);	
 }
 
 #endif /* DRGEOTDI_H */

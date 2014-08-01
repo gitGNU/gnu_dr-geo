@@ -17,17 +17,18 @@
 
 #include "drgeoDrawingArea.h"
 
-drgeoDrawingArea:: drgeoDrawingArea()
+drgeoDrawingArea::drgeoDrawingArea ()
 {
-	drawingArea = gtk_drawing_area_new();
+	drawingArea = gtk_drawing_area_new ();
 	gtk_widget_show (drawingArea);
 }
 
-drgeoDrawingArea:: ~drgeoDrawingArea()
+drgeoDrawingArea::~drgeoDrawingArea ()
 {
 }
 
-GtkWidget* drgeoDrawingArea::createDrawArea()
+GtkWidget* 
+drgeoDrawingArea::createDrawArea ()
 {
 	return drawingArea;
 }
