@@ -71,7 +71,7 @@ paint_point (GtkWidget *widget, gdouble x, gdouble y)
   painterPointer->drgeo_cairo_point (cr, surface, x, y);
 
   /* Now invalidate the affected region of the drawing area. */
-  gtk_widget_queue_draw_area (widget, x - 3, y - 3, 6, 6);
+  gtk_widget_queue_draw_area (widget, x - 3, y - 3, 7, 7);
 }
 
 gboolean

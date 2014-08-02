@@ -39,8 +39,12 @@ drgeoPainter::drgeo_cairo_point (cairo_t *cr, cairo_surface_t *surface, gdouble 
   /* Paint to the surface, where we store our state */
   cr = cairo_create (surface);
 
-  cairo_rectangle (cr, x - 3, y - 3, 6, 6);
-  cairo_fill (cr);
+  int w = 6; /*width of the line */
+  cairo_set_line_width (cr, w);
+  cairo_set_line_cap  (cr, CAIRO_LINE_CAP_ROUND); /* Round dot*/
+  cairo_move_to (cr, x, y); 
+  cairo_line_to (cr, x, y); /* a very short line is a dot */
+  cairo_stroke (cr);
 
   cairo_destroy (cr);   
 }
