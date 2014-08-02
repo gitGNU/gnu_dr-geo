@@ -68,7 +68,7 @@ void
 paint_point (GtkWidget *widget, gdouble x, gdouble y)
 {
   cairo_t *cr;
-  painterPointer->cairo_point (cr, surface, x, y);
+  painterPointer->drgeo_cairo_point (cr, surface, x, y);
 
   /* Now invalidate the affected region of the drawing area. */
   gtk_widget_queue_draw_area (widget, x - 3, y - 3, 6, 6);
@@ -95,7 +95,7 @@ drgeo_configure_event (GtkWidget *widget, GdkEventConfigure *event, gpointer use
 gboolean 
 drgeo_draw_event (GtkWidget *widget, cairo_t *cr,  gpointer user_data)
 {      
-  painterPointer->cairo_background (cr, surface);
+  painterPointer->drgeo_cairo_background (cr, surface);
   return FALSE;
 }
 

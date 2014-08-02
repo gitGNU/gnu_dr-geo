@@ -27,14 +27,14 @@ drgeoPainter::~drgeoPainter ()
 }
 
 void 
-drgeoPainter::cairo_background (cairo_t *cr, cairo_surface_t *surface)
+drgeoPainter::drgeo_cairo_background (cairo_t *cr, cairo_surface_t *surface)
 {
   cairo_set_source_surface (cr, surface, 0, 0);
   cairo_paint(cr);    
 }
 
 void 
-drgeoPainter::cairo_point (cairo_t *cr, cairo_surface_t *surface, gdouble x, gdouble y)
+drgeoPainter::drgeo_cairo_point (cairo_t *cr, cairo_surface_t *surface, gdouble x, gdouble y)
 {
   /* Paint to the surface, where we store our state */
   cr = cairo_create (surface);
@@ -42,5 +42,41 @@ drgeoPainter::cairo_point (cairo_t *cr, cairo_surface_t *surface, gdouble x, gdo
   cairo_rectangle (cr, x - 3, y - 3, 6, 6);
   cairo_fill (cr);
 
+  cairo_destroy (cr);   
+}
+
+void 
+drgeoPainter::drgeo_cairo_line (cairo_t *cr, cairo_surface_t *surface, gdouble x1, gdouble y1, 
+                                        gdouble x2, gdouble y2)
+{
+  cr = cairo_create (surface);
+  
+  cairo_move_to (cr, x1, y1); /* start point of line */
+  cairo_line_to (cr, x2, y2); /* end point of line */
+
+  cairo_stroke (cr);
+  cairo_destroy (cr);   
+}
+
+void 
+drgeoPainter::drgeo_cairo_arc (cairo_t *cr, cairo_surface_t *surface, gdouble x, gdouble y, gdouble r, 
+                                       gdouble start, gdouble end)
+{
+  cr = cairo_create (surface);
+  
+  cairo_arc (cr, x, y, r, start, end); 
+  
+  cairo_stroke (cr);
+  cairo_destroy (cr);   
+}
+
+void 
+drgeoPainter::drgeo_cairo_circle (cairo_t *cr, cairo_surface_t *surface, gdouble x, gdouble y, gdouble r)
+{
+  cr = cairo_create (surface);
+  
+  cairo_arc (cr, x, y, r, 0, 2 * M_PI); /* draw cirle through arc */
+  
+  cairo_stroke (cr);
   cairo_destroy (cr);   
 }
