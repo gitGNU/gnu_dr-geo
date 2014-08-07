@@ -38,4 +38,5 @@ uninstall-local:
 
 
 SUBDIRS = \
-	gui
+	gui \
+	kernel

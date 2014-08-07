@@ -34,5 +34,6 @@ Makefile
 src/Makefile
 po/Makefile.in
 src/gui/Makefile
+src/kernel/Makefile
 src/gui/ui/Makefile
 ])

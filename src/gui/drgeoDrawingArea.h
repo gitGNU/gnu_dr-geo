@@ -22,7 +22,9 @@
 
 #include <gtk/gtk.h>
 #include <iostream>
+#include <vector>
 #include "drgeoPainter.h"
+#include "../kernel/drgeoContainer.h"
 
 static cairo_surface_t *surface = NULL;
 extern gdouble x,y;
