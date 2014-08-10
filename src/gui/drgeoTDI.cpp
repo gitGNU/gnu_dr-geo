@@ -171,7 +171,14 @@ on_delete (GtkWidget *widget, gpointer user_data)
 void 
 on_point (GtkWidget *widget, gpointer user_data)
 {
-    drawAreaPointer->drawPoint();
+    drawAreaPointer->drawEntity (1);
+	std::cout << "Point menu item was selected." << std::endl;
+}
+
+void 
+on_line (GtkWidget *widget, gpointer user_data)
+{
+    drawAreaPointer->drawEntity (2);
 	std::cout << "Point menu item was selected." << std::endl;
 }
 

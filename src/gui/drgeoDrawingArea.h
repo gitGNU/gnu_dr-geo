@@ -38,13 +38,14 @@ class drgeoDrawingArea
 		GtkWidget *drawingArea;
 		GtkWidget *createDrawArea ();
 
-		void drawPoint();
+		void drawEntity (int);
 };
 
 extern "C"
 {
 void set_surface (void);
-void paint_point (GtkWidget *widget, gdouble x, gdouble y);	
+void paint_point (GtkWidget *widget, gdouble x, gdouble y);
+void paint_line (GtkWidget *widget, gdouble startX, gdouble startY, gdouble endX, gdouble endY);	
 gboolean drgeo_configure_event (GtkWidget *widget, GdkEventConfigure *event, 
                                                         gpointer user_data);
 gboolean drgeo_draw_event (GtkWidget *widget, cairo_t *cr,  gpointer user_data);

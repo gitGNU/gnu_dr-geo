@@ -18,7 +18,12 @@
 #include "drgeoDrawingArea.h"
 
 drgeoPainter *painterPointer;
+gdouble x, y, startX, startY, endX, endY;
+int entity;
 std::vector<drgeoContainer> point;
+bool mFirstClick = false;
+bool mSecondClick = false;
+bool mPaintFlag = false;
 
 drgeoDrawingArea::drgeoDrawingArea ()
 {
@@ -45,8 +50,10 @@ drgeoDrawingArea::createDrawArea ()
 }
 
 void 
-drgeoDrawingArea::drawPoint ()
+drgeoDrawingArea::drawEntity (int x)
 {
+	entity = x;
+	mFirstClick = true;
 	g_signal_connect (drawingArea, "button-press-event", 
 	                  G_CALLBACK (drgeo_clicked_event), NULL);
 	std::cout<<"Point Drawn"<<std::endl;
@@ -80,6 +87,16 @@ paint_point (GtkWidget *widget, gdouble x, gdouble y)
 
 	/* Now invalidate the affected region of the drawing area. */
 	gtk_widget_queue_draw_area (widget, x - 3, y - 3, 7, 7);
+}
+
+void
+paint_line (GtkWidget *widget, gdouble startX, gdouble startY, gdouble endX, gdouble endY)
+{
+	cairo_t *cr;
+	painterPointer->drgeo_cairo_line (cr, surface, startX, startY, endX, endY);
+
+	/* Invalidate the complete widget for now*/
+	gtk_widget_queue_draw (widget);
 }
 
 gboolean
@@ -116,9 +133,31 @@ drgeo_clicked_event (GtkWidget *widget, GdkEventButton *event, gpointer user_dat
 
 	if (event->button == 1)
 	{
-		paint_point (widget, event->x, event->y);
-	}
+		if (entity == 1) /* Point entity is selected */
+		{
+			paint_point (widget, event->x, event->y);
+		}
+		if (entity == 2) /* Line entity is selected */
+		{
+			if (mFirstClick)
+			{
+				startX = event->x;
+				startY = event->y;
+				std::cout<<"Start: "<<startX<<" , "<<startY<<std::endl;
+				mFirstClick = false;
+				mSecondClick = true;
+			}
+			else if (!mFirstClick && mSecondClick)
+			{
+				endX = event->x;
+				endY = event->y;
+				std::cout<<"End: "<<endX<<" , "<<endY<<std::endl;
+				mSecondClick = false;
+				paint_line (widget, startX, startY, endX, endY);
+			}
 
+		}
+	}
 	/* We've handled the event, stop processing */
 	return TRUE;
 }
