@@ -179,7 +179,7 @@ void
 on_line (GtkWidget *widget, gpointer user_data)
 {
     drawAreaPointer->drawEntity (2);
-	std::cout << "Point menu item was selected." << std::endl;
+	std::cout << "Line menu item was selected." << std::endl;
 }
 
 void 

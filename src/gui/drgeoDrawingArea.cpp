@@ -18,18 +18,26 @@
 #include "drgeoDrawingArea.h"
 
 drgeoPainter *painterPointer;
-gdouble x, y, startX, startY, endX, endY;
+gdouble x, y, startX, startY, endX, endY, setX, setY;
 int entity;
 std::vector<drgeoContainer> point;
+std::vector<drgeoContainer>::iterator it;
+GdkWindow* win;
+GdkCursor *cur;
+
+/* Flags*/
 bool mFirstClick = false;
 bool mSecondClick = false;
 bool mPaintFlag = false;
+bool mExist = false;
 
 drgeoDrawingArea::drgeoDrawingArea ()
 {
 	drawingArea = gtk_drawing_area_new ();
 	gtk_widget_set_events (drawingArea, gtk_widget_get_events (drawingArea)
-	                       | GDK_BUTTON_PRESS_MASK);
+	                       | GDK_BUTTON_PRESS_MASK
+	                       | GDK_POINTER_MOTION_MASK
+                           | GDK_POINTER_MOTION_HINT_MASK);
 
 	/* Connect Signals */
 	g_signal_connect (drawingArea, "draw", G_CALLBACK (drgeo_draw_event), NULL); 
@@ -56,7 +64,11 @@ drgeoDrawingArea::drawEntity (int x)
 	mFirstClick = true;
 	g_signal_connect (drawingArea, "button-press-event", 
 	                  G_CALLBACK (drgeo_clicked_event), NULL);
-	std::cout<<"Point Drawn"<<std::endl;
+	if (entity == 2)
+	{
+		g_signal_connect (drawingArea, "motion-notify-event",
+		                  G_CALLBACK (drgeo_motion_event), NULL);
+	}    
 }
 
 void 
@@ -95,6 +107,9 @@ paint_line (GtkWidget *widget, gdouble startX, gdouble startY, gdouble endX, gdo
 	cairo_t *cr;
 	painterPointer->drgeo_cairo_line (cr, surface, startX, startY, endX, endY);
 
+	g_signal_handlers_disconnect_by_func (widget, (gpointer)drgeo_motion_event, NULL);
+	gdk_window_set_cursor( win, NULL );
+
 	/* Invalidate the complete widget for now*/
 	gtk_widget_queue_draw (widget);
 }
@@ -112,6 +127,10 @@ drgeo_configure_event (GtkWidget *widget, GdkEventConfigure *event, gpointer use
 
 	/* Initialize the surface to white */
 	set_surface ();
+
+    /* Initialize gdkwindow and cursor */
+	win = gtk_widget_get_window (widget);
+    cur = gdk_cursor_new (GDK_PENCIL);
 
 	/* We've handled the configure event, no need for further processing. */
 	return TRUE;
@@ -139,25 +158,59 @@ drgeo_clicked_event (GtkWidget *widget, GdkEventButton *event, gpointer user_dat
 		}
 		if (entity == 2) /* Line entity is selected */
 		{
-			if (mFirstClick)
+			if (mFirstClick && mExist)
 			{
-				startX = event->x;
-				startY = event->y;
+				startX = setX;
+				startY = setY;
 				std::cout<<"Start: "<<startX<<" , "<<startY<<std::endl;
 				mFirstClick = false;
 				mSecondClick = true;
+				mExist = false;
 			}
-			else if (!mFirstClick && mSecondClick)
+			else if (!mFirstClick && mSecondClick && mExist)
 			{
-				endX = event->x;
-				endY = event->y;
+				endX = setX;
+				endY = setY;
 				std::cout<<"End: "<<endX<<" , "<<endY<<std::endl;
 				mSecondClick = false;
+				mExist = false;
 				paint_line (widget, startX, startY, endX, endY);
 			}
-
 		}
 	}
 	/* We've handled the event, stop processing */
 	return TRUE;
+}
+
+gboolean 
+drgeo_motion_event(GtkWidget *widget, GdkEventMotion *event, gpointer user_data)
+{      
+	check_coord (event->x, event->y);
+
+	return FALSE;
+}
+
+/* Checks if the point already exists */
+void
+check_coord (gdouble dx, gdouble dy)
+{
+	for (it = point.begin(); it != point.end(); ++it)
+	{ 
+		gdouble it_x, it_y;
+		it_x = it->getValueX();
+		it_y = it->getValueY();
+
+		if( (int (it_x-3) <= int (dx) ) && ( int (dx) <= int (it_x+3) ) 
+		   && ( int (it_y-3) <= int (dy) ) && ( int (dy) <= int (it_y+3) ) )
+		{
+			setX = it_x;
+			setY = it_y;
+			mExist = true;
+			gdk_window_set_cursor( win, cur );
+
+			std::cout<<"match found"<<std::endl;
+		}
+		else
+			gdk_window_set_cursor( win, NULL );
+	}
 }

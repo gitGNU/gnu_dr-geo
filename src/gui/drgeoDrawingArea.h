@@ -44,12 +44,14 @@ class drgeoDrawingArea
 extern "C"
 {
 void set_surface (void);
+void check_coord (gdouble dx, gdouble dy);
 void paint_point (GtkWidget *widget, gdouble x, gdouble y);
 void paint_line (GtkWidget *widget, gdouble startX, gdouble startY, gdouble endX, gdouble endY);	
 gboolean drgeo_configure_event (GtkWidget *widget, GdkEventConfigure *event, 
                                                         gpointer user_data);
 gboolean drgeo_draw_event (GtkWidget *widget, cairo_t *cr,  gpointer user_data);
 gboolean drgeo_clicked_event (GtkWidget *widget, GdkEventButton *event, gpointer user_data);
+gboolean drgeo_motion_event(GtkWidget *widget, GdkEventMotion *event, gpointer user_data); 
 }
 
 #endif /* DRGEODRAWINGAREA_H */
