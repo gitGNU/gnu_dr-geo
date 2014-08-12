@@ -64,7 +64,7 @@ drgeoDrawingArea::drawEntity (int x)
 	mFirstClick = true;
 	g_signal_connect (drawingArea, "button-press-event", 
 	                  G_CALLBACK (drgeo_clicked_event), NULL);
-	if (entity == 2)
+	if (entity > 1)
 	{
 		g_signal_connect (drawingArea, "motion-notify-event",
 		                  G_CALLBACK (drgeo_motion_event), NULL);
@@ -106,6 +106,22 @@ paint_line (GtkWidget *widget, gdouble startX, gdouble startY, gdouble endX, gdo
 {
 	cairo_t *cr;
 	painterPointer->drgeo_cairo_line (cr, surface, startX, startY, endX, endY);
+
+	g_signal_handlers_disconnect_by_func (widget, (gpointer)drgeo_motion_event, NULL);
+	gdk_window_set_cursor( win, NULL );
+
+	/* Invalidate the complete widget for now*/
+	gtk_widget_queue_draw (widget);
+}
+
+void
+paint_circle (GtkWidget *widget, gdouble startX, gdouble startY, gdouble endX, gdouble endY)
+{
+	cairo_t *cr;
+
+	gdouble radius = sqrt(pow((endX-startX), 2) + pow((endY-startY), 2));
+
+	painterPointer->drgeo_cairo_circle (cr, surface, startX, startY, radius);
 
 	g_signal_handlers_disconnect_by_func (widget, (gpointer)drgeo_motion_event, NULL);
 	gdk_window_set_cursor( win, NULL );
@@ -156,7 +172,7 @@ drgeo_clicked_event (GtkWidget *widget, GdkEventButton *event, gpointer user_dat
 		{
 			paint_point (widget, event->x, event->y);
 		}
-		if (entity == 2) /* Line entity is selected */
+		if (entity > 1) /* Line entity is selected */
 		{
 			if (mFirstClick && mExist)
 			{
@@ -174,7 +190,10 @@ drgeo_clicked_event (GtkWidget *widget, GdkEventButton *event, gpointer user_dat
 				std::cout<<"End: "<<endX<<" , "<<endY<<std::endl;
 				mSecondClick = false;
 				mExist = false;
-				paint_line (widget, startX, startY, endX, endY);
+				if (entity == 2)
+					paint_line (widget, startX, startY, endX, endY);
+				else if (entity == 3)
+					paint_circle (widget, startX, startY, endX, endY);
 			}
 		}
 	}

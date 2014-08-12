@@ -65,6 +65,7 @@ extern "C"
 	void on_delete (GtkWidget *widget, gpointer user_data);
 	void on_point (GtkWidget *widget, gpointer user_data);
 	void on_line (GtkWidget *widget, gpointer user_data);
+	void on_circle (GtkWidget *widget, gpointer user_data);
 	void on_about (GtkWidget *widget, gpointer user_data);	
 }
 
