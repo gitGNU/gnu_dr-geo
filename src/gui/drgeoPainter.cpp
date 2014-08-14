@@ -42,6 +42,7 @@ drgeoPainter::drgeo_cairo_point (cairo_t *cr, cairo_surface_t *surface, gdouble 
   int w = 6; /*width of the line */
   cairo_set_line_width (cr, w);
   cairo_set_line_cap  (cr, CAIRO_LINE_CAP_ROUND); /* Round dot*/
+  cairo_set_source_rgb(cr, 0.69, 0.19, 0); /* Red Colour */
   cairo_move_to (cr, x, y); 
   cairo_line_to (cr, x, y); /* a very short line is a dot */
   cairo_stroke (cr);
