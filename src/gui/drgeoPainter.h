@@ -32,8 +32,10 @@ class drgeoPainter
 		
 		void drgeo_cairo_background (cairo_t *cr, cairo_surface_t *surface);
 		void drgeo_cairo_point (cairo_t *cr, cairo_surface_t *surface, gdouble x, gdouble y);
-		void drgeo_cairo_line (cairo_t *cr, cairo_surface_t *surface, gdouble x1, gdouble y1, gdouble x2, gdouble y2);
-		void drgeo_cairo_arc (cairo_t *cr, cairo_surface_t *surface, gdouble x, gdouble y, gdouble r, gdouble start, gdouble end);
+		void drgeo_cairo_line (cairo_t *cr, cairo_surface_t *surface, gdouble x1, gdouble y1, 
+		                       				gdouble x2, gdouble y2);
+		void drgeo_cairo_arc (cairo_t *cr, cairo_surface_t *surface, gdouble x, gdouble y, gdouble r, 
+		                      				gdouble start, gdouble end, bool direction);
 		void drgeo_cairo_circle (cairo_t *cr, cairo_surface_t *surface, gdouble x, gdouble y, gdouble r);
 		
 };

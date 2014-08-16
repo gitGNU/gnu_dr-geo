@@ -64,19 +64,22 @@ drgeoPainter::drgeo_cairo_line (cairo_t *cr, cairo_surface_t *surface, gdouble x
 }
 
 void 
-drgeoPainter::drgeo_cairo_arc (cairo_t *cr, cairo_surface_t *surface, gdouble x, gdouble y, gdouble r, 
-                                       gdouble start, gdouble end)
+drgeoPainter::drgeo_cairo_arc (cairo_t *cr, cairo_surface_t *surface, gdouble x, gdouble y, 
+                               		gdouble r, gdouble start, gdouble end, bool direction)
 {
   cr = cairo_create (surface);
-  
-  cairo_arc (cr, x, y, r, start, end); 
+  if(!direction)
+  cairo_arc(cr, x, y, r, start, end);
+  else
+  cairo_arc_negative(cr, x, y, r, start, end); 
   
   cairo_stroke (cr);
   cairo_destroy (cr);   
 }
 
 void 
-drgeoPainter::drgeo_cairo_circle (cairo_t *cr, cairo_surface_t *surface, gdouble x, gdouble y, gdouble r)
+drgeoPainter::drgeo_cairo_circle (cairo_t *cr, cairo_surface_t *surface, gdouble x, gdouble y, 
+                                  					gdouble r)
 {
   cr = cairo_create (surface);
   

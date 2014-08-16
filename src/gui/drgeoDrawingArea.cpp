@@ -18,7 +18,7 @@
 #include "drgeoDrawingArea.h"
 
 drgeoPainter *painterPointer;
-gdouble x, y, startX, startY, endX, endY, setX, setY;
+gdouble x, y, startX, startY, endX, endY, setX, setY, thirdX, thirdY;
 int entity;
 std::vector<drgeoContainer> point;
 std::vector<drgeoContainer>::iterator it;
@@ -28,6 +28,7 @@ GdkCursor *cur;
 /* Flags*/
 bool mFirstClick = false;
 bool mSecondClick = false;
+bool mThirdClick = false;
 bool mPaintFlag = false;
 bool mExist = false;
 
@@ -37,7 +38,7 @@ drgeoDrawingArea::drgeoDrawingArea ()
 	gtk_widget_set_events (drawingArea, gtk_widget_get_events (drawingArea)
 	                       | GDK_BUTTON_PRESS_MASK
 	                       | GDK_POINTER_MOTION_MASK
-                           | GDK_POINTER_MOTION_HINT_MASK);
+	                       | GDK_POINTER_MOTION_HINT_MASK);
 
 	/* Connect Signals */
 	g_signal_connect (drawingArea, "draw", G_CALLBACK (drgeo_draw_event), NULL); 
@@ -130,6 +131,74 @@ paint_circle (GtkWidget *widget, gdouble startX, gdouble startY, gdouble endX, g
 	gtk_widget_queue_draw (widget);
 }
 
+void paint_arc (GtkWidget *widget, gdouble startX, gdouble startY, gdouble midX, gdouble midY,
+                gdouble endX, gdouble endY)
+{
+	cairo_t *cr;
+
+	gdouble cx, cy, radius, startA, endA, x, y, m, x4, y4;
+	gdouble mid12x, mid12y,mid23x,mid23y,slope12,slope23,slopePerp12,slopePerp23, co1,co2;
+	bool direction = false;
+
+	mid12x = ((startX+midX)/2);
+	mid12y = ((startY+midY)/2);
+
+	mid23x = ((midX+endX)/2);
+	mid23y = ((midY+endY)/2);
+
+	slope12 = (midY-startY)/(midX-startX); /* Slope of line between point 1 and 2 */
+	slope23 = (endY-midY)/(endX-midX);  /* Slope of line between point 2 and 3 */
+
+	slopePerp12 = -(1/slope12);  /* Slope of perpendicular 1 */
+	slopePerp23 = -(1/slope23);  /* Slope of perpendicular 1 */
+
+	co1 = mid12y -(slopePerp12*mid12x);  /* Constant 1 */
+	co2 = mid23y -(slopePerp23*mid23x);  /* Constant 2 */
+
+	cx = (co1 - co2)/(slopePerp23 - slopePerp12); /* X-coordinate of Center point */
+	cy = (slopePerp12 * cx) + co1;  /* Y-coordinate of Center point */
+
+	radius = sqrt(pow((cx-startX), 2) + pow((cy-startY), 2));  /* Radius of an Arc */
+
+	startA = atan2((startY-cy),(startX-cx));  /* Starting Angle */
+	endA = atan2 ((endY-cy),(endX-cx)) ;  /* Ending Angle */
+
+	x=midX-startX;
+	y4=startY-endY;
+	x4=startX-endX;
+	m=(((x)*(y4))/(x4))+startY;
+
+	if(midY<m)
+	{
+		if(startX<endX)
+		{
+			direction = false;
+		}
+		else if(startX>endX)
+		{
+			direction = true;
+		}
+	}
+	else if(midY>m)
+	{
+		if (startX<endX)
+		{
+			direction = true;
+		}
+		else if (startX>endX)
+		{
+			direction = false;
+		}
+	}
+
+	painterPointer->drgeo_cairo_arc (cr, surface, cx, cy, radius, startA, endA, direction);
+
+	g_signal_handlers_disconnect_by_func (widget, (gpointer)drgeo_motion_event, NULL);
+	gdk_window_set_cursor( win, NULL );
+	/* Now invalidate the affected region of the drawing area. */
+	gtk_widget_queue_draw (widget);
+}
+
 gboolean
 drgeo_configure_event (GtkWidget *widget, GdkEventConfigure *event, gpointer user_data)
 {
@@ -144,9 +213,9 @@ drgeo_configure_event (GtkWidget *widget, GdkEventConfigure *event, gpointer use
 	/* Initialize the surface to white */
 	set_surface ();
 
-    /* Initialize gdkwindow and cursor */
+	/* Initialize gdkwindow and cursor */
 	win = gtk_widget_get_window (widget);
-    cur = gdk_cursor_new (GDK_PENCIL);
+	cur = gdk_cursor_new (GDK_PENCIL);
 
 	/* We've handled the configure event, no need for further processing. */
 	return TRUE;
@@ -178,7 +247,6 @@ drgeo_clicked_event (GtkWidget *widget, GdkEventButton *event, gpointer user_dat
 			{
 				startX = setX;
 				startY = setY;
-				std::cout<<"Start: "<<startX<<" , "<<startY<<std::endl;
 				mFirstClick = false;
 				mSecondClick = true;
 				mExist = false;
@@ -187,13 +255,22 @@ drgeo_clicked_event (GtkWidget *widget, GdkEventButton *event, gpointer user_dat
 			{
 				endX = setX;
 				endY = setY;
-				std::cout<<"End: "<<endX<<" , "<<endY<<std::endl;
 				mSecondClick = false;
 				mExist = false;
 				if (entity == 2)
 					paint_line (widget, startX, startY, endX, endY);
 				else if (entity == 3)
 					paint_circle (widget, startX, startY, endX, endY);
+				else if(entity == 4)
+					mThirdClick = true;
+			}
+			else if(!mFirstClick && !mSecondClick && mThirdClick && mExist)
+			{
+				thirdX = setX;
+				thirdY = setY;
+				mThirdClick = false;
+				mExist = false;
+				paint_arc (widget, startX, startY, endX, endY, thirdX, thirdY);
 			}
 		}
 	}

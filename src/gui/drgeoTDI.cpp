@@ -190,6 +190,13 @@ on_circle (GtkWidget *widget, gpointer user_data)
 }
 
 void 
+on_arc (GtkWidget *widget, gpointer user_data)
+{
+    drawAreaPointer->drawEntity (4);
+	std::cout << "Arc menu item was selected." << std::endl;
+}
+
+void 
 on_about (GtkWidget *widget, gpointer user_data)
 {
 	std::cout << "About menu item was selected." << std::endl;

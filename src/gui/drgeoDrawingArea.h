@@ -48,6 +48,8 @@ void check_coord (gdouble dx, gdouble dy);
 void paint_point (GtkWidget *widget, gdouble x, gdouble y);
 void paint_line (GtkWidget *widget, gdouble startX, gdouble startY, gdouble endX, gdouble endY);
 void paint_circle (GtkWidget *widget, gdouble startX, gdouble startY, gdouble endX, gdouble endY);
+void paint_arc (GtkWidget *widget, gdouble startX, gdouble startY, gdouble midX, gdouble midY,
+                		gdouble endX, gdouble endY);
 gboolean drgeo_configure_event (GtkWidget *widget, GdkEventConfigure *event, 
                                                         gpointer user_data);
 gboolean drgeo_draw_event (GtkWidget *widget, cairo_t *cr,  gpointer user_data);
