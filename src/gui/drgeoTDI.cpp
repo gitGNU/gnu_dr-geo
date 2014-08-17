@@ -36,7 +36,8 @@ drgeoTDI::drgeoTDI ()
 	mainWindow = GTK_WIDGET (gtk_builder_get_object (builder, "drgeoMainWindow"));
 	box = GTK_BOX (gtk_builder_get_object (builder, "box1"));
 	closeMenuItem = GTK_WIDGET (gtk_builder_get_object (builder, "close"));
-
+	
+    gtk_widget_set_size_request(mainWindow, 800, 500);
 	gtk_widget_show_all (mainWindow);
 	setSensitivity ();
 }
