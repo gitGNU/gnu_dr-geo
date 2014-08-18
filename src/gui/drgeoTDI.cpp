@@ -26,7 +26,7 @@ drgeoTDI::drgeoTDI ()
 	newFlag = false;
 	GError* error = NULL;
 	GtkBuilder *builder = gtk_builder_new();
-
+	
 	if (!gtk_builder_add_from_file (builder, DRGEO_UI_DIR "/drgeoMain.ui", &error))
 	{
 		g_warning ("Couldn't load builder file: %s", error->message);
@@ -200,5 +200,18 @@ on_arc (GtkWidget *widget, gpointer user_data)
 void 
 on_about (GtkWidget *widget, gpointer user_data)
 {
+	GtkWidget *aboutDialog;
+	GError* error = NULL;
+	GtkBuilder *builderAbout = gtk_builder_new();
+
+	if (!gtk_builder_add_from_file (builderAbout, DRGEO_UI_DIR "/drgeoAbout.ui", &error))
+	{
+		g_warning ("Couldn't load builder file: %s", error->message);
+		g_error_free (error);
+	}
+	gtk_builder_connect_signals (builderAbout, &error);
+	aboutDialog = GTK_WIDGET (gtk_builder_get_object (builderAbout, "drgeoAboutDialog"));
+
+	gtk_widget_show (aboutDialog);
 	std::cout << "About menu item was selected." << std::endl;
 }
