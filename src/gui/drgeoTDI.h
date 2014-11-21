@@ -41,6 +41,18 @@ class drgeoTDI
 		GtkWidget *label;
 
 		/* Menu Items */
+		GtkWidget *saveMenuItem;
+		GtkWidget *saveAsMenuItem;
+		GtkWidget *undoMenuItem;
+		GtkWidget *redoMenuItem;
+		GtkWidget *cutMenuItem;
+		GtkWidget *copyMenuItem;
+		GtkWidget *pasteMenuItem;
+		GtkWidget *deleteMenuItem;
+		GtkWidget *pointMenuItem;
+		GtkWidget *lineMenuItem;
+		GtkWidget *circleMenuItem;
+		GtkWidget *arcMenuItem;
 		GtkWidget *closeMenuItem;
 
 		bool newFlag;

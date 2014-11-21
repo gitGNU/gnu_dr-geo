@@ -35,6 +35,18 @@ drgeoTDI::drgeoTDI ()
 	gtk_builder_connect_signals (builder, &error);
 	mainWindow = GTK_WIDGET (gtk_builder_get_object (builder, "drgeoMainWindow"));
 	box = GTK_BOX (gtk_builder_get_object (builder, "box1"));
+	saveMenuItem = GTK_WIDGET (gtk_builder_get_object (builder, "save"));
+	saveAsMenuItem = GTK_WIDGET (gtk_builder_get_object (builder, "save_as"));
+	undoMenuItem = GTK_WIDGET (gtk_builder_get_object (builder, "undo"));
+	redoMenuItem = GTK_WIDGET (gtk_builder_get_object (builder, "redo"));
+	cutMenuItem = GTK_WIDGET (gtk_builder_get_object (builder, "cut"));
+	copyMenuItem = GTK_WIDGET (gtk_builder_get_object (builder, "copy"));
+	pasteMenuItem = GTK_WIDGET (gtk_builder_get_object (builder, "paste"));
+	deleteMenuItem = GTK_WIDGET (gtk_builder_get_object (builder, "delete"));
+	pointMenuItem = GTK_WIDGET (gtk_builder_get_object (builder, "point"));
+	lineMenuItem = GTK_WIDGET (gtk_builder_get_object (builder, "line"));
+	circleMenuItem = GTK_WIDGET (gtk_builder_get_object (builder, "circle"));
+	arcMenuItem = GTK_WIDGET (gtk_builder_get_object (builder, "arc"));
 	closeMenuItem = GTK_WIDGET (gtk_builder_get_object (builder, "close"));
 	
     gtk_widget_set_size_request(mainWindow, 800, 500);
@@ -88,9 +100,37 @@ void
 drgeoTDI::setSensitivity ()
 {
 	if(!newFlag)
+	{
+		gtk_widget_set_sensitive (saveMenuItem, FALSE);
+		gtk_widget_set_sensitive (saveAsMenuItem, FALSE);
+		gtk_widget_set_sensitive (undoMenuItem, FALSE);
+		gtk_widget_set_sensitive (redoMenuItem, FALSE);
+		gtk_widget_set_sensitive (cutMenuItem, FALSE);
+		gtk_widget_set_sensitive (copyMenuItem, FALSE);
+		gtk_widget_set_sensitive (pasteMenuItem, FALSE);
+		gtk_widget_set_sensitive (deleteMenuItem, FALSE);
+		gtk_widget_set_sensitive (pointMenuItem, FALSE);
+		gtk_widget_set_sensitive (lineMenuItem, FALSE);
+		gtk_widget_set_sensitive (circleMenuItem, FALSE);
+		gtk_widget_set_sensitive (arcMenuItem, FALSE);
 		gtk_widget_set_sensitive (closeMenuItem, FALSE);
+	}
 	else
+	{
+		gtk_widget_set_sensitive (saveMenuItem, TRUE);
+		gtk_widget_set_sensitive (saveAsMenuItem, TRUE);
+		gtk_widget_set_sensitive (undoMenuItem, TRUE);
+		gtk_widget_set_sensitive (redoMenuItem, TRUE);
+		gtk_widget_set_sensitive (cutMenuItem, TRUE);
+		gtk_widget_set_sensitive (copyMenuItem, TRUE);
+		gtk_widget_set_sensitive (pasteMenuItem, TRUE);
+		gtk_widget_set_sensitive (deleteMenuItem, TRUE);
+		gtk_widget_set_sensitive (pointMenuItem, TRUE);
+		gtk_widget_set_sensitive (lineMenuItem, TRUE);
+		gtk_widget_set_sensitive (circleMenuItem, TRUE);
+		gtk_widget_set_sensitive (arcMenuItem, TRUE);
 		gtk_widget_set_sensitive (closeMenuItem, TRUE);
+	}
 }
 
 void 
